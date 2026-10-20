@@ -1,0 +1,23 @@
+<!doctype html>
+    <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Architecture | Design Template Library</title>
+    <link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="reference-types.css"></head>
+    <body><main class="deck"><section class="slide ref-slide" aria-label="architecture 디자인 레퍼런스">
+    <header><div class="ref-overline"><div class="kicker">REFERENCE / 06</div><a class="ref-link" href="index.html">전체 레퍼런스 ↗</a></div>
+    <h1>CNN의 구조와 Tensor Shape</h1><p class="subtitle">레이어마다 공간 크기와 채널 수가 어떻게 바뀌는지 연결해서 살펴봅니다.</p></header>
+    <div class="content"><section class="ref-card" style="height:100%;padding:19px 23px"><div class="ref-overline"><div class="ref-k">MODEL ARCHITECTURE · EXAMPLE</div><span class="ref-chip">Input 64×64×3</span></div>
+  <div class="arch-flow">
+    <div class="arch-node"><div class="ref-k">INPUT</div><div class="arch-layers"><span style="background:#ecc0b5"></span><span style="background:#a8ddc1"></span><span></span></div><div class="name">RGB 이미지</div><div class="shape">64×64×3</div><div class="desc">3개 채널</div></div><div class="arch-arrow">→</div>
+    <div class="arch-node focus"><div class="ref-k">CONV + ReLU</div><div class="arch-layers"><span></span><span></span><span></span></div><div class="name">특징 추출</div><div class="shape">64×64×16</div><div class="desc">3×3 · S1 · P1</div></div><div class="arch-arrow">→</div>
+    <div class="arch-node"><div class="ref-k">MAXPOOL</div><div class="arch-layers small"><span></span><span></span><span></span></div><div class="name">공간 축소</div><div class="shape">32×32×16</div><div class="desc">2×2 · S2</div></div><div class="arch-arrow">→</div>
+    <div class="arch-node focus"><div class="ref-k">CONV + GAP</div><div class="arch-layers green small"><span></span><span></span></div><div class="name">특징 요약</div><div class="shape">32</div><div class="desc">Conv 32채널 → 평균</div></div><div class="arch-arrow">→</div>
+    <div class="arch-node final"><div class="ref-k">HEAD</div><div class="arch-layers green" style="font-size:30px;font-weight:800;color:#16877e">3</div><div class="name">분류</div><div class="shape">3 logits</div><div class="desc">Linear 32→3</div></div>
+  </div>
+  <div class="arch-details">
+    <div class="arch-detail"><strong>공간 정보</strong><span>Convolution은 주변 픽셀 패턴을 여러 채널의 Feature Map으로 변환합니다.</span></div>
+    <div class="arch-detail"><strong>해상도 감소</strong><span>2×2 MaxPool, stride 2를 적용하면 H와 W가 절반으로 줄어듭니다.</span></div>
+    <div class="arch-detail"><strong>예측 출력</strong><span>Global Average Pooling 후 Linear를 거쳐 3개 클래스 점수를 만듭니다.</span></div>
+  </div>
+</section></div>
+    <footer class="footer"><span>Design Template Library · Architecture</span><span>06 / 08</span></footer>
+    </section></main></body></html>
