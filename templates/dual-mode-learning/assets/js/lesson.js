@@ -1,0 +1,52 @@
+// Single canonical content. Both renderers import this file.
+export const lesson = {
+  topic: 'CNN의 Convolution 이해하기',
+  subtitle: '한 장의 이미지에서 패턴을 수치로 추출하는 과정',
+  sections: [
+    {
+      id: 'motivation',
+      eyebrow: '01 · WHY',
+      title: '이미지의 패턴은 어떻게 찾을까?',
+      lead: '컴퓨터가 사물의 윤곽을 이해하려면 픽셀의 숫자들에서 일정한 패턴을 찾아야 합니다.',
+      kind: 'concept',
+      body: '<p>이미지는 격자에 배열된 숫자입니다. <strong>Convolution</strong>은 작은 필터가 이미지의 일부를 살펴보면서 특정한 패턴에 얼마나 반응하는지 계산하는 방법입니다.</p>',
+      scrollOnly: '원본 픽셀을 무조건 사람이 볼 수 있는 형태로 출력하는 것이 아니라, 이후 계층이 활용할 특징을 만들어 냅니다. 필터 가중치는 예제에서는 미리 정해지지만 일반적인 CNN에서는 학습을 통해 갱신됩니다.',
+    },
+    {
+      id: 'locality',
+      eyebrow: '02 · INTUITION',
+      title: '전체 이미지 대신 작은 영역부터',
+      lead: '3×3 필터는 한 번에 9개 픽셀만 관찰합니다. 같은 필터를 여러 위치에 반복 적용합니다.',
+      kind: 'concept',
+      body: '<p>왼쪽 위에서 시작해 오른쪽으로 이동하고, 한 줄씩 아래로 내려가며 결과를 누적합니다. 이처럼 <strong>동일한 필터를 공간 전체에 재사용</strong>하므로 위치가 달라도 같은 패턴을 탐지할 수 있습니다.</p>',
+      scrollOnly: '실무에서 CNN의 필터는 학습 가능한 가중치이며, 층이 깊어질수록 여러 필터 응답이 결합됩니다. 여기서는 원리를 보이기 위해 입력 채널 하나와 명시적 3×3 필터 하나만 사용합니다.',
+    },
+    {
+      id: 'pipeline',
+      eyebrow: '03 · PROCESS',
+      title: '입력 → 필터 계산 → Feature Map',
+      lead: '5×5 입력을 3×3 필터로 Stride=1, Padding=0 조건에서 처리하면 3×3 결과가 만들어집니다.',
+      kind: 'flow',
+      body: '<p>출력의 각 셀은 입력 일부와 필터의 원소별 곱을 모두 더한 값입니다. 평균 필터는 합을 9로 나눕니다. 예제는 CNN에서 통상 사용하는 Cross-correlation 방식(필터 뒤집기 없음)입니다.</p>',
+      scrollOnly: '출력 크기는 ((입력 크기 + 2×Padding − Kernel 크기)/Stride) + 1을 바닥 함수로 처리합니다. 여기서는 (5 − 3)/1 + 1 = 3이므로 출력이 3×3입니다.',
+    },
+    {
+      id: 'experiment',
+      eyebrow: '04 · INTERACTIVE LAB',
+      title: '필터를 바꿔 직접 계산해 보기',
+      lead: '동일한 입력에서도 필터 종류에 따라 서로 다른 Feature Map이 만들어지는 모습을 확인합니다.',
+      kind: 'lab',
+      body: '<p>필터를 선택하고 위치를 이동해 출력값을 확인하세요. 필터는 교육용 고정 가중치이며, <strong>학습된 CNN 가중치라고 해석하면 안 됩니다.</strong></p>',
+      scrollOnly: '수학적 의미의 이산 Convolution과 달리 이 예제는 필터를 뒤집지 않는 Cross-correlation을 사용합니다. 실제 CNN은 다수의 학습 가능한 필터를 사용하며 입력 채널이 여러 개인 경우 채널별 곱의 합을 모두 더해 하나의 출력 채널을 구성합니다. 예제는 계산을 명확히 하기 위해 1개 채널로 제한했습니다.',
+    },
+    {
+      id: 'takeaway',
+      eyebrow: '05 · TAKEAWAY',
+      title: 'CNN은 필터로 특징을 추출한다',
+      lead: 'Convolution의 핵심은 이미지를 작은 영역별로 계산해 새로운 특징 표현을 만드는 것입니다.',
+      kind: 'summary',
+      body: '<p>필터가 위치를 따라 움직이며 결과를 생성합니다. 일반적인 CNN에서는 여러 필터의 가중치를 학습하여 분류·검출·분할 등에 유용한 특징을 만듭니다.</p>',
+      scrollOnly: '학습에서의 가중치 갱신과 현재 데모에서 사람이 필터를 선택하는 행위는 서로 다릅니다. 이 데모는 가중합 연산을 직관적으로 설명하는 도구입니다.',
+    },
+  ],
+};

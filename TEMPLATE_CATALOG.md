@@ -39,3 +39,16 @@
 ## Typography (all templates)
 
 All templates, including Concept / Process / Comparison, must use **condensed 1.0 pt** character spacing (`-1pt`) for all text: headings, body, labels, notes and footers. See `DESIGN_SYSTEM.md` and shared HTML/PPTX sources.
+
+
+## 04 · Dual-mode Learning (Scroll / Slide)
+
+| 모드 | 목적 | 원본 | 실제 렌더링 프리뷰 |
+| --- | --- | --- | --- |
+| `scroll` | 목차/스크롤/추가 설명이 있는 웹 교과서 | [scroll.html](templates/dual-mode-learning/scroll.html) | ![Scroll](previews/dual-mode-scroll.jpg) |
+| `slide` | 16:9 발표/강의, 키보드 내비게이션 | [slides.html](templates/dual-mode-learning/slides.html) | ![Interactive slide](previews/dual-mode-lab-slide.jpg) |
+
+- **Common design**: [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md) / `templates/html/styles.css` (네이비·블루·틸, 전역 -1pt 자간).
+- **Shared source**: [lesson.js](templates/dual-mode-learning/assets/js/lesson.js) · [lab.js](templates/dual-mode-learning/assets/js/lab.js).
+- **Instructions**: [DESIGN.md](templates/dual-mode-learning/DESIGN.md) · [MODES.md](templates/dual-mode-learning/MODES.md).
+- **Example**: CNN 5×5 입력과 3×3 필터의 연산을 실시간으로 확인하는 학습용 예제. 실제 CNN 학습 결과가 아님.

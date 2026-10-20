@@ -74,3 +74,15 @@ PPTX와 HTML 기술 강의자료의 공통 시각 설계 규칙입니다. 목표
 - [ ] 발표 화면에서 제목/본문 크기 및 대비가 적절함
 - [ ] 재사용된 외부 시각자료는 출처 링크가 명시됨
 - [ ] 수정된 원본과 프리뷰가 일치함
+
+
+## Rendering Modes (Scroll / Slide)
+
+공통 색상·타이포그래피·-1pt 문자 간격은 **하나의 디자인 시스템**을 따릅니다. 문서의 길이와 탐색 방식만 모드별로 변경합니다.
+
+- **Scroll**: 읽기 폭 제한, 목차/앵커, 세로 스크롤, 상세 설명, 긴 실험 패널.
+- **Slide**: 16:9 화면, 페이지 단위 전환, 핵심 메시지 1개/장, 압축된 조작 패널.
+- **Shared**: 콘텐츠, 용어, 예제 입력값·계산 로직, 색상, 폰트, 인터랙티브 컴포넌트의 의미.
+- 디자인 규칙을 복제하지 않고 새 템플릿의 `assets/css/tokens.css`가 기존 `templates/html/styles.css`를 import합니다.
+
+예시/구현: [Dual-mode Learning](templates/dual-mode-learning/) · [모드별 규칙](templates/dual-mode-learning/MODES.md).

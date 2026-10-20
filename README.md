@@ -51,3 +51,12 @@ For details, see [docs/USAGE.md](docs/USAGE.md).
 ## Scope
 
 This is a **shared design library**, not an existing lecture repository. It does not automatically modify projects under the separate `sh0427-han-private` account. Source attribution is required for external figures and images.
+
+
+## Dual-mode Learning (Scroll / Slide)
+
+- [Dual-mode template](templates/dual-mode-learning/): 동일 콘텐츠를 **웹 교과서(Scroll)** 및 **16:9 발표 슬라이드(Slide)**로 표시합니다.
+- [모드 선택](templates/dual-mode-learning/index.html) · [Scroll 원본](templates/dual-mode-learning/scroll.html) · [Slide 원본](templates/dual-mode-learning/slides.html)
+- [Slide 예시](previews/dual-mode-lab-slide.jpg) · [Scroll 예시](previews/dual-mode-scroll.jpg)
+- `templates/html/styles.css`의 공통 색상·폰트·전역 자간 **-1pt**를 재사용하며, 5개 CNN 개념 섹션과 필터 시뮬레이터의 콘텐츠/계산 로직을 공유합니다.
+- AIBook [Attention 인터랙티브 예제](https://aibook.euiyun.com/chapters/attention.html#sim-editor)는 디자인·학습 흐름 참고자료이며 소스 코드를 복사하지 않았습니다.

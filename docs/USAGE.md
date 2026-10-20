@@ -52,3 +52,18 @@ requirements. Do not edit the reference repo unless asked.
 - HTML: shared `--character-spacing` CSS token; do not use per-component exceptions.
 - PPTX: `CHARACTER_SPACING_PT` is applied in the common `textbox()` helper to every editable run; inspect `a:rPr@spc="-100"` after regeneration.
 - Review previews after changing spacing: word wrapping and line breaks can change.
+
+
+## 6. Scroll / Slide 이중 모드 실행
+
+```bash
+# repository root
+python -m http.server 8000
+```
+
+브라우저에서 `http://localhost:8000/templates/dual-mode-learning/index.html`에 접속합니다.
+
+- Scroll: 왼쪽 목차/세로 스크롤/상세 설명/필터 실습
+- Slide: 16:9, 이전/다음 버튼, 화살표, PageUp/PageDown, URL hash
+- 동일한 `assets/js/lesson.js`와 `assets/js/lab.js`를 사용합니다.
+- 공통 테마는 `templates/html/styles.css`에서 상속하며 문자 간격은 모두 -1pt입니다.
