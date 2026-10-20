@@ -1,17 +1,17 @@
 // Convolution demonstrator: one input channel, stride=1, padding=0.
-const image = [
+export const image = [
   [1, 1, 1, 1, 1],
   [1, 0, 0, 0, 1],
   [1, 0, 1, 0, 1],
   [1, 0, 0, 0, 1],
   [1, 1, 1, 1, 1],
 ];
-const kernels = {
+export const kernels = {
   average: { label: '평균 필터 (1/9)', data: [[1,1,1],[1,1,1],[1,1,1]], divisor: 9 },
   vertical: { label: '세로 경계 필터', data: [[-1,0,1],[-1,0,1],[-1,0,1]], divisor: 1 },
   identity: { label: '중앙 픽셀 통과', data: [[0,0,0],[0,1,0],[0,0,0]], divisor: 1 },
 };
-function convolution(kernel) {
+export function convolution(kernel) {
   const output = [];
   for (let y = 0; y < 3; y++) {
     const row = [];

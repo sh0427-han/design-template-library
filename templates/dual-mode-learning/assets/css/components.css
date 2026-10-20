@@ -55,3 +55,76 @@ button:disabled { cursor: default; opacity: .4; }
   .flow-arrow { min-height: 15px; transform: rotate(90deg); }
   .lab-grid { grid-template-columns: 1fr; }
 }
+/* Reusable visual explanations: the same diagrams work in Scroll and Slide. */
+.learning-content { margin-top: 3px; min-width: 0; }
+.panel-label { font-size: 12px; font-weight: 850; color: var(--blue); letter-spacing: inherit; }
+.teaching-matrix { display: grid; width: max-content; gap: 4px; grid-template-columns: repeat(5, 43px); }
+.teaching-matrix.size-3 { grid-template-columns: repeat(3, 43px); }
+.teaching-cell { display: grid; place-items: center; width: 43px; height: 43px; border-radius: 7px; font: 750 14px var(--font-mono); }
+.teaching-cell.ink { background: #637a98; color: white; }
+.teaching-cell.light { background: #e8edf4; color: #52657e; }
+.teaching-cell.pos { background: #dbe6ff; color: #1e4f9f; }
+.teaching-cell.neg { background: #f9e4d5; color: #9c5620; }
+.teaching-cell.zero { background: #f2f5fa; color: #8594a7; }
+.teaching-cell.focus { box-shadow: inset 0 0 0 3px var(--amber); }
+.motivation-layout { display: grid; grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr); gap: 22px; }
+.explain-visual, .explain-detail, .local-visual, .math-card, .process-panel, .feature-preview { border: 1px solid var(--line); border-radius: 17px; background: var(--white); }
+.explain-visual { padding: 23px 27px; background: #eef4ff; }
+.picture-demo { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 17px 0 2px; }
+.picture-legend { display: inline-flex; align-items: center; gap: 7px; margin-top: 14px; font-size: 13px; color: var(--muted); }
+.legend-key { border: 2px solid var(--amber); border-radius: 3px; width: 13px; height: 13px; }
+.explain-detail { padding: 23px 28px; }
+.explain-detail h3 { font-size: 23px; line-height: 1.3; margin: 10px 0 15px; color: var(--navy); }
+.numbered-note { display: flex; align-items: flex-start; gap: 15px; padding: 8px 0; border-top: 1px solid #e8edf4; }
+.numbered-note > span { font: 750 14px var(--font-mono); color: var(--teal); padding-top: 2px; }
+.numbered-note b { font-size: 15px; }
+.numbered-note p { margin: 2px 0 0; color: var(--muted); font-size: 14px; line-height: 1.38; }
+.teaching-insight { display: flex; align-items: center; gap: 14px; margin-top: 13px; padding: 14px 19px; border-radius: 11px; background: #e8f5f3; color: #1a6f72; font-size: 14px; }
+.teaching-insight strong { color: #194c55; font-size: 17px; }
+.locality-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 21px; }
+.local-visual, .math-card { padding: 23px 27px; }
+.local-visual { background: #eef4ff; display: flex; flex-direction: column; align-items: center; }
+.local-visual .panel-label { align-self: flex-start; }
+.local-visual .teaching-matrix { margin-top: 12px; }
+.position-label { color: var(--muted); font-size: 13px; margin-top: 11px; }
+.small-math-grid { display: flex; align-items: center; gap: 20px; padding: 23px 10px 11px; justify-content: center; }
+.small-math-grid .teaching-cell { width: 38px; height: 38px; font-size: 15px; background: #e6eeff; color: var(--deep); }
+.small-math-grid .teaching-matrix.size-3 { grid-template-columns: repeat(3,38px); }
+.math-division { font-size: 25px; font-weight: 700; color: var(--muted); }
+.calculation-path { display: grid; grid-template-columns: repeat(4,auto); align-items: center; justify-content: space-between; border: 1px solid #d7e4f9; background: #f4f8ff; border-radius: 12px; padding: 12px 14px; margin-top: 12px; color: var(--deep); font-size: 16px; }
+.calculation-path strong { font-size: 25px; color: var(--blue); }
+.math-bottom { font-size: 14px; margin-top: 13px; color: var(--muted); }
+.math-bottom strong { color: var(--deep); }
+.process-graphic { display: grid; grid-template-columns: minmax(0,1fr) 30px minmax(0,1fr) 30px minmax(0,1fr); align-items: stretch; gap: 9px; }
+.process-panel { min-width: 0; padding: 20px 15px 16px; display: flex; flex-direction: column; align-items: center; background: #fcfdff; }
+.process-panel .panel-label { align-self: stretch; }
+.process-panel > strong { font-size: 25px; color: var(--navy); margin: 3px 0 15px; }
+.process-panel small { font-size: 13px; color: var(--muted); margin-top: 12px; }
+.process-panel.process-center { background: #eef4ff; border-color: #cbdaee; }
+.process-panel.process-result { background: #eaf8f5; border-color: #c4e4df; }
+.diagram-arrow { display: grid; place-items: center; font-size: 26px; color: var(--blue); }
+.tiny-grid .teaching-cell { width: 30px; height: 30px; font-size: 11px; border-radius: 4px; }
+.teaching-matrix.tiny-grid { grid-template-columns: repeat(5,30px); gap: 3px; }
+.teaching-matrix.tiny-grid.size-3 { grid-template-columns: repeat(3,30px); }
+.size-equation { display: flex; align-items: center; justify-content: space-between; gap: 20px; background: #eef4ff; border-radius: 12px; padding: 15px 20px; margin-top: 16px; }
+.size-equation div { display: flex; align-items: center; gap: 22px; }
+.size-equation span { color: var(--blue); font-weight: 800; font-size: 12px; }
+.size-equation strong { color: var(--navy); font-size: 21px; }
+.size-equation p { margin: 0; font-size: 14px; color: var(--muted); }
+.feature-gallery { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 14px; }
+.feature-preview { min-width: 0; padding: 16px; background: #fdfefe; }
+.preview-heading { display: flex; flex-direction: column; gap: 4px; }
+.preview-heading strong { color: var(--navy); font-size: 18px; }
+.preview-heading small { color: var(--muted); font-size: 13px; }
+.compact-grid { margin: 18px auto 5px; }
+.compact-grid .teaching-cell { width: 48px; height: 48px; font-size: 13px; }
+.teaching-matrix.compact-grid.size-3 { grid-template-columns: repeat(3,48px); }
+.feature-flow { display: flex; align-items: center; justify-content: space-between; gap: 7px; padding: 15px 20px; margin-top: 15px; background: #e9f5f3; border-radius: 10px; }
+.feature-flow span { font-size: 12px; color: #1f666b; font-weight: 800; }
+.feature-flow b { color: var(--teal); }
+@media(max-width:760px) {
+  .motivation-layout,.locality-layout,.feature-gallery { grid-template-columns:1fr; }
+  .process-graphic { grid-template-columns:1fr; }
+  .diagram-arrow { transform:rotate(90deg); }
+  .size-equation,.feature-flow { flex-wrap:wrap; }
+}
