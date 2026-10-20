@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="ko">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Process | Design Template Library</title><link rel="stylesheet" href="styles.css"></head>
+<body><main class="deck"><section class="slide" aria-label="CNN 데이터 흐름">
+  <header><div class="kicker">PROCESS / 02</div><h1>CNN의 기본 데이터 흐름</h1><p class="subtitle">이미지에서 특징을 추출한 뒤 목적에 맞는 예측 결과를 만든다.</p></header>
+  <div class="content" style="flex-direction:column;justify-content:center">
+    <div class="flow">
+      <div class="node"><div class="node-step">INPUT</div><div class="node-title">입력 이미지</div><div class="node-desc">RGB 픽셀 데이터</div></div><div class="flow-arrow" aria-hidden="true">→</div>
+      <div class="node feature"><div class="node-step">FEATURE</div><div class="node-title">CNN</div><div class="node-desc">계층적으로<br>특징 추출</div></div><div class="flow-arrow" aria-hidden="true">→</div>
+      <div class="node"><div class="node-step">TASK</div><div class="node-title">Task Head</div><div class="node-desc">분류 등<br>목적별 처리</div></div><div class="flow-arrow" aria-hidden="true">→</div>
+      <div class="node output"><div class="node-step">OUTPUT</div><div class="node-title">예측 결과</div><div class="node-desc">클래스 점수 등</div></div>
+    </div><div class="insight"><strong>핵심:</strong> Feature extractor와 Task head의 역할을 분리해 이해한다.</div>
+  </div>
+  <footer class="footer"><span>Design Template Library · Process</span><span>02 / 03</span></footer>
+</section></main></body></html>

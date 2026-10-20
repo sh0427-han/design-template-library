@@ -1,0 +1,5 @@
+node_modules/
+templates/pptx/dist/
+.DS_Store
+Thumbs.db
+*.log
