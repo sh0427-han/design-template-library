@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ko">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Concept | Design Template Library</title><link rel="stylesheet" href="styles.css"></head>
+<body><main class="deck"><section class="slide" aria-label="개념 설명">
+  <header><div class="kicker">CONCEPT / 01</div><h1>이미지는 숫자로 표현된다</h1><p class="subtitle">컴퓨터는 픽셀 값을 입력으로 받아 이미지의 특징을 계산한다.</p></header>
+  <div class="content"><div class="concept-grid">
+    <article class="card concept-copy"><h2 class="card-title">이미지 데이터를 이해하는 방법</h2>
+      <ul class="bullet-list">
+        <li>컬러 이미지는 일반적으로 <strong>R, G, B</strong> 채널로 표현</li>
+        <li>각 채널은 픽셀 값이 모인 2차원 배열</li>
+        <li>CNN은 이러한 배열에서 공간적 패턴을 학습</li>
+      </ul>
+    </article>
+    <div class="concept-visual">
+      <div class="small-label">RGB CHANNELS → TENSOR</div>
+      <div class="matrix-visual">
+        <div class="channel r"><div class="matrix"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><span class="channel-label">R</span></div><span class="matrix-plus">+</span>
+        <div class="channel g"><div class="matrix"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><span class="channel-label">G</span></div><span class="matrix-plus">+</span>
+        <div class="channel b"><div class="matrix"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><span class="channel-label">B</span></div>
+      </div>
+      <div class="tensor">64 × 64 × 3 (H × W × C)</div>
+      <div class="technical-note">개념도: 실제 입력 이미지의 공간 크기는 64×64인 예시입니다. 배열 축 순서는 프레임워크에 따라 달라질 수 있습니다.</div>
+    </div>
+  </div></div>
+  <footer class="footer"><span>Design Template Library · Concept</span><span>01 / 03</span></footer>
+</section></main></body></html>
