@@ -1,67 +1,43 @@
-# Template Catalog v0.1
+# Design Template Catalog · 8 Reference Types
 
-Concept / Process / Comparison 3종과 Scroll / Slide 학습 예제를 함께 다듬는 레퍼런스 라이브러리입니다.
+공통 디자인 시스템은 `DESIGN_SYSTEM.md`에서 관리합니다. 각 유형은 **한 장으로도 의도를 확인할 수 있는 독립 디자인 레퍼런스**입니다. 5장 CNN 예제는 별도의 연속 강의 사례입니다.
 
-| ID | 목적 | HTML | PPTX | 미리보기 |
+| ID | 자료 목적 | 레이아웃 패턴 | HTML · 실제 브라우저 이미지 | PPTX |
 | --- | --- | --- | --- | --- |
-| `concept` | 개념 + 직관적인 수치 예제 | [concept.html](templates/html/concept.html) | [PPTX](templates/pptx/technical-slide-templates.pptx) · 1장 | ![Concept](previews/html-concept.png) |
-| `process` | 입력 → 처리 → 출력 구조 | [process.html](templates/html/process.html) | [PPTX](templates/pptx/technical-slide-templates.pptx) · 2장 | ![Process](previews/html-process.png) |
-| `comparison` | 방법 비교, 적용 조건과 장단점 | [comparison.html](templates/html/comparison.html) | [PPTX](templates/pptx/technical-slide-templates.pptx) · 3장 | ![Comparison](previews/html-comparison.png) |
+| `concept` | 개념 소개·핵심 Figure | 설명 + 개념 도식 | [원본](templates/html/concept.html) · ![Concept](previews/html-concept.png) | 기존 1장 |
+| `process` | 단계/프로세스 설명 | Input → Process → Output | [원본](templates/html/process.html) · ![Process](previews/html-process.png) | 기존 2장 |
+| `comparison` | A/B 접근법 비교 | 동일 지표의 두 패널 | [원본](templates/html/comparison.html) · ![Comparison](previews/html-comparison.png) | 기존 3장 |
+| `step-by-step` | 수식·연산 강의 | 배열 × 커널 → 합계 | [원본](templates/html/step-by-step.html) · ![Step-by-step](previews/html-step-by-step.jpg) | 초안 확정 후 |
+| `interactive` | 웹 실습·임계값 검증 | 슬라이더 + 계산 + 혼동행렬 | [원본](templates/html/interactive.html) · ![Interactive](previews/html-interactive.jpg) | 정적 버전 추후 |
+| `architecture` | 모델·시스템 구조 | Layer·Tensor Shape 연결 | [원본](templates/html/architecture.html) · ![Architecture](previews/html-architecture.jpg) | 초안 확정 후 |
+| `experiment` | 연구 결과·지표 비교 | Confusion Matrix + Metrics | [원본](templates/html/experiment.html) · ![Experiment](previews/html-experiment.jpg) | 초안 확정 후 |
+| `executive-summary` | 경영·기술 보고 | KPI + 비교 + Action | [원본](templates/html/executive-summary.html) · ![Executive Summary](previews/html-executive-summary.jpg) | 초안 확정 후 |
 
-### Concept
+## 유형별 적용 기준
 
-- **적합:** 픽셀·텐서, 퍼셉트론, 활성함수, 성능 지표 개념 설명
-- **구성:** 설명 45% + 수식·도식 55%
-- **주의:** 한 장에 복잡한 수식 여러 개를 우겨 넣지 않기
+- **Concept**: 직관적인 하나의 개념과 Figure를 나란히 배치합니다.
+- **Process**: 실제 처리 순서와 화살표 방향이 일치해야 합니다.
+- **Comparison**: 동일한 질문·측정 조건으로 비교합니다.
+- **Step-by-step**: 계산식과 입력값, 결과가 실제로 일치해야 합니다.
+- **Interactive**: 조작할 수 있는 변수와 화면에 표시하는 계산이 일치해야 합니다. 계산 예시는 정적 이미지로 대체하지 않습니다.
+- **Architecture**: 각 텐서의 H/W/C와 stride·padding 관계를 확인합니다.
+- **Experiment**: 수치 예시는 실제 실험 데이터와 구분합니다. 가상 12개 샘플로 TN=5, FP=1, FN=2, TP=4를 사용했습니다.
+- **Executive Summary**: 개선 수치가 가상인 경우 명시하며, 숫자보다 의사결정 메시지를 우선합니다.
 
-### Process
+## 공통 규칙
 
-- **적합:** 이미지 → CNN → Task Head → Prediction 같은 흐름
-- **구성:** 일관된 단계 카드 + 방향성 있는 화살표
-- **주의:** 병렬 작업/조건 분기는 단순한 직렬 화살표로 오해시키지 않기
+- 네이비/블루/틸, Off-white/White 배경, 전체 글자 간격 `-1pt`.
+- 16:9 슬라이드, 간결한 제목, 의미 있는 도식, 과도한 메타 문구 금지.
+- HTML은 `templates/html/styles.css`를 공통 사용하고, 신규 유형의 차이는 `reference-types.css`에 작성합니다.
+- 모든 유형은 **수정 중인 레퍼런스 초안**이며, 기존 3종 PPTX 원본은 유지합니다.
 
-### Comparison
+## 연속 강의·웹 교과서
 
-- **적합:** 규칙 기반 vs 머신러닝, 전처리 방법, 평가 기법 비교
-- **구성:** 동일한 질문에 대한 양측 답변 + 실제 예제
-- **주의:** 조건이 다른 실험 지표를 같은 조건인 것처럼 표시하지 않기
+[Dual-mode Learning](templates/dual-mode-learning/)은 **위 8가지 유형의 수가 아닌 별도 통합 사용 사례**입니다.
 
-## 추가 후보 (미구현)
-
-`formula`(수식 단계별 계산), `experiment`(그래프·confusion matrix), `section`(장 구분), `architecture`(복잡한 모델 블록), `timeline`(학습·추론 프로세스)
-
-## 기술 상태
-
-- HTML: CSS 공유, 반응형, 별도 의존성 없음
-- PPTX: 실제 3장 편집 가능 원본 파일 + Python 재생성 스크립트
-- PNG 프리뷰: HTML 실제 브라우저 렌더링 캡처
-
-## Typography (all templates)
-
-All templates, including Concept / Process / Comparison, must use **condensed 1.0 pt** character spacing (`-1pt`) for all text: headings, body, labels, notes and footers. See `DESIGN_SYSTEM.md` and shared HTML/PPTX sources.
-
-
-## 04 · Dual-mode Learning (Scroll / Slide)
-
-| 모드 | 목적 | 원본 | 실제 렌더링 프리뷰 |
-| --- | --- | --- | --- |
-| `scroll` | 목차/스크롤/추가 설명이 있는 웹 교과서 | [scroll.html](templates/dual-mode-learning/scroll.html) | ![Scroll](previews/dual-mode-scroll.jpg) |
-| `slide` | 16:9 발표/강의, 키보드 내비게이션 | [slides.html](templates/dual-mode-learning/slides.html) | ![Interactive slide](previews/dual-mode-lab-slide.jpg) |
-
-- **Common design**: [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md) / `templates/html/styles.css` (네이비·블루·틸, 전역 -1pt 자간).
-- **Shared source**: [lesson.js](templates/dual-mode-learning/assets/js/lesson.js) · [lab.js](templates/dual-mode-learning/assets/js/lab.js).
-- **Instructions**: [DESIGN.md](templates/dual-mode-learning/DESIGN.md) · [MODES.md](templates/dual-mode-learning/MODES.md).
-- **Example**: CNN 5×5 입력과 3×3 필터의 연산을 실시간으로 확인하는 학습용 예제. 실제 CNN 학습 결과가 아님.
-
-
-### 5개 슬라이드 레퍼런스
-
-| 장 | 레퍼런스 유형 | 프리뷰 |
+| 모드 | 예제 | 규칙 |
 | --- | --- | --- |
-| 01 | 픽셀 패턴 · 강조 행렬 | [슬라이드 01](templates/dual-mode-learning/slides.html#motivation) |
-| 02 | 국소 계산 · Weight Sharing | [슬라이드 02](templates/dual-mode-learning/slides.html#locality) |
-| 03 | 입력 → 필터 → Feature Map | [슬라이드 03](templates/dual-mode-learning/slides.html#pipeline) |
-| 04 | 조작 가능한 CNN Lab | [슬라이드 04](templates/dual-mode-learning/slides.html#experiment) |
-| 05 | 출력 Feature Map 3종 비교 | [슬라이드 05](templates/dual-mode-learning/slides.html#takeaway) |
+| Scroll | [CNN 웹 교과서](templates/dual-mode-learning/scroll.html) | 왼쪽 목차·세로 스크롤·상세 설명 |
+| Slide | [CNN 발표 예제](templates/dual-mode-learning/slides.html) | 16:9 · 5장 · 키보드 전환 |
 
-3종 기본 레이아웃, 5개 실습 슬라이드, 웹 교과서 모두 디자인 예시로서 지속적으로 수정하며, HTML/PPTX는 해당 형식에 맞게 구현합니다.
+디자인 초안의 평가 방법은 [REFERENCE_REVIEW_GUIDE.md](docs/REFERENCE_REVIEW_GUIDE.md)를 참고합니다.
