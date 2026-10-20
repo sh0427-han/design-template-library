@@ -1,6 +1,6 @@
 # Template Catalog v0.1
 
-최초 제공하는 템플릿 3종. 기술 콘텐츠는 **실제 강의자료가 아니라 레이아웃 사용 예시**입니다.
+Concept / Process / Comparison 3종과 Scroll / Slide 학습 예제를 함께 다듬는 레퍼런스 라이브러리입니다.
 
 | ID | 목적 | HTML | PPTX | 미리보기 |
 | --- | --- | --- | --- | --- |
@@ -52,3 +52,16 @@ All templates, including Concept / Process / Comparison, must use **condensed 1.
 - **Shared source**: [lesson.js](templates/dual-mode-learning/assets/js/lesson.js) · [lab.js](templates/dual-mode-learning/assets/js/lab.js).
 - **Instructions**: [DESIGN.md](templates/dual-mode-learning/DESIGN.md) · [MODES.md](templates/dual-mode-learning/MODES.md).
 - **Example**: CNN 5×5 입력과 3×3 필터의 연산을 실시간으로 확인하는 학습용 예제. 실제 CNN 학습 결과가 아님.
+
+
+### 5개 슬라이드 레퍼런스
+
+| 장 | 레퍼런스 유형 | 프리뷰 |
+| --- | --- | --- |
+| 01 | 픽셀 패턴 · 강조 행렬 | ![01](previews/dual-mode-slide-01.jpg) |
+| 02 | 국소 계산 · Weight Sharing | ![02](previews/dual-mode-slide-02.jpg) |
+| 03 | 입력 → 필터 → Feature Map | ![03](previews/dual-mode-process-slide.jpg) |
+| 04 | 조작 가능한 CNN Lab | ![04](previews/dual-mode-lab-slide.jpg) |
+| 05 | 출력 Feature Map 3종 비교 | ![05](previews/dual-mode-slide-05.jpg) |
+
+3종 기본 레이아웃, 5개 실습 슬라이드, 웹 교과서 모두 디자인 예시로서 지속적으로 수정하며, HTML/PPTX는 해당 형식에 맞게 구현합니다.

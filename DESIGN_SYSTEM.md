@@ -86,3 +86,12 @@ PPTX와 HTML 기술 강의자료의 공통 시각 설계 규칙입니다. 목표
 - 디자인 규칙을 복제하지 않고 새 템플릿의 `assets/css/tokens.css`가 기존 `templates/html/styles.css`를 import합니다.
 
 예시/구현: [Dual-mode Learning](templates/dual-mode-learning/) · [모드별 규칙](templates/dual-mode-learning/MODES.md).
+
+
+## Iterative example guidelines
+
+- 기존 3종 템플릿과 Dual-mode 예시 5장은 동등한 개선 대상입니다.
+- 실제 계산 예제와 충분한 도식 크기로 정보 밀도를 보완하고, 불필요한 설명을 늘려 공간을 채우지 않습니다.
+- 한 줄로 표현 가능한 부제목은 수동 줄바꿈을 넣지 않습니다.
+- 제작 과정이나 AI 작성 여부를 설명하는 메타 문구는 학습자 화면에 넣지 않습니다.
+- Scroll에서는 좌측 목차 오른쪽부터 본문을 정렬하고, 긴 문단은 읽기 폭을 별도로 제한합니다.

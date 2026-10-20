@@ -67,3 +67,8 @@ python -m http.server 8000
 - Slide: 16:9, 이전/다음 버튼, 화살표, PageUp/PageDown, URL hash
 - 동일한 `assets/js/lesson.js`와 `assets/js/lab.js`를 사용합니다.
 - 공통 테마는 `templates/html/styles.css`에서 상속하며 문자 간격은 모두 -1pt입니다.
+
+
+## 7. 통합 갤러리
+
+[HTML 갤러리](../templates/html/index.html)에서 기본 3종과 Dual-mode 예시를 함께 확인할 수 있습니다. 기본 3종에는 편집 가능한 PPTX가 있으며, 새 인터랙티브 5장은 HTML/CSS/JavaScript 기반이고 PPTX 버전은 아직 없습니다. 모든 예시는 계속 개선합니다.
