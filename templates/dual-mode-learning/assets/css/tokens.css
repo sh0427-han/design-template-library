@@ -1,0 +1,24 @@
+/* Base design tokens and -1pt typography are inherited from the canonical
+   templates/html/styles.css. This file only defines semantic aliases. */
+@import url("../../../html/styles.css");
+:root {
+  --surface: var(--white);
+  --surface-soft: var(--pale-blue);
+  --accent: var(--blue);
+  --accent-soft: var(--pale-blue);
+  --line: var(--border);
+  --good: var(--teal);
+  --orange: var(--amber);
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --radius-sm: 9px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --font-ui: "Malgun Gothic", "Apple SD Gothic Neo", system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Consolas, monospace;
+}

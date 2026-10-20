@@ -1,0 +1,52 @@
+// Shared learning content for both Scroll and Slide renderers.
+export const lesson = {
+  topic: 'CNN의 Convolution 이해하기',
+  subtitle: '작은 필터가 픽셀을 계산하고 Feature Map을 만드는 과정',
+  sections: [
+    {
+      id: 'motivation',
+      eyebrow: '01 · CONCEPT',
+      title: '이미지에서 패턴 찾기',
+      lead: '이미지는 픽셀 숫자의 배열이며, CNN은 이 숫자들 사이의 공간적 패턴을 계산합니다.',
+      kind: 'motivation',
+      body: '<p>개별 픽셀 하나만으로는 주변의 형태를 알기 어렵습니다. <strong>필터(Kernel)</strong>는 이웃한 픽셀을 함께 계산해 경계나 밝기 변화에 반응합니다.</p>',
+      scrollOnly: '사진은 보통 여러 채널(RGB)로 구성됩니다. 여기서는 국소 연산을 쉽게 살펴볼 수 있도록 하나의 채널만 표시합니다.',
+    },
+    {
+      id: 'locality',
+      eyebrow: '02 · LOCAL OPERATION',
+      title: '3×3 필터가 한 칸씩 이동한다',
+      lead: '작은 필터를 여러 위치에 적용해도 동일한 가중치가 사용됩니다.',
+      kind: 'locality',
+      body: '<p>첫 위치에서 3×3 입력값 9개를 평균 내면 <strong>6 ÷ 9 ≈ 0.67</strong>입니다. 필터가 옆으로 한 칸 이동하면 다른 입력 영역을 계산합니다.</p>',
+      scrollOnly: 'Stride=1이면 필터가 한 번에 한 픽셀씩 이동합니다. 필터를 바꾸지 않고 모든 위치에 다시 적용하는 것이 Weight Sharing입니다.',
+    },
+    {
+      id: 'pipeline',
+      eyebrow: '03 · INPUT → OUTPUT',
+      title: '5×5 입력이 3×3 결과로 바뀐다',
+      lead: 'Padding 없이 3×3 필터를 Stride=1로 적용하면 가로·세로 각각 3개 결과가 생성됩니다.',
+      kind: 'flow',
+      body: '<p>각 출력 픽셀은 해당 위치의 3×3 입력과 필터의 원소별 곱을 더해 계산합니다. 이 출력 배열을 <strong>Feature Map</strong>이라고 합니다.</p>',
+      scrollOnly: '출력 한 변의 크기는 ⌊(입력 크기 + 2×Padding − Kernel 크기)/Stride⌋ + 1입니다. 예시 조건에서는 ⌊(5−3)/1⌋+1=3입니다.',
+    },
+    {
+      id: 'experiment',
+      eyebrow: '04 · EXPERIMENT',
+      title: '필터를 바꿔 결과 비교하기',
+      lead: '필터를 바꾸거나 입력 위치를 이동하면 선택한 위치의 계산값과 Feature Map이 함께 달라집니다.',
+      kind: 'lab',
+      body: '<p>평균 필터는 주변 픽셀을 평균 내고, 세로 경계 필터는 좌우 밝기 차이에 반응합니다. 실제 CNN의 필터 가중치는 학습으로 결정됩니다.</p>',
+      scrollOnly: '여기서는 필터를 뒤집지 않는 Cross-correlation 방식으로 계산합니다. CNN 라이브러리에서 흔히 사용하는 방식이며, 다채널 입력에서는 채널별 결과를 합산합니다.',
+    },
+    {
+      id: 'takeaway',
+      eyebrow: '05 · FEATURE MAP',
+      title: '필터마다 다른 특징이 남는다',
+      lead: '같은 입력이라도 평균·경계·중앙값 필터는 각기 다른 Feature Map을 만듭니다.',
+      kind: 'summary',
+      body: '<p>하나의 이미지에서 여러 필터가 서로 다른 응답을 만들고, CNN은 이 특징들을 다음 계층으로 전달합니다. <strong>어떤 특징을 추출할지는 학습 중 결정</strong>됩니다.</p>',
+      scrollOnly: '필터 한 개는 출력 채널 하나를 생성합니다. 실제 CNN은 입력 채널 여러 개와 출력 필터 여러 개를 함께 사용합니다.',
+    },
+  ],
+};

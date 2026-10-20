@@ -1,6 +1,6 @@
 # Template Catalog v0.1
 
-최초 제공하는 템플릿 3종. 기술 콘텐츠는 **실제 강의자료가 아니라 레이아웃 사용 예시**입니다.
+Concept / Process / Comparison 3종과 Scroll / Slide 학습 예제를 함께 다듬는 레퍼런스 라이브러리입니다.
 
 | ID | 목적 | HTML | PPTX | 미리보기 |
 | --- | --- | --- | --- | --- |
@@ -39,3 +39,29 @@
 ## Typography (all templates)
 
 All templates, including Concept / Process / Comparison, must use **condensed 1.0 pt** character spacing (`-1pt`) for all text: headings, body, labels, notes and footers. See `DESIGN_SYSTEM.md` and shared HTML/PPTX sources.
+
+
+## 04 · Dual-mode Learning (Scroll / Slide)
+
+| 모드 | 목적 | 원본 | 실제 렌더링 프리뷰 |
+| --- | --- | --- | --- |
+| `scroll` | 목차/스크롤/추가 설명이 있는 웹 교과서 | [scroll.html](templates/dual-mode-learning/scroll.html) | ![Scroll](previews/dual-mode-scroll.jpg) |
+| `slide` | 16:9 발표/강의, 키보드 내비게이션 | [slides.html](templates/dual-mode-learning/slides.html) | ![Interactive slide](previews/dual-mode-lab-slide.jpg) |
+
+- **Common design**: [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md) / `templates/html/styles.css` (네이비·블루·틸, 전역 -1pt 자간).
+- **Shared source**: [lesson.js](templates/dual-mode-learning/assets/js/lesson.js) · [lab.js](templates/dual-mode-learning/assets/js/lab.js).
+- **Instructions**: [DESIGN.md](templates/dual-mode-learning/DESIGN.md) · [MODES.md](templates/dual-mode-learning/MODES.md).
+- **Example**: CNN 5×5 입력과 3×3 필터의 연산을 실시간으로 확인하는 학습용 예제. 실제 CNN 학습 결과가 아님.
+
+
+### 5개 슬라이드 레퍼런스
+
+| 장 | 레퍼런스 유형 | 프리뷰 |
+| --- | --- | --- |
+| 01 | 픽셀 패턴 · 강조 행렬 | [슬라이드 01](templates/dual-mode-learning/slides.html#motivation) |
+| 02 | 국소 계산 · Weight Sharing | [슬라이드 02](templates/dual-mode-learning/slides.html#locality) |
+| 03 | 입력 → 필터 → Feature Map | [슬라이드 03](templates/dual-mode-learning/slides.html#pipeline) |
+| 04 | 조작 가능한 CNN Lab | [슬라이드 04](templates/dual-mode-learning/slides.html#experiment) |
+| 05 | 출력 Feature Map 3종 비교 | [슬라이드 05](templates/dual-mode-learning/slides.html#takeaway) |
+
+3종 기본 레이아웃, 5개 실습 슬라이드, 웹 교과서 모두 디자인 예시로서 지속적으로 수정하며, HTML/PPTX는 해당 형식에 맞게 구현합니다.

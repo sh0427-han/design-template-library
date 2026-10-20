@@ -38,3 +38,19 @@
 - Do not fabricate benchmark results, model configurations, citations or sources.
 - Do not automatically overwrite existing course styling because this library exists.
 - Do not make commits to `sh0427-han-private` unless explicitly requested.
+
+
+## Scroll / Slide dual-mode templates
+
+- For dual-mode requests inspect `templates/dual-mode-learning/DESIGN.md` and `MODES.md` first.
+- Share lesson content, math and interactive behavior between modes; separate only layout, navigation and explanatory density.
+- Inherit the canonical `templates/html/styles.css` tokens and its global **-1pt** character spacing; do not re-declare conflicting colors.
+- Preserve the existing Concept / Process / Comparison HTML and editable PPTX examples.
+
+
+## Ongoing example refinement
+
+- The first three Concept / Process / Comparison HTML/PPTX layouts and the five Dual-mode teaching slides are all editable, evolving reference samples.
+- Do not add generic creator-facing meta notes or force subtitles onto multiple lines when avoidable.
+- Prefer factual, computed visual explanation; distribute content visually across each slide.
+- Validate representative desktop viewports: 1600x950, 1366x768, 1280x720.
