@@ -67,4 +67,4 @@ This is a **shared design library**, not an existing lecture repository. It does
 
 ### Refined slide previews
 
-[01 픽셀 패턴](previews/dual-mode-slide-01.jpg) · [02 필터 이동](previews/dual-mode-slide-02.jpg) · [03 입출력](previews/dual-mode-process-slide.jpg) · [04 실습](previews/dual-mode-lab-slide.jpg) · [05 Feature Map](previews/dual-mode-slide-05.jpg)
+[01 픽셀 패턴](templates/dual-mode-learning/slides.html#motivation) · [02 필터 이동](templates/dual-mode-learning/slides.html#locality) · [03 입출력](templates/dual-mode-learning/slides.html#pipeline) · [04 실습](templates/dual-mode-learning/slides.html#experiment) · [05 Feature Map](templates/dual-mode-learning/slides.html#takeaway)

@@ -58,10 +58,10 @@ All templates, including Concept / Process / Comparison, must use **condensed 1.
 
 | 장 | 레퍼런스 유형 | 프리뷰 |
 | --- | --- | --- |
-| 01 | 픽셀 패턴 · 강조 행렬 | ![01](previews/dual-mode-slide-01.jpg) |
-| 02 | 국소 계산 · Weight Sharing | ![02](previews/dual-mode-slide-02.jpg) |
-| 03 | 입력 → 필터 → Feature Map | ![03](previews/dual-mode-process-slide.jpg) |
-| 04 | 조작 가능한 CNN Lab | ![04](previews/dual-mode-lab-slide.jpg) |
-| 05 | 출력 Feature Map 3종 비교 | ![05](previews/dual-mode-slide-05.jpg) |
+| 01 | 픽셀 패턴 · 강조 행렬 | [슬라이드 01](templates/dual-mode-learning/slides.html#motivation) |
+| 02 | 국소 계산 · Weight Sharing | [슬라이드 02](templates/dual-mode-learning/slides.html#locality) |
+| 03 | 입력 → 필터 → Feature Map | [슬라이드 03](templates/dual-mode-learning/slides.html#pipeline) |
+| 04 | 조작 가능한 CNN Lab | [슬라이드 04](templates/dual-mode-learning/slides.html#experiment) |
+| 05 | 출력 Feature Map 3종 비교 | [슬라이드 05](templates/dual-mode-learning/slides.html#takeaway) |
 
 3종 기본 레이아웃, 5개 실습 슬라이드, 웹 교과서 모두 디자인 예시로서 지속적으로 수정하며, HTML/PPTX는 해당 형식에 맞게 구현합니다.
