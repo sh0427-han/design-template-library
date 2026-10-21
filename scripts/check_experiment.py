@@ -37,6 +37,15 @@ CHECK="""() => {
  prediction:Math.abs(cy(table.querySelector('.pred-axis'))-(cy(cell('FP'))+cy(cell('TN')))/2),
  columns:[Math.abs(cx(document.getElementById('gt-normal'))-cx(cell('FP'))),Math.abs(cx(document.getElementById('gt-anomaly'))-cx(cell('TP')))],
  rows:[Math.abs(cy(document.getElementById('pred-anomaly'))-cy(cell('FP'))),Math.abs(cy(document.getElementById('pred-normal'))-cy(cell('TN')))]};
+ const textBounds=e=>{
+  const walker=document.createTreeWalker(e,NodeFilter.SHOW_TEXT),rs=[];
+  while(walker.nextNode()){if(!walker.currentNode.textContent.trim())continue;const r=document.createRange();r.selectNodeContents(walker.currentNode);rs.push(r.getBoundingClientRect());}
+  return {left:Math.min(...rs.map(r=>r.left)),right:Math.max(...rs.map(r=>r.right))};
+ };
+ const line=box(slide.querySelector('.prediction-divider'));
+ const titleRight=textBounds(table.querySelector('.pred-axis-label')).right;
+ const labelsLeft=Math.min(...[...table.querySelectorAll('tbody th[scope="row"]')].map(e=>textBounds(e).left));
+ const dividerGaps={left:line.x+line.width/2-titleRight,right:labelsLeft-line.x-line.width/2};
  const all=[...slide.querySelectorAll('*')].filter(e=>!e.classList.contains('sr-only')&&e.tagName!=='TR');
  const overflow=all.filter(e=>e.clientWidth>0&&(e.scrollWidth>e.clientWidth+2||e.scrollHeight>e.clientHeight+2)).map(e=>({name:e.className||e.tagName,client:[e.clientWidth,e.clientHeight],scroll:[e.scrollWidth,e.scrollHeight]}));
  const text=all.filter(e=>[...e.childNodes].some(n=>n.nodeType===3&&n.textContent.trim()));
@@ -46,8 +55,9 @@ CHECK="""() => {
  return {slide:box(slide),content:box(slide.querySelector('.content')),footer:box(slide.querySelector('footer')),
  cards:cards.map(box),table:box(table),labels,axisErrors,centering,metrics,overflow,badTypography,
  pageWidth:document.documentElement.scrollWidth,
+ dividerGaps,
  counts:[...table.querySelectorAll('[data-code]')].map(e=>({code:e.dataset.code,count:Number(e.querySelector('.cm-count').textContent),headers:e.getAttribute('headers'),background:getComputedStyle(e).backgroundColor})),
- dividers:{gt:getComputedStyle(table.querySelector('.gt-axis')).borderBottomWidth,prediction:getComputedStyle(table.querySelector('.pred-axis')).borderRightWidth},
+ dividers:{gt:getComputedStyle(table.querySelector('.gt-axis')).borderBottomWidth,prediction:getComputedStyle(slide.querySelector('.prediction-divider')).borderRightWidth},
  fontsLoaded:[...document.fonts].filter(f=>f.family.replaceAll('"','').replaceAll("'",'')==='Pretendard Variable'&&f.status==='loaded').length};
 }"""
 
@@ -92,6 +102,7 @@ def main():
                 r=page.evaluate(CHECK)
                 page.locator('.slide').screenshot(path=str(output/f'experiment-{width}x{height}.png'),animations='disabled')
                 assert all(0<float(width.removesuffix('px'))<=2 for width in r['dividers'].values()),r['dividers']
+                assert abs(r['dividerGaps']['left']-r['dividerGaps']['right'])<.25 and min(r['dividerGaps'].values())>2,r['dividerGaps']
                 assert page.locator('.experiment-card .ref-k').all_text_contents()==['CONFUSION MATRIX','METRICS']
                 assert page.locator('.metric-description').all_text_contents()==['전체 샘플 중 맞힌 비율','이상 예측 중 실제 이상 비율','실제 이상 중 찾아낸 비율','정밀도·재현율의 조화평균']
                 assert page.locator('h1').inner_text()=='혼동행렬과 평가 지표'

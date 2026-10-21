@@ -17,7 +17,9 @@
     .experiment-slide .confusion-table th {font-size:19px;font-weight:650;text-align:center;vertical-align:middle;padding:0;line-height:1.4;}
     .experiment-slide .confusion-table .axis-title {color:var(--blue);font-weight:800;}
     .experiment-slide .confusion-table .gt-axis {padding-bottom:8px;font-size:21px;border-bottom:1px solid #b8c8d9;}
-    .experiment-slide .confusion-table .pred-axis {font-size:18px;border-right:1px solid #b8c8d9;}
+    .experiment-slide .confusion-table .pred-axis {font-size:18px;}
+    .experiment-slide .confusion-figure {position:relative;width:100%;}
+    .experiment-slide .prediction-divider {position:absolute;top:var(--prediction-divider-y,0);height:var(--prediction-divider-height,0);left:var(--prediction-divider-x,0);width:0;border-right:1px solid #b8c8d9;pointer-events:none;}
     .experiment-slide .confusion-table .column-label {padding-bottom:3px;}
     .experiment-slide .confusion-table td {padding:10px 0;height:100px;border-radius:12px;text-align:center;vertical-align:middle;}
     .experiment-slide .confusion-table .correct {background:var(--pale-teal);color:#126b65;}
@@ -43,7 +45,7 @@
     @media(max-width:900px) {
       .experiment-slide .experiment-grid {grid-template-columns:1fr;height:auto;}
       .experiment-slide .experiment-card {padding:22px;}
-      .experiment-slide .confusion-table {max-width:550px;align-self:center;}
+      .experiment-slide .confusion-figure {max-width:550px;align-self:center;}
       .experiment-slide .error-explanations {margin-top:12px;}
       .experiment-slide .metric {min-height:195px;}
     }
@@ -72,20 +74,20 @@
     <section class="experiment-card" aria-labelledby="confusion-heading">
       <div class="ref-k">CONFUSION MATRIX</div><h2 id="confusion-heading">혼동행렬</h2>
       <p class="experiment-context">예시 12개 · 양성: 이상 · 실제 정상/이상 각 6개</p>
-      <table class="confusion-table">
+      <div class="confusion-figure"><table class="confusion-table">
         <caption class="sr-only">모델 예측을 행으로, GT 실제값을 열로 표시한 12개 예시 샘플의 혼동행렬</caption>
         <colgroup><col class="axis-col"><col class="row-col"><col><col></colgroup>
         <thead><tr><th colspan="2" aria-hidden="true"></th><th colspan="2" scope="colgroup" class="axis-title gt-axis">GT (실제값)</th></tr>
           <tr><th colspan="2" aria-hidden="true"></th><th scope="col" class="column-label" id="gt-anomaly">실제 이상</th><th scope="col" class="column-label" id="gt-normal">실제 정상</th></tr></thead>
         <tbody>
-          <tr><th rowspan="2" scope="rowgroup" class="axis-title pred-axis">모델<br>예측</th><th scope="row" id="pred-anomaly">예측 이상</th>
+          <tr><th rowspan="2" scope="rowgroup" class="axis-title pred-axis"><span class="pred-axis-label">모델<br>예측</span></th><th scope="row" id="pred-anomaly">예측 이상</th>
             <td class="correct" data-code="TP" headers="pred-anomaly gt-anomaly"><span class="cm-code">TP</span><strong class="cm-count">4</strong></td>
             <td class="error" data-code="FP" headers="pred-anomaly gt-normal"><span class="cm-code">FP</span><strong class="cm-count">1</strong></td></tr>
           <tr><th scope="row" id="pred-normal">예측 정상</th>
             <td class="error" data-code="FN" headers="pred-normal gt-anomaly"><span class="cm-code">FN</span><strong class="cm-count">2</strong></td>
             <td class="correct" data-code="TN" headers="pred-normal gt-normal"><span class="cm-code">TN</span><strong class="cm-count">5</strong></td></tr>
         </tbody>
-      </table>
+      </table><span class="prediction-divider" aria-hidden="true"></span></div>
       <div class="error-explanations"><p><b>FP:</b> 정상인데 이상으로 예측</p><p><b>FN:</b> 이상인데 정상으로 예측</p></div>
     </section>
     <section class="experiment-card" aria-labelledby="metrics-heading">
@@ -112,4 +114,37 @@
     </section>
   </div></div>
   <footer class="footer"><span>Design Template Library · Experiment</span><span>07 / 08</span></footer>
-</section></main></body></html>
+</section></main>
+<script>
+  // Place the divider halfway through the visible gap, not on a table-cell edge.
+  (() => {
+    const table = document.querySelector('.confusion-table');
+    const axis = table.querySelector('.pred-axis');
+    const figure = table.parentElement;
+    function textBounds(element) {
+      const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
+      const rectangles = [];
+      while (walker.nextNode()) {
+        if (!walker.currentNode.textContent.trim()) continue;
+        const range = document.createRange();
+        range.selectNodeContents(walker.currentNode);
+        rectangles.push(range.getBoundingClientRect());
+      }
+      return {left:Math.min(...rectangles.map(r=>r.left)),right:Math.max(...rectangles.map(r=>r.right))};
+    }
+    function placeDivider() {
+      const title = textBounds(axis.querySelector('.pred-axis-label'));
+      const rowLeft = Math.min(...[...table.querySelectorAll('tbody th[scope="row"]')].map(e=>textBounds(e).left));
+      const rect = axis.getBoundingClientRect(), parent = figure.getBoundingClientRect();
+      const scale = parent.width / parseFloat(getComputedStyle(figure).width);
+      const lineWidth = parseFloat(getComputedStyle(figure.querySelector('.prediction-divider')).borderRightWidth);
+      figure.style.setProperty('--prediction-divider-x', `${((title.right+rowLeft)/2-parent.left)/scale-lineWidth/2}px`);
+      figure.style.setProperty('--prediction-divider-y', `${(rect.top-parent.top)/scale}px`);
+      figure.style.setProperty('--prediction-divider-height', `${rect.height/scale}px`);
+    }
+    document.fonts.ready.then(placeDivider);
+    new ResizeObserver(placeDivider).observe(figure);
+    window.addEventListener('resize', placeDivider);
+  })();
+</script>
+</body></html>
