@@ -34,7 +34,7 @@ GEOMETRY = """() => {
     const slide = document.querySelector('.slide');
     const rect = e => {const r=e.getBoundingClientRect();return {x:r.x,y:r.y,width:r.width,height:r.height,right:r.right,bottom:r.bottom}};
     const s=rect(slide), footer=rect(slide.querySelector('.footer'));
-    const visible=[...slide.querySelectorAll('*')].filter(e=>e.getBoundingClientRect().width && e.getBoundingClientRect().height);
+    const visible=[...slide.querySelectorAll('*')].filter(e=>!e.closest('.sr-only') && e.getBoundingClientRect().width && e.getBoundingClientRect().height);
     const outside=visible.filter(e=>{const r=rect(e);return r.x<s.x-1 || r.right>s.right+1 || r.y<s.y-1 || r.bottom>s.bottom+1}).map(e=>e.className);
     const containers=[...slide.querySelectorAll('.content,.ref-grid,.ref-card,.concept-panel,.compare-card,.node,.arch-node,.executive-kpi,.exec-metric-group,.exec-metric-bars,.exec-impact,.exec-chart,.exec-comparison,.exec-actions')];
     const overflow=containers.filter(e=>e.scrollWidth>e.clientWidth+1 || e.scrollHeight>e.clientHeight+1).map(e=>e.className);
@@ -272,7 +272,7 @@ def main():
                     assert palette['navLinks'] == 0 and not palette['ksp'], (
                         name, width, 'authoring UI present', palette
                     )
-                    if name in ('concept', 'process'):
+                    if name in ('concept', 'process', 'interactive'):
                         assert len(palette['takeaways']) == 1, (
                             name, width, 'missing takeaway', palette
                         )

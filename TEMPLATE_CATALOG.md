@@ -12,7 +12,7 @@
 | `process` | 단계/프로세스 설명 | Input → Process → Output | [원본](templates/html/process.html) · ![Process](previews/html-process.png) |
 | `comparison` | A/B 접근법 비교 | 동일 지표의 두 패널 | [원본](templates/html/comparison.html) · ![Comparison](previews/html-comparison.png) |
 | `step-by-step` | 수식·연산 강의 | 배열 × 커널 → 합계 | [원본](templates/html/step-by-step.html) · ![Step-by-step](previews/html-step-by-step.jpg) |
-| `interactive` | 웹 실습·임계값 검증 | 슬라이더 + 계산 + 혼동행렬 | [원본](templates/html/interactive.html) · ![Interactive](previews/html-interactive.jpg) |
+| `interactive` | 웹 실습·임계값 검증 | 샘플별 실제·예측·유형 → 혼동행렬 → 지표 대입식 | [원본](templates/html/interactive.html) · ![Interactive](previews/html-interactive.jpg) |
 | `architecture` | 모델·시스템 구조 | 논문형 Feature Map Stack·Tensor Shape | [원본](templates/html/architecture.html) · ![Architecture](previews/html-architecture.jpg) |
 | `experiment` | 연구 결과·지표 비교 | Confusion Matrix + Metrics | [원본](templates/html/experiment.html) · ![Experiment](previews/html-experiment.jpg) |
 | `executive-summary` | 경영·기술 보고 | 지표별 그룹형 세로 막대 + 감소율 + Action | [원본](templates/html/executive-summary.html) · ![Executive Summary](previews/html-executive-summary.jpg) |
@@ -23,7 +23,7 @@
 - **Process**: 실제 처리 순서와 화살표 방향이 일치해야 합니다.
 - **Comparison**: 동일한 질문·측정 조건으로 비교합니다.
 - **Step-by-step**: 계산식과 입력값, 결과가 실제로 일치해야 합니다.
-- **Interactive**: 조작할 수 있는 변수와 화면에 표시하는 계산이 일치해야 합니다. 계산 예시는 정적 이미지로 대체하지 않습니다.
+- **Interactive · #5 개선 초안 / 사용자 검토 대기**: 6개 샘플의 점수와 임계값을 비교해 **실제값·모델 예측·TP/FP/FN/TN 유형**을 각각 표시합니다. 오른쪽 혼동행렬은 GT 실제 이상/정상 열, 모델 예측 이상/정상 행의 **TP FP / FN TN** 순서이며, Precision·Recall의 짧은 뜻·일반식·실시간 대입식을 연결합니다. 기본 임계값 0.60에서 TP=2, FP=1, FN=1, TN=2, 두 지표 66.7%입니다. 분모가 0이면 `정의 불가`로 표시하며, 마지막 Teal 캡션은 Recall의 비증가와 Precision의 변동 가능성을 구분합니다. 실제 Chromium 6개 화면×21개 임계값 및 다른 샘플 구성의 재사용 42개 조합 검증 완료. [재사용 기준](docs/INTERACTIVE_PATTERN.md) · [검증 JSON](previews/review/interactive-validation.json). 조작 가능한 계산을 정적 이미지로 대체하지 않습니다.
 - **Architecture**: 각 텐서의 H/W/C와 stride·padding 관계를 확인합니다.
 - **Experiment**: 12건의 혼동행렬(TN=5, FP=1, FN=2, TP=4)과 파생 지표의 수치가 일치해야 합니다.
 - **Executive Summary**: 숫자보다 의사결정 메시지를 우선합니다. 세 지표를 **하나의 그룹형 세로 막대그래프의 x축**에 나란히 놓고, 각 지표에 기존/개선 막대 2개와 감소율을 표시합니다(월간 점검 120→80건 −33.3%, 평균 처리 시간 45→30분/건 −33.3%, 월말 미처리 20→8건 −60.0%). 막대 위에 실제 값과 단위를 표시하며, 공통 비율축(0·50·100%)은 각 지표의 기존 값을 100%로 정규화합니다. 단위가 다른 원래 수치를 하나의 절대값 축에서 비교하지 않습니다. 기존 카드 내부의 과도한 좌우 여백을 줄이고 비교 그래프 영역을 넓혔으며, 모바일에서도 세 지표의 가로 그룹을 유지합니다. 상단 KPI 요약과 가로 그래프의 중복 표시는 제거했습니다. 1500×950 / 1366×768 / 1280×720 / 900×900 / 390×844 Chromium 검증 완료 ([검증 JSON](previews/review/executive-summary-validation.json)).

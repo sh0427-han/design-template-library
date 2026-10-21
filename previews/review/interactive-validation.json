@@ -1,0 +1,1851 @@
+{
+  "status": "passed",
+  "math_checks": 126,
+  "screens": [
+    {
+      "viewport": [
+        1600,
+        950
+      ],
+      "slide": {
+        "x": 80,
+        "y": 70,
+        "right": 1520,
+        "bottom": 880,
+        "width": 1440,
+        "height": 810
+      },
+      "cards": [
+        {
+          "x": 146,
+          "y": 272.21875,
+          "right": 811.765625,
+          "bottom": 742,
+          "width": 665.765625,
+          "height": 469.78125
+        },
+        {
+          "x": 831.765625,
+          "y": 272.21875,
+          "right": 1453.984375,
+          "bottom": 742,
+          "width": 622.21875,
+          "height": 469.78125
+        }
+      ],
+      "footer": {
+        "x": 146,
+        "y": 820,
+        "right": 1454,
+        "bottom": 850,
+        "width": 1308,
+        "height": 30
+      },
+      "content": {
+        "x": 146,
+        "y": 272.21875,
+        "right": 1454,
+        "bottom": 805,
+        "width": 1308,
+        "height": 532.78125
+      },
+      "pageWidth": 1600,
+      "overflow": [],
+      "captionLast": true,
+      "countsOrder": [
+        "TP",
+        "FP",
+        "FN",
+        "TN"
+      ],
+      "labels": [
+        "실제 이상",
+        "실제 정상",
+        "예측 이상",
+        "예측 정상"
+      ],
+      "dividerGaps": {
+        "left": 10.375,
+        "right": 10.375
+      },
+      "badTypography": [],
+      "fontsLoaded": 12,
+      "thresholds": [
+        {
+          "threshold": 0.0,
+          "tp": 3,
+          "tn": 0,
+          "fp": 3,
+          "fn": 0,
+          "precision": "50.0%",
+          "recall": "100.0%"
+        },
+        {
+          "threshold": 0.05,
+          "tp": 3,
+          "tn": 0,
+          "fp": 3,
+          "fn": 0,
+          "precision": "50.0%",
+          "recall": "100.0%"
+        },
+        {
+          "threshold": 0.1,
+          "tp": 3,
+          "tn": 0,
+          "fp": 3,
+          "fn": 0,
+          "precision": "50.0%",
+          "recall": "100.0%"
+        },
+        {
+          "threshold": 0.15,
+          "tp": 3,
+          "tn": 0,
+          "fp": 3,
+          "fn": 0,
+          "precision": "50.0%",
+          "recall": "100.0%"
+        },
+        {
+          "threshold": 0.2,
+          "tp": 3,
+          "tn": 1,
+          "fp": 2,
+          "fn": 0,
+          "precision": "60.0%",
+          "recall": "100.0%"
+        },
+        {
+          "threshold": 0.25,
+          "tp": 3,
+          "tn": 1,
+          "fp": 2,
+          "fn": 0,
+          "precision": "60.0%",
+          "recall": "100.0%"
+        },
+        {
+          "threshold": 0.3,
+          "tp": 3,
+          "tn": 1,
+          "fp": 2,
+          "fn": 0,
+          "precision": "60.0%",
+          "recall": "100.0%"
+        },
+        {
+          "threshold": 0.35,
+          "tp": 2,
+          "tn": 1,
+          "fp": 2,
+          "fn": 1,
+          "precision": "50.0%",
+          "recall": "66.7%"
+        },
+        {
+          "threshold": 0.4,
+          "tp": 2,
+          "tn": 1,
+          "fp": 2,
+          "fn": 1,
+          "precision": "50.0%",
+          "recall": "66.7%"
+        },
+        {
+          "threshold": 0.45,
+          "tp": 2,
+          "tn": 1,
+          "fp": 2,
+          "fn": 1,
+          "precision": "50.0%",
+          "recall": "66.7%"
+        },
+        {
+          "threshold": 0.5,
+          "tp": 2,
+          "tn": 2,
+          "fp": 1,
+          "fn": 1,
+          "precision": "66.7%",
+          "recall": "66.7%"
+        },
+        {
+          "threshold": 0.55,
+          "tp": 2,
+          "tn": 2,
+          "fp": 1,
+          "fn": 1,
+          "precision": "66.7%",
+          "recall": "66.7%"
+        },
+        {
+          "threshold": 0.6,
+          "tp": 2,
+          "tn": 2,
+          "fp": 1,
+          "fn": 1,
+          "precision": "66.7%",
+          "recall": "66.7%"
+        },
+        {
+          "threshold": 0.65,
+          "tp": 2,
+          "tn": 2,
+          "fp": 1,
+          "fn": 1,
+          "precision": "66.7%",
+          "recall": "66.7%"
+        },
+        {
+          "threshold": 0.7,
+          "tp": 1,
+          "tn": 2,
+          "fp": 1,
+          "fn": 2,
+          "precision": "50.0%",
+          "recall": "33.3%"
+        },
+        {
+          "threshold": 0.75,
+          "tp": 1,
+          "tn": 2,
+          "fp": 1,
+          "fn": 2,
+          "precision": "50.0%",
+          "recall": "33.3%"
+        },
+        {
+          "threshold": 0.8,
+          "tp": 1,
+          "tn": 2,
+          "fp": 1,
+          "fn": 2,
+          "precision": "50.0%",
+          "recall": "33.3%"
+        },
+        {
+          "threshold": 0.85,
+          "tp": 0,
+          "tn": 2,
+          "fp": 1,
+          "fn": 3,
+          "precision": "0.0%",
+          "recall": "0.0%"
+        },
+        {
+          "threshold": 0.9,
+          "tp": 0,
+          "tn": 2,
+          "fp": 1,
+          "fn": 3,
+          "precision": "0.0%",
+          "recall": "0.0%"
+        },
+        {
+          "threshold": 0.95,
+          "tp": 0,
+          "tn": 3,
+          "fp": 0,
+          "fn": 3,
+          "precision": "정의 불가",
+          "recall": "0.0%"
+        },
+        {
+          "threshold": 1.0,
+          "tp": 0,
+          "tn": 3,
+          "fp": 0,
+          "fn": 3,
+          "precision": "정의 불가",
+          "recall": "0.0%"
+        }
+      ],
+      "shared_geometry": {
+        "slide": {
+          "x": 80,
+          "y": 70,
+          "width": 1440,
+          "height": 810,
+          "right": 1520,
+          "bottom": 880
+        },
+        "outside": [],
+        "overflow": [],
+        "footerOverlap": [],
+        "spacing": [],
+        "clippedText": [],
+        "arrowErrors": [],
+        "titleLines": 1,
+        "subtitleLines": 1,
+        "pageWidth": 1600
+      }
+    },
+    {
+      "viewport": [
+        1440,
+        810
+      ],
+      "slide": {
+        "x": 35.5625,
+        "y": 20,
+        "right": 1404.4375,
+        "bottom": 790,
+        "width": 1368.875,
+        "height": 770
+      },
+      "cards": [
+        {
+          "x": 98.296875,
+          "y": 212.1875,
+          "right": 731.1875,
+          "bottom": 658.921875,
+          "width": 632.890625,
+          "height": 446.734375
+        },
+        {
+          "x": 750.1875,
+          "y": 212.1875,
+          "right": 1341.6875,
+          "bottom": 658.921875,
+          "width": 591.5,
+          "height": 446.734375
+        }
+      ],
+      "footer": {
+        "x": 98.296875,
+        "y": 733.03125,
+        "right": 1341.703125,
+        "bottom": 761.484375,
+        "width": 1243.40625,
+        "height": 28.453125
+      },
+      "content": {
+        "x": 98.296875,
+        "y": 212.1875,
+        "right": 1341.703125,
+        "bottom": 718.78125,
+        "width": 1243.40625,
+        "height": 506.59375
+      },
+      "pageWidth": 1440,
+      "overflow": [],
+      "captionLast": true,
+      "countsOrder": [
+        "TP",
+        "FP",
+        "FN",
+        "TN"
+      ],
+      "labels": [
+        "실제 이상",
+        "실제 정상",
+        "예측 이상",
+        "예측 정상"
+      ],
+      "dividerGaps": {
+        "left": 9.5,
+        "right": 9.515625
+      },
+      "badTypography": [],
+      "fontsLoaded": 12,
+      "thresholds": [
+        {
+          "threshold": 0.0,
+          "tp": 3,
+          "tn": 0,
+          "fp": 3,
+          "fn": 0,
+          "precision": "50.0%",
+          "recall": "100.0%"
+        },
+        {
+          "threshold": 0.05,
+          "tp": 3,
+          "tn": 0,
+          "fp": 3,
+          "fn": 0,
+          "precision": "50.0%",
+          "recall": "100.0%"
+        },
+        {
+          "threshold": 0.1,
+          "tp": 3,
+          "tn": 0,
+          "fp": 3,
+          "fn": 0,
+          "precision": "50.0%",
+          "recall": "100.0%"
+        },
+        {
+          "threshold": 0.15,
+          "tp": 3,
+          "tn": 0,
+          "fp": 3,
+          "fn": 0,
+          "precision": "50.0%",
+          "recall": "100.0%"
+        },
+        {
+          "threshold": 0.2,
+          "tp": 3,
+          "tn": 1,
+          "fp": 2,
+          "fn": 0,
+          "precision": "60.0%",
+          "recall": "100.0%"
+        },
+        {
+          "threshold": 0.25,
+          "tp": 3,
+          "tn": 1,
+          "fp": 2,
+          "fn": 0,
+          "precision": "60.0%",
+          "recall": "100.0%"
+        },
+        {
+          "threshold": 0.3,
+          "tp": 3,
+          "tn": 1,
+          "fp": 2,
+          "fn": 0,
+          "precision": "60.0%",
+          "recall": "100.0%"
+        },
+        {
+          "threshold": 0.35,
+          "tp": 2,
+          "tn": 1,
+          "fp": 2,
+          "fn": 1,
+          "precision": "50.0%",
+          "recall": "66.7%"
+        },
+        {
+          "threshold": 0.4,
+          "tp": 2,
+          "tn": 1,
+          "fp": 2,
+          "fn": 1,
+          "precision": "50.0%",
+          "recall": "66.7%"
+        },
+        {
+          "threshold": 0.45,
+          "tp": 2,
+          "tn": 1,
+          "fp": 2,
+          "fn": 1,
+          "precision": "50.0%",
+          "recall": "66.7%"
+        },
+        {
+          "threshold": 0.5,
+          "tp": 2,
+          "tn": 2,
+          "fp": 1,
+          "fn": 1,
+          "precision": "66.7%",
+          "recall": "66.7%"
+        },
+        {
+          "threshold": 0.55,
+          "tp": 2,
+          "tn": 2,
+          "fp": 1,
+          "fn": 1,
+          "precision": "66.7%",
+          "recall": "66.7%"
+        },
+        {
+          "threshold": 0.6,
+          "tp": 2,
+          "tn": 2,
+          "fp": 1,
+          "fn": 1,
+          "precision": "66.7%",
+          "recall": "66.7%"
+        },
+        {
+          "threshold": 0.65,
+          "tp": 2,
+          "tn": 2,
+          "fp": 1,
+          "fn": 1,
+          "precision": "66.7%",
+          "recall": "66.7%"
+        },
+        {
+          "threshold": 0.7,
+          "tp": 1,
+          "tn": 2,
+          "fp": 1,
+          "fn": 2,
+          "precision": "50.0%",
+          "recall": "33.3%"
+        },
+        {
+          "threshold": 0.75,
+          "tp": 1,
+          "tn": 2,
+          "fp": 1,
+          "fn": 2,
+          "precision": "50.0%",
+          "recall": "33.3%"
+        },
+        {
+          "threshold": 0.8,
+          "tp": 1,
+          "tn": 2,
+          "fp": 1,
+          "fn": 2,
+          "precision": "50.0%",
+          "recall": "33.3%"
+        },
+        {
+          "threshold": 0.85,
+          "tp": 0,
+          "tn": 2,
+          "fp": 1,
+          "fn": 3,
+          "precision": "0.0%",
+          "recall": "0.0%"
+        },
+        {
+          "threshold": 0.9,
+          "tp": 0,
+          "tn": 2,
+          "fp": 1,
+          "fn": 3,
+          "precision": "0.0%",
+          "recall": "0.0%"
+        },
+        {
+          "threshold": 0.95,
+          "tp": 0,
+          "tn": 3,
+          "fp": 0,
+          "fn": 3,
+          "precision": "정의 불가",
+          "recall": "0.0%"
+        },
+        {
+          "threshold": 1.0,
+          "tp": 0,
+          "tn": 3,
+          "fp": 0,
+          "fn": 3,
+          "precision": "정의 불가",
+          "recall": "0.0%"
+        }
+      ],
+      "shared_geometry": {
+        "slide": {
+          "x": 35.5625,
+          "y": 20,
+          "width": 1368.875,
+          "height": 770,
+          "right": 1404.4375,
+          "bottom": 790
+        },
+        "outside": [],
+        "overflow": [],
+        "footerOverlap": [],
+        "spacing": [],
+        "clippedText": [],
+        "arrowErrors": [],
+        "titleLines": 1,
+        "subtitleLines": 1,
+        "pageWidth": 1440
+      }
+    },
+    {
+      "viewport": [
+        1366,
+        768
+      ],
+      "slide": {
+        "x": 35.890625,
+        "y": 20,
+        "right": 1330.109375,
+        "bottom": 748,
+        "width": 1294.21875,
+        "height": 728
+      },
+      "cards": [
+        {
+          "x": 95.203125,
+          "y": 202.765625,
+          "right": 693.578125,
+          "bottom": 624.109375,
+          "width": 598.375,
+          "height": 421.34375
+        },
+        {
+          "x": 711.546875,
+          "y": 202.765625,
+          "right": 1270.78125,
+          "bottom": 624.109375,
+          "width": 559.234375,
+          "height": 421.34375
+        }
+      ],
+      "footer": {
+        "x": 95.203125,
+        "y": 694.171875,
+        "right": 1270.796875,
+        "bottom": 721.046875,
+        "width": 1175.59375,
+        "height": 26.875
+      },
+      "content": {
+        "x": 95.203125,
+        "y": 202.765625,
+        "right": 1270.796875,
+        "bottom": 680.703125,
+        "width": 1175.59375,
+        "height": 477.9375
+      },
+      "pageWidth": 1366,
+      "overflow": [],
+      "captionLast": true,
+      "countsOrder": [
+        "TP",
+        "FP",
+        "FN",
+        "TN"
+      ],
+      "labels": [
+        "실제 이상",
+        "실제 정상",
+        "예측 이상",
+        "예측 정상"
+      ],
+      "dividerGaps": {
+        "left": 9.140625,
+        "right": 9.15625
+      },
+      "badTypography": [],
+      "fontsLoaded": 12,
+      "thresholds": [
+        {
+          "threshold": 0.0,
+          "tp": 3,
+          "tn": 0,
+          "fp": 3,
+          "fn": 0,
+          "precision": "50.0%",
+          "recall": "100.0%"
+        },
+        {
+          "threshold": 0.05,
+          "tp": 3,
+          "tn": 0,
+          "fp": 3,
+          "fn": 0,
+          "precision": "50.0%",
+          "recall": "100.0%"
+        },
+        {
+          "threshold": 0.1,
+          "tp": 3,
+          "tn": 0,
+          "fp": 3,
+          "fn": 0,
+          "precision": "50.0%",
+          "recall": "100.0%"
+        },
+        {
+          "threshold": 0.15,
+          "tp": 3,
+          "tn": 0,
+          "fp": 3,
+          "fn": 0,
+          "precision": "50.0%",
+          "recall": "100.0%"
+        },
+        {
+          "threshold": 0.2,
+          "tp": 3,
+          "tn": 1,
+          "fp": 2,
+          "fn": 0,
+          "precision": "60.0%",
+          "recall": "100.0%"
+        },
+        {
+          "threshold": 0.25,
+          "tp": 3,
+          "tn": 1,
+          "fp": 2,
+          "fn": 0,
+          "precision": "60.0%",
+          "recall": "100.0%"
+        },
+        {
+          "threshold": 0.3,
+          "tp": 3,
+          "tn": 1,
+          "fp": 2,
+          "fn": 0,
+          "precision": "60.0%",
+          "recall": "100.0%"
+        },
+        {
+          "threshold": 0.35,
+          "tp": 2,
+          "tn": 1,
+          "fp": 2,
+          "fn": 1,
+          "precision": "50.0%",
+          "recall": "66.7%"
+        },
+        {
+          "threshold": 0.4,
+          "tp": 2,
+          "tn": 1,
+          "fp": 2,
+          "fn": 1,
+          "precision": "50.0%",
+          "recall": "66.7%"
+        },
+        {
+          "threshold": 0.45,
+          "tp": 2,
+          "tn": 1,
+          "fp": 2,
+          "fn": 1,
+          "precision": "50.0%",
+          "recall": "66.7%"
+        },
+        {
+          "threshold": 0.5,
+          "tp": 2,
+          "tn": 2,
+          "fp": 1,
+          "fn": 1,
+          "precision": "66.7%",
+          "recall": "66.7%"
+        },
+        {
+          "threshold": 0.55,
+          "tp": 2,
+          "tn": 2,
+          "fp": 1,
+          "fn": 1,
+          "precision": "66.7%",
+          "recall": "66.7%"
+        },
+        {
+          "threshold": 0.6,
+          "tp": 2,
+          "tn": 2,
+          "fp": 1,
+          "fn": 1,
+          "precision": "66.7%",
+          "recall": "66.7%"
+        },
+        {
+          "threshold": 0.65,
+          "tp": 2,
+          "tn": 2,
+          "fp": 1,
+          "fn": 1,
+          "precision": "66.7%",
+          "recall": "66.7%"
+        },
+        {
+          "threshold": 0.7,
+          "tp": 1,
+          "tn": 2,
+          "fp": 1,
+          "fn": 2,
+          "precision": "50.0%",
+          "recall": "33.3%"
+        },
+        {
+          "threshold": 0.75,
+          "tp": 1,
+          "tn": 2,
+          "fp": 1,
+          "fn": 2,
+          "precision": "50.0%",
+          "recall": "33.3%"
+        },
+        {
+          "threshold": 0.8,
+          "tp": 1,
+          "tn": 2,
+          "fp": 1,
+          "fn": 2,
+          "precision": "50.0%",
+          "recall": "33.3%"
+        },
+        {
+          "threshold": 0.85,
+          "tp": 0,
+          "tn": 2,
+          "fp": 1,
+          "fn": 3,
+          "precision": "0.0%",
+          "recall": "0.0%"
+        },
+        {
+          "threshold": 0.9,
+          "tp": 0,
+          "tn": 2,
+          "fp": 1,
+          "fn": 3,
+          "precision": "0.0%",
+          "recall": "0.0%"
+        },
+        {
+          "threshold": 0.95,
+          "tp": 0,
+          "tn": 3,
+          "fp": 0,
+          "fn": 3,
+          "precision": "정의 불가",
+          "recall": "0.0%"
+        },
+        {
+          "threshold": 1.0,
+          "tp": 0,
+          "tn": 3,
+          "fp": 0,
+          "fn": 3,
+          "precision": "정의 불가",
+          "recall": "0.0%"
+        }
+      ],
+      "shared_geometry": {
+        "slide": {
+          "x": 35.890625,
+          "y": 20,
+          "width": 1294.21875,
+          "height": 728,
+          "right": 1330.109375,
+          "bottom": 748
+        },
+        "outside": [],
+        "overflow": [],
+        "footerOverlap": [],
+        "spacing": [],
+        "clippedText": [],
+        "arrowErrors": [],
+        "titleLines": 1,
+        "subtitleLines": 1,
+        "pageWidth": 1366
+      }
+    },
+    {
+      "viewport": [
+        1280,
+        720
+      ],
+      "slide": {
+        "x": 35.5625,
+        "y": 20,
+        "right": 1244.4375,
+        "bottom": 700,
+        "width": 1208.875,
+        "height": 680
+      },
+      "cards": [
+        {
+          "x": 90.96875,
+          "y": 189.953125,
+          "right": 649.890625,
+          "bottom": 584.140625,
+          "width": 558.921875,
+          "height": 394.1875
+        },
+        {
+          "x": 666.671875,
+          "y": 189.953125,
+          "right": 1189.015625,
+          "bottom": 584.140625,
+          "width": 522.34375,
+          "height": 394.1875
+        }
+      ],
+      "footer": {
+        "x": 90.96875,
+        "y": 649.59375,
+        "right": 1189.03125,
+        "bottom": 674.828125,
+        "width": 1098.0625,
+        "height": 25.234375
+      },
+      "content": {
+        "x": 90.96875,
+        "y": 189.953125,
+        "right": 1189.03125,
+        "bottom": 637.015625,
+        "width": 1098.0625,
+        "height": 447.0625
+      },
+      "pageWidth": 1280,
+      "overflow": [],
+      "captionLast": true,
+      "countsOrder": [
+        "TP",
+        "FP",
+        "FN",
+        "TN"
+      ],
+      "labels": [
+        "실제 이상",
+        "실제 정상",
+        "예측 이상",
+        "예측 정상"
+      ],
+      "dividerGaps": {
+        "left": 8.671875,
+        "right": 8.703125
+      },
+      "badTypography": [],
+      "fontsLoaded": 12,
+      "thresholds": [
+        {
+          "threshold": 0.0,
+          "tp": 3,
+          "tn": 0,
+          "fp": 3,
+          "fn": 0,
+          "precision": "50.0%",
+          "recall": "100.0%"
+        },
+        {
+          "threshold": 0.05,
+          "tp": 3,
+          "tn": 0,
+          "fp": 3,
+          "fn": 0,
+          "precision": "50.0%",
+          "recall": "100.0%"
+        },
+        {
+          "threshold": 0.1,
+          "tp": 3,
+          "tn": 0,
+          "fp": 3,
+          "fn": 0,
+          "precision": "50.0%",
+          "recall": "100.0%"
+        },
+        {
+          "threshold": 0.15,
+          "tp": 3,
+          "tn": 0,
+          "fp": 3,
+          "fn": 0,
+          "precision": "50.0%",
+          "recall": "100.0%"
+        },
+        {
+          "threshold": 0.2,
+          "tp": 3,
+          "tn": 1,
+          "fp": 2,
+          "fn": 0,
+          "precision": "60.0%",
+          "recall": "100.0%"
+        },
+        {
+          "threshold": 0.25,
+          "tp": 3,
+          "tn": 1,
+          "fp": 2,
+          "fn": 0,
+          "precision": "60.0%",
+          "recall": "100.0%"
+        },
+        {
+          "threshold": 0.3,
+          "tp": 3,
+          "tn": 1,
+          "fp": 2,
+          "fn": 0,
+          "precision": "60.0%",
+          "recall": "100.0%"
+        },
+        {
+          "threshold": 0.35,
+          "tp": 2,
+          "tn": 1,
+          "fp": 2,
+          "fn": 1,
+          "precision": "50.0%",
+          "recall": "66.7%"
+        },
+        {
+          "threshold": 0.4,
+          "tp": 2,
+          "tn": 1,
+          "fp": 2,
+          "fn": 1,
+          "precision": "50.0%",
+          "recall": "66.7%"
+        },
+        {
+          "threshold": 0.45,
+          "tp": 2,
+          "tn": 1,
+          "fp": 2,
+          "fn": 1,
+          "precision": "50.0%",
+          "recall": "66.7%"
+        },
+        {
+          "threshold": 0.5,
+          "tp": 2,
+          "tn": 2,
+          "fp": 1,
+          "fn": 1,
+          "precision": "66.7%",
+          "recall": "66.7%"
+        },
+        {
+          "threshold": 0.55,
+          "tp": 2,
+          "tn": 2,
+          "fp": 1,
+          "fn": 1,
+          "precision": "66.7%",
+          "recall": "66.7%"
+        },
+        {
+          "threshold": 0.6,
+          "tp": 2,
+          "tn": 2,
+          "fp": 1,
+          "fn": 1,
+          "precision": "66.7%",
+          "recall": "66.7%"
+        },
+        {
+          "threshold": 0.65,
+          "tp": 2,
+          "tn": 2,
+          "fp": 1,
+          "fn": 1,
+          "precision": "66.7%",
+          "recall": "66.7%"
+        },
+        {
+          "threshold": 0.7,
+          "tp": 1,
+          "tn": 2,
+          "fp": 1,
+          "fn": 2,
+          "precision": "50.0%",
+          "recall": "33.3%"
+        },
+        {
+          "threshold": 0.75,
+          "tp": 1,
+          "tn": 2,
+          "fp": 1,
+          "fn": 2,
+          "precision": "50.0%",
+          "recall": "33.3%"
+        },
+        {
+          "threshold": 0.8,
+          "tp": 1,
+          "tn": 2,
+          "fp": 1,
+          "fn": 2,
+          "precision": "50.0%",
+          "recall": "33.3%"
+        },
+        {
+          "threshold": 0.85,
+          "tp": 0,
+          "tn": 2,
+          "fp": 1,
+          "fn": 3,
+          "precision": "0.0%",
+          "recall": "0.0%"
+        },
+        {
+          "threshold": 0.9,
+          "tp": 0,
+          "tn": 2,
+          "fp": 1,
+          "fn": 3,
+          "precision": "0.0%",
+          "recall": "0.0%"
+        },
+        {
+          "threshold": 0.95,
+          "tp": 0,
+          "tn": 3,
+          "fp": 0,
+          "fn": 3,
+          "precision": "정의 불가",
+          "recall": "0.0%"
+        },
+        {
+          "threshold": 1.0,
+          "tp": 0,
+          "tn": 3,
+          "fp": 0,
+          "fn": 3,
+          "precision": "정의 불가",
+          "recall": "0.0%"
+        }
+      ],
+      "shared_geometry": {
+        "slide": {
+          "x": 35.5625,
+          "y": 20,
+          "width": 1208.875,
+          "height": 680,
+          "right": 1244.4375,
+          "bottom": 700
+        },
+        "outside": [],
+        "overflow": [],
+        "footerOverlap": [],
+        "spacing": [],
+        "clippedText": [],
+        "arrowErrors": [],
+        "titleLines": 1,
+        "subtitleLines": 1,
+        "pageWidth": 1280
+      }
+    },
+    {
+      "viewport": [
+        900,
+        900
+      ],
+      "slide": {
+        "x": 16,
+        "y": 16,
+        "right": 884,
+        "bottom": 1361.53125,
+        "width": 868,
+        "height": 1345.53125
+      },
+      "cards": [
+        {
+          "x": 40,
+          "y": 173.21875,
+          "right": 860,
+          "bottom": 672.875,
+          "width": 820,
+          "height": 499.65625
+        },
+        {
+          "x": 40,
+          "y": 690.875,
+          "right": 860,
+          "bottom": 1225.53125,
+          "width": 820,
+          "height": 534.65625
+        }
+      ],
+      "footer": {
+        "x": 40,
+        "y": 1303.53125,
+        "right": 860,
+        "bottom": 1331.53125,
+        "width": 820,
+        "height": 28
+      },
+      "content": {
+        "x": 40,
+        "y": 173.21875,
+        "right": 860,
+        "bottom": 1288.53125,
+        "width": 820,
+        "height": 1115.3125
+      },
+      "pageWidth": 900,
+      "overflow": [],
+      "captionLast": true,
+      "countsOrder": [
+        "TP",
+        "FP",
+        "FN",
+        "TN"
+      ],
+      "labels": [
+        "실제 이상",
+        "실제 정상",
+        "예측 이상",
+        "예측 정상"
+      ],
+      "dividerGaps": {
+        "left": 10.375,
+        "right": 10.375
+      },
+      "badTypography": [],
+      "fontsLoaded": 12,
+      "thresholds": [
+        {
+          "threshold": 0.0,
+          "tp": 3,
+          "tn": 0,
+          "fp": 3,
+          "fn": 0,
+          "precision": "50.0%",
+          "recall": "100.0%"
+        },
+        {
+          "threshold": 0.05,
+          "tp": 3,
+          "tn": 0,
+          "fp": 3,
+          "fn": 0,
+          "precision": "50.0%",
+          "recall": "100.0%"
+        },
+        {
+          "threshold": 0.1,
+          "tp": 3,
+          "tn": 0,
+          "fp": 3,
+          "fn": 0,
+          "precision": "50.0%",
+          "recall": "100.0%"
+        },
+        {
+          "threshold": 0.15,
+          "tp": 3,
+          "tn": 0,
+          "fp": 3,
+          "fn": 0,
+          "precision": "50.0%",
+          "recall": "100.0%"
+        },
+        {
+          "threshold": 0.2,
+          "tp": 3,
+          "tn": 1,
+          "fp": 2,
+          "fn": 0,
+          "precision": "60.0%",
+          "recall": "100.0%"
+        },
+        {
+          "threshold": 0.25,
+          "tp": 3,
+          "tn": 1,
+          "fp": 2,
+          "fn": 0,
+          "precision": "60.0%",
+          "recall": "100.0%"
+        },
+        {
+          "threshold": 0.3,
+          "tp": 3,
+          "tn": 1,
+          "fp": 2,
+          "fn": 0,
+          "precision": "60.0%",
+          "recall": "100.0%"
+        },
+        {
+          "threshold": 0.35,
+          "tp": 2,
+          "tn": 1,
+          "fp": 2,
+          "fn": 1,
+          "precision": "50.0%",
+          "recall": "66.7%"
+        },
+        {
+          "threshold": 0.4,
+          "tp": 2,
+          "tn": 1,
+          "fp": 2,
+          "fn": 1,
+          "precision": "50.0%",
+          "recall": "66.7%"
+        },
+        {
+          "threshold": 0.45,
+          "tp": 2,
+          "tn": 1,
+          "fp": 2,
+          "fn": 1,
+          "precision": "50.0%",
+          "recall": "66.7%"
+        },
+        {
+          "threshold": 0.5,
+          "tp": 2,
+          "tn": 2,
+          "fp": 1,
+          "fn": 1,
+          "precision": "66.7%",
+          "recall": "66.7%"
+        },
+        {
+          "threshold": 0.55,
+          "tp": 2,
+          "tn": 2,
+          "fp": 1,
+          "fn": 1,
+          "precision": "66.7%",
+          "recall": "66.7%"
+        },
+        {
+          "threshold": 0.6,
+          "tp": 2,
+          "tn": 2,
+          "fp": 1,
+          "fn": 1,
+          "precision": "66.7%",
+          "recall": "66.7%"
+        },
+        {
+          "threshold": 0.65,
+          "tp": 2,
+          "tn": 2,
+          "fp": 1,
+          "fn": 1,
+          "precision": "66.7%",
+          "recall": "66.7%"
+        },
+        {
+          "threshold": 0.7,
+          "tp": 1,
+          "tn": 2,
+          "fp": 1,
+          "fn": 2,
+          "precision": "50.0%",
+          "recall": "33.3%"
+        },
+        {
+          "threshold": 0.75,
+          "tp": 1,
+          "tn": 2,
+          "fp": 1,
+          "fn": 2,
+          "precision": "50.0%",
+          "recall": "33.3%"
+        },
+        {
+          "threshold": 0.8,
+          "tp": 1,
+          "tn": 2,
+          "fp": 1,
+          "fn": 2,
+          "precision": "50.0%",
+          "recall": "33.3%"
+        },
+        {
+          "threshold": 0.85,
+          "tp": 0,
+          "tn": 2,
+          "fp": 1,
+          "fn": 3,
+          "precision": "0.0%",
+          "recall": "0.0%"
+        },
+        {
+          "threshold": 0.9,
+          "tp": 0,
+          "tn": 2,
+          "fp": 1,
+          "fn": 3,
+          "precision": "0.0%",
+          "recall": "0.0%"
+        },
+        {
+          "threshold": 0.95,
+          "tp": 0,
+          "tn": 3,
+          "fp": 0,
+          "fn": 3,
+          "precision": "정의 불가",
+          "recall": "0.0%"
+        },
+        {
+          "threshold": 1.0,
+          "tp": 0,
+          "tn": 3,
+          "fp": 0,
+          "fn": 3,
+          "precision": "정의 불가",
+          "recall": "0.0%"
+        }
+      ],
+      "shared_geometry": {
+        "slide": {
+          "x": 16,
+          "y": 16,
+          "width": 868,
+          "height": 1345.53125,
+          "right": 884,
+          "bottom": 1361.53125
+        },
+        "outside": [],
+        "overflow": [],
+        "footerOverlap": [],
+        "spacing": [],
+        "clippedText": [],
+        "arrowErrors": [],
+        "titleLines": 1,
+        "subtitleLines": 1,
+        "pageWidth": 900
+      }
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "slide": {
+        "x": 10,
+        "y": 10,
+        "right": 380,
+        "bottom": 1552.765625,
+        "width": 370,
+        "height": 1542.765625
+      },
+      "cards": [
+        {
+          "x": 30,
+          "y": 186.4375,
+          "right": 360,
+          "bottom": 675.8125,
+          "width": 330,
+          "height": 489.375
+        },
+        {
+          "x": 30,
+          "y": 693.8125,
+          "right": 360,
+          "bottom": 1382.765625,
+          "width": 330,
+          "height": 688.953125
+        }
+      ],
+      "footer": {
+        "x": 30,
+        "y": 1496.765625,
+        "right": 360,
+        "bottom": 1524.765625,
+        "width": 330,
+        "height": 28
+      },
+      "content": {
+        "x": 30,
+        "y": 186.4375,
+        "right": 360,
+        "bottom": 1481.765625,
+        "width": 330,
+        "height": 1295.328125
+      },
+      "pageWidth": 390,
+      "overflow": [],
+      "captionLast": true,
+      "countsOrder": [
+        "TP",
+        "FP",
+        "FN",
+        "TN"
+      ],
+      "labels": [
+        "실제 이상",
+        "실제 정상",
+        "예측 이상",
+        "예측 정상"
+      ],
+      "dividerGaps": {
+        "left": 5.21875,
+        "right": 5.234375
+      },
+      "badTypography": [],
+      "fontsLoaded": 12,
+      "thresholds": [
+        {
+          "threshold": 0.0,
+          "tp": 3,
+          "tn": 0,
+          "fp": 3,
+          "fn": 0,
+          "precision": "50.0%",
+          "recall": "100.0%"
+        },
+        {
+          "threshold": 0.05,
+          "tp": 3,
+          "tn": 0,
+          "fp": 3,
+          "fn": 0,
+          "precision": "50.0%",
+          "recall": "100.0%"
+        },
+        {
+          "threshold": 0.1,
+          "tp": 3,
+          "tn": 0,
+          "fp": 3,
+          "fn": 0,
+          "precision": "50.0%",
+          "recall": "100.0%"
+        },
+        {
+          "threshold": 0.15,
+          "tp": 3,
+          "tn": 0,
+          "fp": 3,
+          "fn": 0,
+          "precision": "50.0%",
+          "recall": "100.0%"
+        },
+        {
+          "threshold": 0.2,
+          "tp": 3,
+          "tn": 1,
+          "fp": 2,
+          "fn": 0,
+          "precision": "60.0%",
+          "recall": "100.0%"
+        },
+        {
+          "threshold": 0.25,
+          "tp": 3,
+          "tn": 1,
+          "fp": 2,
+          "fn": 0,
+          "precision": "60.0%",
+          "recall": "100.0%"
+        },
+        {
+          "threshold": 0.3,
+          "tp": 3,
+          "tn": 1,
+          "fp": 2,
+          "fn": 0,
+          "precision": "60.0%",
+          "recall": "100.0%"
+        },
+        {
+          "threshold": 0.35,
+          "tp": 2,
+          "tn": 1,
+          "fp": 2,
+          "fn": 1,
+          "precision": "50.0%",
+          "recall": "66.7%"
+        },
+        {
+          "threshold": 0.4,
+          "tp": 2,
+          "tn": 1,
+          "fp": 2,
+          "fn": 1,
+          "precision": "50.0%",
+          "recall": "66.7%"
+        },
+        {
+          "threshold": 0.45,
+          "tp": 2,
+          "tn": 1,
+          "fp": 2,
+          "fn": 1,
+          "precision": "50.0%",
+          "recall": "66.7%"
+        },
+        {
+          "threshold": 0.5,
+          "tp": 2,
+          "tn": 2,
+          "fp": 1,
+          "fn": 1,
+          "precision": "66.7%",
+          "recall": "66.7%"
+        },
+        {
+          "threshold": 0.55,
+          "tp": 2,
+          "tn": 2,
+          "fp": 1,
+          "fn": 1,
+          "precision": "66.7%",
+          "recall": "66.7%"
+        },
+        {
+          "threshold": 0.6,
+          "tp": 2,
+          "tn": 2,
+          "fp": 1,
+          "fn": 1,
+          "precision": "66.7%",
+          "recall": "66.7%"
+        },
+        {
+          "threshold": 0.65,
+          "tp": 2,
+          "tn": 2,
+          "fp": 1,
+          "fn": 1,
+          "precision": "66.7%",
+          "recall": "66.7%"
+        },
+        {
+          "threshold": 0.7,
+          "tp": 1,
+          "tn": 2,
+          "fp": 1,
+          "fn": 2,
+          "precision": "50.0%",
+          "recall": "33.3%"
+        },
+        {
+          "threshold": 0.75,
+          "tp": 1,
+          "tn": 2,
+          "fp": 1,
+          "fn": 2,
+          "precision": "50.0%",
+          "recall": "33.3%"
+        },
+        {
+          "threshold": 0.8,
+          "tp": 1,
+          "tn": 2,
+          "fp": 1,
+          "fn": 2,
+          "precision": "50.0%",
+          "recall": "33.3%"
+        },
+        {
+          "threshold": 0.85,
+          "tp": 0,
+          "tn": 2,
+          "fp": 1,
+          "fn": 3,
+          "precision": "0.0%",
+          "recall": "0.0%"
+        },
+        {
+          "threshold": 0.9,
+          "tp": 0,
+          "tn": 2,
+          "fp": 1,
+          "fn": 3,
+          "precision": "0.0%",
+          "recall": "0.0%"
+        },
+        {
+          "threshold": 0.95,
+          "tp": 0,
+          "tn": 3,
+          "fp": 0,
+          "fn": 3,
+          "precision": "정의 불가",
+          "recall": "0.0%"
+        },
+        {
+          "threshold": 1.0,
+          "tp": 0,
+          "tn": 3,
+          "fp": 0,
+          "fn": 3,
+          "precision": "정의 불가",
+          "recall": "0.0%"
+        }
+      ],
+      "shared_geometry": {
+        "slide": {
+          "x": 10,
+          "y": 10,
+          "width": 370,
+          "height": 1542.765625,
+          "right": 380,
+          "bottom": 1552.765625
+        },
+        "outside": [],
+        "overflow": [],
+        "footerOverlap": [],
+        "spacing": [],
+        "clippedText": [],
+        "arrowErrors": [],
+        "titleLines": 1,
+        "subtitleLines": 2,
+        "pageWidth": 390
+      }
+    }
+  ],
+  "font_delivery": "TLS-verified curl CDN cache, fulfilled at original URLs; no trust changes",
+  "browser": "154.0.8037.57",
+  "reuse": {
+    "sample_count": 6,
+    "actual_anomaly": 4,
+    "actual_normal": 2,
+    "checks": 42,
+    "viewports": [
+      {
+        "viewport": [
+          1600,
+          950
+        ],
+        "slide": {
+          "x": 80,
+          "y": 70,
+          "right": 1520,
+          "bottom": 880,
+          "width": 1440,
+          "height": 810
+        },
+        "cards": [
+          {
+            "x": 146,
+            "y": 272.21875,
+            "right": 811.765625,
+            "bottom": 742,
+            "width": 665.765625,
+            "height": 469.78125
+          },
+          {
+            "x": 831.765625,
+            "y": 272.21875,
+            "right": 1453.984375,
+            "bottom": 742,
+            "width": 622.21875,
+            "height": 469.78125
+          }
+        ],
+        "footer": {
+          "x": 146,
+          "y": 820,
+          "right": 1454,
+          "bottom": 850,
+          "width": 1308,
+          "height": 30
+        },
+        "content": {
+          "x": 146,
+          "y": 272.21875,
+          "right": 1454,
+          "bottom": 805,
+          "width": 1308,
+          "height": 532.78125
+        },
+        "pageWidth": 1600,
+        "overflow": [],
+        "captionLast": true,
+        "countsOrder": [
+          "TP",
+          "FP",
+          "FN",
+          "TN"
+        ],
+        "labels": [
+          "실제 이상",
+          "실제 정상",
+          "예측 이상",
+          "예측 정상"
+        ],
+        "dividerGaps": {
+          "left": 10.375,
+          "right": 10.375
+        },
+        "badTypography": [],
+        "fontsLoaded": 12
+      },
+      {
+        "viewport": [
+          390,
+          844
+        ],
+        "slide": {
+          "x": 10,
+          "y": 10,
+          "right": 380,
+          "bottom": 1552.765625,
+          "width": 370,
+          "height": 1542.765625
+        },
+        "cards": [
+          {
+            "x": 30,
+            "y": 186.4375,
+            "right": 360,
+            "bottom": 675.8125,
+            "width": 330,
+            "height": 489.375
+          },
+          {
+            "x": 30,
+            "y": 693.8125,
+            "right": 360,
+            "bottom": 1382.765625,
+            "width": 330,
+            "height": 688.953125
+          }
+        ],
+        "footer": {
+          "x": 30,
+          "y": 1496.765625,
+          "right": 360,
+          "bottom": 1524.765625,
+          "width": 330,
+          "height": 28
+        },
+        "content": {
+          "x": 30,
+          "y": 186.4375,
+          "right": 360,
+          "bottom": 1481.765625,
+          "width": 330,
+          "height": 1295.328125
+        },
+        "pageWidth": 390,
+        "overflow": [],
+        "captionLast": true,
+        "countsOrder": [
+          "TP",
+          "FP",
+          "FN",
+          "TN"
+        ],
+        "labels": [
+          "실제 이상",
+          "실제 정상",
+          "예측 이상",
+          "예측 정상"
+        ],
+        "dividerGaps": {
+          "left": 5.21875,
+          "right": 5.234375
+        },
+        "badTypography": [],
+        "fontsLoaded": 12
+      }
+    ]
+  },
+  "portable_html": {
+    "path": "previews/review/interactive-live.html",
+    "content_pixels_match": true,
+    "native_range_excluded_from_pixel_comparison": true,
+    "interaction_checked": true
+  },
+  "page_errors": [],
+  "request_failures": [],
+  "font_assets": {
+    "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css": "d274380cb7815e92479d38e43dd5b2eef585567091394022a3a2dede048474cb",
+    "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/packages/pretendard/dist/web/variable/woff2-dynamic-subset/PretendardVariable.subset.91.woff2": "fc9fcd1bea9c8f43f97136a1e89bfa6e34db85f820f86538288647b4c24c5b06",
+    "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/packages/pretendard/dist/web/variable/woff2-dynamic-subset/PretendardVariable.subset.90.woff2": "ed2d605d80cbe4f2c1df801852f7a1d8ad5e1a4972b26d8fee93427317f32f09",
+    "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/packages/pretendard/dist/web/variable/woff2-dynamic-subset/PretendardVariable.subset.89.woff2": "44634e793e0d50fcdf803a2ad513d8bf0482d9adccbbd4ef534325cae9b2ee01",
+    "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/packages/pretendard/dist/web/variable/woff2-dynamic-subset/PretendardVariable.subset.88.woff2": "192abc4c6ad933f53d809d8a46ee6237ae71e766bf66199fdce4678841fe12d7",
+    "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/packages/pretendard/dist/web/variable/woff2-dynamic-subset/PretendardVariable.subset.84.woff2": "d28ace2d199ca5c6304a6191f4233e28ddb225d341d6e0b41db040e9447c2cc9",
+    "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/packages/pretendard/dist/web/variable/woff2-dynamic-subset/PretendardVariable.subset.87.woff2": "04ca8277cfe3d27235573956255b0211575504cb695cdeab644c583df774e257",
+    "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/packages/pretendard/dist/web/variable/woff2-dynamic-subset/PretendardVariable.subset.83.woff2": "f8f1fe652aaf3c759d78f37e48afe1c58c1d335e9261c5be2a2d90ff5bbfb9cc",
+    "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/packages/pretendard/dist/web/variable/woff2-dynamic-subset/PretendardVariable.subset.82.woff2": "493e29967aa59d0f5326ae95fe163ca6e0ce9d95610838cc07a1f543a4a2e289",
+    "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/packages/pretendard/dist/web/variable/woff2-dynamic-subset/PretendardVariable.subset.81.woff2": "f0ae631ec332bbaf686a493d126ff56a8ac0c6284bdbb7542cef8fedd946fa66",
+    "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/packages/pretendard/dist/web/variable/woff2-dynamic-subset/PretendardVariable.subset.70.woff2": "8bccc361d2d7ad5c3891a7914505ffd0ed89cf0bd9a5f1f6c320f85af54cb041",
+    "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/packages/pretendard/dist/web/variable/woff2-dynamic-subset/PretendardVariable.subset.86.woff2": "3e680901e55f16848b58d16d25870596495a6a073d9e3127fe481583ac4439b6",
+    "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/packages/pretendard/dist/web/variable/woff2-dynamic-subset/PretendardVariable.subset.85.woff2": "757b9fc85ad85a1024fcacc04a9b688ace2db7af393e9ddc3b5dd2ba605b5a9b"
+  }
+}
