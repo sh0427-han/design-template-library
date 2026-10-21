@@ -11,6 +11,11 @@ on:
       - .github/workflows/render-concept-architecture.yml
   workflow_dispatch:
 
+# Share a branch-wide preview queue with the eight-template renderer.
+concurrency:
+  group: html-preview-${{ github.ref }}
+  cancel-in-progress: false
+
 permissions:
   contents: write
 
