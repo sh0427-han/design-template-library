@@ -16,8 +16,8 @@
     .experiment-slide .confusion-table col.row-col {width:88px;}
     .experiment-slide .confusion-table th {font-size:19px;font-weight:650;text-align:center;vertical-align:middle;padding:0;line-height:1.4;}
     .experiment-slide .confusion-table .axis-title {color:var(--blue);font-weight:800;}
-    .experiment-slide .confusion-table .gt-axis {padding-bottom:4px;font-size:21px;}
-    .experiment-slide .confusion-table .pred-axis {font-size:18px;}
+    .experiment-slide .confusion-table .gt-axis {padding-bottom:8px;font-size:21px;border-bottom:1px solid #b8c8d9;}
+    .experiment-slide .confusion-table .pred-axis {font-size:18px;border-right:1px solid #b8c8d9;}
     .experiment-slide .confusion-table .column-label {padding-bottom:3px;}
     .experiment-slide .confusion-table td {padding:10px 0;height:100px;border-radius:12px;text-align:center;vertical-align:middle;}
     .experiment-slide .confusion-table .correct {background:var(--pale-teal);color:#126b65;}
@@ -27,16 +27,17 @@
     .experiment-slide .error-explanations {border-top:1px solid var(--border);padding-top:10px;margin-top:auto;display:grid;gap:6px;}
     .experiment-slide .error-explanations p {font-size:18px;line-height:1.4;margin:0;color:var(--deep);}
     .experiment-slide .error-explanations b {color:#945616;}
-    .experiment-slide .metric-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:minmax(0,1fr) minmax(0,1.17fr);gap:12px;flex:1;margin-top:12px;min-height:0;}
-    .experiment-slide .metric {display:flex;flex-direction:column;min-width:0;min-height:0;border:1px solid var(--border);border-radius:12px;padding:12px 14px;background:var(--white);}
+    .experiment-slide .metric-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:minmax(0,1fr) minmax(0,1.25fr);gap:12px;flex:1;margin-top:12px;min-height:0;}
+    .experiment-slide .metric {display:flex;flex-direction:column;min-width:0;min-height:0;border:1px solid var(--border);border-radius:12px;padding:10px 14px;background:var(--white);}
     .experiment-slide .metric header {display:flex;align-items:baseline;justify-content:space-between;gap:8px;}
     .experiment-slide .metric h3 {font-size:19px;color:var(--deep);margin:0;font-weight:750;}
-    .experiment-slide .metric-value {font-size:32px;font-weight:800;line-height:1.2;color:var(--navy);white-space:nowrap;}
-    .experiment-slide .metric-equation {font-size:18px;line-height:1.4;color:var(--deep);margin:10px 0 5px;text-align:center;}
+    .experiment-slide .metric-description {font-size:16.5px;line-height:1.3;color:var(--muted);margin:3px 0 2px;}
+    .experiment-slide .metric-value {font-size:30px;font-weight:800;line-height:1.2;color:var(--navy);white-space:nowrap;}
+    .experiment-slide .metric-equation {font-size:18px;line-height:1.4;color:var(--deep);margin:4px 0 2px;text-align:center;}
     .experiment-slide .fraction {display:inline-grid;grid-template-rows:auto auto;text-align:center;vertical-align:middle;}
-    .experiment-slide .fraction > span {display:block;padding:2px 4px;}
+    .experiment-slide .fraction > span {display:block;padding:0 4px;}
     .experiment-slide .fraction > span:first-child {border-bottom:1px solid var(--muted);}
-    .experiment-slide .metric-calculation {font-size:21px;font-weight:750;line-height:1.4;color:var(--blue);text-align:center;margin:auto 0 0;padding-top:7px;}
+    .experiment-slide .metric-calculation {font-size:20px;font-weight:750;line-height:1.4;color:var(--blue);text-align:center;margin:auto 0 0;padding-top:3px;}
     .experiment-slide .metric-alternate {font-size:16px;line-height:1.25;color:var(--muted);margin:1px 0 4px;text-align:center;}
     .experiment-slide .sr-only {position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);}
     @media(max-width:900px) {
@@ -69,8 +70,8 @@
   <header><div class="kicker">EXPERIMENT / 07</div><h1>혼동행렬과 평가 지표</h1><p class="subtitle">12개 샘플로 보는 혼동행렬과 분류 성능</p></header>
   <div class="content"><div class="experiment-grid">
     <section class="experiment-card" aria-labelledby="confusion-heading">
-      <div class="ref-k">EXAMPLE · 12개 샘플</div><h2 id="confusion-heading">혼동행렬</h2>
-      <p class="experiment-context">양성: 이상 · 실제 정상 6개 / 실제 이상 6개</p>
+      <div class="ref-k">CONFUSION MATRIX</div><h2 id="confusion-heading">혼동행렬</h2>
+      <p class="experiment-context">예시 12개 · 양성: 이상 · 실제 정상/이상 각 6개</p>
       <table class="confusion-table">
         <caption class="sr-only">모델 예측을 행으로, GT 실제값을 열로 표시한 12개 예시 샘플의 혼동행렬</caption>
         <colgroup><col class="axis-col"><col class="row-col"><col><col></colgroup>
@@ -91,15 +92,19 @@
       <div class="ref-k">METRICS</div><h2 id="metrics-heading">같은 데이터의 네 가지 평가 지표</h2>
       <div class="metric-grid">
         <article class="metric" data-metric="accuracy"><header><h3>Accuracy</h3><span class="metric-value">75.0%</span></header>
+          <p class="metric-description">전체 샘플 중 맞힌 비율</p>
           <div class="metric-equation" aria-label="(TP + TN) / (TP + TN + FP + FN)"><span class="fraction"><span>TP + TN</span><span>TP + TN + FP + FN</span></span></div>
           <p class="metric-calculation">= 9/12 = 75.0%</p></article>
         <article class="metric" data-metric="precision"><header><h3>Precision</h3><span class="metric-value">80.0%</span></header>
+          <p class="metric-description">이상 예측 중 실제 이상 비율</p>
           <div class="metric-equation" aria-label="TP / (TP + FP)"><span class="fraction"><span>TP</span><span>TP + FP</span></span></div>
           <p class="metric-calculation">= 4/5 = 80.0%</p></article>
         <article class="metric" data-metric="recall"><header><h3>Recall</h3><span class="metric-value">66.7%</span></header>
+          <p class="metric-description">실제 이상 중 찾아낸 비율</p>
           <div class="metric-equation" aria-label="TP / (TP + FN)"><span class="fraction"><span>TP</span><span>TP + FN</span></span></div>
           <p class="metric-calculation">= 4/6 = 66.7%</p></article>
         <article class="metric" data-metric="f1"><header><h3>F1-score</h3><span class="metric-value">72.7%</span></header>
+          <p class="metric-description">정밀도·재현율의 조화평균</p>
           <div class="metric-equation" aria-label="2TP / (2TP + FP + FN)"><span class="fraction"><span>2TP</span><span>2TP + FP + FN</span></span></div>
           <p class="metric-alternate">= 2 × Precision × Recall<br>/ (Precision + Recall)</p>
           <p class="metric-calculation">= 8/11 = 72.7%</p></article>

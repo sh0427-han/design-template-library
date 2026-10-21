@@ -53,9 +53,9 @@
         "x": 171,
         "y": 397.71875,
         "right": 697.53125,
-        "bottom": 697.671875,
+        "bottom": 702.671875,
         "width": 526.53125,
-        "height": 299.953125
+        "height": 304.953125
       },
       "labels": {
         "columns": [
@@ -89,9 +89,9 @@
           "yError": 0,
           "box": {
             "x": 512.765625,
-            "y": 484.703125,
+            "y": 489.703125,
             "right": 689.53125,
-            "bottom": 585.1875,
+            "bottom": 590.1875,
             "width": 176.765625,
             "height": 100.484375
           }
@@ -105,9 +105,9 @@
           "yError": 0,
           "box": {
             "x": 328,
-            "y": 484.703125,
+            "y": 489.703125,
             "right": 504.765625,
-            "bottom": 585.1875,
+            "bottom": 590.1875,
             "width": 176.765625,
             "height": 100.484375
           }
@@ -121,9 +121,9 @@
           "yError": 0,
           "box": {
             "x": 512.765625,
-            "y": 591.1875,
+            "y": 596.1875,
             "right": 689.53125,
-            "bottom": 691.671875,
+            "bottom": 696.671875,
             "width": 176.765625,
             "height": 100.484375
           }
@@ -137,9 +137,9 @@
           "yError": 0,
           "box": {
             "x": 328,
-            "y": 591.1875,
+            "y": 596.1875,
             "right": 504.765625,
-            "bottom": 691.671875,
+            "bottom": 696.671875,
             "width": 176.765625,
             "height": 100.484375
           }
@@ -152,9 +152,9 @@
             "x": 767.53125,
             "y": 374.71875,
             "right": 1092.265625,
-            "bottom": 555.953125,
+            "bottom": 549.5,
             "width": 324.734375,
-            "height": 181.234375
+            "height": 174.78125
           },
           "value": "75.0%",
           "formula": "(TP + TN) / (TP + TN + FP + FN)",
@@ -170,9 +170,9 @@
             "x": 1104.265625,
             "y": 374.71875,
             "right": 1429,
-            "bottom": 555.953125,
+            "bottom": 549.5,
             "width": 324.734375,
-            "height": 181.234375
+            "height": 174.78125
           },
           "value": "80.0%",
           "formula": "TP / (TP + FP)",
@@ -186,11 +186,11 @@
           "name": "recall",
           "box": {
             "x": 767.53125,
-            "y": 567.953125,
+            "y": 561.5,
             "right": 1092.265625,
-            "bottom": 779.984375,
+            "bottom": 780,
             "width": 324.734375,
-            "height": 212.03125
+            "height": 218.5
           },
           "value": "66.7%",
           "formula": "TP / (TP + FN)",
@@ -204,11 +204,11 @@
           "name": "f1",
           "box": {
             "x": 1104.265625,
-            "y": 567.953125,
+            "y": 561.5,
             "right": 1429,
-            "bottom": 779.984375,
+            "bottom": 780,
             "width": 324.734375,
-            "height": 212.03125
+            "height": 218.5
           },
           "value": "72.7%",
           "formula": "2TP / (2TP + FP + FN)",
@@ -248,7 +248,11 @@
           "background": "rgb(227, 246, 243)"
         }
       ],
-      "fontsLoaded": 9
+      "dividers": {
+        "gt": "1px",
+        "prediction": "1px"
+      },
+      "fontsLoaded": 10
     },
     {
       "viewport": [
@@ -301,9 +305,9 @@
         "x": 122.109375,
         "y": 331.4375,
         "right": 622.546875,
-        "bottom": 612.3125,
+        "bottom": 617.109375,
         "width": 500.4375,
-        "height": 280.875
+        "height": 285.671875
       },
       "labels": {
         "columns": [
@@ -337,9 +341,9 @@
           "yError": 0,
           "box": {
             "x": 446.03125,
-            "y": 411.3125,
+            "y": 416.109375,
             "right": 615.546875,
-            "bottom": 506.8125,
+            "bottom": 511.609375,
             "width": 169.515625,
             "height": 95.5
           }
@@ -353,9 +357,9 @@
           "yError": 0,
           "box": {
             "x": 269.515625,
-            "y": 411.3125,
+            "y": 416.109375,
             "right": 439.03125,
-            "bottom": 506.8125,
+            "bottom": 511.609375,
             "width": 169.515625,
             "height": 95.5
           }
@@ -369,9 +373,9 @@
           "yError": 0,
           "box": {
             "x": 446.03125,
-            "y": 511.8125,
+            "y": 516.609375,
             "right": 615.546875,
-            "bottom": 607.3125,
+            "bottom": 612.109375,
             "width": 169.515625,
             "height": 95.5
           }
@@ -385,9 +389,9 @@
           "yError": 0,
           "box": {
             "x": 269.515625,
-            "y": 511.8125,
+            "y": 516.609375,
             "right": 439.03125,
-            "bottom": 607.3125,
+            "bottom": 612.109375,
             "width": 169.515625,
             "height": 95.5
           }
@@ -400,9 +404,9 @@
             "x": 689.171875,
             "y": 309.59375,
             "right": 997.828125,
-            "bottom": 481.921875,
+            "bottom": 475.796875,
             "width": 308.65625,
-            "height": 172.328125
+            "height": 166.203125
           },
           "value": "75.0%",
           "formula": "(TP + TN) / (TP + TN + FP + FN)",
@@ -418,9 +422,9 @@
             "x": 1009.234375,
             "y": 309.59375,
             "right": 1317.890625,
-            "bottom": 481.921875,
+            "bottom": 475.796875,
             "width": 308.65625,
-            "height": 172.328125
+            "height": 166.203125
           },
           "value": "80.0%",
           "formula": "TP / (TP + FP)",
@@ -434,11 +438,11 @@
           "name": "recall",
           "box": {
             "x": 689.171875,
-            "y": 493.328125,
+            "y": 487.203125,
             "right": 997.828125,
-            "bottom": 694.96875,
+            "bottom": 694.953125,
             "width": 308.65625,
-            "height": 201.640625
+            "height": 207.75
           },
           "value": "66.7%",
           "formula": "TP / (TP + FN)",
@@ -452,11 +456,11 @@
           "name": "f1",
           "box": {
             "x": 1009.234375,
-            "y": 493.328125,
+            "y": 487.203125,
             "right": 1317.890625,
-            "bottom": 694.96875,
+            "bottom": 694.953125,
             "width": 308.65625,
-            "height": 201.640625
+            "height": 207.75
           },
           "value": "72.7%",
           "formula": "2TP / (2TP + FP + FN)",
@@ -496,7 +500,11 @@
           "background": "rgb(227, 246, 243)"
         }
       ],
-      "fontsLoaded": 9
+      "dividers": {
+        "gt": "1.05195px",
+        "prediction": "1.05195px"
+      },
+      "fontsLoaded": 10
     },
     {
       "viewport": [
@@ -549,9 +557,9 @@
         "x": 117.765625,
         "y": 315.546875,
         "right": 590.8125,
-        "bottom": 582.75,
+        "bottom": 587.34375,
         "width": 473.046875,
-        "height": 267.203125
+        "height": 271.796875
       },
       "labels": {
         "columns": [
@@ -585,9 +593,9 @@
           "yError": 0,
           "box": {
             "x": 424.546875,
-            "y": 392.15625,
+            "y": 396.75,
             "right": 583.8125,
-            "bottom": 482.453125,
+            "bottom": 487.046875,
             "width": 159.265625,
             "height": 90.296875
           }
@@ -601,9 +609,9 @@
           "yError": 0,
           "box": {
             "x": 258.28125,
-            "y": 392.15625,
+            "y": 396.75,
             "right": 417.546875,
-            "bottom": 482.453125,
+            "bottom": 487.046875,
             "width": 159.265625,
             "height": 90.296875
           }
@@ -617,9 +625,9 @@
           "yError": 0,
           "box": {
             "x": 424.546875,
-            "y": 487.453125,
+            "y": 492.046875,
             "right": 583.8125,
-            "bottom": 577.75,
+            "bottom": 582.34375,
             "width": 159.265625,
             "height": 90.296875
           }
@@ -633,9 +641,9 @@
           "yError": 0,
           "box": {
             "x": 258.28125,
-            "y": 487.453125,
+            "y": 492.046875,
             "right": 417.546875,
-            "bottom": 577.75,
+            "bottom": 582.34375,
             "width": 159.265625,
             "height": 90.296875
           }
@@ -648,9 +656,9 @@
             "x": 653.90625,
             "y": 294.890625,
             "right": 945.671875,
-            "bottom": 457.3125,
+            "bottom": 451.53125,
             "width": 291.765625,
-            "height": 162.421875
+            "height": 156.640625
           },
           "value": "75.0%",
           "formula": "(TP + TN) / (TP + TN + FP + FN)",
@@ -666,9 +674,9 @@
             "x": 956.453125,
             "y": 294.890625,
             "right": 1248.21875,
-            "bottom": 457.3125,
+            "bottom": 451.53125,
             "width": 291.765625,
-            "height": 162.421875
+            "height": 156.640625
           },
           "value": "80.0%",
           "formula": "TP / (TP + FP)",
@@ -682,11 +690,11 @@
           "name": "recall",
           "box": {
             "x": 653.90625,
-            "y": 468.09375,
+            "y": 462.3125,
             "right": 945.671875,
             "bottom": 658.125,
             "width": 291.765625,
-            "height": 190.03125
+            "height": 195.8125
           },
           "value": "66.7%",
           "formula": "TP / (TP + FN)",
@@ -700,11 +708,11 @@
           "name": "f1",
           "box": {
             "x": 956.453125,
-            "y": 468.09375,
+            "y": 462.3125,
             "right": 1248.21875,
             "bottom": 658.125,
             "width": 291.765625,
-            "height": 190.03125
+            "height": 195.8125
           },
           "value": "72.7%",
           "formula": "2TP / (2TP + FP + FN)",
@@ -744,7 +752,11 @@
           "background": "rgb(227, 246, 243)"
         }
       ],
-      "fontsLoaded": 9
+      "dividers": {
+        "gt": "1.11264px",
+        "prediction": "1.11264px"
+      },
+      "fontsLoaded": 10
     },
     {
       "viewport": [
@@ -797,9 +809,9 @@
         "x": 112.109375,
         "y": 295.453125,
         "right": 553.828125,
-        "bottom": 547,
+        "bottom": 551.359375,
         "width": 441.71875,
-        "height": 251.546875
+        "height": 255.90625
       },
       "labels": {
         "columns": [
@@ -833,9 +845,9 @@
           "yError": 0,
           "box": {
             "x": 397.78125,
-            "y": 368.3125,
+            "y": 372.671875,
             "right": 547.828125,
-            "bottom": 452.65625,
+            "bottom": 457.015625,
             "width": 150.046875,
             "height": 84.34375
           }
@@ -849,9 +861,9 @@
           "yError": 0,
           "box": {
             "x": 241.75,
-            "y": 368.3125,
+            "y": 372.671875,
             "right": 391.78125,
-            "bottom": 452.65625,
+            "bottom": 457.015625,
             "width": 150.03125,
             "height": 84.34375
           }
@@ -865,9 +877,9 @@
           "yError": 0,
           "box": {
             "x": 397.78125,
-            "y": 457.65625,
+            "y": 462.015625,
             "right": 547.828125,
-            "bottom": 542,
+            "bottom": 546.359375,
             "width": 150.046875,
             "height": 84.34375
           }
@@ -881,9 +893,9 @@
           "yError": 0,
           "box": {
             "x": 241.75,
-            "y": 457.65625,
+            "y": 462.015625,
             "right": 391.78125,
-            "bottom": 542,
+            "bottom": 546.359375,
             "width": 150.03125,
             "height": 84.34375
           }
@@ -896,9 +908,9 @@
             "x": 612.890625,
             "y": 276.15625,
             "right": 885.359375,
-            "bottom": 428.0625,
+            "bottom": 422.65625,
             "width": 272.46875,
-            "height": 151.90625
+            "height": 146.5
           },
           "value": "75.0%",
           "formula": "(TP + TN) / (TP + TN + FP + FN)",
@@ -914,9 +926,9 @@
             "x": 895.421875,
             "y": 276.15625,
             "right": 1167.890625,
-            "bottom": 428.0625,
+            "bottom": 422.65625,
             "width": 272.46875,
-            "height": 151.90625
+            "height": 146.5
           },
           "value": "80.0%",
           "formula": "TP / (TP + FP)",
@@ -930,11 +942,11 @@
           "name": "recall",
           "box": {
             "x": 612.890625,
-            "y": 438.125,
+            "y": 432.71875,
             "right": 885.359375,
-            "bottom": 615.859375,
+            "bottom": 615.875,
             "width": 272.46875,
-            "height": 177.734375
+            "height": 183.15625
           },
           "value": "66.7%",
           "formula": "TP / (TP + FN)",
@@ -948,11 +960,11 @@
           "name": "f1",
           "box": {
             "x": 895.421875,
-            "y": 438.125,
+            "y": 432.71875,
             "right": 1167.890625,
-            "bottom": 615.859375,
+            "bottom": 615.875,
             "width": 272.46875,
-            "height": 177.734375
+            "height": 183.15625
           },
           "value": "72.7%",
           "formula": "2TP / (2TP + FP + FN)",
@@ -992,7 +1004,11 @@
           "background": "rgb(227, 246, 243)"
         }
       ],
-      "fontsLoaded": 9
+      "dividers": {
+        "gt": "1.19118px",
+        "prediction": "1.19118px"
+      },
+      "fontsLoaded": 10
     },
     {
       "viewport": [
@@ -1003,23 +1019,23 @@
         "x": 16,
         "y": 16,
         "right": 884,
-        "bottom": 1354.6875,
+        "bottom": 1375.296875,
         "width": 868,
-        "height": 1338.6875
+        "height": 1359.296875
       },
       "content": {
         "x": 40,
         "y": 173.21875,
         "right": 860,
-        "bottom": 1281.6875,
+        "bottom": 1302.296875,
         "width": 820,
-        "height": 1108.46875
+        "height": 1129.078125
       },
       "footer": {
         "x": 40,
-        "y": 1296.6875,
+        "y": 1317.296875,
         "right": 860,
-        "bottom": 1324.6875,
+        "bottom": 1345.296875,
         "width": 820,
         "height": 28
       },
@@ -1028,26 +1044,26 @@
           "x": 40,
           "y": 173.21875,
           "right": 860,
-          "bottom": 703.046875,
+          "bottom": 708.046875,
           "width": 820,
-          "height": 529.828125
+          "height": 534.828125
         },
         {
           "x": 40,
-          "y": 723.046875,
+          "y": 728.046875,
           "right": 860,
-          "bottom": 1281.6875,
+          "bottom": 1302.296875,
           "width": 820,
-          "height": 558.640625
+          "height": 574.25
         }
       ],
       "table": {
         "x": 175,
         "y": 296.71875,
         "right": 725,
-        "bottom": 596.671875,
+        "bottom": 601.671875,
         "width": 550,
-        "height": 299.953125
+        "height": 304.953125
       },
       "labels": {
         "columns": [
@@ -1081,9 +1097,9 @@
           "yError": 0,
           "box": {
             "x": 528.5,
-            "y": 383.703125,
+            "y": 388.703125,
             "right": 717,
-            "bottom": 484.1875,
+            "bottom": 489.1875,
             "width": 188.5,
             "height": 100.484375
           }
@@ -1097,9 +1113,9 @@
           "yError": 0,
           "box": {
             "x": 332,
-            "y": 383.703125,
+            "y": 388.703125,
             "right": 520.5,
-            "bottom": 484.1875,
+            "bottom": 489.1875,
             "width": 188.5,
             "height": 100.484375
           }
@@ -1113,9 +1129,9 @@
           "yError": 0,
           "box": {
             "x": 528.5,
-            "y": 490.1875,
+            "y": 495.1875,
             "right": 717,
-            "bottom": 590.671875,
+            "bottom": 595.671875,
             "width": 188.5,
             "height": 100.484375
           }
@@ -1129,9 +1145,9 @@
           "yError": 0,
           "box": {
             "x": 332,
-            "y": 490.1875,
+            "y": 495.1875,
             "right": 520.5,
-            "bottom": 590.671875,
+            "bottom": 595.671875,
             "width": 188.5,
             "height": 100.484375
           }
@@ -1142,9 +1158,9 @@
           "name": "accuracy",
           "box": {
             "x": 63,
-            "y": 823.546875,
+            "y": 828.546875,
             "right": 444,
-            "bottom": 1018.546875,
+            "bottom": 1023.546875,
             "width": 381,
             "height": 195
           },
@@ -1160,9 +1176,9 @@
           "name": "precision",
           "box": {
             "x": 456,
-            "y": 823.546875,
+            "y": 828.546875,
             "right": 837,
-            "bottom": 1018.546875,
+            "bottom": 1023.546875,
             "width": 381,
             "height": 195
           },
@@ -1178,11 +1194,11 @@
           "name": "recall",
           "box": {
             "x": 63,
-            "y": 1030.53125,
+            "y": 1035.546875,
             "right": 444,
-            "bottom": 1258.671875,
+            "bottom": 1279.296875,
             "width": 381,
-            "height": 228.140625
+            "height": 243.75
           },
           "value": "66.7%",
           "formula": "TP / (TP + FN)",
@@ -1196,11 +1212,11 @@
           "name": "f1",
           "box": {
             "x": 456,
-            "y": 1030.53125,
+            "y": 1035.546875,
             "right": 837,
-            "bottom": 1258.671875,
+            "bottom": 1279.296875,
             "width": 381,
-            "height": 228.140625
+            "height": 243.75
           },
           "value": "72.7%",
           "formula": "2TP / (2TP + FP + FN)",
@@ -1240,7 +1256,11 @@
           "background": "rgb(227, 246, 243)"
         }
       ],
-      "fontsLoaded": 9
+      "dividers": {
+        "gt": "1px",
+        "prediction": "1px"
+      },
+      "fontsLoaded": 10
     },
     {
       "viewport": [
@@ -1251,23 +1271,23 @@
         "x": 10,
         "y": 10,
         "right": 380,
-        "bottom": 1735.734375,
+        "bottom": 1771.359375,
         "width": 370,
-        "height": 1725.734375
+        "height": 1761.359375
       },
       "content": {
         "x": 30,
         "y": 160.21875,
         "right": 360,
-        "bottom": 1664.734375,
+        "bottom": 1700.359375,
         "width": 330,
-        "height": 1504.515625
+        "height": 1540.140625
       },
       "footer": {
         "x": 30,
-        "y": 1679.734375,
+        "y": 1715.359375,
         "right": 360,
-        "bottom": 1707.734375,
+        "bottom": 1743.359375,
         "width": 330,
         "height": 28
       },
@@ -1276,26 +1296,26 @@
           "x": 30,
           "y": 160.21875,
           "right": 360,
-          "bottom": 676.609375,
+          "bottom": 681.609375,
           "width": 330,
-          "height": 516.390625
+          "height": 521.390625
         },
         {
           "x": 30,
-          "y": 696.609375,
+          "y": 701.609375,
           "right": 360,
-          "bottom": 1664.734375,
+          "bottom": 1700.359375,
           "width": 330,
-          "height": 968.125
+          "height": 998.75
         }
       ],
       "table": {
         "x": 48,
         "y": 277.21875,
         "right": 342,
-        "bottom": 578.015625,
+        "bottom": 583.015625,
         "width": 294,
-        "height": 300.796875
+        "height": 305.796875
       },
       "labels": {
         "columns": [
@@ -1329,9 +1349,9 @@
           "yError": 0,
           "box": {
             "x": 249.5,
-            "y": 364.015625,
+            "y": 369.015625,
             "right": 338,
-            "bottom": 464.015625,
+            "bottom": 469.015625,
             "width": 88.5,
             "height": 100
           }
@@ -1345,9 +1365,9 @@
           "yError": 0,
           "box": {
             "x": 157,
-            "y": 364.015625,
+            "y": 369.015625,
             "right": 245.5,
-            "bottom": 464.015625,
+            "bottom": 469.015625,
             "width": 88.5,
             "height": 100
           }
@@ -1361,9 +1381,9 @@
           "yError": 0,
           "box": {
             "x": 249.5,
-            "y": 471.015625,
+            "y": 476.015625,
             "right": 338,
-            "bottom": 571.015625,
+            "bottom": 576.015625,
             "width": 88.5,
             "height": 100
           }
@@ -1377,9 +1397,9 @@
           "yError": 0,
           "box": {
             "x": 157,
-            "y": 471.015625,
+            "y": 476.015625,
             "right": 245.5,
-            "bottom": 571.015625,
+            "bottom": 576.015625,
             "width": 88.5,
             "height": 100
           }
@@ -1390,11 +1410,11 @@
           "name": "accuracy",
           "box": {
             "x": 48,
-            "y": 792.109375,
+            "y": 797.109375,
             "right": 342,
-            "bottom": 984.890625,
+            "bottom": 997.546875,
             "width": 294,
-            "height": 192.78125
+            "height": 200.4375
           },
           "value": "75.0%",
           "formula": "(TP + TN) / (TP + TN + FP + FN)",
@@ -1408,11 +1428,11 @@
           "name": "precision",
           "box": {
             "x": 48,
-            "y": 996.890625,
+            "y": 1009.546875,
             "right": 342,
-            "bottom": 1189.671875,
+            "bottom": 1209.984375,
             "width": 294,
-            "height": 192.78125
+            "height": 200.4375
           },
           "value": "80.0%",
           "formula": "TP / (TP + FP)",
@@ -1426,11 +1446,11 @@
           "name": "recall",
           "box": {
             "x": 48,
-            "y": 1201.671875,
+            "y": 1221.984375,
             "right": 342,
-            "bottom": 1394.453125,
+            "bottom": 1422.421875,
             "width": 294,
-            "height": 192.78125
+            "height": 200.4375
           },
           "value": "66.7%",
           "formula": "TP / (TP + FN)",
@@ -1444,11 +1464,11 @@
           "name": "f1",
           "box": {
             "x": 48,
-            "y": 1406.453125,
+            "y": 1434.421875,
             "right": 342,
-            "bottom": 1646.734375,
+            "bottom": 1682.359375,
             "width": 294,
-            "height": 240.28125
+            "height": 247.9375
           },
           "value": "72.7%",
           "formula": "2TP / (2TP + FP + FN)",
@@ -1488,7 +1508,11 @@
           "background": "rgb(227, 246, 243)"
         }
       ],
-      "fontsLoaded": 9
+      "dividers": {
+        "gt": "1px",
+        "prediction": "1px"
+      },
+      "fontsLoaded": 10
     }
   ],
   "browser": "154.0.8037.57",
@@ -1502,7 +1526,8 @@
     "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/packages/pretendard/dist/web/variable/woff2-dynamic-subset/PretendardVariable.subset.83.woff2": "f8f1fe652aaf3c759d78f37e48afe1c58c1d335e9261c5be2a2d90ff5bbfb9cc",
     "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/packages/pretendard/dist/web/variable/woff2-dynamic-subset/PretendardVariable.subset.82.woff2": "493e29967aa59d0f5326ae95fe163ca6e0ce9d95610838cc07a1f543a4a2e289",
     "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/packages/pretendard/dist/web/variable/woff2-dynamic-subset/PretendardVariable.subset.84.woff2": "d28ace2d199ca5c6304a6191f4233e28ddb225d341d6e0b41db040e9447c2cc9",
-    "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/packages/pretendard/dist/web/variable/woff2-dynamic-subset/PretendardVariable.subset.86.woff2": "3e680901e55f16848b58d16d25870596495a6a073d9e3127fe481583ac4439b6"
+    "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/packages/pretendard/dist/web/variable/woff2-dynamic-subset/PretendardVariable.subset.86.woff2": "3e680901e55f16848b58d16d25870596495a6a073d9e3127fe481583ac4439b6",
+    "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/packages/pretendard/dist/web/variable/woff2-dynamic-subset/PretendardVariable.subset.85.woff2": "757b9fc85ad85a1024fcacc04a9b688ace2db7af393e9ddc3b5dd2ba605b5a9b"
   },
   "page_errors": [],
   "request_failures": [],

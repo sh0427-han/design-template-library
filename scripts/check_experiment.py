@@ -47,6 +47,7 @@ CHECK="""() => {
  cards:cards.map(box),table:box(table),labels,axisErrors,centering,metrics,overflow,badTypography,
  pageWidth:document.documentElement.scrollWidth,
  counts:[...table.querySelectorAll('[data-code]')].map(e=>({code:e.dataset.code,count:Number(e.querySelector('.cm-count').textContent),headers:e.getAttribute('headers'),background:getComputedStyle(e).backgroundColor})),
+ dividers:{gt:getComputedStyle(table.querySelector('.gt-axis')).borderBottomWidth,prediction:getComputedStyle(table.querySelector('.pred-axis')).borderRightWidth},
  fontsLoaded:[...document.fonts].filter(f=>f.family.replaceAll('"','').replaceAll("'",'')==='Pretendard Variable'&&f.status==='loaded').length};
 }"""
 
@@ -90,6 +91,9 @@ def main():
                 page.evaluate('document.fonts.ready')
                 r=page.evaluate(CHECK)
                 page.locator('.slide').screenshot(path=str(output/f'experiment-{width}x{height}.png'),animations='disabled')
+                assert all(0<float(width.removesuffix('px'))<=2 for width in r['dividers'].values()),r['dividers']
+                assert page.locator('.experiment-card .ref-k').all_text_contents()==['CONFUSION MATRIX','METRICS']
+                assert page.locator('.metric-description').all_text_contents()==['전체 샘플 중 맞힌 비율','이상 예측 중 실제 이상 비율','실제 이상 중 찾아낸 비율','정밀도·재현율의 조화평균']
                 assert page.locator('h1').inner_text()=='혼동행렬과 평가 지표'
                 assert page.locator('.subtitle').inner_text()=='12개 샘플로 보는 혼동행렬과 분류 성능'
                 assert r['labels']=={'columns':['실제 이상','실제 정상'],'rows':['예측 이상','예측 정상']}
