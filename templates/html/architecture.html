@@ -60,6 +60,8 @@
  .architecture-slide .architecture-notes strong{font-size:18px}
  .architecture-slide .architecture-notes p{font-size:16px}
 }
+.architecture-slide .activation-stack image {image-rendering:auto}
+.architecture-slide .activation-stack rect {shape-rendering:geometricPrecision}
 </style>
 </head>
 <body>
@@ -124,7 +126,7 @@
 <div class="paper-desc">클래스 점수</div>
 </article>
 </div>
-<div class="paper-caption"><span>Tensor Shape: H×W×C · 배치 차원 생략</span><span>Feature Map: 대표 채널의 축소 격자</span></div>
+<div class="paper-caption"><span>Tensor Shape: H×W×C · 배치 차원 생략</span><span>Feature Map: 입력 이미지 기반 활성화 패턴</span></div>
 <div class="architecture-notes">
 <div><strong>특징 추출</strong><p>Conv는 주변 패턴을 계산해 서로 다른 채널의 활성화 맵을 생성</p></div>
 <div><strong>공간 축소</strong><p>MaxPool은 동일 채널의 2×2 최댓값만 선택해 H·W 감소</p></div>
@@ -132,4 +134,4 @@
 </div>
 </section></div>
 <footer class="footer"><span>Design Template Library · Architecture</span><span>06 / 08</span></footer>
-</section></main></body></html>
+</section></main><script src="assets/cnn-feature-maps.js" defer></script></body></html>
