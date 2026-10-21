@@ -190,6 +190,43 @@ def main():
                             'feature': 'rgb(234, 241, 255)',
                             'output': 'rgb(227, 246, 243)'
                         }, (name, width, 'lost meaningful stage colors', palette)
+                    if name == 'executive-summary':
+                        kpis = page.evaluate("""() => {
+                          const groups = [...document.querySelectorAll(
+                            '.exec-metric-group')];
+                          return groups.map(g => {
+                            const before = Number(g.dataset.before);
+                            const after = Number(g.dataset.after);
+                            const bars = [...g.querySelectorAll('.exec-fill')]
+                              .map(el => Number(el.style.width.replace('%','')));
+                            const heading = g.querySelector('h3')?.textContent;
+                            const delta = g.querySelector('.exec-delta')?.textContent;
+                            const border = getComputedStyle(g).borderStyle;
+                            const background = getComputedStyle(g).backgroundColor;
+                            return {before, after, bars, heading, delta,
+                              border, background};
+                          });
+                        }""")
+                        expected = [
+                            ('월간 수동 점검', 120, 80, '−33.3%'),
+                            ('평균 처리 시간', 45, 30, '−33.3%'),
+                            ('월말 미처리', 20, 8, '−60.0%')
+                        ]
+                        assert len(kpis) == len(expected), (width, kpis)
+                        for group, (title, before, after, delta) in zip(
+                            kpis, expected
+                        ):
+                            assert (group['heading'], group['before'],
+                                    group['after'], group['delta']) == (
+                                        title, before, after, delta
+                                    ), (width, group)
+                            assert abs(group['bars'][0] - 100) < .01 and (
+                                abs(group['bars'][1] - after / before * 100)
+                                < .02
+                            ), (width, group)
+                            assert group['border'] != 'none' and (
+                                group['background'] == 'rgb(255, 255, 255)'
+                            ), (width, group)
                     m = page.evaluate(GEOMETRY)
                     for key in ('outside','overflow','footerOverlap','spacing','clippedText','arrowErrors'):
                         assert not m[key], (name, width, key, m[key])
