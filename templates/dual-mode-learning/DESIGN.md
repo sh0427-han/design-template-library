@@ -46,7 +46,7 @@
 
 - Common source: [`../../DESIGN_SYSTEM.md`](../../DESIGN_SYSTEM.md).
 - AIBook Attention: https://aibook.euiyun.com/chapters/attention.html#sim-editor (interaction/layout inspiration, no code copied).
-- This example implements both HTML Scroll and Slide modes; the eight standalone HTML references are reusable visual patterns, not output formats. Historical PPTX files are outside the project scope.
+- This example implements both HTML Scroll and Slide modes; the eight standalone HTML references are reusable visual patterns, not output formats. Legacy PPTX assets were removed; do not recreate them.
 
 ## Acceptance Criteria
 
