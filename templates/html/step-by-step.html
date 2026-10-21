@@ -1,23 +1,25 @@
 <!doctype html>
     <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Step-By-Step | Design Template Library</title>
-    <link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="reference-types.css"></head>
-    <body><main class="deck"><section class="slide ref-slide" aria-label="step-by-step 디자인 레퍼런스">
-    <header><div class="ref-overline"><div class="kicker">REFERENCE / 04</div><a class="ref-link" href="index.html">전체 레퍼런스 ↗</a></div>
-    <h1>필터 계산을 단계별로 살펴보기</h1><p class="subtitle">입력 배열과 커널을 곱하고 더하면 Feature Map의 한 값을 얻습니다.</p></header>
+    <link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="reference-types.css"><link rel="stylesheet" href="reference-layout.css">
+</head>
+    <body><main class="deck reference-deck"><section class="slide ref-slide reference-slide step-by-step-slide" aria-label="step-by-step 디자인 레퍼런스">
+    <header><div class="ref-overline"><div class="kicker">STEP-BY-STEP / 04</div><a class="ref-link" href="index.html">전체 레퍼런스 ↗</a></div>
+    <h1>필터의 곱셈과 합산</h1><p class="subtitle">같은 위치의 원소별 곱 → 전체 합산 → Feature Map의 한 값</p></header>
     <div class="content"><div class="ref-grid step-grid">
   <section class="ref-card ref-soft"><div class="ref-k">01 · INPUT × KERNEL</div><h2 class="ref-h">2×2 영역의 합성곱 계산</h2>
-    <div class="step-equation"><div class="step-matrix"><span>1</span><span>2</span><span>3</span><span>4</span></div>
-      <div class="step-op">⊙</div><div class="step-matrix kernel"><span>1</span><span>0</span><span>−1</span><span>1</span></div><div class="step-op">→</div><div class="step-result">2</div></div>
-    <div class="ref-desc" style="text-align:center">각 위치의 값을 곱한 뒤 모두 더하면 출력값 2가 됩니다.</div>
+    <div class="step-equation"><div class="step-operand"><span class="operand-label">입력 영역</span><div class="step-matrix"><span>1</span><span>2</span><span>3</span><span>4</span></div></div>
+      <div class="step-op">⊙</div><div class="step-operand"><span class="operand-label">커널</span><div class="step-matrix kernel"><span>1</span><span>0</span><span>−1</span><span>1</span></div></div><div class="step-op">→</div><div class="step-operand"><span class="operand-label">출력</span><div class="step-result">2</div></div></div>
+    <div class="ref-desc" style="text-align:center">⊙ 원소별 곱 · → 합산 · bias = 0</div>
     <div class="step-values"><div class="step-val"><small>위 왼쪽</small>1×1 = 1</div><div class="step-val"><small>위 오른쪽</small>2×0 = 0</div><div class="step-val"><small>아래 왼쪽</small>3×(−1) = −3</div><div class="step-val"><small>아래 오른쪽</small>4×1 = 4</div></div>
   </section>
   <section class="ref-card"><div class="ref-k">02 · CALCULATION</div><h2 class="ref-h">원소별 곱의 합</h2>
-    <div style="font-size:30px;font-weight:800;color:#12233F;background:#F6F8FC;border-radius:14px;padding:27px 17px;text-align:center;margin:17px 0">1 + 0 − 3 + 4 = <span style="color:#16968d">2</span></div>
-    <div class="step-points"><div class="step-point"><strong>1</strong><span>입력과 커널의 <b>같은 위치</b>에 있는 값을 곱합니다.</span></div>
-      <div class="step-point"><strong>2</strong><span>네 개의 곱을 더해 출력 Feature Map의 <b>한 칸</b>을 채웁니다.</span></div>
-      <div class="step-point"><strong>3</strong><span>커널을 다음 위치로 옮기고 같은 연산을 반복합니다.</span></div></div>
-    <p class="ref-note" style="margin-top:19px">표기 ⊙는 원소별 곱을 뜻합니다. 딥러닝 라이브러리의 Convolution 연산은 보통 커널을 뒤집지 않는 cross-correlation 방식입니다.</p>
+    <div class="sum-equation">1 + 0 − 3 + 4 = <span style="color:#16968d">2</span></div>
+    <div class="step-points"><div class="step-point"><strong>1</strong><span>입력과 커널의 <b>같은 위치</b>끼리 곱셈</span></div>
+      <div class="step-point"><strong>2</strong><span>네 곱의 합으로 Feature Map의 <b>한 칸</b> 계산</span></div>
+      <div class="step-point"><strong>3</strong><span>다음 위치로 커널 이동 후 연산 반복</span></div></div>
+    <p class="ref-note" style="margin-top:19px">CNN의 일반적 구현: 커널을 뒤집지 않는 cross-correlation. 위 예시는 단일 채널·bias 0 기준.</p>
   </section></div></div>
     <footer class="footer"><span>Design Template Library · Step-By-Step</span><span>04 / 08</span></footer>
     </section></main></body></html>
+

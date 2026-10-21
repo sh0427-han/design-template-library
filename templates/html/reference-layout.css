@@ -1,0 +1,216 @@
+/* Opt-in shell for the eight standalone references only.
+   Shared tokens remain in styles.css; gallery and continuous lessons are unaffected. */
+.reference-deck { padding:20px; min-height:100vh; align-content:center; }
+.reference-slide {
+  width:1440px; height:810px; min-height:0; aspect-ratio:16/9;
+  padding:54px 66px 30px;
+  zoom:min(1, calc((100vw - 40px) / 1440px), calc((100vh - 40px) / 810px));
+}
+.reference-slide header {flex:0 0 auto;}
+.reference-slide h1 {margin:7px 0 6px;font-size:49px;line-height:1.13;}
+.reference-slide .subtitle {font-size:21px;line-height:1.38;}
+.reference-slide .content {margin-top:25px;min-height:0;}
+.reference-slide .footer {flex:0 0 auto;margin-top:15px;padding-top:11px;font-size:15px;}
+.reference-slide .ref-overline {display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.reference-slide .ref-link {color:var(--blue);font-size:16px;font-weight:700;text-decoration:none;}
+.reference-slide .ref-link:hover {text-decoration:underline;}
+.reference-slide .ref-k {font-size:16px;}
+.reference-slide .ref-h {margin:6px 0 16px;font-size:25px;}
+.reference-slide .ref-note {font-size:17px;line-height:1.45;}
+.reference-slide .ref-desc {font-size:19px;}
+.reference-slide .ref-card {padding:24px;}
+.reference-slide input {font:inherit;letter-spacing:inherit;}
+.reference-slide a:focus-visible,.reference-slide input:focus-visible {outline:3px solid var(--amber);outline-offset:4px;}
+/* The Concept's figure units, captions and centered arrow are retained. */
+.reference-slide .concept-panel {padding:22px 26px;}
+.reference-slide .selected-color small {font-size:16px;}
+.reference-slide .tensor-shape .label {font-size:17px;}
+/* Process: equal nodes, one arrow on each shared centerline. */
+.process-slide .content {display:flex;}
+.process-slide .flow {grid-template-columns:1fr 48px 1fr 48px 1fr 48px 1fr;}
+.process-slide .node {min-height:320px;padding:25px 20px;}
+.process-slide .node-step {font-size:16px;margin-bottom:16px;}
+.process-slide .node-title {font-size:29px;margin-bottom:12px;}
+.process-slide .node-desc {font-size:21px;}
+.process-slide .insight {margin-top:28px;font-size:22px;}
+.process-symbol {width:100px;height:80px;margin:0 auto 21px;color:var(--blue);}
+.input-symbol {display:grid;grid-template-columns:repeat(3,1fr);gap:4px;width:80px;}
+.input-symbol i {background:#bdd3f6;border:1px solid #8eb2ec;border-radius:3px;}
+.input-symbol i:nth-child(3n+2) {background:#80b5d9;}
+.feature-symbol {display:flex;align-items:center;justify-content:center;}
+.feature-symbol i {width:42px;height:61px;background:#88aee8;border:2px solid white;transform:skewY(-8deg);margin-left:-15px;}
+.feature-symbol i:first-child {margin-left:0;}
+.output-symbol {display:flex;flex-direction:column;justify-content:center;gap:9px;}
+.output-symbol i {height:13px;background:var(--teal);border-radius:4px;width:84%;}
+.output-symbol i:nth-child(2) {width:45%;opacity:.65;}
+.output-symbol i:nth-child(3) {width:23%;opacity:.45;}
+/* Comparison: the same three questions occupy matching rows. */
+.comparison-slide .compare-grid {gap:22px;}
+.comparison-slide .compare-card {padding:28px 32px;}
+.comparison-slide .compare-card h2 {font-size:30px;margin:18px 0 12px;}
+.comparison-slide .compare-card p {font-size:21px;}
+.compare-criteria {display:grid;margin:24px 0 0;}
+.compare-criteria > div {display:grid;grid-template-columns:105px 1fr;gap:16px;padding:15px 0;border-top:1px solid var(--border);font-size:21px;line-height:1.4;}
+.compare-criteria dt {font-weight:800;color:var(--deep);}
+.compare-criteria dd {margin:0;color:var(--ink);}
+.comparison-slide .compare-foot {font-size:19px;line-height:1.55;padding-top:20px;}
+/* Calculation: larger, labeled matrices and a predictable reading order. */
+.step-grid {grid-template-columns:1.04fr 1fr;}
+.step-grid > .ref-card {justify-content:flex-start;}
+.step-operand {display:flex;flex-direction:column;align-items:center;gap:12px;}
+.operand-label {font-size:18px;color:var(--deep);font-weight:700;}
+.step-equation {gap:18px;flex:1;margin:20px 0;}
+.step-matrix {grid-template-columns:repeat(2,64px);gap:6px;}
+.step-matrix span {width:64px;height:64px;font-size:29px;background:#fff;border:1px solid #cadcf5;}
+.step-matrix.kernel span {border-color:#b4ddd8;}
+.step-result {width:82px;height:134px;font-size:38px;}
+.step-op {padding-top:37px;}
+.step-values {grid-template-columns:repeat(2,1fr);gap:10px;margin-top:22px;}
+.step-val {font-size:23px;padding:12px;}
+.step-val small {font-size:16px;}
+.step-val:last-child {background:var(--canvas);color:var(--navy);}
+.sum-equation {font-size:34px;font-weight:800;color:var(--navy);background:var(--canvas);border-radius:14px;padding:27px 17px;text-align:center;margin:16px 0 24px;}
+.step-point {font-size:21px;line-height:1.5;align-items:center;}
+.step-points {gap:22px;}
+.step-grid .ref-note {margin-top:auto!important;padding-top:20px;}
+/* Interactive: align score headers, bars, truth labels and outcomes. */
+.interactive-grid {grid-template-columns:1.12fr .88fr;}
+.threshold-input {height:30px;margin:0;cursor:pointer;}
+.score-heading,.score-row {display:grid;grid-template-columns:48px minmax(0,1fr) 96px 60px;gap:12px;align-items:center;}
+.score-heading {margin-top:25px;font-size:16px;color:var(--muted);}
+.score-list {gap:16px;margin-top:14px;}
+.score-row {font-size:18px;}
+.score-track {height:20px;}
+.score-track::after {height:28px;}
+.truth {font-size:17px;}
+.outcome {font-size:16px;padding:5px;}
+.cm-grid {grid-template-columns:92px repeat(2,130px);grid-template-rows:32px repeat(2,88px);gap:9px;margin-top:18px;}
+.cm-grid .cm-caption {font-size:18px;}
+.cm-grid .cm-correct,.cm-grid .cm-error {font-size:32px;}
+.cm-legend {text-align:center;margin:14px 0 0;}
+.interactive-slide .ref-pair {margin-top:16px!important;}
+.ref-metric b {font-size:31px;}
+.ref-metric span {font-size:18px;}
+/* Architecture: retain the layer flow, with explicit intermediate shape. */
+.arch-flow {grid-template-columns:1fr 32px 1.05fr 32px 1fr 32px 1.25fr 32px .85fr;margin:27px 0 25px;}
+.arch-node {min-height:248px;padding:16px 10px;}
+.arch-node .name {font-size:23px;}
+.arch-node .shape {font-size:21px;white-space:nowrap;}
+.arch-node .desc {font-size:17px;line-height:1.35;}
+.arch-detail strong {font-size:21px;margin-bottom:8px;}
+.arch-detail span {font-size:18px;line-height:1.5;}
+.arch-details .arch-detail {min-height:115px;}
+/* Experiment: visible TN/FP/FN/TP mapping, same values and formulas. */
+.exp-matrix {grid-template-columns:96px repeat(2,150px);grid-template-rows:32px repeat(2,132px);gap:10px;margin:20px 0;}
+.exp-matrix .hdr {font-size:19px;}
+.exp-matrix .good,.exp-matrix .bad {display:flex;flex-direction:column;justify-content:center;gap:3px;font-size:40px;}
+.exp-matrix small {font-size:18px;}
+.exp-metric {padding:16px 18px;}
+.exp-metric small {font-size:18px;}
+.exp-metric b {font-size:34px;}
+.exp-facts {font-size:19px;gap:10px;margin-top:16px;padding-top:16px;}
+/* Executive: compact KPI band, all three comparisons, a separate action panel. */
+.executive-kpis {margin-bottom:18px;}
+.executive-kpi {padding:15px 20px;}
+.executive-kpi b {font-size:36px;}
+.executive-grid {height:auto;min-height:0;grid-template-columns:1.04fr .96fr;}
+.executive-grid .ref-card {padding:22px 24px;}
+.exec-comparison {gap:21px;margin-top:20px;}
+.exec-bar {grid-template-columns:100px 1fr 72px;font-size:19px;}
+.exec-actions {gap:24px;margin-top:20px;}
+.exec-action {font-size:20px;line-height:1.5;}
+.executive-summary-slide .ref-note {margin-top:12px!important;}
+/* Reading mode on narrow screens; preserve arrows and the logical order. */
+@media(max-width:900px) {
+  .reference-deck {padding:16px;align-content:start;}
+  .reference-slide {zoom:1;width:100%;height:auto;min-height:0;aspect-ratio:auto;padding:30px 24px;overflow:visible;}
+  .reference-slide h1 {font-size:36px;line-height:1.2;}
+  .reference-slide .subtitle {font-size:19px;}
+  .reference-slide .kicker {font-size:15px;}
+  .reference-slide .ref-link {font-size:15px;}
+  .reference-slide .ref-card,.reference-slide .concept-panel {padding:22px;}
+  .reference-slide .ref-grid,.reference-slide .compare-grid,.reference-slide .concept-stage {grid-template-columns:1fr;height:auto;}
+  .reference-slide .concept-stage {gap:20px;}
+  .reference-slide .value-panel {gap:20px;}
+  .reference-slide .concept-panel {min-height:0;}
+  .reference-slide .image-figure {min-height:280px;}
+  .reference-slide .footer {gap:16px;font-size:14px;}
+  .reference-slide .footer span:last-child {white-space:nowrap;}
+  .reference-slide .content {display:block;}
+  .process-slide .flow,.arch-flow {display:grid;grid-template-columns:1fr;gap:12px;}
+  .process-slide .node {min-width:0;min-height:0;padding:22px;}
+  .process-slide .flow-arrow,.arch-arrow {display:grid;place-items:center;justify-self:center;width:48px;height:48px;transform:rotate(90deg);line-height:1;}
+  .arch-node {min-height:225px;}
+  .arch-details,.executive-kpis {grid-template-columns:1fr;}
+  .step-equation {flex:0 0 auto;min-height:220px;}
+  .step-grid .ref-note {margin-top:24px!important;}
+  .score-heading {margin-top:20px;}
+  .ref-overline {flex-wrap:wrap;}
+  .exp-matrix {grid-template-columns:80px repeat(2,minmax(0,1fr));}
+  .cm-grid {grid-template-columns:80px repeat(2,minmax(0,1fr));}
+}
+@media(max-width:520px) {
+  .reference-deck {padding:10px;}
+  .reference-slide {padding:26px 16px;}
+  .reference-slide h1 {font-size:32px;}
+  .reference-slide .ref-card,.reference-slide .concept-panel,.comparison-slide .compare-card {padding:18px;}
+  .reference-slide .ref-h,.reference-slide .panel-head h2 {font-size:23px;}
+  .reference-slide .concept-takeaway {display:block;line-height:1.5;}
+  .concept-takeaway strong {display:block;margin-bottom:5px;}
+  .reference-slide .tensor-shape {flex-wrap:wrap;}
+  .reference-slide .tensor-shape .label {text-align:left;}
+  .reference-slide .channel-value {padding:10px;}
+  .reference-slide .image-unit {width:44%;}
+  .reference-slide .image-frame,.reference-slide .pixel-frame {height:200px;}
+  .reference-slide .image-frame svg {height:190px;}
+  .reference-slide .pixel-block {grid-template-columns:repeat(4,27px);grid-template-rows:repeat(4,27px);}
+  .reference-slide .pixel-block span {width:27px;height:27px;}
+  .reference-slide .figure-label {font-size:15px;}
+  .compare-criteria > div {grid-template-columns:80px 1fr;gap:12px;font-size:19px;}
+  .comparison-slide .compare-card h2 {font-size:27px;}
+  .step-equation {gap:8px;min-height:170px;}
+  .step-matrix {grid-template-columns:repeat(2,34px);gap:3px;}
+  .step-matrix span {width:34px;height:40px;font-size:23px;border-radius:6px;}
+  .step-result {width:46px;height:83px;font-size:29px;}
+  .step-op {font-size:22px;padding-top:31px;}
+  .operand-label {font-size:16px;}
+  .step-operand {gap:8px;}
+  .step-point {font-size:19px;gap:10px;}
+  .sum-equation {font-size:29px;padding:22px 8px;}
+  .score-heading,.score-row {grid-template-columns:30px minmax(0,1fr) 83px 35px;gap:6px;}
+  .score-heading {font-size:14px;}
+  .score-row,.truth,.outcome {font-size:15px;}
+  .outcome {padding:5px 2px;}
+  .cm-grid,.exp-matrix {grid-template-columns:68px repeat(2,minmax(0,1fr));gap:6px;}
+  .cm-grid .cm-caption,.exp-matrix .hdr {font-size:16px;}
+  .exp-metric {padding:14px;}
+  .exp-facts {font-size:17px;}
+  .exec-bar {grid-template-columns:78px 1fr 56px;font-size:17px;gap:7px;}
+}
+@media print {
+  .reference-deck {padding:0;min-height:0;}
+  .reference-slide {zoom:1;width:1440px;height:810px;}
+}
+/* Keep content within the common body region, including the footer clearance. */
+.step-equation {margin:12px 0;}
+.step-val {padding:8px;line-height:1.2;}
+.step-val small {line-height:1.25;margin-bottom:4px;}
+.interactive-slide .ref-h {margin-bottom:12px;}
+.score-heading {margin-top:14px;}
+.score-list {gap:10px;margin-top:12px;}
+.outcome {padding:3px;line-height:1.3;}
+.score-row {line-height:1.4;}
+.cm-grid {grid-template-rows:28px repeat(2,72px);margin-top:6px;}
+.interactive-slide .cm-legend {font-size:16px;line-height:1.4;margin-top:8px;}
+.interactive-slide .ref-pair {margin-top:12px!important;}
+.ref-metric {padding:10px;}
+.ref-metric b {line-height:1.25;margin-top:5px;}
+.interactive-slide .ref-card > .ref-note:last-child {margin-bottom:0;}
+.exp-metric {padding:12px 18px;}
+.exp-metric b {display:block;line-height:1.2;margin-top:5px;}
+.exp-facts {line-height:1.4;font-size:18px;}
+.exp-grid .ref-note {margin-bottom:0;}
+.executive-kpi {padding:10px 20px;}
+.exec-comparison {gap:12px;}
+.exec-actions {gap:18px;}
+.executive-grid .ref-card {padding:20px 24px;}

@@ -87,14 +87,15 @@
       .figure-label{font-size:14px;}
     }
   </style>
+<link rel="stylesheet" href="reference-layout.css">
 </head>
 <body>
-<main class="deck">
-  <section class="slide concept-slide" aria-label="Concept 레퍼런스">
+<main class="deck reference-deck">
+  <section class="slide concept-slide reference-slide" aria-label="Concept 레퍼런스">
     <header>
-      <div class="kicker">CONCEPT / 01</div>
+      <div class="ref-overline"><div class="kicker">CONCEPT / 01</div><a class="ref-link" href="index.html">전체 레퍼런스 ↗</a></div>
       <h1>이미지의 숫자 구조</h1>
-      <p class="subtitle">픽셀 색상은 RGB 세 값으로, 이미지 전체는 높이 × 너비 × 채널로 표현</p>
+      <p class="subtitle">픽셀 색상은 8-bit RGB 세 값으로, 이미지 전체는 높이 × 너비 × 채널로 표현</p>
     </header>
     <div class="concept-stage">
       <article class="concept-panel visual-panel">
@@ -116,8 +117,25 @@
               <path d="M125 59 C119 41 126 29 138 18" stroke="#765441" stroke-width="7" fill="none" stroke-linecap="round"/>
               <path d="M132 43 Q166 7 193 37 Q166 64 132 43Z" fill="url(#leafFill)" stroke="#498e69" stroke-width="2"/>
               <path d="M77 89 Q60 133 80 166" stroke="#ffd5b7" stroke-width="19" stroke-linecap="round" opacity=".42" fill="none"/>
-              <rect x="144" y="104" width="46" height="46" rx="2" fill="none" stroke="#12233F" stroke-width="4"/>
-              <path d="M155 104V150 M166 104V150 M177 104V150 M144 115H190 M144 126H190 M144 137H190" stroke="#12233F" stroke-width=".9" opacity=".55"/>
+              <rect x="144.0" y="104.0" width="11.5" height="11.5" fill="#f57b61"/>
+<rect x="155.5" y="104.0" width="11.5" height="11.5" fill="#ec6c55"/>
+<rect x="167.0" y="104.0" width="11.5" height="11.5" fill="#e65a46"/>
+<rect x="178.5" y="104.0" width="11.5" height="11.5" fill="#d94f3f"/>
+<rect x="144.0" y="115.5" width="11.5" height="11.5" fill="#f18468"/>
+<rect x="155.5" y="115.5" width="11.5" height="11.5" fill="#e86750"/>
+<rect x="167.0" y="115.5" width="11.5" height="11.5" fill="#e65a46"/>
+<rect x="178.5" y="115.5" width="11.5" height="11.5" fill="#ce4438"/>
+<rect x="144.0" y="127.0" width="11.5" height="11.5" fill="#f18a70"/>
+<rect x="155.5" y="127.0" width="11.5" height="11.5" fill="#e76b53"/>
+<rect x="167.0" y="127.0" width="11.5" height="11.5" fill="#dc5845"/>
+<rect x="178.5" y="127.0" width="11.5" height="11.5" fill="#c64435"/>
+<rect x="144.0" y="138.5" width="11.5" height="11.5" fill="#ef9877"/>
+<rect x="155.5" y="138.5" width="11.5" height="11.5" fill="#e57a5f"/>
+<rect x="167.0" y="138.5" width="11.5" height="11.5" fill="#d85d4b"/>
+<rect x="178.5" y="138.5" width="11.5" height="11.5" fill="#c84c3d"/>
+<rect x="144" y="104" width="46" height="46" rx="2" fill="none" stroke="#12233F" stroke-width="4"/>
+              <rect x="167" y="115.5" width="11.5" height="11.5" fill="none" stroke="#12233F" stroke-width="1.5"/>
+              <path d="M155.5 104V150 M167 104V150 M178.5 104V150 M144 115.5H190 M144 127H190 M144 138.5H190" stroke="#12233F" stroke-width=".9" opacity=".55"/>
             </svg>
             </div>
             <span class="figure-label">입력 이미지</span>
@@ -138,7 +156,7 @@
       </article>
       <article class="concept-panel value-panel">
         <div class="panel-head"><h2>선택 픽셀의 RGB 값</h2></div>
-        <div class="selected-color"><span class="swatch"></span><div><strong>RGB (230, 90, 70)</strong><small>HEX &nbsp;#E65A46</small></div></div>
+        <div class="selected-color"><span class="swatch"></span><div><strong>RGB (230, 90, 70)</strong><small>HEX &nbsp;#E65A46 · 채널 범위 0–255</small></div></div>
         <div class="channel-values">
           <div class="channel-value"><div class="head">R <span class="dot" style="background:#e8695c"></span></div><div class="number">230</div><div class="track"><div class="bar" style="width:90.2%;background:#e8695c"></div></div></div>
           <div class="channel-value"><div class="head">G <span class="dot" style="background:#5db88b"></span></div><div class="number">90</div><div class="track"><div class="bar" style="width:35.3%;background:#5db88b"></div></div></div>

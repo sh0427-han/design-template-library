@@ -1,24 +1,26 @@
 <!doctype html>
     <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Interactive | Design Template Library</title>
-    <link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="reference-types.css"></head>
-    <body><main class="deck"><section class="slide ref-slide" aria-label="interactive 디자인 레퍼런스">
-    <header><div class="ref-overline"><div class="kicker">REFERENCE / 05</div><a class="ref-link" href="index.html">전체 레퍼런스 ↗</a></div>
-    <h1>임계값을 바꾸면 예측이 달라진다</h1><p class="subtitle">슬라이더로 판정 기준을 조절하며 Precision·Recall의 변화를 살펴봅니다.</p></header>
+    <link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="reference-types.css"><link rel="stylesheet" href="reference-layout.css">
+</head>
+    <body><main class="deck reference-deck"><section class="slide ref-slide reference-slide interactive-slide" aria-label="interactive 디자인 레퍼런스">
+    <header><div class="ref-overline"><div class="kicker">INTERACTIVE / 05</div><a class="ref-link" href="index.html">전체 레퍼런스 ↗</a></div>
+    <h1>임계값과 분류 결과</h1><p class="subtitle">판정 기준 조절에 따른 양성 예측·Precision·Recall의 변화</p></header>
     <div class="content"><div class="ref-grid interactive-grid">
-  <section class="ref-card"><div class="ref-overline"><div><div class="ref-k">LIVE CONTROL</div><h2 class="ref-h">판정 임계값 조절</h2></div><div class="ref-chip">6개 샘플</div></div>
+  <section class="ref-card"><div class="ref-overline"><div><div class="ref-k">LIVE CONTROL</div><h2 class="ref-h">판정 임계값 조절</h2></div><div class="ref-chip">가상 6개 샘플</div></div>
     <div class="threshold-meta"><label style="font-size:17px;font-weight:800;color:#12233F" for="threshold">Threshold</label><strong id="threshold-value" style="font-size:28px;color:#3168C8">0.60</strong></div>
     <input class="threshold-input" id="threshold" type="range" min="0" max="100" value="60" step="5" aria-label="임계값 변경">
-    <p class="ref-note">점수가 임계값 이상이면 양성으로 판정합니다. 주황색 점선은 현재 임계값입니다.</p>
-    <div id="score-list" class="score-list" aria-live="polite"></div>
+    <p class="ref-note">점수 ≥ 임계값: 이상(양성) · 주황 점선: 현재 임계값</p>
+    <div class="score-heading"><span>샘플</span><span>이상 점수</span><span>점수 / 실제</span><span>판정</span></div><div id="score-list" class="score-list"></div>
   </section>
-  <section class="ref-card"><div class="ref-k">CONFUSION MATRIX</div><h2 class="ref-h">임계값에 따라 달라지는 평가</h2>
+  <section class="ref-card" aria-live="polite" aria-atomic="true"><div class="ref-k">CONFUSION MATRIX</div><h2 class="ref-h">예측 결과와 평가</h2>
     <div class="cm-grid" id="cm-grid"><span></span><span class="cm-caption">예측 음성</span><span class="cm-caption">예측 양성</span>
       <span class="cm-caption">실제 음성</span><span class="cm-correct" id="cm-tn">2</span><span class="cm-error" id="cm-fp">1</span>
       <span class="cm-caption">실제 양성</span><span class="cm-error" id="cm-fn">1</span><span class="cm-correct" id="cm-tp">2</span></div>
-    <div class="ref-pair" style="margin-top:21px"><div class="ref-metric"><span>Precision</span><b id="precision">66.7%</b></div><div class="ref-metric"><span>Recall</span><b id="recall">66.7%</b></div></div>
-    <p class="ref-note" style="margin-top:16px">임계값을 올리면 양성 판정은 줄어들지만, Precision과 Recall이 항상 같은 방향으로 변하지는 않습니다.</p>
+    <p class="ref-note cm-legend">TN 정상 적중 · FP 오탐<br>FN 미탐 · TP 이상 적중</p><div class="ref-pair" style="margin-top:21px"><div class="ref-metric"><span>Precision</span><b id="precision">66.7%</b></div><div class="ref-metric"><span>Recall</span><b id="recall">66.7%</b></div></div>
+    <p class="ref-note" style="margin-top:16px">임계값 상승 → 양성 판정·Recall은 증가하지 않음. Precision은 샘플 구성에 따라 변동.</p>
   </section></div>
   <script src="interactive-reference.js" defer></script></div>
     <footer class="footer"><span>Design Template Library · Interactive</span><span>05 / 08</span></footer>
     </section></main></body></html>
+

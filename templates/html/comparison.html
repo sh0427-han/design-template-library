@@ -1,11 +1,13 @@
 <!doctype html>
 <html lang="ko">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Comparison | Design Template Library</title><link rel="stylesheet" href="styles.css"></head>
-<body><main class="deck"><section class="slide" aria-label="비교 설명">
-  <header><div class="kicker">COMPARISON / 03</div><h1>규칙 기반과 머신러닝의 차이</h1><p class="subtitle">판단 기준을 누가, 어떻게 만드는지가 핵심적인 차이다.</p></header>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Comparison | Design Template Library</title><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="reference-layout.css">
+</head>
+<body><main class="deck reference-deck"><section class="slide reference-slide comparison-slide" aria-label="비교 설명">
+  <header><div class="ref-overline"><div class="kicker">COMPARISON / 03</div><a class="ref-link" href="index.html">전체 레퍼런스 ↗</a></div><h1>규칙 기반과 머신러닝</h1><p class="subtitle">같은 사과 이미지 분류 과제에서 비교하는 판단 기준·변경 방식·적용 조건</p></header>
   <div class="content"><div class="compare-grid">
-    <article class="card compare-card"><div class="pill">RULE-BASED</div><h2>사람이 규칙을 정의</h2><p>판단에 필요한 규칙을 개발자가 직접 작성한다.</p><div class="example">예: 1 + 1 = 2</div><div class="compare-foot">단순하고 명확한 조건에는 구현과 검증이 쉬움</div></article>
-    <article class="card compare-card"><div class="pill ml">MACHINE LEARNING</div><h2>데이터에서 규칙을 학습</h2><p>학습 목표와 데이터로부터 모델 파라미터를 추정한다.</p><div class="example">예: 이미지 속 사과 분류</div><div class="compare-foot">복잡한 시각 패턴에서는 데이터 기반 학습이 유리할 수 있음</div></article>
+    <article class="card compare-card"><div class="pill">RULE-BASED</div><h2>사람이 규칙을 정의</h2><p>색상·윤곽 조건을 개발자가 직접 지정</p><dl class="compare-criteria"><div><dt>판단 기준</dt><dd>색상 비율 + 둥근 윤곽 조건</dd></div><div><dt>기준 변경</dt><dd>조건·임계값 직접 수정</dd></div><div><dt>적용 조건</dt><dd>조명·배경이 일정한 환경</dd></div></dl><div class="compare-foot">명확한 조건에서 구현·검증이 용이<br>색상·모양이 비슷한 대상의 구분에 한계</div></article>
+    <article class="card compare-card"><div class="pill ml">MACHINE LEARNING</div><h2>데이터에서 규칙을 학습</h2><p>라벨이 있는 이미지로 모델 파라미터 추정</p><dl class="compare-criteria"><div><dt>판단 기준</dt><dd>학습 데이터의 시각 패턴</dd></div><div><dt>기준 변경</dt><dd>데이터 보완 + 재학습</dd></div><div><dt>적용 조건</dt><dd>대표성 있는 학습·평가 데이터</dd></div></dl><div class="compare-foot">복잡한 시각 패턴의 구분에 활용<br>데이터 편향·환경 변화에 따른 성능 검증 필요</div></article>
   </div></div>
-  <footer class="footer"><span>Design Template Library · Comparison</span><span>03 / 03</span></footer>
+  <footer class="footer"><span>Design Template Library · Comparison</span><span>03 / 08</span></footer>
 </section></main></body></html>
+

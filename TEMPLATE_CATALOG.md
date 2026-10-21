@@ -1,5 +1,7 @@
 # Design Template Catalog · 8 Reference Types
 
+**2026-10-21 검토 상태:** 8종 HTML 브라우저 검증 완료 · 디자인 승인 대기. [유형별 결과](docs/REFERENCE_REVIEW_2026-10-21.md) · [Before / After](previews/review/README.md)
+
 공통 디자인 시스템은 `DESIGN_SYSTEM.md`에서 관리합니다. 각 유형은 **한 장으로도 의도를 확인할 수 있는 독립 디자인 레퍼런스**입니다. 5장 CNN 예제는 별도의 연속 강의 사례입니다.
 
 | ID | 자료 목적 | 레이아웃 패턴 | HTML · 실제 브라우저 이미지 | PPTX |
@@ -28,7 +30,7 @@
 
 - 네이비/블루/틸, Off-white/White 배경, 전체 글자 간격 `-1pt`.
 - 16:9 슬라이드, 간결한 제목, 의미 있는 도식, 과도한 메타 문구 금지.
-- HTML은 `templates/html/styles.css`를 공통 사용하고, 신규 유형의 차이는 `reference-types.css`에 작성합니다.
+- HTML은 `templates/html/styles.css`를 공통 사용합니다. 기본 유형 스타일은 `reference-types.css`, 8종 전용 공통 프레임·세부 조정은 `reference-layout.css`에 작성합니다. 재사용할 때 HTML이 참조하는 CSS 파일을 함께 복사합니다.
 - 모든 유형은 **수정 중인 레퍼런스 초안**이며, 기존 3종 PPTX 원본은 유지합니다.
 
 ## 연속 강의·웹 교과서
@@ -41,3 +43,4 @@
 | Slide | [CNN 발표 예제](templates/dual-mode-learning/slides.html) | 16:9 · 5장 · 키보드 전환 |
 
 디자인 초안의 평가 방법은 [REFERENCE_REVIEW_GUIDE.md](docs/REFERENCE_REVIEW_GUIDE.md)를 참고합니다.
+
