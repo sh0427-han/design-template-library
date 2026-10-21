@@ -8,7 +8,9 @@
 <link rel="stylesheet" href="reference-types.css">
 <link rel="stylesheet" href="reference-layout.css">
 <style>
-/* Architecture reference only: paper-style tensors, no decorative stage cards. */
+/* Architecture reference: docs/FIGURE_PRODUCTION_STANDARD.md describes
+   shape validation, genuine single-photo input, geometry-derived internal connectors,
+   palette semantics, and browser QA. Keep this SVG source editable. */
 .architecture-slide .content > .ref-card {
   display:flex; flex-direction:column; width:100%; height:100%; min-height:0;
   padding:20px 25px 22px; background:#fff; overflow:hidden;
@@ -142,11 +144,6 @@
       <article class="arch-stage" data-block="2" aria-label="Conv Block 2: Conv 3×3 stride 1 padding 1 32 channels, ReLU, MaxPool 2×2 stride 2. Conv output 32×32×32, Block output 16×16×32">
         <div class="arch-title">CONV BLOCK 2</div><div class="arch-graphic" data-art="block2"></div>
         <div class="arch-shape">16×16×32</div><div class="arch-operation">Conv → ReLU → MaxPool</div><div class="arch-explain">3×3 S1 P1 · Pool 2×2 S2</div>
-        <div class="arch-step-roles" aria-label="세 가지 연산의 역할">
-          <span><b>Conv</b>특징 조합 · 채널 증가</span>
-          <span><b>ReLU</b>음수→0 · 비선형성</span>
-          <span><b>MaxPool</b>최댓값 선택 · 공간 축소</span>
-        </div>
       </article>
       <article class="arch-stage" aria-label="Flatten 16×16×32 특징을 8192차원 벡터로 변환">
         <div class="arch-title" data-group="CLASSIFIER">FLATTEN</div><div class="arch-graphic" data-art="flatten"></div>
@@ -170,6 +167,7 @@
   'use strict';
   const ns = 'http://www.w3.org/2000/svg';
   const colors = {ink:'#12233F', blue:'#3168C8', teal:'#26A6A1'};
+  // Blue: connections between stages; teal: transformations inside a stage.
   function el(tag, attrs={}, parent) {
     const node=document.createElementNS(ns,tag);
     for(const [key,value] of Object.entries(attrs)) node.setAttribute(key,String(value));
@@ -243,6 +241,26 @@
     el('rect',{x:x-.6,y:y-.6,width:width+1.2,height:122.5,
       fill:'none',stroke:'#317d8d','stroke-width':.85},svg);
   }
+  function drawInternalArrow(svg,{fromX,toX,centerY}) {
+    // Position at the midpoint of the *visible* tensor/vector rectangles.
+    // Compute edges from actual drawing geometry rather than fixed x coordinates.
+    // A single stroke path joins arrow shaft and head without pixel gaps.
+    if (toX-fromX<11) throw new Error('Insufficient internal arrow clearance');
+    const tip=toX;
+    el('path',{
+      d:`M${fromX.toFixed(1)} ${centerY.toFixed(1)} H${tip.toFixed(1)} `+
+        `M${(tip-5).toFixed(1)} ${(centerY-3.8).toFixed(1)} `+
+        `L${tip.toFixed(1)} ${centerY.toFixed(1)} `+
+        `L${(tip-5).toFixed(1)} ${(centerY+3.8).toFixed(1)}`,
+      fill:'none',stroke:colors.teal,'stroke-width':2,
+      'stroke-linejoin':'round','stroke-linecap':'round',
+      'data-internal-arrow':''
+    },svg);
+  }
+  function stackBounds({x,y,size,n,dx,dy}) {
+    // z-stack is drawn toward upper-right: first/front face is at (x,y).
+    return {left:x,top:y-(n-1)*dy,right:x+size+(n-1)*dx,bottom:y+size};
+  }
   function drawBlock(svg,{convSize,poolSize,channels,convShape,poolShape,variant,data}) {
     // S1/P1 convolution preserves H,W; only max pooling halves H,W.
     // Close intra-block modules while reserving more separation between stages.
@@ -251,9 +269,12 @@
     const px=138,py=convSize>=60?67:73;
     drawStack(svg,{x:px,y:py,size:poolSize,n:7,dx:3,dy:3.2,
       data:variant==='low'?pooled:deep,variant});
-    // Same optical flow axis in both blocks, Flatten, and stage connectors.
-    el('path',{d:'M121 82.5 H135',fill:'none',stroke:colors.blue,'stroke-width':2},svg);
-    el('path',{d:'M130 78.5 L136 82.5 L130 86.5',fill:'none',stroke:colors.blue,'stroke-width':2},svg);
+    const convRect=stackBounds({x:sx,y:sy,size:convSize,n:7,dx:4,dy:3.8});
+    const poolRect=stackBounds({x:px,y:py,size:poolSize,n:7,dx:3,dy:3.2});
+    drawInternalArrow(svg,{
+      fromX:convRect.right+3.5,toX:poolRect.left-3.5,
+      centerY:((convRect.top+convRect.bottom)/2+(poolRect.top+poolRect.bottom)/2)/2
+    });
     // ReLU remains explicit in the stage's Conv → ReLU → MaxPool line below.
     // Avoid tiny and overlapping labels inside the compact feature-map diagram.
     [[72,'Conv'],[168,'MaxPool']].forEach(([x,label])=>{
@@ -267,19 +288,22 @@
   }
   const handlers={
     input(svg) {
-      el('rect',{x:31,y:31,width:108,height:108,rx:2.5,fill:'#f2f6fa',stroke:'#8fa6c3','stroke-width':1.7},svg);
-      el('image',{href:'assets/concept-apple-photo.jpg',x:32,y:32,width:106,height:106,
+      // Exactly one RGB photo; no duplicate frame, silhouettes or tinted overlays.
+      el('image',{href:'assets/concept-apple-photo.jpg',x:31,y:31,width:108,height:108,
         preserveAspectRatio:'xMidYMid slice'},svg);
-      el('path',{d:'M83 70 Q72 59 77 51 M80 53 Q97 40 110 54 Q94 62 80 53Z',fill:'#487752','fill-opacity':.4},svg);
-      el('circle',{cx:85,cy:93,r:27,fill:'#cc4d47','fill-opacity':.18},svg);
     },
     block1(svg) {drawBlock(svg,{convSize:68,poolSize:46,channels:16,convShape:'64×64×16',poolShape:'32×32×16',variant:'low',data:activations});},
     block2(svg) {drawBlock(svg,{convSize:49,poolSize:31,channels:32,convShape:'32×32×32',poolShape:'16×16×32',variant:'deep',data:deep});},
     flatten(svg) {
-      drawStack(svg,{x:31,y:68,size:48,n:6,dx:4,dy:3.8,data:deep,variant:'deep'});
-      el('path',{d:'M102 82.5 H119',stroke:colors.blue,'stroke-width':2,fill:'none'},svg);
-      el('path',{d:'M113 78.5 L120 82.5 L113 86.5',fill:'none',stroke:colors.blue,'stroke-width':2},svg);
+      const stack={x:31,y:68,size:48,n:6,dx:4,dy:3.8};
+      drawStack(svg,{...stack,data:deep,variant:'deep'});
       drawLongVector(svg,121,20,17);
+      const bounds=stackBounds(stack);
+      const vectorCenterY=20+122.5/2;
+      drawInternalArrow(svg,{
+        fromX:bounds.right+3.5,toX:121-3.5,
+        centerY:((bounds.top+bounds.bottom)/2+vectorCenterY)/2
+      });
     },
     fc(svg) {
       drawLongVector(svg,18,20,16);
