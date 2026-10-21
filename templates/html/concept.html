@@ -124,6 +124,16 @@
       .pixel-block span{height:40px;width:40px}
     }
     @media(max-width:520px){
+      /* Override later reference-layout.css's legacy 44%-width image rule. */
+      .reference-slide.concept-slide .image-unit{width:100%}
+      .reference-slide.concept-slide .image-frame,
+      .reference-slide.concept-slide .pixel-frame,
+      .reference-slide.concept-slide .zoom-arrow{height:172px}
+      .reference-slide.concept-slide .pixel-block{
+        grid-template-columns:repeat(4,26px);
+        grid-template-rows:repeat(4,26px);
+      }
+      .reference-slide.concept-slide .pixel-block span{height:26px;width:26px}
       .concept-stage{gap:15px}
       .image-figure{gap:0;grid-template-columns:minmax(0,1fr) 24px minmax(0,1fr);margin-top:7px}
       .image-frame,.pixel-frame,.zoom-arrow{height:172px}
