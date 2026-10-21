@@ -1,21 +1,110 @@
 <!doctype html>
-    <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Experiment | Design Template Library</title>
-    <link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="reference-types.css"><link rel="stylesheet" href="reference-layout.css">
+<html lang="ko">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>혼동행렬과 평가 지표 | Design Template Library</title>
+  <link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="reference-types.css"><link rel="stylesheet" href="reference-layout.css">
+  <style>
+    /* #7 only: keep shared styles and the other seven references unchanged. */
+    .experiment-slide h1 {line-height:1.25;}
+    .experiment-slide .experiment-grid {display:grid;grid-template-columns:.94fr 1.16fr;gap:20px;height:100%;}
+    .experiment-slide .experiment-card {display:flex;flex-direction:column;min-width:0;min-height:0;padding:24px;background:var(--white);border:1px solid var(--border);border-radius:17px;}
+    .experiment-slide .experiment-card h2 {font-size:25px;line-height:1.3;color:var(--navy);margin:6px 0 8px;}
+    .experiment-slide .experiment-context {font-size:18px;color:var(--muted);line-height:1.5;margin:0;}
+    .experiment-slide .confusion-table {table-layout:fixed;width:100%;border-collapse:separate;border-spacing:8px 6px;margin:8px 0 4px;color:var(--deep);}
+    .experiment-slide .confusion-table col.axis-col {width:45px;}
+    .experiment-slide .confusion-table col.row-col {width:88px;}
+    .experiment-slide .confusion-table th {font-size:19px;font-weight:650;text-align:center;vertical-align:middle;padding:0;line-height:1.4;}
+    .experiment-slide .confusion-table .axis-title {color:var(--blue);font-weight:800;}
+    .experiment-slide .confusion-table .gt-axis {padding-bottom:4px;font-size:21px;}
+    .experiment-slide .confusion-table .pred-axis {font-size:18px;}
+    .experiment-slide .confusion-table .column-label {padding-bottom:3px;}
+    .experiment-slide .confusion-table td {padding:10px 0;height:100px;border-radius:12px;text-align:center;vertical-align:middle;}
+    .experiment-slide .confusion-table .correct {background:var(--pale-teal);color:#126b65;}
+    .experiment-slide .confusion-table .error {background:#fff0e0;color:#945616;}
+    .experiment-slide .cm-code {display:block;font-size:19px;font-weight:800;line-height:1.3;}
+    .experiment-slide .cm-count {display:block;font-size:44px;font-weight:800;line-height:1.2;margin-top:3px;}
+    .experiment-slide .error-explanations {border-top:1px solid var(--border);padding-top:10px;margin-top:auto;display:grid;gap:6px;}
+    .experiment-slide .error-explanations p {font-size:18px;line-height:1.4;margin:0;color:var(--deep);}
+    .experiment-slide .error-explanations b {color:#945616;}
+    .experiment-slide .metric-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:minmax(0,1fr) minmax(0,1.17fr);gap:12px;flex:1;margin-top:12px;min-height:0;}
+    .experiment-slide .metric {display:flex;flex-direction:column;min-width:0;min-height:0;border:1px solid var(--border);border-radius:12px;padding:12px 14px;background:var(--white);}
+    .experiment-slide .metric header {display:flex;align-items:baseline;justify-content:space-between;gap:8px;}
+    .experiment-slide .metric h3 {font-size:19px;color:var(--deep);margin:0;font-weight:750;}
+    .experiment-slide .metric-value {font-size:32px;font-weight:800;line-height:1.2;color:var(--navy);white-space:nowrap;}
+    .experiment-slide .metric-equation {font-size:18px;line-height:1.4;color:var(--deep);margin:10px 0 5px;text-align:center;}
+    .experiment-slide .fraction {display:inline-grid;grid-template-rows:auto auto;text-align:center;vertical-align:middle;}
+    .experiment-slide .fraction > span {display:block;padding:2px 4px;}
+    .experiment-slide .fraction > span:first-child {border-bottom:1px solid var(--muted);}
+    .experiment-slide .metric-calculation {font-size:21px;font-weight:750;line-height:1.4;color:var(--blue);text-align:center;margin:auto 0 0;padding-top:7px;}
+    .experiment-slide .metric-alternate {font-size:16px;line-height:1.25;color:var(--muted);margin:1px 0 4px;text-align:center;}
+    .experiment-slide .sr-only {position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);}
+    @media(max-width:900px) {
+      .experiment-slide .experiment-grid {grid-template-columns:1fr;height:auto;}
+      .experiment-slide .experiment-card {padding:22px;}
+      .experiment-slide .confusion-table {max-width:550px;align-self:center;}
+      .experiment-slide .error-explanations {margin-top:12px;}
+      .experiment-slide .metric {min-height:195px;}
+    }
+    @media(max-width:520px) {
+      .experiment-slide.reference-slide {padding:28px 20px;}
+      .experiment-slide .experiment-card {padding:17px;}
+      .experiment-slide .confusion-table {border-spacing:4px 7px;}
+      .experiment-slide .confusion-table col.axis-col {width:34px;}
+      .experiment-slide .confusion-table col.row-col {width:63px;}
+      .experiment-slide .confusion-table th {font-size:17px;}
+      .experiment-slide .confusion-table .pred-axis {font-size:16px;}
+      .experiment-slide .confusion-table .gt-axis {font-size:20px;}
+      .experiment-slide .confusion-table td {height:100px;}
+      .experiment-slide .cm-count {font-size:38px;}
+      .experiment-slide .experiment-context,.experiment-slide .error-explanations p {font-size:17px;}
+      .experiment-slide .metric-grid {grid-template-columns:1fr;grid-template-rows:none;}
+      .experiment-slide .metric {min-height:0;padding:16px;}
+      .experiment-slide .metric-equation {margin-top:14px;font-size:20px;}
+      .experiment-slide .metric-alternate {font-size:17px;}
+    }
+  </style>
 </head>
-    <body><main class="deck reference-deck"><section class="slide ref-slide reference-slide experiment-slide" aria-label="experiment 디자인 레퍼런스">
-    <header><div class="ref-overline"><div class="kicker">EXPERIMENT / 07</div></div>
-    <h1>혼동행렬과 평가 지표</h1><p class="subtitle">동일한 예측 결과의 네 가지 해석 · 이상을 양성으로 정의</p></header>
-    <div class="content"><div class="ref-grid exp-grid"><section class="ref-card"><div class="ref-k">TEST SET · 12건</div><h2 class="ref-h">혼동행렬</h2>
-<div class="exp-matrix"><span></span><span class="hdr">예측 정상</span><span class="hdr">예측 이상</span>
-<span class="hdr">실제 정상</span><span class="good"><small>TN</small>5</span><span class="bad"><small>FP</small>1</span>
-<span class="hdr">실제 이상</span><span class="bad"><small>FN</small>2</span><span class="good"><small>TP</small>4</span></div>
-<div class="ref-note" style="text-align:center">실제 정상 6건 · 실제 이상 6건</div>
-</section><section class="ref-card"><div class="ref-k">METRICS</div><h2 class="ref-h">동일 데이터에서 지표 비교</h2>
-<div class="exp-metrics"><div class="exp-metric"><small>Accuracy</small><b>75.0%</b></div><div class="exp-metric"><small>Precision</small><b>80.0%</b></div><div class="exp-metric"><small>Recall</small><b>66.7%</b></div><div class="exp-metric"><small>F1-score</small><b>72.7%</b></div></div>
-<div class="exp-facts"><div><b>정확도</b> = (TP + TN) / 전체 = 9 / 12</div><div><b>Precision</b> = TP / (TP + FP) = 4 / 5</div><div><b>Recall</b> = TP / (TP + FN) = 4 / 6</div><div><b>F1</b> = 2TP / (2TP + FP + FN) = 8 / 11</div></div>
-
-</section></div></div>
-    <footer class="footer"><span>Design Template Library · Experiment</span><span>07 / 08</span></footer>
-    </section></main></body></html>
-
+<body><main class="deck reference-deck"><section class="slide ref-slide reference-slide experiment-slide" aria-label="Experiment 디자인 레퍼런스">
+  <header><div class="kicker">EXPERIMENT / 07</div><h1>혼동행렬과 평가 지표</h1><p class="subtitle">12개 샘플로 보는 혼동행렬과 분류 성능</p></header>
+  <div class="content"><div class="experiment-grid">
+    <section class="experiment-card" aria-labelledby="confusion-heading">
+      <div class="ref-k">EXAMPLE · 12개 샘플</div><h2 id="confusion-heading">혼동행렬</h2>
+      <p class="experiment-context">양성: 이상 · 실제 정상 6개 / 실제 이상 6개</p>
+      <table class="confusion-table">
+        <caption class="sr-only">모델 예측을 행으로, GT 실제값을 열로 표시한 12개 예시 샘플의 혼동행렬</caption>
+        <colgroup><col class="axis-col"><col class="row-col"><col><col></colgroup>
+        <thead><tr><th colspan="2" aria-hidden="true"></th><th colspan="2" scope="colgroup" class="axis-title gt-axis">GT (실제값)</th></tr>
+          <tr><th colspan="2" aria-hidden="true"></th><th scope="col" class="column-label" id="gt-normal">실제 정상</th><th scope="col" class="column-label" id="gt-anomaly">실제 이상</th></tr></thead>
+        <tbody>
+          <tr><th rowspan="2" scope="rowgroup" class="axis-title pred-axis">모델<br>예측</th><th scope="row" id="pred-anomaly">예측 이상</th>
+            <td class="error" data-code="FP" headers="pred-anomaly gt-normal"><span class="cm-code">FP</span><strong class="cm-count">1</strong></td>
+            <td class="correct" data-code="TP" headers="pred-anomaly gt-anomaly"><span class="cm-code">TP</span><strong class="cm-count">4</strong></td></tr>
+          <tr><th scope="row" id="pred-normal">예측 정상</th>
+            <td class="correct" data-code="TN" headers="pred-normal gt-normal"><span class="cm-code">TN</span><strong class="cm-count">5</strong></td>
+            <td class="error" data-code="FN" headers="pred-normal gt-anomaly"><span class="cm-code">FN</span><strong class="cm-count">2</strong></td></tr>
+        </tbody>
+      </table>
+      <div class="error-explanations"><p><b>FP:</b> 정상인데 이상으로 예측</p><p><b>FN:</b> 이상인데 정상으로 예측</p></div>
+    </section>
+    <section class="experiment-card" aria-labelledby="metrics-heading">
+      <div class="ref-k">METRICS</div><h2 id="metrics-heading">같은 데이터의 네 가지 평가 지표</h2>
+      <div class="metric-grid">
+        <article class="metric" data-metric="accuracy"><header><h3>Accuracy</h3><span class="metric-value">75.0%</span></header>
+          <div class="metric-equation" aria-label="(TP + TN) / (TP + TN + FP + FN)"><span class="fraction"><span>TP + TN</span><span>TP + TN + FP + FN</span></span></div>
+          <p class="metric-calculation">= 9/12 = 75.0%</p></article>
+        <article class="metric" data-metric="precision"><header><h3>Precision</h3><span class="metric-value">80.0%</span></header>
+          <div class="metric-equation" aria-label="TP / (TP + FP)"><span class="fraction"><span>TP</span><span>TP + FP</span></span></div>
+          <p class="metric-calculation">= 4/5 = 80.0%</p></article>
+        <article class="metric" data-metric="recall"><header><h3>Recall</h3><span class="metric-value">66.7%</span></header>
+          <div class="metric-equation" aria-label="TP / (TP + FN)"><span class="fraction"><span>TP</span><span>TP + FN</span></span></div>
+          <p class="metric-calculation">= 4/6 = 66.7%</p></article>
+        <article class="metric" data-metric="f1"><header><h3>F1-score</h3><span class="metric-value">72.7%</span></header>
+          <div class="metric-equation" aria-label="2TP / (2TP + FP + FN)"><span class="fraction"><span>2TP</span><span>2TP + FP + FN</span></span></div>
+          <p class="metric-alternate">= 2 × Precision × Recall<br>/ (Precision + Recall)</p>
+          <p class="metric-calculation">= 8/11 = 72.7%</p></article>
+      </div>
+    </section>
+  </div></div>
+  <footer class="footer"><span>Design Template Library · Experiment</span><span>07 / 08</span></footer>
+</section></main></body></html>

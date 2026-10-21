@@ -14,7 +14,7 @@
 | `step-by-step` | 수식·연산 강의 | 배열 × 커널 → 합계 | [원본](templates/html/step-by-step.html) · ![Step-by-step](previews/html-step-by-step.jpg) |
 | `interactive` | 웹 실습·임계값 검증 | 슬라이더 + 계산 + 혼동행렬 | [원본](templates/html/interactive.html) · ![Interactive](previews/html-interactive.jpg) |
 | `architecture` | 모델·시스템 구조 | 논문형 Feature Map Stack·Tensor Shape | [원본](templates/html/architecture.html) · ![Architecture](previews/html-architecture.jpg) |
-| `experiment` | 연구 결과·지표 비교 | Confusion Matrix + Metrics | [원본](templates/html/experiment.html) · ![Experiment](previews/html-experiment.jpg) |
+| `experiment` | 연구 결과·지표 비교 | GT 열 × 모델 예측 행 · 지표별 공식·계산 | [원본](templates/html/experiment.html) · ![Experiment](previews/html-experiment.jpg) |
 | `executive-summary` | 경영·기술 보고 | 지표별 그룹형 세로 막대 + 감소율 + Action | [원본](templates/html/executive-summary.html) · ![Executive Summary](previews/html-executive-summary.jpg) |
 
 ## 유형별 적용 기준
@@ -25,7 +25,9 @@
 - **Step-by-step**: 계산식과 입력값, 결과가 실제로 일치해야 합니다.
 - **Interactive**: 조작할 수 있는 변수와 화면에 표시하는 계산이 일치해야 합니다. 계산 예시는 정적 이미지로 대체하지 않습니다.
 - **Architecture**: 각 텐서의 H/W/C와 stride·padding 관계를 확인합니다.
-- **Experiment**: 12건의 혼동행렬(TN=5, FP=1, FN=2, TP=4)과 파생 지표의 수치가 일치해야 합니다.
+- **Experiment**: [혼동행렬 원본](templates/html/experiment.html)과 [실제 프리뷰](previews/html-experiment.jpg)는 왼쪽 혼동행렬 + 오른쪽 4개 지표 구성을 유지합니다. 가로축은 **GT(실제값)**로 정상→이상, 세로축은 **모델 예측**으로 이상→정상 순서입니다. 따라서 상단 행은 **FP=1 / TP=4**, 하단 행은 **TN=5 / FN=2**입니다. TN/TP는 Teal, FP/FN은 Amber이며 축·라벨·셀을 중앙 정렬합니다. 12개 예시 샘플(실제 정상 6, 실제 이상 6), 양성=이상 기준을 유지하고 FP/FN의 의미를 행렬 아래에 설명합니다. 각 지표 옆에 공식과 대입 결과를 함께 표시합니다: Accuracy 9/12=75.0%, Precision 4/5=80.0%, Recall 4/6=66.7%, F1 8/11=72.7%. F1은 `2PR/(P+R)`의 전체 Precision/Recall 표기와 동치식 `2TP/(2TP+FP+FN)`을 모두 제공합니다. 제목·본문은 공통 Pretendard와 -1pt를 상속하며, #7 전용 스타일은 해당 HTML에 한정했습니다.
+
+  **검증:** [scripts/check_experiment.py](scripts/check_experiment.py)로 1600×950 / 1440×810 / 1366×768 / 1280×720 / 900×900 / 390×844의 6개 Chromium 렌더링을 재현합니다. 축 방향·셀 위치·중심 좌표, 독립 분수 계산, 수식·카드 잘림, 푸터 겹침, 모바일 가로 넘침, 자간·폰트 일관성을 확인했습니다([검증 JSON](previews/review/experiment-validation.json)). 실제 Pretendard 로딩은 TLS 검증을 거쳐 가져온 원본 CDN 글꼴을 임시 캐시에서 제공해 검증하며 브라우저 신뢰 설정은 변경하지 않습니다. 재사용 시에도 축 순서와 수식의 분모를 새 데이터에 맞게 함께 검산합니다.
 - **Executive Summary**: 숫자보다 의사결정 메시지를 우선합니다. 세 지표를 **하나의 그룹형 세로 막대그래프의 x축**에 나란히 놓고, 각 지표에 기존/개선 막대 2개와 감소율을 표시합니다(월간 점검 120→80건 −33.3%, 평균 처리 시간 45→30분/건 −33.3%, 월말 미처리 20→8건 −60.0%). 막대 위에 실제 값과 단위를 표시하며, 공통 비율축(0·50·100%)은 각 지표의 기존 값을 100%로 정규화합니다. 단위가 다른 원래 수치를 하나의 절대값 축에서 비교하지 않습니다. 기존 카드 내부의 과도한 좌우 여백을 줄이고 비교 그래프 영역을 넓혔으며, 모바일에서도 세 지표의 가로 그룹을 유지합니다. 상단 KPI 요약과 가로 그래프의 중복 표시는 제거했습니다. 1500×950 / 1366×768 / 1280×720 / 900×900 / 390×844 Chromium 검증 완료 ([검증 JSON](previews/review/executive-summary-validation.json)).
 
 ## 색상 및 카드 적용 기준
