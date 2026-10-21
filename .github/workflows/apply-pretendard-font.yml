@@ -13,6 +13,11 @@ on:
       - .github/workflows/apply-pretendard-font.yml
   workflow_dispatch:
 
+# Serialize preview writers for the same branch to prevent non-fast-forward races.
+concurrency:
+  group: html-preview-${{ github.ref }}
+  cancel-in-progress: false
+
 permissions:
   contents: write
 
@@ -41,7 +46,14 @@ jobs:
           git add previews/html-*.png previews/html-*.jpg previews/dual-mode-*.jpg
           if ! git diff --cached --quiet; then
             git commit -m "chore: refresh HTML previews with default Pretendard"
-            git fetch origin "${{ github.ref_name }}"
-            git rebase "origin/${{ github.ref_name }}"
-            git push origin HEAD:${{ github.ref_name }}
+            for attempt in 1 2 3; do
+              git fetch origin "${{ github.ref_name }}"
+              git rebase "origin/${{ github.ref_name }}"
+              if git push origin HEAD:${{ github.ref_name }}; then
+                exit 0
+              fi
+              sleep 2
+            done
+            echo "Unable to push previews after 3 attempts" >&2
+            exit 1
           fi
