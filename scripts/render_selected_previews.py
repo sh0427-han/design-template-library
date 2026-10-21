@@ -30,8 +30,9 @@ CHECK = """() => {
   };
   const sr = rect(slide);
   const footer = rect(slide.querySelector('.footer'));
-  const boxes = [...slide.querySelectorAll('.concept-stage,.value-panel,.visual-panel,.image-frame,.pixel-frame,.paper-pipeline,.paper-stage,.architecture-notes,.architecture-notes > div,.concept-panel,.ref-card')];
-  const overflow = boxes.filter(e => e.scrollWidth > e.clientWidth + 2 ||
+  const boxes = [...slide.querySelectorAll('.concept-stage,.value-panel,.visual-panel,.image-frame,.pixel-frame,.paper-pipeline,.architecture-notes,.architecture-notes > div,.concept-panel,.ref-card')];
+  const textBoxes=[...slide.querySelectorAll('.paper-stage-head,.paper-shape,.paper-op,.paper-desc')];
+  const overflow = [...boxes,...textBoxes].filter(e => e.scrollWidth > e.clientWidth + 2 ||
     e.scrollHeight > e.clientHeight + 2).map(e => e.className);
   const bodyChildren = [...slide.children].filter(e => e !== slide.querySelector('.footer'));
   const overlap = bodyChildren.filter(e => rect(e).bottom > footer.y + 1)
