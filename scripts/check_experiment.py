@@ -92,9 +92,9 @@ def main():
                 page.locator('.slide').screenshot(path=str(output/f'experiment-{width}x{height}.png'),animations='disabled')
                 assert page.locator('h1').inner_text()=='혼동행렬과 평가 지표'
                 assert page.locator('.subtitle').inner_text()=='12개 샘플로 보는 혼동행렬과 분류 성능'
-                assert r['labels']=={'columns':['실제 정상','실제 이상'],'rows':['예측 이상','예측 정상']}
-                assert [(c['code'],c['count']) for c in r['counts']]==[('FP',1),('TP',4),('TN',5),('FN',2)]
-                assert [c['headers'] for c in r['counts']]==['pred-anomaly gt-normal','pred-anomaly gt-anomaly','pred-normal gt-normal','pred-normal gt-anomaly']
+                assert r['labels']=={'columns':['실제 이상','실제 정상'],'rows':['예측 이상','예측 정상']}
+                assert [(c['code'],c['count']) for c in r['counts']]==[('TP',4),('FP',1),('FN',2),('TN',5)]
+                assert [c['headers'] for c in r['counts']]==['pred-anomaly gt-anomaly','pred-anomaly gt-normal','pred-normal gt-anomaly','pred-normal gt-normal']
                 counts={c['code']:c['count'] for c in r['counts']};tp,tn,fp,fn=(counts[k] for k in ['TP','TN','FP','FN'])
                 assert tp+tn+fp+fn==12 and tn+fp==6 and tp+fn==6
                 precision=Fraction(tp,tp+fp);recall=Fraction(tp,tp+fn)

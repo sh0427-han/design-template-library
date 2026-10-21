@@ -59,8 +59,8 @@
       },
       "labels": {
         "columns": [
-          "실제 정상",
-          "실제 이상"
+          "실제 이상",
+          "실제 정상"
         ],
         "rows": [
           "예측 이상",
@@ -88,9 +88,9 @@
           ],
           "yError": 0,
           "box": {
-            "x": 328,
+            "x": 512.765625,
             "y": 484.703125,
-            "right": 504.765625,
+            "right": 689.53125,
             "bottom": 585.1875,
             "width": 176.765625,
             "height": 100.484375
@@ -104,9 +104,9 @@
           ],
           "yError": 0,
           "box": {
-            "x": 512.765625,
+            "x": 328,
             "y": 484.703125,
-            "right": 689.53125,
+            "right": 504.765625,
             "bottom": 585.1875,
             "width": 176.765625,
             "height": 100.484375
@@ -120,9 +120,9 @@
           ],
           "yError": 0,
           "box": {
-            "x": 328,
+            "x": 512.765625,
             "y": 591.1875,
-            "right": 504.765625,
+            "right": 689.53125,
             "bottom": 691.671875,
             "width": 176.765625,
             "height": 100.484375
@@ -136,9 +136,9 @@
           ],
           "yError": 0,
           "box": {
-            "x": 512.765625,
+            "x": 328,
             "y": 591.1875,
-            "right": 689.53125,
+            "right": 504.765625,
             "bottom": 691.671875,
             "width": 176.765625,
             "height": 100.484375
@@ -224,28 +224,28 @@
       "pageWidth": 1600,
       "counts": [
         {
-          "code": "FP",
-          "count": 1,
-          "headers": "pred-anomaly gt-normal",
-          "background": "rgb(255, 240, 224)"
-        },
-        {
           "code": "TP",
           "count": 4,
           "headers": "pred-anomaly gt-anomaly",
           "background": "rgb(227, 246, 243)"
         },
         {
-          "code": "TN",
-          "count": 5,
-          "headers": "pred-normal gt-normal",
-          "background": "rgb(227, 246, 243)"
+          "code": "FP",
+          "count": 1,
+          "headers": "pred-anomaly gt-normal",
+          "background": "rgb(255, 240, 224)"
         },
         {
           "code": "FN",
           "count": 2,
           "headers": "pred-normal gt-anomaly",
           "background": "rgb(255, 240, 224)"
+        },
+        {
+          "code": "TN",
+          "count": 5,
+          "headers": "pred-normal gt-normal",
+          "background": "rgb(227, 246, 243)"
         }
       ],
       "fontsLoaded": 9
@@ -307,8 +307,8 @@
       },
       "labels": {
         "columns": [
-          "실제 정상",
-          "실제 이상"
+          "실제 이상",
+          "실제 정상"
         ],
         "rows": [
           "예측 이상",
@@ -336,9 +336,9 @@
           ],
           "yError": 0,
           "box": {
-            "x": 269.515625,
+            "x": 446.03125,
             "y": 411.3125,
-            "right": 439.03125,
+            "right": 615.546875,
             "bottom": 506.8125,
             "width": 169.515625,
             "height": 95.5
@@ -352,9 +352,9 @@
           ],
           "yError": 0,
           "box": {
-            "x": 446.03125,
+            "x": 269.515625,
             "y": 411.3125,
-            "right": 615.546875,
+            "right": 439.03125,
             "bottom": 506.8125,
             "width": 169.515625,
             "height": 95.5
@@ -368,9 +368,9 @@
           ],
           "yError": 0,
           "box": {
-            "x": 269.515625,
+            "x": 446.03125,
             "y": 511.8125,
-            "right": 439.03125,
+            "right": 615.546875,
             "bottom": 607.3125,
             "width": 169.515625,
             "height": 95.5
@@ -384,9 +384,9 @@
           ],
           "yError": 0,
           "box": {
-            "x": 446.03125,
+            "x": 269.515625,
             "y": 511.8125,
-            "right": 615.546875,
+            "right": 439.03125,
             "bottom": 607.3125,
             "width": 169.515625,
             "height": 95.5
@@ -472,28 +472,28 @@
       "pageWidth": 1440,
       "counts": [
         {
-          "code": "FP",
-          "count": 1,
-          "headers": "pred-anomaly gt-normal",
-          "background": "rgb(255, 240, 224)"
-        },
-        {
           "code": "TP",
           "count": 4,
           "headers": "pred-anomaly gt-anomaly",
           "background": "rgb(227, 246, 243)"
         },
         {
-          "code": "TN",
-          "count": 5,
-          "headers": "pred-normal gt-normal",
-          "background": "rgb(227, 246, 243)"
+          "code": "FP",
+          "count": 1,
+          "headers": "pred-anomaly gt-normal",
+          "background": "rgb(255, 240, 224)"
         },
         {
           "code": "FN",
           "count": 2,
           "headers": "pred-normal gt-anomaly",
           "background": "rgb(255, 240, 224)"
+        },
+        {
+          "code": "TN",
+          "count": 5,
+          "headers": "pred-normal gt-normal",
+          "background": "rgb(227, 246, 243)"
         }
       ],
       "fontsLoaded": 9
@@ -555,8 +555,8 @@
       },
       "labels": {
         "columns": [
-          "실제 정상",
-          "실제 이상"
+          "실제 이상",
+          "실제 정상"
         ],
         "rows": [
           "예측 이상",
@@ -584,9 +584,9 @@
           ],
           "yError": 0,
           "box": {
-            "x": 258.28125,
+            "x": 424.546875,
             "y": 392.15625,
-            "right": 417.546875,
+            "right": 583.8125,
             "bottom": 482.453125,
             "width": 159.265625,
             "height": 90.296875
@@ -600,9 +600,9 @@
           ],
           "yError": 0,
           "box": {
-            "x": 424.546875,
+            "x": 258.28125,
             "y": 392.15625,
-            "right": 583.8125,
+            "right": 417.546875,
             "bottom": 482.453125,
             "width": 159.265625,
             "height": 90.296875
@@ -616,9 +616,9 @@
           ],
           "yError": 0,
           "box": {
-            "x": 258.28125,
+            "x": 424.546875,
             "y": 487.453125,
-            "right": 417.546875,
+            "right": 583.8125,
             "bottom": 577.75,
             "width": 159.265625,
             "height": 90.296875
@@ -632,9 +632,9 @@
           ],
           "yError": 0,
           "box": {
-            "x": 424.546875,
+            "x": 258.28125,
             "y": 487.453125,
-            "right": 583.8125,
+            "right": 417.546875,
             "bottom": 577.75,
             "width": 159.265625,
             "height": 90.296875
@@ -720,28 +720,28 @@
       "pageWidth": 1366,
       "counts": [
         {
-          "code": "FP",
-          "count": 1,
-          "headers": "pred-anomaly gt-normal",
-          "background": "rgb(255, 240, 224)"
-        },
-        {
           "code": "TP",
           "count": 4,
           "headers": "pred-anomaly gt-anomaly",
           "background": "rgb(227, 246, 243)"
         },
         {
-          "code": "TN",
-          "count": 5,
-          "headers": "pred-normal gt-normal",
-          "background": "rgb(227, 246, 243)"
+          "code": "FP",
+          "count": 1,
+          "headers": "pred-anomaly gt-normal",
+          "background": "rgb(255, 240, 224)"
         },
         {
           "code": "FN",
           "count": 2,
           "headers": "pred-normal gt-anomaly",
           "background": "rgb(255, 240, 224)"
+        },
+        {
+          "code": "TN",
+          "count": 5,
+          "headers": "pred-normal gt-normal",
+          "background": "rgb(227, 246, 243)"
         }
       ],
       "fontsLoaded": 9
@@ -803,8 +803,8 @@
       },
       "labels": {
         "columns": [
-          "실제 정상",
-          "실제 이상"
+          "실제 이상",
+          "실제 정상"
         ],
         "rows": [
           "예측 이상",
@@ -827,24 +827,8 @@
         {
           "code": "FP",
           "xErrors": [
-            0.0078125,
-            0.0078125
-          ],
-          "yError": 0,
-          "box": {
-            "x": 241.75,
-            "y": 368.3125,
-            "right": 391.78125,
-            "bottom": 452.65625,
-            "width": 150.03125,
-            "height": 84.34375
-          }
-        },
-        {
-          "code": "TP",
-          "xErrors": [
-            0.0078125,
-            0.0078125
+            0,
+            0
           ],
           "yError": 0,
           "box": {
@@ -857,23 +841,23 @@
           }
         },
         {
-          "code": "TN",
+          "code": "TP",
           "xErrors": [
             0,
-            0.0078125
+            0
           ],
           "yError": 0,
           "box": {
             "x": 241.75,
-            "y": 457.65625,
+            "y": 368.3125,
             "right": 391.78125,
-            "bottom": 542,
+            "bottom": 452.65625,
             "width": 150.03125,
             "height": 84.34375
           }
         },
         {
-          "code": "FN",
+          "code": "TN",
           "xErrors": [
             0.0078125,
             0
@@ -885,6 +869,22 @@
             "right": 547.828125,
             "bottom": 542,
             "width": 150.046875,
+            "height": 84.34375
+          }
+        },
+        {
+          "code": "FN",
+          "xErrors": [
+            0,
+            0.0078125
+          ],
+          "yError": 0,
+          "box": {
+            "x": 241.75,
+            "y": 457.65625,
+            "right": 391.78125,
+            "bottom": 542,
+            "width": 150.03125,
             "height": 84.34375
           }
         }
@@ -968,28 +968,28 @@
       "pageWidth": 1280,
       "counts": [
         {
-          "code": "FP",
-          "count": 1,
-          "headers": "pred-anomaly gt-normal",
-          "background": "rgb(255, 240, 224)"
-        },
-        {
           "code": "TP",
           "count": 4,
           "headers": "pred-anomaly gt-anomaly",
           "background": "rgb(227, 246, 243)"
         },
         {
-          "code": "TN",
-          "count": 5,
-          "headers": "pred-normal gt-normal",
-          "background": "rgb(227, 246, 243)"
+          "code": "FP",
+          "count": 1,
+          "headers": "pred-anomaly gt-normal",
+          "background": "rgb(255, 240, 224)"
         },
         {
           "code": "FN",
           "count": 2,
           "headers": "pred-normal gt-anomaly",
           "background": "rgb(255, 240, 224)"
+        },
+        {
+          "code": "TN",
+          "count": 5,
+          "headers": "pred-normal gt-normal",
+          "background": "rgb(227, 246, 243)"
         }
       ],
       "fontsLoaded": 9
@@ -1051,8 +1051,8 @@
       },
       "labels": {
         "columns": [
-          "실제 정상",
-          "실제 이상"
+          "실제 이상",
+          "실제 정상"
         ],
         "rows": [
           "예측 이상",
@@ -1080,9 +1080,9 @@
           ],
           "yError": 0,
           "box": {
-            "x": 332,
+            "x": 528.5,
             "y": 383.703125,
-            "right": 520.5,
+            "right": 717,
             "bottom": 484.1875,
             "width": 188.5,
             "height": 100.484375
@@ -1096,9 +1096,9 @@
           ],
           "yError": 0,
           "box": {
-            "x": 528.5,
+            "x": 332,
             "y": 383.703125,
-            "right": 717,
+            "right": 520.5,
             "bottom": 484.1875,
             "width": 188.5,
             "height": 100.484375
@@ -1112,9 +1112,9 @@
           ],
           "yError": 0,
           "box": {
-            "x": 332,
+            "x": 528.5,
             "y": 490.1875,
-            "right": 520.5,
+            "right": 717,
             "bottom": 590.671875,
             "width": 188.5,
             "height": 100.484375
@@ -1128,9 +1128,9 @@
           ],
           "yError": 0,
           "box": {
-            "x": 528.5,
+            "x": 332,
             "y": 490.1875,
-            "right": 717,
+            "right": 520.5,
             "bottom": 590.671875,
             "width": 188.5,
             "height": 100.484375
@@ -1216,28 +1216,28 @@
       "pageWidth": 900,
       "counts": [
         {
-          "code": "FP",
-          "count": 1,
-          "headers": "pred-anomaly gt-normal",
-          "background": "rgb(255, 240, 224)"
-        },
-        {
           "code": "TP",
           "count": 4,
           "headers": "pred-anomaly gt-anomaly",
           "background": "rgb(227, 246, 243)"
         },
         {
-          "code": "TN",
-          "count": 5,
-          "headers": "pred-normal gt-normal",
-          "background": "rgb(227, 246, 243)"
+          "code": "FP",
+          "count": 1,
+          "headers": "pred-anomaly gt-normal",
+          "background": "rgb(255, 240, 224)"
         },
         {
           "code": "FN",
           "count": 2,
           "headers": "pred-normal gt-anomaly",
           "background": "rgb(255, 240, 224)"
+        },
+        {
+          "code": "TN",
+          "count": 5,
+          "headers": "pred-normal gt-normal",
+          "background": "rgb(227, 246, 243)"
         }
       ],
       "fontsLoaded": 9
@@ -1299,8 +1299,8 @@
       },
       "labels": {
         "columns": [
-          "실제 정상",
-          "실제 이상"
+          "실제 이상",
+          "실제 정상"
         ],
         "rows": [
           "예측 이상",
@@ -1328,9 +1328,9 @@
           ],
           "yError": 0,
           "box": {
-            "x": 157,
+            "x": 249.5,
             "y": 364.015625,
-            "right": 245.5,
+            "right": 338,
             "bottom": 464.015625,
             "width": 88.5,
             "height": 100
@@ -1344,9 +1344,9 @@
           ],
           "yError": 0,
           "box": {
-            "x": 249.5,
+            "x": 157,
             "y": 364.015625,
-            "right": 338,
+            "right": 245.5,
             "bottom": 464.015625,
             "width": 88.5,
             "height": 100
@@ -1360,9 +1360,9 @@
           ],
           "yError": 0,
           "box": {
-            "x": 157,
+            "x": 249.5,
             "y": 471.015625,
-            "right": 245.5,
+            "right": 338,
             "bottom": 571.015625,
             "width": 88.5,
             "height": 100
@@ -1376,9 +1376,9 @@
           ],
           "yError": 0,
           "box": {
-            "x": 249.5,
+            "x": 157,
             "y": 471.015625,
-            "right": 338,
+            "right": 245.5,
             "bottom": 571.015625,
             "width": 88.5,
             "height": 100
@@ -1464,28 +1464,28 @@
       "pageWidth": 390,
       "counts": [
         {
-          "code": "FP",
-          "count": 1,
-          "headers": "pred-anomaly gt-normal",
-          "background": "rgb(255, 240, 224)"
-        },
-        {
           "code": "TP",
           "count": 4,
           "headers": "pred-anomaly gt-anomaly",
           "background": "rgb(227, 246, 243)"
         },
         {
-          "code": "TN",
-          "count": 5,
-          "headers": "pred-normal gt-normal",
-          "background": "rgb(227, 246, 243)"
+          "code": "FP",
+          "count": 1,
+          "headers": "pred-anomaly gt-normal",
+          "background": "rgb(255, 240, 224)"
         },
         {
           "code": "FN",
           "count": 2,
           "headers": "pred-normal gt-anomaly",
           "background": "rgb(255, 240, 224)"
+        },
+        {
+          "code": "TN",
+          "count": 5,
+          "headers": "pred-normal gt-normal",
+          "background": "rgb(227, 246, 243)"
         }
       ],
       "fontsLoaded": 9

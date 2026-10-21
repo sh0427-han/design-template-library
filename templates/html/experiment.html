@@ -75,14 +75,14 @@
         <caption class="sr-only">모델 예측을 행으로, GT 실제값을 열로 표시한 12개 예시 샘플의 혼동행렬</caption>
         <colgroup><col class="axis-col"><col class="row-col"><col><col></colgroup>
         <thead><tr><th colspan="2" aria-hidden="true"></th><th colspan="2" scope="colgroup" class="axis-title gt-axis">GT (실제값)</th></tr>
-          <tr><th colspan="2" aria-hidden="true"></th><th scope="col" class="column-label" id="gt-normal">실제 정상</th><th scope="col" class="column-label" id="gt-anomaly">실제 이상</th></tr></thead>
+          <tr><th colspan="2" aria-hidden="true"></th><th scope="col" class="column-label" id="gt-anomaly">실제 이상</th><th scope="col" class="column-label" id="gt-normal">실제 정상</th></tr></thead>
         <tbody>
           <tr><th rowspan="2" scope="rowgroup" class="axis-title pred-axis">모델<br>예측</th><th scope="row" id="pred-anomaly">예측 이상</th>
-            <td class="error" data-code="FP" headers="pred-anomaly gt-normal"><span class="cm-code">FP</span><strong class="cm-count">1</strong></td>
-            <td class="correct" data-code="TP" headers="pred-anomaly gt-anomaly"><span class="cm-code">TP</span><strong class="cm-count">4</strong></td></tr>
+            <td class="correct" data-code="TP" headers="pred-anomaly gt-anomaly"><span class="cm-code">TP</span><strong class="cm-count">4</strong></td>
+            <td class="error" data-code="FP" headers="pred-anomaly gt-normal"><span class="cm-code">FP</span><strong class="cm-count">1</strong></td></tr>
           <tr><th scope="row" id="pred-normal">예측 정상</th>
-            <td class="correct" data-code="TN" headers="pred-normal gt-normal"><span class="cm-code">TN</span><strong class="cm-count">5</strong></td>
-            <td class="error" data-code="FN" headers="pred-normal gt-anomaly"><span class="cm-code">FN</span><strong class="cm-count">2</strong></td></tr>
+            <td class="error" data-code="FN" headers="pred-normal gt-anomaly"><span class="cm-code">FN</span><strong class="cm-count">2</strong></td>
+            <td class="correct" data-code="TN" headers="pred-normal gt-normal"><span class="cm-code">TN</span><strong class="cm-count">5</strong></td></tr>
         </tbody>
       </table>
       <div class="error-explanations"><p><b>FP:</b> 정상인데 이상으로 예측</p><p><b>FN:</b> 이상인데 정상으로 예측</p></div>
