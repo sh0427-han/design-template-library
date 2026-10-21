@@ -10,7 +10,7 @@
   <style>
 /* Executive-only grouped chart: each KPI baseline is normalized to 100%. */
 .executive-summary-slide .content {
-  display:grid;grid-template-rows:minmax(0,1fr) auto;gap:12px;
+  display:grid;grid-template-rows:minmax(0,1fr);
 }
 .executive-summary-slide .executive-grid {
   grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);
@@ -91,7 +91,6 @@
   padding:24px 0;align-items:start;align-content:center;gap:14px;line-height:1.55;
 }
 .executive-summary-slide .exec-action + .exec-action {border-top:1px solid var(--border);}
-.executive-summary-slide .content > .ref-note {margin:0 3px!important;}
 @media(max-width:900px) {
   .executive-summary-slide .executive-grid {grid-template-columns:1fr;height:auto;}
   .executive-summary-slide .exec-chart {margin:0;}
@@ -178,7 +177,6 @@
 <div class="exec-action"><strong>3</strong><span><b>확대 판단</b><br>효율성과 미검출 위험을 함께 확인</span></div></div>
         </section>
       </div>
-      <p class="ref-note" style="margin:13px 3px 0">가상 시나리오 · 동일한 월간 유입량과 집계 기준 가정 · 실측 효과 아님</p>
     </div>
     <footer class="footer"><span>Design Template Library · Executive-Summary</span><span>08 / 08</span></footer>
   </section>

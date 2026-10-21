@@ -112,7 +112,7 @@ def check_executive(page, width):
         obsolete:document.querySelectorAll('.executive-kpis,.executive-kpi,.exec-track,.exec-bar').length,
         title:document.querySelector('h1').textContent,
         subtitle:document.querySelector('.subtitle').textContent,
-        note:document.querySelector('.content > .ref-note').textContent,
+        note:document.querySelector('.content > .ref-note')?.textContent ?? null,
         footer:[...document.querySelectorAll('.footer span')].map(e=>e.textContent),
         actions:[...document.querySelectorAll('.exec-action')].map(e=>({
           number:e.querySelector('strong').textContent,
@@ -181,7 +181,7 @@ def check_executive(page, width):
         previous=group
     assert result['title']=='점검 효율 개선안 요약'
     assert result['subtitle']=='수동 점검 부담 감소를 위한 파일럿 검토 · 효율성과 미검출 위험의 동시 평가'
-    assert result['note']=='가상 시나리오 · 동일한 월간 유입량과 집계 기준 가정 · 실측 효과 아님'
+    assert result['note'] is None, (width, 'removed scenario note still present', result)
     assert result['footer']==['Design Template Library · Executive-Summary','08 / 08']
     assert result['actions']==[
         dict(number='1',title='우선순위 설정',detail='점검 대상의 위험도와 처리 시점을 구분'),
