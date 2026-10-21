@@ -23,16 +23,19 @@
     }
     .panel-head { display:flex; align-items:center; justify-content:space-between; gap:12px; }
     .panel-head h2 { color:var(--navy); font-size:23px; margin:0; }
-    .panel-eyebrow { font-size:14px; font-weight:800; color:var(--blue); }
-    .image-figure { display:grid; grid-template-columns:1fr 25px 1fr; align-items:center; gap:10px; height:calc(100% - 33px); }
-    .image-frame { background:linear-gradient(150deg,#f7fcff,#e5f0fa); height:290px; border-radius:16px; display:grid; place-items:center; border:1px solid #dbe7f1; overflow:hidden; }
-    .image-frame svg { width:min(100%,245px); height:260px; }
-    .zoom-arrow { font-size:29px; color:var(--blue); font-weight:800; text-align:center; }
+    .visual-panel { display:flex; flex-direction:column; }
+    .image-figure { display:flex; align-items:center; flex:1; min-height:0; margin-top:12px; }
+    .figure-unit { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; min-width:0; }
+    .image-unit { width:min(265px,46%); flex:0 0 auto; }
+    .pixel-unit { flex:0 0 auto; }
+    .image-frame { background:linear-gradient(150deg,#f7fcff,#e5f0fa); height:274px; width:100%; border-radius:16px; display:grid; place-items:center; border:1px solid #dbe7f1; overflow:hidden; }
+    .image-frame svg { width:min(100%,245px); height:248px; }
+    .pixel-frame { height:274px; display:grid; place-items:center; }
+    .zoom-arrow { flex:1; min-width:20px; display:grid; place-items:center; font-size:29px; color:var(--blue); font-weight:800; margin-bottom:31px; }
+    .figure-label { font-size:17px; line-height:1.25; font-weight:800; color:var(--deep); text-align:center; white-space:nowrap; }
     .pixel-block { display:grid; grid-template-columns:repeat(4,48px); grid-template-rows:repeat(4,48px); gap:3px; justify-content:center; }
     .pixel-block span { width:48px; height:48px; border:2px solid rgba(255,255,255,.72); border-radius:4px; }
     .pixel-block .selected {outline:4px solid var(--navy);outline-offset:-4px;position:relative;}
-    .figure-labels {display:grid;grid-template-columns:1fr 25px 1fr;gap:10px;margin-top:11px;text-align:center;color:var(--deep);font-size:17px;font-weight:800;}
-    .figure-labels{transform:translateY(-11px);} .figure-labels span:nth-child(2){visibility:hidden;}
     .value-panel {display:flex;flex-direction:column;justify-content:space-between;gap:14px;}
     .value-title {color:var(--navy);font-size:23px;font-weight:800;margin:0;}
     .selected-color {display:flex;align-items:center;gap:17px;background:#f7f9fd;border:1px solid var(--border);border-radius:13px;padding:13px 16px;}
@@ -57,8 +60,7 @@
       .concept-slide h1{font-size:40px;}
       .concept-stage{grid-template-columns:1fr 1fr;gap:13px;}
       .concept-panel{padding:17px;}
-      .image-figure{gap:6px;grid-template-columns:1fr 15px 1fr;}
-      .image-frame{height:238px;}
+      .image-frame,.pixel-frame{height:238px;}
       .image-frame svg{height:215px;}
       .pixel-block{grid-template-columns:repeat(4,33px);grid-template-rows:repeat(4,33px);gap:2px;}
       .pixel-block span{height:33px;width:33px;}
@@ -71,12 +73,18 @@
       .concept-slide{padding:25px 18px;}
       .concept-slide h1{font-size:34px;}
       .concept-slide .subtitle{font-size:18px;}
-      .image-frame{height:230px;}
+      .image-frame,.pixel-frame{height:230px;}
       .image-frame svg{height:220px;}
       .pixel-block{grid-template-columns:repeat(4,42px);grid-template-rows:repeat(4,42px);}
       .pixel-block span{height:42px;width:42px;}
       .value-panel{gap:14px;}
       .concept-takeaway{font-size:17px;}
+      .image-unit{width:min(265px,46%);}
+    }
+    @media(max-width:490px){
+      .pixel-block{grid-template-columns:repeat(4,28px);grid-template-rows:repeat(4,28px);gap:2px;}
+      .pixel-block span{height:28px;width:28px;}
+      .figure-label{font-size:14px;}
     }
   </style>
 </head>
@@ -89,10 +97,11 @@
       <p class="subtitle">픽셀 색상은 RGB 세 값으로, 이미지 전체는 높이 × 너비 × 채널로 표현</p>
     </header>
     <div class="concept-stage">
-      <article class="concept-panel">
-        <div class="panel-head"><h2>이미지 → 픽셀</h2><span class="panel-eyebrow">01 · PIXEL</span></div>
+      <article class="concept-panel visual-panel">
+        <div class="panel-head"><h2>이미지 → 픽셀</h2></div>
         <div class="image-figure">
-          <div class="image-frame" role="img" aria-label="빨간 사과 모양 이미지">
+          <div class="figure-unit image-unit">
+            <div class="image-frame" role="img" aria-label="빨간 사과 모양 이미지">
             <svg viewBox="0 0 240 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <defs>
                 <linearGradient id="appleSkin" x1=".13" y1=".1" x2=".9" y2=".92">
@@ -110,19 +119,25 @@
               <rect x="144" y="104" width="46" height="46" rx="2" fill="none" stroke="#12233F" stroke-width="4"/>
               <path d="M155 104V150 M166 104V150 M177 104V150 M144 115H190 M144 126H190 M144 137H190" stroke="#12233F" stroke-width=".9" opacity=".55"/>
             </svg>
+            </div>
+            <span class="figure-label">입력 이미지</span>
           </div>
           <span class="zoom-arrow" aria-hidden="true">→</span>
-          <div class="pixel-block" role="img" aria-label="사과의 빨간 영역을 확대해 표현한 4 곱하기 4 픽셀 배열">
+          <div class="figure-unit pixel-unit">
+            <div class="pixel-frame">
+              <div class="pixel-block" role="img" aria-label="사과의 빨간 영역을 확대해 표현한 4 곱하기 4 픽셀 배열">
             <span style="background:#f57b61"></span><span style="background:#ec6c55"></span><span style="background:#e65a46"></span><span style="background:#d94f3f"></span>
             <span style="background:#f18468"></span><span style="background:#e86750"></span><span class="selected" style="background:#e65a46"></span><span style="background:#ce4438"></span>
             <span style="background:#f18a70"></span><span style="background:#e76b53"></span><span style="background:#dc5845"></span><span style="background:#c64435"></span>
             <span style="background:#ef9877"></span><span style="background:#e57a5f"></span><span style="background:#d85d4b"></span><span style="background:#c84c3d"></span>
+              </div>
+            </div>
+            <span class="figure-label">픽셀 확대 (4×4)</span>
           </div>
         </div>
-        <div class="figure-labels"><span>입력 이미지</span><span></span><span>픽셀 확대 (4×4)</span></div>
       </article>
       <article class="concept-panel value-panel">
-        <div class="panel-head"><h2>선택 픽셀의 RGB 값</h2><span class="panel-eyebrow">02 · RGB</span></div>
+        <div class="panel-head"><h2>선택 픽셀의 RGB 값</h2></div>
         <div class="selected-color"><span class="swatch"></span><div><strong>RGB (230, 90, 70)</strong><small>HEX &nbsp;#E65A46</small></div></div>
         <div class="channel-values">
           <div class="channel-value"><div class="head">R <span class="dot" style="background:#e8695c"></span></div><div class="number">230</div><div class="track"><div class="bar" style="width:90.2%;background:#e8695c"></div></div></div>
