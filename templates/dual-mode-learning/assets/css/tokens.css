@@ -19,6 +19,6 @@
   --radius-sm: 9px;
   --radius-md: 14px;
   --radius-lg: 20px;
-  --font-ui: "Malgun Gothic", "Apple SD Gothic Neo", system-ui, sans-serif;
+  --font-ui: var(--font-sans);
   --font-mono: ui-monospace, SFMono-Regular, Consolas, monospace;
 }

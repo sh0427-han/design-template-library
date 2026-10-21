@@ -93,6 +93,57 @@
       .pixel-block span{height:28px;width:28px;}
       .figure-label{font-size:14px;}
     }
+
+    /* Concept: unframed photographic figure and true per-pixel RGB mapping. */
+    .concept-stage{grid-template-columns:1.05fr .95fr;gap:25px}
+    .concept-panel.visual-panel{display:flex;flex-direction:column;min-width:0;padding:22px 26px;background:#fff;border:1px solid var(--border);border-radius:18px}
+    .visual-panel .panel-head{padding-left:4px}
+    .image-figure{display:grid;grid-template-columns:minmax(0,1fr) 47px minmax(0,1fr);align-items:center;gap:3px;width:100%;margin-top:16px}
+    .figure-unit{width:100%;height:100%;gap:12px;justify-content:center}
+    .image-unit{width:100%;min-width:0}
+    .image-frame{width:100%;height:274px;padding:0;background:transparent;border:none;border-radius:0;overflow:visible;display:grid;place-items:center}
+    .photo-wrap{width:min(100%,262px);aspect-ratio:1;max-height:none;border-radius:0;box-shadow:none;overflow:visible}
+    .concept-photo{width:100%;height:100%;object-fit:contain}
+    .photo-roi{left:65%;top:47.5%;width:5%;height:5%;border:2px solid white;box-shadow:0 0 0 1.5px var(--navy);background:transparent;pointer-events:none}
+    .pixel-frame{width:100%;height:274px}
+    .pixel-block{grid-template-columns:repeat(4,44px);grid-template-rows:repeat(4,44px);gap:3px}
+    .pixel-block span{width:44px;height:44px;border:1px solid #ffffffcc;border-radius:1px}
+    .pixel-block .selected{outline:3px solid var(--navy);outline-offset:1px;z-index:1}
+    .zoom-arrow{height:274px;min-width:0;align-self:center;margin:0;transform:translateY(-16.5px);display:grid;place-items:center;font-size:28px}
+    .figure-label{font-size:17px}
+    .photo-sample-note{margin-top:auto;padding-top:7px;font-size:13px;text-align:center}
+    .selected-color{background:#f7f9fd}
+    .selected-color .swatch{background:#dbe4f0}
+    .concept-panel .pixel-block span{border-radius:1px}
+    @media(max-width:900px){
+      .concept-stage{grid-template-columns:1fr;gap:20px}
+      .reference-slide .concept-panel.visual-panel{padding:20px}
+      .image-figure{grid-template-columns:minmax(0,1fr) 38px minmax(0,1fr)}
+      .image-frame,.pixel-frame,.zoom-arrow{height:256px}
+      .pixel-block{grid-template-columns:repeat(4,40px);grid-template-rows:repeat(4,40px)}
+      .pixel-block span{height:40px;width:40px}
+    }
+    @media(max-width:520px){
+      /* Override later reference-layout.css's legacy 44%-width image rule. */
+      .reference-slide.concept-slide .image-unit{width:100%}
+      .reference-slide.concept-slide .image-frame,
+      .reference-slide.concept-slide .pixel-frame,
+      .reference-slide.concept-slide .zoom-arrow{height:172px}
+      .reference-slide.concept-slide .pixel-block{
+        grid-template-columns:repeat(4,26px);
+        grid-template-rows:repeat(4,26px);
+      }
+      .reference-slide.concept-slide .pixel-block span{height:26px;width:26px}
+      .concept-stage{gap:15px}
+      .image-figure{gap:0;grid-template-columns:minmax(0,1fr) 24px minmax(0,1fr);margin-top:7px}
+      .image-frame,.pixel-frame,.zoom-arrow{height:172px}
+      .pixel-block{grid-template-columns:repeat(4,26px);grid-template-rows:repeat(4,26px);gap:2px}
+      .pixel-block span{height:26px;width:26px}
+      .zoom-arrow{font-size:22px;transform:translateY(-14px)}
+      .photo-wrap{width:min(100%,160px)}
+      .figure-label{font-size:14px;white-space:normal;text-align:center}
+      .photo-sample-note{font-size:12px}
+    }
   </style>
 <link rel="stylesheet" href="reference-layout.css">
 </head>
@@ -100,18 +151,18 @@
 <main class="deck reference-deck">
   <section class="slide concept-slide reference-slide" aria-label="Concept 레퍼런스">
     <header>
-      <div class="ref-overline"><div class="kicker">CONCEPT / 01</div><a class="ref-link" href="index.html">전체 레퍼런스 ↗</a></div>
+      <div class="ref-overline"><div class="kicker">CONCEPT / 01</div></div>
       <h1>이미지의 숫자 구조</h1>
       <p class="subtitle">픽셀 색상은 8-bit RGB 세 값으로, 이미지 전체는 높이 × 너비 × 채널로 표현</p>
     </header>
     <div class="concept-stage">
-      <article class="concept-panel visual-panel">
+      <article class="concept-panel visual-panel" aria-label="사과 이미지의 픽셀 표현">
         <div class="panel-head"><h2>이미지 → 픽셀</h2></div>
         <div class="image-figure">
           <div class="figure-unit image-unit">
             <div class="image-frame" role="img" aria-label="사과 사진과 선택 영역">
             <div class="photo-wrap" role="img" aria-label="실사형 사과 이미지에서 선택한 정사각형 영역">
-              <img src="assets/concept-apple-photo.jpg" class="concept-photo" width="540" height="540" alt="밝은 배경에 놓인 붉은 사과" />
+              <img src="assets/concept-apple-photo.jpg" id="concept-image" class="concept-photo" width="540" height="540" alt="밝은 배경에 놓인 붉은 사과" />
               <span class="photo-roi" aria-hidden="true"></span>
             </div>
             </div>
@@ -120,16 +171,16 @@
           <span class="zoom-arrow" aria-hidden="true">→</span>
           <div class="figure-unit pixel-unit">
             <div class="pixel-frame">
-              <div class="pixel-block" role="img" aria-label="사과의 빨간 영역을 확대해 표현한 4 곱하기 4 픽셀 배열"><span style="background:#e03740"></span><span style="background:#e5525f"></span><span style="background:#ee5155"></span><span style="background:#f04746"></span><span style="background:#d9282c"></span><span style="background:#e03840"></span><span class="selected" style="background:#e83334"></span><span style="background:#f14037"></span><span style="background:#d3201f"></span><span style="background:#d2161f"></span><span style="background:#da1922"></span><span style="background:#ef3f34"></span><span style="background:#d11f1d"></span><span style="background:#cd161b"></span><span style="background:#e03234"></span><span style="background:#ed4b43"></span></div>
+              <div class="pixel-block" role="img" aria-label="사과의 빨간 영역을 확대해 표현한 4 곱하기 4 픽셀 배열"><span></span><span></span><span></span><span></span><span></span><span></span><span class="selected"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
             </div>
-            <span class="figure-label">영역 색상 (4×4)</span>
+            <span class="figure-label">픽셀 확대 (4×4)</span>
           </div>
         </div>
-        <div class="photo-sample-note">64×64 영역의 4×4 블록 평균 색상</div>
+        <div class="photo-sample-note">80×80 리샘플 이미지의 선택된 4×4 픽셀</div>
       </article>
       <article class="concept-panel value-panel">
         <div class="panel-head"><h2>선택 픽셀의 RGB 값</h2></div>
-        <div class="selected-color"><span class="swatch"></span><div><strong>RGB (232, 51, 52)</strong><small>HEX &nbsp;#E83334 · 채널 범위 0–255</small></div></div>
+        <div class="selected-color"><span class="swatch"></span><div><strong><span id="selected-rgb">RGB 값 계산 중</span></strong><small>HEX &nbsp;<span id="selected-hex">—</span> · 채널 범위 0–255</small></div></div>
         <div class="channel-values">
           <div class="channel-value"><div class="head">R <span class="dot" style="background:#e8695c"></span></div><div class="number">232</div><div class="track"><div class="bar" style="width:91.0%;background:#e8695c"></div></div></div>
           <div class="channel-value"><div class="head">G <span class="dot" style="background:#5db88b"></span></div><div class="number">51</div><div class="track"><div class="bar" style="width:20.0%;background:#5db88b"></div></div></div>
@@ -138,9 +189,49 @@
         <div class="tensor-shape"><span class="formula">H × W × 3</span><span class="label">높이 × 너비 × RGB 채널<br><strong>이미지 텐서</strong></span></div>
       </article>
     </div>
-    <div class="concept-takeaway"><strong>핵심 개념</strong><span>픽셀 하나 → RGB 3개 값 &nbsp;·&nbsp; 이미지 전체 → 3차원 배열(HWC)</span></div>
+    <div class="concept-takeaway ref-takeaway"><strong>핵심 개념</strong><span>픽셀 하나 → RGB 3개 값 &nbsp;·&nbsp; 이미지 전체 → 3차원 배열(HWC)</span></div>
     <footer class="footer"><span>Design Template Library · Concept</span><span>01 / 08</span></footer>
   </section>
 </main>
+
+<script>
+/* Sample the displayed photograph as an 80×80 RGB image. The 4×4 block is
+   read from the same canvas raster, so every swatch/value is image-derived. */
+(async () => {
+  const image = document.getElementById('concept-image');
+  const slide = document.querySelector('.concept-slide');
+  try {
+    await image.decode();
+    const canvas = document.createElement('canvas');
+    canvas.width = canvas.height = 80;
+    const ctx = canvas.getContext('2d', {willReadFrequently:true});
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = 'high';
+    ctx.drawImage(image, 0, 0, 80, 80);
+    const rgba = ctx.getImageData(52, 38, 4, 4).data;
+    const colors = Array.from({length:16}, (_,i) =>
+      [rgba[i*4],rgba[i*4+1],rgba[i*4+2]]);
+    document.querySelectorAll('.pixel-block span').forEach((pixel,i) => {
+      pixel.style.backgroundColor = 'rgb(' + colors[i].join(',') + ')';
+      pixel.title = 'RGB (' + colors[i].join(', ') + ')';
+    });
+    const [r,g,b] = colors[6];
+    const rgb = 'rgb(' + [r,g,b].join(',') + ')';
+    const hex = '#' + [r,g,b].map(v=>v.toString(16).padStart(2,'0')).join('').toUpperCase();
+    document.getElementById('selected-rgb').textContent = 'RGB ('+[r,g,b].join(', ')+')';
+    document.getElementById('selected-hex').textContent = hex;
+    document.querySelector('.selected-color .swatch').style.backgroundColor = rgb;
+    document.querySelectorAll('.channel-value').forEach((node,i) => {
+      node.querySelector('.number').textContent = [r,g,b][i];
+      node.querySelector('.bar').style.width = (100*[r,g,b][i]/255)+'%';
+    });
+    slide.dataset.sampled = 'true';
+  } catch(e) {
+    document.getElementById('selected-rgb').textContent = '이미지 픽셀 읽기 실패';
+    slide.dataset.sampled = 'error';
+    console.error(e);
+  }
+})();
+</script>
 </body>
 </html>

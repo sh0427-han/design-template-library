@@ -2,7 +2,7 @@
 
 ## Goal
 
-기술적 정확성이 필요한 강의, 논문 발표, 보고 및 웹 교과서에 같은 시각적 언어를 적용한다. AIBook처럼 설명·시각화·직접 조작·결과 확인이 연결되는 교육 경험을 목표로 하되 기존 콘텐츠와 기능을 존중한다.
+기술적 정확성이 필요한 강의, 논문 발표, 보고 및 웹 교과서를 **HTML Scroll/Slide 두 방식**으로 제작한다. AIBook처럼 설명·시각화·직접 조작·결과 확인이 연결되는 교육 경험을 목표로 하되 기존 콘텐츠와 기능을 존중한다. **PPTX는 제작·변환 대상이 아니다.**
 
 ## Single Source of Truth
 
@@ -17,7 +17,7 @@
 ## Visual System
 
 - 배경: 밝고 차분한 neutral palette, 본문 텍스트는 높은 대비
-- 글꼴: `DESIGN_SYSTEM.md`의 한글 sans-serif, 수치/코드는 monospace
+- 글꼴: 공유 HTML 기본 폰트 **Pretendard Variable**. 수치/코드 영역의 monospace 설정은 기존과 동일
 - **모든 텍스트에 -1pt 좁은 자간을 적용**하며 기존 `templates/html/styles.css`의 `--character-spacing`을 상속한다.
 - 색상은 semantic token으로 지정: `--ink`, `--muted`, `--accent`, `--line`, `--surface`, `--surface-soft`
 - 설명은 좁은 읽기 폭을 유지하고, 시각화는 필요한 너비를 사용한다.
@@ -46,7 +46,7 @@
 
 - Common source: [`../../DESIGN_SYSTEM.md`](../../DESIGN_SYSTEM.md).
 - AIBook Attention: https://aibook.euiyun.com/chapters/attention.html#sim-editor (interaction/layout inspiration, no code copied).
-- This HTML example is an independent reference; existing editable PPTX templates are unchanged.
+- This example implements both HTML Scroll and Slide modes; the eight standalone HTML references are reusable visual patterns, not output formats. Legacy PPTX assets were removed; do not recreate them.
 
 ## Acceptance Criteria
 
@@ -55,7 +55,7 @@
 3. 같은 `lab.js`의 수치 계산 결과가 두 모드에서 동일하다.
 4. Scroll에서는 페이지 전체가 자연스럽게 세로 스크롤된다.
 5. Slide에서는 화살표/버튼/해시로 전환되고 뷰포트 내 내용이 잘리지 않는다.
-6. CDN, 외부 라이브러리 없이 로컬 정적 서버에서 동작한다.
+6. 로컬 정적 서버에서 기능이 동작하며, 웹 폰트(Pretendard CDN)가 로딩되지 않아도 폴백 폰트로 콘텐츠와 인터랙션을 사용할 수 있다.
 
 ## Avoid
 
@@ -66,7 +66,7 @@
 
 ## Reference-gallery refinement criteria (2026-10-20)
 
-- `concept`, `process`, `comparison`의 기존 HTML/PPTX와 이 5장 실습은 **모두 함께 다듬는 레퍼런스 예시**입니다. 어떤 예시도 최종 확정 디자인으로 취급하지 않습니다.
+- 8종 HTML 구성 패턴과 이 5장 HTML 실습은 **모두 함께 다듬는 레퍼런스 예시**입니다. 어떤 예시도 최종 확정 디자인으로 취급하지 않습니다.
 - 빈 여백을 무조건 글로 채우지 않습니다. 각 화면에서 **계산 가능한 그림, 수치 비교, 처리 단계**가 충분한 크기로 보이도록 배치합니다.
 - 핵심 부제목은 공간이 허용하는 한 문장으로 표시합니다. 수동 `<br>`를 넣지 않으며 필요한 경우 영역을 넓힙니다.
 - 슬라이드·웹 교과서의 사용자 본문에서는 구현·제작 과정에 대한 메타 설명을 삭제합니다. 수치·가정·용어에 관한 필수 설명만 남깁니다.

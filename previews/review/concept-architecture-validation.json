@@ -1,0 +1,366 @@
+{
+  "tested_viewports": [
+    [
+      1500,
+      950
+    ],
+    [
+      1366,
+      768
+    ],
+    [
+      1280,
+      720
+    ],
+    [
+      390,
+      844
+    ]
+  ],
+  "results": [
+    {
+      "name": "concept",
+      "viewport": [
+        1500,
+        950
+      ],
+      "slide": {
+        "x": 30,
+        "y": 70,
+        "right": 1470,
+        "bottom": 880,
+        "width": 1440,
+        "height": 810
+      },
+      "footer": {
+        "x": 96,
+        "y": 820,
+        "right": 1404,
+        "bottom": 850,
+        "width": 1308,
+        "height": 30
+      },
+      "overflow": [],
+      "overlap": [],
+      "pageWidth": 1500,
+      "imgLoaded": true,
+      "sampled": "true",
+      "arrows": [
+        0.125,
+        0.125
+      ],
+      "labelSpacing": 12,
+      "pixelRGB": [
+        223,
+        54,
+        56
+      ],
+      "spacing": "-1.33333px",
+      "stages": 0,
+      "gaps": 0,
+      "logits": 0,
+      "shapes": []
+    },
+    {
+      "name": "architecture",
+      "viewport": [
+        1500,
+        950
+      ],
+      "slide": {
+        "x": 30,
+        "y": 70,
+        "right": 1470,
+        "bottom": 880,
+        "width": 1440,
+        "height": 810
+      },
+      "footer": {
+        "x": 96,
+        "y": 820,
+        "right": 1404,
+        "bottom": 850,
+        "width": 1308,
+        "height": 30
+      },
+      "overflow": [],
+      "overlap": [],
+      "pageWidth": 1500,
+      "imgLoaded": null,
+      "sampled": null,
+      "arrows": null,
+      "labelSpacing": null,
+      "pixelRGB": null,
+      "spacing": "-1.33333px",
+      "stages": 6,
+      "gaps": 32,
+      "logits": 3,
+      "shapes": [
+        "64×64×3",
+        "64×64×16",
+        "32×32×16",
+        "32×32×32",
+        "32",
+        "3 logits"
+      ]
+    },
+    {
+      "name": "concept",
+      "viewport": [
+        1366,
+        768
+      ],
+      "slide": {
+        "x": 35.890625,
+        "y": 20,
+        "right": 1330.109375,
+        "bottom": 748,
+        "width": 1294.21875,
+        "height": 728
+      },
+      "footer": {
+        "x": 95.203125,
+        "y": 694.171875,
+        "right": 1270.796875,
+        "bottom": 721.046875,
+        "width": 1175.59375,
+        "height": 26.875
+      },
+      "overflow": [],
+      "overlap": [],
+      "pageWidth": 1366,
+      "imgLoaded": true,
+      "sampled": "true",
+      "arrows": [
+        0.1078948974609375,
+        0.1078948974609375
+      ],
+      "labelSpacing": 10.78125,
+      "pixelRGB": [
+        223,
+        54,
+        56
+      ],
+      "spacing": "-1.33333px",
+      "stages": 0,
+      "gaps": 0,
+      "logits": 0,
+      "shapes": []
+    },
+    {
+      "name": "architecture",
+      "viewport": [
+        1366,
+        768
+      ],
+      "slide": {
+        "x": 35.890625,
+        "y": 20,
+        "right": 1330.109375,
+        "bottom": 748,
+        "width": 1294.21875,
+        "height": 728
+      },
+      "footer": {
+        "x": 95.203125,
+        "y": 694.171875,
+        "right": 1270.796875,
+        "bottom": 721.046875,
+        "width": 1175.59375,
+        "height": 26.875
+      },
+      "overflow": [],
+      "overlap": [],
+      "pageWidth": 1366,
+      "imgLoaded": null,
+      "sampled": null,
+      "arrows": null,
+      "labelSpacing": null,
+      "pixelRGB": null,
+      "spacing": "-1.33333px",
+      "stages": 6,
+      "gaps": 32,
+      "logits": 3,
+      "shapes": [
+        "64×64×3",
+        "64×64×16",
+        "32×32×16",
+        "32×32×32",
+        "32",
+        "3 logits"
+      ]
+    },
+    {
+      "name": "concept",
+      "viewport": [
+        1280,
+        720
+      ],
+      "slide": {
+        "x": 35.5625,
+        "y": 20,
+        "right": 1244.4375,
+        "bottom": 700,
+        "width": 1208.875,
+        "height": 680
+      },
+      "footer": {
+        "x": 90.96875,
+        "y": 649.59375,
+        "right": 1189.03125,
+        "bottom": 674.828125,
+        "width": 1098.0625,
+        "height": 25.234375
+      },
+      "overflow": [],
+      "overlap": [],
+      "pageWidth": 1280,
+      "imgLoaded": true,
+      "sampled": "true",
+      "arrows": [
+        0.08563232421875,
+        0.08563232421875
+      ],
+      "labelSpacing": 10.0625,
+      "pixelRGB": [
+        223,
+        54,
+        56
+      ],
+      "spacing": "-1.33333px",
+      "stages": 0,
+      "gaps": 0,
+      "logits": 0,
+      "shapes": []
+    },
+    {
+      "name": "architecture",
+      "viewport": [
+        1280,
+        720
+      ],
+      "slide": {
+        "x": 35.5625,
+        "y": 20,
+        "right": 1244.4375,
+        "bottom": 700,
+        "width": 1208.875,
+        "height": 680
+      },
+      "footer": {
+        "x": 90.96875,
+        "y": 649.59375,
+        "right": 1189.03125,
+        "bottom": 674.828125,
+        "width": 1098.0625,
+        "height": 25.234375
+      },
+      "overflow": [],
+      "overlap": [],
+      "pageWidth": 1280,
+      "imgLoaded": null,
+      "sampled": null,
+      "arrows": null,
+      "labelSpacing": null,
+      "pixelRGB": null,
+      "spacing": "-1.33333px",
+      "stages": 6,
+      "gaps": 32,
+      "logits": 3,
+      "shapes": [
+        "64×64×3",
+        "64×64×16",
+        "32×32×16",
+        "32×32×32",
+        "32",
+        "3 logits"
+      ]
+    },
+    {
+      "name": "concept",
+      "viewport": [
+        390,
+        844
+      ],
+      "slide": {
+        "x": 10,
+        "y": 10,
+        "right": 380,
+        "bottom": 1172.3125,
+        "width": 370,
+        "height": 1162.3125
+      },
+      "footer": {
+        "x": 26,
+        "y": 1118.3125,
+        "right": 364,
+        "bottom": 1146.3125,
+        "width": 338,
+        "height": 28
+      },
+      "overflow": [],
+      "overlap": [],
+      "pageWidth": 390,
+      "imgLoaded": true,
+      "sampled": "true",
+      "arrows": [
+        1.375,
+        1.375
+      ],
+      "labelSpacing": 12,
+      "pixelRGB": [
+        223,
+        54,
+        56
+      ],
+      "spacing": "-1.33333px",
+      "stages": 0,
+      "gaps": 0,
+      "logits": 0,
+      "shapes": []
+    },
+    {
+      "name": "architecture",
+      "viewport": [
+        390,
+        844
+      ],
+      "slide": {
+        "x": 10,
+        "y": 10,
+        "right": 380,
+        "bottom": 1594.109375,
+        "width": 370,
+        "height": 1584.109375
+      },
+      "footer": {
+        "x": 26,
+        "y": 1540.109375,
+        "right": 364,
+        "bottom": 1568.109375,
+        "width": 338,
+        "height": 28
+      },
+      "overflow": [],
+      "overlap": [],
+      "pageWidth": 390,
+      "imgLoaded": null,
+      "sampled": null,
+      "arrows": null,
+      "labelSpacing": null,
+      "pixelRGB": null,
+      "spacing": "-1.33333px",
+      "stages": 6,
+      "gaps": 32,
+      "logits": 3,
+      "shapes": [
+        "64×64×3",
+        "64×64×16",
+        "32×32×16",
+        "32×32×32",
+        "32",
+        "3 logits"
+      ]
+    }
+  ]
+}

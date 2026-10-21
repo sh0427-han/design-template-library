@@ -1,6 +1,6 @@
 # Design System v0.1
 
-PPTX와 HTML 기술 강의자료의 공통 시각 설계 규칙입니다. 목표는 **기술적으로 정확하면서 읽기 쉬운 시각 설명**입니다.
+HTML 기반 **Scroll / Slide 자료 제작 전용** 디자인 시스템입니다. 목표는 **기술적으로 정확하면서 읽기 쉬운 시각 설명**입니다. 8종 디자인 레퍼런스는 Scroll·Slide에서 재사용하는 구성 패턴이며, **PPTX는 제작 대상이 아닙니다.**
 
 ## 설계 원칙
 
@@ -15,13 +15,12 @@ PPTX와 HTML 기술 강의자료의 공통 시각 설계 규칙입니다. 목표
 
 | 항목 | 규격 |
 | --- | --- |
-| 화면 비율 | 16:9 |
-| PPTX | 13.333 × 7.5 in (wide) |
-| HTML 기준 캔버스 | 1440 × 810 px |
-| 안전 여백 | 좌우 72px 이상 / PPTX 0.68in 이상 |
+| Slide Mode | 16:9, 기준 캔버스 1440 × 810 px |
+| Scroll Mode | 세로 스크롤·반응형 읽기 폭·목차/앵커 |
+| Slide 안전 여백 | 좌우 72px 이상 (8종 레퍼런스의 별도 조정값은 하단 참조) |
 | 제목 영역 | Category → Title → Subtitle |
 | 본문 구성 | 2-column / flow / comparison |
-| Footer | 형식 및 슬라이드 번호, 방해되지 않게 |
+| Footer | 모드와 콘텐츠에 맞게 최소화, 본문과 겹치지 않게 |
 
 ## Color tokens
 
@@ -40,15 +39,26 @@ PPTX와 HTML 기술 강의자료의 공통 시각 설계 규칙입니다. 목표
 
 색의 의미는 사례마다 다를 수 있으므로 Blue/Teal/Amber를 정상·불량 클래스에 자동 매핑하지 않습니다.
 
+### 배경색 사용 기준 (8종 HTML 레퍼런스)
+
+- **기본 캔버스:** Off-white (`--canvas`), **일반 콘텐츠 카드:** White (`#fff`) 유지.
+- **정보를 구분하지 않는 시각적 강조:** 배경색 대신 제목 색상·가느다란 왼쪽 선·타이포그래피로 표현.
+- **결론·핵심 메시지:** 흰색 바탕에 Teal 왼쪽 선만 사용하는 `.ref-takeaway`를 공통 사용. Concept/Process 같은 역할의 캡션은 동일한 형태를 적용.
+- **의미 있는 처리·출력 구분:** Process의 FEATURE는 Pale Blue, OUTPUT은 Pale Teal을 사용할 수 있으며 단계의 의미와 연결될 때만 색 면적을 허용.
+- **판정 상태·실험 데이터:** TP/TN은 Teal, FP/FN은 Amber와 같이 레이블과 연결된 결과 셀에만 의미 색상 사용. 색상만으로 의미 전달 금지.
+- **계산·실험 전체 카드:** 구조적인 카드 배경은 흰색으로 통일. 입력/연산 셀·도식의 필요한 부분만 색상 강조.
+- **타이틀 우측의 갤러리 내비게이션 및 제작자용 메타 칩:** 실제 강의 레퍼런스 화면에는 표시하지 않음. 재사용 시 필요한 청중용 정보만 표시.
+
+
 ## Typography
 
-- 한국어: `Malgun Gothic` 또는 시스템 한글 산세리프
-- 제목: HTML 52–58 px, PPT 30–36 pt
-- 본문: HTML 21–26 px, PPT 16–20 pt
-- 라벨: HTML 16–19 px, PPT 11–14 pt
+- **HTML 기본 폰트:** `Pretendard Variable` (Pretendard v1.3.9), 미지원·오프라인 환경은 `Pretendard` → `Malgun Gothic` → `Apple SD Gothic Neo` → 시스템 산세리프 순서로 대체
+- **로딩:** `templates/html/styles.css`에서 Pretendard Dynamic Subset 웹 폰트를 가져오며, 8종 레퍼런스·갤러리·CNN Scroll/Slide가 공통 토큰을 상속
+- Slide 제목: 기준 52–58 px (8종 HTML 레퍼런스는 49 px)
+- Slide 본문: 기준 21–26 px / 라벨 16–19 px, 정보 밀도에 따라 조정
+- Scroll: 반응형 제목·본문 크기를 사용하며 본문의 읽기 폭과 문단 간격을 우선
 - **모든 텍스트 문자 간격: 좁게 1.0pt (=-1.0pt)**. 제목·본문·부제목·라벨·각주·갤러리까지 예외 없이 공통 적용.
-- **PPTX:** `templates/pptx/build_templates.py`의 `CHARACTER_SPACING_PT = -1.0`을 사용. 모든 `textbox()`의 텍스트 run에 OOXML `a:rPr@spc="-100"` 반영(100 = 1pt).
-- **HTML:** `templates/html/styles.css`의 `--character-spacing: -1pt`를 `html`에 적용하고 모든 텍스트 요소가 상속하도록 구성. CSS 1pt는 표준 96dpi 환경에서 약 1.333px에 해당.
+- **HTML:** `templates/html/styles.css`의 `--font-sans`와 `--character-spacing: -1pt`를 공유. CSS 1pt는 표준 96dpi 환경에서 약 1.333px에 해당.
 - 이후 새 템플릿에도 동일 규칙 적용. **별도 요청 없이 특정 제목·라벨에 다른 자간 설정 금지.**
 - 강의 화면에서 읽기 힘든 작은 글자, 긴 문단, 강제 줄바꿈 최소화
 
@@ -61,9 +71,12 @@ PPTX와 HTML 기술 강의자료의 공통 시각 설계 규칙입니다. 목표
 - **Highlight**: 한 페이지에서 주된 강조는 1~2곳으로 제한
 - **Sources**: 외부 이미지/도표가 있으면 가까운 위치에 원문 URL 기재
 
-## PPT · HTML 동기화
+## HTML Scroll / Slide 공유
 
-공통 디자인 값은 HTML의 `templates/html/styles.css`와 PPT 생성 스크립트의 `COLORS`를 통해 정의합니다. 두 형식의 레이아웃은 의미/계층/색을 일치시키되 픽셀 단위로 완전히 동일할 필요는 없습니다.
+- 공통 디자인 토큰(색상·Pretendard·자간)은 `templates/html/styles.css`를 단일 기준으로 사용합니다.
+- 콘텐츠·수식·인터랙티브 계산 로직은 가능하면 공유하고, Scroll/Slide는 **레이아웃·내비게이션·설명 밀도**만 다르게 구현합니다.
+- 8종 독립 HTML 레퍼런스는 출력 모드가 아닌 **시각 구성 패턴**입니다. 필요한 패턴을 Scroll 문서 또는 Slide 화면에 재구성해 사용합니다.
+- PPTX 제작·변환·동기화는 라이브러리 범위 밖입니다. 기존 PPTX 소스·생성 코드·프리뷰는 삭제했습니다. 새 PPTX 파일은 만들지 않습니다.
 
 ## 품질 점검
 
@@ -109,7 +122,7 @@ PPTX와 HTML 기술 강의자료의 공통 시각 설계 규칙입니다. 목표
 
 - 최신 Concept을 기준으로 공통 프레임 통일: 1440×810, 제목 49px, 부제목 21px, 여백 위 54px / 좌우 66px / 아래 30px. 위 기본 규격에서 이 8종에만 적용하는 조정값입니다.
 - 데스크톱은 너비와 높이를 모두 고려한 16:9 비례 축소, 900px 이하에서는 세로 읽기 배치.
-- `templates/html/reference-layout.css`는 8종 HTML에서만 명시적으로 로드합니다. 갤러리·CNN 연속 강의·PPTX의 공통 토큰은 바꾸지 않습니다.
+- `templates/html/reference-layout.css`는 8종 HTML에서만 명시적으로 로드합니다. 갤러리·CNN 연속 강의의 레이아웃을 변경하지 않으며 공통 토큰은 `styles.css`에서만 관리합니다.
 - 모든 텍스트는 기존 `--character-spacing: -1pt` 상속. 색상·패널 구조와 유형별 목적 유지.
 - 검증 및 비교: [8종 검토 기록](docs/REFERENCE_REVIEW_2026-10-21.md).
 

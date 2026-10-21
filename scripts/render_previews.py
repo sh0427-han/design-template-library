@@ -2,6 +2,7 @@
 
 Requirements: Python Playwright and Chromium (CHROMIUM_EXECUTABLE overrides PATH).
 Run: python scripts/render_previews.py
+Executive only: python scripts/render_previews.py --templates executive-summary
 Canonical previews are captured at 1500x950; viewport evidence and measurements
 are written to --evidence-dir (default: /tmp/design-template-review).
 """
@@ -35,7 +36,7 @@ GEOMETRY = """() => {
     const s=rect(slide), footer=rect(slide.querySelector('.footer'));
     const visible=[...slide.querySelectorAll('*')].filter(e=>e.getBoundingClientRect().width && e.getBoundingClientRect().height);
     const outside=visible.filter(e=>{const r=rect(e);return r.x<s.x-1 || r.right>s.right+1 || r.y<s.y-1 || r.bottom>s.bottom+1}).map(e=>e.className);
-    const containers=[...slide.querySelectorAll('.content,.ref-grid,.ref-card,.concept-panel,.compare-card,.node,.arch-node,.executive-kpi')];
+    const containers=[...slide.querySelectorAll('.content,.ref-grid,.ref-card,.concept-panel,.compare-card,.node,.arch-node,.executive-kpi,.exec-metric-group,.exec-metric-bars,.exec-impact,.exec-chart,.exec-comparison,.exec-actions')];
     const overflow=containers.filter(e=>e.scrollWidth>e.clientWidth+1 || e.scrollHeight>e.clientHeight+1).map(e=>e.className);
     const footerOverlap=visible.filter(e=> !e.closest('footer') && !e.matches('script') && rect(e).bottom>footer.y+1).map(e=>e.className);
     const textElements=visible.filter(e=>[...e.childNodes].some(n=>n.nodeType===3 && n.textContent.trim()));
@@ -100,9 +101,107 @@ def check_interactive(page):
     return results
 
 
+def check_executive(page, width):
+    """Check KPI values, normalized heights and shared grouped-chart axes."""
+    result = page.evaluate("""() => {
+      const box = el => {const r=el.getBoundingClientRect();return {x:r.x,y:r.y,width:r.width,height:r.height,right:r.right,bottom:r.bottom}};
+      const impact=document.querySelector('.exec-impact');
+      const action=document.querySelector('.exec-action-panel');
+      const groups=[...document.querySelectorAll('.exec-metric-group')];
+      return {
+        obsolete:document.querySelectorAll('.executive-kpis,.executive-kpi,.exec-track,.exec-bar').length,
+        title:document.querySelector('h1').textContent,
+        subtitle:document.querySelector('.subtitle').textContent,
+        noteCount:document.querySelectorAll('.exec-scenario-note').length,
+        footer:[...document.querySelectorAll('.footer span')].map(e=>e.textContent),
+        actions:[...document.querySelectorAll('.exec-action')].map(e=>({
+          number:e.querySelector('strong').textContent,
+          title:e.querySelector('b').textContent,
+          detail:e.querySelector('span').lastChild.textContent
+        })),
+        impact:box(impact),action:box(action),
+        impactBackground:getComputedStyle(impact).backgroundColor,
+        impactBorder:getComputedStyle(impact).borderStyle,
+        ticks:[...document.querySelectorAll('.exec-y-axis span')].map(e=>({
+          label:e.textContent,ratio:Number(e.style.getPropertyValue('--tick')),box:box(e)
+        })),
+        groups:groups.map(g=>({
+          box:box(g),title:g.querySelector('h3').textContent,
+          titleBox:box(g.querySelector('h3')),
+          valueBoxes:[...g.querySelectorAll('.exec-value')].map(box),
+          before:Number(g.dataset.before),after:Number(g.dataset.after),unit:g.dataset.unit,
+          delta:g.querySelector('.exec-delta').textContent,
+          deltaColor:getComputedStyle(g.querySelector('.exec-delta')).color,
+          values:[...g.querySelectorAll('.exec-value')].map(e=>e.textContent),
+          labels:[...g.querySelectorAll('.exec-series')].map(e=>e.textContent),
+          bars:[...g.querySelectorAll('.exec-fill')].map(e=>({
+            ...box(e),color:getComputedStyle(e).backgroundColor,
+            ratio:Number(e.style.getPropertyValue('--ratio'))
+          })),
+          border:getComputedStyle(g).borderStyle,
+          background:getComputedStyle(g).backgroundColor
+        }))
+      };
+    }""")
+    assert result['obsolete'] == 0, (width, 'duplicate or horizontal KPI layout', result)
+    expected = [
+        ('월간 수동 점검',120,80,'건'),
+        ('평균 처리 시간',45,30,'분/건'),
+        ('월말 미처리',20,8,'건'),
+    ]
+    assert len(result['groups']) == 3, (width, result)
+    assert result['impactBorder']!='none' and result['impactBackground']=='rgb(255, 255, 255)', (width, result)
+    assert [(t['label'],t['ratio']) for t in result['ticks']]==[('100%',1),('50%',.5),('0',0)], (width, result)
+    previous = None
+    for group, (title,before,after,unit) in zip(result['groups'],expected):
+        assert (group['title'],group['before'],group['after'],group['unit']) == (title,before,after,unit), (width, group)
+        delta=f'{(after-before)/before*100:.1f}%'.replace('-', '−')
+        assert group['delta'] == delta and group['deltaColor'] == 'rgb(38, 166, 161)', (width, group)
+        assert group['values'] == [f'{before}{unit}',f'{after}{unit}'], (width, group)
+        assert group['labels'] == ['기존','개선안'] and len(group['bars']) == 2, (width, group)
+        base,new=group['bars']
+        assert base['color']=='rgb(49, 104, 200)' and new['color']=='rgb(38, 166, 161)', (width, group)
+        assert abs(base['ratio']-1)<.0001 and abs(new['ratio']-after/before)<.0001, (width, group)
+        assert base['height']>base['width'] and new['height']>0, (width, 'not vertical bars', group)
+        assert abs(base['width']-new['width'])<1 and new['x']>base['right'], (width, 'bars not side by side', group)
+        assert abs(base['bottom']-new['bottom'])<1, (width, 'unequal baselines', group)
+        assert abs(new['height']/base['height']-after/before)<.002, (width, 'rendered height ratio', group)
+        assert group['titleBox']['y']>base['bottom'], (width, 'category not below x-axis', group)
+        assert abs(group['titleBox']['x']+group['titleBox']['width']/2-(base['x']+new['right'])/2)<1, (width, 'category not centered on pair', group)
+        for value,bar in zip(group['valueBoxes'],group['bars']):
+            assert value['bottom']<=bar['y'], (width, 'value overlaps bar', group)
+        assert group['valueBoxes'][0]['right']<group['valueBoxes'][1]['x'], (width, 'value labels overlap', group)
+        for tick in result['ticks']:
+            tick_y=tick['box']['y']+tick['box']['height']/2
+            assert abs(tick_y-(base['bottom']-base['height']*tick['ratio']))<1, (width, 'axis scale mismatch', group)
+        if previous:
+            assert group['box']['x']>previous['box']['right'], (width, 'groups not ordered across x-axis', result)
+            assert abs(base['bottom']-previous['bars'][0]['bottom'])<1, (width, 'no common baseline', result)
+            assert abs(base['height']-previous['bars'][0]['height'])<1, (width, 'unequal normalized scale', result)
+        previous=group
+    assert result['title']=='점검 효율 개선안 요약'
+    assert result['subtitle']=='수동 점검 부담 감소를 위한 파일럿 검토 · 효율성과 미검출 위험의 동시 평가'
+    assert result['noteCount'] == 0, (
+        width, 'obsolete hypothetical-data footnote still present', result
+    )
+    assert result['footer']==['Design Template Library · Executive-Summary','08 / 08']
+    assert result['actions']==[
+        dict(number='1',title='우선순위 설정',detail='점검 대상의 위험도와 처리 시점을 구분'),
+        dict(number='2',title='파일럿 기준 통일',detail='동일 기준으로 도입 전·후 수치를 집계'),
+        dict(number='3',title='확대 판단',detail='효율성과 미검출 위험을 함께 확인'),
+    ], (width, 'Action content changed', result)
+    if width>900:
+        assert result['action']['x']>result['impact']['right'], (width, 'two-column layout', result)
+    else:
+        assert result['action']['y']>result['impact']['bottom'], (width, 'reading order', result)
+    return result
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--evidence-dir', type=Path, default=Path('/tmp/design-template-review'))
+    parser.add_argument('--templates', nargs='+', choices=TEMPLATE_IDS, default=TEMPLATE_IDS,
+                        help='Render selected templates without updating unrelated previews')
     args = parser.parse_args()
     args.evidence_dir.mkdir(parents=True, exist_ok=True)
     (ROOT/'previews').mkdir(exist_ok=True)
@@ -110,6 +209,7 @@ def main():
     threading.Thread(target=server.serve_forever, daemon=True).start()
     measurements = []
     interactions = []
+    executive = []
     try:
         with sync_playwright() as p:
             executable = os.environ.get('CHROMIUM_EXECUTABLE') or shutil.which('chromium') or shutil.which('chromium-browser')
@@ -120,10 +220,87 @@ def main():
             page.on('requestfailed', lambda request: errors.append(request.url))
             for width, height in VIEWPORTS:
                 page.set_viewport_size(dict(width=width, height=height))
-                for name in TEMPLATE_IDS:
+                for name in args.templates:
                     page.goto(f'http://127.0.0.1:{server.server_port}/templates/html/{name}.html')
                     page.evaluate('document.fonts.ready')
+                    font_status = page.evaluate("""() => ({
+                      family: getComputedStyle(
+                        document.querySelector('h1')).fontFamily,
+                      loaded: [...document.fonts].some(face =>
+                        face.family.replace(/["']/g, '') ===
+                          'Pretendard Variable' && face.status === 'loaded')
+                    })""")
+                    assert font_status['family'].startswith(
+                        '"Pretendard Variable"'
+                    ) and font_status['loaded'], (
+                        name, width, 'Pretendard not applied', font_status
+                    )
                     assert page.evaluate('CSS.supports("zoom", "calc(100vw / 1440px)")'), 'Browser lacks typed CSS division for zoom'
+                    palette = page.evaluate("""() => {
+                      const bg = el => getComputedStyle(el).backgroundColor;
+                      const white = 'rgb(255, 255, 255)';
+                      const cards = [...document.querySelectorAll(
+                        '.reference-slide .ref-card, .reference-slide .concept-panel, ' +
+                        '.reference-slide .compare-card'
+                      )];
+                      const takeaways = [...document.querySelectorAll('.ref-takeaway')];
+                      const step = document.querySelector('.node.feature');
+                      const output = document.querySelector('.node.output');
+                      const ksp = [...document.querySelectorAll('.ref-chip')].some(
+                        e => e.textContent.includes('K kernel')
+                      );
+                      return {
+                        cardCount: cards.length,
+                        nonwhiteCards: cards.filter(el => bg(el) !== white)
+                          .map(el => el.className),
+                        takeaways: takeaways.map(el => ({
+                          bg: bg(el),
+                          rule: getComputedStyle(el).borderLeftColor,
+                          width: getComputedStyle(el).borderLeftWidth
+                        })),
+                        navLinks: [...document.querySelectorAll('header a')].filter(
+                          e => e.textContent.includes('전체 레퍼런스')).length,
+                        ksp,
+                        process: step && output ? {
+                          feature: bg(step), output: bg(output)
+                        } : null
+                      };
+                    }""")
+                    assert not palette['nonwhiteCards'], (
+                        name, width, 'decorative card backgrounds', palette
+                    )
+                    assert palette['navLinks'] == 0 and not palette['ksp'], (
+                        name, width, 'authoring UI present', palette
+                    )
+                    if name in ('concept', 'process'):
+                        assert len(palette['takeaways']) == 1, (
+                            name, width, 'missing takeaway', palette
+                        )
+                        takeaway = palette['takeaways'][0]
+                        assert takeaway['bg'] == 'rgb(255, 255, 255)' and (
+                            2.0 < float(takeaway['width'].removesuffix('px')) <= 4.01
+                        ) and takeaway['rule'] == 'rgb(38, 166, 161)', (
+                            name, width, 'takeaway does not match shared style',
+                            palette
+                        )
+                    else:
+                        assert not palette['takeaways'], (name, width, palette)
+                    if name == 'process':
+                        assert palette['process'] == {
+                            'feature': 'rgb(234, 241, 255)',
+                            'output': 'rgb(227, 246, 243)'
+                        }, (name, width, 'lost meaningful stage colors', palette)
+                    disallowed_labels = (
+                        '가상 데이터', '가상 시나리오', '가상 6개',
+                        '가상 12건', '실측 효과 아님', '실제 모델 성능 아님',
+                        '실제 학습값 아님'
+                    )
+                    displayed_text = page.locator('body').inner_text()
+                    assert not any(
+                        label in displayed_text for label in disallowed_labels
+                    ), (name, width, 'simulated-data disclaimer still shown')
+                    if name == 'executive-summary':
+                        executive.append(dict(viewport=[width,height], **check_executive(page, width)))
                     m = page.evaluate(GEOMETRY)
                     for key in ('outside','overflow','footerOverlap','spacing','clippedText','arrowErrors'):
                         assert not m[key], (name, width, key, m[key])
@@ -133,7 +310,7 @@ def main():
                         assert abs(r['width']/r['height']-16/9)<.002
                         assert r['bottom'] <= height and r['right'] <= width
                         assert m['titleLines'] == 1 and m['subtitleLines'] == 1, (name, width, m)
-                    measurements.append(dict(template=name, viewport=[width,height], **m))
+                    measurements.append(dict(template=name, viewport=[width,height], font=font_status, **m))
                     if name == 'interactive':
                         interactions.append(dict(viewport=[width,height],thresholds=check_interactive(page)))
                     page.screenshot(path=str(args.evidence_dir/f'{name}-{width}.png'), full_page=True)
@@ -142,14 +319,15 @@ def main():
                         options = {'quality':92} if ext == 'jpg' else {}
                         page.locator('.slide').screenshot(path=str(ROOT/'previews'/f'html-{name}.{ext}'), animations='disabled', **options)
             assert not errors, errors
-            report = dict(browser=browser.version, viewports=VIEWPORTS, measurements=measurements, interactive=interactions, errors=errors)
+            report = dict(browser=browser.version, viewports=VIEWPORTS, measurements=measurements, interactive=interactions, executive=executive, errors=errors)
             (args.evidence_dir/'validation.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
             browser.close()
     finally:
         server.shutdown()
         server.server_close()
-    print(f'PASS: {len(measurements)} renders; 21 thresholds + keyboard/pointer controls at each viewport; no geometry, spacing or runtime errors.')
+    print(f'PASS: {len(measurements)} renders; {len(interactions)} interactive viewport checks; {len(executive)} KPI checks; Pretendard loaded, no geometry, spacing or runtime errors.')
 
 
 if __name__ == '__main__':
     main()
+

@@ -17,14 +17,14 @@
 
 - 공통 수정사항은 `DESIGN_SYSTEM.md`와 공유 CSS에서 먼저 해결합니다.
 - 유형별 수정사항은 `01 Concept` ~ `08 Executive Summary`로 구분해 기록합니다.
-- **각 유형의 HTML 디자인을 승인한 다음** 새 유형의 PPTX 원본 및 프리뷰를 제작합니다. 기존 3종 PPTX는 유지합니다.
+- **8종 HTML 시각 패턴을 승인한 다음** 필요한 콘텐츠를 Scroll/Slide HTML로 구성합니다. PPTX 제작은 범위 밖입니다.
 - 외부 Figure 사용 시 실제 출처를 표기하고, 가상 수치는 실제 성능으로 오해되지 않게 합니다.
 - '예제로 직접 구현했습니다' 같은 제작 과정 설명은 사용자에게 보이는 슬라이드에서 제외합니다.
 
 ## 현재 구현 범위
 
-- 기존: Concept / Process / Comparison (HTML + PPTX 3장)
+- 기존: Concept / Process / Comparison (HTML 3종)
 - 신규 초안: Step-by-step / Interactive / Architecture / Experiment / Executive Summary (HTML 5종)
 - 별도: CNN Scroll/Slide 5개 개념으로 구성된 연속 강의 예제
 
-새로운 유형의 HTML/PPTX 편집 호환은 아직 완성되지 않았으며, 8종 최종 확정 후 추진합니다.
+모든 신규 결과물은 HTML Scroll/Slide 모드로 구현합니다. 8종의 개별 HTML은 재사용 가능한 디자인 패턴입니다.
