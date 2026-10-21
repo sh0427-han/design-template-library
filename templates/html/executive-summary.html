@@ -91,6 +91,10 @@
   padding:24px 0;align-items:start;align-content:center;gap:14px;line-height:1.55;
 }
 .executive-summary-slide .exec-action + .exec-action {border-top:1px solid var(--border);}
+.executive-summary-slide .exec-scenario-note {
+  flex:0 0 auto;margin:0;padding-top:9px;border-top:1px solid var(--border);
+  color:var(--muted);font-size:14px;line-height:1.4;word-break:keep-all;
+}
 @media(max-width:900px) {
   .executive-summary-slide .executive-grid {grid-template-columns:1fr;height:auto;}
   .executive-summary-slide .exec-chart {margin:0;}
@@ -175,6 +179,7 @@
           <div class="exec-actions"><div class="exec-action"><strong>1</strong><span><b>우선순위 설정</b><br>점검 대상의 위험도와 처리 시점을 구분</span></div>
 <div class="exec-action"><strong>2</strong><span><b>파일럿 기준 통일</b><br>동일 기준으로 도입 전·후 수치를 집계</span></div>
 <div class="exec-action"><strong>3</strong><span><b>확대 판단</b><br>효율성과 미검출 위험을 함께 확인</span></div></div>
+          <p class="exec-scenario-note">가상 시나리오 · 동일한 월간 유입량과 집계 기준 가정 · 실측 효과 아님</p>
         </section>
       </div>
     </div>
