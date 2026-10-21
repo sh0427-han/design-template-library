@@ -5,7 +5,10 @@
 - Canonical repository: https://github.com/sh0427-han/design-template-library
 - Repository owner: `sh0427-han` (ChatGPT GitHub connection: `배포용`)
 - Do not confuse it with `sh0427-han-private` (separate private project account).
-- This is a reusable **design reference library**, not an application deployment repository.
+- This is an **HTML-only design reference library** for AI/ML teaching, technical presentations, papers, and engineering reports, not an application deployment repository.
+- **Only HTML Scroll Mode and Slide Mode are supported outputs. Do not generate PPTX, create PPTX conversions, or synchronize to PPTX.**
+- The eight standalone HTML types are reusable visual patterns, not alternative output formats; compose them into Scroll or Slide pages as needed.
+- Existing `templates/pptx/` files are historical artifacts: leave them untouched unless explicitly instructed to archive or delete them.
 
 ## Before any edit
 
@@ -17,22 +20,25 @@
 
 - One main concept per slide; use diagrams and data flows where helpful.
 - Ensure technical accuracy, especially equations, tensor layouts, CNN flows and metrics.
-- Maintain visual consistency between PPT and HTML, while respecting format-specific constraints.
-- Apply **condensed character spacing of 1.0 pt (`-1pt`) to ALL text** (title, body, label, caption, footer, gallery), in both PPTX and HTML. Use shared constants; never override only for labels or headings without explicit user request.
-- Preserve editability: do not rasterize PPT slide backgrounds.
+- Use the shared HTML/CSS/JavaScript design system for Scroll and Slide; keep content and calculations consistent across modes.
+- Apply **condensed character spacing of 1.0 pt (`-1pt`) to ALL HTML text** (title, body, label, caption, footer, gallery). Use shared tokens; never override individual labels/headings without explicit instruction.
+- Use Pretendard Variable as the default HTML typeface via `templates/html/styles.css`.
+- Preserve editable HTML/CSS/JavaScript source and functional browser interactions; do not substitute a static screenshot for working content.
 - Do not insert third-party figures without a source URL near the figure.
 - User/project-specific requirements take priority over the library defaults.
 - Do not edit external repositories without explicit instruction.
 
 ## Adding or changing a template
 
-1. Update editable source in `templates/html` and/or `templates/pptx`.
+1. Update HTML/CSS/JavaScript source under `templates/`; do not create or edit PPTX.
 2. Rebuild outputs and previews; never assert visual verification without rendering.
 3. Update `TEMPLATE_CATALOG.md` to include purpose, source, preview, and status.
 4. Check title clipping, text overflow, alignment, arrow direction, responsive behavior.
 5. Report changed files, tests, and remaining limitations.
 
 ## Avoid
+
+- Do not propose future PPTX generation as a project milestone.
 
 - Do not use templates solely for decoration, with no informational advantage.
 - Do not fabricate benchmark results, model configurations, citations or sources.
@@ -45,12 +51,12 @@
 - For dual-mode requests inspect `templates/dual-mode-learning/DESIGN.md` and `MODES.md` first.
 - Share lesson content, math and interactive behavior between modes; separate only layout, navigation and explanatory density.
 - Inherit the canonical `templates/html/styles.css` tokens and its global **-1pt** character spacing; do not re-declare conflicting colors.
-- Preserve the existing Concept / Process / Comparison HTML and editable PPTX examples.
+- Preserve the existing Concept / Process / Comparison HTML patterns and the CNN Scroll/Slide implementation except where the task requires changes.
 
 
 ## Ongoing example refinement
 
-- The first three Concept / Process / Comparison HTML/PPTX layouts and the five Dual-mode teaching slides are all editable, evolving reference samples.
+- The eight HTML reference patterns and CNN Scroll/Slide lesson are editable, evolving reference samples.
 - Do not add generic creator-facing meta notes or force subtitles onto multiple lines when avoidable.
 - Prefer factual, computed visual explanation; distribute content visually across each slide.
 - Validate representative desktop viewports: 1600x950, 1366x768, 1280x720.
