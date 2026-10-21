@@ -95,22 +95,17 @@ button[aria-pressed=true] { background: #12233F; border-color: #12233F; color: #
       try {
         const doc = frame.contentDocument;
         const font = frame.dataset.font;
-        if (font === 'pretendard') {
-          const link = doc.createElement('link');
-          link.rel = 'stylesheet';
-          link.href = 'https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css';
-          doc.head.append(link);
-          await new Promise(resolve => {
-            link.addEventListener('load', resolve, {once:true});
-            link.addEventListener('error', resolve, {once:true});
-          });
-        }
         const style = doc.createElement('style');
         style.textContent = font === 'malgun'
           ? 'html, body, body * {font-family:"Malgun Gothic",sans-serif!important;}'
           : 'html, body, body * {font-family:"Pretendard Variable","Pretendard",sans-serif!important;}';
         doc.head.append(style);
-        await doc.fonts.ready;
+        if (font === 'pretendard') {
+          const link = doc.createElement('link');
+          link.rel = 'stylesheet';
+          link.href = 'https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css';
+          doc.head.append(link);
+        }
       } catch (error) {
         console.warn('동일 출처 서버에서 여세요 (예: python -m http.server).', error);
       }
@@ -125,7 +120,7 @@ button[aria-pressed=true] { background: #12233F; border-color: #12233F; color: #
       frame.src = pageNames[current];
     });
   }));
-  document.querySelectorAll('[data-view]').forEach(button => button.addEventListener('click', () => {
+  document.querySelectorAll('button[data-view]').forEach(button => button.addEventListener('click', () => {
     container.dataset.view = button.dataset.view;
     document.querySelectorAll('button[data-view]').forEach(b => b.setAttribute('aria-pressed', String(b === button)));
     requestAnimationFrame(resizeFrames);
