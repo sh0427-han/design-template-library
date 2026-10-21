@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>맑은 고딕 · Pretendard 폰트 비교 | Design Template Library</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root {
+  font-family: system-ui, "Malgun Gothic", sans-serif;
+  color: #1B2940;
+  background: #F6F8FC;
+  letter-spacing: -1pt;
+}
+* { box-sizing: border-box; }
+body { margin: 0; padding: 32px clamp(16px, 3vw, 55px) 60px; }
+a { color: #3168C8; }
+button { font: inherit; letter-spacing: inherit; cursor: pointer; }
+header { max-width: 1500px; margin: 0 auto 28px; }
+.kicker { color: #3168C8; font-size: 15px; font-weight: 800; }
+h1 { margin: 12px 0 8px; font-size: clamp(29px, 3.5vw, 42px); color: #12233F; }
+.subtitle { margin: 0; font-size: 18px; line-height: 1.65; color: #64748B; }
+.switcher { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 9px; align-items: center; }
+button { background: #fff; color: #1B3558; border: 1px solid #DDE4EF; border-radius: 10px; padding: 10px 15px; font-size: 16px; font-weight: 700; }
+button[aria-pressed=true] { background: #12233F; border-color: #12233F; color: #fff; }
+.switcher .sep { width: 1px; height: 30px; background: #DDE4EF; margin: 0 9px; }
+.compare-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; max-width: 1600px; margin: 0 auto; }
+.sample { min-width: 0; background: #fff; border: 1px solid #DDE4EF; border-radius: 16px; padding: 18px; }
+.sample-head { display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between; align-items: baseline; margin-bottom: 14px; }
+.sample-head h2 { margin: 0; font-size: 24px; color: #12233F; }
+.sample-head span { font-size: 14px; color: #64748B; }
+.paper-window { width: 100%; overflow: hidden; position: relative; background: #E9EFF7; border-radius: 9px; }
+.paper-frame { position: absolute; inset: 0 auto auto 0; width: 1500px; height: 950px; border: 0; transform-origin: top left; pointer-events: none; }
+.sample-meta { display: grid; grid-template-columns: auto 1fr; gap: 6px 12px; margin-top: 17px; font-size: 15px; line-height: 1.5; }
+.sample-meta dt { font-weight: 800; color: #12233F; }
+.sample-meta dd { margin: 0; color: #64748B; }
+.sample-text { font-size: 18px; margin: 17px 0 0; line-height: 1.55; color: #1B3558; }
+.sample--malgun .sample-head h2, .sample--malgun .sample-text { font-family: "Malgun Gothic", sans-serif; }
+.sample--pretendard .sample-head h2, .sample--pretendard .sample-text { font-family: "Pretendard Variable", "Pretendard", sans-serif; }
+.compare-grid[data-view="malgun"] { grid-template-columns: minmax(0, 1fr); max-width: 1150px; }
+.compare-grid[data-view="pretendard"] { grid-template-columns: minmax(0, 1fr); max-width: 1150px; }
+.compare-grid[data-view="malgun"] .sample--pretendard,
+.compare-grid[data-view="pretendard"] .sample--malgun { display: none; }
+.note { max-width: 1500px; margin: 22px auto 0; color: #64748B; line-height: 1.6; font-size: 15px; }
+@media (max-width: 900px) {
+  .compare-grid { grid-template-columns: minmax(0, 1fr); }
+  .switcher .sep { display: none; }
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="kicker">DESIGN TEMPLATE LIBRARY · FONT COMPARISON</div>
+  <h1>맑은 고딕 / Pretendard</h1>
+  <p class="subtitle">동일한 HTML · 동일한 글꼴 크기와 두께 · 전체 자간 -1pt. 실제 Concept와 Architecture 원본 페이지를 나란히 렌더링합니다.</p>
+  <nav class="switcher" aria-label="비교 대상과 보기 모드">
+    <button type="button" data-page="concept" aria-pressed="true">01 Concept</button>
+    <button type="button" data-page="architecture" aria-pressed="false">06 Architecture</button>
+    <span class="sep"></span>
+    <button type="button" data-view="both" aria-pressed="true">나란히 비교</button>
+    <button type="button" data-view="malgun" aria-pressed="false">맑은 고딕 확대</button>
+    <button type="button" data-view="pretendard" aria-pressed="false">Pretendard 확대</button>
+  </nav>
+</header>
+<main class="compare-grid" id="compare" data-view="both">
+  <section class="sample sample--malgun" aria-label="맑은 고딕 결과">
+    <div class="sample-head"><h2>맑은 고딕</h2><span>Malgun Gothic · Windows 설치 폰트</span></div>
+    <div class="paper-window"><iframe class="paper-frame" data-font="malgun" title="맑은 고딕을 적용한 템플릿 미리보기" loading="eager"></iframe></div>
+    <dl class="sample-meta"><dt>폰트</dt><dd>Malgun Gothic</dd><dt>비교 조건</dt><dd>기존 템플릿의 텍스트 크기·자간·레이아웃 유지</dd></dl>
+    <p class="sample-text">이미지의 숫자 구조 · CNN 아키텍처 · 64×64×16 · Feature Map 변화</p>
+  </section>
+  <section class="sample sample--pretendard" aria-label="Pretendard 결과">
+    <div class="sample-head"><h2>Pretendard</h2><span>Pretendard Variable · 공식 CDN</span></div>
+    <div class="paper-window"><iframe class="paper-frame" data-font="pretendard" title="Pretendard를 적용한 템플릿 미리보기" loading="eager"></iframe></div>
+    <dl class="sample-meta"><dt>폰트</dt><dd>Pretendard Variable</dd><dt>비교 조건</dt><dd>기존 템플릿의 텍스트 크기·자간·레이아웃 유지</dd></dl>
+    <p class="sample-text">이미지의 숫자 구조 · CNN 아키텍처 · 64×64×16 · Feature Map 변화</p>
+  </section>
+</main>
+<p class="note">정확한 맑은 고딕 비교는 해당 폰트가 설치된 Windows 브라우저에서 확인하세요. 설치되지 않은 환경에서는 시스템 대체 글꼴이 보일 수 있습니다. Pretendard는 네트워크 연결이 필요하며 로딩 실패 시 대체 글꼴이 보일 수 있습니다. 이 페이지는 원본 두 템플릿의 글꼴만 임시로 변경하여 보여주며 소스 디자인은 수정하지 않습니다.</p>
+<script>
+(() => {
+  const pageNames = { concept: 'concept.html', architecture: 'architecture.html' };
+  let current = 'concept';
+  const container = document.getElementById('compare');
+  function resizeFrames() {
+    document.querySelectorAll('.paper-window').forEach(windowElement => {
+      const width = windowElement.clientWidth;
+      const scale = width / 1500;
+      windowElement.style.height = (950 * scale) + 'px';
+      windowElement.querySelector('iframe').style.transform = 'scale(' + scale + ')';
+    });
+  }
+  function setPreview(frame) {
+    frame.addEventListener('load', async () => {
+      try {
+        const doc = frame.contentDocument;
+        const font = frame.dataset.font;
+        if (font === 'pretendard') {
+          const link = doc.createElement('link');
+          link.rel = 'stylesheet';
+          link.href = 'https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css';
+          doc.head.append(link);
+          await new Promise(resolve => {
+            link.addEventListener('load', resolve, {once:true});
+            link.addEventListener('error', resolve, {once:true});
+          });
+        }
+        const style = doc.createElement('style');
+        style.textContent = font === 'malgun'
+          ? 'html, body, body * {font-family:"Malgun Gothic",sans-serif!important;}'
+          : 'html, body, body * {font-family:"Pretendard Variable","Pretendard",sans-serif!important;}';
+        doc.head.append(style);
+        await doc.fonts.ready;
+      } catch (error) {
+        console.warn('동일 출처 서버에서 여세요 (예: python -m http.server).', error);
+      }
+    });
+    frame.src = pageNames[current];
+  }
+  document.querySelectorAll('.paper-frame').forEach(setPreview);
+  document.querySelectorAll('[data-page]').forEach(button => button.addEventListener('click', () => {
+    current = button.dataset.page;
+    document.querySelectorAll('[data-page]').forEach(b => b.setAttribute('aria-pressed', String(b === button)));
+    document.querySelectorAll('.paper-frame').forEach(frame => {
+      frame.src = pageNames[current];
+    });
+  }));
+  document.querySelectorAll('[data-view]').forEach(button => button.addEventListener('click', () => {
+    container.dataset.view = button.dataset.view;
+    document.querySelectorAll('button[data-view]').forEach(b => b.setAttribute('aria-pressed', String(b === button)));
+    requestAnimationFrame(resizeFrames);
+  }));
+  const observer = new ResizeObserver(resizeFrames);
+  document.querySelectorAll('.paper-window').forEach(el => observer.observe(el));
+  window.addEventListener('resize', resizeFrames);
+  resizeFrames();
+})();
+</script>
+</body>
+</html>
