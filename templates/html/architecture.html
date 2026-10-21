@@ -31,11 +31,11 @@
 .architecture-slide .arch-phase-band .arch-classifier::after {background:#9dd2ca;}
 .architecture-slide .arch-pipeline {
   display:grid; grid-template-columns:1.05fr 1.16fr 1.10fr 1.16fr 1.03fr 1.30fr;
-  gap:18px; align-items:start; margin:15px 0 12px; padding:0 4px; flex:1; min-height:0;
+  gap:18px; align-items:start; margin:18px 0 14px; padding:0 4px; flex:1; min-height:0;
 }
 .architecture-slide .arch-stage {
   min-width:0; position:relative; display:flex; flex-direction:column;
-  align-items:center; text-align:center;
+  align-items:center; text-align:center; margin-top:25px;
 }
 .architecture-slide .arch-stage:not(:last-child)::after {
   content:""; position:absolute; top:118px; right:-16px; width:13px;
@@ -52,18 +52,16 @@
 .architecture-slide .arch-shape {font-size:22px; font-weight:800; color:var(--navy); white-space:nowrap; line-height:1.2;}
 .architecture-slide .arch-operation {font-size:15px; font-weight:700; color:var(--blue); margin-top:10px; white-space:nowrap;}
 .architecture-slide .arch-explain {font-size:14px; color:var(--muted); margin-top:5px; line-height:1.3; white-space:nowrap;}
-.architecture-slide .arch-citation {
-  display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
-  border-top:1px solid var(--border); padding:10px 0 11px;
-  font-size:14px; color:var(--muted); line-height:1.4;
+/* Only the relevant lesson note remains; descriptions sit under their own stages. */
+.architecture-slide .arch-block-note {
+  display:flex; align-items:center; justify-content:center; flex-wrap:wrap;
+  column-gap:14px; row-gap:3px;
+  border-top:1px solid var(--border); padding:15px 4px 3px;
+  color:var(--muted); font-size:15px; line-height:1.4;
 }
-.architecture-slide .arch-notes {border-top:1px solid var(--border); padding-top:16px;
-  display:grid;grid-template-columns:repeat(3,minmax(0,1fr)); gap:0;}
-.architecture-slide .arch-notes > div {min-width:0; padding:0 17px;}
-.architecture-slide .arch-notes > div:first-child {padding-left:0;}
-.architecture-slide .arch-notes > div + div {border-left:1px solid var(--border);}
-.architecture-slide .arch-notes strong {display:block; font-size:19px; color:var(--navy); margin-bottom:6px;}
-.architecture-slide .arch-notes p {font-size:16px; color:#52647d; line-height:1.45; margin:0; word-break:keep-all;}
+.architecture-slide .arch-block-note strong {
+  color:var(--navy); font-size:16px; font-weight:800;
+}
 @media(max-width:900px) {
   .architecture-slide .arch-phase-band {display:none;}
   .architecture-slide .content > .ref-card {height:auto; overflow:visible; padding:21px;}
@@ -74,8 +72,9 @@
   .architecture-slide .arch-shape {font-size:20px;}
   .architecture-slide .arch-operation {font-size:14px;}
   .architecture-slide .arch-explain {font-size:13px;}
-  .architecture-slide .arch-notes strong {font-size:17px;}
-  .architecture-slide .arch-notes p {font-size:15px;}
+  .architecture-slide .arch-stage {margin-top:0;}
+  .architecture-slide .arch-block-note {font-size:13px; gap:6px;}
+  .architecture-slide .arch-block-note strong {font-size:14px;}
 }
 @media(max-width:520px) {
   .architecture-slide .content > .ref-card {padding:17px 15px;}
@@ -96,13 +95,8 @@
   .architecture-slide .arch-shape {grid-column:2;grid-row:2;font-size:20px;}
   .architecture-slide .arch-operation {grid-column:2;grid-row:3;margin:0;font-size:13px;white-space:normal;}
   .architecture-slide .arch-explain {grid-column:2;grid-row:4;font-size:12px;white-space:normal;}
-  .architecture-slide .arch-citation {font-size:12px;gap:2px;}
-  .architecture-slide .arch-citation span {display:block;width:100%;}
-  .architecture-slide .arch-notes {grid-template-columns:1fr; gap:13px; padding-top:13px;}
-  .architecture-slide .arch-notes > div {padding:0 0 12px!important; border-left:0!important;border-bottom:1px solid var(--border);}
-  .architecture-slide .arch-notes > div:last-child {border-bottom:0; padding-bottom:0!important;}
-  .architecture-slide .arch-notes strong {font-size:17px;margin-bottom:4px;}
-  .architecture-slide .arch-notes p {font-size:15px;}
+  .architecture-slide .arch-block-note {padding:12px 5px 2px; font-size:12px; text-align:center;}
+  .architecture-slide .arch-block-note strong {font-size:13px;}
 }
 @media print {.architecture-slide .content > .ref-card {overflow:hidden;}}
 </style>
@@ -119,37 +113,35 @@
       <span class="arch-extractor">FEATURE EXTRACTOR</span>
       <span class="arch-classifier">CLASSIFIER</span>
     </div>
-    <div class="arch-pipeline" aria-label="Input → Conv1 → MaxPool → Conv2 → Flatten → Linear → Softmax">
+    <div class="arch-pipeline" aria-label="Input → Conv1 → ReLU → MaxPool → Conv2 → ReLU → Flatten → FC Layer → Softmax">
       <article class="arch-stage" aria-label="Input 단일 RGB 이미지, 64×64×3">
         <div class="arch-title">INPUT</div><div class="arch-graphic" data-art="input"></div>
-        <div class="arch-shape">64×64×3</div><div class="arch-operation">RGB image</div><div class="arch-explain">단일 입력 이미지</div>
+        <div class="arch-shape">64×64×3</div><div class="arch-operation">RGB · 3채널</div><div class="arch-explain">이미지 픽셀 입력</div>
       </article>
       <article class="arch-stage" aria-label="Conv1 + ReLU, kernel 3, stride 2, padding 1, 32×32×16">
         <div class="arch-title" data-group="FEATURE EXTRACTOR">CONV 1 + ReLU</div><div class="arch-graphic" data-art="conv1"></div>
-        <div class="arch-shape">32×32×16</div><div class="arch-operation">3×3 · S2 · P1 · 16ch</div><div class="arch-explain">16 feature maps</div>
+        <div class="arch-shape">32×32×16</div><div class="arch-operation">3×3 · S2 · 16ch</div><div class="arch-explain">초기 패턴 추출 · ReLU</div>
       </article>
       <article class="arch-stage" aria-label="MaxPool 2×2, stride 2, 16×16×16">
         <div class="arch-title">MAXPOOL</div><div class="arch-graphic" data-art="pool"></div>
-        <div class="arch-shape">16×16×16</div><div class="arch-operation">2×2 · S2</div><div class="arch-explain">H·W 1/2 · 채널 유지</div>
+        <div class="arch-shape">16×16×16</div><div class="arch-operation">2×2 · S2</div><div class="arch-explain">강한 반응 유지 · 크기 축소</div>
       </article>
       <article class="arch-stage" aria-label="Conv2 + ReLU, kernel 3, stride 2, padding 1, 8×8×32">
         <div class="arch-title">CONV 2 + ReLU</div><div class="arch-graphic" data-art="conv2"></div>
-        <div class="arch-shape">8×8×32</div><div class="arch-operation">3×3 · S2 · P1 · 32ch</div><div class="arch-explain">32 feature maps</div>
+        <div class="arch-shape">8×8×32</div><div class="arch-operation">3×3 · S2 · 32ch</div><div class="arch-explain">특징 조합 · ReLU</div>
       </article>
       <article class="arch-stage" aria-label="Flatten: 8×8×32의 모든 값을 펼쳐 2048차원 1D 벡터 생성">
         <div class="arch-title" data-group="CLASSIFIER">FLATTEN</div><div class="arch-graphic" data-art="flatten"></div>
-        <div class="arch-shape">2,048</div><div class="arch-operation">8×8×32 → 1D</div><div class="arch-explain">전체 원소를 일렬로 나열</div>
+        <div class="arch-shape">2,048</div><div class="arch-operation">8×8×32 → 1D</div><div class="arch-explain">특징값을 1열로 펼침</div>
       </article>
-      <article class="arch-stage" aria-label="Linear: 2048차원 벡터를 3개 logits로 변환하고 Softmax로 3개 확률 산출">
-        <div class="arch-title">LINEAR + SOFTMAX</div><div class="arch-graphic" data-art="linear"></div>
-        <div class="arch-shape">3 probabilities</div><div class="arch-operation">2,048 → 3 logits → p</div><div class="arch-explain">예시 logits: [2, 1, 0]</div>
+      <article class="arch-stage" aria-label="Fully Connected Layer: 2048차원 벡터를 3개 logits로 변환, Softmax로 각 클래스 확률 산출">
+        <div class="arch-title">FC LAYER + Softmax</div><div class="arch-graphic" data-art="linear"></div>
+        <div class="arch-shape">3 probabilities</div><div class="arch-operation">2,048 → 3 logits → 확률</div><div class="arch-explain">가중합 → 클래스별 확률</div>
       </article>
     </div>
-    <div class="arch-citation"><span>Tensor Shape: H×W×C · Batch 생략</span><span>Feature Map·Vector: 축소 모식도 · 중간 원소 생략</span></div>
-    <div class="arch-notes">
-      <div><strong>Feature extraction</strong><p>Conv: 패턴 학습 · H×W 축소 · 채널 증가</p></div>
-      <div><strong>Spatial reduction</strong><p>Stride 2와 MaxPool로 해상도 축소</p></div>
-      <div><strong>Classifier</strong><p>Flatten: 2,048D → Linear → Softmax 확률</p></div>
+    <div class="arch-block-note">
+      <strong>Layer vs Block</strong>
+      <span>Conv · ReLU · MaxPool은 서로 다른 연산 · 함께 묶으면 <b>Conv Block</b></span>
     </div>
   </section></div>
   <footer class="footer"><span>Design Template Library · Architecture</span><span>06 / 08</span></footer>
