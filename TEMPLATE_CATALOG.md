@@ -28,6 +28,16 @@
 - **Experiment**: 수치 예시는 실제 실험 데이터와 구분합니다. 가상 12개 샘플로 TN=5, FP=1, FN=2, TP=4를 사용했습니다.
 - **Executive Summary**: 개선 수치가 가상인 경우 명시하며, 숫자보다 의사결정 메시지를 우선합니다.
 
+## 색상 및 카드 적용 기준
+
+- **일반 카드 = 흰색**, 캔버스 = Off-white. 장식 목적으로 카드 전체를 파랗거나 초록색으로 채우지 않습니다.
+- **강조 캡션 = 흰색 바탕 + 왼쪽 Teal 선**. 01 Concept과 02 Process에서 동일 컴포넌트 `.ref-takeaway`를 사용합니다.
+- 02 Process: **Feature(CNN) 파란색 / Output(예측 결과) 초록색**은 단계의 기능 구분을 위해 유지합니다.
+- 04 Step-by-step, 07 Experiment: 카드 전체의 Pale Blue 배경을 제거하고 흰색으로 통일했습니다.
+- 05 Interactive, 07 Experiment: TP/TN 초록·FP/FN 주황 결과 셀 등 의미가 명시된 영역에만 배경색을 사용합니다.
+- 03 Comparison의 비교 라벨, 06 Architecture의 Feature Map 격자, 08 Executive Summary의 비교 막대처럼 데이터 범주를 구분하는 소규모 강조색은 유지합니다.
+- 8종의 헤더는 청중용 제목만 남기고 `전체 레퍼런스 ↗` 편집/갤러리 링크를 제거했습니다. 06 Architecture의 `K kernel · S stride · P padding` 편집용 칩도 제거했습니다.
+
 ## 공통 규칙
 
 - 네이비/블루/틸, Off-white/White 배경, 전체 글자 간격 `-1pt`.
