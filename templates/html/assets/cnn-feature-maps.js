@@ -93,7 +93,7 @@
     const dark = palette==='teal' ? [31,151,143] : [30,74,142];
     const light = [242,247,253];
     for (let i = 0; i < data.length; i++) {
-      const v = Math.pow(clamp(data[i] * 1.25), 0.73);
+      const v = Math.pow(clamp(data[i] * 4.5), 0.74);
       for (let c = 0; c < 3; c++) {
         pixels.data[4*i+c] = Math.round(light[c] + (dark[c]-light[c])*v);
       }
