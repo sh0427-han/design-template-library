@@ -8,113 +8,206 @@
 <link rel="stylesheet" href="reference-types.css">
 <link rel="stylesheet" href="reference-layout.css">
 <style>
-/* 04 Step-by-Step: one numerically verified, editable cross-correlation figure.
-   Reuse policy: docs/FIGURE_PRODUCTION_STANDARD.md (available on #6 PR). */
-.step-by-step-slide .content { display:flex; }
-.step-by-step-slide .calc-layout { display:grid; grid-template-columns:1.24fr .92fr; gap:20px; width:100%; min-height:0; }
-.step-by-step-slide .calc-panel { display:flex; flex-direction:column; min-width:0; padding:23px 24px; background:#fff; border:1px solid var(--border); border-radius:17px; }
+/* 04 Step-by-Step: 5x5 input, 3x3 kernel, explicit receptive-field mapping. */
+.step-by-step-slide .content { display:flex; margin-top:18px; }
+.step-by-step-slide .calc-layout { display:grid; grid-template-columns:1.12fr .96fr; gap:14px; width:100%; min-height:0; }
+.step-by-step-slide .calc-panel { display:flex; flex-direction:column; min-width:0; padding:16px 18px; background:#fff; border:1px solid var(--border); border-radius:17px; }
 .step-by-step-slide .calc-step { color:var(--blue); font-size:14px; font-weight:800; }
-.step-by-step-slide .calc-heading { margin:8px 0 0; color:var(--navy); font-size:25px; font-weight:800; line-height:1.2; }
-.step-by-step-slide .calc-flow { display:flex; align-items:center; justify-content:center; gap:14px; width:100%; margin:auto 0; padding:17px 0 13px; }
-.step-by-step-slide .calc-item { display:flex; flex-direction:column; align-items:center; min-width:0; gap:15px; }
-.step-by-step-slide .calc-item-title { min-height:25px; font-size:17px; color:var(--deep); font-weight:750; white-space:nowrap; }
-.step-by-step-slide .calc-matrix { display:grid; grid-template-columns:repeat(2,70px); grid-auto-rows:70px; gap:6px; }
-.step-by-step-slide .calc-matrix > div { display:flex; justify-content:center; align-items:center; border:1px solid #cad9ed; border-radius:9px; background:#f7f9fd; color:var(--navy); font-size:29px; font-weight:800; font-variant-numeric:tabular-nums; }
-.step-by-step-slide .calc-matrix.kernel > div { background:#edf8f6; border-color:#b9ddd8; }
-.step-by-step-slide .calc-matrix.product { grid-template-columns:repeat(2,92px); grid-auto-rows:70px; }
-.step-by-step-slide .calc-matrix.product > div { flex-direction:column; gap:2px; border-color:#d4e2f3; background:#f2f6fc; }
-.step-by-step-slide .calc-matrix.product small { color:#607995; font-size:13px; font-weight:650; }
-.step-by-step-slide .calc-matrix.product strong { color:var(--navy); font-size:27px; line-height:1; }
-.step-by-step-slide .calc-operator { align-self:center; margin-top:38px; min-width:24px; text-align:center; color:var(--blue); font-size:30px; font-weight:750; line-height:1; }
-.step-by-step-slide .calc-arrow { width:34px; height:16px; margin-top:38px; flex-shrink:0; overflow:visible; }
+.step-by-step-slide .calc-heading { margin:8px 0 0; color:var(--navy); font-size:20px; font-weight:800; line-height:1.16; }
+.step-by-step-slide .calc-note { margin:4px 0 0; color:var(--muted); font-size:12px; line-height:1.35; }
+.step-by-step-slide .calc-flow { --diagram-height:208px; display:flex; align-items:flex-start; justify-content:center; gap:8px; width:100%; margin:8px 0 4px; padding:4px 0 2px; }
+.step-by-step-slide .calc-panel:nth-child(2) .calc-flow { --diagram-height:164px; gap:5px; }
+.step-by-step-slide .calc-item { display:flex; flex-direction:column; align-items:center; min-width:0; gap:6px; }
+.step-by-step-slide .calc-diagram { display:flex; align-items:center; justify-content:center; height:var(--diagram-height); width:100%; }
+.step-by-step-slide .calc-connector { display:flex; align-items:center; justify-content:center; height:calc(var(--diagram-height) + 26px); padding-top:26px; flex:0 0 auto; }
+.step-by-step-slide .calc-item-title { height:20px; flex:0 0 20px; width:100%; font-size:15px; line-height:20px; color:var(--deep); font-weight:760; text-align:left; white-space:nowrap; }
+.step-by-step-slide .calc-matrix { display:grid; gap:4px; justify-content:center; }
+.step-by-step-slide .calc-matrix > div { display:flex; justify-content:center; align-items:center; border:1px solid #cad9ed; border-radius:9px; background:#f7f9fd; color:var(--navy); font-size:26px; font-weight:800; font-variant-numeric:tabular-nums; }
+.step-by-step-slide .input5 { grid-template-columns:repeat(5,38px); grid-auto-rows:38px; }
+.step-by-step-slide .input5 > div { width:38px; height:38px; font-size:18px; }
+.step-by-step-slide .kernel3 { grid-template-columns:repeat(3,46px); grid-auto-rows:46px; }
+.step-by-step-slide .kernel3 > div { width:46px; height:46px; background:#edf8f6; border-color:#b9ddd8; }
+.step-by-step-slide .patch3 { grid-template-columns:repeat(3,46px); grid-auto-rows:46px; }
+.step-by-step-slide .patch3 > div { width:46px; height:46px; background:#f7fbff; }
+.step-by-step-slide .calc-panel:nth-child(2) .patch3,.step-by-step-slide .calc-panel:nth-child(2) .kernel3 { grid-template-columns:repeat(3,42px); grid-auto-rows:42px; }
+.step-by-step-slide .calc-panel:nth-child(2) .patch3 > div,.step-by-step-slide .calc-panel:nth-child(2) .kernel3 > div { width:42px; height:42px; font-size:22px; }
+.step-by-step-slide .product3 { grid-template-columns:repeat(3,60px); grid-auto-rows:48px; }
+.step-by-step-slide .product3 > div { width:60px; height:48px; flex-direction:column; gap:2px; border-color:#d4e2f3; background:#f2f6fc; }
+.step-by-step-slide .product3 small { color:#607995; font-size:10px; font-weight:650; }
+.step-by-step-slide .product3 strong { color:var(--navy); font-size:19px; line-height:1; }
+.step-by-step-slide .output3 { grid-template-columns:repeat(3,44px); grid-auto-rows:44px; }
+.step-by-step-slide .output3 > div { width:44px; height:44px; font-size:19px; background:#f7f9fd; }
+.step-by-step-slide .output3 > div:not(.focus-out) { color:#8492a6; background:#f6f7fb; }
+.step-by-step-slide .focus-rf { background:#e9f3ff !important; border-color:#8db7ff !important; box-shadow:inset 0 0 0 2px rgba(49,104,200,.18); }
+.step-by-step-slide .focus-out { background:var(--navy) !important; border-color:var(--navy) !important; color:#fff !important; box-shadow:0 8px 18px rgba(18,35,63,.14); }
+.step-by-step-slide .calc-operator { min-width:16px; text-align:center; color:var(--blue); font-size:24px; font-weight:800; line-height:1; }
+.step-by-step-slide .calc-arrow { width:24px; height:12px; flex-shrink:0; overflow:visible; }
 .step-by-step-slide .calc-arrow path { fill:none; stroke:var(--blue); stroke-width:2.3; stroke-linecap:round; stroke-linejoin:round; }
-.step-by-step-slide .calc-mini-caption { display:flex; align-items:center; justify-content:center; min-height:43px; color:#64748b; border-top:1px solid var(--border); font-size:16px; text-align:center; }
-.step-by-step-slide .calc-sum-work { display:flex; align-items:center; justify-content:center; gap:12px; flex-direction:column; margin:auto 0; padding:8px 0; }
-.step-by-step-slide .calc-equation { font-size:36px; font-weight:800; letter-spacing:-1pt; color:var(--navy); white-space:nowrap; font-variant-numeric:tabular-nums; }
-.step-by-step-slide .calc-equation-sub { font-size:16px; color:var(--muted); margin-top:3px; }
-.step-by-step-slide .calc-down-arrow { width:25px; height:38px; }
-.step-by-step-slide .calc-down-arrow path { fill:none; stroke:var(--blue); stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
-.step-by-step-slide .calc-output-wrap { display:flex; flex-direction:column; align-items:center; gap:10px; }
-.step-by-step-slide .calc-output-label { font-size:17px; color:var(--deep); font-weight:800; }
-.step-by-step-slide .calc-output { width:92px; height:92px; display:grid; place-items:center; border-radius:11px; color:#fff; background:var(--navy); font-size:43px; font-weight:850; font-variant-numeric:tabular-nums; }
-.step-by-step-slide .calc-output-caption { font-size:16px; color:#52647d; text-align:center; }
-.step-by-step-slide .calc-method-note { border-top:1px solid var(--border); padding-top:14px; min-height:43px; font-size:14px; color:#64748b; line-height:1.45; text-align:center; }
+.step-by-step-slide .mapping-summary { display:flex; justify-content:flex-start; align-items:center; gap:7px; min-height:0; border-top:1px solid var(--border); padding-top:8px; color:#52647d; font-size:13px; text-align:left; }
+.step-by-step-slide .mapping-pill { display:inline-flex; align-items:center; justify-content:center; padding:2px 8px; border-radius:999px; background:#eef3fb; color:var(--deep); font-weight:760; }
+.step-by-step-slide .calc-why { margin-top:6px; color:#5f7088; font-size:12px; line-height:1.35; }
+.step-by-step-slide .calc-arrow-inline { width:18px; height:12px; }
+.step-by-step-slide .calc-arrow-inline path { fill:none; stroke:var(--blue); stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+.step-by-step-slide .calc-sum-area { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; margin:2px 0 0; padding:0; }
+.step-by-step-slide .calc-equation { font-size:27px; font-weight:800; letter-spacing:-1pt; color:var(--navy); text-align:center; white-space:nowrap; font-variant-numeric:tabular-nums; }
+.step-by-step-slide .calc-equation-sub { font-size:13px; color:var(--muted); text-align:center; }
+.step-by-step-slide .calc-output-row { display:flex; align-items:center; justify-content:center; gap:8px; }
+.step-by-step-slide .calc-output-wrap { display:flex; flex-direction:column; align-items:center; gap:6px; }
+.step-by-step-slide .calc-output-label { font-size:15px; color:var(--deep); font-weight:800; }
+.step-by-step-slide .calc-output { width:70px; height:70px; display:grid; place-items:center; border-radius:11px; color:#fff; background:var(--navy); font-size:34px; font-weight:850; font-variant-numeric:tabular-nums; box-shadow:0 12px 22px rgba(18,35,63,.14); }
+.step-by-step-slide .calc-output-caption { font-size:13px; color:#52647d; text-align:center; }
+.step-by-step-slide .calc-method-note { border-top:1px solid var(--border); padding-top:6px; min-height:0; font-size:11px; color:#64748b; line-height:1.35; text-align:center; }
+.step-by-step-slide .em { color:var(--blue); font-weight:780; }
 @media (max-width:900px) {
   .step-by-step-slide.reference-slide { zoom:1; width:100%; height:auto; aspect-ratio:auto; overflow:visible; }
   .step-by-step-slide .calc-layout { grid-template-columns:1fr; gap:16px; }
-  .step-by-step-slide .calc-panel { padding:20px; }
-  .step-by-step-slide .calc-flow { margin:18px 0 20px; }
-  .step-by-step-slide .calc-sum-work { margin:25px 0; }
+  .step-by-step-slide .calc-panel { padding:16px; }
+  .step-by-step-slide .calc-flow { margin:10px 0 12px; }
 }
 @media (max-width:520px) {
-  .step-by-step-slide .calc-panel { padding:17px 14px; }
+  .step-by-step-slide .calc-panel { padding:16px 14px; }
   .step-by-step-slide .calc-heading { font-size:22px; }
-  .step-by-step-slide .calc-flow { gap:7px; }
-  .step-by-step-slide .calc-item { gap:8px; }
-  .step-by-step-slide .calc-item-title { font-size:13px; }
-  .step-by-step-slide .calc-matrix { grid-template-columns:repeat(2,40px); grid-auto-rows:42px; gap:3px; }
-  .step-by-step-slide .calc-matrix > div { width:40px; font-size:22px; }
-  .step-by-step-slide .calc-matrix.product { grid-template-columns:repeat(2,48px); grid-auto-rows:42px; gap:3px; }
-  .step-by-step-slide .calc-matrix.product > div { width:48px; gap:0; }
-  .step-by-step-slide .calc-matrix.product small { font-size:10px; }
-  .step-by-step-slide .calc-matrix.product strong { font-size:20px; }
-  .step-by-step-slide .calc-operator { min-width:14px; font-size:24px; margin-top:23px; }
-  .step-by-step-slide .calc-arrow { width:20px; height:13px; margin-top:23px; }
-  .step-by-step-slide .calc-equation { font-size:29px; }
-  .step-by-step-slide .calc-mini-caption,.step-by-step-slide .calc-method-note { font-size:13px; }
+  .step-by-step-slide .calc-note { font-size:13px; }
+  .step-by-step-slide .calc-flow { gap:7px; flex-direction:column; align-items:center; }
+  .step-by-step-slide .calc-item { width:100%; }
+  .step-by-step-slide .calc-diagram { height:auto; }
+  .step-by-step-slide .calc-connector { height:24px; padding:0; transform:rotate(90deg); }
+  .step-by-step-slide .calc-item { gap:7px; }
+  .step-by-step-slide .calc-item-title { font-size:13px; text-align:center; }
+  .step-by-step-slide .input5 { grid-template-columns:repeat(5,34px); grid-auto-rows:34px; gap:3px; }
+  .step-by-step-slide .input5 > div { width:34px; height:34px; font-size:16px; border-radius:7px; }
+  .step-by-step-slide .kernel3,.step-by-step-slide .patch3 { grid-template-columns:repeat(3,40px); grid-auto-rows:40px; gap:3px; }
+  .step-by-step-slide .kernel3 > div,.step-by-step-slide .patch3 > div { width:40px; height:40px; font-size:18px; border-radius:7px; }
+  .step-by-step-slide .product3 { grid-template-columns:repeat(3,54px); grid-auto-rows:46px; gap:3px; }
+  .step-by-step-slide .product3 > div { width:54px; height:46px; border-radius:7px; }
+  .step-by-step-slide .product3 small { font-size:9px; }
+  .step-by-step-slide .product3 strong { font-size:18px; }
+  .step-by-step-slide .output3 { grid-template-columns:repeat(3,40px); grid-auto-rows:40px; gap:3px; }
+  .step-by-step-slide .output3 > div { width:40px; height:40px; font-size:18px; border-radius:7px; }
+  .step-by-step-slide .calc-operator { min-width:14px; font-size:22px; }
+  .step-by-step-slide .calc-arrow { width:20px; height:13px; }
+  .step-by-step-slide .mapping-summary { font-size:13px; gap:6px; flex-wrap:wrap; }
+  .step-by-step-slide .calc-equation { font-size:22px; }
+  .step-by-step-slide .calc-output-row { flex-direction:column; gap:10px; }
+  .step-by-step-slide .calc-output { width:72px; height:72px; font-size:30px; }
+  .step-by-step-slide .calc-method-note { font-size:13px; }
 }
 </style>
 </head>
 <body>
 <main class="deck reference-deck">
-  <section class="slide ref-slide reference-slide step-by-step-slide" aria-label="2×2 커널의 원소별 곱셈과 합산 예시">
+  <section class="slide ref-slide reference-slide step-by-step-slide" aria-label="5×5 입력과 3×3 커널의 단계별 convolution 예시">
     <header>
       <div class="ref-overline"><div class="kicker">STEP-BY-STEP / 04</div></div>
       <h1>필터의 곱셈과 합산</h1>
-      <p class="subtitle">원소별 곱셈 결과 4개를 더해 Feature Map의 한 값을 계산</p>
+      <p class="subtitle">입력의 3×3 영역과 커널을 곱해 출력 Feature Map의 한 값을 계산</p>
     </header>
     <div class="content">
       <div class="calc-layout">
-        <section class="calc-panel" aria-label="첫 단계: 동일 위치의 원소별 곱셈">
-          <div class="calc-step">01 · ELEMENT-WISE MULTIPLICATION</div>
-          <h2 class="calc-heading">같은 위치의 값끼리 곱셈</h2>
+        <section class="calc-panel" aria-label="첫 단계: 입력 영역과 커널, 출력 위치의 대응 관계">
+          <div class="calc-step">01 · RECEPTIVE FIELD → OUTPUT POSITION</div>
+          <h2 class="calc-heading">입력의 어느 영역이 출력의 어느 위치로 가는가</h2>
+          <p class="calc-note">입력 5×5의 <span class="em">좌상단 3×3 영역</span>에 커널을 적용하면, 출력 Feature Map의 <span class="em">좌상단 값</span>이 계산됩니다.</p>
           <div class="calc-flow">
             <div class="calc-item">
-              <div class="calc-item-title">입력 영역</div>
-              <div class="calc-matrix" aria-label="입력 행렬: 첫 행 1, 2. 둘째 행 3, 4"><div>1</div><div>2</div><div>3</div><div>4</div></div>
+              <div class="calc-item-title">입력 5×5</div>
+              <div class="calc-diagram">
+              <div class="calc-matrix input5" aria-label="입력 행렬 5×5">
+                <div class="focus-rf">1</div><div class="focus-rf">2</div><div class="focus-rf">3</div><div>1</div><div>0</div>
+                <div class="focus-rf">4</div><div class="focus-rf">5</div><div class="focus-rf">6</div><div>2</div><div>1</div>
+                <div class="focus-rf">7</div><div class="focus-rf">8</div><div class="focus-rf">9</div><div>3</div><div>1</div>
+                <div>2</div><div>1</div><div>0</div><div>4</div><div>2</div>
+                <div>1</div><div>3</div><div>2</div><div>1</div><div>0</div>
+              </div>
+              </div>
             </div>
-            <div class="calc-operator" aria-label="원소별 곱셈">⊙</div>
+            <div class="calc-connector"><svg class="calc-arrow" viewBox="0 0 36 16" role="img" aria-label="커널 적용"><path d="M2 8 H32 M26 2 L32 8 L26 14"/></svg></div>
+            <div class="calc-item">
+              <div class="calc-item-title">커널 3×3</div>
+              <div class="calc-diagram">
+              <div class="calc-matrix kernel3" aria-label="커널 행렬 3×3">
+                <div>1</div><div>0</div><div>−1</div>
+                <div>1</div><div>0</div><div>−1</div>
+                <div>1</div><div>0</div><div>−1</div>
+              </div>
+              </div>
+            </div>
+            <div class="calc-connector"><svg class="calc-arrow" viewBox="0 0 36 16" role="img" aria-label="출력 feature map"><path d="M2 8 H32 M26 2 L32 8 L26 14"/></svg></div>
+            <div class="calc-item">
+              <div class="calc-item-title">출력 3×3</div>
+              <div class="calc-diagram">
+              <div class="calc-matrix output3" aria-label="출력 feature map 3×3">
+                <div class="focus-out">−6</div><div>9</div><div>16</div>
+                <div>−2</div><div>5</div><div>11</div>
+                <div>−1</div><div>4</div><div>8</div>
+              </div>
+              </div>
+            </div>
+          </div>
+          <div class="mapping-summary">
+            <span class="mapping-pill">좌상단 3×3 입력 영역</span>
+            <svg class="calc-arrow-inline" viewBox="0 0 18 12" aria-hidden="true"><path d="M1 6 H16 M11 1 L16 6 L11 11"/></svg>
+            <span class="mapping-pill">출력 좌상단 셀 (1,1) = −6</span>
+          </div>
+          <p class="calc-why">커널은 같은 위치의 값을 곱해 <span class="em">어떤 패턴이 얼마나 강한지</span> 점수처럼 계산합니다. 양수는 더하고, 음수는 빼면서 지역적인 방향·경계 특징을 강조합니다.</p>
+        </section>
+        <section class="calc-panel" aria-label="두 번째 단계: 선택된 3×3 영역과 커널의 곱셈 및 합산">
+          <div class="calc-step">02 · MULTIPLY → SUM</div>
+          <h2 class="calc-heading">선택된 3×3 영역을 실제로 계산</h2>
+          <p class="calc-note">좌상단 3×3 영역과 커널의 <span class="em">같은 위치</span>를 곱한 뒤 9개 결과를 모두 더하면 출력의 좌상단 한 칸이 됩니다.</p>
+          <div class="calc-flow">
+            <div class="calc-item">
+              <div class="calc-item-title">선택된 입력 영역</div>
+              <div class="calc-diagram">
+              <div class="calc-matrix patch3" aria-label="선택된 입력 3×3 영역">
+                <div class="focus-rf">1</div><div class="focus-rf">2</div><div class="focus-rf">3</div>
+                <div class="focus-rf">4</div><div class="focus-rf">5</div><div class="focus-rf">6</div>
+                <div class="focus-rf">7</div><div class="focus-rf">8</div><div class="focus-rf">9</div>
+              </div>
+              </div>
+            </div>
+            <div class="calc-connector"><div class="calc-operator" aria-label="원소별 곱셈">⊙</div></div>
             <div class="calc-item">
               <div class="calc-item-title">커널</div>
-              <div class="calc-matrix kernel" aria-label="커널 행렬: 첫 행 1, 0. 둘째 행 -1, 1"><div>1</div><div>0</div><div>−1</div><div>1</div></div>
+              <div class="calc-diagram">
+              <div class="calc-matrix kernel3" aria-label="커널 3×3">
+                <div>1</div><div>0</div><div>−1</div>
+                <div>1</div><div>0</div><div>−1</div>
+                <div>1</div><div>0</div><div>−1</div>
+              </div>
+              </div>
             </div>
-            <svg class="calc-arrow" viewBox="0 0 36 16" role="img" aria-label="원소별 곱 결과"><path d="M2 8 H32 M26 2 L32 8 L26 14"/></svg>
+            <div class="calc-connector"><svg class="calc-arrow" viewBox="0 0 36 16" role="img" aria-label="원소별 곱 결과"><path d="M2 8 H32 M26 2 L32 8 L26 14"/></svg></div>
             <div class="calc-item">
-              <div class="calc-item-title">곱셈 결과</div>
-              <div class="calc-matrix product" aria-label="원소별 곱 결과: 첫 행 1, 0. 둘째 행 -3, 4">
+              <div class="calc-item-title">원소별 곱 결과</div>
+              <div class="calc-diagram">
+              <div class="calc-matrix product3" aria-label="원소별 곱 결과 3×3">
                 <div><small>1×1</small><strong>1</strong></div>
                 <div><small>2×0</small><strong>0</strong></div>
                 <div><small>3×(−1)</small><strong>−3</strong></div>
                 <div><small>4×1</small><strong>4</strong></div>
+                <div><small>5×0</small><strong>0</strong></div>
+                <div><small>6×(−1)</small><strong>−6</strong></div>
+                <div><small>7×1</small><strong>7</strong></div>
+                <div><small>8×0</small><strong>0</strong></div>
+                <div><small>9×(−1)</small><strong>−9</strong></div>
+              </div>
               </div>
             </div>
           </div>
-          <div class="calc-mini-caption">입력과 커널의 <strong>같은 위치</strong>끼리 곱하면 4개의 결과가 생성</div>
-        </section>
-        <section class="calc-panel" aria-label="두 번째 단계: 원소별 곱 결과의 합산">
-          <div class="calc-step">02 · SUM &amp; OUTPUT</div>
-          <h2 class="calc-heading">네 결과를 합쳐 한 값으로</h2>
-          <div class="calc-sum-work">
-            <div class="calc-equation" aria-label="1 더하기 0 빼기 3 더하기 4는 2">1 + 0 − 3 + 4 = 2</div>
-            <div class="calc-equation-sub">원소별 곱의 총합</div>
-            <svg class="calc-down-arrow" viewBox="0 0 25 38" role="img" aria-label="Feature Map 출력"><path d="M12.5 1 V34 M6 27 L12.5 34 L19 27"/></svg>
-            <div class="calc-output-wrap">
-              <div class="calc-output-label">Feature Map의 한 칸</div>
-              <div class="calc-output">2</div>
-              <div class="calc-output-caption">커널을 이동하며 같은 연산 반복</div>
+          <div class="calc-sum-area">
+            <div class="calc-equation" aria-label="5 더하기 0 빼기 2 더하기 8 더하기 0 빼기 3 더하기 1 더하기 0 빼기 4는 5">1 + 0 − 3 + 4 + 0 − 6 + 7 + 0 − 9 = −6</div>
+            <div class="calc-equation-sub">9개 곱셈 결과의 합 = 출력 Feature Map 좌상단 셀의 값</div>
+            <div class="calc-output-row">
+              <svg class="calc-arrow-inline" viewBox="0 0 18 12" aria-hidden="true"><path d="M1 6 H16 M11 1 L16 6 L11 11"/></svg>
+              <div class="calc-output-wrap">
+                <div class="calc-output-label">출력 좌상단 셀</div>
+                <div class="calc-output">−6</div>
+                <div class="calc-output-caption">선택한 입력 영역의 응답값</div>
+              </div>
             </div>
           </div>
-          <div class="calc-method-note">단일 입력 채널 · bias = 0 · 커널을 뒤집지 않는 cross-correlation</div>
+          <div class="calc-method-note">stride = 1 · padding = 0 · 단일 입력 채널 · bias = 0 · 커널을 뒤집지 않는 cross-correlation</div>
         </section>
       </div>
     </div>
