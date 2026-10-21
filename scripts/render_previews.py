@@ -112,10 +112,7 @@ def check_executive(page, width):
         obsolete:document.querySelectorAll('.executive-kpis,.executive-kpi,.exec-track,.exec-bar').length,
         title:document.querySelector('h1').textContent,
         subtitle:document.querySelector('.subtitle').textContent,
-        note:document.querySelector('.exec-scenario-note')?.textContent.trim() ?? null,
-        noteBox:document.querySelector('.exec-scenario-note')
-          ? box(document.querySelector('.exec-scenario-note')) : null,
-        lastActionBox:box([...document.querySelectorAll('.exec-action')].at(-1)),
+        noteCount:document.querySelectorAll('.exec-scenario-note').length,
         footer:[...document.querySelectorAll('.footer span')].map(e=>e.textContent),
         actions:[...document.querySelectorAll('.exec-action')].map(e=>({
           number:e.querySelector('strong').textContent,
@@ -184,14 +181,8 @@ def check_executive(page, width):
         previous=group
     assert result['title']=='점검 효율 개선안 요약'
     assert result['subtitle']=='수동 점검 부담 감소를 위한 파일럿 검토 · 효율성과 미검출 위험의 동시 평가'
-    assert result['note'] == (
-        '가상 시나리오 · 동일한 월간 유입량과 집계 기준 가정 · 실측 효과 아님'
-    ), (width, 'hypothetical scenario disclosure missing', result)
-    assert result['noteBox']['y'] >= result['lastActionBox']['bottom']-1, (
-        width, 'disclosure overlaps actions', result
-    )
-    assert result['noteBox']['bottom'] <= result['action']['bottom']+1, (
-        width, 'disclosure escapes action card', result
+    assert result['noteCount'] == 0, (
+        width, 'obsolete hypothetical-data footnote still present', result
     )
     assert result['footer']==['Design Template Library · Executive-Summary','08 / 08']
     assert result['actions']==[
@@ -299,6 +290,15 @@ def main():
                             'feature': 'rgb(234, 241, 255)',
                             'output': 'rgb(227, 246, 243)'
                         }, (name, width, 'lost meaningful stage colors', palette)
+                    disallowed_labels = (
+                        '가상 데이터', '가상 시나리오', '가상 6개',
+                        '가상 12건', '실측 효과 아님', '실제 모델 성능 아님',
+                        '실제 학습값 아님'
+                    )
+                    displayed_text = page.locator('body').inner_text()
+                    assert not any(
+                        label in displayed_text for label in disallowed_labels
+                    ), (name, width, 'simulated-data disclaimer still shown')
                     if name == 'executive-summary':
                         executive.append(dict(viewport=[width,height], **check_executive(page, width)))
                     m = page.evaluate(GEOMETRY)
