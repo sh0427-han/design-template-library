@@ -56,6 +56,8 @@ def main():
                         })),
                         photos:[...document.querySelectorAll('img[src*="concept-apple-photo"]')].map(
                            el=>el.complete && el.naturalWidth>0),
+                        svgPhotoCount:document.querySelectorAll(
+                          'svg image[href*="concept-apple-photo"]').length,
                         pools:document.querySelector('.architecture-slide')?.dataset.poolCheck,
                         gap:document.querySelector('.architecture-slide')?.dataset.gapLength,
                         noOutside:document.documentElement.scrollWidth<=innerWidth
@@ -64,7 +66,10 @@ def main():
                     assert info['noOutside'] and info['width']<=width,(name,width,info)
                     assert all(f['done']=='true' and f['sources'] for f in info['figures']),(
                         name,width,info)
-                    assert info['photos'] and all(info['photos']),(name,width,info)
+                    if name=='architecture':
+                        assert info['svgPhotoCount']==1, (name,width,'input image missing',info)
+                    else:
+                        assert info['photos'] and all(info['photos']),(name,width,info)
                     if name=='architecture':
                         assert info['pools']=='pass' and info['gap']=='32',(width,info)
                         assert [(f['channels'],f['maps']) for f in info['figures']]==[
