@@ -136,6 +136,60 @@ def main():
                         name, width, 'Pretendard not applied', font_status
                     )
                     assert page.evaluate('CSS.supports("zoom", "calc(100vw / 1440px)")'), 'Browser lacks typed CSS division for zoom'
+                    palette = page.evaluate("""() => {
+                      const bg = el => getComputedStyle(el).backgroundColor;
+                      const white = 'rgb(255, 255, 255)';
+                      const cards = [...document.querySelectorAll(
+                        '.reference-slide .ref-card, .reference-slide .concept-panel, ' +
+                        '.reference-slide .compare-card'
+                      )];
+                      const takeaways = [...document.querySelectorAll('.ref-takeaway')];
+                      const step = document.querySelector('.node.feature');
+                      const output = document.querySelector('.node.output');
+                      const ksp = [...document.querySelectorAll('.ref-chip')].some(
+                        e => e.textContent.includes('K kernel')
+                      );
+                      return {
+                        cardCount: cards.length,
+                        nonwhiteCards: cards.filter(el => bg(el) !== white)
+                          .map(el => el.className),
+                        takeaways: takeaways.map(el => ({
+                          bg: bg(el),
+                          rule: getComputedStyle(el).borderLeftColor,
+                          width: getComputedStyle(el).borderLeftWidth
+                        })),
+                        navLinks: [...document.querySelectorAll('header a')].filter(
+                          e => e.textContent.includes('전체 레퍼런스')).length,
+                        ksp,
+                        process: step && output ? {
+                          feature: bg(step), output: bg(output)
+                        } : null
+                      };
+                    }""")
+                    assert not palette['nonwhiteCards'], (
+                        name, width, 'decorative card backgrounds', palette
+                    )
+                    assert palette['navLinks'] == 0 and not palette['ksp'], (
+                        name, width, 'authoring UI present', palette
+                    )
+                    if name in ('concept', 'process'):
+                        assert len(palette['takeaways']) == 1, (
+                            name, width, 'missing takeaway', palette
+                        )
+                        takeaway = palette['takeaways'][0]
+                        assert takeaway['bg'] == 'rgb(255, 255, 255)' and (
+                            takeaway['width'] == '4px'
+                        ) and takeaway['rule'] == 'rgb(38, 166, 161)', (
+                            name, width, 'takeaway does not match shared style',
+                            palette
+                        )
+                    else:
+                        assert not palette['takeaways'], (name, width, palette)
+                    if name == 'process':
+                        assert palette['process'] == {
+                            'feature': 'rgb(234, 241, 255)',
+                            'output': 'rgb(227, 246, 243)'
+                        }, (name, width, 'lost meaningful stage colors', palette)
                     m = page.evaluate(GEOMETRY)
                     for key in ('outside','overflow','footerOverlap','spacing','clippedText','arrowErrors'):
                         assert not m[key], (name, width, key, m[key])
