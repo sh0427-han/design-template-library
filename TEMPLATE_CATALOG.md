@@ -31,6 +31,7 @@
 ## 공통 규칙
 
 - 네이비/블루/틸, Off-white/White 배경, 전체 글자 간격 `-1pt`.
+- 기본 HTML 폰트: **Pretendard Variable** (`styles.css` 공통 토큰, v1.3.9 웹 폰트), 미로딩 시 시스템 폴백 사용. 기존 PPTX 폰트는 변경하지 않습니다.
 - 16:9 슬라이드, 간결한 제목, 의미 있는 도식, 과도한 메타 문구 금지.
 - HTML은 `templates/html/styles.css`를 공통 사용합니다. 기본 유형 스타일은 `reference-types.css`, 8종 전용 공통 프레임·세부 조정은 `reference-layout.css`에 작성합니다. 재사용할 때 HTML이 참조하는 CSS 파일을 함께 복사합니다.
 - 모든 유형은 **수정 중인 레퍼런스 초안**이며, 기존 3종 PPTX 원본은 유지합니다.
