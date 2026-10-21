@@ -8,7 +8,7 @@
 - This is an **HTML-only design reference library** for AI/ML teaching, technical presentations, papers, and engineering reports, not an application deployment repository.
 - **Only HTML Scroll Mode and Slide Mode are supported outputs. Do not generate PPTX, create PPTX conversions, or synchronize to PPTX.**
 - The eight standalone HTML types are reusable visual patterns, not alternative output formats; compose them into Scroll or Slide pages as needed.
-- Existing `templates/pptx/` files are historical artifacts: leave them untouched unless explicitly instructed to archive or delete them.
+- PPTX assets, generation scripts, and preview files have been removed by user request. Do not recreate them.
 
 ## Before any edit
 
