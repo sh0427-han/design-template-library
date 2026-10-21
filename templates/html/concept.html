@@ -96,7 +96,7 @@
 
     /* Concept: unframed photographic figure and true per-pixel RGB mapping. */
     .concept-stage{grid-template-columns:1.05fr .95fr;gap:25px}
-    .visual-panel{display:flex;flex-direction:column;min-width:0;padding:22px 0 12px;background:transparent;border:0}
+    .concept-panel.visual-panel{display:flex;flex-direction:column;min-width:0;padding:22px 26px;background:#fff;border:1px solid var(--border);border-radius:18px}
     .visual-panel .panel-head{padding-left:4px}
     .image-figure{display:grid;grid-template-columns:minmax(0,1fr) 47px minmax(0,1fr);align-items:center;gap:3px;width:100%;margin-top:16px}
     .figure-unit{width:100%;height:100%;gap:12px;justify-content:center}
@@ -117,7 +117,7 @@
     .concept-panel .pixel-block span{border-radius:1px}
     @media(max-width:900px){
       .concept-stage{grid-template-columns:1fr;gap:20px}
-      .visual-panel{padding:9px 0 13px}
+      .reference-slide .concept-panel.visual-panel{padding:20px}
       .image-figure{grid-template-columns:minmax(0,1fr) 38px minmax(0,1fr)}
       .image-frame,.pixel-frame,.zoom-arrow{height:256px}
       .pixel-block{grid-template-columns:repeat(4,40px);grid-template-rows:repeat(4,40px)}
@@ -156,7 +156,7 @@
       <p class="subtitle">픽셀 색상은 8-bit RGB 세 값으로, 이미지 전체는 높이 × 너비 × 채널로 표현</p>
     </header>
     <div class="concept-stage">
-      <article class="visual-panel" aria-label="사과 이미지의 픽셀 표현">
+      <article class="concept-panel visual-panel" aria-label="사과 이미지의 픽셀 표현">
         <div class="panel-head"><h2>이미지 → 픽셀</h2></div>
         <div class="image-figure">
           <div class="figure-unit image-unit">
