@@ -54,3 +54,11 @@
 - Do not add generic creator-facing meta notes or force subtitles onto multiple lines when avoidable.
 - Prefer factual, computed visual explanation; distribute content visually across each slide.
 - Validate representative desktop viewports: 1600x950, 1366x768, 1280x720.
+
+## Titles and figure descriptions
+
+- Use concise Korean noun-phrase or short-phrase slide titles. Avoid `~다` / `~입니다` endings in visible titles.
+- Prefer short, direct figure labels and captions instead of `~입니다` sentences.
+- Exclude authoring/meta commentary such as "교육용으로 직접 구현한 예제입니다" or "완성 디자인은 아닙니다" from visible slides.
+- Preserve genuine figure attribution, necessary experimental conditions, and technically significant caveats.
+- For Concept previews, keep the example image, pixel selection, RGB numerics, and tensor shape consistent.

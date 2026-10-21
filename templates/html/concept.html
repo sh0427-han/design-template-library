@@ -1,26 +1,140 @@
 <!doctype html>
 <html lang="ko">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Concept | Design Template Library</title><link rel="stylesheet" href="styles.css"></head>
-<body><main class="deck"><section class="slide" aria-label="개념 설명">
-  <header><div class="kicker">CONCEPT / 01</div><h1>이미지는 숫자로 표현된다</h1><p class="subtitle">컴퓨터는 픽셀 값을 입력으로 받아 이미지의 특징을 계산한다.</p></header>
-  <div class="content"><div class="concept-grid">
-    <article class="card concept-copy"><h2 class="card-title">이미지 데이터를 이해하는 방법</h2>
-      <ul class="bullet-list">
-        <li>컬러 이미지는 일반적으로 <strong>R, G, B</strong> 채널로 표현</li>
-        <li>각 채널은 픽셀 값이 모인 2차원 배열</li>
-        <li>CNN은 이러한 배열에서 공간적 패턴을 학습</li>
-      </ul>
-    </article>
-    <div class="concept-visual">
-      <div class="small-label">RGB CHANNELS → TENSOR</div>
-      <div class="matrix-visual">
-        <div class="channel r"><div class="matrix"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><span class="channel-label">R</span></div><span class="matrix-plus">+</span>
-        <div class="channel g"><div class="matrix"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><span class="channel-label">G</span></div><span class="matrix-plus">+</span>
-        <div class="channel b"><div class="matrix"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><span class="channel-label">B</span></div>
-      </div>
-      <div class="tensor">64 × 64 × 3 (H × W × C)</div>
-      <div class="technical-note">개념도: 실제 입력 이미지의 공간 크기는 64×64인 예시입니다. 배열 축 순서는 프레임워크에 따라 달라질 수 있습니다.</div>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Concept | Design Template Library</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .concept-slide {
+      width: min(1440px,100%); height:810px; min-height:0; aspect-ratio:16/9;
+      padding:54px 66px 30px; gap:0; color:var(--ink); background:var(--canvas);
+    }
+    .concept-slide header { flex:0 0 auto; }
+    .concept-slide h1 { margin:7px 0 6px; font-size:49px; line-height:1.13; }
+    .concept-slide .subtitle { font-size:21px; line-height:1.38; }
+    .concept-stage {
+      display:grid; grid-template-columns:1.02fr .98fr; gap:22px;
+      margin-top:25px; flex:1; min-height:0;
+    }
+    .concept-panel {
+      background:#fff; border:1px solid var(--border); border-radius:18px;
+      min-width:0; min-height:0; padding:22px 26px;
+    }
+    .panel-head { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+    .panel-head h2 { color:var(--navy); font-size:23px; margin:0; }
+    .panel-eyebrow { font-size:14px; font-weight:800; color:var(--blue); }
+    .image-figure { display:grid; grid-template-columns:1fr 25px 1fr; align-items:center; gap:10px; height:calc(100% - 33px); }
+    .image-frame { background:linear-gradient(150deg,#f7fcff,#e5f0fa); height:290px; border-radius:16px; display:grid; place-items:center; border:1px solid #dbe7f1; overflow:hidden; }
+    .image-frame svg { width:min(100%,245px); height:260px; }
+    .zoom-arrow { font-size:29px; color:var(--blue); font-weight:800; text-align:center; }
+    .pixel-block { display:grid; grid-template-columns:repeat(4,48px); grid-template-rows:repeat(4,48px); gap:3px; justify-content:center; }
+    .pixel-block span { width:48px; height:48px; border:2px solid rgba(255,255,255,.72); border-radius:4px; }
+    .pixel-block .selected {outline:4px solid var(--navy);outline-offset:-4px;position:relative;}
+    .figure-labels {display:grid;grid-template-columns:1fr 25px 1fr;gap:10px;margin-top:11px;text-align:center;color:var(--deep);font-size:17px;font-weight:800;}
+    .figure-labels{transform:translateY(-11px);} .figure-labels span:nth-child(2){visibility:hidden;}
+    .value-panel {display:flex;flex-direction:column;justify-content:space-between;gap:14px;}
+    .value-title {color:var(--navy);font-size:23px;font-weight:800;margin:0;}
+    .selected-color {display:flex;align-items:center;gap:17px;background:#f7f9fd;border:1px solid var(--border);border-radius:13px;padding:13px 16px;}
+    .selected-color .swatch {height:45px;width:64px;flex:0 0 auto;border-radius:10px;background:rgb(230,90,70);}
+    .selected-color strong {display:block;color:var(--navy);font-size:22px;}
+    .selected-color small {display:block;color:var(--muted);font-size:14px;margin-top:2px;}
+    .channel-values {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;}
+    .channel-value {background:#f7f9fd;border:1px solid var(--border);border-radius:13px;padding:12px 13px;}
+    .channel-value .head {display:flex;align-items:center;justify-content:space-between;font-size:17px;font-weight:800;color:var(--deep);}
+    .channel-value .dot {height:15px;width:15px;border-radius:50%;}
+    .channel-value .number {font-size:29px;font-weight:800;color:var(--navy);margin-top:6px;}
+    .channel-value .track {height:7px;background:#e0e8f1;border-radius:7px;overflow:hidden;margin-top:8px;}
+    .channel-value .bar {height:100%;border-radius:7px;}
+    .tensor-shape {display:flex;align-items:center;justify-content:space-between;gap:14px;padding:16px 17px;background:var(--pale-blue);border:1px solid #cadef8;border-radius:13px;}
+    .tensor-shape .formula {font-size:31px;color:var(--navy);font-weight:800;white-space:nowrap;}
+    .tensor-shape .label {font-size:15px;line-height:1.43;color:var(--deep);text-align:right;}
+    .concept-takeaway {flex:0 0 auto;display:flex;align-items:center;gap:15px;margin-top:14px;padding:12px 17px;border-left:4px solid var(--teal);background:#e9f5f4;border-radius:0 10px 10px 0;color:var(--deep);font-size:19px;font-weight:650;}
+    .concept-takeaway strong{color:#117a74;white-space:nowrap;}
+    .concept-slide .footer { flex:0 0 auto; margin-top:15px; padding-top:11px;font-size:14px; }
+    @media(max-width:1100px) {
+      .concept-slide {height:auto;min-height:680px;aspect-ratio:auto;padding:34px 30px 25px;}
+      .concept-slide h1{font-size:40px;}
+      .concept-stage{grid-template-columns:1fr 1fr;gap:13px;}
+      .concept-panel{padding:17px;}
+      .image-figure{gap:6px;grid-template-columns:1fr 15px 1fr;}
+      .image-frame{height:238px;}
+      .image-frame svg{height:215px;}
+      .pixel-block{grid-template-columns:repeat(4,33px);grid-template-rows:repeat(4,33px);gap:2px;}
+      .pixel-block span{height:33px;width:33px;}
+      .value-title,.panel-head h2{font-size:19px;}
+      .channel-value{padding:9px;}.channel-value .number{font-size:23px;}
+      .tensor-shape .formula{font-size:23px;}
+    }
+    @media(max-width:760px){
+      .concept-stage{grid-template-columns:1fr;}
+      .concept-slide{padding:25px 18px;}
+      .concept-slide h1{font-size:34px;}
+      .concept-slide .subtitle{font-size:18px;}
+      .image-frame{height:230px;}
+      .image-frame svg{height:220px;}
+      .pixel-block{grid-template-columns:repeat(4,42px);grid-template-rows:repeat(4,42px);}
+      .pixel-block span{height:42px;width:42px;}
+      .value-panel{gap:14px;}
+      .concept-takeaway{font-size:17px;}
+    }
+  </style>
+</head>
+<body>
+<main class="deck">
+  <section class="slide concept-slide" aria-label="Concept 레퍼런스">
+    <header>
+      <div class="kicker">CONCEPT / 01</div>
+      <h1>이미지의 숫자 구조</h1>
+      <p class="subtitle">픽셀 색상은 RGB 세 값으로, 이미지 전체는 높이 × 너비 × 채널로 표현</p>
+    </header>
+    <div class="concept-stage">
+      <article class="concept-panel">
+        <div class="panel-head"><h2>이미지 → 픽셀</h2><span class="panel-eyebrow">01 · PIXEL</span></div>
+        <div class="image-figure">
+          <div class="image-frame" role="img" aria-label="빨간 사과 모양 이미지">
+            <svg viewBox="0 0 240 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="appleSkin" x1=".13" y1=".1" x2=".9" y2=".92">
+                  <stop offset="0" stop-color="#ffb38e"/><stop offset=".4" stop-color="#ea644b"/><stop offset="1" stop-color="#bb312c"/>
+                </linearGradient>
+                <linearGradient id="leafFill" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0" stop-color="#94ca8e"/><stop offset="1" stop-color="#438c69"/>
+                </linearGradient>
+              </defs>
+              <ellipse cx="122" cy="225" rx="68" ry="11" fill="#c8dae5" opacity=".65"/>
+              <path d="M120 62 C87 35 39 54 36 112 C31 178 79 222 109 217 C122 212 126 210 140 216 C172 227 214 178 205 115 C198 60 156 38 120 62Z" fill="url(#appleSkin)" stroke="#b63d34" stroke-width="2"/>
+              <path d="M125 59 C119 41 126 29 138 18" stroke="#765441" stroke-width="7" fill="none" stroke-linecap="round"/>
+              <path d="M132 43 Q166 7 193 37 Q166 64 132 43Z" fill="url(#leafFill)" stroke="#498e69" stroke-width="2"/>
+              <path d="M77 89 Q60 133 80 166" stroke="#ffd5b7" stroke-width="19" stroke-linecap="round" opacity=".42" fill="none"/>
+              <rect x="144" y="104" width="46" height="46" rx="2" fill="none" stroke="#12233F" stroke-width="4"/>
+              <path d="M155 104V150 M166 104V150 M177 104V150 M144 115H190 M144 126H190 M144 137H190" stroke="#12233F" stroke-width=".9" opacity=".55"/>
+            </svg>
+          </div>
+          <span class="zoom-arrow" aria-hidden="true">→</span>
+          <div class="pixel-block" role="img" aria-label="사과의 빨간 영역을 확대해 표현한 4 곱하기 4 픽셀 배열">
+            <span style="background:#f57b61"></span><span style="background:#ec6c55"></span><span style="background:#e65a46"></span><span style="background:#d94f3f"></span>
+            <span style="background:#f18468"></span><span style="background:#e86750"></span><span class="selected" style="background:#e65a46"></span><span style="background:#ce4438"></span>
+            <span style="background:#f18a70"></span><span style="background:#e76b53"></span><span style="background:#dc5845"></span><span style="background:#c64435"></span>
+            <span style="background:#ef9877"></span><span style="background:#e57a5f"></span><span style="background:#d85d4b"></span><span style="background:#c84c3d"></span>
+          </div>
+        </div>
+        <div class="figure-labels"><span>입력 이미지</span><span></span><span>픽셀 확대 (4×4)</span></div>
+      </article>
+      <article class="concept-panel value-panel">
+        <div class="panel-head"><h2>선택 픽셀의 RGB 값</h2><span class="panel-eyebrow">02 · RGB</span></div>
+        <div class="selected-color"><span class="swatch"></span><div><strong>RGB (230, 90, 70)</strong><small>HEX &nbsp;#E65A46</small></div></div>
+        <div class="channel-values">
+          <div class="channel-value"><div class="head">R <span class="dot" style="background:#e8695c"></span></div><div class="number">230</div><div class="track"><div class="bar" style="width:90.2%;background:#e8695c"></div></div></div>
+          <div class="channel-value"><div class="head">G <span class="dot" style="background:#5db88b"></span></div><div class="number">90</div><div class="track"><div class="bar" style="width:35.3%;background:#5db88b"></div></div></div>
+          <div class="channel-value"><div class="head">B <span class="dot" style="background:#558ecb"></span></div><div class="number">70</div><div class="track"><div class="bar" style="width:27.5%;background:#558ecb"></div></div></div>
+        </div>
+        <div class="tensor-shape"><span class="formula">H × W × 3</span><span class="label">높이 × 너비 × RGB 채널<br><strong>이미지 텐서</strong></span></div>
+      </article>
     </div>
-  </div></div>
-  <footer class="footer"><span>Design Template Library · Concept</span><span>01 / 03</span></footer>
-</section></main></body></html>
+    <div class="concept-takeaway"><strong>핵심 개념</strong><span>픽셀 하나 → RGB 3개 값 &nbsp;·&nbsp; 이미지 전체 → 3차원 배열(HWC)</span></div>
+    <footer class="footer"><span>Design Template Library · Concept</span><span>01 / 08</span></footer>
+  </section>
+</main>
+</body>
+</html>
