@@ -13,8 +13,7 @@
 .reference-slide .content {margin-top:25px;min-height:0;}
 .reference-slide .footer {flex:0 0 auto;margin-top:15px;padding-top:11px;font-size:15px;}
 .reference-slide .ref-overline {display:flex;align-items:center;justify-content:space-between;gap:12px;}
-.reference-slide .ref-link {color:var(--blue);font-size:16px;font-weight:700;text-decoration:none;}
-.reference-slide .ref-link:hover {text-decoration:underline;}
+.reference-slide header .ref-overline {justify-content:flex-start;}
 .reference-slide .ref-k {font-size:16px;}
 .reference-slide .ref-h {margin:6px 0 16px;font-size:25px;}
 .reference-slide .ref-note {font-size:17px;line-height:1.45;}
@@ -218,3 +217,22 @@
 .exec-comparison {gap:12px;}
 .exec-actions {gap:18px;}
 .executive-grid .ref-card {padding:20px 24px;}
+
+
+/* Reference callouts: white surface + teal rule, never decorative fills.
+   Colored cell/card backgrounds are reserved for semantic process states. */
+.reference-slide .ref-takeaway {
+  display:flex;align-items:center;gap:15px;
+  margin-top:14px;padding:12px 17px;
+  border-left:4px solid var(--teal);
+  border-radius:0 10px 10px 0;
+  background:#fff;color:var(--deep);
+  font-size:19px;line-height:1.45;
+}
+.reference-slide .ref-takeaway strong {
+  color:#117a74;white-space:nowrap;
+}
+@media(max-width:520px) {
+  .reference-slide .ref-takeaway {display:block;line-height:1.5;}
+  .reference-slide .ref-takeaway strong {display:block;margin-bottom:5px;}
+}
