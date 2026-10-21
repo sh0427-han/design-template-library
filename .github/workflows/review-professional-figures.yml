@@ -1,0 +1,59 @@
+name: Review Professional Reference Figures
+
+on:
+  push:
+    branches:
+      - design/professional-figures-architecture-process-comparison
+    paths:
+      - templates/html/architecture.html
+      - templates/html/process.html
+      - templates/html/comparison.html
+      - templates/html/assets/cnn-feature-maps.js
+      - scripts/check_professional_figures.py
+      - .github/workflows/review-professional-figures.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: professional-figures-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install Chromium and Playwright
+        run: |
+          python -m pip install playwright
+          python -m playwright install --with-deps chromium
+      - name: Verify computed maps, pooling and common input image
+        run: python scripts/check_professional_figures.py
+      - name: Render revised 02 03 06 and verify general layout
+        run: python scripts/render_previews.py --templates architecture process comparison --evidence-dir /tmp/professional-figures
+      - name: Save only three reviewed previews
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add previews/html-architecture.jpg previews/html-process.png previews/html-comparison.png
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: render refined Architecture, Process and Comparison figures"
+            for attempt in 1 2 3; do
+              git fetch origin "${{ github.ref_name }}"
+              git rebase "origin/${{ github.ref_name }}"
+              if git push origin HEAD:"${{ github.ref_name }}"; then
+                exit 0
+              fi
+              sleep 2
+            done
+            echo "Failed to update figure previews" >&2
+            exit 1
+          fi
