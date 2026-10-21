@@ -190,20 +190,22 @@
     root.dataset.computedMaps='true';
     root.dataset.gapLength=String(result.gap.length);
   }
-  function renderProcess(result) {
-    const svg=document.querySelector('.process-feature-svg');
-    if(!svg)return;
-    layerStack(svg,result.conv1,64,[0,3,6,9],'blue',false);
-    const slide=document.querySelector('.process-slide');
-    if(slide)slide.dataset.computedMaps='true';
+  function renderSmallMotifs(result) {
+    for(const selector of ['.process-feature-svg','.compare-feature-svg']){
+      document.querySelectorAll(selector).forEach(svg => {
+        layerStack(svg,result.conv1,64,[0,3,6,9],'blue',false);
+        const slide=svg.closest('.slide');
+        if(slide)slide.dataset.computedMaps='true';
+      });
+    }
   }
   function begin() {
-    if(!document.querySelector('.process-feature-svg,.architecture-slide'))return;
+    if(!document.querySelector('.process-feature-svg,.compare-feature-svg,.architecture-slide'))return;
     const img = new Image();
     img.onload=()=> {
       try {
         const maps=compute(img);
-        renderArchitecture(maps);renderProcess(maps);
+        renderArchitecture(maps);renderSmallMotifs(maps);
       } catch(err) {console.error('Feature map rendering failed',err);}
     };
     img.onerror=()=>console.error('CNN source photograph could not load');
