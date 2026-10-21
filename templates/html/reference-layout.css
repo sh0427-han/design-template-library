@@ -2,6 +2,7 @@
    Shared tokens remain in styles.css; gallery and continuous lessons are unaffected. */
 .reference-deck { padding:20px; min-height:100vh; align-content:center; }
 .reference-slide {
+  word-break:keep-all; overflow-wrap:break-word;
   width:1440px; height:810px; min-height:0; aspect-ratio:16/9;
   padding:54px 66px 30px;
   zoom:min(1, calc((100vw - 40px) / 1440px), calc((100vh - 40px) / 810px));
@@ -18,6 +19,9 @@
 .reference-slide .ref-h {margin:6px 0 16px;font-size:25px;}
 .reference-slide .ref-note {font-size:17px;line-height:1.45;}
 .reference-slide .ref-desc {font-size:19px;}
+.reference-slide p,.reference-slide .ref-desc,.reference-slide .compare-foot,
+.reference-slide .exec-action,.reference-slide .arch-detail,.reference-slide .step-point {text-wrap:pretty;}
+.reference-slide .note-sentence {display:block;}
 .reference-slide .ref-card {padding:24px;}
 .reference-slide input {font:inherit;letter-spacing:inherit;}
 .reference-slide a:focus-visible,.reference-slide input:focus-visible {outline:3px solid var(--amber);outline-offset:4px;}

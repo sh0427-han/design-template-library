@@ -1,6 +1,6 @@
 # Design Template Catalog · 8 Reference Types
 
-**2026-10-21 검토 상태:** 8종 HTML 브라우저 검증 완료 · 디자인 승인 대기. [유형별 결과](docs/REFERENCE_REVIEW_2026-10-21.md) · [Before / After](previews/review/README.md)
+**2026-10-21 검토 상태:** 8종 HTML 브라우저 검증 완료 · 05 문장 단위 줄바꿈 및 공통 어절 보호 반영 · 디자인 승인 대기. [유형별 결과](docs/REFERENCE_REVIEW_2026-10-21.md) · [Before / After](previews/review/README.md)
 
 공통 디자인 시스템은 `DESIGN_SYSTEM.md`에서 관리합니다. 각 유형은 **한 장으로도 의도를 확인할 수 있는 독립 디자인 레퍼런스**입니다. 5장 CNN 예제는 별도의 연속 강의 사례입니다.
 

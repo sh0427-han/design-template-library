@@ -112,3 +112,8 @@ PPTX와 HTML 기술 강의자료의 공통 시각 설계 규칙입니다. 목표
 - `templates/html/reference-layout.css`는 8종 HTML에서만 명시적으로 로드합니다. 갤러리·CNN 연속 강의·PPTX의 공통 토큰은 바꾸지 않습니다.
 - 모든 텍스트는 기존 `--character-spacing: -1pt` 상속. 색상·패널 구조와 유형별 목적 유지.
 - 검증 및 비교: [8종 검토 기록](docs/REFERENCE_REVIEW_2026-10-21.md).
+
+### 줄바꿈과 하단 식별 문구
+
+- 한글 어절 중간을 나누지 않습니다. 짧은 한두 글자만 마지막 줄에 남으면 문장 전체를 다음 줄로 옮깁니다. 8종 HTML은 `word-break: keep-all`과 문단의 `text-wrap: pretty`를 사용하며, 의미 단위 분리가 필요할 때 `.note-sentence`를 사용합니다.
+- `Design Template Library · 유형명`은 레퍼런스 식별용 기본값입니다. 실제 자료에서는 강의명·프로젝트명·보고서명과 장/주제로 교체할 수 있습니다. 이번 수정에서는 기존 하단 문구를 유지합니다.
