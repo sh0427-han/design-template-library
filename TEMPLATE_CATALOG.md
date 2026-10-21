@@ -1,21 +1,21 @@
-# Design Template Catalog · 8 Reference Types
+# Design Template Catalog · 8 HTML Reference Patterns
 
-**2026-10-21 Concept / Architecture 개선:** Concept은 별도 사진 프레임을 제거하고, 기존 실사형 사과 사진을 80×80 RGB로 리샘플링하여 선택 영역의 **실제 4×4 픽셀값**을 Canvas에서 읽어 표시합니다. 선택 셀의 RGB·HEX·채널 막대는 동일한 픽셀 데이터에 연결됩니다. Architecture는 Input → Conv16 → MaxPool → Conv32 → GAP32 → Linear3의 Tensor Shape를 시각적 Feature Map·Vector 변화로 표현하고, 하단에는 3개의 간결한 기술 설명만 배치했습니다. Chromium에서 **1500×950 / 1366×768 / 1280×720 / 390×844 (두 페이지 × 네 해상도)**를 검증했고 [검증 JSON](previews/review/concept-architecture-validation.json)과 두 HTML 프리뷰를 갱신했습니다. 다른 여섯 레퍼런스·CNN Scroll/Slide·PPTX는 유지했습니다.
+**2026-10-21 Concept / Architecture 개선:** Concept은 별도 사진 프레임을 제거하고, 기존 실사형 사과 사진을 80×80 RGB로 리샘플링하여 선택 영역의 **실제 4×4 픽셀값**을 Canvas에서 읽어 표시합니다. 선택 셀의 RGB·HEX·채널 막대는 동일한 픽셀 데이터에 연결됩니다. Architecture는 Input → Conv16 → MaxPool → Conv32 → GAP32 → Linear3의 Tensor Shape를 시각적 Feature Map·Vector 변화로 표현하고, 하단에는 3개의 간결한 기술 설명만 배치했습니다. Chromium에서 **1500×950 / 1366×768 / 1280×720 / 390×844 (두 페이지 × 네 해상도)**를 검증했고 [검증 JSON](previews/review/concept-architecture-validation.json)과 두 HTML 프리뷰를 갱신했습니다. 다른 여섯 레퍼런스·CNN Scroll/Slide의 기존 콘텐츠와 동작은 유지했습니다.
 
 **2026-10-21 검토 상태:** 8종 HTML 브라우저 검증 완료 · 05 문장 단위 줄바꿈 및 공통 어절 보호 반영 · 디자인 승인 대기. [유형별 결과](docs/REFERENCE_REVIEW_2026-10-21.md) · [Before / After](previews/review/README.md)
 
-공통 디자인 시스템은 `DESIGN_SYSTEM.md`에서 관리합니다. 각 유형은 **한 장으로도 의도를 확인할 수 있는 독립 디자인 레퍼런스**입니다. 5장 CNN 예제는 별도의 연속 강의 사례입니다.
+공통 디자인 시스템은 `DESIGN_SYSTEM.md`에서 관리합니다. **이 라이브러리는 HTML 기반 Scroll·Slide 자료 제작에만 사용하며 PPTX를 제작하지 않습니다.** 8종은 두 모드에서 재사용할 수 있는 **시각 구성 패턴**으로, 독립 HTML은 패턴 예시입니다. 5장 CNN 예제는 동일 콘텐츠를 Scroll·Slide로 제공하는 통합 구현 사례입니다.
 
-| ID | 자료 목적 | 레이아웃 패턴 | HTML · 실제 브라우저 이미지 | PPTX |
-| --- | --- | --- | --- | --- |
-| `concept` | 개념 소개·핵심 Figure | 실사형 입력·영역 색상 샘플·RGB 수치 | [원본](templates/html/concept.html) · ![Concept](previews/html-concept.png) | 기존 1장 |
-| `process` | 단계/프로세스 설명 | Input → Process → Output | [원본](templates/html/process.html) · ![Process](previews/html-process.png) | 기존 2장 |
-| `comparison` | A/B 접근법 비교 | 동일 지표의 두 패널 | [원본](templates/html/comparison.html) · ![Comparison](previews/html-comparison.png) | 기존 3장 |
-| `step-by-step` | 수식·연산 강의 | 배열 × 커널 → 합계 | [원본](templates/html/step-by-step.html) · ![Step-by-step](previews/html-step-by-step.jpg) | 초안 확정 후 |
-| `interactive` | 웹 실습·임계값 검증 | 슬라이더 + 계산 + 혼동행렬 | [원본](templates/html/interactive.html) · ![Interactive](previews/html-interactive.jpg) | 정적 버전 추후 |
-| `architecture` | 모델·시스템 구조 | 논문형 Feature Map Stack·Tensor Shape | [원본](templates/html/architecture.html) · ![Architecture](previews/html-architecture.jpg) | 초안 확정 후 |
-| `experiment` | 연구 결과·지표 비교 | Confusion Matrix + Metrics | [원본](templates/html/experiment.html) · ![Experiment](previews/html-experiment.jpg) | 초안 확정 후 |
-| `executive-summary` | 경영·기술 보고 | KPI + 비교 + Action | [원본](templates/html/executive-summary.html) · ![Executive Summary](previews/html-executive-summary.jpg) | 초안 확정 후 |
+| ID | 자료 목적 | 레이아웃 패턴 | HTML · 실제 브라우저 이미지 |
+| --- | --- | --- | --- |
+| `concept` | 개념 소개·핵심 Figure | 실사형 입력·영역 색상 샘플·RGB 수치 | [원본](templates/html/concept.html) · ![Concept](previews/html-concept.png) |
+| `process` | 단계/프로세스 설명 | Input → Process → Output | [원본](templates/html/process.html) · ![Process](previews/html-process.png) |
+| `comparison` | A/B 접근법 비교 | 동일 지표의 두 패널 | [원본](templates/html/comparison.html) · ![Comparison](previews/html-comparison.png) |
+| `step-by-step` | 수식·연산 강의 | 배열 × 커널 → 합계 | [원본](templates/html/step-by-step.html) · ![Step-by-step](previews/html-step-by-step.jpg) |
+| `interactive` | 웹 실습·임계값 검증 | 슬라이더 + 계산 + 혼동행렬 | [원본](templates/html/interactive.html) · ![Interactive](previews/html-interactive.jpg) |
+| `architecture` | 모델·시스템 구조 | 논문형 Feature Map Stack·Tensor Shape | [원본](templates/html/architecture.html) · ![Architecture](previews/html-architecture.jpg) |
+| `experiment` | 연구 결과·지표 비교 | Confusion Matrix + Metrics | [원본](templates/html/experiment.html) · ![Experiment](previews/html-experiment.jpg) |
+| `executive-summary` | 경영·기술 보고 | KPI + 비교 + Action | [원본](templates/html/executive-summary.html) · ![Executive Summary](previews/html-executive-summary.jpg) |
 
 ## 유형별 적용 기준
 
@@ -31,14 +31,14 @@
 ## 공통 규칙
 
 - 네이비/블루/틸, Off-white/White 배경, 전체 글자 간격 `-1pt`.
-- 기본 HTML 폰트: **Pretendard Variable** (`styles.css` 공통 토큰, v1.3.9 웹 폰트), 미로딩 시 시스템 폴백 사용. 기존 PPTX 폰트는 변경하지 않습니다.
-- 16:9 슬라이드, 간결한 제목, 의미 있는 도식, 과도한 메타 문구 금지.
+- 기본 HTML 폰트: **Pretendard Variable** (`styles.css` 공통 토큰, v1.3.9 웹 폰트), 미로딩 시 시스템 폴백 사용.
+- **Slide:** 16:9 화면, 명사형 제목, 한 장에 하나의 핵심 개념. **Scroll:** 연속 문서·읽기 폭·목차 및 자세한 설명. 의미 있는 도식과 불필요한 메타 문구 배제.
 - HTML은 `templates/html/styles.css`를 공통 사용합니다. 기본 유형 스타일은 `reference-types.css`, 8종 전용 공통 프레임·세부 조정은 `reference-layout.css`에 작성합니다. 재사용할 때 HTML이 참조하는 CSS 파일을 함께 복사합니다.
-- 모든 유형은 **수정 중인 레퍼런스 초안**이며, 기존 3종 PPTX 원본은 유지합니다.
+- 모든 유형은 **수정 중인 HTML 레퍼런스**입니다. 기존 레거시 PPTX 원본 파일은 변경하지 않고 보존하지만 새로운 PPTX 제작은 진행하지 않습니다.
 
 ## 연속 강의·웹 교과서
 
-[Dual-mode Learning](templates/dual-mode-learning/)은 **위 8가지 유형의 수가 아닌 별도 통합 사용 사례**입니다.
+[Dual-mode Learning](templates/dual-mode-learning/)은 **위 8가지 패턴과 별개인 Scroll·Slide 렌더링 통합 예제**입니다.
 
 | 모드 | 예제 | 규칙 |
 | --- | --- | --- |
