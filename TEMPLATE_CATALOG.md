@@ -11,7 +11,7 @@
 | `concept` | 개념 소개·핵심 Figure | 실사형 입력·영역 색상 샘플·RGB 수치 | [원본](templates/html/concept.html) · ![Concept](previews/html-concept.png) |
 | `process` | 단계/프로세스 설명 | Input → Process → Output | [원본](templates/html/process.html) · ![Process](previews/html-process.png) |
 | `comparison` | A/B 접근법 비교 | 동일 지표의 두 패널 | [원본](templates/html/comparison.html) · ![Comparison](previews/html-comparison.png) |
-| `step-by-step` | 수식·연산 강의 | 배열 × 커널 → 합계 | [원본](templates/html/step-by-step.html) · ![Step-by-step](previews/html-step-by-step.jpg) |
+| `step-by-step` | 수식·연산 강의 | 입력 2×2 × 커널 2×2 → 원소별 곱 결과 2×2 → 합산 → Feature Map 한 칸 | [원본](templates/html/step-by-step.html) · ![Step-by-step](previews/html-step-by-step.jpg) |
 | `interactive` | 웹 실습·임계값 검증 | 슬라이더 + 계산 + 혼동행렬 | [원본](templates/html/interactive.html) · ![Interactive](previews/html-interactive.jpg) |
 | `architecture` | 모델·시스템 구조 | 논문형 Feature Map Stack·Tensor Shape | [원본](templates/html/architecture.html) · ![Architecture](previews/html-architecture.jpg) |
 | `experiment` | 연구 결과·지표 비교 | Confusion Matrix + Metrics | [원본](templates/html/experiment.html) · ![Experiment](previews/html-experiment.jpg) |
@@ -22,7 +22,7 @@
 - **Concept**: 직관적인 하나의 개념과 Figure를 나란히 배치합니다.
 - **Process**: 실제 처리 순서와 화살표 방향이 일치해야 합니다.
 - **Comparison**: 동일한 질문·측정 조건으로 비교합니다.
-- **Step-by-step**: 계산식과 입력값, 결과가 실제로 일치해야 합니다.
+- **Step-by-step**: 같은 위치의 원소별 곱셈 결과 `[[1,0],[-3,4]]` → 합산 `1+0−3+4=2` → Feature Map 한 칸으로 연결합니다. 단일 입력 채널·bias 0·커널 반전 없는 cross-correlation 조건을 밝히고, 입력값과 결과를 검산합니다.
 - **Interactive**: 조작할 수 있는 변수와 화면에 표시하는 계산이 일치해야 합니다. 계산 예시는 정적 이미지로 대체하지 않습니다.
 - **Architecture**: 각 텐서의 H/W/C와 stride·padding 관계를 확인합니다.
 - **Experiment**: 12건의 혼동행렬(TN=5, FP=1, FN=2, TP=4)과 파생 지표의 수치가 일치해야 합니다.
