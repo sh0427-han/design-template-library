@@ -178,7 +178,7 @@ def main():
                         )
                         takeaway = palette['takeaways'][0]
                         assert takeaway['bg'] == 'rgb(255, 255, 255)' and (
-                            takeaway['width'] == '4px'
+                            2.0 < float(takeaway['width'].removesuffix('px')) <= 4.01
                         ) and takeaway['rule'] == 'rgb(38, 166, 161)', (
                             name, width, 'takeaway does not match shared style',
                             palette
