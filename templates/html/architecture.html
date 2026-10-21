@@ -14,9 +14,24 @@
   padding:20px 25px 22px; background:#fff; overflow:hidden;
 }
 .architecture-slide .arch-eyebrow {font-size:14px; font-weight:800; color:var(--blue);}
+/* Functional partition: input / feature extractor / classifier. */
+.architecture-slide .arch-phase-band {
+  display:grid; grid-template-columns:1.05fr 1.22fr 1.15fr 1.22fr 1.05fr 1.07fr;
+  gap:18px; padding:0 4px; margin:9px 0 -7px;
+}
+.architecture-slide .arch-phase-band span {
+  text-align:center; font-size:13px; font-weight:800; color:var(--deep);
+  white-space:nowrap; line-height:1.4;
+}
+.architecture-slide .arch-phase-band span::after {
+  content:""; display:block; height:1px; margin-top:3px; background:#b7c6db;
+}
+.architecture-slide .arch-phase-band .arch-extractor {grid-column:2/5;}
+.architecture-slide .arch-phase-band .arch-classifier {grid-column:5/7; color:#17817d;}
+.architecture-slide .arch-phase-band .arch-classifier::after {background:#9dd2ca;}
 .architecture-slide .arch-pipeline {
   display:grid; grid-template-columns:1.05fr 1.22fr 1.15fr 1.22fr 1.05fr 1.07fr;
-  gap:18px; align-items:start; margin:19px 0 12px; padding:0 4px; flex:1; min-height:0;
+  gap:18px; align-items:start; margin:15px 0 12px; padding:0 4px; flex:1; min-height:0;
 }
 .architecture-slide .arch-stage {
   min-width:0; position:relative; display:flex; flex-direction:column;
@@ -50,6 +65,7 @@
 .architecture-slide .arch-notes strong {display:block; font-size:19px; color:var(--navy); margin-bottom:6px;}
 .architecture-slide .arch-notes p {font-size:16px; color:#52647d; line-height:1.45; margin:0; word-break:keep-all;}
 @media(max-width:900px) {
+  .architecture-slide .arch-phase-band {display:none;}
   .architecture-slide .content > .ref-card {height:auto; overflow:visible; padding:21px;}
   .architecture-slide .arch-pipeline {grid-template-columns:repeat(3,minmax(0,1fr));gap:24px 13px;margin:20px 0 19px;}
   .architecture-slide .arch-stage:not(:last-child)::before,.architecture-slide .arch-stage:not(:last-child)::after {display:none;}
@@ -72,6 +88,10 @@
   .architecture-slide .arch-stage:not(:last-child)::after {display:block;top:auto;bottom:-4px;right:50%;width:1.5px;height:9px;}
   .architecture-slide .arch-stage:not(:last-child)::before {display:block;top:auto;bottom:-6px;right:calc(50% - 3px);transform:rotate(135deg);}
   .architecture-slide .arch-title {grid-column:2;grid-row:1;min-height:0;white-space:normal;}
+  .architecture-slide .arch-title[data-group]::before {
+    content:attr(data-group); display:block; font-size:11px;
+    font-weight:750; color:var(--teal); margin-bottom:3px;
+  }
   .architecture-slide .arch-graphic {grid-column:1;grid-row:1/5;width:126px;height:124px;}
   .architecture-slide .arch-shape {grid-column:2;grid-row:2;font-size:20px;}
   .architecture-slide .arch-operation {grid-column:2;grid-row:3;margin:0;font-size:13px;white-space:normal;}
@@ -91,17 +111,21 @@
 <main class="deck reference-deck">
 <section class="slide ref-slide reference-slide architecture-slide" aria-label="CNN Architecture 레퍼런스">
   <header><div class="ref-overline"><div class="kicker">ARCHITECTURE / 06</div></div>
-    <h1>CNN 아키텍처</h1><p class="subtitle">Feature Map의 채널 증가, 공간 축소, 벡터 요약</p>
+    <h1>CNN 아키텍처</h1><p class="subtitle">특징 추출(Feature Extractor)과 분류(Classifier)</p>
   </header>
   <div class="content"><section class="ref-card">
-    <div class="arch-eyebrow">CNN LAYER-WISE ARCHITECTURE</div>
-    <div class="arch-pipeline" aria-label="Input → Conv1 → MaxPool → Conv2 → GAP → Linear">
+    <div class="arch-eyebrow">EXAMPLE CNN ARCHITECTURE</div>
+    <div class="arch-phase-band" aria-hidden="true">
+      <span class="arch-extractor">FEATURE EXTRACTOR</span>
+      <span class="arch-classifier">CLASSIFIER</span>
+    </div>
+    <div class="arch-pipeline" aria-label="Input → Conv1 → MaxPool → Conv2 → Flatten → Linear">
       <article class="arch-stage" aria-label="Input 단일 RGB 이미지, 64×64×3">
         <div class="arch-title">INPUT</div><div class="arch-graphic" data-art="input"></div>
         <div class="arch-shape">64×64×3</div><div class="arch-operation">RGB image</div><div class="arch-explain">단일 입력 이미지</div>
       </article>
       <article class="arch-stage" aria-label="Conv1 + ReLU, kernel 3, stride 1, padding 1, 64×64×16">
-        <div class="arch-title">CONV 1 + ReLU</div><div class="arch-graphic" data-art="conv1"></div>
+        <div class="arch-title" data-group="FEATURE EXTRACTOR">CONV 1 + ReLU</div><div class="arch-graphic" data-art="conv1"></div>
         <div class="arch-shape">64×64×16</div><div class="arch-operation">3×3 · S1 · P1 · 16ch</div><div class="arch-explain">16 feature maps</div>
       </article>
       <article class="arch-stage" aria-label="MaxPool 2×2, stride 2, 32×32×16">
@@ -112,20 +136,20 @@
         <div class="arch-title">CONV 2 + ReLU</div><div class="arch-graphic" data-art="conv2"></div>
         <div class="arch-shape">32×32×32</div><div class="arch-operation">3×3 · S1 · P1 · 32ch</div><div class="arch-explain">32 feature maps</div>
       </article>
-      <article class="arch-stage" aria-label="Global Average Pooling: 채널별 공간 평균, 32차원 벡터">
-        <div class="arch-title">GAP</div><div class="arch-graphic" data-art="gap"></div>
-        <div class="arch-shape">32</div><div class="arch-operation">mean(H, W)</div><div class="arch-explain">채널별 평균 → 1D</div>
+      <article class="arch-stage" aria-label="Flatten: 32×32×32의 모든 값을 펼쳐 32768차원 1D 벡터 생성">
+        <div class="arch-title" data-group="CLASSIFIER">FLATTEN</div><div class="arch-graphic" data-art="flatten"></div>
+        <div class="arch-shape">32,768</div><div class="arch-operation">32×32×32 → 1D</div><div class="arch-explain">전체 원소를 일렬로 나열</div>
       </article>
-      <article class="arch-stage" aria-label="Linear: 32차원 벡터를 3개 class logits로 사상">
+      <article class="arch-stage" aria-label="Linear: 32768차원 벡터를 3개 class logits로 사상">
         <div class="arch-title">LINEAR</div><div class="arch-graphic" data-art="linear"></div>
-        <div class="arch-shape">3 logits</div><div class="arch-operation">Linear 32 → 3</div><div class="arch-explain">3개 클래스 점수</div>
+        <div class="arch-shape">3 logits</div><div class="arch-operation">Linear 32,768 → 3</div><div class="arch-explain">3개 클래스 점수</div>
       </article>
     </div>
-    <div class="arch-citation"><span>Tensor Shape: H×W×C · Batch 생략</span><span>Feature Map: 대표 채널의 축소 모식도 · 실제 활성화 아님</span></div>
+    <div class="arch-citation"><span>Tensor Shape: H×W×C · Batch 생략</span><span>Feature Map·Vector: 축소 모식도 · 중간 원소 생략</span></div>
     <div class="arch-notes">
-      <div><strong>Feature extraction</strong><p>Conv: local pattern → 다중 채널</p></div>
+      <div><strong>Feature extraction</strong><p>Conv: local pattern 추출 · 채널 증가</p></div>
       <div><strong>Spatial reduction</strong><p>MaxPool: H×W 절반 · 채널 유지</p></div>
-      <div><strong>Vector summarization</strong><p>GAP: 32D vector → Linear: 3 logits</p></div>
+      <div><strong>Classifier</strong><p>Flatten: 32,768D → Linear: 3 logits</p></div>
     </div>
   </section></div>
   <footer class="footer"><span>Design Template Library · Architecture</span><span>06 / 08</span></footer>
@@ -190,6 +214,22 @@
     el('rect',{x:x-.6,y:y-.6,width:width+1.2,height:32*cellH+.2,
       fill:'none',stroke:'#317d8d','stroke-width':.85},svg);
   }
+  /* Long feature vectors are drawn with an explicit omission break;
+     the semantic dimension is 32*32*32, not the number of shown cells. */
+  function drawLongVector(svg,x,y,width=17) {
+    const cellH=3.05;
+    for(let i=0;i<34;i++) {
+      const segment=i<17?i:i-17;
+      const yy=y+(i<17?0:70)+segment*cellH;
+      const t=(Math.sin(i*1.76)+1)/2;
+      el('rect',{x,y:yy,width,height:cellH-.45,rx:.35,
+        fill:ramp(.22+.72*t,'deep')},svg);
+    }
+    [56.7,61.5,66.3].forEach(cy=>el('circle',{
+      cx:x+width/2,cy:y+cy,r:1.5,fill:'#438d99'},svg));
+    el('rect',{x:x-.6,y:y-.6,width:width+1.2,height:122.5,
+      fill:'none',stroke:'#317d8d','stroke-width':.85},svg);
+  }
   const handlers={
     input(svg) {
       el('rect',{x:31,y:31,width:108,height:108,rx:2.5,fill:'#f2f6fa',stroke:'#8fa6c3','stroke-width':1.7},svg);
@@ -201,14 +241,14 @@
     conv1(svg) {drawStack(svg,{x:17,y:63,size:79,n:7,dx:7,dy:5,data:activations,variant:'low'});},
     pool(svg) {drawStack(svg,{x:29,y:72,size:60,n:7,dx:7,dy:5,data:pooled,variant:'low'});},
     conv2(svg) {drawStack(svg,{x:18,y:79,size:59,n:12,dx:6.5,dy:4,data:deep,variant:'deep'});},
-    gap(svg) {
+    flatten(svg) {
       drawStack(svg,{x:9,y:76,size:43,n:5,dx:4.4,dy:3.8,data:deep,variant:'deep'});
       el('path',{d:'M78 78 H105',stroke:colors.teal,'stroke-width':1.8,fill:'none'},svg);
       el('path',{d:'M100 74 L106 78 L100 82',fill:'none',stroke:colors.teal,'stroke-width':1.8},svg);
-      drawVector(svg,117,19,17,3.55);
+      drawLongVector(svg,117,17,17);
     },
     linear(svg) {
-      drawVector(svg,19,19,15,3.55);
+      drawLongVector(svg,19,17,15);
       [39,80,121].forEach(yy=>el('path',{d:`M39 76 L100 ${yy}`,
         stroke:'#8aa7c0','stroke-width':1.5,fill:'none'},svg));
       [39,80,121].forEach((yy,i)=>{
