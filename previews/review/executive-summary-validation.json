@@ -1,0 +1,1144 @@
+{
+  "browser": "154.0.8037.57",
+  "viewports": [
+    [
+      1500,
+      950
+    ],
+    [
+      1366,
+      768
+    ],
+    [
+      1280,
+      720
+    ],
+    [
+      900,
+      900
+    ],
+    [
+      390,
+      844
+    ]
+  ],
+  "measurements": [
+    {
+      "template": "executive-summary",
+      "viewport": [
+        1500,
+        950
+      ],
+      "font": {
+        "family": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+        "loaded": true
+      },
+      "slide": {
+        "x": 30,
+        "y": 70,
+        "width": 1440,
+        "height": 810,
+        "right": 1470,
+        "bottom": 880
+      },
+      "outside": [],
+      "overflow": [],
+      "footerOverlap": [],
+      "spacing": [],
+      "clippedText": [],
+      "arrowErrors": [],
+      "titleLines": 1,
+      "subtitleLines": 1,
+      "pageWidth": 1500
+    },
+    {
+      "template": "executive-summary",
+      "viewport": [
+        1366,
+        768
+      ],
+      "font": {
+        "family": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+        "loaded": true
+      },
+      "slide": {
+        "x": 35.890625,
+        "y": 20,
+        "width": 1294.21875,
+        "height": 728,
+        "right": 1330.109375,
+        "bottom": 748
+      },
+      "outside": [],
+      "overflow": [],
+      "footerOverlap": [],
+      "spacing": [],
+      "clippedText": [],
+      "arrowErrors": [],
+      "titleLines": 1,
+      "subtitleLines": 1,
+      "pageWidth": 1366
+    },
+    {
+      "template": "executive-summary",
+      "viewport": [
+        1280,
+        720
+      ],
+      "font": {
+        "family": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+        "loaded": true
+      },
+      "slide": {
+        "x": 35.5625,
+        "y": 20,
+        "width": 1208.875,
+        "height": 680,
+        "right": 1244.4375,
+        "bottom": 700
+      },
+      "outside": [],
+      "overflow": [],
+      "footerOverlap": [],
+      "spacing": [],
+      "clippedText": [],
+      "arrowErrors": [],
+      "titleLines": 1,
+      "subtitleLines": 1,
+      "pageWidth": 1280
+    },
+    {
+      "template": "executive-summary",
+      "viewport": [
+        900,
+        900
+      ],
+      "font": {
+        "family": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+        "loaded": true
+      },
+      "slide": {
+        "x": 16,
+        "y": 16,
+        "width": 868,
+        "height": 1266.84375,
+        "right": 884,
+        "bottom": 1282.84375
+      },
+      "outside": [],
+      "overflow": [],
+      "footerOverlap": [],
+      "spacing": [],
+      "clippedText": [],
+      "arrowErrors": [],
+      "titleLines": 1,
+      "subtitleLines": 1,
+      "pageWidth": 900
+    },
+    {
+      "template": "executive-summary",
+      "viewport": [
+        390,
+        844
+      ],
+      "font": {
+        "family": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+        "loaded": true
+      },
+      "slide": {
+        "x": 10,
+        "y": 10,
+        "width": 370,
+        "height": 1364.90625,
+        "right": 380,
+        "bottom": 1374.90625
+      },
+      "outside": [],
+      "overflow": [],
+      "footerOverlap": [],
+      "spacing": [],
+      "clippedText": [],
+      "arrowErrors": [],
+      "titleLines": 1,
+      "subtitleLines": 2,
+      "pageWidth": 390
+    }
+  ],
+  "interactive": [],
+  "executive": [
+    {
+      "viewport": [
+        1500,
+        950
+      ],
+      "obsolete": 0,
+      "title": "점검 효율 개선안 요약",
+      "subtitle": "수동 점검 부담 감소를 위한 파일럿 검토 · 효율성과 미검출 위험의 동시 평가",
+      "note": "가상 시나리오 · 동일한 월간 유입량과 집계 기준 가정 · 실측 효과 아님",
+      "footer": [
+        "Design Template Library · Executive-Summary",
+        "08 / 08"
+      ],
+      "actions": [
+        {
+          "number": "1",
+          "title": "우선순위 설정",
+          "detail": "점검 대상의 위험도와 처리 시점을 구분"
+        },
+        {
+          "number": "2",
+          "title": "파일럿 기준 통일",
+          "detail": "동일 기준으로 도입 전·후 수치를 집계"
+        },
+        {
+          "number": "3",
+          "title": "확대 판단",
+          "detail": "효율성과 미검출 위험을 함께 확인"
+        }
+      ],
+      "impact": {
+        "x": 96,
+        "y": 266.328125,
+        "width": 747.671875,
+        "height": 502.03125,
+        "right": 843.671875,
+        "bottom": 768.359375
+      },
+      "action": {
+        "x": 865.671875,
+        "y": 266.328125,
+        "width": 538.328125,
+        "height": 502.03125,
+        "right": 1404,
+        "bottom": 768.359375
+      },
+      "groups": [
+        {
+          "box": {
+            "x": 96,
+            "y": 297.125,
+            "width": 747.671875,
+            "height": 151.078125,
+            "right": 843.671875,
+            "bottom": 448.203125
+          },
+          "title": "월간 수동 점검",
+          "before": 120,
+          "after": 80,
+          "unit": "건",
+          "delta": "−33.3%",
+          "deltaColor": "rgb(38, 166, 161)",
+          "values": [
+            "120건",
+            "80건"
+          ],
+          "labels": [
+            "기존",
+            "개선안"
+          ],
+          "bars": [
+            {
+              "x": 388.828125,
+              "y": 360.125,
+              "width": 32,
+              "height": 60,
+              "right": 420.828125,
+              "bottom": 420.125,
+              "color": "rgb(49, 104, 200)",
+              "ratio": 1
+            },
+            {
+              "x": 518.828125,
+              "y": 380.125,
+              "width": 32,
+              "height": 40,
+              "right": 550.828125,
+              "bottom": 420.125,
+              "color": "rgb(38, 166, 161)",
+              "ratio": 0.6667
+            }
+          ],
+          "border": "solid",
+          "background": "rgb(255, 255, 255)"
+        },
+        {
+          "box": {
+            "x": 96,
+            "y": 457.203125,
+            "width": 747.671875,
+            "height": 151.078125,
+            "right": 843.671875,
+            "bottom": 608.28125
+          },
+          "title": "평균 처리 시간",
+          "before": 45,
+          "after": 30,
+          "unit": "분/건",
+          "delta": "−33.3%",
+          "deltaColor": "rgb(38, 166, 161)",
+          "values": [
+            "45분/건",
+            "30분/건"
+          ],
+          "labels": [
+            "기존",
+            "개선안"
+          ],
+          "bars": [
+            {
+              "x": 388.828125,
+              "y": 520.203125,
+              "width": 32,
+              "height": 60,
+              "right": 420.828125,
+              "bottom": 580.203125,
+              "color": "rgb(49, 104, 200)",
+              "ratio": 1
+            },
+            {
+              "x": 518.828125,
+              "y": 540.203125,
+              "width": 32,
+              "height": 40,
+              "right": 550.828125,
+              "bottom": 580.203125,
+              "color": "rgb(38, 166, 161)",
+              "ratio": 0.6667
+            }
+          ],
+          "border": "solid",
+          "background": "rgb(255, 255, 255)"
+        },
+        {
+          "box": {
+            "x": 96,
+            "y": 617.28125,
+            "width": 747.671875,
+            "height": 151.078125,
+            "right": 843.671875,
+            "bottom": 768.359375
+          },
+          "title": "월말 미처리",
+          "before": 20,
+          "after": 8,
+          "unit": "건",
+          "delta": "−60.0%",
+          "deltaColor": "rgb(38, 166, 161)",
+          "values": [
+            "20건",
+            "8건"
+          ],
+          "labels": [
+            "기존",
+            "개선안"
+          ],
+          "bars": [
+            {
+              "x": 388.828125,
+              "y": 680.28125,
+              "width": 32,
+              "height": 60,
+              "right": 420.828125,
+              "bottom": 740.28125,
+              "color": "rgb(49, 104, 200)",
+              "ratio": 1
+            },
+            {
+              "x": 518.828125,
+              "y": 716.28125,
+              "width": 32,
+              "height": 24,
+              "right": 550.828125,
+              "bottom": 740.28125,
+              "color": "rgb(38, 166, 161)",
+              "ratio": 0.4
+            }
+          ],
+          "border": "solid",
+          "background": "rgb(255, 255, 255)"
+        }
+      ]
+    },
+    {
+      "viewport": [
+        1366,
+        768
+      ],
+      "obsolete": 0,
+      "title": "점검 효율 개선안 요약",
+      "subtitle": "수동 점검 부담 감소를 위한 파일럿 검토 · 효율성과 미검출 위험의 동시 평가",
+      "note": "가상 시나리오 · 동일한 월간 유입량과 집계 기준 가정 · 실측 효과 아님",
+      "footer": [
+        "Design Template Library · Executive-Summary",
+        "08 / 08"
+      ],
+      "actions": [
+        {
+          "number": "1",
+          "title": "우선순위 설정",
+          "detail": "점검 대상의 위험도와 처리 시점을 구분"
+        },
+        {
+          "number": "2",
+          "title": "파일럿 기준 통일",
+          "detail": "동일 기준으로 도입 전·후 수치를 집계"
+        },
+        {
+          "number": "3",
+          "title": "확대 판단",
+          "detail": "효율성과 미검출 위험을 함께 확인"
+        }
+      ],
+      "impact": {
+        "x": 95.203125,
+        "y": 197.484375,
+        "width": 671.984375,
+        "height": 450.28125,
+        "right": 767.1875,
+        "bottom": 647.765625
+      },
+      "action": {
+        "x": 786.953125,
+        "y": 197.484375,
+        "width": 483.84375,
+        "height": 450.28125,
+        "right": 1270.796875,
+        "bottom": 647.765625
+      },
+      "groups": [
+        {
+          "box": {
+            "x": 95.203125,
+            "y": 225.15625,
+            "width": 671.984375,
+            "height": 135.484375,
+            "right": 767.1875,
+            "bottom": 360.640625
+          },
+          "title": "월간 수동 점검",
+          "before": 120,
+          "after": 80,
+          "unit": "건",
+          "delta": "−33.3%",
+          "deltaColor": "rgb(38, 166, 161)",
+          "values": [
+            "120건",
+            "80건"
+          ],
+          "labels": [
+            "기존",
+            "개선안"
+          ],
+          "bars": [
+            {
+              "x": 358.40625,
+              "y": 281.03125,
+              "width": 28.75,
+              "height": 53.921875,
+              "right": 387.15625,
+              "bottom": 334.953125,
+              "color": "rgb(49, 104, 200)",
+              "ratio": 1
+            },
+            {
+              "x": 475.234375,
+              "y": 299.015625,
+              "width": 28.75,
+              "height": 35.9375,
+              "right": 503.984375,
+              "bottom": 334.953125,
+              "color": "rgb(38, 166, 161)",
+              "ratio": 0.6667
+            }
+          ],
+          "border": "solid",
+          "background": "rgb(255, 255, 255)"
+        },
+        {
+          "box": {
+            "x": 95.203125,
+            "y": 368.71875,
+            "width": 671.984375,
+            "height": 135.484375,
+            "right": 767.1875,
+            "bottom": 504.203125
+          },
+          "title": "평균 처리 시간",
+          "before": 45,
+          "after": 30,
+          "unit": "분/건",
+          "delta": "−33.3%",
+          "deltaColor": "rgb(38, 166, 161)",
+          "values": [
+            "45분/건",
+            "30분/건"
+          ],
+          "labels": [
+            "기존",
+            "개선안"
+          ],
+          "bars": [
+            {
+              "x": 358.40625,
+              "y": 424.59375,
+              "width": 28.75,
+              "height": 53.921875,
+              "right": 387.15625,
+              "bottom": 478.515625,
+              "color": "rgb(49, 104, 200)",
+              "ratio": 1
+            },
+            {
+              "x": 475.234375,
+              "y": 442.578125,
+              "width": 28.75,
+              "height": 35.9375,
+              "right": 503.984375,
+              "bottom": 478.515625,
+              "color": "rgb(38, 166, 161)",
+              "ratio": 0.6667
+            }
+          ],
+          "border": "solid",
+          "background": "rgb(255, 255, 255)"
+        },
+        {
+          "box": {
+            "x": 95.203125,
+            "y": 512.28125,
+            "width": 671.984375,
+            "height": 135.484375,
+            "right": 767.1875,
+            "bottom": 647.765625
+          },
+          "title": "월말 미처리",
+          "before": 20,
+          "after": 8,
+          "unit": "건",
+          "delta": "−60.0%",
+          "deltaColor": "rgb(38, 166, 161)",
+          "values": [
+            "20건",
+            "8건"
+          ],
+          "labels": [
+            "기존",
+            "개선안"
+          ],
+          "bars": [
+            {
+              "x": 358.40625,
+              "y": 568.15625,
+              "width": 28.75,
+              "height": 53.921875,
+              "right": 387.15625,
+              "bottom": 622.078125,
+              "color": "rgb(49, 104, 200)",
+              "ratio": 1
+            },
+            {
+              "x": 475.234375,
+              "y": 600.515625,
+              "width": 28.75,
+              "height": 21.5625,
+              "right": 503.984375,
+              "bottom": 622.078125,
+              "color": "rgb(38, 166, 161)",
+              "ratio": 0.4
+            }
+          ],
+          "border": "solid",
+          "background": "rgb(255, 255, 255)"
+        }
+      ]
+    },
+    {
+      "viewport": [
+        1280,
+        720
+      ],
+      "obsolete": 0,
+      "title": "점검 효율 개선안 요약",
+      "subtitle": "수동 점검 부담 감소를 위한 파일럿 검토 · 효율성과 미검출 위험의 동시 평가",
+      "note": "가상 시나리오 · 동일한 월간 유입량과 집계 기준 가정 · 실측 효과 아님",
+      "footer": [
+        "Design Template Library · Executive-Summary",
+        "08 / 08"
+      ],
+      "actions": [
+        {
+          "number": "1",
+          "title": "우선순위 설정",
+          "detail": "점검 대상의 위험도와 처리 시점을 구분"
+        },
+        {
+          "number": "2",
+          "title": "파일럿 기준 통일",
+          "detail": "동일 기준으로 도입 전·후 수치를 집계"
+        },
+        {
+          "number": "3",
+          "title": "확대 판단",
+          "detail": "효율성과 미검출 위험을 함께 확인"
+        }
+      ],
+      "impact": {
+        "x": 90.96875,
+        "y": 185.015625,
+        "width": 627.65625,
+        "height": 421.265625,
+        "right": 718.625,
+        "bottom": 606.28125
+      },
+      "action": {
+        "x": 737.09375,
+        "y": 185.015625,
+        "width": 451.921875,
+        "height": 421.265625,
+        "right": 1189.015625,
+        "bottom": 606.28125
+      },
+      "groups": [
+        {
+          "box": {
+            "x": 90.96875,
+            "y": 210.875,
+            "width": 627.65625,
+            "height": 126.765625,
+            "right": 718.625,
+            "bottom": 337.640625
+          },
+          "title": "월간 수동 점검",
+          "before": 120,
+          "after": 80,
+          "unit": "건",
+          "delta": "−33.3%",
+          "deltaColor": "rgb(38, 166, 161)",
+          "values": [
+            "120건",
+            "80건"
+          ],
+          "labels": [
+            "기존",
+            "개선안"
+          ],
+          "bars": [
+            {
+              "x": 336.796875,
+              "y": 263.921875,
+              "width": 26.859375,
+              "height": 50.359375,
+              "right": 363.65625,
+              "bottom": 314.28125,
+              "color": "rgb(49, 104, 200)",
+              "ratio": 1
+            },
+            {
+              "x": 445.90625,
+              "y": 280.703125,
+              "width": 26.859375,
+              "height": 33.578125,
+              "right": 472.765625,
+              "bottom": 314.28125,
+              "color": "rgb(38, 166, 161)",
+              "ratio": 0.6667
+            }
+          ],
+          "border": "solid",
+          "background": "rgb(255, 255, 255)"
+        },
+        {
+          "box": {
+            "x": 90.96875,
+            "y": 345.1875,
+            "width": 627.65625,
+            "height": 126.765625,
+            "right": 718.625,
+            "bottom": 471.953125
+          },
+          "title": "평균 처리 시간",
+          "before": 45,
+          "after": 30,
+          "unit": "분/건",
+          "delta": "−33.3%",
+          "deltaColor": "rgb(38, 166, 161)",
+          "values": [
+            "45분/건",
+            "30분/건"
+          ],
+          "labels": [
+            "기존",
+            "개선안"
+          ],
+          "bars": [
+            {
+              "x": 336.796875,
+              "y": 398.234375,
+              "width": 26.859375,
+              "height": 50.359375,
+              "right": 363.65625,
+              "bottom": 448.59375,
+              "color": "rgb(49, 104, 200)",
+              "ratio": 1
+            },
+            {
+              "x": 445.90625,
+              "y": 415.015625,
+              "width": 26.859375,
+              "height": 33.578125,
+              "right": 472.765625,
+              "bottom": 448.59375,
+              "color": "rgb(38, 166, 161)",
+              "ratio": 0.6667
+            }
+          ],
+          "border": "solid",
+          "background": "rgb(255, 255, 255)"
+        },
+        {
+          "box": {
+            "x": 90.96875,
+            "y": 479.5,
+            "width": 627.65625,
+            "height": 126.78125,
+            "right": 718.625,
+            "bottom": 606.28125
+          },
+          "title": "월말 미처리",
+          "before": 20,
+          "after": 8,
+          "unit": "건",
+          "delta": "−60.0%",
+          "deltaColor": "rgb(38, 166, 161)",
+          "values": [
+            "20건",
+            "8건"
+          ],
+          "labels": [
+            "기존",
+            "개선안"
+          ],
+          "bars": [
+            {
+              "x": 336.796875,
+              "y": 532.546875,
+              "width": 26.859375,
+              "height": 50.359375,
+              "right": 363.65625,
+              "bottom": 582.90625,
+              "color": "rgb(49, 104, 200)",
+              "ratio": 1
+            },
+            {
+              "x": 445.90625,
+              "y": 562.765625,
+              "width": 26.859375,
+              "height": 20.140625,
+              "right": 472.765625,
+              "bottom": 582.90625,
+              "color": "rgb(38, 166, 161)",
+              "ratio": 0.4
+            }
+          ],
+          "border": "solid",
+          "background": "rgb(255, 255, 255)"
+        }
+      ]
+    },
+    {
+      "viewport": [
+        900,
+        900
+      ],
+      "obsolete": 0,
+      "title": "점검 효율 개선안 요약",
+      "subtitle": "수동 점검 부담 감소를 위한 파일럿 검토 · 효율성과 미검출 위험의 동시 평가",
+      "note": "가상 시나리오 · 동일한 월간 유입량과 집계 기준 가정 · 실측 효과 아님",
+      "footer": [
+        "Design Template Library · Executive-Summary",
+        "08 / 08"
+      ],
+      "actions": [
+        {
+          "number": "1",
+          "title": "우선순위 설정",
+          "detail": "점검 대상의 위험도와 처리 시점을 구분"
+        },
+        {
+          "number": "2",
+          "title": "파일럿 기준 통일",
+          "detail": "동일 기준으로 도입 전·후 수치를 집계"
+        },
+        {
+          "number": "3",
+          "title": "확대 판단",
+          "detail": "효율성과 미검출 위험을 함께 확인"
+        }
+      ],
+      "impact": {
+        "x": 40,
+        "y": 171.40625,
+        "width": 820,
+        "height": 528.796875,
+        "right": 860,
+        "bottom": 700.203125
+      },
+      "action": {
+        "x": 40,
+        "y": 722.203125,
+        "width": 820,
+        "height": 451,
+        "right": 860,
+        "bottom": 1173.203125
+      },
+      "groups": [
+        {
+          "box": {
+            "x": 40,
+            "y": 202.203125,
+            "width": 820,
+            "height": 160,
+            "right": 860,
+            "bottom": 362.203125
+          },
+          "title": "월간 수동 점검",
+          "before": 120,
+          "after": 80,
+          "unit": "건",
+          "delta": "−33.3%",
+          "deltaColor": "rgb(38, 166, 161)",
+          "values": [
+            "120건",
+            "80건"
+          ],
+          "labels": [
+            "기존",
+            "개선안"
+          ],
+          "bars": [
+            {
+              "x": 369,
+              "y": 265.203125,
+              "width": 32,
+              "height": 60,
+              "right": 401,
+              "bottom": 325.203125,
+              "color": "rgb(49, 104, 200)",
+              "ratio": 1
+            },
+            {
+              "x": 499,
+              "y": 285.203125,
+              "width": 32,
+              "height": 40,
+              "right": 531,
+              "bottom": 325.203125,
+              "color": "rgb(38, 166, 161)",
+              "ratio": 0.6667
+            }
+          ],
+          "border": "solid",
+          "background": "rgb(255, 255, 255)"
+        },
+        {
+          "box": {
+            "x": 40,
+            "y": 371.203125,
+            "width": 820,
+            "height": 160,
+            "right": 860,
+            "bottom": 531.203125
+          },
+          "title": "평균 처리 시간",
+          "before": 45,
+          "after": 30,
+          "unit": "분/건",
+          "delta": "−33.3%",
+          "deltaColor": "rgb(38, 166, 161)",
+          "values": [
+            "45분/건",
+            "30분/건"
+          ],
+          "labels": [
+            "기존",
+            "개선안"
+          ],
+          "bars": [
+            {
+              "x": 369,
+              "y": 434.203125,
+              "width": 32,
+              "height": 60,
+              "right": 401,
+              "bottom": 494.203125,
+              "color": "rgb(49, 104, 200)",
+              "ratio": 1
+            },
+            {
+              "x": 499,
+              "y": 454.203125,
+              "width": 32,
+              "height": 40,
+              "right": 531,
+              "bottom": 494.203125,
+              "color": "rgb(38, 166, 161)",
+              "ratio": 0.6667
+            }
+          ],
+          "border": "solid",
+          "background": "rgb(255, 255, 255)"
+        },
+        {
+          "box": {
+            "x": 40,
+            "y": 540.203125,
+            "width": 820,
+            "height": 160,
+            "right": 860,
+            "bottom": 700.203125
+          },
+          "title": "월말 미처리",
+          "before": 20,
+          "after": 8,
+          "unit": "건",
+          "delta": "−60.0%",
+          "deltaColor": "rgb(38, 166, 161)",
+          "values": [
+            "20건",
+            "8건"
+          ],
+          "labels": [
+            "기존",
+            "개선안"
+          ],
+          "bars": [
+            {
+              "x": 369,
+              "y": 603.203125,
+              "width": 32,
+              "height": 60,
+              "right": 401,
+              "bottom": 663.203125,
+              "color": "rgb(49, 104, 200)",
+              "ratio": 1
+            },
+            {
+              "x": 499,
+              "y": 639.203125,
+              "width": 32,
+              "height": 24,
+              "right": 531,
+              "bottom": 663.203125,
+              "color": "rgb(38, 166, 161)",
+              "ratio": 0.4
+            }
+          ],
+          "border": "solid",
+          "background": "rgb(255, 255, 255)"
+        }
+      ]
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "obsolete": 0,
+      "title": "점검 효율 개선안 요약",
+      "subtitle": "수동 점검 부담 감소를 위한 파일럿 검토 · 효율성과 미검출 위험의 동시 평가",
+      "note": "가상 시나리오 · 동일한 월간 유입량과 집계 기준 가정 · 실측 효과 아님",
+      "footer": [
+        "Design Template Library · Executive-Summary",
+        "08 / 08"
+      ],
+      "actions": [
+        {
+          "number": "1",
+          "title": "우선순위 설정",
+          "detail": "점검 대상의 위험도와 처리 시점을 구분"
+        },
+        {
+          "number": "2",
+          "title": "파일럿 기준 통일",
+          "detail": "동일 기준으로 도입 전·후 수치를 집계"
+        },
+        {
+          "number": "3",
+          "title": "확대 판단",
+          "detail": "효율성과 미검출 위험을 함께 확인"
+        }
+      ],
+      "impact": {
+        "x": 26,
+        "y": 182.828125,
+        "width": 338,
+        "height": 528.796875,
+        "right": 364,
+        "bottom": 711.625
+      },
+      "action": {
+        "x": 26,
+        "y": 733.625,
+        "width": 338,
+        "height": 511,
+        "right": 364,
+        "bottom": 1244.625
+      },
+      "groups": [
+        {
+          "box": {
+            "x": 26,
+            "y": 213.625,
+            "width": 338,
+            "height": 160,
+            "right": 364,
+            "bottom": 373.625
+          },
+          "title": "월간 수동 점검",
+          "before": 120,
+          "after": 80,
+          "unit": "건",
+          "delta": "−33.3%",
+          "deltaColor": "rgb(38, 166, 161)",
+          "values": [
+            "120건",
+            "80건"
+          ],
+          "labels": [
+            "기존",
+            "개선안"
+          ],
+          "bars": [
+            {
+              "x": 120,
+              "y": 276.625,
+              "width": 32,
+              "height": 60,
+              "right": 152,
+              "bottom": 336.625,
+              "color": "rgb(49, 104, 200)",
+              "ratio": 1
+            },
+            {
+              "x": 238,
+              "y": 296.625,
+              "width": 32,
+              "height": 40,
+              "right": 270,
+              "bottom": 336.625,
+              "color": "rgb(38, 166, 161)",
+              "ratio": 0.6667
+            }
+          ],
+          "border": "solid",
+          "background": "rgb(255, 255, 255)"
+        },
+        {
+          "box": {
+            "x": 26,
+            "y": 382.625,
+            "width": 338,
+            "height": 160,
+            "right": 364,
+            "bottom": 542.625
+          },
+          "title": "평균 처리 시간",
+          "before": 45,
+          "after": 30,
+          "unit": "분/건",
+          "delta": "−33.3%",
+          "deltaColor": "rgb(38, 166, 161)",
+          "values": [
+            "45분/건",
+            "30분/건"
+          ],
+          "labels": [
+            "기존",
+            "개선안"
+          ],
+          "bars": [
+            {
+              "x": 120,
+              "y": 445.625,
+              "width": 32,
+              "height": 60,
+              "right": 152,
+              "bottom": 505.625,
+              "color": "rgb(49, 104, 200)",
+              "ratio": 1
+            },
+            {
+              "x": 238,
+              "y": 465.625,
+              "width": 32,
+              "height": 40,
+              "right": 270,
+              "bottom": 505.625,
+              "color": "rgb(38, 166, 161)",
+              "ratio": 0.6667
+            }
+          ],
+          "border": "solid",
+          "background": "rgb(255, 255, 255)"
+        },
+        {
+          "box": {
+            "x": 26,
+            "y": 551.625,
+            "width": 338,
+            "height": 160,
+            "right": 364,
+            "bottom": 711.625
+          },
+          "title": "월말 미처리",
+          "before": 20,
+          "after": 8,
+          "unit": "건",
+          "delta": "−60.0%",
+          "deltaColor": "rgb(38, 166, 161)",
+          "values": [
+            "20건",
+            "8건"
+          ],
+          "labels": [
+            "기존",
+            "개선안"
+          ],
+          "bars": [
+            {
+              "x": 120,
+              "y": 614.625,
+              "width": 32,
+              "height": 60,
+              "right": 152,
+              "bottom": 674.625,
+              "color": "rgb(49, 104, 200)",
+              "ratio": 1
+            },
+            {
+              "x": 238,
+              "y": 650.625,
+              "width": 32,
+              "height": 24,
+              "right": 270,
+              "bottom": 674.625,
+              "color": "rgb(38, 166, 161)",
+              "ratio": 0.4
+            }
+          ],
+          "border": "solid",
+          "background": "rgb(255, 255, 255)"
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "base_commit": "53c4a34bad20a292baf51fd69cf53f668e09a1cb",
+  "font_transport": "Exact Pretendard v1.3.9 CDN CSS/WOFF2 responses fetched through system-verified HTTPS and served to Chromium via Playwright routing. Chromium does not trust the environment proxy CA; TLS verification was not disabled.",
+  "source_sha256": {
+    "templates/html/executive-summary.html": "84b42ec3370ecfbdf55a38dd7ebd09096d57115cfb1858363738d0022732d2d2",
+    "templates/html/styles.css": "3d6b1df7cdc59a176a746a120735c14df867f3122acb2b378dab796bb58e7b68",
+    "templates/html/reference-types.css": "9ad52a4a7d1f0671da3ecca0d5bc3bce66be2cdd4ee7df5348ec42d6299e5df1",
+    "templates/html/reference-layout.css": "a749d3155862beb17363bcfeb2f8dd5f92e2c2534d6c25197bc336c4bf79fb0e"
+  }
+}

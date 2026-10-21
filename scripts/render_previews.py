@@ -2,6 +2,7 @@
 
 Requirements: Python Playwright and Chromium (CHROMIUM_EXECUTABLE overrides PATH).
 Run: python scripts/render_previews.py
+Executive only: python scripts/render_previews.py --templates executive-summary
 Canonical previews are captured at 1500x950; viewport evidence and measurements
 are written to --evidence-dir (default: /tmp/design-template-review).
 """
@@ -35,7 +36,7 @@ GEOMETRY = """() => {
     const s=rect(slide), footer=rect(slide.querySelector('.footer'));
     const visible=[...slide.querySelectorAll('*')].filter(e=>e.getBoundingClientRect().width && e.getBoundingClientRect().height);
     const outside=visible.filter(e=>{const r=rect(e);return r.x<s.x-1 || r.right>s.right+1 || r.y<s.y-1 || r.bottom>s.bottom+1}).map(e=>e.className);
-    const containers=[...slide.querySelectorAll('.content,.ref-grid,.ref-card,.concept-panel,.compare-card,.node,.arch-node,.executive-kpi')];
+    const containers=[...slide.querySelectorAll('.content,.ref-grid,.ref-card,.concept-panel,.compare-card,.node,.arch-node,.executive-kpi,.exec-metric-group,.exec-metric-bars,.exec-impact,.exec-actions')];
     const overflow=containers.filter(e=>e.scrollWidth>e.clientWidth+1 || e.scrollHeight>e.clientHeight+1).map(e=>e.className);
     const footerOverlap=visible.filter(e=> !e.closest('footer') && !e.matches('script') && rect(e).bottom>footer.y+1).map(e=>e.className);
     const textElements=visible.filter(e=>[...e.childNodes].some(n=>n.nodeType===3 && n.textContent.trim()));
@@ -100,9 +101,87 @@ def check_interactive(page):
     return results
 
 
+def check_executive(page, width):
+    """Check displayed KPI values AND real vertical bar geometry independently."""
+    result = page.evaluate("""() => {
+      const box = el => {const r=el.getBoundingClientRect();return {x:r.x,y:r.y,width:r.width,height:r.height,right:r.right,bottom:r.bottom}};
+      const impact=document.querySelector('.exec-impact');
+      const action=document.querySelector('.exec-action-panel');
+      const groups=[...document.querySelectorAll('.exec-metric-group')];
+      return {
+        obsolete:document.querySelectorAll('.executive-kpis,.executive-kpi,.exec-track,.exec-bar').length,
+        title:document.querySelector('h1').textContent,
+        subtitle:document.querySelector('.subtitle').textContent,
+        note:document.querySelector('.content > .ref-note').textContent,
+        footer:[...document.querySelectorAll('.footer span')].map(e=>e.textContent),
+        actions:[...document.querySelectorAll('.exec-action')].map(e=>({
+          number:e.querySelector('strong').textContent,
+          title:e.querySelector('b').textContent,
+          detail:e.querySelector('span').lastChild.textContent
+        })),
+        impact:box(impact),action:box(action),
+        groups:groups.map(g=>({
+          box:box(g),title:g.querySelector('h3').textContent,
+          before:Number(g.dataset.before),after:Number(g.dataset.after),unit:g.dataset.unit,
+          delta:g.querySelector('.exec-delta').textContent,
+          deltaColor:getComputedStyle(g.querySelector('.exec-delta')).color,
+          values:[...g.querySelectorAll('.exec-value')].map(e=>e.textContent),
+          labels:[...g.querySelectorAll('.exec-series')].map(e=>e.textContent),
+          bars:[...g.querySelectorAll('.exec-fill')].map(e=>({
+            ...box(e),color:getComputedStyle(e).backgroundColor,
+            ratio:Number(e.style.getPropertyValue('--ratio'))
+          })),
+          border:getComputedStyle(g).borderStyle,
+          background:getComputedStyle(g).backgroundColor
+        }))
+      };
+    }""")
+    assert result['obsolete'] == 0, (width, 'duplicate or horizontal KPI layout', result)
+    expected = [
+        ('월간 수동 점검',120,80,'건'),
+        ('평균 처리 시간',45,30,'분/건'),
+        ('월말 미처리',20,8,'건'),
+    ]
+    assert len(result['groups']) == 3, (width, result)
+    previous = None
+    for group, (title,before,after,unit) in zip(result['groups'],expected):
+        assert (group['title'],group['before'],group['after'],group['unit']) == (title,before,after,unit), (width, group)
+        delta=f'{(after-before)/before*100:.1f}%'.replace('-', '−')
+        assert group['delta'] == delta and group['deltaColor'] == 'rgb(38, 166, 161)', (width, group)
+        assert group['values'] == [f'{before}{unit}',f'{after}{unit}'], (width, group)
+        assert group['labels'] == ['기존','개선안'] and len(group['bars']) == 2, (width, group)
+        base,new=group['bars']
+        assert base['color']=='rgb(49, 104, 200)' and new['color']=='rgb(38, 166, 161)', (width, group)
+        assert abs(base['ratio']-1)<.0001 and abs(new['ratio']-after/before)<.0001, (width, group)
+        assert base['height']>base['width'] and new['height']>0, (width, 'not vertical bars', group)
+        assert abs(base['width']-new['width'])<1 and new['x']>base['right'], (width, 'bars not side by side', group)
+        assert abs(base['bottom']-new['bottom'])<1, (width, 'unequal baselines', group)
+        assert abs(new['height']/base['height']-after/before)<.002, (width, 'rendered height ratio', group)
+        assert group['border']!='none' and group['background']=='rgb(255, 255, 255)', (width, group)
+        if previous:
+            assert group['box']['y']>previous['bottom'], (width, 'KPI cards not stacked', result)
+        previous=group['box']
+    assert result['title']=='점검 효율 개선안 요약'
+    assert result['subtitle']=='수동 점검 부담 감소를 위한 파일럿 검토 · 효율성과 미검출 위험의 동시 평가'
+    assert result['note']=='가상 시나리오 · 동일한 월간 유입량과 집계 기준 가정 · 실측 효과 아님'
+    assert result['footer']==['Design Template Library · Executive-Summary','08 / 08']
+    assert result['actions']==[
+        dict(number='1',title='우선순위 설정',detail='점검 대상의 위험도와 처리 시점을 구분'),
+        dict(number='2',title='파일럿 기준 통일',detail='동일 기준으로 도입 전·후 수치를 집계'),
+        dict(number='3',title='확대 판단',detail='효율성과 미검출 위험을 함께 확인'),
+    ], (width, 'Action content changed', result)
+    if width>900:
+        assert result['action']['x']>result['impact']['right'], (width, 'two-column layout', result)
+    else:
+        assert result['action']['y']>result['impact']['bottom'], (width, 'reading order', result)
+    return result
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--evidence-dir', type=Path, default=Path('/tmp/design-template-review'))
+    parser.add_argument('--templates', nargs='+', choices=TEMPLATE_IDS, default=TEMPLATE_IDS,
+                        help='Render selected templates without updating unrelated previews')
     args = parser.parse_args()
     args.evidence_dir.mkdir(parents=True, exist_ok=True)
     (ROOT/'previews').mkdir(exist_ok=True)
@@ -110,6 +189,7 @@ def main():
     threading.Thread(target=server.serve_forever, daemon=True).start()
     measurements = []
     interactions = []
+    executive = []
     try:
         with sync_playwright() as p:
             executable = os.environ.get('CHROMIUM_EXECUTABLE') or shutil.which('chromium') or shutil.which('chromium-browser')
@@ -120,7 +200,7 @@ def main():
             page.on('requestfailed', lambda request: errors.append(request.url))
             for width, height in VIEWPORTS:
                 page.set_viewport_size(dict(width=width, height=height))
-                for name in TEMPLATE_IDS:
+                for name in args.templates:
                     page.goto(f'http://127.0.0.1:{server.server_port}/templates/html/{name}.html')
                     page.evaluate('document.fonts.ready')
                     font_status = page.evaluate("""() => ({
@@ -191,42 +271,7 @@ def main():
                             'output': 'rgb(227, 246, 243)'
                         }, (name, width, 'lost meaningful stage colors', palette)
                     if name == 'executive-summary':
-                        kpis = page.evaluate("""() => {
-                          const groups = [...document.querySelectorAll(
-                            '.exec-metric-group')];
-                          return groups.map(g => {
-                            const before = Number(g.dataset.before);
-                            const after = Number(g.dataset.after);
-                            const bars = [...g.querySelectorAll('.exec-fill')]
-                              .map(el => Number(el.style.width.replace('%','')));
-                            const heading = g.querySelector('h3')?.textContent;
-                            const delta = g.querySelector('.exec-delta')?.textContent;
-                            const border = getComputedStyle(g).borderStyle;
-                            const background = getComputedStyle(g).backgroundColor;
-                            return {before, after, bars, heading, delta,
-                              border, background};
-                          });
-                        }""")
-                        expected = [
-                            ('월간 수동 점검', 120, 80, '−33.3%'),
-                            ('평균 처리 시간', 45, 30, '−33.3%'),
-                            ('월말 미처리', 20, 8, '−60.0%')
-                        ]
-                        assert len(kpis) == len(expected), (width, kpis)
-                        for group, (title, before, after, delta) in zip(
-                            kpis, expected
-                        ):
-                            assert (group['heading'], group['before'],
-                                    group['after'], group['delta']) == (
-                                        title, before, after, delta
-                                    ), (width, group)
-                            assert abs(group['bars'][0] - 100) < .01 and (
-                                abs(group['bars'][1] - after / before * 100)
-                                < .02
-                            ), (width, group)
-                            assert group['border'] != 'none' and (
-                                group['background'] == 'rgb(255, 255, 255)'
-                            ), (width, group)
+                        executive.append(dict(viewport=[width,height], **check_executive(page, width)))
                     m = page.evaluate(GEOMETRY)
                     for key in ('outside','overflow','footerOverlap','spacing','clippedText','arrowErrors'):
                         assert not m[key], (name, width, key, m[key])
@@ -236,7 +281,7 @@ def main():
                         assert abs(r['width']/r['height']-16/9)<.002
                         assert r['bottom'] <= height and r['right'] <= width
                         assert m['titleLines'] == 1 and m['subtitleLines'] == 1, (name, width, m)
-                    measurements.append(dict(template=name, viewport=[width,height], **m))
+                    measurements.append(dict(template=name, viewport=[width,height], font=font_status, **m))
                     if name == 'interactive':
                         interactions.append(dict(viewport=[width,height],thresholds=check_interactive(page)))
                     page.screenshot(path=str(args.evidence_dir/f'{name}-{width}.png'), full_page=True)
@@ -245,14 +290,15 @@ def main():
                         options = {'quality':92} if ext == 'jpg' else {}
                         page.locator('.slide').screenshot(path=str(ROOT/'previews'/f'html-{name}.{ext}'), animations='disabled', **options)
             assert not errors, errors
-            report = dict(browser=browser.version, viewports=VIEWPORTS, measurements=measurements, interactive=interactions, errors=errors)
+            report = dict(browser=browser.version, viewports=VIEWPORTS, measurements=measurements, interactive=interactions, executive=executive, errors=errors)
             (args.evidence_dir/'validation.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
             browser.close()
     finally:
         server.shutdown()
         server.server_close()
-    print(f'PASS: {len(measurements)} renders; 21 thresholds + keyboard/pointer controls at each viewport; Pretendard loaded, no geometry, spacing or runtime errors.')
+    print(f'PASS: {len(measurements)} renders; {len(interactions)} interactive viewport checks; {len(executive)} KPI checks; Pretendard loaded, no geometry, spacing or runtime errors.')
 
 
 if __name__ == '__main__':
     main()
+

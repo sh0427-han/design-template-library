@@ -15,7 +15,7 @@
 | `interactive` | 웹 실습·임계값 검증 | 슬라이더 + 계산 + 혼동행렬 | [원본](templates/html/interactive.html) · ![Interactive](previews/html-interactive.jpg) |
 | `architecture` | 모델·시스템 구조 | 논문형 Feature Map Stack·Tensor Shape | [원본](templates/html/architecture.html) · ![Architecture](previews/html-architecture.jpg) |
 | `experiment` | 연구 결과·지표 비교 | Confusion Matrix + Metrics | [원본](templates/html/experiment.html) · ![Experiment](previews/html-experiment.jpg) |
-| `executive-summary` | 경영·기술 보고 | KPI + 비교 + Action | [원본](templates/html/executive-summary.html) · ![Executive Summary](previews/html-executive-summary.jpg) |
+| `executive-summary` | 경영·기술 보고 | KPI·감소율·세로 막대 통합 카드 + Action | [원본](templates/html/executive-summary.html) · ![Executive Summary](previews/html-executive-summary.jpg) |
 
 ## 유형별 적용 기준
 
@@ -26,7 +26,7 @@
 - **Interactive**: 조작할 수 있는 변수와 화면에 표시하는 계산이 일치해야 합니다. 계산 예시는 정적 이미지로 대체하지 않습니다.
 - **Architecture**: 각 텐서의 H/W/C와 stride·padding 관계를 확인합니다.
 - **Experiment**: 수치 예시는 실제 실험 데이터와 구분합니다. 가상 12개 샘플로 TN=5, FP=1, FN=2, TP=4를 사용했습니다.
-- **Executive Summary**: 개선 수치가 가상인 경우 명시하며, 숫자보다 의사결정 메시지를 우선합니다. 기존/개선 막대는 **지표별로 독립된 비교 카드**에 묶고, 각 카드에 감소율을 표시합니다(월간 점검 120→80건 −33.3%, 평균 처리 시간 45→30분/건 −33.3%, 월말 미처리 20→8건 −60.0%). 비교 막대는 각 지표의 기존 값을 100%로 정규화합니다.
+- **Executive Summary**: 개선 수치가 가상인 경우 명시하며, 숫자보다 의사결정 메시지를 우선합니다. 기존/개선 막대는 **지표별로 독립된 비교 카드**에 묶고, 각 카드에 감소율을 표시합니다(월간 점검 120→80건 −33.3%, 평균 처리 시간 45→30분/건 −33.3%, 월말 미처리 20→8건 −60.0%). 각 카드의 세로 막대 2개에 실제 값과 단위를 표시하며, 각 지표의 기존 값을 100%로 정규화합니다. 상단 KPI 요약과 가로 그래프의 중복 표시는 제거했습니다. 1500×950 / 1366×768 / 1280×720 / 900×900 / 390×844 Chromium 검증 완료 ([검증 JSON](previews/review/executive-summary-validation.json)).
 
 ## 색상 및 카드 적용 기준
 
@@ -56,4 +56,5 @@
 | Slide | [CNN 발표 예제](templates/dual-mode-learning/slides.html) | 16:9 · 5장 · 키보드 전환 |
 
 디자인 초안의 평가 방법은 [REFERENCE_REVIEW_GUIDE.md](docs/REFERENCE_REVIEW_GUIDE.md)를 참고합니다.
+
 
