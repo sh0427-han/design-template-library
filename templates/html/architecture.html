@@ -2,18 +2,61 @@
     <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Architecture | Design Template Library</title>
     <link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="reference-types.css"><link rel="stylesheet" href="reference-layout.css">
-</head>
+<style>
+/* Scientific network schematic — isolated to Architecture. */
+.architecture-slide .content > .ref-card {overflow:hidden;}
+.paper-pipeline{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px;align-items:stretch;margin:22px 0 26px;}
+.paper-stage{position:relative;display:grid;grid-template-rows:30px 114px 31px 27px 23px;align-items:center;justify-items:center;gap:2px;min-width:0;min-height:268px;padding:15px 8px 12px;border:1px solid #DDE4EF;border-radius:13px;background:linear-gradient(180deg,#FFFFFF,#F8FAFD);text-align:center;}
+.paper-conv,.paper-conv2{background:linear-gradient(180deg,#F5F9FF,#EDF3FF);border-color:#BFD2F3;}
+.paper-gap{background:linear-gradient(180deg,#F3FBF9,#EAF7F4);border-color:#C0E4DC;}
+.paper-fc{background:linear-gradient(180deg,#EAF7F4,#E1F3EF);border-color:#9BD9CD;}
+.paper-stage:not(:last-child)::after{content:'→';position:absolute;right:-15px;top:114px;width:16px;line-height:26px;font-size:26px;font-weight:700;color:#3168C8;z-index:5;filter:drop-shadow(0 1px 0 #fff);}
+.paper-stage-head{font-size:14px;font-weight:800;color:#1B3558;white-space:nowrap;}
+.paper-figure{display:grid;place-items:center;height:112px;width:100%;perspective:480px;}
+.fm{position:relative;width:100px;height:95px;transform:translateX(-7px);}
+.fm i{position:absolute;display:block;top:calc(18px - var(--layer)*5px);left:calc(28px - var(--layer)*8px);width:64px;height:71px;border:1.5px solid #3168C8;border-radius:3px;transform:skewY(-11deg);background-color:#A8C5F5;background-image:repeating-linear-gradient(0deg,transparent 0 13px,#4E83C733 13px 14px),repeating-linear-gradient(90deg,transparent 0 13px,#4E83C733 13px 14px);box-shadow:3px 4px 7px #17395B16;}
+.fm i:nth-child(1){z-index:4}.fm i:nth-child(2){z-index:3}.fm i:nth-child(3){z-index:2}.fm i:nth-child(4){z-index:1}
+.fm-rgb i:nth-child(1){background-color:#EAAEA6;border-color:#CB8D86}.fm-rgb i:nth-child(2){background-color:#A4D9C8;border-color:#7DADA0}.fm-rgb i:nth-child(3){background-color:#ABC5EA;border-color:#82A8DA}
+.fm-teal i{background-color:#93D4CD;border-color:#30A19A;}
+.fm-deep i{background-color:#8DA8D3;border-color:#486AA4;}
+.fm-medium{transform:translateX(1px) scale(.82);}
+.paper-vector{height:90px;display:flex;align-items:center;gap:4px;transform:rotate(-13deg);}
+.paper-vector i{width:11px;height:var(--h);border:1px solid #248D8A;background:linear-gradient(#60BAB5,#C5EDE8);border-radius:2px;box-shadow:1px 2px 3px #183d4d15;}
+.paper-logits{width:94px;display:grid;gap:9px;padding:8px;}
+.paper-logits i{width:var(--score);height:15px;border-radius:2px;background:linear-gradient(90deg,#238F87,#75C8BC);box-shadow:0 1px 1px #1232;}
+.paper-logits i:not(:first-child){background:linear-gradient(90deg,#95B6C8,#C0D7E3);}
+.paper-shape{font-size:18px;font-weight:800;color:#12233F;white-space:nowrap;letter-spacing:-1pt;}
+.paper-op{font-size:14px;font-weight:800;color:#3168C8;white-space:nowrap;}
+.paper-desc{font-size:13px;color:#64748B;line-height:1.25;}
+.paper-caption{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;border-top:1px solid #DDE4EF;margin-top:-6px;padding:13px 2px 0;color:#64748B;font-size:16px;}
+.architecture-slide .arch-details{margin-top:22px;}
+@media(max-width:900px){
+.paper-pipeline{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;}
+.paper-stage{min-height:250px;}
+.paper-stage:not(:last-child)::after{content:none;}
+.paper-caption{font-size:14px;}
+}
+@media(max-width:520px){
+.paper-pipeline{grid-template-columns:1fr;gap:12px;}
+.paper-stage{grid-template-columns:110px 1fr;grid-template-rows:repeat(4,auto);min-height:0;padding:14px 12px;column-gap:13px;text-align:left;justify-items:start;}
+.paper-stage-head{grid-column:2;grid-row:1;}
+.paper-figure{grid-column:1;grid-row:1/5;height:112px;}
+.paper-shape,.paper-op,.paper-desc{grid-column:2;}
+.paper-shape{grid-row:2}.paper-op{grid-row:3}.paper-desc{grid-row:4}
+}
+@media print{.paper-pipeline{grid-template-columns:repeat(6,minmax(0,1fr));}}
+</style></head>
     <body><main class="deck reference-deck"><section class="slide ref-slide reference-slide architecture-slide" aria-label="architecture 디자인 레퍼런스">
     <header><div class="ref-overline"><div class="kicker">ARCHITECTURE / 06</div><a class="ref-link" href="index.html">전체 레퍼런스 ↗</a></div>
-    <h1>CNN의 구조와 Tensor Shape</h1><p class="subtitle">공간 크기 H×W와 채널 C의 변화 · 배치 차원을 생략한 HWC 표기</p></header>
-    <div class="content"><section class="ref-card" style="height:100%;padding:19px 23px"><div class="ref-overline"><div class="ref-k">MODEL ARCHITECTURE · HWC</div><span class="ref-chip">S stride · P padding</span></div>
-  <div class="arch-flow">
-    <div class="arch-node"><div class="ref-k">INPUT</div><div class="arch-layers"><span style="background:#ecc0b5"></span><span style="background:#a8ddc1"></span><span></span></div><div class="name">RGB 이미지</div><div class="shape">64×64×3</div><div class="desc">3개 채널</div></div><div class="arch-arrow">→</div>
-    <div class="arch-node focus"><div class="ref-k">CONV + ReLU</div><div class="arch-layers"><span></span><span></span><span></span></div><div class="name">특징 추출</div><div class="shape">64×64×16</div><div class="desc">3×3 · S1 · P1</div></div><div class="arch-arrow">→</div>
-    <div class="arch-node"><div class="ref-k">MAXPOOL</div><div class="arch-layers small"><span></span><span></span><span></span></div><div class="name">공간 축소</div><div class="shape">32×32×16</div><div class="desc">2×2 · S2 · P0</div></div><div class="arch-arrow">→</div>
-    <div class="arch-node focus"><div class="ref-k">CONV + GAP</div><div class="arch-layers green small"><span></span><span></span></div><div class="name">특징 요약</div><div class="shape">32×32×32 → 32</div><div class="desc">3×3 · S1 · P1 → GAP</div></div><div class="arch-arrow">→</div>
-    <div class="arch-node final"><div class="ref-k">HEAD</div><div class="arch-layers green" style="font-size:30px;font-weight:800;color:#16877e">3</div><div class="name">분류</div><div class="shape">3 logits</div><div class="desc">Linear 32→3</div></div>
-  </div>
+    <h1>CNN 아키텍처</h1><p class="subtitle">계층별 Feature Map 변화와 출력 차원</p></header>
+    <div class="content"><section class="ref-card" style="height:100%;padding:19px 23px"><div class="ref-overline"><div class="ref-k">CNN LAYER-WISE ARCHITECTURE</div><span class="ref-chip">K kernel · S stride · P padding</span></div>
+  <div class="paper-pipeline" aria-label="CNN 모델 레이어별 특징맵 변화"><article class="paper-stage paper-input"><div class="paper-stage-head">INPUT</div><div class="paper-figure"><div class="fm fm-rgb fm-big" aria-hidden="true"><i style="--layer:0"></i><i style="--layer:1"></i><i style="--layer:2"></i></div></div><div class="paper-shape">64×64×3</div><div class="paper-op">RGB</div><div class="paper-desc">H×W×C</div></article>
+<article class="paper-stage paper-conv"><div class="paper-stage-head">CONV 1 + ReLU</div><div class="paper-figure"><div class="fm fm-blue fm-big" aria-hidden="true"><i style="--layer:0"></i><i style="--layer:1"></i><i style="--layer:2"></i><i style="--layer:3"></i></div></div><div class="paper-shape">64×64×16</div><div class="paper-op">K3 · S1 · P1</div><div class="paper-desc">16 feature maps</div></article>
+<article class="paper-stage paper-pool"><div class="paper-stage-head">MAX POOL</div><div class="paper-figure"><div class="fm fm-teal fm-medium" aria-hidden="true"><i style="--layer:0"></i><i style="--layer:1"></i><i style="--layer:2"></i><i style="--layer:3"></i></div></div><div class="paper-shape">32×32×16</div><div class="paper-op">K2 · S2 · P0</div><div class="paper-desc">해상도 ½</div></article>
+<article class="paper-stage paper-conv2"><div class="paper-stage-head">CONV 2 + ReLU</div><div class="paper-figure"><div class="fm fm-deep fm-medium" aria-hidden="true"><i style="--layer:0"></i><i style="--layer:1"></i><i style="--layer:2"></i><i style="--layer:3"></i></div></div><div class="paper-shape">32×32×32</div><div class="paper-op">K3 · S1 · P1</div><div class="paper-desc">32 feature maps</div></article>
+<article class="paper-stage paper-gap"><div class="paper-stage-head">GLOBAL AVG POOL</div><div class="paper-figure"><div class="paper-vector" aria-hidden="true"><i style="--h:18px"></i><i style="--h:45px"></i><i style="--h:34px"></i><i style="--h:58px"></i><i style="--h:27px"></i><i style="--h:39px"></i></div></div><div class="paper-shape">32</div><div class="paper-op">Spatial mean</div><div class="paper-desc">32채널 → 32값</div></article>
+<article class="paper-stage paper-fc"><div class="paper-stage-head">LINEAR</div><div class="paper-figure"><div class="paper-logits" aria-hidden="true"><i style="--score:75%"></i><i style="--score:42%"></i><i style="--score:24%"></i></div></div><div class="paper-shape">3 logits</div><div class="paper-op">FC 32→3</div><div class="paper-desc">클래스 점수</div></article></div>
+  <div class="paper-caption"><span>Tensor Shape: H×W×C · 배치 차원 생략</span><span>Conv 후 ReLU · GAP 채널별 평균 · Softmax 미적용</span></div>
   <div class="arch-details">
     <div class="arch-detail"><strong>공간 정보</strong><span>Conv 3×3, S1, P1: 공간 크기 유지<br>64 → 64 · 채널 3 → 16</span></div>
     <div class="arch-detail"><strong>해상도 감소</strong><span>MaxPool 2×2, S2, P0: H·W 절반<br>64 → 32 · 채널 16 유지</span></div>
