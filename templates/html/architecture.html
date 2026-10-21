@@ -16,7 +16,7 @@
 .architecture-slide .arch-eyebrow {font-size:14px; font-weight:800; color:var(--blue);}
 /* Functional partition: input / feature extractor / classifier. */
 .architecture-slide .arch-phase-band {
-  display:grid; grid-template-columns:1.05fr 1.22fr 1.15fr 1.22fr 1.05fr 1.07fr;
+  display:grid; grid-template-columns:1.05fr 1.16fr 1.10fr 1.16fr 1.03fr 1.30fr;
   gap:18px; padding:0 4px; margin:9px 0 -7px;
 }
 .architecture-slide .arch-phase-band span {
@@ -30,7 +30,7 @@
 .architecture-slide .arch-phase-band .arch-classifier {grid-column:5/7; color:#17817d;}
 .architecture-slide .arch-phase-band .arch-classifier::after {background:#9dd2ca;}
 .architecture-slide .arch-pipeline {
-  display:grid; grid-template-columns:1.05fr 1.22fr 1.15fr 1.22fr 1.05fr 1.07fr;
+  display:grid; grid-template-columns:1.05fr 1.16fr 1.10fr 1.16fr 1.03fr 1.30fr;
   gap:18px; align-items:start; margin:15px 0 12px; padding:0 4px; flex:1; min-height:0;
 }
 .architecture-slide .arch-stage {
@@ -114,42 +114,42 @@
     <h1>CNN 아키텍처</h1><p class="subtitle">특징 추출(Feature Extractor)과 분류(Classifier)</p>
   </header>
   <div class="content"><section class="ref-card">
-    <div class="arch-eyebrow">EXAMPLE CNN ARCHITECTURE</div>
+    <div class="arch-eyebrow">EXAMPLE CNN · H×W ↓ · CHANNELS ↑</div>
     <div class="arch-phase-band" aria-hidden="true">
       <span class="arch-extractor">FEATURE EXTRACTOR</span>
       <span class="arch-classifier">CLASSIFIER</span>
     </div>
-    <div class="arch-pipeline" aria-label="Input → Conv1 → MaxPool → Conv2 → Flatten → Linear">
+    <div class="arch-pipeline" aria-label="Input → Conv1 → MaxPool → Conv2 → Flatten → Linear → Softmax">
       <article class="arch-stage" aria-label="Input 단일 RGB 이미지, 64×64×3">
         <div class="arch-title">INPUT</div><div class="arch-graphic" data-art="input"></div>
         <div class="arch-shape">64×64×3</div><div class="arch-operation">RGB image</div><div class="arch-explain">단일 입력 이미지</div>
       </article>
-      <article class="arch-stage" aria-label="Conv1 + ReLU, kernel 3, stride 1, padding 1, 64×64×16">
+      <article class="arch-stage" aria-label="Conv1 + ReLU, kernel 3, stride 2, padding 1, 32×32×16">
         <div class="arch-title" data-group="FEATURE EXTRACTOR">CONV 1 + ReLU</div><div class="arch-graphic" data-art="conv1"></div>
-        <div class="arch-shape">64×64×16</div><div class="arch-operation">3×3 · S1 · P1 · 16ch</div><div class="arch-explain">16 feature maps</div>
+        <div class="arch-shape">32×32×16</div><div class="arch-operation">3×3 · S2 · P1 · 16ch</div><div class="arch-explain">16 feature maps</div>
       </article>
-      <article class="arch-stage" aria-label="MaxPool 2×2, stride 2, 32×32×16">
+      <article class="arch-stage" aria-label="MaxPool 2×2, stride 2, 16×16×16">
         <div class="arch-title">MAXPOOL</div><div class="arch-graphic" data-art="pool"></div>
-        <div class="arch-shape">32×32×16</div><div class="arch-operation">2×2 · S2</div><div class="arch-explain">H·W 1/2 · 채널 유지</div>
+        <div class="arch-shape">16×16×16</div><div class="arch-operation">2×2 · S2</div><div class="arch-explain">H·W 1/2 · 채널 유지</div>
       </article>
-      <article class="arch-stage" aria-label="Conv2 + ReLU, kernel 3, stride 1, padding 1, 32×32×32">
+      <article class="arch-stage" aria-label="Conv2 + ReLU, kernel 3, stride 2, padding 1, 8×8×32">
         <div class="arch-title">CONV 2 + ReLU</div><div class="arch-graphic" data-art="conv2"></div>
-        <div class="arch-shape">32×32×32</div><div class="arch-operation">3×3 · S1 · P1 · 32ch</div><div class="arch-explain">32 feature maps</div>
+        <div class="arch-shape">8×8×32</div><div class="arch-operation">3×3 · S2 · P1 · 32ch</div><div class="arch-explain">32 feature maps</div>
       </article>
-      <article class="arch-stage" aria-label="Flatten: 32×32×32의 모든 값을 펼쳐 32768차원 1D 벡터 생성">
+      <article class="arch-stage" aria-label="Flatten: 8×8×32의 모든 값을 펼쳐 2048차원 1D 벡터 생성">
         <div class="arch-title" data-group="CLASSIFIER">FLATTEN</div><div class="arch-graphic" data-art="flatten"></div>
-        <div class="arch-shape">32,768</div><div class="arch-operation">32×32×32 → 1D</div><div class="arch-explain">전체 원소를 일렬로 나열</div>
+        <div class="arch-shape">2,048</div><div class="arch-operation">8×8×32 → 1D</div><div class="arch-explain">전체 원소를 일렬로 나열</div>
       </article>
-      <article class="arch-stage" aria-label="Linear: 32768차원 벡터를 3개 class logits로 사상">
-        <div class="arch-title">LINEAR</div><div class="arch-graphic" data-art="linear"></div>
-        <div class="arch-shape">3 logits</div><div class="arch-operation">Linear 32,768 → 3</div><div class="arch-explain">3개 클래스 점수</div>
+      <article class="arch-stage" aria-label="Linear: 2048차원 벡터를 3개 logits로 변환하고 Softmax로 3개 확률 산출">
+        <div class="arch-title">LINEAR + SOFTMAX</div><div class="arch-graphic" data-art="linear"></div>
+        <div class="arch-shape">3 probabilities</div><div class="arch-operation">2,048 → 3 logits → p</div><div class="arch-explain">예시 logits: [2, 1, 0]</div>
       </article>
     </div>
     <div class="arch-citation"><span>Tensor Shape: H×W×C · Batch 생략</span><span>Feature Map·Vector: 축소 모식도 · 중간 원소 생략</span></div>
     <div class="arch-notes">
-      <div><strong>Feature extraction</strong><p>Conv: local pattern 추출 · 채널 증가</p></div>
-      <div><strong>Spatial reduction</strong><p>MaxPool: H×W 절반 · 채널 유지</p></div>
-      <div><strong>Classifier</strong><p>Flatten: 32,768D → Linear: 3 logits</p></div>
+      <div><strong>Feature extraction</strong><p>Conv: 패턴 학습 · H×W 축소 · 채널 증가</p></div>
+      <div><strong>Spatial reduction</strong><p>Stride 2와 MaxPool로 해상도 축소</p></div>
+      <div><strong>Classifier</strong><p>Flatten: 2,048D → Linear → Softmax 확률</p></div>
     </div>
   </section></div>
   <footer class="footer"><span>Design Template Library · Architecture</span><span>06 / 08</span></footer>
@@ -167,7 +167,8 @@
     return node;
   }
   function makeSvg(container, label) {
-    const svg=el('svg',{viewBox:'0 0 170 160',role:'img','aria-label':label},container);
+    const viewBox=container.dataset.art==='linear'?'0 0 220 160':'0 0 170 160';
+    const svg=el('svg',{viewBox,role:'img','aria-label':label},container);
     const title=el('title',{},svg); title.textContent=label;
     return svg;
   }
@@ -214,8 +215,8 @@
     el('rect',{x:x-.6,y:y-.6,width:width+1.2,height:32*cellH+.2,
       fill:'none',stroke:'#317d8d','stroke-width':.85},svg);
   }
-  /* Long feature vectors are drawn with an explicit omission break;
-     the semantic dimension is 32*32*32, not the number of shown cells. */
+  /* Long feature vectors use an explicit omission break;
+     the semantic dimension is 8*8*32 = 2,048, not the number of drawn cells. */
   function drawLongVector(svg,x,y,width=17) {
     const cellH=3.05;
     for(let i=0;i<34;i++) {
@@ -238,24 +239,51 @@
       el('path',{d:'M83 70 Q72 59 77 51 M80 53 Q97 40 110 54 Q94 62 80 53Z',fill:'#487752','fill-opacity':.4},svg);
       el('circle',{cx:85,cy:93,r:27,fill:'#cc4d47','fill-opacity':.18},svg);
     },
-    conv1(svg) {drawStack(svg,{x:17,y:63,size:79,n:7,dx:7,dy:5,data:activations,variant:'low'});},
-    pool(svg) {drawStack(svg,{x:29,y:72,size:60,n:7,dx:7,dy:5,data:pooled,variant:'low'});},
-    conv2(svg) {drawStack(svg,{x:18,y:79,size:59,n:12,dx:6.5,dy:4,data:deep,variant:'deep'});},
+    conv1(svg) {drawStack(svg,{x:17,y:66,size:77,n:7,dx:7,dy:5,data:activations,variant:'low'});},
+    pool(svg) {drawStack(svg,{x:29,y:75,size:54,n:7,dx:7,dy:5,data:pooled,variant:'low'});},
+    conv2(svg) {drawStack(svg,{x:18,y:83,size:41,n:12,dx:6.5,dy:4,data:deep,variant:'deep'});},
     flatten(svg) {
-      drawStack(svg,{x:9,y:76,size:43,n:5,dx:4.4,dy:3.8,data:deep,variant:'deep'});
+      drawStack(svg,{x:9,y:76,size:41,n:5,dx:4.4,dy:3.8,data:deep,variant:'deep'});
       el('path',{d:'M78 78 H105',stroke:colors.teal,'stroke-width':1.8,fill:'none'},svg);
       el('path',{d:'M100 74 L106 78 L100 82',fill:'none',stroke:colors.teal,'stroke-width':1.8},svg);
       drawLongVector(svg,117,17,17);
     },
     linear(svg) {
-      drawLongVector(svg,19,17,15);
-      [39,80,121].forEach(yy=>el('path',{d:`M39 76 L100 ${yy}`,
-        stroke:'#8aa7c0','stroke-width':1.5,fill:'none'},svg));
-      [39,80,121].forEach((yy,i)=>{
-        el('circle',{cx:110,cy:yy,r:13,fill:i===1?'#9ddbd5':'#d9f0ed',stroke:'#328d91','stroke-width':1.6},svg);
-        const t=el('text',{x:136,y:yy+4.8,fill:colors.ink,'font-size':16,
-          'font-weight':700,'font-family':'Pretendard Variable, sans-serif'},svg);
-        t.textContent=`z${i+1}`;
+      // The 2,048D input is drawn schematically with an omission break.
+      drawLongVector(svg,10,17,13);
+      const ys=[39,80,121];
+      const logits=[2,1,0];
+      const exponentials=logits.map(z=>Math.exp(z));
+      const total=exponentials.reduce((a,b)=>a+b,0);
+      const probabilities=exponentials.map(e=>e/total);
+      const label=el('text',{x:74,y:12,'text-anchor':'middle',
+        fill:'#64748B','font-size':12,'font-weight':700},svg);
+      label.textContent='Logits';
+      ys.forEach((y,i)=>{
+        el('path',{d:`M27 78 L62 ${y}`,stroke:'#8aa7c0',
+          'stroke-width':1.4,fill:'none'},svg);
+        el('circle',{cx:75,cy:y,r:13,fill:i===0?'#cee1fa':'#eaf1fb',
+          stroke:'#497cac','stroke-width':1.2},svg);
+        const t=el('text',{x:75,y:y+4.5,fill:'#1B3558',
+          'text-anchor':'middle','font-size':13,'font-weight':700},svg);
+        t.textContent=`${logits[i]}`;
+      });
+      el('path',{d:'M94 80 H115',stroke:'#26A6A1',
+        'stroke-width':1.8,fill:'none'},svg);
+      el('path',{d:'M110 75 L116 80 L110 85',
+        stroke:'#26A6A1','stroke-width':1.8,fill:'none'},svg);
+      const op=el('text',{x:144,y:12,'text-anchor':'middle',
+        fill:'#17817d','font-size':12,'font-weight':700},svg);
+      op.textContent='Softmax';
+      probabilities.forEach((p,i)=>{
+        const y=ys[i];
+        el('rect',{x:124,y:y-8,width:52,height:16,rx:2,
+          fill:'#ecf3f6',stroke:'#dce6eb','stroke-width':.5},svg);
+        el('rect',{x:124,y:y-8,width:52*p,height:16,rx:2,
+          fill:i===0?'#26A6A1':'#91c7c2'},svg);
+        const text=el('text',{x:181,y:y+4.5,fill:'#1B3558',
+          'font-size':12,'font-weight':800},svg);
+        text.textContent=`${(p*100).toFixed(1)}%`;
       });
     }
   };
