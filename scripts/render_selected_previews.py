@@ -66,7 +66,7 @@ CHECK = """() => {
     gaps:slide.querySelectorAll('.paper-vector i').length,
     logits:slide.querySelectorAll('.paper-logits span').length,
     shapes:[...slide.querySelectorAll('.paper-shape')].map(e=>e.textContent.trim())};
-}""".replace('""".replace', '""" # no-op')
+}"""
 
 
 def main():
@@ -99,7 +99,7 @@ def main():
                     assert not result['overflow'], (name,width,'overflow',result)
                     assert not result['overlap'], (name,width,'footer overlap',result)
                     assert result['pageWidth'] <= width, (name,width,'horizontal scroll',result)
-                    assert abs(float(result['spacing'])+4/3) < .02, (
+                    assert abs(float(result['spacing'].removesuffix('px'))+4/3) < .02, (
                         name,width,'letter spacing',result
                     )
                     if name == 'concept':
