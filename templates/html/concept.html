@@ -30,16 +30,23 @@
     .pixel-unit { flex:0 0 auto; }
     .image-frame { background:linear-gradient(150deg,#f7fcff,#e5f0fa); height:274px; width:100%; border-radius:16px; display:grid; place-items:center; border:1px solid #dbe7f1; overflow:hidden; }
     .image-frame svg { width:min(100%,245px); height:248px; }
+    .photo-wrap { width:min(100%,262px);aspect-ratio:1;position:relative;overflow:hidden;border-radius:13px;box-shadow:0 4px 20px #12233F14; }
+    .concept-photo {display:block;width:100%;height:100%;object-fit:cover;}
+    .photo-roi {position:absolute;left:62.963%;top:44.444%;width:11.852%;height:11.852%;border:2.5px solid #fff;box-shadow:0 0 0 2px #12233F,inset 0 0 0 1px #12233F;outline-offset:0;pointer-events:none;}
+    .image-frame {padding:6px;}
+    .image-frame .photo-wrap {max-height:100%;}
+    .concept-panel .pixel-block span {border-radius:2px;}
     .pixel-frame { height:274px; display:grid; place-items:center; }
     .zoom-arrow { flex:1; min-width:20px; display:grid; place-items:center; font-size:29px; color:var(--blue); font-weight:800; margin-bottom:31px; }
     .figure-label { font-size:17px; line-height:1.25; font-weight:800; color:var(--deep); text-align:center; white-space:nowrap; }
     .pixel-block { display:grid; grid-template-columns:repeat(4,48px); grid-template-rows:repeat(4,48px); gap:3px; justify-content:center; }
     .pixel-block span { width:48px; height:48px; border:2px solid rgba(255,255,255,.72); border-radius:4px; }
     .pixel-block .selected {outline:4px solid var(--navy);outline-offset:-4px;position:relative;}
+    .photo-sample-note {font-size:14px;color:var(--muted);line-height:1.2;text-align:center;margin-top:1px;}
     .value-panel {display:flex;flex-direction:column;justify-content:space-between;gap:14px;}
     .value-title {color:var(--navy);font-size:23px;font-weight:800;margin:0;}
     .selected-color {display:flex;align-items:center;gap:17px;background:#f7f9fd;border:1px solid var(--border);border-radius:13px;padding:13px 16px;}
-    .selected-color .swatch {height:45px;width:64px;flex:0 0 auto;border-radius:10px;background:rgb(230,90,70);}
+    .selected-color .swatch {height:45px;width:64px;flex:0 0 auto;border-radius:10px;background:rgb(232,51,52);}
     .selected-color strong {display:block;color:var(--navy);font-size:22px;}
     .selected-color small {display:block;color:var(--muted);font-size:14px;margin-top:2px;}
     .channel-values {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;}
@@ -81,7 +88,7 @@
       .concept-takeaway{font-size:17px;}
       .image-unit{width:min(265px,46%);}
     }
-    @media(max-width:490px){
+    @media(max-width:490px){.photo-sample-note{font-size:12px;}
       .pixel-block{grid-template-columns:repeat(4,28px);grid-template-rows:repeat(4,28px);gap:2px;}
       .pixel-block span{height:28px;width:28px;}
       .figure-label{font-size:14px;}
@@ -102,65 +109,31 @@
         <div class="panel-head"><h2>이미지 → 픽셀</h2></div>
         <div class="image-figure">
           <div class="figure-unit image-unit">
-            <div class="image-frame" role="img" aria-label="빨간 사과 모양 이미지">
-            <svg viewBox="0 0 240 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <defs>
-                <linearGradient id="appleSkin" x1=".13" y1=".1" x2=".9" y2=".92">
-                  <stop offset="0" stop-color="#ffb38e"/><stop offset=".4" stop-color="#ea644b"/><stop offset="1" stop-color="#bb312c"/>
-                </linearGradient>
-                <linearGradient id="leafFill" x1="0" x2="1" y1="0" y2="1">
-                  <stop offset="0" stop-color="#94ca8e"/><stop offset="1" stop-color="#438c69"/>
-                </linearGradient>
-              </defs>
-              <ellipse cx="122" cy="225" rx="68" ry="11" fill="#c8dae5" opacity=".65"/>
-              <path d="M120 62 C87 35 39 54 36 112 C31 178 79 222 109 217 C122 212 126 210 140 216 C172 227 214 178 205 115 C198 60 156 38 120 62Z" fill="url(#appleSkin)" stroke="#b63d34" stroke-width="2"/>
-              <path d="M125 59 C119 41 126 29 138 18" stroke="#765441" stroke-width="7" fill="none" stroke-linecap="round"/>
-              <path d="M132 43 Q166 7 193 37 Q166 64 132 43Z" fill="url(#leafFill)" stroke="#498e69" stroke-width="2"/>
-              <path d="M77 89 Q60 133 80 166" stroke="#ffd5b7" stroke-width="19" stroke-linecap="round" opacity=".42" fill="none"/>
-              <rect x="144.0" y="104.0" width="11.5" height="11.5" fill="#f57b61"/>
-<rect x="155.5" y="104.0" width="11.5" height="11.5" fill="#ec6c55"/>
-<rect x="167.0" y="104.0" width="11.5" height="11.5" fill="#e65a46"/>
-<rect x="178.5" y="104.0" width="11.5" height="11.5" fill="#d94f3f"/>
-<rect x="144.0" y="115.5" width="11.5" height="11.5" fill="#f18468"/>
-<rect x="155.5" y="115.5" width="11.5" height="11.5" fill="#e86750"/>
-<rect x="167.0" y="115.5" width="11.5" height="11.5" fill="#e65a46"/>
-<rect x="178.5" y="115.5" width="11.5" height="11.5" fill="#ce4438"/>
-<rect x="144.0" y="127.0" width="11.5" height="11.5" fill="#f18a70"/>
-<rect x="155.5" y="127.0" width="11.5" height="11.5" fill="#e76b53"/>
-<rect x="167.0" y="127.0" width="11.5" height="11.5" fill="#dc5845"/>
-<rect x="178.5" y="127.0" width="11.5" height="11.5" fill="#c64435"/>
-<rect x="144.0" y="138.5" width="11.5" height="11.5" fill="#ef9877"/>
-<rect x="155.5" y="138.5" width="11.5" height="11.5" fill="#e57a5f"/>
-<rect x="167.0" y="138.5" width="11.5" height="11.5" fill="#d85d4b"/>
-<rect x="178.5" y="138.5" width="11.5" height="11.5" fill="#c84c3d"/>
-<rect x="144" y="104" width="46" height="46" rx="2" fill="none" stroke="#12233F" stroke-width="4"/>
-              <rect x="167" y="115.5" width="11.5" height="11.5" fill="none" stroke="#12233F" stroke-width="1.5"/>
-              <path d="M155.5 104V150 M167 104V150 M178.5 104V150 M144 115.5H190 M144 127H190 M144 138.5H190" stroke="#12233F" stroke-width=".9" opacity=".55"/>
-            </svg>
+            <div class="image-frame" role="img" aria-label="사과 사진과 선택 영역">
+            <div class="photo-wrap" role="img" aria-label="실사형 사과 이미지에서 선택한 정사각형 영역">
+              <img src="assets/concept-apple-photo.jpg" class="concept-photo" width="540" height="540" alt="밝은 배경에 놓인 붉은 사과" />
+              <span class="photo-roi" aria-hidden="true"></span>
+            </div>
             </div>
             <span class="figure-label">입력 이미지</span>
           </div>
           <span class="zoom-arrow" aria-hidden="true">→</span>
           <div class="figure-unit pixel-unit">
             <div class="pixel-frame">
-              <div class="pixel-block" role="img" aria-label="사과의 빨간 영역을 확대해 표현한 4 곱하기 4 픽셀 배열">
-            <span style="background:#f57b61"></span><span style="background:#ec6c55"></span><span style="background:#e65a46"></span><span style="background:#d94f3f"></span>
-            <span style="background:#f18468"></span><span style="background:#e86750"></span><span class="selected" style="background:#e65a46"></span><span style="background:#ce4438"></span>
-            <span style="background:#f18a70"></span><span style="background:#e76b53"></span><span style="background:#dc5845"></span><span style="background:#c64435"></span>
-            <span style="background:#ef9877"></span><span style="background:#e57a5f"></span><span style="background:#d85d4b"></span><span style="background:#c84c3d"></span>
-              </div>
+              <div class="pixel-block" role="img" aria-label="사과의 빨간 영역을 확대해 표현한 4 곱하기 4 픽셀 배열"><span style="background:#e03740"></span><span style="background:#e5525f"></span><span style="background:#ee5155"></span><span style="background:#f04746"></span><span style="background:#d9282c"></span><span style="background:#e03840"></span><span class="selected" style="background:#e83334"></span><span style="background:#f14037"></span><span style="background:#d3201f"></span><span style="background:#d2161f"></span><span style="background:#da1922"></span><span style="background:#ef3f34"></span><span style="background:#d11f1d"></span><span style="background:#cd161b"></span><span style="background:#e03234"></span><span style="background:#ed4b43"></span></div>
             </div>
-            <span class="figure-label">픽셀 확대 (4×4)</span>
+            <span class="figure-label">영역 색상 (4×4)</span>
           </div>
         </div>
+        <div class="photo-sample-note">64×64 영역의 4×4 블록 평균 색상</div>
       </article>
       <article class="concept-panel value-panel">
         <div class="panel-head"><h2>선택 픽셀의 RGB 값</h2></div>
-        <div class="selected-color"><span class="swatch"></span><div><strong>RGB (230, 90, 70)</strong><small>HEX &nbsp;#E65A46 · 채널 범위 0–255</small></div></div>
+        <div class="selected-color"><span class="swatch"></span><div><strong>RGB (232, 51, 52)</strong><small>HEX &nbsp;#E83334 · 채널 범위 0–255</small></div></div>
         <div class="channel-values">
-          <div class="channel-value"><div class="head">R <span class="dot" style="background:#e8695c"></span></div><div class="number">230</div><div class="track"><div class="bar" style="width:90.2%;background:#e8695c"></div></div></div>
-          <div class="channel-value"><div class="head">G <span class="dot" style="background:#5db88b"></span></div><div class="number">90</div><div class="track"><div class="bar" style="width:35.3%;background:#5db88b"></div></div></div>
-          <div class="channel-value"><div class="head">B <span class="dot" style="background:#558ecb"></span></div><div class="number">70</div><div class="track"><div class="bar" style="width:27.5%;background:#558ecb"></div></div></div>
+          <div class="channel-value"><div class="head">R <span class="dot" style="background:#e8695c"></span></div><div class="number">232</div><div class="track"><div class="bar" style="width:91.0%;background:#e8695c"></div></div></div>
+          <div class="channel-value"><div class="head">G <span class="dot" style="background:#5db88b"></span></div><div class="number">51</div><div class="track"><div class="bar" style="width:20.0%;background:#5db88b"></div></div></div>
+          <div class="channel-value"><div class="head">B <span class="dot" style="background:#558ecb"></span></div><div class="number">52</div><div class="track"><div class="bar" style="width:20.4%;background:#558ecb"></div></div></div>
         </div>
         <div class="tensor-shape"><span class="formula">H × W × 3</span><span class="label">높이 × 너비 × RGB 채널<br><strong>이미지 텐서</strong></span></div>
       </article>
