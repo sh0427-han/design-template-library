@@ -1,6 +1,6 @@
 # Design Template Catalog · 8 Reference Types
 
-**2026-10-21 시각 자료 개선:** Concept에 실사형 사과 이미지를 적용하고 사진의 64×64 영역을 4×4 대표 RGB 값으로 요약하여 실제 수치와 연결했습니다. Architecture는 6단계 Feature Map 스택을 이용한 논문형 모델 구조도로 재구성했습니다. 해당 두 페이지의 HTML 소스는 업데이트했으며 이번 환경에서는 Chromium 프리뷰 재생성이 불가해 `previews/html-*`는 이전 버전 이미지입니다. 실제 화면 확인 및 썸네일 재생성은 `python scripts/render_previews.py`로 진행합니다.
+**2026-10-21 Concept / Architecture 개선:** Concept은 별도 사진 프레임을 제거하고, 기존 실사형 사과 사진을 80×80 RGB로 리샘플링하여 선택 영역의 **실제 4×4 픽셀값**을 Canvas에서 읽어 표시합니다. 선택 셀의 RGB·HEX·채널 막대는 동일한 픽셀 데이터에 연결됩니다. Architecture는 Input → Conv16 → MaxPool → Conv32 → GAP32 → Linear3의 Tensor Shape를 시각적 Feature Map·Vector 변화로 표현하고, 하단에는 3개의 간결한 기술 설명만 배치했습니다. Chromium에서 **1500×950 / 1366×768 / 1280×720 / 390×844 (두 페이지 × 네 해상도)**를 검증했고 [검증 JSON](previews/review/concept-architecture-validation.json)과 두 HTML 프리뷰를 갱신했습니다. 다른 여섯 레퍼런스·CNN Scroll/Slide·PPTX는 유지했습니다.
 
 **2026-10-21 검토 상태:** 8종 HTML 브라우저 검증 완료 · 05 문장 단위 줄바꿈 및 공통 어절 보호 반영 · 디자인 승인 대기. [유형별 결과](docs/REFERENCE_REVIEW_2026-10-21.md) · [Before / After](previews/review/README.md)
 
