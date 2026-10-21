@@ -2,6 +2,46 @@
     <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Executive-Summary | Design Template Library</title>
     <link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="reference-types.css"><link rel="stylesheet" href="reference-layout.css">
+
+<style>
+/* Each KPI comparison is a distinct white, outlined block.
+   Blue = baseline, teal = proposed. Change percent lives with its metric. */
+.executive-summary-slide .exec-comparison{
+  display:grid;grid-template-columns:minmax(0,1fr);gap:8px;margin-top:9px;
+}
+.executive-summary-slide .exec-metric-group{
+  min-width:0;border:1px solid var(--border);border-radius:11px;
+  background:#fff;padding:8px 12px 9px;
+}
+.executive-summary-slide .exec-metric-head{
+  display:flex;align-items:baseline;justify-content:space-between;gap:8px;
+  margin-bottom:5px;
+}
+.executive-summary-slide .exec-metric-head h3{
+  font-size:16px;line-height:1.2;margin:0;font-weight:800;color:var(--navy);
+}
+.executive-summary-slide .exec-delta{
+  color:#117a74;font-size:16px;font-weight:800;white-space:nowrap;
+}
+.executive-summary-slide .exec-metric-bars{display:grid;gap:4px}
+.executive-summary-slide .exec-metric-bars .exec-bar{
+  display:grid;grid-template-columns:49px minmax(0,1fr) 69px;gap:7px;
+  font-size:14px;line-height:17px;align-items:center;
+}
+.executive-summary-slide .exec-metric-bars .exec-series{font-weight:700;color:var(--deep)}
+.executive-summary-slide .exec-metric-bars .exec-bar>b{
+  font-size:14px;text-align:right;color:var(--navy);white-space:nowrap;
+}
+.executive-summary-slide .exec-metric-bars .exec-track{height:11px}
+.executive-summary-slide .exec-metric-bars .exec-fill{height:100%}
+@media(max-width:520px){
+  .executive-summary-slide .exec-metric-group{padding:11px 12px}
+  .executive-summary-slide .exec-metric-head h3{font-size:17px}
+  .executive-summary-slide .exec-metric-bars .exec-bar{
+    grid-template-columns:49px minmax(0,1fr) 66px;gap:6px;
+  }
+}
+</style>
 </head>
     <body><main class="deck reference-deck"><section class="slide ref-slide reference-slide executive-summary-slide" aria-label="executive-summary 디자인 레퍼런스">
     <header><div class="ref-overline"><div class="kicker">EXECUTIVE-SUMMARY / 08</div></div>
@@ -10,8 +50,29 @@
 <section class="executive-kpi"><div class="ref-k">평균 처리 시간 (분/건)</div><b>45 → 30</b><span class="change">−33.3% · 처리 시간</span></section>
 <section class="executive-kpi"><div class="ref-k">월말 미처리 (건)</div><b>20 → 8</b><span class="change">−60.0% · 잔여 건수</span></section></div>
 <div class="ref-grid executive-grid"><section class="ref-card"><div class="ref-k">IMPACT · 지표별 기존 값 = 100%</div><h2 class="ref-h">기존 대비 변경안</h2>
-<div class="exec-comparison"><div><div class="exec-bar"><b>월간 점검</b><div class="exec-track"><div class="exec-fill" style="width:100%"></div></div><b>120건</b></div><div class="exec-bar" style="margin-top:7px"><b>개선안</b><div class="exec-track"><div class="exec-fill new" style="width:66.67%"></div></div><b>80건</b></div></div>
-<div><div class="exec-bar"><b>평균 시간</b><div class="exec-track"><div class="exec-fill" style="width:100%"></div></div><b>45분</b></div><div class="exec-bar" style="margin-top:7px"><b>개선안</b><div class="exec-track"><div class="exec-fill new" style="width:66.67%"></div></div><b>30분</b></div></div><div><div class="exec-bar"><b>미처리</b><div class="exec-track"><div class="exec-fill" style="width:100%"></div></div><b>20건</b></div><div class="exec-bar" style="margin-top:7px"><b>개선안</b><div class="exec-track"><div class="exec-fill new" style="width:40%"></div></div><b>8건</b></div></div></div>
+<div class="exec-comparison" aria-label="지표별 변경 전후 비교">
+  <section class="exec-metric-group" data-before="120" data-after="80" aria-label="월간 수동 점검 기존 120건, 개선안 80건, 33.3% 감소">
+    <div class="exec-metric-head"><h3>월간 수동 점검</h3><strong class="exec-delta">−33.3%</strong></div>
+    <div class="exec-metric-bars">
+      <div class="exec-bar"><span class="exec-series">기존</span><div class="exec-track"><div class="exec-fill" style="width:100%"></div></div><b>120건</b></div>
+      <div class="exec-bar"><span class="exec-series">개선안</span><div class="exec-track"><div class="exec-fill new" style="width:66.67%"></div></div><b>80건</b></div>
+    </div>
+  </section>
+  <section class="exec-metric-group" data-before="45" data-after="30" aria-label="평균 처리 시간 기존 45분/건, 개선안 30분/건, 33.3% 감소">
+    <div class="exec-metric-head"><h3>평균 처리 시간</h3><strong class="exec-delta">−33.3%</strong></div>
+    <div class="exec-metric-bars">
+      <div class="exec-bar"><span class="exec-series">기존</span><div class="exec-track"><div class="exec-fill" style="width:100%"></div></div><b>45분/건</b></div>
+      <div class="exec-bar"><span class="exec-series">개선안</span><div class="exec-track"><div class="exec-fill new" style="width:66.67%"></div></div><b>30분/건</b></div>
+    </div>
+  </section>
+  <section class="exec-metric-group" data-before="20" data-after="8" aria-label="월말 미처리 기존 20건, 개선안 8건, 60.0% 감소">
+    <div class="exec-metric-head"><h3>월말 미처리</h3><strong class="exec-delta">−60.0%</strong></div>
+    <div class="exec-metric-bars">
+      <div class="exec-bar"><span class="exec-series">기존</span><div class="exec-track"><div class="exec-fill" style="width:100%"></div></div><b>20건</b></div>
+      <div class="exec-bar"><span class="exec-series">개선안</span><div class="exec-track"><div class="exec-fill new" style="width:40.00%"></div></div><b>8건</b></div>
+    </div>
+  </section>
+</div>
 </section><section class="ref-card"><div class="ref-k">ACTION ITEMS</div><h2 class="ref-h">파일럿 실행과 확대 판단</h2>
 <div class="exec-actions"><div class="exec-action"><strong>1</strong><span><b>우선순위 설정</b><br>점검 대상의 위험도와 처리 시점을 구분</span></div>
 <div class="exec-action"><strong>2</strong><span><b>파일럿 기준 통일</b><br>동일 기준으로 도입 전·후 수치를 집계</span></div>
