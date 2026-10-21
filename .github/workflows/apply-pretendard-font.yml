@@ -40,5 +40,7 @@ jobs:
           git add previews/html-*.png previews/html-*.jpg previews/dual-mode-*.jpg
           if ! git diff --cached --quiet; then
             git commit -m "chore: refresh HTML previews with default Pretendard"
+            git fetch origin "${{ github.ref_name }}"
+            git rebase "origin/${{ github.ref_name }}"
             git push origin HEAD:${{ github.ref_name }}
           fi
