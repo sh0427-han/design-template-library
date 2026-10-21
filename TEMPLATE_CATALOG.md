@@ -4,16 +4,18 @@
 
 **2026-10-21 검토 상태:** 8종 HTML 브라우저 검증 완료 · 05 문장 단위 줄바꿈 및 공통 어절 보호 반영 · 디자인 승인 대기. [유형별 결과](docs/REFERENCE_REVIEW_2026-10-21.md) · [Before / After](previews/review/README.md)
 
+새 HTML Scroll/Slide 자료 제작 시 [레퍼런스 재사용 워크플로](docs/REFERENCE_REUSE_WORKFLOW.md)를 따라 **디자인 규칙 + 8종 HTML 원본**을 함께 사용하고 프리뷰 이미지는 최종 검수용으로 사용합니다.
+
 공통 디자인 시스템은 `DESIGN_SYSTEM.md`에서 관리합니다. **이 라이브러리는 HTML 기반 Scroll·Slide 자료 제작에만 사용하며 PPTX를 제작하지 않습니다.** 8종은 두 모드에서 재사용할 수 있는 **시각 구성 패턴**으로, 독립 HTML은 패턴 예시입니다. 5장 CNN 예제는 동일 콘텐츠를 Scroll·Slide로 제공하는 통합 구현 사례입니다.
 
 | ID | 자료 목적 | 레이아웃 패턴 | HTML · 실제 브라우저 이미지 |
 | --- | --- | --- | --- |
 | `concept` | 개념 소개·핵심 Figure | 실사형 입력·영역 색상 샘플·RGB 수치 | [원본](templates/html/concept.html) · ![Concept](previews/html-concept.png) |
-| `process` | 단계/프로세스 설명 | Input → Process → Output | [원본](templates/html/process.html) · ![Process](previews/html-process.png) |
-| `comparison` | A/B 접근법 비교 | 동일 지표의 두 패널 | [원본](templates/html/comparison.html) · ![Comparison](previews/html-comparison.png) |
+| `process` | 단계/프로세스 설명 | 사과 입력 → 특징 맵(CNN) → Task Head → Output | [원본](templates/html/process.html) · ![Process](previews/html-process.png) |
+| `comparison` | A/B 접근법 비교 | 같은 사과 사진을 규칙 조건 / CNN 특징 시각화와 연결한 대칭 패널 | [원본](templates/html/comparison.html) · ![Comparison](previews/html-comparison.png) |
 | `step-by-step` | 수식·연산 강의 | 배열 × 커널 → 합계 | [원본](templates/html/step-by-step.html) · ![Step-by-step](previews/html-step-by-step.jpg) |
 | `interactive` | 웹 실습·임계값 검증 | 슬라이더 + 계산 + 혼동행렬 | [원본](templates/html/interactive.html) · ![Interactive](previews/html-interactive.jpg) |
-| `architecture` | 모델·시스템 구조 | 논문형 Feature Map Stack·Tensor Shape | [원본](templates/html/architecture.html) · ![Architecture](previews/html-architecture.jpg) |
+| `architecture` | 모델·시스템 구조 | 입력 사과 이미지에서 계산한 합성곱 활성화 맵 → 대응하는 MaxPool → 32차원 GAP | [원본](templates/html/architecture.html) · ![Architecture](previews/html-architecture.jpg) |
 | `experiment` | 연구 결과·지표 비교 | Confusion Matrix + Metrics | [원본](templates/html/experiment.html) · ![Experiment](previews/html-experiment.jpg) |
 | `executive-summary` | 경영·기술 보고 | 지표별 그룹형 세로 막대 + 감소율 + Action | [원본](templates/html/executive-summary.html) · ![Executive Summary](previews/html-executive-summary.jpg) |
 
@@ -24,7 +26,7 @@
 - **Comparison**: 동일한 질문·측정 조건으로 비교합니다.
 - **Step-by-step**: 계산식과 입력값, 결과가 실제로 일치해야 합니다.
 - **Interactive**: 조작할 수 있는 변수와 화면에 표시하는 계산이 일치해야 합니다. 계산 예시는 정적 이미지로 대체하지 않습니다.
-- **Architecture**: 각 텐서의 H/W/C와 stride·padding 관계를 확인합니다.
+- **Architecture**: 각 텐서의 H/W/C와 stride·padding 관계를 확인합니다. 각 단계의 Figure는 동일한 입력에서 출발하고 2×2 MaxPool 결과는 직전 Feature Map의 해당 2×2 최댓값과 일치해야 합니다. `assets/cnn-feature-maps.js`는 학습된 모델이 아닌 고정 가중치 계산 도식으로, 실제 학습 파라미터를 주장하지 않습니다.
 - **Experiment**: 12건의 혼동행렬(TN=5, FP=1, FN=2, TP=4)과 파생 지표의 수치가 일치해야 합니다.
 - **Executive Summary**: 숫자보다 의사결정 메시지를 우선합니다. 세 지표를 **하나의 그룹형 세로 막대그래프의 x축**에 나란히 놓고, 각 지표에 기존/개선 막대 2개와 감소율을 표시합니다(월간 점검 120→80건 −33.3%, 평균 처리 시간 45→30분/건 −33.3%, 월말 미처리 20→8건 −60.0%). 막대 위에 실제 값과 단위를 표시하며, 공통 비율축(0·50·100%)은 각 지표의 기존 값을 100%로 정규화합니다. 단위가 다른 원래 수치를 하나의 절대값 축에서 비교하지 않습니다. 기존 카드 내부의 과도한 좌우 여백을 줄이고 비교 그래프 영역을 넓혔으며, 모바일에서도 세 지표의 가로 그룹을 유지합니다. 상단 KPI 요약과 가로 그래프의 중복 표시는 제거했습니다. 1500×950 / 1366×768 / 1280×720 / 900×900 / 390×844 Chromium 검증 완료 ([검증 JSON](previews/review/executive-summary-validation.json)).
 
