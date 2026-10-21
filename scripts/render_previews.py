@@ -123,6 +123,18 @@ def main():
                 for name in TEMPLATE_IDS:
                     page.goto(f'http://127.0.0.1:{server.server_port}/templates/html/{name}.html')
                     page.evaluate('document.fonts.ready')
+                    font_status = page.evaluate("""() => ({
+                      family: getComputedStyle(
+                        document.querySelector('h1')).fontFamily,
+                      loaded: [...document.fonts].some(face =>
+                        face.family.replace(/["']/g, '') ===
+                          'Pretendard Variable' && face.status === 'loaded')
+                    })""")
+                    assert font_status['family'].startswith(
+                        '"Pretendard Variable"'
+                    ) and font_status['loaded'], (
+                        name, width, 'Pretendard not applied', font_status
+                    )
                     assert page.evaluate('CSS.supports("zoom", "calc(100vw / 1440px)")'), 'Browser lacks typed CSS division for zoom'
                     m = page.evaluate(GEOMETRY)
                     for key in ('outside','overflow','footerOverlap','spacing','clippedText','arrowErrors'):
@@ -148,7 +160,7 @@ def main():
     finally:
         server.shutdown()
         server.server_close()
-    print(f'PASS: {len(measurements)} renders; 21 thresholds + keyboard/pointer controls at each viewport; no geometry, spacing or runtime errors.')
+    print(f'PASS: {len(measurements)} renders; 21 thresholds + keyboard/pointer controls at each viewport; Pretendard loaded, no geometry, spacing or runtime errors.')
 
 
 if __name__ == '__main__':
