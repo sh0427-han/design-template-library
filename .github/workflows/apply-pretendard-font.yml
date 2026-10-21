@@ -6,6 +6,7 @@ on:
       - design/concept-architecture-figure-refinement
     paths:
       - templates/html/styles.css
+      - templates/html/executive-summary.html
       - templates/dual-mode-learning/assets/css/tokens.css
       - scripts/verify_pretendard.py
       - scripts/render_previews.py
