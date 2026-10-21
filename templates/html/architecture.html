@@ -13,11 +13,10 @@
   display:flex; flex-direction:column; width:100%; height:100%; min-height:0;
   padding:20px 25px 22px; background:#fff; overflow:hidden;
 }
-.architecture-slide .arch-eyebrow {font-size:14px; font-weight:800; color:var(--blue);}
 /* Functional partition: input / feature extractor / classifier. */
 .architecture-slide .arch-phase-band {
   display:grid; grid-template-columns:1.04fr 1.52fr 1.52fr 1.13fr 1.05fr 1.35fr;
-  gap:18px; padding:0 4px; margin:9px 0 -7px;
+  gap:18px; padding:0 4px; margin:3px 0 -7px;
 }
 .architecture-slide .arch-phase-band span {
   text-align:center; font-size:13px; font-weight:800; color:var(--deep);
@@ -31,7 +30,7 @@
 .architecture-slide .arch-phase-band .arch-classifier::after {background:#9dd2ca;}
 .architecture-slide .arch-pipeline {
   display:grid; grid-template-columns:1.04fr 1.52fr 1.52fr 1.13fr 1.05fr 1.35fr;
-  gap:18px; align-items:start; margin:30px 0 10px; padding:0 4px; flex:1; min-height:0;
+  gap:18px; align-items:start; margin:21px 0 10px; padding:0 4px; flex:1; min-height:0;
 }
 .architecture-slide .arch-stage {
   min-width:0; position:relative; display:flex; flex-direction:column;
@@ -52,6 +51,18 @@
 .architecture-slide .arch-shape {font-size:22px; font-weight:800; color:var(--navy); white-space:nowrap; line-height:1.2;}
 .architecture-slide .arch-operation {font-size:14px; font-weight:700; color:var(--blue); margin-top:10px; white-space:nowrap;}
 .architecture-slide .arch-explain {font-size:14px; color:var(--muted); margin-top:5px; line-height:1.3; white-space:nowrap;}
+/* Separate rules make the extent of each repeated convolution block clear. */
+.architecture-slide .arch-stage[data-block] .arch-title {
+  width:100%; border-bottom:1.5px solid #adbed9;
+  padding-bottom:8px; margin-bottom:7px; min-height:35px;
+}
+.architecture-slide .arch-stage .arch-step-roles {
+  width:100%; display:flex; flex-direction:column; align-items:center;
+  gap:4px; margin-top:14px; color:#52647d;
+  font-size:14px; line-height:1.42;
+}
+.architecture-slide .arch-step-roles span {white-space:nowrap;}
+.architecture-slide .arch-step-roles b {font-weight:800; color:var(--blue); margin-right:5px;}
 
 
 @media(max-width:900px) {
@@ -64,9 +75,10 @@
   .architecture-slide .arch-title {font-size:15px;}
   .architecture-slide .arch-shape {font-size:20px;}
   .architecture-slide .arch-operation {font-size:14px;}
-  .architecture-slide .arch-explain {font-size:13px;}
+ .architecture-slide .arch-explain {font-size:13px;}
   .architecture-slide .arch-stage {margin-top:0;}
-  
+  .architecture-slide .arch-stage .arch-step-roles {font-size:12px; align-items:center;}
+}
 @media(max-width:520px) {
   .architecture-slide .content > .ref-card {padding:17px 15px;}
   .architecture-slide .arch-pipeline {grid-template-columns:1fr; gap:10px; margin:13px 0 18px; padding:0;}
@@ -85,8 +97,11 @@
   .architecture-slide .arch-graphic {grid-column:1;grid-row:1/5;width:126px;height:124px;}
   .architecture-slide .arch-shape {grid-column:2;grid-row:2;font-size:20px;}
   .architecture-slide .arch-operation {grid-column:2;grid-row:3;margin:0;font-size:13px;white-space:normal;}
-  .architecture-slide .arch-explain {grid-column:2;grid-row:4;font-size:12px;white-space:normal;}
-  
+ .architecture-slide .arch-explain {grid-column:2;grid-row:4;font-size:12px;white-space:normal;}
+  .architecture-slide .arch-stage[data-block] .arch-title {width:auto; border-bottom:0; padding-bottom:0; margin-bottom:0; min-height:0;}
+  .architecture-slide .arch-step-roles {grid-column:2;grid-row:5;align-items:flex-start!important;margin-top:6px!important;gap:2px!important;}
+  .architecture-slide .arch-step-roles span {white-space:normal;}
+}
 @media print {.architecture-slide .content > .ref-card {overflow:hidden;}}
 </style>
 </head>
@@ -97,7 +112,6 @@
     <h1>CNN 아키텍처</h1><p class="subtitle">특징 추출(Feature Extractor)과 분류(Classifier)</p>
   </header>
   <div class="content"><section class="ref-card">
-    <div class="arch-eyebrow">EXAMPLE CNN · H×W ↓ · CHANNELS ↑</div>
     <div class="arch-phase-band" aria-hidden="true">
       <span class="arch-extractor">FEATURE EXTRACTOR</span>
       <span class="arch-classifier">CLASSIFIER</span>
@@ -107,13 +121,23 @@
         <div class="arch-title">INPUT</div><div class="arch-graphic" data-art="input"></div>
         <div class="arch-shape">64×64×3</div><div class="arch-operation">RGB · 3채널</div><div class="arch-explain">입력 이미지</div>
       </article>
-      <article class="arch-stage" aria-label="Conv Block 1: Conv 3×3 stride 1 padding 1 16 channels, ReLU, MaxPool 2×2 stride 2. Conv output 64×64×16, Block output 32×32×16">
+      <article class="arch-stage" data-block="1" aria-label="Conv Block 1: Conv 3×3 stride 1 padding 1 16 channels, ReLU, MaxPool 2×2 stride 2. Conv output 64×64×16, Block output 32×32×16">
         <div class="arch-title" data-group="FEATURE EXTRACTOR">CONV BLOCK 1</div><div class="arch-graphic" data-art="block1"></div>
         <div class="arch-shape">32×32×16</div><div class="arch-operation">Conv → ReLU → MaxPool</div><div class="arch-explain">3×3 S1 P1 · Pool 2×2 S2</div>
+        <div class="arch-step-roles" aria-label="세 가지 연산의 역할">
+          <span><b>Conv</b>국소 특징 추출</span>
+          <span><b>ReLU</b>음수→0 · 비선형성</span>
+          <span><b>MaxPool</b>최댓값 선택 · 공간 축소</span>
+        </div>
       </article>
-      <article class="arch-stage" aria-label="Conv Block 2: Conv 3×3 stride 1 padding 1 32 channels, ReLU, MaxPool 2×2 stride 2. Conv output 32×32×32, Block output 16×16×32">
+      <article class="arch-stage" data-block="2" aria-label="Conv Block 2: Conv 3×3 stride 1 padding 1 32 channels, ReLU, MaxPool 2×2 stride 2. Conv output 32×32×32, Block output 16×16×32">
         <div class="arch-title">CONV BLOCK 2</div><div class="arch-graphic" data-art="block2"></div>
         <div class="arch-shape">16×16×32</div><div class="arch-operation">Conv → ReLU → MaxPool</div><div class="arch-explain">3×3 S1 P1 · Pool 2×2 S2</div>
+        <div class="arch-step-roles" aria-label="세 가지 연산의 역할">
+          <span><b>Conv</b>특징 조합 · 채널 증가</span>
+          <span><b>ReLU</b>음수→0 · 비선형성</span>
+          <span><b>MaxPool</b>최댓값 선택 · 공간 축소</span>
+        </div>
       </article>
       <article class="arch-stage" aria-label="Flatten 16×16×32 특징을 8192차원 벡터로 변환">
         <div class="arch-title" data-group="CLASSIFIER">FLATTEN</div><div class="arch-graphic" data-art="flatten"></div>
