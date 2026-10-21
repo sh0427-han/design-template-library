@@ -30,6 +30,8 @@ AI·ML 교육자료, 논문·기술 발표, 엔지니어링 보고를 위한 **H
 
 **[8종 HTML 갤러리](templates/html/index.html)** · [유형별 사용 지침](TEMPLATE_CATALOG.md) · [검토 체크리스트](docs/REFERENCE_REVIEW_GUIDE.md)
 
+**새 자료 제작 시:** [레퍼런스 재사용 워크플로](docs/REFERENCE_REUSE_WORKFLOW.md)에 따라 **MD 디자인 규칙 → 8종 HTML 원본 → 브라우저 프리뷰 검수** 순서로 활용합니다. 최종 결과물은 HTML Scroll/Slide이며 프리뷰 이미지 자체를 복사해서 사용하는 방식이 아닙니다.
+
 ## Scroll / Slide 통합 구현 예제
 
 [CNN 강의 예제](templates/dual-mode-learning/)는 별도의 디자인 유형이 아니라, **동일한 콘텐츠를 두 HTML 렌더링 모드로 제공하는 실제 구현 사례**입니다.
