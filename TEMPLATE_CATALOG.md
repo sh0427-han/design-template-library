@@ -1,6 +1,6 @@
 # Design Template Catalog · 8 HTML Reference Patterns
 
-**2026-10-21 Concept / Architecture 개선:** Concept은 **왼쪽 흰색 외부 카드 섹션을 유지**하면서 사진 자체에 붙은 추가 배경·테두리·그림자를 제거했습니다. 사진의 80×80 리샘플 결과에서 선택된 실제 4×4 픽셀값을 Canvas로 가져오며, 확대 셀·RGB·HEX 값이 동일한 이미지 데이터에 연결됩니다. Architecture는 원본 RGB → Conv1의 대표 Feature Map 활성화 패턴 → 같은 채널의 **2×2 MaxPool 최대값**에 따른 공간 축소 → Conv2의 추가 채널 및 활성화 변화 → GAP의 32차원 벡터 → Linear의 3 logits를 단계별로 구분해 표현합니다. Feature Map 격자는 대표 채널의 공간 구조를 보여주는 축소 도식으로 표기합니다. Chromium에서 1500×950 / 1366×768 / 1280×720 / 390×844 브라우저 검증 및 [검증 JSON](previews/review/concept-architecture-validation.json)과 두 최신 프리뷰를 갱신했습니다.
+**2026-10-21 Concept / Architecture 개선:** Concept은 **왼쪽 흰색 외부 카드 섹션을 유지**하면서 사진 자체에 붙은 추가 배경·테두리·그림자를 제거했습니다. 사진의 80×80 리샘플 결과에서 선택된 실제 4×4 픽셀값을 Canvas로 가져오며, 확대 셀·RGB·HEX 값이 동일한 이미지 데이터에 연결됩니다. Architecture는 **단일 RGB 이미지(64×64×3)** → Conv1 **16채널 Feature Map Stack(64×64×16)** → MaxPool **공간 크기 1/2, 채널 유지(32×32×16)** → Conv2 **32채널 Stack(32×32×32)** → GAP **채널별 평균 1D 벡터(32)** → Linear **3 logits**를 논문형 도식으로 표현합니다. Feature Map 격자는 대표 채널의 공간 구조를 보여주는 축소 도식으로 표기합니다. Chromium에서 1500×950 / 1366×768 / 1280×720 / 390×844 브라우저 검증 및 [검증 JSON](previews/review/concept-architecture-validation.json)과 두 최신 프리뷰를 갱신했습니다.
 
 **2026-10-21 검토 상태:** 8종 HTML 브라우저 검증 완료 · 05 문장 단위 줄바꿈 및 공통 어절 보호 반영 · 디자인 승인 대기. [유형별 결과](docs/REFERENCE_REVIEW_2026-10-21.md) · [Before / After](previews/review/README.md)
 
