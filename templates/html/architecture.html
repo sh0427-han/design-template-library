@@ -16,7 +16,7 @@
 /* Functional partition: input / feature extractor / classifier. */
 .architecture-slide .arch-phase-band {
   display:grid; grid-template-columns:1.04fr 1.52fr 1.52fr 1.13fr 1.05fr 1.35fr;
-  gap:18px; padding:0 4px; margin:3px 0 -7px;
+  gap:25px; padding:0 4px; margin:3px 0 -7px;
 }
 .architecture-slide .arch-phase-band span {
   text-align:center; font-size:13px; font-weight:800; color:var(--deep);
@@ -30,22 +30,22 @@
 .architecture-slide .arch-phase-band .arch-classifier::after {background:#9dd2ca;}
 .architecture-slide .arch-pipeline {
   display:grid; grid-template-columns:1.04fr 1.52fr 1.52fr 1.13fr 1.05fr 1.35fr;
-  gap:18px; align-items:start; margin:21px 0 10px; padding:0 4px; flex:1; min-height:0;
+  gap:25px; align-items:start; margin:21px 0 10px; padding:0 4px; flex:1; min-height:0;
 }
 .architecture-slide .arch-stage {
   min-width:0; position:relative; display:flex; flex-direction:column;
   align-items:center; text-align:center; margin-top:8px;
 }
 .architecture-slide .arch-stage:not(:last-child)::after {
-  content:""; position:absolute; top:128px; right:-16px; width:13px;
+  content:""; position:absolute; top:137px; right:-21px; width:18px;
   height:1.8px; background:var(--blue);
 }
 .architecture-slide .arch-stage:not(:last-child)::before {
-  content:""; position:absolute; top:124px; right:-18px; width:7px; height:7px;
+  content:""; position:absolute; top:134px; right:-22px; width:7px; height:7px;
   border-top:1.8px solid var(--blue); border-right:1.8px solid var(--blue);
   transform:rotate(45deg);
 }
-.architecture-slide .arch-title {font-size:17px; font-weight:800; color:var(--navy); min-height:26px; white-space:nowrap;}
+.architecture-slide .arch-title {font-size:17px; font-weight:800; color:var(--navy); min-height:40px; height:40px; width:100%; white-space:nowrap; display:flex; align-items:flex-start; justify-content:center;}
 .architecture-slide .arch-graphic {display:block; width:100%; height:195px; overflow:visible;}
 .architecture-slide .arch-graphic svg {display:block; width:100%; height:100%;}
 .architecture-slide .arch-shape {font-size:22px; font-weight:800; color:var(--navy); white-space:nowrap; line-height:1.2;}
@@ -53,8 +53,8 @@
 .architecture-slide .arch-explain {font-size:14px; color:var(--muted); margin-top:5px; line-height:1.3; white-space:nowrap;}
 /* Separate rules make the extent of each repeated convolution block clear. */
 .architecture-slide .arch-stage[data-block] .arch-title {
-  width:100%; border-bottom:1.5px solid #adbed9;
-  padding-bottom:8px; margin-bottom:7px; min-height:35px;
+  border-bottom:1.5px solid #adbed9;
+  padding-bottom:0; margin-bottom:0; min-height:40px; height:40px;
 }
 .architecture-slide .arch-stage .arch-step-roles {
   width:100%; display:flex; flex-direction:column; align-items:center;
@@ -89,7 +89,7 @@
   }
   .architecture-slide .arch-stage:not(:last-child)::after {display:block;top:auto;bottom:-4px;right:50%;width:1.5px;height:9px;}
   .architecture-slide .arch-stage:not(:last-child)::before {display:block;top:auto;bottom:-6px;right:calc(50% - 3px);transform:rotate(135deg);}
-  .architecture-slide .arch-title {grid-column:2;grid-row:1;min-height:0;white-space:normal;}
+  .architecture-slide .arch-title {grid-column:2;grid-row:1;min-height:0;height:auto;display:block;white-space:normal;}
   .architecture-slide .arch-title[data-group]::before {
     content:attr(data-group); display:block; font-size:11px;
     font-weight:750; color:var(--teal); margin-bottom:3px;
@@ -98,7 +98,7 @@
   .architecture-slide .arch-shape {grid-column:2;grid-row:2;font-size:20px;}
   .architecture-slide .arch-operation {grid-column:2;grid-row:3;margin:0;font-size:13px;white-space:normal;}
  .architecture-slide .arch-explain {grid-column:2;grid-row:4;font-size:12px;white-space:normal;}
-  .architecture-slide .arch-stage[data-block] .arch-title {width:auto; border-bottom:0; padding-bottom:0; margin-bottom:0; min-height:0;}
+  .architecture-slide .arch-stage[data-block] .arch-title {width:auto; border-bottom:0; padding-bottom:0; margin-bottom:0; min-height:0;height:auto;}
   .architecture-slide .arch-step-roles {grid-column:2;grid-row:5;align-items:flex-start!important;margin-top:6px!important;gap:2px!important;}
   .architecture-slide .arch-step-roles span {white-space:normal;}
 }
@@ -235,22 +235,23 @@
   }
   function drawBlock(svg,{convSize,poolSize,channels,convShape,poolShape,variant,data}) {
     // S1/P1 convolution preserves H,W; only max pooling halves H,W.
-    const sx=19, sy=65;
-    drawStack(svg,{x:sx,y:sy,size:convSize,n:7,dx:4.6,dy:3.8,data,variant});
-    const px=151,py=92;
-    drawStack(svg,{x:px,y:py,size:poolSize,n:7,dx:3.4,dy:3.3,
+    // Close intra-block modules while reserving more separation between stages.
+    const sx=convSize>=60?26:42, sy=convSize>=60?59:70;
+    drawStack(svg,{x:sx,y:sy,size:convSize,n:7,dx:4,dy:3.8,data,variant});
+    const px=138,py=convSize>=60?67:73;
+    drawStack(svg,{x:px,y:py,size:poolSize,n:7,dx:3,dy:3.2,
       data:variant==='low'?pooled:deep,variant});
-    el('path',{d:'M113 84 H143',fill:'none',stroke:'#26A6A1','stroke-width':2},svg);
-    el('path',{d:'M137 80 L144 84 L137 88',fill:'none',stroke:'#26A6A1','stroke-width':2},svg);
-    const mid=el('text',{x:128,y:70,fill:'#1B817c','font-size':11,'font-weight':800,
-      'text-anchor':'middle'},svg);
-    mid.textContent='ReLU';
-    [[71,'Conv'],[177,'MaxPool']].forEach(([x,label])=>{
+    // Same optical flow axis in both blocks, Flatten, and stage connectors.
+    el('path',{d:'M121 82.5 H135',fill:'none',stroke:colors.blue,'stroke-width':2},svg);
+    el('path',{d:'M130 78.5 L136 82.5 L130 86.5',fill:'none',stroke:colors.blue,'stroke-width':2},svg);
+    // ReLU remains explicit in the stage's Conv → ReLU → MaxPool line below.
+    // Avoid tiny and overlapping labels inside the compact feature-map diagram.
+    [[72,'Conv'],[168,'MaxPool']].forEach(([x,label])=>{
       const t=el('text',{x,y:157,fill:'#355471','font-size':14,'font-weight':800,
         'text-anchor':'middle'},svg);t.textContent=label;
     });
-    [[71,convShape],[177,poolShape]].forEach(([x,label])=>{
-      const t=el('text',{x,y:25,fill:'#17817d','font-size':12,'font-weight':800,
+    [[72,convShape],[168,poolShape]].forEach(([x,label])=>{
+      const t=el('text',{x,y:25,fill:colors.blue,'font-size':12,'font-weight':800,
         'text-anchor':'middle'},svg);t.textContent=label;
     });
   }
@@ -262,13 +263,13 @@
       el('path',{d:'M83 70 Q72 59 77 51 M80 53 Q97 40 110 54 Q94 62 80 53Z',fill:'#487752','fill-opacity':.4},svg);
       el('circle',{cx:85,cy:93,r:27,fill:'#cc4d47','fill-opacity':.18},svg);
     },
-    block1(svg) {drawBlock(svg,{convSize:79,poolSize:52,channels:16,convShape:'64×64×16',poolShape:'32×32×16',variant:'low',data:activations});},
-    block2(svg) {drawBlock(svg,{convSize:52,poolSize:32,channels:32,convShape:'32×32×32',poolShape:'16×16×32',variant:'deep',data:deep});},
+    block1(svg) {drawBlock(svg,{convSize:68,poolSize:46,channels:16,convShape:'64×64×16',poolShape:'32×32×16',variant:'low',data:activations});},
+    block2(svg) {drawBlock(svg,{convSize:49,poolSize:31,channels:32,convShape:'32×32×32',poolShape:'16×16×32',variant:'deep',data:deep});},
     flatten(svg) {
-      drawStack(svg,{x:9,y:80,size:48,n:6,dx:4.4,dy:3.8,data:deep,variant:'deep'});
-      el('path',{d:'M75 83 H104',stroke:colors.teal,'stroke-width':1.8,fill:'none'},svg);
-      el('path',{d:'M99 79 L105 83 L99 87',fill:'none',stroke:colors.teal,'stroke-width':1.8},svg);
-      drawLongVector(svg,116,20,17);
+      drawStack(svg,{x:31,y:68,size:48,n:6,dx:4,dy:3.8,data:deep,variant:'deep'});
+      el('path',{d:'M102 82.5 H119',stroke:colors.blue,'stroke-width':2,fill:'none'},svg);
+      el('path',{d:'M113 78.5 L120 82.5 L113 86.5',fill:'none',stroke:colors.blue,'stroke-width':2},svg);
+      drawLongVector(svg,121,20,17);
     },
     fc(svg) {
       drawLongVector(svg,18,20,16);
