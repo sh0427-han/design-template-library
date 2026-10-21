@@ -42,13 +42,15 @@ PPTX와 HTML 기술 강의자료의 공통 시각 설계 규칙입니다. 목표
 
 ## Typography
 
-- 한국어: `Malgun Gothic` 또는 시스템 한글 산세리프
+- **HTML 기본 폰트:** `Pretendard Variable` (Pretendard v1.3.9), 미지원·오프라인 환경은 `Pretendard` → `Malgun Gothic` → `Apple SD Gothic Neo` → 시스템 산세리프 순서로 대체
+- **로딩:** `templates/html/styles.css`에서 Pretendard Dynamic Subset 웹 폰트를 가져오며, 8종 레퍼런스·갤러리·CNN Scroll/Slide가 공통 토큰을 상속
+- **PPTX:** 기존 폰트 설정을 변경하지 않음. 폰트 변경은 HTML 승인 후 별도 반영
 - 제목: HTML 52–58 px, PPT 30–36 pt
 - 본문: HTML 21–26 px, PPT 16–20 pt
 - 라벨: HTML 16–19 px, PPT 11–14 pt
 - **모든 텍스트 문자 간격: 좁게 1.0pt (=-1.0pt)**. 제목·본문·부제목·라벨·각주·갤러리까지 예외 없이 공통 적용.
 - **PPTX:** `templates/pptx/build_templates.py`의 `CHARACTER_SPACING_PT = -1.0`을 사용. 모든 `textbox()`의 텍스트 run에 OOXML `a:rPr@spc="-100"` 반영(100 = 1pt).
-- **HTML:** `templates/html/styles.css`의 `--character-spacing: -1pt`를 `html`에 적용하고 모든 텍스트 요소가 상속하도록 구성. CSS 1pt는 표준 96dpi 환경에서 약 1.333px에 해당.
+- **HTML:** `templates/html/styles.css`의 `--font-sans`와 `--character-spacing: -1pt`를 공유. CSS 1pt는 표준 96dpi 환경에서 약 1.333px에 해당.
 - 이후 새 템플릿에도 동일 규칙 적용. **별도 요청 없이 특정 제목·라벨에 다른 자간 설정 금지.**
 - 강의 화면에서 읽기 힘든 작은 글자, 긴 문단, 강제 줄바꿈 최소화
 
