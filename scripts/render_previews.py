@@ -36,7 +36,7 @@ GEOMETRY = """() => {
     const s=rect(slide), footer=rect(slide.querySelector('.footer'));
     const visible=[...slide.querySelectorAll('*')].filter(e=>e.getBoundingClientRect().width && e.getBoundingClientRect().height);
     const outside=visible.filter(e=>{const r=rect(e);return r.x<s.x-1 || r.right>s.right+1 || r.y<s.y-1 || r.bottom>s.bottom+1}).map(e=>e.className);
-    const containers=[...slide.querySelectorAll('.content,.ref-grid,.ref-card,.concept-panel,.compare-card,.node,.arch-node,.executive-kpi,.exec-metric-group,.exec-metric-bars,.exec-impact,.exec-actions')];
+    const containers=[...slide.querySelectorAll('.content,.ref-grid,.ref-card,.concept-panel,.compare-card,.node,.arch-node,.executive-kpi,.exec-metric-group,.exec-metric-bars,.exec-impact,.exec-chart,.exec-comparison,.exec-actions')];
     const overflow=containers.filter(e=>e.scrollWidth>e.clientWidth+1 || e.scrollHeight>e.clientHeight+1).map(e=>e.className);
     const footerOverlap=visible.filter(e=> !e.closest('footer') && !e.matches('script') && rect(e).bottom>footer.y+1).map(e=>e.className);
     const textElements=visible.filter(e=>[...e.childNodes].some(n=>n.nodeType===3 && n.textContent.trim()));
@@ -102,7 +102,7 @@ def check_interactive(page):
 
 
 def check_executive(page, width):
-    """Check displayed KPI values AND real vertical bar geometry independently."""
+    """Check KPI values, normalized heights and shared grouped-chart axes."""
     result = page.evaluate("""() => {
       const box = el => {const r=el.getBoundingClientRect();return {x:r.x,y:r.y,width:r.width,height:r.height,right:r.right,bottom:r.bottom}};
       const impact=document.querySelector('.exec-impact');
@@ -120,8 +120,15 @@ def check_executive(page, width):
           detail:e.querySelector('span').lastChild.textContent
         })),
         impact:box(impact),action:box(action),
+        impactBackground:getComputedStyle(impact).backgroundColor,
+        impactBorder:getComputedStyle(impact).borderStyle,
+        ticks:[...document.querySelectorAll('.exec-y-axis span')].map(e=>({
+          label:e.textContent,ratio:Number(e.style.getPropertyValue('--tick')),box:box(e)
+        })),
         groups:groups.map(g=>({
           box:box(g),title:g.querySelector('h3').textContent,
+          titleBox:box(g.querySelector('h3')),
+          valueBoxes:[...g.querySelectorAll('.exec-value')].map(box),
           before:Number(g.dataset.before),after:Number(g.dataset.after),unit:g.dataset.unit,
           delta:g.querySelector('.exec-delta').textContent,
           deltaColor:getComputedStyle(g.querySelector('.exec-delta')).color,
@@ -143,6 +150,8 @@ def check_executive(page, width):
         ('월말 미처리',20,8,'건'),
     ]
     assert len(result['groups']) == 3, (width, result)
+    assert result['impactBorder']!='none' and result['impactBackground']=='rgb(255, 255, 255)', (width, result)
+    assert [(t['label'],t['ratio']) for t in result['ticks']]==[('100%',1),('50%',.5),('0',0)], (width, result)
     previous = None
     for group, (title,before,after,unit) in zip(result['groups'],expected):
         assert (group['title'],group['before'],group['after'],group['unit']) == (title,before,after,unit), (width, group)
@@ -157,10 +166,19 @@ def check_executive(page, width):
         assert abs(base['width']-new['width'])<1 and new['x']>base['right'], (width, 'bars not side by side', group)
         assert abs(base['bottom']-new['bottom'])<1, (width, 'unequal baselines', group)
         assert abs(new['height']/base['height']-after/before)<.002, (width, 'rendered height ratio', group)
-        assert group['border']!='none' and group['background']=='rgb(255, 255, 255)', (width, group)
+        assert group['titleBox']['y']>base['bottom'], (width, 'category not below x-axis', group)
+        assert abs(group['titleBox']['x']+group['titleBox']['width']/2-(base['x']+new['right'])/2)<1, (width, 'category not centered on pair', group)
+        for value,bar in zip(group['valueBoxes'],group['bars']):
+            assert value['bottom']<=bar['y'], (width, 'value overlaps bar', group)
+        assert group['valueBoxes'][0]['right']<group['valueBoxes'][1]['x'], (width, 'value labels overlap', group)
+        for tick in result['ticks']:
+            tick_y=tick['box']['y']+tick['box']['height']/2
+            assert abs(tick_y-(base['bottom']-base['height']*tick['ratio']))<1, (width, 'axis scale mismatch', group)
         if previous:
-            assert group['box']['y']>previous['bottom'], (width, 'KPI cards not stacked', result)
-        previous=group['box']
+            assert group['box']['x']>previous['box']['right'], (width, 'groups not ordered across x-axis', result)
+            assert abs(base['bottom']-previous['bars'][0]['bottom'])<1, (width, 'no common baseline', result)
+            assert abs(base['height']-previous['bars'][0]['height'])<1, (width, 'unequal normalized scale', result)
+        previous=group
     assert result['title']=='점검 효율 개선안 요약'
     assert result['subtitle']=='수동 점검 부담 감소를 위한 파일럿 검토 · 효율성과 미검출 위험의 동시 평가'
     assert result['note']=='가상 시나리오 · 동일한 월간 유입량과 집계 기준 가정 · 실측 효과 아님'
