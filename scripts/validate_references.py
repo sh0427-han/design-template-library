@@ -70,9 +70,14 @@ def check_concept(page):
     for key,expected in [('left',.65),('top',.475),('width',.05),('height',.05)]:
         assert abs(extra['roi'][key]-expected)<.003,(key,extra['roi'])
     fig=extra['fig']
-    assert abs(fig['frame']['cy']-fig['pixels']['cy'])<1.5,(extra['viewport'],fig)
-    assert abs(fig['arrow']['cy']-fig['frame']['cy'])<1.5,(extra['viewport'],fig)
-    assert abs(fig['labels'][0]['y']-fig['labels'][1]['y'])<1.5,(extra['viewport'],fig)
+    if extra['viewport']>520:
+        assert abs(fig['frame']['cy']-fig['pixels']['cy'])<1.5,(extra['viewport'],fig)
+        assert abs(fig['arrow']['cy']-fig['frame']['cy'])<1.5,(extra['viewport'],fig)
+        assert abs(fig['labels'][0]['y']-fig['labels'][1]['y'])<1.5,(extra['viewport'],fig)
+    else:
+        assert abs(fig['frame']['cx']-fig['pixels']['cx'])<1.5,(extra['viewport'],fig)
+        assert abs(fig['arrow']['cx']-fig['frame']['cx'])<1.5,(extra['viewport'],fig)
+        assert fig['frame']['bottom']<fig['arrow']['cy']<fig['pixels']['y'],(extra['viewport'],fig)
     if extra['viewport']>900:
         assert abs(fig['panels'][0]['y']-fig['panels'][1]['y'])<1.5
         assert abs(fig['panels'][0]['bottom']-fig['panels'][1]['bottom'])<1.5
