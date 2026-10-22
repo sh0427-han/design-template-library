@@ -185,7 +185,7 @@ def main():
      fallback.locator('#threshold').fill(threshold);geometry=fallback.evaluate(CHECK)
      assert geometry['fontsLoaded']==0
      assert not geometry['overflow'] and not geometry['cardContentEscapes'],('font fallback',width,threshold,geometry)
-     assert geometry['pageWidth']<=width and geometry['content']['bottom']<geometry['footer']['y']+1
+     assert geometry['pageWidth']<=width and geometry['content']['bottom']<geometry['footer']['y']+1,('font fallback bounds',width,threshold,geometry)
      report['font_fallback'].append({'viewport':[width,height],'threshold':int(threshold)/100,**geometry})
     if width==1600:fallback.locator('.slide').screenshot(path=str(out/'interactive-font-fallback.png'),animations='disabled')
    fallback.close()

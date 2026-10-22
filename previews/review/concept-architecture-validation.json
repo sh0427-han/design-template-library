@@ -1,6 +1,6 @@
 {
   "status": "passed",
-  "started_utc": "2026-10-22T03:14:30.979922+00:00",
+  "started_utc": "2026-10-22T08:37:05.554705+00:00",
   "viewports": [
     [
       1600,
@@ -1531,7 +1531,7 @@
     "templates/html/reference-layout.css": "53d908fa3a4cb3e6c8e4c1e7b884df44494b7e4e81a2eda06adb170cbef39f26",
     "templates/html/styles.css": "e3decf7af6e7acc2d36f675714f502508c5c5876fdc3310fdce877694468dff3",
     "templates/html/step-by-step.html": "8e7eed2d4bbeaeea3fb644973a0ff99f9e0c075bababf93a8964636197143d3c",
-    "templates/html/interactive.html": "af7291cba79fa713e93738ccfa2a18e6bcb3add98fbf9a7c1bd43cc2eba32b51",
+    "templates/html/interactive.html": "999cc515d9f3ad03dbee7c1437959b79463ad251e890142233471e4ff7722869",
     "templates/html/concept.html": "9d50ae70c9d63dc257738e2260d3eccf415029baff5726b8f21f13a09da5b018",
     "templates/html/reference-types.css": "976c72a1d4e736fc6d7f7c328445f4e7feead457f4ef7165ca3926b5615e18b7",
     "templates/html/architecture.html": "0b40aa7f35960458292b8fd691a0ffcac83e8646993dda516b85e809efac28e1",
@@ -1546,7 +1546,7 @@
   "failed_requests": [],
   "http_errors": [],
   "canonical_preview_sha256": {
-    "previews/html-concept.png": "c89e19104f4a308e070269047ba07fd2baf15fc9a2bf0fe692ffe0e470f22bbc",
+    "previews/html-concept.png": "18f66f5c8b8cc366d00fdd53234a7c51e0cfd5804c46c896fb73e58c99fa2554",
     "previews/html-process.png": "273a7c3c17bc109f608d7cc382c2d23c392cc525914e64c0d36758e0ffed1ddc",
     "previews/html-comparison.png": "ef24a100f037534d0828e2e38ef9e0cba12338a001d068a82e48b2111887e71a",
     "previews/html-step-by-step.jpg": "2390409158a2cb310ddaa9b183fd83c7809b93b5e00f232cbf62612e54fe907f",
@@ -1555,6 +1555,6 @@
     "previews/html-experiment.jpg": "cbce9de643d76ecd0201be3e671128e3d309d81b49a4b51e2c9bdec0f137fe50",
     "previews/html-executive-summary.jpg": "0446024bf52616cdc0f2ab604c44e5e4f6482722e7d7648c16d238756500372c"
   },
-  "finished_utc": "2026-10-22T03:15:11.838305+00:00",
+  "finished_utc": "2026-10-22T08:37:45.078555+00:00",
   "derived_from": "reference-validation.json (same final-source execution)"
 }
