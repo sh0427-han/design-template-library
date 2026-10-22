@@ -5,7 +5,7 @@ Requires Playwright and system Chromium. Uses the bundled official Pretendard fo
 from functools import partial
 from http.server import SimpleHTTPRequestHandler,ThreadingHTTPServer
 from pathlib import Path
-import base64,hashlib,json,re,threading
+import base64,hashlib,json,os,re,threading,traceback
 import render_previews
 from reference_validation import actual_fonts, browser_options
 from playwright.sync_api import sync_playwright
@@ -61,10 +61,6 @@ def main():
  assert font_hash=='9599f12fd42fc0bce1cd50b47a0c022e108d7aa64dd0d1bb0ed44f3282d900b4'
  report={'status':'running','math_checks':0,'screens':[],'font_delivery':'Original Pretendard Variable v1.3.9 from common local CSS; no CDN required','font_asset':{'path':str(font_path.relative_to(ROOT)),'sha256':font_hash,'bytes':len(font_bytes)}}
  evidence.write_text(json.dumps(report))
- def font(route):
-  # The shared CSS still imports the CDN. It contributes no fonts in this test.
-  assert route.request.url.endswith('.css'),route.request.url
-  route.fulfill(body='',content_type='text/css')
  server=ThreadingHTTPServer(('127.0.0.1',0),partial(Quiet,directory=str(ROOT)))
  threading.Thread(target=server.serve_forever,daemon=True).start()
  try:
@@ -72,7 +68,7 @@ def main():
    browser=p.chromium.launch(**browser_options())
    report['browser']=browser.version
    page=browser.new_page();errors=[];failures=[]
-   page.on('pageerror',lambda e:errors.append(str(e)));page.on('requestfailed',lambda r:failures.append(r.url));page.route('https://cdn.jsdelivr.net/**',font)
+   page.on('pageerror',lambda e:errors.append(str(e)));page.on('requestfailed',lambda r:failures.append(r.url))
    for width,height in SIZES:
     page.set_viewport_size({'width':width,'height':height})
     page.goto(f'http://127.0.0.1:{server.server_port}/templates/html/interactive.html',wait_until='networkidle');page.evaluate('document.fonts.ready')
@@ -177,10 +173,9 @@ def main():
      report['reuse']['checks']+=1
     page.locator('#threshold').fill('60');report['reuse']['viewports'].append({'viewport':[width,height],**page.evaluate(CHECK)})
     page.locator('.slide').screenshot(path=str(out/f'interactive-reuse-{width}.png'),animations='disabled')
-   # Check the reported card-boundary regression even without the CDN font.
+   # Check the reported card-boundary regression when the bundled font is missing.
    fallback=browser.new_page()
    fallback.on('pageerror',lambda e:errors.append(str(e)))
-   fallback.route('https://cdn.jsdelivr.net/**',lambda route:route.fulfill(body='',content_type='text/css'))
    fallback.route('**/assets/fonts/pretendard/PretendardVariable.woff2',lambda route:route.fulfill(status=404,body=''))
    report['font_fallback']=[]
    for width,height in SIZES:
@@ -250,7 +245,13 @@ def main():
    assert not errors and not failures,(errors,failures)
    report.update(status='passed',page_errors=errors,request_failures=failures);browser.close()
  except Exception as exc:
-  report.update(status='failed',error=str(exc));raise
+  report.update(status='failed',error=traceback.format_exc())
+  if os.environ.get('GITHUB_ACTIONS')=='true':
+   # Keep actionable failure evidence in the Checks API, even when the runner's
+   # external log/artifact download endpoint is unavailable to the client.
+   diagnostic=report['error'].replace('%','%25').replace('\r','%0D').replace('\n','%0A')
+   print('::error title=Interactive verification failed::'+diagnostic,flush=True)
+  raise
  finally:
   server.shutdown();server.server_close();evidence.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
 
