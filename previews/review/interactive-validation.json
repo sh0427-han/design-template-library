@@ -91,7 +91,7 @@
         "right": 10.375
       },
       "badTypography": [],
-      "fontsLoaded": 11,
+      "fontsLoaded": 1,
       "thresholds": [
         {
           "threshold": 0.0,
@@ -301,6 +301,22 @@
         "titleLines": 1,
         "subtitleLines": 1,
         "pageWidth": 1600
+      },
+      "rendered_fonts": {
+        "default": {
+          "text_elements": 83,
+          "rendered_families": {
+            "Pretendard Variable": 544
+          },
+          "fallback_elements": 0
+        },
+        "undefined_precision": {
+          "text_elements": 83,
+          "rendered_families": {
+            "Pretendard Variable": 542
+          },
+          "fallback_elements": 0
+        }
       }
     },
     {
@@ -392,7 +408,7 @@
         "right": 9.515625
       },
       "badTypography": [],
-      "fontsLoaded": 11,
+      "fontsLoaded": 1,
       "thresholds": [
         {
           "threshold": 0.0,
@@ -602,6 +618,22 @@
         "titleLines": 1,
         "subtitleLines": 1,
         "pageWidth": 1440
+      },
+      "rendered_fonts": {
+        "default": {
+          "text_elements": 83,
+          "rendered_families": {
+            "Pretendard Variable": 544
+          },
+          "fallback_elements": 0
+        },
+        "undefined_precision": {
+          "text_elements": 83,
+          "rendered_families": {
+            "Pretendard Variable": 542
+          },
+          "fallback_elements": 0
+        }
       }
     },
     {
@@ -693,7 +725,7 @@
         "right": 9.15625
       },
       "badTypography": [],
-      "fontsLoaded": 11,
+      "fontsLoaded": 1,
       "thresholds": [
         {
           "threshold": 0.0,
@@ -903,6 +935,22 @@
         "titleLines": 1,
         "subtitleLines": 1,
         "pageWidth": 1366
+      },
+      "rendered_fonts": {
+        "default": {
+          "text_elements": 83,
+          "rendered_families": {
+            "Pretendard Variable": 544
+          },
+          "fallback_elements": 0
+        },
+        "undefined_precision": {
+          "text_elements": 83,
+          "rendered_families": {
+            "Pretendard Variable": 542
+          },
+          "fallback_elements": 0
+        }
       }
     },
     {
@@ -994,7 +1042,7 @@
         "right": 8.703125
       },
       "badTypography": [],
-      "fontsLoaded": 11,
+      "fontsLoaded": 1,
       "thresholds": [
         {
           "threshold": 0.0,
@@ -1204,6 +1252,22 @@
         "titleLines": 1,
         "subtitleLines": 1,
         "pageWidth": 1280
+      },
+      "rendered_fonts": {
+        "default": {
+          "text_elements": 83,
+          "rendered_families": {
+            "Pretendard Variable": 544
+          },
+          "fallback_elements": 0
+        },
+        "undefined_precision": {
+          "text_elements": 83,
+          "rendered_families": {
+            "Pretendard Variable": 542
+          },
+          "fallback_elements": 0
+        }
       }
     },
     {
@@ -1295,7 +1359,7 @@
         "right": 10.375
       },
       "badTypography": [],
-      "fontsLoaded": 11,
+      "fontsLoaded": 1,
       "thresholds": [
         {
           "threshold": 0.0,
@@ -1505,6 +1569,22 @@
         "titleLines": 1,
         "subtitleLines": 1,
         "pageWidth": 900
+      },
+      "rendered_fonts": {
+        "default": {
+          "text_elements": 83,
+          "rendered_families": {
+            "Pretendard Variable": 544
+          },
+          "fallback_elements": 0
+        },
+        "undefined_precision": {
+          "text_elements": 83,
+          "rendered_families": {
+            "Pretendard Variable": 542
+          },
+          "fallback_elements": 0
+        }
       }
     },
     {
@@ -1596,7 +1676,7 @@
         "right": 5.234375
       },
       "badTypography": [],
-      "fontsLoaded": 11,
+      "fontsLoaded": 1,
       "thresholds": [
         {
           "threshold": 0.0,
@@ -1806,10 +1886,31 @@
         "titleLines": 1,
         "subtitleLines": 2,
         "pageWidth": 390
+      },
+      "rendered_fonts": {
+        "default": {
+          "text_elements": 83,
+          "rendered_families": {
+            "Pretendard Variable": 541
+          },
+          "fallback_elements": 0
+        },
+        "undefined_precision": {
+          "text_elements": 83,
+          "rendered_families": {
+            "Pretendard Variable": 539
+          },
+          "fallback_elements": 0
+        }
       }
     }
   ],
-  "font_delivery": "TLS-verified curl CDN cache, fulfilled at original URLs; no trust changes",
+  "font_delivery": "Bundled original Pretendard Variable v1.3.9; external CDN deliberately unavailable during tests",
+  "font_asset": {
+    "path": "templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+    "sha256": "9599f12fd42fc0bce1cd50b47a0c022e108d7aa64dd0d1bb0ed44f3282d900b4",
+    "bytes": 2057688
+  },
   "browser": "154.0.8037.57",
   "reuse": {
     "sample_count": 6,
@@ -1906,7 +2007,7 @@
           "right": 10.375
         },
         "badTypography": [],
-        "fontsLoaded": 11
+        "fontsLoaded": 1
       },
       {
         "viewport": [
@@ -1997,7 +2098,7 @@
           "right": 5.234375
         },
         "badTypography": [],
-        "fontsLoaded": 11
+        "fontsLoaded": 1
       }
     ]
   },
@@ -3127,20 +3228,23 @@
     "native_range_excluded_from_pixel_comparison": true,
     "interaction_checked": true
   },
+  "offline_portable": {
+    "method": "Generated HTML bytes loaded by set_content; file:// navigation blocked by managed browser policy",
+    "default": {
+      "text_elements": 83,
+      "rendered_families": {
+        "Pretendard Variable": 544
+      },
+      "fallback_elements": 0
+    },
+    "undefined_precision": {
+      "text_elements": 83,
+      "rendered_families": {
+        "Pretendard Variable": 542
+      },
+      "fallback_elements": 0
+    }
+  },
   "page_errors": [],
-  "request_failures": [],
-  "font_assets": {
-    "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css": "d274380cb7815e92479d38e43dd5b2eef585567091394022a3a2dede048474cb",
-    "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/packages/pretendard/dist/web/variable/woff2-dynamic-subset/PretendardVariable.subset.91.woff2": "fc9fcd1bea9c8f43f97136a1e89bfa6e34db85f820f86538288647b4c24c5b06",
-    "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/packages/pretendard/dist/web/variable/woff2-dynamic-subset/PretendardVariable.subset.90.woff2": "ed2d605d80cbe4f2c1df801852f7a1d8ad5e1a4972b26d8fee93427317f32f09",
-    "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/packages/pretendard/dist/web/variable/woff2-dynamic-subset/PretendardVariable.subset.89.woff2": "44634e793e0d50fcdf803a2ad513d8bf0482d9adccbbd4ef534325cae9b2ee01",
-    "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/packages/pretendard/dist/web/variable/woff2-dynamic-subset/PretendardVariable.subset.88.woff2": "192abc4c6ad933f53d809d8a46ee6237ae71e766bf66199fdce4678841fe12d7",
-    "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/packages/pretendard/dist/web/variable/woff2-dynamic-subset/PretendardVariable.subset.84.woff2": "d28ace2d199ca5c6304a6191f4233e28ddb225d341d6e0b41db040e9447c2cc9",
-    "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/packages/pretendard/dist/web/variable/woff2-dynamic-subset/PretendardVariable.subset.87.woff2": "04ca8277cfe3d27235573956255b0211575504cb695cdeab644c583df774e257",
-    "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/packages/pretendard/dist/web/variable/woff2-dynamic-subset/PretendardVariable.subset.83.woff2": "f8f1fe652aaf3c759d78f37e48afe1c58c1d335e9261c5be2a2d90ff5bbfb9cc",
-    "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/packages/pretendard/dist/web/variable/woff2-dynamic-subset/PretendardVariable.subset.82.woff2": "493e29967aa59d0f5326ae95fe163ca6e0ce9d95610838cc07a1f543a4a2e289",
-    "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/packages/pretendard/dist/web/variable/woff2-dynamic-subset/PretendardVariable.subset.86.woff2": "3e680901e55f16848b58d16d25870596495a6a073d9e3127fe481583ac4439b6",
-    "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/packages/pretendard/dist/web/variable/woff2-dynamic-subset/PretendardVariable.subset.70.woff2": "8bccc361d2d7ad5c3891a7914505ffd0ed89cf0bd9a5f1f6c320f85af54cb041",
-    "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/packages/pretendard/dist/web/variable/woff2-dynamic-subset/PretendardVariable.subset.85.woff2": "757b9fc85ad85a1024fcacc04a9b688ace2db7af393e9ddc3b5dd2ba605b5a9b"
-  }
+  "request_failures": []
 }

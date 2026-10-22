@@ -4,6 +4,11 @@
 <title>임계값과 분류 결과 | Design Template Library</title>
 <link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="reference-types.css"><link rel="stylesheet" href="reference-layout.css">
 <style>
+/* #5 ships the original font locally; this face wins over the CDN subsets. */
+@font-face {
+ font-family:'Pretendard Variable';font-style:normal;font-weight:100 900;font-display:swap;
+ src:url('assets/fonts/pretendard/PretendardVariable.woff2') format('woff2');
+}
 /* #5 only: inherit canonical typography and colors; preserve the other references. */
 .interactive-slide h1 {line-height:1.35;margin-bottom:3px;}
 .interactive-slide .kicker {line-height:1.2;}

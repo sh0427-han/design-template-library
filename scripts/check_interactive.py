@@ -1,11 +1,11 @@
 """Verify only #5 across six viewports, all 21 thresholds and accessible controls.
 Run: python scripts/check_interactive.py
-Requires Playwright, system Chromium and curl. Font cache uses TLS-verified CDN bytes.
+Requires Playwright and system Chromium. Uses the bundled official Pretendard font.
 """
 from functools import partial
 from http.server import SimpleHTTPRequestHandler,ThreadingHTTPServer
 from pathlib import Path
-import base64,hashlib,json,os,shutil,subprocess,threading
+import base64,hashlib,json,os,re,shutil,threading
 import render_previews
 from playwright.sync_api import sync_playwright
 
@@ -46,21 +46,33 @@ class Quiet(SimpleHTTPRequestHandler):
 def sample_text(page,selector):
  return page.locator('.score-row').evaluate_all('(rows,selector)=>rows.sort((a,b)=>Number(a.dataset.sample)-Number(b.dataset.sample)).map(row=>row.querySelector(selector).textContent)',selector)
 
+def rendered_fonts(page):
+ """Audit actual platform fonts, not merely the requested CSS font-family."""
+ nodes=page.evaluate('''() => [...document.querySelectorAll('.slide *')].filter(e=>!e.closest('.sr-only')&&e.getBoundingClientRect().width&&e.getBoundingClientRect().height&&[...e.childNodes].some(n=>n.nodeType===3&&n.textContent.trim())).map((e,i)=>{e.dataset.fontAudit=String(i);return {index:i,text:[...e.childNodes].filter(n=>n.nodeType===3).map(n=>n.textContent).join('').trim()}})''')
+ cdp=page.context.new_cdp_session(page);cdp.send('DOM.enable');cdp.send('CSS.enable')
+ root=cdp.send('DOM.getDocument',{'depth':-1})['root']['nodeId'];families={}
+ try:
+  for node in nodes:
+   node_id=cdp.send('DOM.querySelector',{'nodeId':root,'selector':f'[data-font-audit="{node["index"]}"]'})['nodeId']
+   fonts=cdp.send('CSS.getPlatformFontsForNode',{'nodeId':node_id})['fonts'];assert fonts,node
+   for font in fonts:
+    assert font['familyName']=='Pretendard Variable' and font['isCustomFont'],(node,font)
+    families[font['familyName']]=families.get(font['familyName'],0)+font['glyphCount']
+ finally:cdp.detach()
+ return {'text_elements':len(nodes),'rendered_families':families,'fallback_elements':0}
+
 def main():
  out=Path('/tmp/interactive-draft-review');out.mkdir(exist_ok=True)
  evidence=ROOT/'previews/review/interactive-validation.json'
- report={'status':'running','math_checks':0,'screens':[],'font_delivery':'TLS-verified curl CDN cache, fulfilled at original URLs; no trust changes'}
+ font_path=ROOT/'templates/html/assets/fonts/pretendard/PretendardVariable.woff2'
+ font_bytes=font_path.read_bytes();font_hash=hashlib.sha256(font_bytes).hexdigest()
+ assert font_hash=='9599f12fd42fc0bce1cd50b47a0c022e108d7aa64dd0d1bb0ed44f3282d900b4'
+ report={'status':'running','math_checks':0,'screens':[],'font_delivery':'Bundled original Pretendard Variable v1.3.9; external CDN deliberately unavailable during tests','font_asset':{'path':str(font_path.relative_to(ROOT)),'sha256':font_hash,'bytes':len(font_bytes)}}
  evidence.write_text(json.dumps(report))
- cache=Path('/tmp/experiment-verified-fonts');cache.mkdir(exist_ok=True)
- manifest_path=cache/'manifest.json';manifest=json.loads(manifest_path.read_text()) if manifest_path.exists() else {};assets={}
  def font(route):
-  url=route.request.url;assert url.startswith('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/')
-  path=cache/hashlib.sha256(url.encode()).hexdigest()
-  if not path.exists() or hashlib.sha256(path.read_bytes()).hexdigest()!=manifest.get(url):
-   subprocess.run(['curl','--fail','--silent','--show-error','--location','--proto','=https','--tlsv1.2','--max-time','45',url,'-o',str(path)],check=True)
-   manifest[url]=hashlib.sha256(path.read_bytes()).hexdigest();manifest_path.write_text(json.dumps(manifest))
-  assets[url]=manifest[url]
-  route.fulfill(body=path.read_bytes(),headers={'content-type':'text/css' if '.css' in url else 'font/woff2','access-control-allow-origin':'*'})
+  # The shared CSS still imports the CDN. It contributes no fonts in this test.
+  assert route.request.url.endswith('.css'),route.request.url
+  route.fulfill(body='',content_type='text/css')
  server=ThreadingHTTPServer(('127.0.0.1',0),partial(Quiet,directory=str(ROOT)))
  threading.Thread(target=server.serve_forever,daemon=True).start()
  try:
@@ -100,6 +112,7 @@ def main():
      geometry=page.evaluate(CHECK)
      assert not geometry['overflow'] and not geometry['cardContentEscapes'],(width,threshold,geometry)
      thresholds.append({'threshold':threshold/100,**expected,'precision':precision,'recall':recall});report['math_checks']+=1
+    undefined_fonts=rendered_fonts(page)
     slider=page.locator('#threshold')
     slider.fill('60');page.evaluate('window.savedSample=document.querySelector("[data-sample=\\"4\\"]")')
     slider.fill('70')
@@ -139,7 +152,7 @@ def main():
      page.locator('.slide').screenshot(path=str(ROOT/'previews/html-interactive.jpg'),quality=94,animations='disabled')
      # Native range paint can differ by subpixel after pointer/keyboard use.
      page.locator('.slide').screenshot(path=str(out/'interactive-content.png'),mask=[page.locator('#threshold')],animations='disabled')
-    report['screens'].append({'viewport':[width,height],**r,'thresholds':thresholds,'shared_geometry':shared})
+    report['screens'].append({'viewport':[width,height],**r,'thresholds':thresholds,'shared_geometry':shared,'rendered_fonts':{'default':rendered_fonts(page),'undefined_precision':undefined_fonts}})
     print('PASS',width,height,flush=True)
    # Reuse proof: replace only the sample array in a browser response, keeping
    # the checked-in lesson unchanged. Class totals and formulas must follow it.
@@ -175,6 +188,7 @@ def main():
    fallback=browser.new_page()
    fallback.on('pageerror',lambda e:errors.append(str(e)))
    fallback.route('https://cdn.jsdelivr.net/**',lambda route:route.fulfill(body='',content_type='text/css'))
+   fallback.route('**/assets/fonts/pretendard/PretendardVariable.woff2',lambda route:route.fulfill(status=404,body=''))
    report['font_fallback']=[]
    for width,height in SIZES:
     fallback.set_viewport_size({'width':width,'height':height})
@@ -197,14 +211,17 @@ def main():
    page.set_viewport_size({'width':1600,'height':950})
    page.goto(f'http://127.0.0.1:{server.server_port}/templates/html/interactive.html',wait_until='networkidle');page.evaluate('document.fonts.ready');page.locator('h1').click()
    page.locator('.slide').screenshot(path=str(out/'interactive-content.png'),mask=[page.locator('#threshold')],animations='disabled')
-   # Shareable HTML: inline local dependencies; only the original web font
-   # remains remote, with the normal system-font fallback when offline.
+   # Shareable HTML includes all CSS, JS, font bytes and the original license.
    portable=(ROOT/'templates/html/interactive.html').read_text()
    for name in ['styles.css','reference-types.css','reference-layout.css']:
-    portable=portable.replace(f'<link rel="stylesheet" href="{name}">', '<style>\n'+(ROOT/'templates/html'/name).read_text()+'\n</style>')
+    css=(ROOT/'templates/html'/name).read_text()
+    if name=='styles.css':css=re.sub(r'@import\s+url\([^;]+\);','',css)
+    portable=portable.replace(f'<link rel="stylesheet" href="{name}">', '<style>\n'+css+'\n</style>')
+   portable=portable.replace('assets/fonts/pretendard/PretendardVariable.woff2','data:font/woff2;base64,'+base64.b64encode(font_bytes).decode())
    portable=portable.replace('<script src="interactive-reference.js" defer></script>','')
    portable=portable.replace('</body>','<script>\n'+original+'\n</script></body>')
-   portable='<!-- Generated by scripts/check_interactive.py; edit templates/html sources. -->\n'+portable
+   license_text=(font_path.parent/'LICENSE').read_text()
+   portable='<!-- Generated by scripts/check_interactive.py; edit templates/html sources. -->\n<!-- Bundled Pretendard Variable v1.3.9\n'+license_text+'\n-->\n'+portable
    (ROOT/'previews/review/interactive-live.html').write_text(portable)
    page.set_viewport_size({'width':1600,'height':950})
    page.goto(f'http://127.0.0.1:{server.server_port}/previews/review/interactive-live.html',wait_until='networkidle');page.evaluate('document.fonts.ready');page.locator('h1').click()
@@ -226,8 +243,19 @@ def main():
    assert comparison['maxChannelDelta']<=2 and comparison['differentPixels']<=comparison['totalPixels']*.001,comparison
    page.locator('#threshold').fill('100');assert page.locator('#precision').inner_text()=='정의 불가'
    report['portable_html']={'path':'previews/review/interactive-live.html','content_within_tolerance':True,'pixel_comparison':comparison,'max_channel_tolerance':2,'max_changed_fraction':.001,'native_range_excluded_from_pixel_comparison':True,'interaction_checked':True}
+   # Load the generated bytes in a fresh offline context. Managed Chromium
+   # disallows file:// navigation; set_content verifies the offline document
+   # without changing that policy or claiming to have tested the file origin.
+   offline=browser.new_context(offline=True,viewport={'width':1600,'height':950})
+   offline_page=offline.new_page();offline_page.on('pageerror',lambda e:errors.append(str(e)))
+   offline_page.on('requestfailed',lambda r:failures.append(r.url))
+   offline_page.set_content((ROOT/'previews/review/interactive-live.html').read_text(),wait_until='load');offline_page.evaluate('document.fonts.ready')
+   report['offline_portable']={'method':'Generated HTML bytes loaded by set_content; file:// navigation blocked by managed browser policy','default':rendered_fonts(offline_page)}
+   offline_page.locator('#threshold').fill('100');assert offline_page.locator('#precision').inner_text()=='정의 불가'
+   report['offline_portable']['undefined_precision']=rendered_fonts(offline_page)
+   offline.close()
    assert not errors and not failures,(errors,failures)
-   report.update(status='passed',page_errors=errors,request_failures=failures,font_assets=assets);browser.close()
+   report.update(status='passed',page_errors=errors,request_failures=failures);browser.close()
  except Exception as exc:
   report.update(status='failed',error=str(exc));raise
  finally:
