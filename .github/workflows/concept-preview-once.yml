@@ -5,6 +5,7 @@ on:
       - feat/concept-pixel-rgb-final-refinement
     paths:
       - .github/workflows/concept-preview-once.yml
+      - templates/html/concept.html
 permissions:
   contents: write
 jobs:
