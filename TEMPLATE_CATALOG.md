@@ -17,11 +17,11 @@
 
 ## 01 Concept · 구체적 사례에서 숫자 구조로
 
-- **사용 목적·청중:** 이미지·데이터 구조를 처음 접하는 학습자, 변수나 센서 값을 소개하는 기술 설명.
-- **핵심 Figure:** 저장소의 사과 사진 한 장 → 선택한 4×4 픽셀 확대 → 선택 셀의 RGB/HEX → `H×W×3`.
-- **현재 예제:** 80×80 리샘플 Canvas의 `(52,38)`부터 4×4를 읽고 0-based index 6의 실제 픽셀을 모든 표시값에 연결합니다. 기준 Chromium에서는 RGB `(223,54,56)`, HEX `#DF3638`입니다.
-- **주의:** 새 사진을 쓰면 픽셀·색상·채널 막대·HEX를 실제 래스터에서 다시 계산합니다. 예전 숫자나 장식 색상을 남기지 않습니다. 사진 자체에 불필요한 추가 프레임·그림자를 붙이지 않습니다.
-- **가이드:** [상세 명세](docs/REFERENCE_PAGE_SPECS.md#01-concept), [Figure 제작](docs/FIGURE_PRODUCTION_STANDARD.md).
+- **목적:** Vision AI 입문자가 실사 사진의 픽셀, 각 RGB 8-bit 채널 세 값, 이미지 전체의 H×W×3(HWC) 배열을 하나의 그림에서 이해합니다. CNN·Kernel·Feature Map·Classification은 제외합니다.
+- **Figure 흐름:** 왼쪽 사진의 ROI → Blue 확대 화살표 → 실제 4×4 색상 셀 → index 6의 Navy 선택 표시와 오른쪽 같은 색 Swatch → RGB/HEX, R/G/B 막대 → H × W × 3 텐서. 사진과 픽셀은 각기 하나의 Figure와 간단한 라벨을 사용합니다.
+- **데이터:** 원본은 [사과 사진](templates/html/assets/concept-apple-photo.jpg) 한 장. 사진을 고품질 80×80 Canvas에 리샘플한 뒤 (52,38)부터 4×4의 RGB를 행 우선으로 읽습니다. 선택 index 6 = 로컬 (2,1), 전체 (54,39). 검산용 기준 Chromium 결과는 R=223/G=54/B=56, HEX #DF3638이며 새 환경에서는 실제 계산값을 우선합니다.
+- **연결·디자인:** ROI 위치 left 65%/top 47.5%, 크기 5%×5%는 실제 리샘플 좌표와 같습니다. 선택 셀과 Swatch는 Navy 테두리·작은 공통 선택 표시, 3개 채널 막대는 동일 기준선에서 값/255×100%로 계산합니다(분류 확률 아님). 초기값은 중립 placeholder이며 잘못된 RGB 숫자를 하드코딩하지 않습니다. White 카드 2개, 로컬 Pretendard Variable, 전체 자간 −1pt, Navy/Blue/Teal을 보존합니다.
+- **재현:** [편집 가능한 HTML](templates/html/concept.html) · [PNG 프리뷰](previews/html-concept.png) · [상세 명세](docs/REFERENCE_PAGE_SPECS.md#01-concept) · [Figure 제작 표준](docs/FIGURE_PRODUCTION_STANDARD.md). 새 이미지로 교체할 경우 ROI·16개 픽셀·선택 좌표·수치·HEX·Swatch·막대·접근성 문구·프리뷰를 동기 검증합니다. 6개 Chromium 화면에서 위치·폰트·오버플로·Footer를 검사합니다.
 
 ## 02 Process · 입력 이미지에서 클래스별 예측 확률로
 
