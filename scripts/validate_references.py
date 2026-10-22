@@ -28,7 +28,58 @@ def check_concept(page):
     assert r['rgb']=='RGB ('+', '.join(map(str,rgb))+')'
     assert r['hex']=='#'+''.join(f'{v:02X}' for v in rgb)
     assert all(abs(a-100*b/255)<.001 for a,b in zip(r['bars'],rgb))
-    return {'resample':[80,80],'roi':[52,38,4,4],'selected_index':6,'rgb':rgb,'hex':r['hex'],'all_16_swatches_match':True}
+    extra=page.evaluate('''() => {
+        const box=e=>{const b=e.getBoundingClientRect();return {x:b.x,y:b.y,
+            right:b.right,bottom:b.bottom,width:b.width,height:b.height,
+            cx:b.x+b.width/2,cy:b.y+b.height/2}};
+        const image=document.querySelector('#concept-image');
+        const frame=box(document.querySelector('.image-frame'));
+        const pixels=box(document.querySelector('.pixel-frame'));
+        const arrow=box(document.querySelector('.zoom-arrow'));
+        const photo=box(document.querySelector('.photo-wrap'));
+        const roi=box(document.querySelector('.photo-roi'));
+        const panels=[...document.querySelectorAll('.concept-panel')].map(box);
+        const labels=[...document.querySelectorAll('.figure-label')].map(box);
+        const selected=document.querySelector('.pixel-block .selected');
+        const swatch=document.querySelector('.selected-color .swatch');
+        return {
+            viewport:innerWidth,imageLoaded:image.complete && image.naturalWidth>0,
+            state:document.querySelector('.concept-slide').dataset.sampled,
+            selectedIndex:[...selected.parentNode.children].indexOf(selected),
+            declaredIndex:Number(selected.dataset.selectedIndex),
+            selectedTitle:selected.title,
+            swatchComputed:getComputedStyle(swatch).backgroundColor,
+            pixelComputed:getComputedStyle(selected).backgroundColor,
+            selectedOutline:getComputedStyle(selected).outlineStyle,
+            roi:{left:(roi.x-photo.x)/photo.width,top:(roi.y-photo.y)/photo.height,
+                width:roi.width/photo.width,height:roi.height/photo.height},
+            fig:{frame,pixels,arrow,labels,panels},
+            placeholderCount:[...document.querySelectorAll('.channel-value .number')]
+                .filter(e=>e.textContent==='—').length,
+            channelCount:document.querySelectorAll('.channel-value').length,
+            actualCellCount:document.querySelectorAll('.pixel-block span').length
+        };
+    }''')
+    assert extra['state']=='true' and extra['imageLoaded']
+    assert extra['selectedIndex']==extra['declaredIndex']==6
+    assert extra['actualCellCount']==16 and extra['channelCount']==3
+    assert extra['placeholderCount']==0
+    assert extra['selectedTitle']=='RGB ('+', '.join(map(str,rgb))+')'
+    assert extra['pixelComputed']==extra['swatchComputed']=='rgb('+', '.join(map(str,rgb))+')'
+    assert extra['selectedOutline']=='solid'
+    for key,expected in [('left',.65),('top',.475),('width',.05),('height',.05)]:
+        assert abs(extra['roi'][key]-expected)<.003,(key,extra['roi'])
+    fig=extra['fig']
+    assert abs(fig['frame']['cy']-fig['pixels']['cy'])<1.5,(extra['viewport'],fig)
+    assert abs(fig['arrow']['cy']-fig['frame']['cy'])<1.5,(extra['viewport'],fig)
+    assert abs(fig['labels'][0]['y']-fig['labels'][1]['y'])<1.5,(extra['viewport'],fig)
+    if extra['viewport']>900:
+        assert abs(fig['panels'][0]['y']-fig['panels'][1]['y'])<1.5
+        assert abs(fig['panels'][0]['bottom']-fig['panels'][1]['bottom'])<1.5
+    return {'resample':[80,80],'roi':[52,38,4,4],'selected_index':6,
+            'selected_xy':[54,39],'rgb':rgb,'hex':r['hex'],
+            'all_16_swatches_match':True,'swatch_matches_rgb':True,
+            'roi_normalized':extra['roi'],'figure_alignment_verified':True}
 
 def check_motif(page,name):
     points=[0,1,63,64,65,32*64+32,4095]
