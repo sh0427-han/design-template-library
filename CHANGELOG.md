@@ -1,9 +1,24 @@
 # Changelog
 
+## 2026-10-22 · 최종 HTML 통합
+
+- #2·#3은 PR #9, #4는 PR #11, #6은 PR #10의 최종 소스를 선택.
+- 로컬 #5·#7 승인본과 상세 패턴 문서를 통합 브랜치에 포함.
+- #6은 두 Conv/ReLU/MaxPool Block → Flatten 8192 → FC → Softmax로 확정.
+- 공통 CSS에서 공식 로컬 Pretendard를 제공하고 실제 렌더링 글꼴을 검증.
+- #4의 원소별 곱 기호를 SVG로 표현해 글리프 폴백 제거.
+- 8종 공통 검증·프리뷰와 #5 경계값/재사용 검증을 정리.
+- README·카탈로그·디자인 시스템·Figure 표준·페이지 명세·재사용 문서 최신화.
+- PR별 자동 커밋 워크플로를 읽기 전용 공통 CI로 통합.
+
+위 항목은 [통합 PR #12](https://github.com/sh0427-han/design-template-library/pull/12)에 포함됩니다. #5·#7 원본과 통합 브랜치 Push를 완료했으며, 검증·선택·원격 결과 확인 방법은 [통합 보고서](docs/INTEGRATION_REPORT_2026-10-22.md)에 기록합니다.
+
+## 2026-10-21
+
+- 8종 독립 HTML 패턴·실제 사진·픽셀 정합성과 16:9/모바일 프레임 개선.
+- 기존 PPTX 자산·생성 스크립트 삭제, 지원 범위를 HTML Scroll/Slide로 정리.
+
 ## 2026-10-20
 
-- Retained the three editable Concept / Process / Comparison HTML/PPTX references.
-- Improved Dual-mode slides 1, 2, 3 and 5 with diagrams and computed numerical examples.
-- Removed generic production notes and adjusted presentation subtitles.
-- Left-aligned and widened the Scroll textbook layout.
-- Integrated all references into one HTML gallery and documented ongoing refinement.
+- 공통 디자인 시스템과 Scroll/Slide 콘텐츠·계산 공유 예제 도입.
+- 계산 가능한 도식과 문장 단위 배치, 연속 읽기·페이지 탐색 정리.

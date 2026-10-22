@@ -1,74 +1,50 @@
-# How to use this library
+# 사용 방법 · HTML 전용
 
-## 1. HTML 미리보기
+이 문서는 빠른 실행·편집 요령입니다. 목적별 문서 지도는 [README](../README.md), 실제 패턴 선택은 [카탈로그](../TEMPLATE_CATALOG.md)를 참고합니다. 지원 결과물은 HTML Scroll / Slide이며 PPTX 파일·생성 경로는 없습니다.
 
-`templates/html/index.html`을 브라우저에서 열면 각 디자인 샘플로 이동할 수 있습니다. HTML 내용은 각 페이지에서, 색·간격·글꼴은 `styles.css`에서 수정합니다.
+## 실행
 
-## 2. PowerPoint 수정·재생성
-
-`templates/pptx/technical-slide-templates.pptx`는 편집 가능한 슬라이드 3장입니다. PPT 프로그램에서 텍스트와 도형을 직접 수정할 수 있습니다.
-
-재생성 시:
+공통 CSS·사진·폰트의 경로를 유지하기 위해 **저장소 루트**에서 서버를 실행합니다.
 
 ```bash
-python -m pip install -r templates/pptx/requirements.txt
-python templates/pptx/build_templates.py
-```
-
-생성 코드는 동일한 이름의 PPTX를 새로 저장하므로 직접 수정한 PPTX는 미리 백업해야 합니다.
-
-## 3. ChatGPT 요청 예시
-
-> `https://github.com/sh0427-han/design-template-library`의 `process` 템플릿과 `DESIGN_SYSTEM.md`를 참조하여 CNN 아키텍처 설명 슬라이드 2장을 만들어줘. 기존 강의자료의 스타일·순서를 우선하고, 템플릿을 적용하기 전에 실제 파일을 확인해줘.
-
-## 4. Codex 연동
-
-다른 프로젝트의 `AGENTS.md`에 다음 부분을 넣을 수 있습니다.
-
-```md
-## Slide design reference
-
-Reference repo: https://github.com/sh0427-han/design-template-library
-Read DESIGN_SYSTEM.md and TEMPLATE_CATALOG.md (if accessible) before adding
-PPT/HTML slide designs. Preserve this project's existing layout and content
-requirements. Do not edit the reference repo unless asked.
-```
-
-**참고:** 경로를 기재하는 것만으로 다른 계정/저장소 접근 권한이 자동 부여되지는 않습니다.
-
-## 5. 신규 템플릿 등록
-
-1. 사용 목적과 ID(`kebab-case`) 확정
-2. 원본 HTML/PPT 작성
-3. 16:9 화면 렌더링 및 텍스트 잘림 검사
-4. `previews/`에 실제 PNG 캡처 반영
-5. `TEMPLATE_CATALOG.md`의 목록과 선택 기준 갱신
-
-외부 Figure를 활용한 경우 미리보기 또는 해당 원본 근처에 원문 출처 URL을 작성합니다.
-
-## Global character spacing
-
-- Entire library standard: **condensed 1.0 pt** (`-1pt`), for headings, body, labels, footnotes and gallery.
-- HTML: shared `--character-spacing` CSS token; do not use per-component exceptions.
-- PPTX: `CHARACTER_SPACING_PT` is applied in the common `textbox()` helper to every editable run; inspect `a:rPr@spc="-100"` after regeneration.
-- Review previews after changing spacing: word wrapping and line breaks can change.
-
-
-## 6. Scroll / Slide 이중 모드 실행
-
-```bash
-# repository root
 python -m http.server 8000
 ```
 
-브라우저에서 `http://localhost:8000/templates/dual-mode-learning/index.html`에 접속합니다.
+- `http://localhost:8000/templates/html/index.html`: 8종 갤러리
+- `http://localhost:8000/templates/dual-mode-learning/scroll.html`: 연속 읽기
+- `http://localhost:8000/templates/dual-mode-learning/slides.html`: 페이지 전환
 
-- Scroll: 왼쪽 목차/세로 스크롤/상세 설명/필터 실습
-- Slide: 16:9, 이전/다음 버튼, 화살표, PageUp/PageDown, URL hash
-- 동일한 `assets/js/lesson.js`와 `assets/js/lab.js`를 사용합니다.
-- 공통 테마는 `templates/html/styles.css`에서 상속하며 문자 간격은 모두 -1pt입니다.
+## 무엇을 편집하는가
 
+- 내용·도형·수식: 해당 `templates/html/<type>.html`과 연결된 JS.
+- 공통 색상·폰트·자간: `templates/html/styles.css`.
+- 8종 프레임·반응형: `reference-layout.css`.
+- 특정 페이지 보정: 그 페이지의 클래스 안에서 작성.
+- 실제 데이터·계산 조건: [페이지 상세 명세](REFERENCE_PAGE_SPECS.md)와 함께 수정.
 
-## 7. 통합 갤러리
+원본을 다른 프로젝트로 복사할 때 CSS·JS·사진뿐 아니라 `assets/fonts/pretendard`와 라이선스를 함께 가져갑니다. #5의 공유용 단일 HTML은 폰트까지 내장한 생성본이며, 수정은 원본에서 합니다.
 
-[HTML 갤러리](../templates/html/index.html)에서 기본 3종과 Dual-mode 예시를 함께 확인할 수 있습니다. 기본 3종에는 편집 가능한 PPTX가 있으며, 새 인터랙티브 5장은 HTML/CSS/JavaScript 기반이고 PPTX 버전은 아직 없습니다. 모든 예시는 계속 개선합니다.
+## 검증·프리뷰
+
+```bash
+python -m pip install playwright
+python -m playwright install chromium
+python scripts/check_sources.py
+python scripts/verify_character_spacing.py
+python scripts/validate_references.py
+python scripts/check_interactive.py
+python scripts/verify_pretendard.py
+python scripts/check_documentation.py
+```
+
+대표 프리뷰는 `previews/html-*`, 공통 결과는 [reference-validation.json](../previews/review/reference-validation.json), 화면별 PNG는 기본 `/tmp/reference-integration-review`입니다. [검토 가이드](REFERENCE_REVIEW_GUIDE.md)의 6개 화면과 직접 시각 확인을 수행합니다.
+
+## 요청문 예시
+
+> 이 저장소의 AGENTS, DESIGN_SYSTEM, Figure 제작 표준과 페이지 상세 명세를 읽고, 대상 독자를 위한 HTML Scroll/Slide 자료를 만들어줘. 내용에 맞는 패턴만 선택하고 편집 가능한 도형·수식으로 재구성해줘. 실제 데이터와 모식도를 구분하고, 로컬 Pretendard·전체 −1pt를 유지해줘. 독립 계산과 실제 글꼴·6개 화면을 검증하고 다른 데이터 구성에서도 재사용을 확인한 뒤 문서와 프리뷰를 갱신해줘.
+
+## 다른 저장소에 적용
+
+다른 프로젝트의 스타일·순서·콘텐츠 요구를 우선합니다. 이 저장소의 경로를 기재하는 것만으로 접근 권한이 생기는 것은 아닙니다. 다른 저장소 수정·배포는 사용자가 지시한 범위 안에서 진행합니다.
+
+새 유형을 등록할 때는 목적·ID·원본·검증·대표 프리뷰·카탈로그·상세 명세를 함께 추가합니다. 절차는 [재사용 워크플로](REFERENCE_REUSE_WORKFLOW.md)를 따릅니다.

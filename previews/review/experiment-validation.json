@@ -1,0 +1,1943 @@
+{
+  "status": "passed",
+  "started_utc": "2026-10-22T08:37:05.554705+00:00",
+  "viewports": [
+    [
+      1600,
+      950
+    ],
+    [
+      1440,
+      810
+    ],
+    [
+      1366,
+      768
+    ],
+    [
+      1280,
+      720
+    ],
+    [
+      900,
+      900
+    ],
+    [
+      390,
+      844
+    ]
+  ],
+  "templates": [
+    "experiment"
+  ],
+  "cases": [
+    {
+      "template": "experiment",
+      "viewport": [
+        1600,
+        950
+      ],
+      "technical": {
+        "slide": {
+          "x": 80,
+          "y": 70,
+          "right": 1520,
+          "bottom": 880,
+          "width": 1440,
+          "height": 810
+        },
+        "content": {
+          "x": 146,
+          "y": 272.21875,
+          "right": 1454,
+          "bottom": 805,
+          "width": 1308,
+          "height": 532.78125
+        },
+        "footer": {
+          "x": 146,
+          "y": 820,
+          "right": 1454,
+          "bottom": 850,
+          "width": 1308,
+          "height": 30
+        },
+        "cards": [
+          {
+            "x": 146,
+            "y": 272.21875,
+            "right": 722.53125,
+            "bottom": 805,
+            "width": 576.53125,
+            "height": 532.78125
+          },
+          {
+            "x": 742.53125,
+            "y": 272.21875,
+            "right": 1454,
+            "bottom": 805,
+            "width": 711.46875,
+            "height": 532.78125
+          }
+        ],
+        "table": {
+          "x": 171,
+          "y": 397.71875,
+          "right": 697.53125,
+          "bottom": 702.671875,
+          "width": 526.53125,
+          "height": 304.953125
+        },
+        "labels": {
+          "columns": [
+            "실제 이상",
+            "실제 정상"
+          ],
+          "rows": [
+            "예측 이상",
+            "예측 정상"
+          ]
+        },
+        "axisErrors": {
+          "gt": 0,
+          "prediction": 0,
+          "columns": [
+            0,
+            0
+          ],
+          "rows": [
+            0,
+            0
+          ]
+        },
+        "centering": [
+          {
+            "code": "FP",
+            "xErrors": [
+              0.0078125,
+              0.0078125
+            ],
+            "yError": 0,
+            "box": {
+              "x": 512.765625,
+              "y": 489.703125,
+              "right": 689.53125,
+              "bottom": 590.1875,
+              "width": 176.765625,
+              "height": 100.484375
+            }
+          },
+          {
+            "code": "TP",
+            "xErrors": [
+              0.0078125,
+              0.0078125
+            ],
+            "yError": 0,
+            "box": {
+              "x": 328,
+              "y": 489.703125,
+              "right": 504.765625,
+              "bottom": 590.1875,
+              "width": 176.765625,
+              "height": 100.484375
+            }
+          },
+          {
+            "code": "TN",
+            "xErrors": [
+              0,
+              0.0078125
+            ],
+            "yError": 0,
+            "box": {
+              "x": 512.765625,
+              "y": 596.1875,
+              "right": 689.53125,
+              "bottom": 696.671875,
+              "width": 176.765625,
+              "height": 100.484375
+            }
+          },
+          {
+            "code": "FN",
+            "xErrors": [
+              0.0078125,
+              0
+            ],
+            "yError": 0,
+            "box": {
+              "x": 328,
+              "y": 596.1875,
+              "right": 504.765625,
+              "bottom": 696.671875,
+              "width": 176.765625,
+              "height": 100.484375
+            }
+          }
+        ],
+        "metrics": [
+          {
+            "name": "accuracy",
+            "box": {
+              "x": 767.53125,
+              "y": 374.71875,
+              "right": 1092.265625,
+              "bottom": 549.5,
+              "width": 324.734375,
+              "height": 174.78125
+            },
+            "value": "75.0%",
+            "formula": "(TP + TN) / (TP + TN + FP + FN)",
+            "fraction": [
+              "TP + TN",
+              "TP + TN + FP + FN"
+            ],
+            "calculation": "= 9/12 = 75.0%"
+          },
+          {
+            "name": "precision",
+            "box": {
+              "x": 1104.265625,
+              "y": 374.71875,
+              "right": 1429,
+              "bottom": 549.5,
+              "width": 324.734375,
+              "height": 174.78125
+            },
+            "value": "80.0%",
+            "formula": "TP / (TP + FP)",
+            "fraction": [
+              "TP",
+              "TP + FP"
+            ],
+            "calculation": "= 4/5 = 80.0%"
+          },
+          {
+            "name": "recall",
+            "box": {
+              "x": 767.53125,
+              "y": 561.5,
+              "right": 1092.265625,
+              "bottom": 780,
+              "width": 324.734375,
+              "height": 218.5
+            },
+            "value": "66.7%",
+            "formula": "TP / (TP + FN)",
+            "fraction": [
+              "TP",
+              "TP + FN"
+            ],
+            "calculation": "= 4/6 = 66.7%"
+          },
+          {
+            "name": "f1",
+            "box": {
+              "x": 1104.265625,
+              "y": 561.5,
+              "right": 1429,
+              "bottom": 780,
+              "width": 324.734375,
+              "height": 218.5
+            },
+            "value": "72.7%",
+            "formula": "2TP / (2TP + FP + FN)",
+            "fraction": [
+              "2TP",
+              "2TP + FP + FN"
+            ],
+            "calculation": "= 8/11 = 72.7%"
+          }
+        ],
+        "overflow": [],
+        "badTypography": [],
+        "pageWidth": 1600,
+        "dividerGaps": {
+          "left": 14.25,
+          "right": 14.28125
+        },
+        "counts": [
+          {
+            "code": "TP",
+            "count": 4,
+            "headers": "pred-anomaly gt-anomaly",
+            "background": "rgb(227, 246, 243)"
+          },
+          {
+            "code": "FP",
+            "count": 1,
+            "headers": "pred-anomaly gt-normal",
+            "background": "rgb(255, 240, 224)"
+          },
+          {
+            "code": "FN",
+            "count": 2,
+            "headers": "pred-normal gt-anomaly",
+            "background": "rgb(255, 240, 224)"
+          },
+          {
+            "code": "TN",
+            "count": 5,
+            "headers": "pred-normal gt-normal",
+            "background": "rgb(227, 246, 243)"
+          }
+        ],
+        "dividers": {
+          "gt": "1px",
+          "prediction": "1px"
+        },
+        "fontsLoaded": 1
+      },
+      "fonts": {
+        "elements": 53,
+        "families": {
+          "Pretendard Variable": 514
+        },
+        "fallback": [],
+        "unpainted": [],
+        "bad_spacing": [],
+        "loaded": {
+          "counts": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "faces": [
+            {
+              "family": "Pretendard Variable",
+              "weight": "100 900",
+              "status": "loaded"
+            }
+          ]
+        }
+      },
+      "geometry": {
+        "slide": {
+          "x": 80,
+          "y": 70,
+          "width": 1440,
+          "height": 810,
+          "right": 1520,
+          "bottom": 880
+        },
+        "outside": [],
+        "overflow": [],
+        "footerOverlap": [],
+        "spacing": [],
+        "clippedText": [],
+        "arrowErrors": [],
+        "titleLines": 1,
+        "subtitleLines": 1,
+        "pageWidth": 1600,
+        "card_padding": [
+          {
+            "card": "experiment-card",
+            "escaped": []
+          },
+          {
+            "card": "experiment-card",
+            "escaped": []
+          }
+        ]
+      }
+    },
+    {
+      "template": "experiment",
+      "viewport": [
+        1440,
+        810
+      ],
+      "technical": {
+        "slide": {
+          "x": 35.5625,
+          "y": 20,
+          "right": 1404.4375,
+          "bottom": 790,
+          "width": 1368.875,
+          "height": 770
+        },
+        "content": {
+          "x": 98.296875,
+          "y": 212.1875,
+          "right": 1341.703125,
+          "bottom": 718.78125,
+          "width": 1243.40625,
+          "height": 506.59375
+        },
+        "footer": {
+          "x": 98.296875,
+          "y": 733.03125,
+          "right": 1341.703125,
+          "bottom": 761.484375,
+          "width": 1243.40625,
+          "height": 28.453125
+        },
+        "cards": [
+          {
+            "x": 98.296875,
+            "y": 212.1875,
+            "right": 646.359375,
+            "bottom": 718.78125,
+            "width": 548.0625,
+            "height": 506.59375
+          },
+          {
+            "x": 665.359375,
+            "y": 212.1875,
+            "right": 1341.703125,
+            "bottom": 718.78125,
+            "width": 676.34375,
+            "height": 506.59375
+          }
+        ],
+        "table": {
+          "x": 122.109375,
+          "y": 331.4375,
+          "right": 622.546875,
+          "bottom": 617.109375,
+          "width": 500.4375,
+          "height": 285.671875
+        },
+        "labels": {
+          "columns": [
+            "실제 이상",
+            "실제 정상"
+          ],
+          "rows": [
+            "예측 이상",
+            "예측 정상"
+          ]
+        },
+        "axisErrors": {
+          "gt": 0,
+          "prediction": 0,
+          "columns": [
+            0,
+            0
+          ],
+          "rows": [
+            0,
+            0
+          ]
+        },
+        "centering": [
+          {
+            "code": "FP",
+            "xErrors": [
+              0.0078125,
+              0
+            ],
+            "yError": 0,
+            "box": {
+              "x": 446.03125,
+              "y": 416.109375,
+              "right": 615.546875,
+              "bottom": 511.609375,
+              "width": 169.515625,
+              "height": 95.5
+            }
+          },
+          {
+            "code": "TP",
+            "xErrors": [
+              0.0078125,
+              0.0078125
+            ],
+            "yError": 0,
+            "box": {
+              "x": 269.515625,
+              "y": 416.109375,
+              "right": 439.03125,
+              "bottom": 511.609375,
+              "width": 169.515625,
+              "height": 95.5
+            }
+          },
+          {
+            "code": "TN",
+            "xErrors": [
+              0,
+              0
+            ],
+            "yError": 0,
+            "box": {
+              "x": 446.03125,
+              "y": 516.609375,
+              "right": 615.546875,
+              "bottom": 612.109375,
+              "width": 169.515625,
+              "height": 95.5
+            }
+          },
+          {
+            "code": "FN",
+            "xErrors": [
+              0,
+              0
+            ],
+            "yError": 0,
+            "box": {
+              "x": 269.515625,
+              "y": 516.609375,
+              "right": 439.03125,
+              "bottom": 612.109375,
+              "width": 169.515625,
+              "height": 95.5
+            }
+          }
+        ],
+        "metrics": [
+          {
+            "name": "accuracy",
+            "box": {
+              "x": 689.171875,
+              "y": 309.59375,
+              "right": 997.828125,
+              "bottom": 475.796875,
+              "width": 308.65625,
+              "height": 166.203125
+            },
+            "value": "75.0%",
+            "formula": "(TP + TN) / (TP + TN + FP + FN)",
+            "fraction": [
+              "TP + TN",
+              "TP + TN + FP + FN"
+            ],
+            "calculation": "= 9/12 = 75.0%"
+          },
+          {
+            "name": "precision",
+            "box": {
+              "x": 1009.234375,
+              "y": 309.59375,
+              "right": 1317.890625,
+              "bottom": 475.796875,
+              "width": 308.65625,
+              "height": 166.203125
+            },
+            "value": "80.0%",
+            "formula": "TP / (TP + FP)",
+            "fraction": [
+              "TP",
+              "TP + FP"
+            ],
+            "calculation": "= 4/5 = 80.0%"
+          },
+          {
+            "name": "recall",
+            "box": {
+              "x": 689.171875,
+              "y": 487.203125,
+              "right": 997.828125,
+              "bottom": 694.953125,
+              "width": 308.65625,
+              "height": 207.75
+            },
+            "value": "66.7%",
+            "formula": "TP / (TP + FN)",
+            "fraction": [
+              "TP",
+              "TP + FN"
+            ],
+            "calculation": "= 4/6 = 66.7%"
+          },
+          {
+            "name": "f1",
+            "box": {
+              "x": 1009.234375,
+              "y": 487.203125,
+              "right": 1317.890625,
+              "bottom": 694.953125,
+              "width": 308.65625,
+              "height": 207.75
+            },
+            "value": "72.7%",
+            "formula": "2TP / (2TP + FP + FN)",
+            "fraction": [
+              "2TP",
+              "2TP + FP + FN"
+            ],
+            "calculation": "= 8/11 = 72.7%"
+          }
+        ],
+        "overflow": [],
+        "badTypography": [],
+        "pageWidth": 1440,
+        "dividerGaps": {
+          "left": 13.25,
+          "right": 13.28125
+        },
+        "counts": [
+          {
+            "code": "TP",
+            "count": 4,
+            "headers": "pred-anomaly gt-anomaly",
+            "background": "rgb(227, 246, 243)"
+          },
+          {
+            "code": "FP",
+            "count": 1,
+            "headers": "pred-anomaly gt-normal",
+            "background": "rgb(255, 240, 224)"
+          },
+          {
+            "code": "FN",
+            "count": 2,
+            "headers": "pred-normal gt-anomaly",
+            "background": "rgb(255, 240, 224)"
+          },
+          {
+            "code": "TN",
+            "count": 5,
+            "headers": "pred-normal gt-normal",
+            "background": "rgb(227, 246, 243)"
+          }
+        ],
+        "dividers": {
+          "gt": "1.05195px",
+          "prediction": "1.05195px"
+        },
+        "fontsLoaded": 1
+      },
+      "fonts": {
+        "elements": 53,
+        "families": {
+          "Pretendard Variable": 514
+        },
+        "fallback": [],
+        "unpainted": [],
+        "bad_spacing": [],
+        "loaded": {
+          "counts": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "faces": [
+            {
+              "family": "Pretendard Variable",
+              "weight": "100 900",
+              "status": "loaded"
+            }
+          ]
+        }
+      },
+      "geometry": {
+        "slide": {
+          "x": 35.5625,
+          "y": 20,
+          "width": 1368.875,
+          "height": 770,
+          "right": 1404.4375,
+          "bottom": 790
+        },
+        "outside": [],
+        "overflow": [],
+        "footerOverlap": [],
+        "spacing": [],
+        "clippedText": [],
+        "arrowErrors": [],
+        "titleLines": 1,
+        "subtitleLines": 1,
+        "pageWidth": 1440,
+        "card_padding": [
+          {
+            "card": "experiment-card",
+            "escaped": []
+          },
+          {
+            "card": "experiment-card",
+            "escaped": []
+          }
+        ]
+      }
+    },
+    {
+      "template": "experiment",
+      "viewport": [
+        1366,
+        768
+      ],
+      "technical": {
+        "slide": {
+          "x": 35.890625,
+          "y": 20,
+          "right": 1330.109375,
+          "bottom": 748,
+          "width": 1294.21875,
+          "height": 728
+        },
+        "content": {
+          "x": 95.203125,
+          "y": 202.765625,
+          "right": 1270.796875,
+          "bottom": 680.703125,
+          "width": 1175.59375,
+          "height": 477.9375
+        },
+        "footer": {
+          "x": 95.203125,
+          "y": 694.171875,
+          "right": 1270.796875,
+          "bottom": 721.046875,
+          "width": 1175.59375,
+          "height": 26.875
+        },
+        "cards": [
+          {
+            "x": 95.203125,
+            "y": 202.765625,
+            "right": 613.375,
+            "bottom": 680.703125,
+            "width": 518.171875,
+            "height": 477.9375
+          },
+          {
+            "x": 631.34375,
+            "y": 202.765625,
+            "right": 1270.78125,
+            "bottom": 680.703125,
+            "width": 639.4375,
+            "height": 477.9375
+          }
+        ],
+        "table": {
+          "x": 117.765625,
+          "y": 315.546875,
+          "right": 590.8125,
+          "bottom": 587.34375,
+          "width": 473.046875,
+          "height": 271.796875
+        },
+        "labels": {
+          "columns": [
+            "실제 이상",
+            "실제 정상"
+          ],
+          "rows": [
+            "예측 이상",
+            "예측 정상"
+          ]
+        },
+        "axisErrors": {
+          "gt": 0,
+          "prediction": 0,
+          "columns": [
+            0,
+            0
+          ],
+          "rows": [
+            0,
+            0
+          ]
+        },
+        "centering": [
+          {
+            "code": "FP",
+            "xErrors": [
+              0,
+              0.0078125
+            ],
+            "yError": 0,
+            "box": {
+              "x": 424.546875,
+              "y": 396.75,
+              "right": 583.8125,
+              "bottom": 487.046875,
+              "width": 159.265625,
+              "height": 90.296875
+            }
+          },
+          {
+            "code": "TP",
+            "xErrors": [
+              0.0078125,
+              0
+            ],
+            "yError": 0,
+            "box": {
+              "x": 258.28125,
+              "y": 396.75,
+              "right": 417.546875,
+              "bottom": 487.046875,
+              "width": 159.265625,
+              "height": 90.296875
+            }
+          },
+          {
+            "code": "TN",
+            "xErrors": [
+              0.0078125,
+              0.0078125
+            ],
+            "yError": 0,
+            "box": {
+              "x": 424.546875,
+              "y": 492.046875,
+              "right": 583.8125,
+              "bottom": 582.34375,
+              "width": 159.265625,
+              "height": 90.296875
+            }
+          },
+          {
+            "code": "FN",
+            "xErrors": [
+              0.0078125,
+              0
+            ],
+            "yError": 0,
+            "box": {
+              "x": 258.28125,
+              "y": 492.046875,
+              "right": 417.546875,
+              "bottom": 582.34375,
+              "width": 159.265625,
+              "height": 90.296875
+            }
+          }
+        ],
+        "metrics": [
+          {
+            "name": "accuracy",
+            "box": {
+              "x": 653.90625,
+              "y": 294.890625,
+              "right": 945.671875,
+              "bottom": 451.53125,
+              "width": 291.765625,
+              "height": 156.640625
+            },
+            "value": "75.0%",
+            "formula": "(TP + TN) / (TP + TN + FP + FN)",
+            "fraction": [
+              "TP + TN",
+              "TP + TN + FP + FN"
+            ],
+            "calculation": "= 9/12 = 75.0%"
+          },
+          {
+            "name": "precision",
+            "box": {
+              "x": 956.453125,
+              "y": 294.890625,
+              "right": 1248.21875,
+              "bottom": 451.53125,
+              "width": 291.765625,
+              "height": 156.640625
+            },
+            "value": "80.0%",
+            "formula": "TP / (TP + FP)",
+            "fraction": [
+              "TP",
+              "TP + FP"
+            ],
+            "calculation": "= 4/5 = 80.0%"
+          },
+          {
+            "name": "recall",
+            "box": {
+              "x": 653.90625,
+              "y": 462.3125,
+              "right": 945.671875,
+              "bottom": 658.125,
+              "width": 291.765625,
+              "height": 195.8125
+            },
+            "value": "66.7%",
+            "formula": "TP / (TP + FN)",
+            "fraction": [
+              "TP",
+              "TP + FN"
+            ],
+            "calculation": "= 4/6 = 66.7%"
+          },
+          {
+            "name": "f1",
+            "box": {
+              "x": 956.453125,
+              "y": 462.3125,
+              "right": 1248.21875,
+              "bottom": 658.125,
+              "width": 291.765625,
+              "height": 195.8125
+            },
+            "value": "72.7%",
+            "formula": "2TP / (2TP + FP + FN)",
+            "fraction": [
+              "2TP",
+              "2TP + FP + FN"
+            ],
+            "calculation": "= 8/11 = 72.7%"
+          }
+        ],
+        "overflow": [],
+        "badTypography": [],
+        "pageWidth": 1366,
+        "dividerGaps": {
+          "left": 12.734375,
+          "right": 12.75
+        },
+        "counts": [
+          {
+            "code": "TP",
+            "count": 4,
+            "headers": "pred-anomaly gt-anomaly",
+            "background": "rgb(227, 246, 243)"
+          },
+          {
+            "code": "FP",
+            "count": 1,
+            "headers": "pred-anomaly gt-normal",
+            "background": "rgb(255, 240, 224)"
+          },
+          {
+            "code": "FN",
+            "count": 2,
+            "headers": "pred-normal gt-anomaly",
+            "background": "rgb(255, 240, 224)"
+          },
+          {
+            "code": "TN",
+            "count": 5,
+            "headers": "pred-normal gt-normal",
+            "background": "rgb(227, 246, 243)"
+          }
+        ],
+        "dividers": {
+          "gt": "1.11264px",
+          "prediction": "1.11264px"
+        },
+        "fontsLoaded": 1
+      },
+      "fonts": {
+        "elements": 53,
+        "families": {
+          "Pretendard Variable": 514
+        },
+        "fallback": [],
+        "unpainted": [],
+        "bad_spacing": [],
+        "loaded": {
+          "counts": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "faces": [
+            {
+              "family": "Pretendard Variable",
+              "weight": "100 900",
+              "status": "loaded"
+            }
+          ]
+        }
+      },
+      "geometry": {
+        "slide": {
+          "x": 35.890625,
+          "y": 20,
+          "width": 1294.21875,
+          "height": 728,
+          "right": 1330.109375,
+          "bottom": 748
+        },
+        "outside": [],
+        "overflow": [],
+        "footerOverlap": [],
+        "spacing": [],
+        "clippedText": [],
+        "arrowErrors": [],
+        "titleLines": 1,
+        "subtitleLines": 1,
+        "pageWidth": 1366,
+        "card_padding": [
+          {
+            "card": "experiment-card",
+            "escaped": []
+          },
+          {
+            "card": "experiment-card",
+            "escaped": []
+          }
+        ]
+      }
+    },
+    {
+      "template": "experiment",
+      "viewport": [
+        1280,
+        720
+      ],
+      "technical": {
+        "slide": {
+          "x": 35.5625,
+          "y": 20,
+          "right": 1244.4375,
+          "bottom": 700,
+          "width": 1208.875,
+          "height": 680
+        },
+        "content": {
+          "x": 90.96875,
+          "y": 189.953125,
+          "right": 1189.03125,
+          "bottom": 637.015625,
+          "width": 1098.0625,
+          "height": 447.0625
+        },
+        "footer": {
+          "x": 90.96875,
+          "y": 649.59375,
+          "right": 1189.03125,
+          "bottom": 674.828125,
+          "width": 1098.0625,
+          "height": 25.234375
+        },
+        "cards": [
+          {
+            "x": 90.96875,
+            "y": 189.953125,
+            "right": 574.96875,
+            "bottom": 637.015625,
+            "width": 484,
+            "height": 447.0625
+          },
+          {
+            "x": 591.75,
+            "y": 189.953125,
+            "right": 1189.03125,
+            "bottom": 637.015625,
+            "width": 597.28125,
+            "height": 447.0625
+          }
+        ],
+        "table": {
+          "x": 112.109375,
+          "y": 295.453125,
+          "right": 553.828125,
+          "bottom": 551.359375,
+          "width": 441.71875,
+          "height": 255.90625
+        },
+        "labels": {
+          "columns": [
+            "실제 이상",
+            "실제 정상"
+          ],
+          "rows": [
+            "예측 이상",
+            "예측 정상"
+          ]
+        },
+        "axisErrors": {
+          "gt": 0.00390625,
+          "prediction": 0,
+          "columns": [
+            0,
+            0
+          ],
+          "rows": [
+            0,
+            0
+          ]
+        },
+        "centering": [
+          {
+            "code": "FP",
+            "xErrors": [
+              0,
+              0
+            ],
+            "yError": 0,
+            "box": {
+              "x": 397.78125,
+              "y": 372.671875,
+              "right": 547.828125,
+              "bottom": 457.015625,
+              "width": 150.046875,
+              "height": 84.34375
+            }
+          },
+          {
+            "code": "TP",
+            "xErrors": [
+              0,
+              0
+            ],
+            "yError": 0,
+            "box": {
+              "x": 241.75,
+              "y": 372.671875,
+              "right": 391.78125,
+              "bottom": 457.015625,
+              "width": 150.03125,
+              "height": 84.34375
+            }
+          },
+          {
+            "code": "TN",
+            "xErrors": [
+              0.0078125,
+              0
+            ],
+            "yError": 0,
+            "box": {
+              "x": 397.78125,
+              "y": 462.015625,
+              "right": 547.828125,
+              "bottom": 546.359375,
+              "width": 150.046875,
+              "height": 84.34375
+            }
+          },
+          {
+            "code": "FN",
+            "xErrors": [
+              0,
+              0.0078125
+            ],
+            "yError": 0,
+            "box": {
+              "x": 241.75,
+              "y": 462.015625,
+              "right": 391.78125,
+              "bottom": 546.359375,
+              "width": 150.03125,
+              "height": 84.34375
+            }
+          }
+        ],
+        "metrics": [
+          {
+            "name": "accuracy",
+            "box": {
+              "x": 612.890625,
+              "y": 276.15625,
+              "right": 885.359375,
+              "bottom": 422.65625,
+              "width": 272.46875,
+              "height": 146.5
+            },
+            "value": "75.0%",
+            "formula": "(TP + TN) / (TP + TN + FP + FN)",
+            "fraction": [
+              "TP + TN",
+              "TP + TN + FP + FN"
+            ],
+            "calculation": "= 9/12 = 75.0%"
+          },
+          {
+            "name": "precision",
+            "box": {
+              "x": 895.421875,
+              "y": 276.15625,
+              "right": 1167.890625,
+              "bottom": 422.65625,
+              "width": 272.46875,
+              "height": 146.5
+            },
+            "value": "80.0%",
+            "formula": "TP / (TP + FP)",
+            "fraction": [
+              "TP",
+              "TP + FP"
+            ],
+            "calculation": "= 4/5 = 80.0%"
+          },
+          {
+            "name": "recall",
+            "box": {
+              "x": 612.890625,
+              "y": 432.71875,
+              "right": 885.359375,
+              "bottom": 615.875,
+              "width": 272.46875,
+              "height": 183.15625
+            },
+            "value": "66.7%",
+            "formula": "TP / (TP + FN)",
+            "fraction": [
+              "TP",
+              "TP + FN"
+            ],
+            "calculation": "= 4/6 = 66.7%"
+          },
+          {
+            "name": "f1",
+            "box": {
+              "x": 895.421875,
+              "y": 432.71875,
+              "right": 1167.890625,
+              "bottom": 615.875,
+              "width": 272.46875,
+              "height": 183.15625
+            },
+            "value": "72.7%",
+            "formula": "2TP / (2TP + FP + FN)",
+            "fraction": [
+              "2TP",
+              "2TP + FP + FN"
+            ],
+            "calculation": "= 8/11 = 72.7%"
+          }
+        ],
+        "overflow": [],
+        "badTypography": [],
+        "pageWidth": 1280,
+        "dividerGaps": {
+          "left": 11.625,
+          "right": 11.625
+        },
+        "counts": [
+          {
+            "code": "TP",
+            "count": 4,
+            "headers": "pred-anomaly gt-anomaly",
+            "background": "rgb(227, 246, 243)"
+          },
+          {
+            "code": "FP",
+            "count": 1,
+            "headers": "pred-anomaly gt-normal",
+            "background": "rgb(255, 240, 224)"
+          },
+          {
+            "code": "FN",
+            "count": 2,
+            "headers": "pred-normal gt-anomaly",
+            "background": "rgb(255, 240, 224)"
+          },
+          {
+            "code": "TN",
+            "count": 5,
+            "headers": "pred-normal gt-normal",
+            "background": "rgb(227, 246, 243)"
+          }
+        ],
+        "dividers": {
+          "gt": "1.19118px",
+          "prediction": "1.19118px"
+        },
+        "fontsLoaded": 1
+      },
+      "fonts": {
+        "elements": 53,
+        "families": {
+          "Pretendard Variable": 514
+        },
+        "fallback": [],
+        "unpainted": [],
+        "bad_spacing": [],
+        "loaded": {
+          "counts": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "faces": [
+            {
+              "family": "Pretendard Variable",
+              "weight": "100 900",
+              "status": "loaded"
+            }
+          ]
+        }
+      },
+      "geometry": {
+        "slide": {
+          "x": 35.5625,
+          "y": 20,
+          "width": 1208.875,
+          "height": 680,
+          "right": 1244.4375,
+          "bottom": 700
+        },
+        "outside": [],
+        "overflow": [],
+        "footerOverlap": [],
+        "spacing": [],
+        "clippedText": [],
+        "arrowErrors": [],
+        "titleLines": 1,
+        "subtitleLines": 1,
+        "pageWidth": 1280,
+        "card_padding": [
+          {
+            "card": "experiment-card",
+            "escaped": []
+          },
+          {
+            "card": "experiment-card",
+            "escaped": []
+          }
+        ]
+      }
+    },
+    {
+      "template": "experiment",
+      "viewport": [
+        900,
+        900
+      ],
+      "technical": {
+        "slide": {
+          "x": 16,
+          "y": 16,
+          "right": 884,
+          "bottom": 1375.296875,
+          "width": 868,
+          "height": 1359.296875
+        },
+        "content": {
+          "x": 40,
+          "y": 173.21875,
+          "right": 860,
+          "bottom": 1302.296875,
+          "width": 820,
+          "height": 1129.078125
+        },
+        "footer": {
+          "x": 40,
+          "y": 1317.296875,
+          "right": 860,
+          "bottom": 1345.296875,
+          "width": 820,
+          "height": 28
+        },
+        "cards": [
+          {
+            "x": 40,
+            "y": 173.21875,
+            "right": 860,
+            "bottom": 708.046875,
+            "width": 820,
+            "height": 534.828125
+          },
+          {
+            "x": 40,
+            "y": 728.046875,
+            "right": 860,
+            "bottom": 1302.296875,
+            "width": 820,
+            "height": 574.25
+          }
+        ],
+        "table": {
+          "x": 175,
+          "y": 296.71875,
+          "right": 725,
+          "bottom": 601.671875,
+          "width": 550,
+          "height": 304.953125
+        },
+        "labels": {
+          "columns": [
+            "실제 이상",
+            "실제 정상"
+          ],
+          "rows": [
+            "예측 이상",
+            "예측 정상"
+          ]
+        },
+        "axisErrors": {
+          "gt": 0,
+          "prediction": 0,
+          "columns": [
+            0,
+            0
+          ],
+          "rows": [
+            0,
+            0
+          ]
+        },
+        "centering": [
+          {
+            "code": "FP",
+            "xErrors": [
+              0,
+              0
+            ],
+            "yError": 0,
+            "box": {
+              "x": 528.5,
+              "y": 388.703125,
+              "right": 717,
+              "bottom": 489.1875,
+              "width": 188.5,
+              "height": 100.484375
+            }
+          },
+          {
+            "code": "TP",
+            "xErrors": [
+              0,
+              0
+            ],
+            "yError": 0,
+            "box": {
+              "x": 332,
+              "y": 388.703125,
+              "right": 520.5,
+              "bottom": 489.1875,
+              "width": 188.5,
+              "height": 100.484375
+            }
+          },
+          {
+            "code": "TN",
+            "xErrors": [
+              0.0078125,
+              0
+            ],
+            "yError": 0,
+            "box": {
+              "x": 528.5,
+              "y": 495.1875,
+              "right": 717,
+              "bottom": 595.671875,
+              "width": 188.5,
+              "height": 100.484375
+            }
+          },
+          {
+            "code": "FN",
+            "xErrors": [
+              0,
+              0.0078125
+            ],
+            "yError": 0,
+            "box": {
+              "x": 332,
+              "y": 495.1875,
+              "right": 520.5,
+              "bottom": 595.671875,
+              "width": 188.5,
+              "height": 100.484375
+            }
+          }
+        ],
+        "metrics": [
+          {
+            "name": "accuracy",
+            "box": {
+              "x": 63,
+              "y": 828.546875,
+              "right": 444,
+              "bottom": 1023.546875,
+              "width": 381,
+              "height": 195
+            },
+            "value": "75.0%",
+            "formula": "(TP + TN) / (TP + TN + FP + FN)",
+            "fraction": [
+              "TP + TN",
+              "TP + TN + FP + FN"
+            ],
+            "calculation": "= 9/12 = 75.0%"
+          },
+          {
+            "name": "precision",
+            "box": {
+              "x": 456,
+              "y": 828.546875,
+              "right": 837,
+              "bottom": 1023.546875,
+              "width": 381,
+              "height": 195
+            },
+            "value": "80.0%",
+            "formula": "TP / (TP + FP)",
+            "fraction": [
+              "TP",
+              "TP + FP"
+            ],
+            "calculation": "= 4/5 = 80.0%"
+          },
+          {
+            "name": "recall",
+            "box": {
+              "x": 63,
+              "y": 1035.546875,
+              "right": 444,
+              "bottom": 1279.296875,
+              "width": 381,
+              "height": 243.75
+            },
+            "value": "66.7%",
+            "formula": "TP / (TP + FN)",
+            "fraction": [
+              "TP",
+              "TP + FN"
+            ],
+            "calculation": "= 4/6 = 66.7%"
+          },
+          {
+            "name": "f1",
+            "box": {
+              "x": 456,
+              "y": 1035.546875,
+              "right": 837,
+              "bottom": 1279.296875,
+              "width": 381,
+              "height": 243.75
+            },
+            "value": "72.7%",
+            "formula": "2TP / (2TP + FP + FN)",
+            "fraction": [
+              "2TP",
+              "2TP + FP + FN"
+            ],
+            "calculation": "= 8/11 = 72.7%"
+          }
+        ],
+        "overflow": [],
+        "badTypography": [],
+        "pageWidth": 900,
+        "dividerGaps": {
+          "left": 14.265625,
+          "right": 14.265625
+        },
+        "counts": [
+          {
+            "code": "TP",
+            "count": 4,
+            "headers": "pred-anomaly gt-anomaly",
+            "background": "rgb(227, 246, 243)"
+          },
+          {
+            "code": "FP",
+            "count": 1,
+            "headers": "pred-anomaly gt-normal",
+            "background": "rgb(255, 240, 224)"
+          },
+          {
+            "code": "FN",
+            "count": 2,
+            "headers": "pred-normal gt-anomaly",
+            "background": "rgb(255, 240, 224)"
+          },
+          {
+            "code": "TN",
+            "count": 5,
+            "headers": "pred-normal gt-normal",
+            "background": "rgb(227, 246, 243)"
+          }
+        ],
+        "dividers": {
+          "gt": "1px",
+          "prediction": "1px"
+        },
+        "fontsLoaded": 1
+      },
+      "fonts": {
+        "elements": 53,
+        "families": {
+          "Pretendard Variable": 514
+        },
+        "fallback": [],
+        "unpainted": [],
+        "bad_spacing": [],
+        "loaded": {
+          "counts": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "faces": [
+            {
+              "family": "Pretendard Variable",
+              "weight": "100 900",
+              "status": "loaded"
+            }
+          ]
+        }
+      },
+      "geometry": {
+        "slide": {
+          "x": 16,
+          "y": 16,
+          "width": 868,
+          "height": 1359.296875,
+          "right": 884,
+          "bottom": 1375.296875
+        },
+        "outside": [],
+        "overflow": [],
+        "footerOverlap": [],
+        "spacing": [],
+        "clippedText": [],
+        "arrowErrors": [],
+        "titleLines": 1,
+        "subtitleLines": 1,
+        "pageWidth": 900,
+        "card_padding": [
+          {
+            "card": "experiment-card",
+            "escaped": []
+          },
+          {
+            "card": "experiment-card",
+            "escaped": []
+          }
+        ]
+      }
+    },
+    {
+      "template": "experiment",
+      "viewport": [
+        390,
+        844
+      ],
+      "technical": {
+        "slide": {
+          "x": 10,
+          "y": 10,
+          "right": 380,
+          "bottom": 1771.359375,
+          "width": 370,
+          "height": 1761.359375
+        },
+        "content": {
+          "x": 30,
+          "y": 160.21875,
+          "right": 360,
+          "bottom": 1700.359375,
+          "width": 330,
+          "height": 1540.140625
+        },
+        "footer": {
+          "x": 30,
+          "y": 1715.359375,
+          "right": 360,
+          "bottom": 1743.359375,
+          "width": 330,
+          "height": 28
+        },
+        "cards": [
+          {
+            "x": 30,
+            "y": 160.21875,
+            "right": 360,
+            "bottom": 681.609375,
+            "width": 330,
+            "height": 521.390625
+          },
+          {
+            "x": 30,
+            "y": 701.609375,
+            "right": 360,
+            "bottom": 1700.359375,
+            "width": 330,
+            "height": 998.75
+          }
+        ],
+        "table": {
+          "x": 48,
+          "y": 277.21875,
+          "right": 342,
+          "bottom": 583.015625,
+          "width": 294,
+          "height": 305.796875
+        },
+        "labels": {
+          "columns": [
+            "실제 이상",
+            "실제 정상"
+          ],
+          "rows": [
+            "예측 이상",
+            "예측 정상"
+          ]
+        },
+        "axisErrors": {
+          "gt": 0,
+          "prediction": 0,
+          "columns": [
+            0,
+            0
+          ],
+          "rows": [
+            0,
+            0
+          ]
+        },
+        "centering": [
+          {
+            "code": "FP",
+            "xErrors": [
+              0,
+              0
+            ],
+            "yError": 0,
+            "box": {
+              "x": 249.5,
+              "y": 369.015625,
+              "right": 338,
+              "bottom": 469.015625,
+              "width": 88.5,
+              "height": 100
+            }
+          },
+          {
+            "code": "TP",
+            "xErrors": [
+              0,
+              0.0078125
+            ],
+            "yError": 0,
+            "box": {
+              "x": 157,
+              "y": 369.015625,
+              "right": 245.5,
+              "bottom": 469.015625,
+              "width": 88.5,
+              "height": 100
+            }
+          },
+          {
+            "code": "TN",
+            "xErrors": [
+              0.0078125,
+              0.0078125
+            ],
+            "yError": 0,
+            "box": {
+              "x": 249.5,
+              "y": 476.015625,
+              "right": 338,
+              "bottom": 576.015625,
+              "width": 88.5,
+              "height": 100
+            }
+          },
+          {
+            "code": "FN",
+            "xErrors": [
+              0,
+              0
+            ],
+            "yError": 0,
+            "box": {
+              "x": 157,
+              "y": 476.015625,
+              "right": 245.5,
+              "bottom": 576.015625,
+              "width": 88.5,
+              "height": 100
+            }
+          }
+        ],
+        "metrics": [
+          {
+            "name": "accuracy",
+            "box": {
+              "x": 48,
+              "y": 797.109375,
+              "right": 342,
+              "bottom": 997.546875,
+              "width": 294,
+              "height": 200.4375
+            },
+            "value": "75.0%",
+            "formula": "(TP + TN) / (TP + TN + FP + FN)",
+            "fraction": [
+              "TP + TN",
+              "TP + TN + FP + FN"
+            ],
+            "calculation": "= 9/12 = 75.0%"
+          },
+          {
+            "name": "precision",
+            "box": {
+              "x": 48,
+              "y": 1009.546875,
+              "right": 342,
+              "bottom": 1209.984375,
+              "width": 294,
+              "height": 200.4375
+            },
+            "value": "80.0%",
+            "formula": "TP / (TP + FP)",
+            "fraction": [
+              "TP",
+              "TP + FP"
+            ],
+            "calculation": "= 4/5 = 80.0%"
+          },
+          {
+            "name": "recall",
+            "box": {
+              "x": 48,
+              "y": 1221.984375,
+              "right": 342,
+              "bottom": 1422.421875,
+              "width": 294,
+              "height": 200.4375
+            },
+            "value": "66.7%",
+            "formula": "TP / (TP + FN)",
+            "fraction": [
+              "TP",
+              "TP + FN"
+            ],
+            "calculation": "= 4/6 = 66.7%"
+          },
+          {
+            "name": "f1",
+            "box": {
+              "x": 48,
+              "y": 1434.421875,
+              "right": 342,
+              "bottom": 1682.359375,
+              "width": 294,
+              "height": 247.9375
+            },
+            "value": "72.7%",
+            "formula": "2TP / (2TP + FP + FN)",
+            "fraction": [
+              "2TP",
+              "2TP + FP + FN"
+            ],
+            "calculation": "= 8/11 = 72.7%"
+          }
+        ],
+        "overflow": [],
+        "badTypography": [],
+        "pageWidth": 390,
+        "dividerGaps": {
+          "left": 5.96875,
+          "right": 5.984375
+        },
+        "counts": [
+          {
+            "code": "TP",
+            "count": 4,
+            "headers": "pred-anomaly gt-anomaly",
+            "background": "rgb(227, 246, 243)"
+          },
+          {
+            "code": "FP",
+            "count": 1,
+            "headers": "pred-anomaly gt-normal",
+            "background": "rgb(255, 240, 224)"
+          },
+          {
+            "code": "FN",
+            "count": 2,
+            "headers": "pred-normal gt-anomaly",
+            "background": "rgb(255, 240, 224)"
+          },
+          {
+            "code": "TN",
+            "count": 5,
+            "headers": "pred-normal gt-normal",
+            "background": "rgb(227, 246, 243)"
+          }
+        ],
+        "dividers": {
+          "gt": "1px",
+          "prediction": "1px"
+        },
+        "fontsLoaded": 1
+      },
+      "fonts": {
+        "elements": 53,
+        "families": {
+          "Pretendard Variable": 514
+        },
+        "fallback": [],
+        "unpainted": [],
+        "bad_spacing": [],
+        "loaded": {
+          "counts": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "faces": [
+            {
+              "family": "Pretendard Variable",
+              "weight": "100 900",
+              "status": "loaded"
+            }
+          ]
+        }
+      },
+      "geometry": {
+        "slide": {
+          "x": 10,
+          "y": 10,
+          "width": 370,
+          "height": 1761.359375,
+          "right": 380,
+          "bottom": 1771.359375
+        },
+        "outside": [],
+        "overflow": [],
+        "footerOverlap": [],
+        "spacing": [],
+        "clippedText": [],
+        "arrowErrors": [],
+        "titleLines": 1,
+        "subtitleLines": 1,
+        "pageWidth": 390,
+        "card_padding": [
+          {
+            "card": "experiment-card",
+            "escaped": []
+          },
+          {
+            "card": "experiment-card",
+            "escaped": []
+          }
+        ]
+      }
+    }
+  ],
+  "font_delivery": "original local Pretendard v1.3.9, no CDN interception",
+  "source_sha256": {
+    "templates/html/executive-summary.html": "9717607f3a1c742fe72dd63990d2edaccb5bb0c33b844a43943cdea9b56fe37c",
+    "templates/html/comparison.html": "39f209a04d9ab4a335d8d7a91da9903453b97479ac6ec7e286d6572d3fe15ed3",
+    "templates/html/index.html": "fe3f81b518278aa88fd47e061543e713fe4b153adfaf8547b6a0e9dd6342f043",
+    "templates/html/experiment.html": "711282187d6138e69e2b92ab6f2730387be8cb491d8401d0928d33c96caf62dd",
+    "templates/html/interactive-reference.js": "0756c5facbf831184f561e3941bf37ef0a30a83af3118e6374735d37119951f7",
+    "templates/html/reference-layout.css": "53d908fa3a4cb3e6c8e4c1e7b884df44494b7e4e81a2eda06adb170cbef39f26",
+    "templates/html/styles.css": "e3decf7af6e7acc2d36f675714f502508c5c5876fdc3310fdce877694468dff3",
+    "templates/html/step-by-step.html": "8e7eed2d4bbeaeea3fb644973a0ff99f9e0c075bababf93a8964636197143d3c",
+    "templates/html/interactive.html": "999cc515d9f3ad03dbee7c1437959b79463ad251e890142233471e4ff7722869",
+    "templates/html/concept.html": "9d50ae70c9d63dc257738e2260d3eccf415029baff5726b8f21f13a09da5b018",
+    "templates/html/reference-types.css": "976c72a1d4e736fc6d7f7c328445f4e7feead457f4ef7165ca3926b5615e18b7",
+    "templates/html/architecture.html": "0b40aa7f35960458292b8fd691a0ffcac83e8646993dda516b85e809efac28e1",
+    "templates/html/process.html": "1a6ea8ec1c7cc266b7709dbf9e65eea783a696679de107394d2a89802b4876ce",
+    "templates/html/font-comparison.html": "03591c1effa0a60af07955046d486ebb813464f8c26c7cd7a45ef70e272022d7",
+    "templates/html/assets/concept-apple-photo.jpg": "6a7524a8f5fce2700d50970d21ad7a9912c07ace760d08fd603ba79728e15efc",
+    "templates/html/assets/cnn-feature-maps.js": "b8a71c04fced7a9df2a568c2cd3577af3ddde56b3903cfd2b7d1031fc19d2c05",
+    "templates/html/assets/fonts/pretendard/PretendardVariable.woff2": "9599f12fd42fc0bce1cd50b47a0c022e108d7aa64dd0d1bb0ed44f3282d900b4"
+  },
+  "browser": "154.0.8037.57",
+  "page_errors": [],
+  "failed_requests": [],
+  "http_errors": [],
+  "canonical_preview_sha256": {
+    "previews/html-concept.png": "18f66f5c8b8cc366d00fdd53234a7c51e0cfd5804c46c896fb73e58c99fa2554",
+    "previews/html-process.png": "273a7c3c17bc109f608d7cc382c2d23c392cc525914e64c0d36758e0ffed1ddc",
+    "previews/html-comparison.png": "ef24a100f037534d0828e2e38ef9e0cba12338a001d068a82e48b2111887e71a",
+    "previews/html-step-by-step.jpg": "2390409158a2cb310ddaa9b183fd83c7809b93b5e00f232cbf62612e54fe907f",
+    "previews/html-interactive.jpg": "77dc52445344c0722eb29cb283a7034af3a61b5e19653cf6c452d62d45ce9be1",
+    "previews/html-architecture.jpg": "7654d31d9163133174e587f5b1cccc09cd9b9f5f043cec07a742c723741f4b3b",
+    "previews/html-experiment.jpg": "cbce9de643d76ecd0201be3e671128e3d309d81b49a4b51e2c9bdec0f137fe50",
+    "previews/html-executive-summary.jpg": "0446024bf52616cdc0f2ab604c44e5e4f6482722e7d7648c16d238756500372c"
+  },
+  "finished_utc": "2026-10-22T08:37:45.078555+00:00",
+  "derived_from": "reference-validation.json (same final-source execution)"
+}

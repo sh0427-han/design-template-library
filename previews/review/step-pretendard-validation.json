@@ -1,0 +1,959 @@
+{
+  "status": "passed",
+  "started_utc": "2026-10-22T08:37:05.554705+00:00",
+  "viewports": [
+    [
+      1600,
+      950
+    ],
+    [
+      1440,
+      810
+    ],
+    [
+      1366,
+      768
+    ],
+    [
+      1280,
+      720
+    ],
+    [
+      900,
+      900
+    ],
+    [
+      390,
+      844
+    ]
+  ],
+  "templates": [
+    "step-by-step"
+  ],
+  "cases": [
+    {
+      "template": "step-by-step",
+      "viewport": [
+        1600,
+        950
+      ],
+      "technical": {
+        "input": [
+          [
+            1,
+            2,
+            3,
+            1,
+            0
+          ],
+          [
+            4,
+            5,
+            6,
+            2,
+            1
+          ],
+          [
+            7,
+            8,
+            9,
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            0,
+            4,
+            2
+          ],
+          [
+            1,
+            3,
+            2,
+            1,
+            0
+          ]
+        ],
+        "kernel": [
+          [
+            1,
+            0,
+            -1
+          ],
+          [
+            1,
+            0,
+            -1
+          ],
+          [
+            1,
+            0,
+            -1
+          ]
+        ],
+        "products": [
+          1,
+          0,
+          -3,
+          4,
+          0,
+          -6,
+          7,
+          0,
+          -9
+        ],
+        "output": [
+          [
+            -6,
+            9,
+            16
+          ],
+          [
+            -2,
+            5,
+            11
+          ],
+          [
+            -1,
+            4,
+            8
+          ]
+        ],
+        "stride": 1,
+        "padding": 0,
+        "bias": 0,
+        "kernel_flipped": false
+      },
+      "fonts": {
+        "elements": 111,
+        "families": {
+          "Pretendard Variable": 820
+        },
+        "fallback": [],
+        "unpainted": [],
+        "bad_spacing": [],
+        "loaded": {
+          "counts": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "faces": [
+            {
+              "family": "Pretendard Variable",
+              "weight": "100 900",
+              "status": "loaded"
+            }
+          ]
+        }
+      },
+      "geometry": {
+        "slide": {
+          "x": 80,
+          "y": 70,
+          "width": 1440,
+          "height": 810,
+          "right": 1520,
+          "bottom": 880
+        },
+        "outside": [],
+        "overflow": [],
+        "footerOverlap": [],
+        "spacing": [],
+        "clippedText": [],
+        "arrowErrors": [],
+        "titleLines": 1,
+        "subtitleLines": 1,
+        "pageWidth": 1600,
+        "card_padding": [
+          {
+            "card": "calc-panel",
+            "escaped": []
+          },
+          {
+            "card": "calc-panel",
+            "escaped": []
+          }
+        ]
+      }
+    },
+    {
+      "template": "step-by-step",
+      "viewport": [
+        1440,
+        810
+      ],
+      "technical": {
+        "input": [
+          [
+            1,
+            2,
+            3,
+            1,
+            0
+          ],
+          [
+            4,
+            5,
+            6,
+            2,
+            1
+          ],
+          [
+            7,
+            8,
+            9,
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            0,
+            4,
+            2
+          ],
+          [
+            1,
+            3,
+            2,
+            1,
+            0
+          ]
+        ],
+        "kernel": [
+          [
+            1,
+            0,
+            -1
+          ],
+          [
+            1,
+            0,
+            -1
+          ],
+          [
+            1,
+            0,
+            -1
+          ]
+        ],
+        "products": [
+          1,
+          0,
+          -3,
+          4,
+          0,
+          -6,
+          7,
+          0,
+          -9
+        ],
+        "output": [
+          [
+            -6,
+            9,
+            16
+          ],
+          [
+            -2,
+            5,
+            11
+          ],
+          [
+            -1,
+            4,
+            8
+          ]
+        ],
+        "stride": 1,
+        "padding": 0,
+        "bias": 0,
+        "kernel_flipped": false
+      },
+      "fonts": {
+        "elements": 111,
+        "families": {
+          "Pretendard Variable": 820
+        },
+        "fallback": [],
+        "unpainted": [],
+        "bad_spacing": [],
+        "loaded": {
+          "counts": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "faces": [
+            {
+              "family": "Pretendard Variable",
+              "weight": "100 900",
+              "status": "loaded"
+            }
+          ]
+        }
+      },
+      "geometry": {
+        "slide": {
+          "x": 35.5625,
+          "y": 20,
+          "width": 1368.875,
+          "height": 770,
+          "right": 1404.4375,
+          "bottom": 790
+        },
+        "outside": [],
+        "overflow": [],
+        "footerOverlap": [],
+        "spacing": [],
+        "clippedText": [],
+        "arrowErrors": [],
+        "titleLines": 1,
+        "subtitleLines": 1,
+        "pageWidth": 1440,
+        "card_padding": [
+          {
+            "card": "calc-panel",
+            "escaped": []
+          },
+          {
+            "card": "calc-panel",
+            "escaped": []
+          }
+        ]
+      }
+    },
+    {
+      "template": "step-by-step",
+      "viewport": [
+        1366,
+        768
+      ],
+      "technical": {
+        "input": [
+          [
+            1,
+            2,
+            3,
+            1,
+            0
+          ],
+          [
+            4,
+            5,
+            6,
+            2,
+            1
+          ],
+          [
+            7,
+            8,
+            9,
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            0,
+            4,
+            2
+          ],
+          [
+            1,
+            3,
+            2,
+            1,
+            0
+          ]
+        ],
+        "kernel": [
+          [
+            1,
+            0,
+            -1
+          ],
+          [
+            1,
+            0,
+            -1
+          ],
+          [
+            1,
+            0,
+            -1
+          ]
+        ],
+        "products": [
+          1,
+          0,
+          -3,
+          4,
+          0,
+          -6,
+          7,
+          0,
+          -9
+        ],
+        "output": [
+          [
+            -6,
+            9,
+            16
+          ],
+          [
+            -2,
+            5,
+            11
+          ],
+          [
+            -1,
+            4,
+            8
+          ]
+        ],
+        "stride": 1,
+        "padding": 0,
+        "bias": 0,
+        "kernel_flipped": false
+      },
+      "fonts": {
+        "elements": 111,
+        "families": {
+          "Pretendard Variable": 820
+        },
+        "fallback": [],
+        "unpainted": [],
+        "bad_spacing": [],
+        "loaded": {
+          "counts": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "faces": [
+            {
+              "family": "Pretendard Variable",
+              "weight": "100 900",
+              "status": "loaded"
+            }
+          ]
+        }
+      },
+      "geometry": {
+        "slide": {
+          "x": 35.890625,
+          "y": 20,
+          "width": 1294.21875,
+          "height": 728,
+          "right": 1330.109375,
+          "bottom": 748
+        },
+        "outside": [],
+        "overflow": [],
+        "footerOverlap": [],
+        "spacing": [],
+        "clippedText": [],
+        "arrowErrors": [],
+        "titleLines": 1,
+        "subtitleLines": 1,
+        "pageWidth": 1366,
+        "card_padding": [
+          {
+            "card": "calc-panel",
+            "escaped": []
+          },
+          {
+            "card": "calc-panel",
+            "escaped": []
+          }
+        ]
+      }
+    },
+    {
+      "template": "step-by-step",
+      "viewport": [
+        1280,
+        720
+      ],
+      "technical": {
+        "input": [
+          [
+            1,
+            2,
+            3,
+            1,
+            0
+          ],
+          [
+            4,
+            5,
+            6,
+            2,
+            1
+          ],
+          [
+            7,
+            8,
+            9,
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            0,
+            4,
+            2
+          ],
+          [
+            1,
+            3,
+            2,
+            1,
+            0
+          ]
+        ],
+        "kernel": [
+          [
+            1,
+            0,
+            -1
+          ],
+          [
+            1,
+            0,
+            -1
+          ],
+          [
+            1,
+            0,
+            -1
+          ]
+        ],
+        "products": [
+          1,
+          0,
+          -3,
+          4,
+          0,
+          -6,
+          7,
+          0,
+          -9
+        ],
+        "output": [
+          [
+            -6,
+            9,
+            16
+          ],
+          [
+            -2,
+            5,
+            11
+          ],
+          [
+            -1,
+            4,
+            8
+          ]
+        ],
+        "stride": 1,
+        "padding": 0,
+        "bias": 0,
+        "kernel_flipped": false
+      },
+      "fonts": {
+        "elements": 111,
+        "families": {
+          "Pretendard Variable": 820
+        },
+        "fallback": [],
+        "unpainted": [],
+        "bad_spacing": [],
+        "loaded": {
+          "counts": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "faces": [
+            {
+              "family": "Pretendard Variable",
+              "weight": "100 900",
+              "status": "loaded"
+            }
+          ]
+        }
+      },
+      "geometry": {
+        "slide": {
+          "x": 35.5625,
+          "y": 20,
+          "width": 1208.875,
+          "height": 680,
+          "right": 1244.4375,
+          "bottom": 700
+        },
+        "outside": [],
+        "overflow": [],
+        "footerOverlap": [],
+        "spacing": [],
+        "clippedText": [],
+        "arrowErrors": [],
+        "titleLines": 1,
+        "subtitleLines": 1,
+        "pageWidth": 1280,
+        "card_padding": [
+          {
+            "card": "calc-panel",
+            "escaped": []
+          },
+          {
+            "card": "calc-panel",
+            "escaped": []
+          }
+        ]
+      }
+    },
+    {
+      "template": "step-by-step",
+      "viewport": [
+        900,
+        900
+      ],
+      "technical": {
+        "input": [
+          [
+            1,
+            2,
+            3,
+            1,
+            0
+          ],
+          [
+            4,
+            5,
+            6,
+            2,
+            1
+          ],
+          [
+            7,
+            8,
+            9,
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            0,
+            4,
+            2
+          ],
+          [
+            1,
+            3,
+            2,
+            1,
+            0
+          ]
+        ],
+        "kernel": [
+          [
+            1,
+            0,
+            -1
+          ],
+          [
+            1,
+            0,
+            -1
+          ],
+          [
+            1,
+            0,
+            -1
+          ]
+        ],
+        "products": [
+          1,
+          0,
+          -3,
+          4,
+          0,
+          -6,
+          7,
+          0,
+          -9
+        ],
+        "output": [
+          [
+            -6,
+            9,
+            16
+          ],
+          [
+            -2,
+            5,
+            11
+          ],
+          [
+            -1,
+            4,
+            8
+          ]
+        ],
+        "stride": 1,
+        "padding": 0,
+        "bias": 0,
+        "kernel_flipped": false
+      },
+      "fonts": {
+        "elements": 111,
+        "families": {
+          "Pretendard Variable": 820
+        },
+        "fallback": [],
+        "unpainted": [],
+        "bad_spacing": [],
+        "loaded": {
+          "counts": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "faces": [
+            {
+              "family": "Pretendard Variable",
+              "weight": "100 900",
+              "status": "loaded"
+            }
+          ]
+        }
+      },
+      "geometry": {
+        "slide": {
+          "x": 16,
+          "y": 16,
+          "width": 868,
+          "height": 1184.15625,
+          "right": 884,
+          "bottom": 1200.15625
+        },
+        "outside": [],
+        "overflow": [],
+        "footerOverlap": [],
+        "spacing": [],
+        "clippedText": [],
+        "arrowErrors": [],
+        "titleLines": 1,
+        "subtitleLines": 1,
+        "pageWidth": 900,
+        "card_padding": [
+          {
+            "card": "calc-panel",
+            "escaped": []
+          },
+          {
+            "card": "calc-panel",
+            "escaped": []
+          }
+        ]
+      }
+    },
+    {
+      "template": "step-by-step",
+      "viewport": [
+        390,
+        844
+      ],
+      "technical": {
+        "input": [
+          [
+            1,
+            2,
+            3,
+            1,
+            0
+          ],
+          [
+            4,
+            5,
+            6,
+            2,
+            1
+          ],
+          [
+            7,
+            8,
+            9,
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            0,
+            4,
+            2
+          ],
+          [
+            1,
+            3,
+            2,
+            1,
+            0
+          ]
+        ],
+        "kernel": [
+          [
+            1,
+            0,
+            -1
+          ],
+          [
+            1,
+            0,
+            -1
+          ],
+          [
+            1,
+            0,
+            -1
+          ]
+        ],
+        "products": [
+          1,
+          0,
+          -3,
+          4,
+          0,
+          -6,
+          7,
+          0,
+          -9
+        ],
+        "output": [
+          [
+            -6,
+            9,
+            16
+          ],
+          [
+            -2,
+            5,
+            11
+          ],
+          [
+            -1,
+            4,
+            8
+          ]
+        ],
+        "stride": 1,
+        "padding": 0,
+        "bias": 0,
+        "kernel_flipped": false
+      },
+      "fonts": {
+        "elements": 111,
+        "families": {
+          "Pretendard Variable": 813
+        },
+        "fallback": [],
+        "unpainted": [],
+        "bad_spacing": [],
+        "loaded": {
+          "counts": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "faces": [
+            {
+              "family": "Pretendard Variable",
+              "weight": "100 900",
+              "status": "loaded"
+            }
+          ]
+        }
+      },
+      "geometry": {
+        "slide": {
+          "x": 10,
+          "y": 10,
+          "width": 370,
+          "height": 2102.15625,
+          "right": 380,
+          "bottom": 2112.15625
+        },
+        "outside": [],
+        "overflow": [],
+        "footerOverlap": [],
+        "spacing": [],
+        "clippedText": [],
+        "arrowErrors": [],
+        "titleLines": 1,
+        "subtitleLines": 2,
+        "pageWidth": 390,
+        "card_padding": [
+          {
+            "card": "calc-panel",
+            "escaped": []
+          },
+          {
+            "card": "calc-panel",
+            "escaped": []
+          }
+        ]
+      }
+    }
+  ],
+  "font_delivery": "original local Pretendard v1.3.9, no CDN interception",
+  "source_sha256": {
+    "templates/html/executive-summary.html": "9717607f3a1c742fe72dd63990d2edaccb5bb0c33b844a43943cdea9b56fe37c",
+    "templates/html/comparison.html": "39f209a04d9ab4a335d8d7a91da9903453b97479ac6ec7e286d6572d3fe15ed3",
+    "templates/html/index.html": "fe3f81b518278aa88fd47e061543e713fe4b153adfaf8547b6a0e9dd6342f043",
+    "templates/html/experiment.html": "711282187d6138e69e2b92ab6f2730387be8cb491d8401d0928d33c96caf62dd",
+    "templates/html/interactive-reference.js": "0756c5facbf831184f561e3941bf37ef0a30a83af3118e6374735d37119951f7",
+    "templates/html/reference-layout.css": "53d908fa3a4cb3e6c8e4c1e7b884df44494b7e4e81a2eda06adb170cbef39f26",
+    "templates/html/styles.css": "e3decf7af6e7acc2d36f675714f502508c5c5876fdc3310fdce877694468dff3",
+    "templates/html/step-by-step.html": "8e7eed2d4bbeaeea3fb644973a0ff99f9e0c075bababf93a8964636197143d3c",
+    "templates/html/interactive.html": "999cc515d9f3ad03dbee7c1437959b79463ad251e890142233471e4ff7722869",
+    "templates/html/concept.html": "9d50ae70c9d63dc257738e2260d3eccf415029baff5726b8f21f13a09da5b018",
+    "templates/html/reference-types.css": "976c72a1d4e736fc6d7f7c328445f4e7feead457f4ef7165ca3926b5615e18b7",
+    "templates/html/architecture.html": "0b40aa7f35960458292b8fd691a0ffcac83e8646993dda516b85e809efac28e1",
+    "templates/html/process.html": "1a6ea8ec1c7cc266b7709dbf9e65eea783a696679de107394d2a89802b4876ce",
+    "templates/html/font-comparison.html": "03591c1effa0a60af07955046d486ebb813464f8c26c7cd7a45ef70e272022d7",
+    "templates/html/assets/concept-apple-photo.jpg": "6a7524a8f5fce2700d50970d21ad7a9912c07ace760d08fd603ba79728e15efc",
+    "templates/html/assets/cnn-feature-maps.js": "b8a71c04fced7a9df2a568c2cd3577af3ddde56b3903cfd2b7d1031fc19d2c05",
+    "templates/html/assets/fonts/pretendard/PretendardVariable.woff2": "9599f12fd42fc0bce1cd50b47a0c022e108d7aa64dd0d1bb0ed44f3282d900b4"
+  },
+  "browser": "154.0.8037.57",
+  "page_errors": [],
+  "failed_requests": [],
+  "http_errors": [],
+  "canonical_preview_sha256": {
+    "previews/html-concept.png": "18f66f5c8b8cc366d00fdd53234a7c51e0cfd5804c46c896fb73e58c99fa2554",
+    "previews/html-process.png": "273a7c3c17bc109f608d7cc382c2d23c392cc525914e64c0d36758e0ffed1ddc",
+    "previews/html-comparison.png": "ef24a100f037534d0828e2e38ef9e0cba12338a001d068a82e48b2111887e71a",
+    "previews/html-step-by-step.jpg": "2390409158a2cb310ddaa9b183fd83c7809b93b5e00f232cbf62612e54fe907f",
+    "previews/html-interactive.jpg": "77dc52445344c0722eb29cb283a7034af3a61b5e19653cf6c452d62d45ce9be1",
+    "previews/html-architecture.jpg": "7654d31d9163133174e587f5b1cccc09cd9b9f5f043cec07a742c723741f4b3b",
+    "previews/html-experiment.jpg": "cbce9de643d76ecd0201be3e671128e3d309d81b49a4b51e2c9bdec0f137fe50",
+    "previews/html-executive-summary.jpg": "0446024bf52616cdc0f2ab604c44e5e4f6482722e7d7648c16d238756500372c"
+  },
+  "finished_utc": "2026-10-22T08:37:45.078555+00:00",
+  "derived_from": "reference-validation.json (same final-source execution)"
+}

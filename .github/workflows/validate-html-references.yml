@@ -1,0 +1,47 @@
+name: Validate Final HTML References
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main, 'integration/**']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: final-html-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: python -m pip install playwright
+      - run: python -m playwright install --with-deps chromium
+      - name: Syntax and shared token checks
+        run: |
+          python scripts/check_sources.py
+          python scripts/verify_character_spacing.py
+          python templates/dual-mode-learning/tools/check.py
+      - name: Eight references, real fonts and six viewports
+        run: python scripts/validate_references.py
+      - name: Interactive boundary states and reuse
+        run: python scripts/check_interactive.py
+      - name: Gallery and Scroll / Slide regression
+        run: python scripts/verify_pretendard.py
+      - name: Markdown links and final design contracts
+        run: python scripts/check_documentation.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: final-html-reference-evidence
+          path: |
+            previews/html-*.png
+            previews/html-*.jpg
+            previews/review/*validation.json
+            /tmp/reference-integration-review

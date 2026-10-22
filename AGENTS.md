@@ -14,7 +14,9 @@
 
 1. Read `DESIGN_SYSTEM.md` and `TEMPLATE_CATALOG.md`.
 2. Inspect the relevant source under `templates/` and preview under `previews/`.
-3. Scope the change to requested artifacts. Preserve unrelated templates.
+3. For new HTML Scroll/Slide documents, follow `docs/REFERENCE_REUSE_WORKFLOW.md`: design-system rules -> appropriate editable HTML reference -> screenshots for QA. Never substitute screenshots for editable SVG/CSS/JS.
+4. The standalone 8 examples are visual patterns, not eight mandatory slides; select and combine only those that serve the content.
+5. Scope the change to requested artifacts. Preserve unrelated templates.
 
 ## Core rules
 
