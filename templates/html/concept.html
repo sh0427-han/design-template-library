@@ -241,30 +241,35 @@
     }
     @media (max-width:900px) {
       .concept-stage { grid-template-columns:minmax(0,1fr); gap:20px; }
-      .concept-panel { padding:20px; }
-      .image-figure { min-height:290px; }
-      .image-frame,.pixel-frame,.zoom-arrow { height:256px; }
+      .reference-slide.concept-slide .concept-panel { padding:20px; }
+      .reference-slide.concept-slide .image-figure { min-height:290px; }
+      .reference-slide.concept-slide .image-frame,
+    .reference-slide.concept-slide .pixel-frame,
+    .reference-slide.concept-slide .zoom-arrow { height:256px; }
     }
     @media (max-width:520px) {
-      .concept-panel { padding:18px; }
-      .image-figure {
+      .reference-slide.concept-slide .concept-panel { padding:18px; }
+      .reference-slide.concept-slide .image-figure {
         grid-template-columns:minmax(0,1fr) 24px minmax(0,1fr);
         gap:2px;
         min-height:205px;
         margin-top:8px;
       }
       .figure-unit { gap:10px; }
-      .image-frame,.pixel-frame,.zoom-arrow { height:172px; }
+      .reference-slide.concept-slide .image-frame,
+      .reference-slide.concept-slide .pixel-frame,
+      .reference-slide.concept-slide .zoom-arrow { height:172px; }
+      .reference-slide.concept-slide .image-unit { width:100%; }
       .photo-wrap { width:min(100%,160px); }
-      .pixel-block {
+      .reference-slide.concept-slide .pixel-block {
         grid-template-columns:repeat(4,28px);
         grid-template-rows:repeat(4,28px);
         gap:2px;
       }
-      .pixel-block span { width:28px; height:28px; }
+      .reference-slide.concept-slide .pixel-block span { width:28px; height:28px; }
       .zoom-arrow { transform:translateY(-14px); }
       .zoom-arrow svg { width:21px; height:20px; }
-      .figure-label { font-size:14px; white-space:normal; }
+      .reference-slide.concept-slide .figure-label { font-size:14px; white-space:normal; }
       .selected-color { gap:12px; padding:12px; }
       .selected-color .swatch { width:52px; height:42px; }
       .selected-color strong { font-size:20px; }
