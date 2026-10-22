@@ -48,7 +48,7 @@ python -m http.server 8000
 
 ```text
 templates/html/                  # 8개 원본과 갤러리
-  styles.css                     # 색상·로컬 폰트·전역 -1pt
+  styles.css                     # 색상·로컬 폰트·전역 -1pt·행간/간격 토큰
   reference-layout.css           # 8종 전용 16:9/반응형 프레임
   reference-types.css            # 유형별 기본 컴포넌트
   assets/                        # 사진·고정 필터 예제·Pretendard
@@ -98,7 +98,7 @@ python scripts/validate_references.py --templates architecture step-by-step --ev
 1. [AGENTS.md](AGENTS.md)와 [디자인 시스템](DESIGN_SYSTEM.md)을 읽습니다.
 2. 청중·한 줄 학습 목표·입력·출력·수식·단순화 조건을 정합니다.
 3. [카탈로그](TEMPLATE_CATALOG.md)에서 패턴을 고르고 [상세 명세](docs/REFERENCE_PAGE_SPECS.md)를 확인합니다.
-4. [Figure 제작 표준](docs/FIGURE_PRODUCTION_STANDARD.md)에 따라 편집 가능한 도형과 데이터 흐름을 설계합니다.
+4. [컴포넌트 설계 규격](docs/DESIGN_COMPONENT_RECIPES.md)의 기록표에 카드·행간/간격·도식·수식·상태·반응형·높이 예산을 정하고, [Figure 제작 표준](docs/FIGURE_PRODUCTION_STANDARD.md)에 따라 편집 가능한 도형과 데이터 흐름을 설계합니다.
 5. [재사용 워크플로](docs/REFERENCE_REUSE_WORKFLOW.md)에 따라 실제 과제 데이터로 바꾸고 다른 데이터 구성으로도 확인합니다.
 6. 수학·실제 폰트·6개 화면·실제 캡처를 검증하고 관련 문서·카탈로그·프리뷰를 동기화합니다.
 
@@ -107,6 +107,7 @@ python scripts/validate_references.py --templates architecture step-by-step --ev
 ## 문서 지도와 통합 상태
 
 - [사용 방법](docs/USAGE.md): 실행·복사·편집 요령
+- [컴포넌트 설계 규격](docs/DESIGN_COMPONENT_RECIPES.md): #2–#8에서 대조한 실제 수치·변형·예외와 새 개념의 설계 기록표
 - [Figure 제작 표준](docs/FIGURE_PRODUCTION_STANDARD.md): 개념에서 실제 도식까지의 실무 절차
 - [페이지 상세 명세](docs/REFERENCE_PAGE_SPECS.md): 8개 페이지를 재구현할 수 있는 데이터·수식·구성
 - [Interactive 상세 패턴](docs/INTERACTIVE_PATTERN.md) · [Experiment 상세 패턴](docs/EXPERIMENT_PATTERN.md)

@@ -1,6 +1,6 @@
 # 8개 레퍼런스 상세 명세
 
-**현재 HTML 원본의 재구현 명세**입니다. 어떤 페이지를 선택할지는 [카탈로그](../TEMPLATE_CATALOG.md), 시각 토큰은 [디자인 시스템](../DESIGN_SYSTEM.md), 그림 제작 절차는 [Figure 표준](FIGURE_PRODUCTION_STANDARD.md)을 봅니다. 공통 규칙을 여기에 반복 정의하지 않습니다.
+**현재 HTML 원본의 재구현 명세**입니다. 어떤 페이지를 선택할지는 [카탈로그](../TEMPLATE_CATALOG.md), 시각 토큰은 [디자인 시스템](../DESIGN_SYSTEM.md), 그림 제작 절차는 [Figure 표준](FIGURE_PRODUCTION_STANDARD.md)을 봅니다. #2–#8의 실제 패널·Typography·도식·반응형 수치와 다른 개념에 적용할 기록표는 [컴포넌트 설계 규격](DESIGN_COMPONENT_RECIPES.md)에 있습니다. 공통 규칙을 여기에 반복 정의하지 않습니다.
 
 ## 공통 구현 계약
 
