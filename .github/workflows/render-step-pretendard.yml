@@ -1,0 +1,53 @@
+name: Render Step-by-Step With Pretendard
+
+on:
+  push:
+    branches:
+      - feat/step-by-step-multiply-sum-20261022
+    paths:
+      - scripts/render_step_pretendard.py
+      - .github/workflows/render-step-pretendard.yml
+      - templates/html/step-by-step.html
+      - templates/html/styles.css
+      - templates/html/reference-types.css
+      - templates/html/reference-layout.css
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: step-pretendard-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  screenshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install Chromium / Playwright
+        run: |
+          python -m pip install playwright
+          python -m playwright install --with-deps chromium
+      - name: Require real Pretendard and render #4
+        run: python scripts/render_step_pretendard.py
+      - name: Commit verified preview and font evidence
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add previews/html-step-by-step.jpg previews/review/step-pretendard-validation.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'chore(step): render preview using verified Pretendard'
+            for i in 1 2 3; do
+              git fetch origin "${{ github.ref_name }}"
+              git rebase "origin/${{ github.ref_name }}"
+              if git push origin HEAD:"${{ github.ref_name }}"; then exit 0; fi
+              sleep 3
+            done
+            exit 1
+          fi
