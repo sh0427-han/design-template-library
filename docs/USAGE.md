@@ -17,12 +17,14 @@ python -m http.server 8000
 ## 무엇을 편집하는가
 
 - 내용·도형·수식: 해당 `templates/html/<type>.html`과 연결된 JS.
-- 공통 색상·폰트·자간: `templates/html/styles.css`.
+- 공통 색상·폰트·자간·행간·간격 토큰: `templates/html/styles.css`.
 - 8종 프레임·반응형: `reference-layout.css`.
 - 특정 페이지 보정: 그 페이지의 클래스 안에서 작성.
 - 실제 데이터·계산 조건: [페이지 상세 명세](REFERENCE_PAGE_SPECS.md)와 함께 수정.
 
 원본을 다른 프로젝트로 복사할 때 CSS·JS·사진뿐 아니라 `assets/fonts/pretendard`와 라이선스를 함께 가져갑니다. #5의 공유용 단일 HTML은 폰트까지 내장한 생성본이며, 수정은 원본에서 합니다.
+
+패널·제목·도식·수식·상태를 구성하기 전에 [컴포넌트 설계 규격](DESIGN_COMPONENT_RECIPES.md)의 기록표를 작성합니다. 실제 예제의 수치와 공통 시작값·예외를 구분하고 CSS 로드 순서와 적용된 computed style을 확인합니다.
 
 ## 검증·프리뷰
 
@@ -41,7 +43,7 @@ python scripts/check_documentation.py
 
 ## 요청문 예시
 
-> 이 저장소의 AGENTS, DESIGN_SYSTEM, Figure 제작 표준과 페이지 상세 명세를 읽고, 대상 독자를 위한 HTML Scroll/Slide 자료를 만들어줘. 내용에 맞는 패턴만 선택하고 편집 가능한 도형·수식으로 재구성해줘. 실제 데이터와 모식도를 구분하고, 로컬 Pretendard·전체 −1pt를 유지해줘. 독립 계산과 실제 글꼴·6개 화면을 검증하고 다른 데이터 구성에서도 재사용을 확인한 뒤 문서와 프리뷰를 갱신해줘.
+> 이 저장소의 AGENTS, DESIGN_SYSTEM, 컴포넌트 설계 규격, Figure 제작 표준과 페이지 상세 명세를 읽고, 대상 독자를 위한 HTML Scroll/Slide 자료를 만들어줘. 내용에 맞는 패턴만 선택하고 편집 가능한 도형·수식으로 재구성해줘. 카드·행간/간격·도식 높이·수식·상태·모바일 규격과 예외 이유를 먼저 기록해줘. 실제 데이터와 모식도를 구분하고, 로컬 Pretendard·전체 −1pt를 유지해줘. 독립 계산과 실제 글꼴·6개 화면을 검증하고 다른 데이터 구성에서도 재사용을 확인한 뒤 문서와 프리뷰를 갱신해줘.
 
 ## 다른 저장소에 적용
 

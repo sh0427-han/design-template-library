@@ -13,6 +13,7 @@ import hashlib,json,math,struct,threading
 from playwright.sync_api import sync_playwright
 from reference_validation import NAMES,SIZES,GEOMETRY,CARD_PADDING,EXPERIMENT_GEOMETRY,actual_fonts,browser_options,check_executive
 from process_validation import check_process,check_process_robustness
+from comparison_validation import check_comparison,check_comparison_resize
 ROOT=Path(__file__).resolve().parents[1]
 class Quiet(SimpleHTTPRequestHandler):
     def log_message(self,*_):pass
@@ -55,7 +56,6 @@ def check_motif(page,name):
         painted.append(colors)
     assert painted==r['painted']
     assert len(r['photos'])==(2 if name=='comparison' else 1)
-    if name=='comparison':assert page.locator('.rule-conditions span').all_text_contents()==['색상 조건','형태 조건']
     return {'independent_gradient_samples':16*len(points),'painted_pixels':4*len(points),'channels':16,'boundary':'replicate','learned_inference':False}
 
 def ints(page,selector):return [int(s.replace('−','-')) for s in page.locator(selector).all_text_contents()]
@@ -134,6 +134,7 @@ def write_compatibility_reports(report):
     """Keep legacy report URLs on the same execution as the full 48-case proof."""
     groups={
         'process-validation.json':['process'],
+        'comparison-validation.json':['comparison'],
         'concept-architecture-validation.json':['concept','architecture'],
         'professional-figures-validation.json':['process','comparison','architecture'],
         'step-pretendard-validation.json':['step-by-step'],
@@ -168,6 +169,7 @@ def main(argv=None):
                     elif name in ('process','comparison'):
                         technical=check_motif(page,name)
                         if name=='process':technical['prediction_flow']=check_process(page,width)
+                        else:technical['preparation_and_inference']=check_comparison(page,width)
                     elif name=='step-by-step':technical=check_step(page,width)
                     elif name=='interactive':technical=check_interactive(page)
                     elif name=='architecture':technical=check_architecture(page,width)
@@ -191,6 +193,8 @@ def main(argv=None):
                     print('PASS',name,width,height,flush=True)
             if 'process' in args.templates:
                 report['process_robustness']=check_process_robustness(browser,f'http://127.0.0.1:{server.server_port}',args.evidence_dir)
+            if 'comparison' in args.templates:
+                report['comparison_live_resize']=check_comparison_resize(browser,f'http://127.0.0.1:{server.server_port}')
             assert not errors and not failed and not http,(errors,failed,http)
             report.update(status='passed',page_errors=errors,failed_requests=failed,http_errors=http);browser.close()
     except Exception as exc:report.update(status='failed',error=str(exc));raise
