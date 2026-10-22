@@ -486,36 +486,49 @@ h1 { margin: 15px 0 9px; font-size: 55px; line-height: 1.16; color: var(--navy);
 </style>
 <style>
 /* #5 only: inherit canonical typography and colors; preserve the other references. */
-.interactive-slide h1 {line-height:1.25;}
-.interactive-slide .content {display:flex;flex-direction:column;}
+.interactive-slide h1 {line-height:1.35;margin-bottom:3px;}
+.interactive-slide .kicker {line-height:1.2;}
+.interactive-slide .footer {line-height:1.2;}
+.interactive-slide .ref-k,.interactive-slide .sample-note {line-height:1.25;}
+.interactive-slide .content {display:flex;flex-direction:column;margin-top:23px;}
 .interactive-slide .live-grid {display:grid;grid-template-columns:1.07fr 1fr;gap:20px;flex:1;min-height:0;}
 .interactive-slide .live-card {padding:20px;min-width:0;min-height:0;background:var(--white);border:1px solid var(--border);border-radius:17px;display:flex;flex-direction:column;}
-.interactive-slide .live-card h2 {font-size:25px;line-height:1.3;color:var(--navy);margin:6px 0 10px;}
+.interactive-slide .live-card h2 {font-size:25px;line-height:1.3;color:var(--navy);margin:6px 0 6px;}
+.interactive-slide .live-card > * {flex-shrink:0;}
 .interactive-slide .live-heading {display:flex;justify-content:space-between;align-items:baseline;gap:12px;}
 .interactive-slide .sample-note {font-size:17px;color:var(--muted);white-space:nowrap;}
-.interactive-slide .threshold-meta {margin:2px 0 3px;}
+.interactive-slide .threshold-panel {display:grid;grid-template-columns:140px 1fr;gap:12px;align-items:center;}
+.interactive-slide .threshold-meta {margin:0;gap:10px;line-height:1.2;}
 .interactive-slide .threshold-meta label {font-size:21px;font-weight:750;color:var(--navy);}
 .interactive-slide #threshold-value {font-size:29px;color:var(--blue);}
 .interactive-slide .threshold-control {display:grid;grid-template-columns:36px 1fr 36px;gap:8px;align-items:center;}
 .interactive-slide .threshold-control > span {font-size:16px;color:var(--muted);}
 .interactive-slide .threshold-control > span:last-child {text-align:right;}
 .interactive-slide .threshold-input {height:28px;accent-color:var(--blue);}
-.interactive-slide .decision-rule {font-size:18px;line-height:1.4;color:var(--deep);margin:6px 0 10px;}
-.interactive-slide .score-heading,.interactive-slide .score-row {grid-template-columns:32px minmax(0,1fr) 44px 44px 44px 46px;gap:9px;}
-.interactive-slide .score-heading {font-size:16px;margin:4px 0 0;line-height:1.4;}
-.interactive-slide .score-list {margin-top:8px;gap:5px;}
+.interactive-slide .decision-rule {font-size:18px;line-height:1.4;color:var(--deep);margin:6px 0 4px;}
+.interactive-slide .score-heading,.interactive-slide .score-row {display:grid;grid-template-columns:30px minmax(0,1fr) 40px 74px 42px;gap:8px;}
+.interactive-slide .score-heading {font-size:16px;margin:4px 9px 4px 95px;line-height:1.4;}
+.interactive-slide .sample-groups {display:grid;gap:8px;}
+.interactive-slide .sample-group {display:grid;grid-template-columns:76px minmax(0,1fr);gap:10px;border:1px solid var(--border);border-radius:10px;padding:4px 8px;min-width:0;}
+.interactive-slide .group-label {display:flex;flex-direction:column;justify-content:center;gap:3px;border-right:1px solid var(--border);padding-right:8px;}
+.interactive-slide .group-label h3 {font-size:18px;color:var(--deep);line-height:1.35;margin:0;}
+.interactive-slide .group-label span {font-size:16px;color:var(--muted);}
+.interactive-slide .score-list {margin:0;gap:3px;align-content:start;}
 .interactive-slide .score-row {font-size:18px;min-height:27px;line-height:1.35;}
 .interactive-slide .score-row > :not(.score-track),.interactive-slide .score-heading > :not(:nth-child(2)) {text-align:center;}
 .interactive-slide .score-track {height:18px;}
 .interactive-slide .score-track::after {top:-4px;height:26px;}
 .interactive-slide .score-number {font-size:17px;color:var(--deep);}
-.interactive-slide .sample-truth {font-size:17px;color:var(--muted);}
-.interactive-slide .sample-prediction {font-size:18px;font-weight:750;color:var(--navy);}
+.interactive-slide .prediction-cell {display:grid;grid-template-columns:14px 1fr;gap:4px;align-items:center;}
+.interactive-slide .prediction-arrow {color:var(--muted);font-size:17px;}
+.interactive-slide .sample-prediction {display:block;font-size:17px;font-weight:750;color:var(--muted);background:var(--white);border:1px solid var(--border);border-radius:6px;padding:2px 5px;line-height:1.3;text-align:center;}
+.interactive-slide [data-prediction="1"] .sample-prediction {color:var(--blue);border-color:var(--blue);background:var(--pale-blue);}
+.interactive-slide [data-prediction="0"] .score-fill {background:var(--muted);opacity:.6;}
 .interactive-slide .outcome {font-size:16px;padding:4px 2px;line-height:1.3;}
-.interactive-slide .score-summary {font-size:17px;color:var(--deep);margin:auto 0 0;padding-top:8px;line-height:1.4;}
+.interactive-slide .score-summary {font-size:17px;color:var(--deep);margin:10px 0 0;padding-top:8px;line-height:1.4;border-top:1px solid var(--border);}
 .interactive-slide .live-context {font-size:17px;color:var(--muted);line-height:1.4;margin:0;}
 .interactive-slide .live-cm-wrap {position:relative;width:100%;max-width:480px;align-self:center;}
-.interactive-slide .live-cm {border-collapse:separate;border-spacing:6px 4px;table-layout:fixed;width:100%;margin:5px 0 6px;}
+.interactive-slide .live-cm {border-collapse:separate;border-spacing:6px 4px;table-layout:fixed;width:100%;margin:3px 0 2px;}
 .interactive-slide .live-cm col.axis {width:38px;}
 .interactive-slide .live-cm col.row-label {width:78px;}
 .interactive-slide .live-cm th {font-size:18px;line-height:1.3;text-align:center;vertical-align:middle;font-weight:650;color:var(--deep);padding:0;}
@@ -527,9 +540,9 @@ h1 { margin: 15px 0 9px; font-size: 55px; line-height: 1.16; color: var(--navy);
 .interactive-slide .cm-error {background:#fff0e0;color:#945616;}
 .interactive-slide .live-cm small {display:block;font-size:15px;font-weight:800;line-height:1.1;}
 .interactive-slide .live-cm strong {display:block;font-size:30px;line-height:1.1;font-weight:800;}
-.interactive-slide .live-metrics {display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:auto;padding-top:8px;}
+.interactive-slide .live-metrics {display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:auto;padding-top:6px;}
 .interactive-slide .live-metric {border:1px solid var(--border);border-radius:10px;padding:8px 12px;min-width:0;background:var(--white);}
-.interactive-slide .live-metric header {display:flex;justify-content:space-between;gap:6px;align-items:baseline;}
+.interactive-slide .live-metric header {display:flex;justify-content:space-between;gap:6px;align-items:baseline;line-height:1.2;}
 .interactive-slide .live-metric h3 {font-size:18px;color:var(--deep);margin:0;}
 .interactive-slide .live-metric header b {font-size:28px;color:var(--navy);white-space:nowrap;}
 .interactive-slide .metric-meaning {font-size:16px;color:var(--muted);line-height:1.35;margin:3px 0 5px;}
@@ -550,9 +563,19 @@ h1 { margin: 15px 0 9px; font-size: 55px; line-height: 1.16; color: var(--navy);
  .interactive-slide .live-card h2 {font-size:24px;}
  .interactive-slide .live-heading {display:block;}
  .interactive-slide .sample-note {font-size:16px;}
- .interactive-slide .score-heading,.interactive-slide .score-row {grid-template-columns:28px minmax(0,1fr) 32px 32px 32px 30px;gap:6px;}
+ .interactive-slide .threshold-panel {display:block;margin-top:8px;}
+ .interactive-slide .threshold-meta {margin-bottom:3px;}
+ .interactive-slide .sample-group {grid-template-columns:45px minmax(0,1fr);gap:7px;padding:6px;}
+ .interactive-slide .group-label {padding-right:5px;}
+ .interactive-slide .group-label h3 {font-size:16px;}
+ .interactive-slide .group-label span {font-size:15px;}
+ .interactive-slide .score-heading {margin-left:59px;margin-right:7px;}
+ .interactive-slide .score-heading,.interactive-slide .score-row {grid-template-columns:23px minmax(0,1fr) 29px 56px 28px;gap:4px;}
  .interactive-slide .score-heading {font-size:14px;}
- .interactive-slide .score-row,.interactive-slide .score-number,.interactive-slide .sample-truth,.interactive-slide .sample-prediction {font-size:15px;}
+ .interactive-slide .score-row,.interactive-slide .score-number,.interactive-slide .sample-prediction {font-size:15px;}
+ .interactive-slide .prediction-cell {grid-template-columns:14px 1fr;gap:2px;}
+ .interactive-slide .prediction-arrow {font-size:14px;}
+ .interactive-slide .sample-prediction {padding:2px 3px;}
  .interactive-slide .outcome {font-size:14px;}
  .interactive-slide .decision-rule,.interactive-slide .score-summary {font-size:17px;}
  .interactive-slide .live-cm {border-spacing:4px;}
@@ -575,11 +598,11 @@ h1 { margin: 15px 0 9px; font-size: 55px; line-height: 1.16; color: var(--navy);
   <section class="ref-card live-card" aria-labelledby="control-title">
     <div class="live-heading"><div class="ref-k">LIVE CONTROL</div><span class="sample-note" id="sample-note">예시 6개 · 양성: 이상</span></div>
     <h2 id="control-title">점수와 임계값으로 판정</h2>
-    <div class="threshold-meta"><label for="threshold">임계값</label><strong id="threshold-value">0.60</strong></div>
+    <div class="threshold-panel"><div class="threshold-meta"><label for="threshold">임계값</label><strong id="threshold-value">0.60</strong></div>
     <div class="threshold-control"><span>0.00</span><input class="threshold-input" id="threshold" type="range" min="0" max="100" value="60" step="5" aria-label="판정 임계값"><span>1.00</span></div>
-    <p class="decision-rule">점수 ≥ 임계값 → 이상 · 주황 점선: 현재 임계값</p>
-    <div class="score-heading" aria-hidden="true"><span>샘플</span><span>이상 점수</span><span>점수</span><span>실제</span><span>예측</span><span>유형</span></div>
-    <div id="score-list" class="score-list" role="list" aria-label="샘플별 실제값과 모델 예측"></div>
+    </div><p class="decision-rule">점수 ≥ 임계값 → 이상 · 주황 점선: 현재 임계값</p>
+    <div class="score-heading" aria-hidden="true"><span>샘플</span><span>이상 점수</span><span>점수</span><span>예측</span><span>유형</span></div>
+    <div id="score-list" class="sample-groups" aria-label="실제값별 샘플과 모델 예측"></div>
     <p class="score-summary" id="score-summary"></p>
   </section>
   <section class="ref-card live-card" aria-labelledby="evaluation-title">
@@ -601,7 +624,7 @@ h1 { margin: 15px 0 9px; font-size: 55px; line-height: 1.16; color: var(--navy);
       <article class="live-metric"><header><h3>Recall</h3><b id="recall">66.7%</b></header><p class="metric-meaning">실제 이상 중 찾아낸 비율</p><div class="live-metric-formula">TP / (TP + FN)</div><p id="recall-calculation" class="live-metric-calculation"></p></article>
     </div>
   </section>
-</div><div class="ref-takeaway"><strong>임계값 ↑ → Recall은 증가하지 않음</strong><span>Precision은 샘플 구성에 따라 변동</span></div></div>
+</div><div class="ref-takeaway"><strong>임계값 = 이상으로 판정하는 최소 점수</strong><span>낮추면 더 민감하게 · 높이면 더 엄격하게</span></div></div>
 <div id="evaluation-status" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
 <footer class="footer"><span>Design Template Library · Interactive</span><span>05 / 08</span></footer>
 </section></main><script>
@@ -618,26 +641,48 @@ h1 { margin: 15px 0 9px; font-size: 55px; line-height: 1.16; color: var(--navy);
   const positives = samples.filter(item => item.truth === 1).length;
   document.getElementById('sample-note').textContent=`예시 ${samples.length}개 · 양성: 이상`;
   document.getElementById('live-context').textContent=`실제 정상 ${samples.length-positives}개 · 실제 이상 ${positives}개`;
+  const rows = new Map();
+  // Ground-truth groups and sample identities stay fixed while predictions move.
+  [0,1].forEach(truth => {
+    const label = truth ? '이상' : '정상';
+    const group = document.createElement('section');
+    group.className='sample-group'; group.dataset.truth=String(truth);
+    group.setAttribute('aria-labelledby',`group-title-${truth}`);
+    const members=samples.map((item,index)=>({...item,index})).filter(item=>item.truth===truth);
+    group.innerHTML=`<div class="group-label"><h3 id="group-title-${truth}">실제 ${label}</h3><span>${members.length}개</span></div><div class="score-list" role="list" aria-label="실제 ${label} 샘플"></div>`;
+    members.forEach(item => {
+      const row=document.createElement('div');row.className='score-row';row.dataset.sample=String(item.index+1);row.setAttribute('role','listitem');
+      row.innerHTML=`<span class="sample-id"><strong>#${item.index+1}</strong><span class="sample-truth sr-only">${label}</span></span>
+        <div class="score-track" aria-hidden="true"><div class="score-fill" style="width:${item.score*100}%"></div></div>
+        <span class="score-number">${item.score.toFixed(2)}</span>
+        <span class="prediction-cell"><span class="prediction-arrow" aria-hidden="true">→</span><span class="sample-prediction"></span></span><span class="outcome"></span>`;
+      group.querySelector('.score-list').appendChild(row);rows.set(item.index,row);
+    });
+    list.appendChild(group);
+  });
   const pct = (n,d) => d ? (100*n/d).toFixed(1)+'%' : '정의 불가';
   function update() {
     const threshold = Number(slider.value)/100;
     readout.textContent = threshold.toFixed(2);
     slider.setAttribute('aria-valuetext', `${threshold.toFixed(2)}, 이 점수 이상이면 이상으로 예측`);
     const counts = {tp:0,tn:0,fp:0,fn:0};
-    list.innerHTML = '';
     samples.forEach((item,index) => {
       const prediction = Number(item.score >= threshold);
       const type = item.truth ? (prediction ? 'TP' : 'FN') : (prediction ? 'FP' : 'TN');
       counts[type.toLowerCase()]++;
       const truth = item.truth ? '이상' : '정상', predicted = prediction ? '이상' : '정상';
-      const row = document.createElement('div');
-      row.className = 'score-row'; row.setAttribute('role','listitem');
+      const row = rows.get(index), badge=row.querySelector('.sample-prediction');
+      const changed=row.dataset.prediction!==undefined && row.dataset.prediction!==String(prediction);
+      row.dataset.prediction=String(prediction);row.dataset.type=type;row.dataset.changed=String(changed);
       row.setAttribute('aria-label', `샘플 ${index+1}, 점수 ${item.score.toFixed(2)}, 실제 ${truth}, 예측 ${predicted}, ${type}`);
-      row.innerHTML = `<strong>#${index+1}</strong>
-        <div class="score-track" aria-hidden="true" style="--threshold-pct:${threshold*100}%"><div class="score-fill" style="width:${item.score*100}%"></div></div>
-        <span class="score-number">${item.score.toFixed(2)}</span><span class="sample-truth">${truth}</span>
-        <span class="sample-prediction">${predicted}</span><span class="outcome ${type.toLowerCase()}">${type}</span>`;
-      list.appendChild(row);
+      row.querySelector('.score-track').style.setProperty('--threshold-pct',`${threshold*100}%`);
+      badge.textContent=predicted;
+      const outcome=row.querySelector('.outcome');outcome.className=`outcome ${type.toLowerCase()}`;outcome.textContent=type;
+      badge.getAnimations().forEach(animation=>animation.cancel());
+      if(changed && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const accent=getComputedStyle(badge).getPropertyValue('--blue').trim();
+        badge.animate([{outline:`2px solid ${accent}`,outlineOffset:'2px'},{outline:'2px solid transparent',outlineOffset:'2px'}],{duration:550});
+      }
     });
     for (const [key,value] of Object.entries(counts)) document.getElementById('cm-'+key).textContent=String(value);
     const {tp,tn,fp,fn} = counts;

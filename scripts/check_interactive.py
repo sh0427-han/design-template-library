@@ -5,7 +5,7 @@ Requires Playwright, system Chromium and curl. Font cache uses TLS-verified CDN 
 from functools import partial
 from http.server import SimpleHTTPRequestHandler,ThreadingHTTPServer
 from pathlib import Path
-import hashlib,json,os,shutil,subprocess,threading
+import base64,hashlib,json,os,shutil,subprocess,threading
 import render_previews
 from playwright.sync_api import sync_playwright
 
@@ -19,11 +19,20 @@ CHECK="""() => {
  const line=box(slide.querySelector('.live-pred-divider'));
  const axisRight=textBounds(table.querySelector('.pred-axis-label')).right;
  const labelsLeft=Math.min(...[...table.querySelectorAll('tbody th[scope="row"]')].map(e=>textBounds(e).left));
- const containers=[...slide.querySelectorAll('.live-card,.live-grid,.live-metric,.live-metric header,.live-metric-calculation,.score-row,.sample-prediction,h1,h2')];
+ const containers=[...slide.querySelectorAll('.live-card,.live-grid,.live-metric,.live-metric header,.live-metric-calculation,.sample-group,.sample-groups,.group-label,.score-summary,.threshold-panel,.threshold-control,.score-row,.sample-prediction,h1,h2')];
  const overflow=containers.filter(e=>e.scrollWidth>e.clientWidth+2||e.scrollHeight>e.clientHeight+2).map(e=>e.className||e.tagName);
+ const cardContentEscapes=[];
+ for(const card of slide.querySelectorAll('.live-card')) {
+  const r=box(card),s=getComputedStyle(card),scale=r.width/parseFloat(s.width);
+  const left=r.x+(parseFloat(s.paddingLeft)+parseFloat(s.borderLeftWidth))*scale,right=r.right-(parseFloat(s.paddingRight)+parseFloat(s.borderRightWidth))*scale;
+  const top=r.y+(parseFloat(s.paddingTop)+parseFloat(s.borderTopWidth))*scale,bottom=r.bottom-(parseFloat(s.paddingBottom)+parseFloat(s.borderBottomWidth))*scale;
+  for(const child of card.children) {const b=box(child);if(b.x<left-1||b.right>right+1||b.y<top-1||b.bottom>bottom+1)cardContentEscapes.push(child.className||child.tagName);}
+ }
+ const summary=box(slide.querySelector('#score-summary')),control=box(slide.querySelector('.live-card'));
  const text=[...slide.querySelectorAll('*')].filter(e=>!e.closest('.sr-only')&&[...e.childNodes].some(n=>n.nodeType===3&&n.textContent.trim()));
  return {slide:box(slide),cards:[...slide.querySelectorAll('.live-card')].map(box),footer:box(slide.querySelector('footer')),content:box(slide.querySelector('.content')),
-  pageWidth:document.documentElement.scrollWidth,overflow,
+  pageWidth:document.documentElement.scrollWidth,overflow,cardContentEscapes,summaryBottomGap:control.bottom-summary.bottom,
+  groups:[...slide.querySelectorAll('.sample-group')].map(g=>({truth:Number(g.dataset.truth),count:g.querySelector('.group-label span').textContent,samples:[...g.querySelectorAll('.score-row')].map(r=>Number(r.dataset.sample))})),
   captionLast:slide.querySelector('.content').lastElementChild.matches('.ref-takeaway'),
   countsOrder:[...table.querySelectorAll('[data-code]')].map(e=>e.dataset.code),
   labels:[...table.querySelectorAll('th[scope="col"],th[scope="row"]')].map(e=>e.textContent),
@@ -33,6 +42,9 @@ CHECK="""() => {
 }"""
 class Quiet(SimpleHTTPRequestHandler):
  def log_message(self,*_):pass
+
+def sample_text(page,selector):
+ return page.locator('.score-row').evaluate_all('(rows,selector)=>rows.sort((a,b)=>Number(a.dataset.sample)-Number(b.dataset.sample)).map(row=>row.querySelector(selector).textContent)',selector)
 
 def main():
  out=Path('/tmp/interactive-draft-review');out.mkdir(exist_ok=True)
@@ -68,9 +80,10 @@ def main():
       prediction=score>=threshold/100;key=('tp' if prediction else 'fn') if truth else ('fp' if prediction else 'tn')
       expected[key]+=1;types.append(key.upper());predictions.append('이상' if prediction else '정상')
      assert {k:int(page.locator('#cm-'+k).inner_text()) for k in expected}==expected
-     assert page.locator('.outcome').all_text_contents()==types
-     assert page.locator('.sample-prediction').all_text_contents()==predictions
-     assert page.locator('.sample-truth').all_text_contents()==['이상' if truth else '정상' for _,truth in SAMPLES]
+     assert sample_text(page,'.outcome')==types
+     assert sample_text(page,'.sample-prediction')==predictions
+     assert sample_text(page,'.sample-truth')==['이상' if truth else '정상' for _,truth in SAMPLES]
+     assert page.locator('.score-row').evaluate_all('(rows)=>rows.every(r=>r.dataset.prediction===(r.querySelector(".sample-prediction").textContent==="이상"?"1":"0")&&r.dataset.type===r.querySelector(".outcome").textContent)')
      pct=lambda n,d:f'{100*n/d:.1f}%' if d else '정의 불가'
      tp,fp,fn=expected['tp'],expected['fp'],expected['fn']
      precision,recall=pct(tp,tp+fp),pct(tp,tp+fn)
@@ -78,13 +91,24 @@ def main():
      assert page.locator('#precision-calculation').inner_text()==f'{tp} / ({tp} + {fp}) = {precision}'
      assert page.locator('#recall-calculation').inner_text()==f'{tp} / ({tp} + {fn}) = {recall}'
      assert page.locator('#threshold-value').inner_text()==f'{threshold/100:.2f}'
+     markers=page.locator('.score-track').evaluate_all('(tracks)=>tracks.map(t=>parseFloat(t.style.getPropertyValue("--threshold-pct")))')
+     assert len(markers)==6 and all(abs(marker-threshold)<1e-8 for marker in markers)
      assert page.locator('#threshold').get_attribute('aria-valuetext').startswith(f'{threshold/100:.2f}')
      assert page.locator('#score-summary').inner_text()==f"이상 예측 {tp+fp}개 · 정상 예측 {expected['tn']+fn}개"
      assert page.locator('#evaluation-status').inner_text().startswith(f'임계값 {threshold/100:.2f}. TP {tp}, FP {fp}, FN {fn}, TN {expected["tn"]}.')
      # Undefined precision is wider than the percentages: check every state for clipping.
-     assert not page.evaluate(CHECK)['overflow'],(width,threshold,page.evaluate(CHECK)['overflow'])
+     geometry=page.evaluate(CHECK)
+     assert not geometry['overflow'] and not geometry['cardContentEscapes'],(width,threshold,geometry)
      thresholds.append({'threshold':threshold/100,**expected,'precision':precision,'recall':recall});report['math_checks']+=1
-    slider=page.locator('#threshold');slider.focus()
+    slider=page.locator('#threshold')
+    slider.fill('60');page.evaluate('window.savedSample=document.querySelector("[data-sample=\\"4\\"]")')
+    slider.fill('70')
+    assert page.locator('.score-row[data-changed="true"]').evaluate_all('(rows)=>rows.map(r=>Number(r.dataset.sample))')==[4]
+    assert page.evaluate('window.savedSample===document.querySelector("[data-sample=\\"4\\"]")')
+    assert page.locator('[data-sample="4"] .sample-prediction').inner_text()=='정상'
+    if width==1600:
+     page.locator('.slide').screenshot(path=str(out/'interactive-threshold-070.png'),animations='disabled')
+    slider.focus()
     for key,value in [('Home','0'),('ArrowRight','5'),('End','100'),('ArrowLeft','95')]:
      slider.press(key);assert slider.input_value()==value
     b=slider.bounding_box();slider.click(position={'x':b['width']/2,'y':b['height']/2});assert slider.input_value()=='50'
@@ -94,6 +118,9 @@ def main():
     assert abs(r['dividerGaps']['left']-r['dividerGaps']['right'])<.25 and min(r['dividerGaps'].values())>2
     assert not r['badTypography'] and r['fontsLoaded']>0
     assert r['captionLast'] and r['pageWidth']<=width
+    assert r['groups']==[{'truth':0,'count':'3개','samples':[1,3,6]},{'truth':1,'count':'3개','samples':[2,4,5]}]
+    assert not r['cardContentEscapes']
+    assert page.locator('.ref-takeaway strong').inner_text()=='임계값 = 이상으로 판정하는 최소 점수'
     assert r['content']['bottom']<r['footer']['y']+1
     if width>900:
      assert abs(r['slide']['width']/r['slide']['height']-16/9)<.002
@@ -128,16 +155,38 @@ def main():
       prediction=score>=threshold/100;key=('tp' if prediction else 'fn') if truth else ('fp' if prediction else 'tn')
       expected[key]+=1;labels.append(key.upper());predictions.append('이상' if prediction else '정상')
      assert {k:int(page.locator('#cm-'+k).inner_text()) for k in expected}==expected
-     assert page.locator('.outcome').all_text_contents()==labels
-     assert page.locator('.sample-prediction').all_text_contents()==predictions
+     assert sample_text(page,'.outcome')==labels
+     assert sample_text(page,'.sample-prediction')==predictions
      for metric,extra in [('precision','fp'),('recall','fn')]:
       value=pct(expected['tp'],expected['tp']+expected[extra])
       assert page.locator('#'+metric).inner_text()==value
       assert page.locator('#'+metric+'-calculation').inner_text()==f"{expected['tp']} / ({expected['tp']} + {expected[extra]}) = {value}"
-     assert not page.evaluate(CHECK)['overflow']
+     geometry=page.evaluate(CHECK)
+     assert not geometry['overflow'] and not geometry['cardContentEscapes'],(width,threshold,geometry)
+     assert geometry['groups']==[{'truth':0,'count':'2개','samples':[3,6]},{'truth':1,'count':'4개','samples':[1,2,4,5]}]
      report['reuse']['checks']+=1
     page.locator('#threshold').fill('60');report['reuse']['viewports'].append({'viewport':[width,height],**page.evaluate(CHECK)})
     page.locator('.slide').screenshot(path=str(out/f'interactive-reuse-{width}.png'),animations='disabled')
+   # Check the reported card-boundary regression even without the CDN font.
+   fallback=browser.new_page()
+   fallback.on('pageerror',lambda e:errors.append(str(e)))
+   fallback.route('https://cdn.jsdelivr.net/**',lambda route:route.fulfill(body='',content_type='text/css'))
+   report['font_fallback']=[]
+   for width,height in SIZES:
+    fallback.set_viewport_size({'width':width,'height':height})
+    fallback.goto(f'http://127.0.0.1:{server.server_port}/templates/html/interactive.html',wait_until='networkidle');fallback.evaluate('document.fonts.ready')
+    for threshold in ['60','100']:
+     fallback.locator('#threshold').fill(threshold);geometry=fallback.evaluate(CHECK)
+     assert geometry['fontsLoaded']==0
+     assert not geometry['overflow'] and not geometry['cardContentEscapes'],('font fallback',width,threshold,geometry)
+     assert geometry['pageWidth']<=width and geometry['content']['bottom']<geometry['footer']['y']+1
+     report['font_fallback'].append({'viewport':[width,height],'threshold':int(threshold)/100,**geometry})
+    if width==1600:fallback.locator('.slide').screenshot(path=str(out/'interactive-font-fallback.png'),animations='disabled')
+   fallback.close()
+   page.emulate_media(reduced_motion='reduce');page.locator('#threshold').fill('60');page.locator('#threshold').fill('70')
+   assert page.locator('.sample-prediction').evaluate_all('(badges)=>badges.every(b=>b.getAnimations().length===0)')
+   report['prediction_transition']={'from':.60,'to':.70,'changed_default_sample':4,'dom_identity_retained':True,'reduced_motion_checked':True}
+   page.emulate_media(reduced_motion='no-preference')
    # Shareable HTML: inline local dependencies; only the original web font
    # remains remote, with the normal system-font fallback when offline.
    portable=(ROOT/'templates/html/interactive.html').read_text()
@@ -153,9 +202,20 @@ def main():
    assert page.locator('#live-context').inner_text()=='실제 정상 3개 · 실제 이상 3개'
    page.locator('.slide').screenshot(path=str(out/'interactive-portable.png'),animations='disabled')
    portable_pixels=page.locator('.slide').screenshot(mask=[page.locator('#threshold')],animations='disabled')
-   assert portable_pixels==(out/'interactive-content.png').read_bytes()
+   comparison=page.evaluate('''async ({expected,actual}) => {
+    const load=src=>new Promise((resolve,reject)=>{const im=new Image();im.onload=()=>resolve(im);im.onerror=reject;im.src='data:image/png;base64,'+src});
+    const a=await load(expected),b=await load(actual);
+    if(a.width!==b.width||a.height!==b.height)throw new Error('Preview dimensions differ');
+    const canvas=document.createElement('canvas');canvas.width=a.width;canvas.height=a.height;const ctx=canvas.getContext('2d',{willReadFrequently:true});
+    ctx.drawImage(a,0,0);const x=ctx.getImageData(0,0,a.width,a.height).data;ctx.clearRect(0,0,a.width,a.height);ctx.drawImage(b,0,0);const y=ctx.getImageData(0,0,a.width,a.height).data;
+    let maxChannelDelta=0,differentPixels=0;
+    for(let i=0;i<x.length;i+=4){let delta=0;for(let c=0;c<4;c++)delta=Math.max(delta,Math.abs(x[i+c]-y[i+c]));maxChannelDelta=Math.max(maxChannelDelta,delta);if(delta)differentPixels++;}
+    return {maxChannelDelta,differentPixels,totalPixels:a.width*a.height};
+   }''',{'expected':base64.b64encode((out/'interactive-content.png').read_bytes()).decode(),'actual':base64.b64encode(portable_pixels).decode()})
+   # Rounded-edge rasterization can vary by 1–2 levels after live updates.
+   assert comparison['maxChannelDelta']<=2 and comparison['differentPixels']<=comparison['totalPixels']*.001,comparison
    page.locator('#threshold').fill('100');assert page.locator('#precision').inner_text()=='정의 불가'
-   report['portable_html']={'path':'previews/review/interactive-live.html','content_pixels_match':True,'native_range_excluded_from_pixel_comparison':True,'interaction_checked':True}
+   report['portable_html']={'path':'previews/review/interactive-live.html','content_within_tolerance':True,'pixel_comparison':comparison,'max_channel_tolerance':2,'max_changed_fraction':.001,'native_range_excluded_from_pixel_comparison':True,'interaction_checked':True}
    assert not errors and not failures,(errors,failures)
    report.update(status='passed',page_errors=errors,request_failures=failures,font_assets=assets);browser.close()
  except Exception as exc:

@@ -83,7 +83,7 @@ def check_interactive(page):
             labels.append(key.upper())
         actual = {k: int(page.locator('#cm-' + k).inner_text()) for k in counts}
         assert actual == counts, (value, actual, counts)
-        assert page.locator('.outcome').all_text_contents() == labels
+        assert page.locator('.score-row').evaluate_all('(rows)=>rows.sort((a,b)=>Number(a.dataset.sample)-Number(b.dataset.sample)).map(row=>row.querySelector(".outcome").textContent)') == labels
         assert page.locator('#threshold-value').inner_text() == f'{value/100:.2f}'
         pct = lambda n, d: f'{100*n/d:.1f}%' if d else '정의 불가'
         assert page.locator('#precision').inner_text() == pct(counts['tp'], counts['tp']+counts['fp'])
