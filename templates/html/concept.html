@@ -5,151 +5,282 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Concept | Design Template Library</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="reference-layout.css">
   <style>
+    /* #1 Concept: page-scoped, single-source styles; shared tokens stay global. */
     .concept-slide {
-      width: min(1440px,100%); height:810px; min-height:0; aspect-ratio:16/9;
-      padding:54px 66px 30px; gap:0; color:var(--ink); background:var(--canvas);
+      padding:54px 66px 30px;
+      color:var(--ink);
+      background:var(--canvas);
     }
-    .concept-slide header { flex:0 0 auto; }
     .concept-slide h1 { margin:7px 0 6px; font-size:49px; line-height:1.13; }
     .concept-slide .subtitle { font-size:21px; line-height:1.38; }
     .concept-stage {
-      display:grid; grid-template-columns:1.02fr .98fr; gap:22px;
-      margin-top:25px; flex:1; min-height:0;
+      display:grid;
+      grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
+      gap:25px;
+      flex:1;
+      min-height:0;
+      margin-top:25px;
     }
     .concept-panel {
-      background:#fff; border:1px solid var(--border); border-radius:18px;
-      min-width:0; min-height:0; padding:22px 26px;
+      display:flex;
+      flex-direction:column;
+      min-width:0;
+      min-height:0;
+      padding:22px 26px;
+      background:var(--white);
+      border:1px solid var(--border);
+      border-radius:18px;
     }
-    .panel-head { display:flex; align-items:center; justify-content:space-between; gap:12px; }
-    .panel-head h2 { color:var(--navy); font-size:23px; margin:0; }
-    .visual-panel { display:flex; flex-direction:column; }
-    .image-figure { display:flex; align-items:center; flex:1; min-height:0; margin-top:12px; }
-    .figure-unit { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; min-width:0; }
-    .image-unit { width:min(265px,46%); flex:0 0 auto; }
-    .pixel-unit { flex:0 0 auto; }
-    .image-frame { background:linear-gradient(150deg,#f7fcff,#e5f0fa); height:274px; width:100%; border-radius:16px; display:grid; place-items:center; border:1px solid #dbe7f1; overflow:hidden; }
-    .image-frame svg { width:min(100%,245px); height:248px; }
-    .photo-wrap { width:min(100%,262px);aspect-ratio:1;position:relative;overflow:hidden;border-radius:13px;box-shadow:0 4px 20px #12233F14; }
-    .concept-photo {display:block;width:100%;height:100%;object-fit:cover;}
-    .photo-roi {position:absolute;left:62.963%;top:44.444%;width:11.852%;height:11.852%;border:2.5px solid #fff;box-shadow:0 0 0 2px #12233F,inset 0 0 0 1px #12233F;outline-offset:0;pointer-events:none;}
-    .image-frame {padding:6px;}
-    .image-frame .photo-wrap {max-height:100%;}
-    .concept-panel .pixel-block span {border-radius:2px;}
-    .pixel-frame { height:274px; display:grid; place-items:center; }
-    .zoom-arrow { flex:1; min-width:20px; display:grid; place-items:center; font-size:29px; color:var(--blue); font-weight:800; margin-bottom:31px; }
-    .figure-label { font-size:17px; line-height:1.25; font-weight:800; color:var(--deep); text-align:center; white-space:nowrap; }
-    .pixel-block { display:grid; grid-template-columns:repeat(4,48px); grid-template-rows:repeat(4,48px); gap:3px; justify-content:center; }
-    .pixel-block span { width:48px; height:48px; border:2px solid rgba(255,255,255,.72); border-radius:4px; }
-    .pixel-block .selected {outline:4px solid var(--navy);outline-offset:-4px;position:relative;}
-    .photo-sample-note {font-size:14px;color:var(--muted);line-height:1.2;text-align:center;margin-top:1px;}
-    .value-panel {display:flex;flex-direction:column;justify-content:space-between;gap:14px;}
-    .value-title {color:var(--navy);font-size:23px;font-weight:800;margin:0;}
-    .selected-color {display:flex;align-items:center;gap:17px;background:#f7f9fd;border:1px solid var(--border);border-radius:13px;padding:13px 16px;}
-    .selected-color .swatch {height:45px;width:64px;flex:0 0 auto;border-radius:10px;background:rgb(232,51,52);}
-    .selected-color strong {display:block;color:var(--navy);font-size:22px;}
-    .selected-color small {display:block;color:var(--muted);font-size:14px;margin-top:2px;}
-    .channel-values {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;}
-    .channel-value {background:#f7f9fd;border:1px solid var(--border);border-radius:13px;padding:12px 13px;}
-    .channel-value .head {display:flex;align-items:center;justify-content:space-between;font-size:17px;font-weight:800;color:var(--deep);}
-    .channel-value .dot {height:15px;width:15px;border-radius:50%;}
-    .channel-value .number {font-size:29px;font-weight:800;color:var(--navy);margin-top:6px;}
-    .channel-value .track {height:7px;background:#e0e8f1;border-radius:7px;overflow:hidden;margin-top:8px;}
-    .channel-value .bar {height:100%;border-radius:7px;}
-    .tensor-shape {display:flex;align-items:center;justify-content:space-between;gap:14px;padding:16px 17px;background:var(--pale-blue);border:1px solid #cadef8;border-radius:13px;}
-    .tensor-shape .formula {font-size:31px;color:var(--navy);font-weight:800;white-space:nowrap;}
-    .tensor-shape .label {font-size:15px;line-height:1.43;color:var(--deep);text-align:right;}
-    .concept-takeaway {flex:0 0 auto;display:flex;align-items:center;gap:15px;margin-top:14px;padding:12px 17px;border-left:4px solid var(--teal);background:#e9f5f4;border-radius:0 10px 10px 0;color:var(--deep);font-size:19px;font-weight:650;}
-    .concept-takeaway strong{color:#117a74;white-space:nowrap;}
-    .concept-slide .footer { flex:0 0 auto; margin-top:15px; padding-top:11px;font-size:14px; }
-    @media(max-width:1100px) {
-      .concept-slide {height:auto;min-height:680px;aspect-ratio:auto;padding:34px 30px 25px;}
-      .concept-slide h1{font-size:40px;}
-      .concept-stage{grid-template-columns:1fr 1fr;gap:13px;}
-      .concept-panel{padding:17px;}
-      .image-frame,.pixel-frame{height:238px;}
-      .image-frame svg{height:215px;}
-      .pixel-block{grid-template-columns:repeat(4,33px);grid-template-rows:repeat(4,33px);gap:2px;}
-      .pixel-block span{height:33px;width:33px;}
-      .value-title,.panel-head h2{font-size:19px;}
-      .channel-value{padding:9px;}.channel-value .number{font-size:23px;}
-      .tensor-shape .formula{font-size:23px;}
+    .concept-panel .panel-head h2 {
+      margin:0;
+      color:var(--navy);
+      font-size:23px;
+      font-weight:800;
     }
-    @media(max-width:760px){
-      .concept-stage{grid-template-columns:1fr;}
-      .concept-slide{padding:25px 18px;}
-      .concept-slide h1{font-size:34px;}
-      .concept-slide .subtitle{font-size:18px;}
-      .image-frame,.pixel-frame{height:230px;}
-      .image-frame svg{height:220px;}
-      .pixel-block{grid-template-columns:repeat(4,42px);grid-template-rows:repeat(4,42px);}
-      .pixel-block span{height:42px;width:42px;}
-      .value-panel{gap:14px;}
-      .concept-takeaway{font-size:17px;}
-      .image-unit{width:min(265px,46%);}
+    .image-figure {
+      display:grid;
+      grid-template-columns:minmax(0,1fr) 42px minmax(0,1fr);
+      align-items:center;
+      gap:5px;
+      flex:1;
+      min-height:0;
+      margin-top:14px;
     }
-    @media(max-width:490px){.photo-sample-note{font-size:12px;}
-      .pixel-block{grid-template-columns:repeat(4,28px);grid-template-rows:repeat(4,28px);gap:2px;}
-      .pixel-block span{height:28px;width:28px;}
-      .figure-label{font-size:14px;}
+    .figure-unit {
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+      width:100%;
+      height:100%;
     }
-
-    /* Concept: unframed photographic figure and true per-pixel RGB mapping. */
-    .concept-stage{grid-template-columns:1.05fr .95fr;gap:25px}
-    .concept-panel.visual-panel{display:flex;flex-direction:column;min-width:0;padding:22px 26px;background:#fff;border:1px solid var(--border);border-radius:18px}
-    .visual-panel .panel-head{padding-left:4px}
-    .image-figure{display:grid;grid-template-columns:minmax(0,1fr) 47px minmax(0,1fr);align-items:center;gap:3px;width:100%;margin-top:16px}
-    .figure-unit{width:100%;height:100%;gap:12px;justify-content:center}
-    .image-unit{width:100%;min-width:0}
-    .image-frame{width:100%;height:274px;padding:0;background:transparent;border:none;border-radius:0;overflow:visible;display:grid;place-items:center}
-    .photo-wrap{width:min(100%,262px);aspect-ratio:1;max-height:none;border-radius:0;box-shadow:none;overflow:visible}
-    .concept-photo{width:100%;height:100%;object-fit:contain}
-    .photo-roi{left:65%;top:47.5%;width:5%;height:5%;border:2px solid white;box-shadow:0 0 0 1.5px var(--navy);background:transparent;pointer-events:none}
-    .pixel-frame{width:100%;height:274px}
-    .pixel-block{grid-template-columns:repeat(4,44px);grid-template-rows:repeat(4,44px);gap:3px}
-    .pixel-block span{width:44px;height:44px;border:1px solid #ffffffcc;border-radius:1px}
-    .pixel-block .selected{outline:3px solid var(--navy);outline-offset:1px;z-index:1}
-    .zoom-arrow{height:274px;min-width:0;align-self:center;margin:0;transform:translateY(-16.5px);display:grid;place-items:center;font-size:28px}
-    .figure-label{font-size:17px}
-    .photo-sample-note{margin-top:auto;padding-top:7px;font-size:13px;text-align:center}
-    .selected-color{background:#f7f9fd}
-    .selected-color .swatch{background:#dbe4f0}
-    .concept-panel .pixel-block span{border-radius:1px}
-    @media(max-width:900px){
-      .concept-stage{grid-template-columns:1fr;gap:20px}
-      .reference-slide .concept-panel.visual-panel{padding:20px}
-      .image-figure{grid-template-columns:minmax(0,1fr) 38px minmax(0,1fr)}
-      .image-frame,.pixel-frame,.zoom-arrow{height:256px}
-      .pixel-block{grid-template-columns:repeat(4,40px);grid-template-rows:repeat(4,40px)}
-      .pixel-block span{height:40px;width:40px}
+    .image-frame,.pixel-frame {
+      display:grid;
+      place-items:center;
+      width:100%;
+      height:274px;
+      min-width:0;
     }
-    @media(max-width:520px){
-      /* Override later reference-layout.css's legacy 44%-width image rule. */
-      .reference-slide.concept-slide .image-unit{width:100%}
-      .reference-slide.concept-slide .image-frame,
-      .reference-slide.concept-slide .pixel-frame,
-      .reference-slide.concept-slide .zoom-arrow{height:172px}
-      .reference-slide.concept-slide .pixel-block{
-        grid-template-columns:repeat(4,26px);
-        grid-template-rows:repeat(4,26px);
+    .photo-wrap {
+      position:relative;
+      width:min(100%,262px);
+      aspect-ratio:1;
+    }
+    .concept-photo {
+      display:block;
+      width:100%;
+      height:100%;
+      object-fit:contain;
+    }
+    .photo-roi {
+      position:absolute;
+      left:65%;
+      top:47.5%;
+      width:5%;
+      height:5%;
+      box-sizing:border-box;
+      border:2px solid var(--white);
+      box-shadow:0 0 0 1.5px var(--navy);
+      pointer-events:none;
+    }
+    .zoom-arrow {
+      display:grid;
+      place-items:center;
+      width:100%;
+      height:274px;
+      min-width:0;
+      transform:translateY(-16.5px);
+      color:var(--blue);
+    }
+    .zoom-arrow svg { display:block; width:35px; height:24px; }
+    .figure-label {
+      color:var(--deep);
+      text-align:center;
+      font-size:17px;
+      font-weight:800;
+      line-height:1.25;
+      white-space:nowrap;
+    }
+    .pixel-block {
+      display:grid;
+      grid-template-columns:repeat(4,50px);
+      grid-template-rows:repeat(4,50px);
+      gap:3px;
+    }
+    .pixel-block span {
+      display:block;
+      width:50px;
+      height:50px;
+      background:#e9eef5;
+      border:1px solid #ffffffcc;
+      border-radius:1px;
+    }
+    .pixel-block .selected {
+      position:relative;
+      z-index:1;
+      outline:3px solid var(--navy);
+      outline-offset:1px;
+    }
+    .pixel-block .selected::after,
+    .selected-color .swatch::after {
+      content:"";
+      position:absolute;
+      top:-5px;
+      right:-5px;
+      width:7px;
+      height:7px;
+      border:1px solid var(--white);
+      border-radius:50%;
+      background:var(--navy);
+    }
+    .value-panel { justify-content:space-between; gap:14px; }
+    .selected-color {
+      display:flex;
+      align-items:center;
+      gap:17px;
+      min-width:0;
+      padding:13px 16px;
+      background:#f7f9fd;
+      border:1px solid var(--border);
+      border-radius:13px;
+    }
+    .selected-color .swatch {
+      position:relative;
+      width:64px;
+      height:45px;
+      flex:0 0 auto;
+      border:2px solid var(--navy);
+      border-radius:8px;
+      background:#dbe4f0;
+    }
+    .selected-color strong {
+      display:block;
+      color:var(--navy);
+      font-size:22px;
+      line-height:1.25;
+    }
+    .selected-color small {
+      display:block;
+      margin-top:2px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.4;
+    }
+    .channel-values {
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:11px;
+    }
+    .channel-value {
+      min-width:0;
+      padding:12px 13px;
+      background:#f7f9fd;
+      border:1px solid var(--border);
+      border-radius:13px;
+    }
+    .channel-value .head {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      color:var(--deep);
+      font-size:17px;
+      font-weight:800;
+    }
+    .channel-value .dot { width:15px; height:15px; border-radius:50%; }
+    .channel-value .number {
+      margin-top:6px;
+      color:var(--navy);
+      font-size:29px;
+      font-weight:800;
+      font-variant-numeric:tabular-nums;
+    }
+    .channel-value .track {
+      height:7px;
+      margin-top:8px;
+      background:#e0e8f1;
+      border-radius:7px;
+      overflow:hidden;
+    }
+    .channel-value .bar { width:0; height:100%; border-radius:7px; }
+    .tensor-shape {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      padding:16px 17px;
+      background:var(--pale-blue);
+      border:1px solid #cadef8;
+      border-radius:13px;
+    }
+    .tensor-shape .formula {
+      color:var(--navy);
+      font-size:31px;
+      font-weight:800;
+      white-space:nowrap;
+    }
+    .tensor-shape .channel-count { color:var(--blue); }
+    .tensor-shape .label {
+      color:var(--deep);
+      font-size:15px;
+      line-height:1.43;
+      text-align:right;
+    }
+    .concept-slide .concept-takeaway {
+      flex:0 0 auto;
+      margin-top:14px;
+    }
+    .concept-slide .footer {
+      flex:0 0 auto;
+      margin-top:15px;
+      padding-top:11px;
+      font-size:14px;
+    }
+    @media (max-width:900px) {
+      .concept-stage { grid-template-columns:minmax(0,1fr); gap:20px; }
+      .concept-panel { padding:20px; }
+      .image-figure { min-height:290px; }
+      .image-frame,.pixel-frame,.zoom-arrow { height:256px; }
+    }
+    @media (max-width:520px) {
+      .concept-panel { padding:18px; }
+      .image-figure {
+        grid-template-columns:minmax(0,1fr) 24px minmax(0,1fr);
+        gap:2px;
+        min-height:205px;
+        margin-top:8px;
       }
-      .reference-slide.concept-slide .pixel-block span{height:26px;width:26px}
-      .concept-stage{gap:15px}
-      .image-figure{gap:0;grid-template-columns:minmax(0,1fr) 24px minmax(0,1fr);margin-top:7px}
-      .image-frame,.pixel-frame,.zoom-arrow{height:172px}
-      .pixel-block{grid-template-columns:repeat(4,26px);grid-template-rows:repeat(4,26px);gap:2px}
-      .pixel-block span{height:26px;width:26px}
-      .zoom-arrow{font-size:22px;transform:translateY(-14px)}
-      .photo-wrap{width:min(100%,160px)}
-      .figure-label{font-size:14px;white-space:normal;text-align:center}
-      .photo-sample-note{font-size:12px}
+      .figure-unit { gap:10px; }
+      .image-frame,.pixel-frame,.zoom-arrow { height:172px; }
+      .photo-wrap { width:min(100%,160px); }
+      .pixel-block {
+        grid-template-columns:repeat(4,28px);
+        grid-template-rows:repeat(4,28px);
+        gap:2px;
+      }
+      .pixel-block span { width:28px; height:28px; }
+      .zoom-arrow { transform:translateY(-14px); }
+      .zoom-arrow svg { width:21px; height:20px; }
+      .figure-label { font-size:14px; white-space:normal; }
+      .selected-color { gap:12px; padding:12px; }
+      .selected-color .swatch { width:52px; height:42px; }
+      .selected-color strong { font-size:20px; }
+      .selected-color small { font-size:12px; }
+      .channel-values { gap:7px; }
+      .channel-value { padding:10px 9px; }
+      .channel-value .number { font-size:25px; }
+      .tensor-shape { flex-wrap:wrap; }
+      .tensor-shape .formula { font-size:27px; }
+      .tensor-shape .label { text-align:left; }
     }
   </style>
-<link rel="stylesheet" href="reference-layout.css">
 </head>
 <body>
 <main class="deck reference-deck">
-  <section class="slide concept-slide reference-slide" aria-label="Concept 레퍼런스">
+  <section class="slide concept-slide reference-slide" aria-label="Concept 레퍼런스" data-sampled="loading">
     <header>
       <div class="ref-overline"><div class="kicker">CONCEPT / 01</div></div>
       <h1>이미지의 숫자 구조</h1>
@@ -168,25 +299,24 @@
             </div>
             <span class="figure-label">입력 이미지</span>
           </div>
-          <span class="zoom-arrow" aria-hidden="true">→</span>
+          <span class="zoom-arrow" aria-hidden="true"><svg viewBox="0 0 42 24" fill="none"><path d="M2 12 H37 M29 4 L37 12 L29 20" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           <div class="figure-unit pixel-unit">
             <div class="pixel-frame">
-              <div class="pixel-block" role="img" aria-label="사과의 빨간 영역을 확대해 표현한 4 곱하기 4 픽셀 배열"><span></span><span></span><span></span><span></span><span></span><span></span><span class="selected"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+              <div class="pixel-block" role="img" aria-label="사과의 빨간 영역을 확대해 표현한 4 곱하기 4 픽셀 배열"><span></span><span></span><span></span><span></span><span></span><span></span><span class="selected" data-selected-index="6"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
             </div>
             <span class="figure-label">픽셀 확대 (4×4)</span>
           </div>
         </div>
-        <div class="photo-sample-note">80×80 리샘플 이미지의 선택된 4×4 픽셀</div>
-      </article>
+              </article>
       <article class="concept-panel value-panel">
         <div class="panel-head"><h2>선택 픽셀의 RGB 값</h2></div>
-        <div class="selected-color"><span class="swatch"></span><div><strong><span id="selected-rgb">RGB 값 계산 중</span></strong><small>HEX &nbsp;<span id="selected-hex">—</span> · 채널 범위 0–255</small></div></div>
+        <div class="selected-color"><span class="swatch" role="img" aria-label="선택된 픽셀과 동일한 색상"></span><div><strong><span id="selected-rgb">RGB 값 계산 중</span></strong><small>HEX &nbsp;<span id="selected-hex">—</span> · 채널 범위 0–255</small></div></div>
         <div class="channel-values">
-          <div class="channel-value"><div class="head">R <span class="dot" style="background:#e8695c"></span></div><div class="number">232</div><div class="track"><div class="bar" style="width:91.0%;background:#e8695c"></div></div></div>
-          <div class="channel-value"><div class="head">G <span class="dot" style="background:#5db88b"></span></div><div class="number">51</div><div class="track"><div class="bar" style="width:20.0%;background:#5db88b"></div></div></div>
-          <div class="channel-value"><div class="head">B <span class="dot" style="background:#558ecb"></span></div><div class="number">52</div><div class="track"><div class="bar" style="width:20.4%;background:#558ecb"></div></div></div>
+          <div class="channel-value"><div class="head">R <span class="dot" style="background:#e8695c"></span></div><div class="number">—</div><div class="track"><div class="bar" style="background:#e8695c"></div></div></div>
+          <div class="channel-value"><div class="head">G <span class="dot" style="background:#5db88b"></span></div><div class="number">—</div><div class="track"><div class="bar" style="background:#5db88b"></div></div></div>
+          <div class="channel-value"><div class="head">B <span class="dot" style="background:#558ecb"></span></div><div class="number">—</div><div class="track"><div class="bar" style="background:#558ecb"></div></div></div>
         </div>
-        <div class="tensor-shape"><span class="formula">H × W × 3</span><span class="label">높이 × 너비 × RGB 채널<br><strong>이미지 텐서</strong></span></div>
+        <div class="tensor-shape"><span class="formula">H × W × <span class="channel-count">3</span></span><span class="label">높이 × 너비 × RGB 채널<br><strong>이미지 텐서</strong></span></div>
       </article>
     </div>
     <div class="concept-takeaway ref-takeaway"><strong>핵심 개념</strong><span>픽셀 하나 → RGB 3개 값 &nbsp;·&nbsp; 이미지 전체 → 3차원 배열(HWC)</span></div>
@@ -195,41 +325,67 @@
 </main>
 
 <script>
-/* Sample the displayed photograph as an 80×80 RGB image. The 4×4 block is
-   read from the same canvas raster, so every swatch/value is image-derived. */
+/* The 4×4 swatches and selected channel values share one 80×80 canvas raster. */
 (async () => {
   const image = document.getElementById('concept-image');
   const slide = document.querySelector('.concept-slide');
+  const selected_index = 6;
+  const cells = [...document.querySelectorAll('.pixel-block span')];
+  const channels = [...document.querySelectorAll('.channel-value')];
+  const rgb_label = document.getElementById('selected-rgb');
+  const hex_label = document.getElementById('selected-hex');
+  const swatch = document.querySelector('.selected-color .swatch');
+
   try {
     await image.decode();
+    if (!image.naturalWidth || !image.naturalHeight) {
+      throw new Error('Source photograph is unavailable');
+    }
     const canvas = document.createElement('canvas');
     canvas.width = canvas.height = 80;
     const ctx = canvas.getContext('2d', {willReadFrequently:true});
+    if (!ctx) throw new Error('Canvas 2D context is unavailable');
     ctx.imageSmoothingEnabled = true;
     ctx.imageSmoothingQuality = 'high';
     ctx.drawImage(image, 0, 0, 80, 80);
+
     const rgba = ctx.getImageData(52, 38, 4, 4).data;
     const colors = Array.from({length:16}, (_,i) =>
       [rgba[i*4],rgba[i*4+1],rgba[i*4+2]]);
-    document.querySelectorAll('.pixel-block span').forEach((pixel,i) => {
-      pixel.style.backgroundColor = 'rgb(' + colors[i].join(',') + ')';
-      pixel.title = 'RGB (' + colors[i].join(', ') + ')';
+    if (colors.length !== cells.length || selected_index >= colors.length ||
+        colors.some(color => color.some(value => !Number.isInteger(value) ||
+            value < 0 || value > 255))) {
+      throw new Error('Invalid 4×4 RGB sample');
+    }
+
+    const selected = colors[selected_index];
+    const rgb = 'rgb(' + selected.join(',') + ')';
+    const hex = '#' + selected.map(value =>
+      value.toString(16).padStart(2,'0')).join('').toUpperCase();
+
+    cells.forEach((cell,index) => {
+      cell.style.backgroundColor = 'rgb(' + colors[index].join(',') + ')';
+      cell.title = 'RGB (' + colors[index].join(', ') + ')';
     });
-    const [r,g,b] = colors[6];
-    const rgb = 'rgb(' + [r,g,b].join(',') + ')';
-    const hex = '#' + [r,g,b].map(v=>v.toString(16).padStart(2,'0')).join('').toUpperCase();
-    document.getElementById('selected-rgb').textContent = 'RGB ('+[r,g,b].join(', ')+')';
-    document.getElementById('selected-hex').textContent = hex;
-    document.querySelector('.selected-color .swatch').style.backgroundColor = rgb;
-    document.querySelectorAll('.channel-value').forEach((node,i) => {
-      node.querySelector('.number').textContent = [r,g,b][i];
-      node.querySelector('.bar').style.width = (100*[r,g,b][i]/255)+'%';
+    swatch.style.backgroundColor = rgb;
+    rgb_label.textContent = 'RGB (' + selected.join(', ') + ')';
+    hex_label.textContent = hex;
+    channels.forEach((node,index) => {
+      node.querySelector('.number').textContent = selected[index];
+      node.querySelector('.bar').style.width = (100 * selected[index] / 255) + '%';
     });
     slide.dataset.sampled = 'true';
-  } catch(e) {
-    document.getElementById('selected-rgb').textContent = '이미지 픽셀 읽기 실패';
+  } catch (error) {
+    rgb_label.textContent = '이미지 픽셀 읽기 실패';
+    hex_label.textContent = '—';
+    cells.forEach(cell => { cell.title = '원본 이미지 읽기 실패'; });
+    channels.forEach(node => {
+      node.querySelector('.number').textContent = '—';
+      node.querySelector('.bar').style.width = '0%';
+    });
+    swatch.style.backgroundColor = '#dbe4f0';
     slide.dataset.sampled = 'error';
-    console.error(e);
+    console.error(error);
   }
 })();
 </script>
