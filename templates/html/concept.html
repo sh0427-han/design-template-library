@@ -249,7 +249,8 @@
     }
     @media (max-width:520px) {
       /* Give the grid a definite viewport-width track; auto tracks shrink to 238px. */
-      .concept-deck { grid-template-columns:minmax(0,1fr); }
+      .concept-deck { width:100%; grid-template-columns:minmax(0,1fr); }
+      .reference-slide.concept-slide { width:calc(100vw - 20px); }
       .reference-slide.concept-slide .concept-panel { padding:18px; }
       .reference-slide.concept-slide .image-figure {
         grid-template-columns:minmax(0,1fr) 24px minmax(0,1fr);
