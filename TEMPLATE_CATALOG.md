@@ -44,7 +44,7 @@
 - **RULE-BASED:** 사람이 붉은색 영역·둥근 윤곽 조건을 설정하고 AND로 조합해 판단 규칙을 만드는 도식입니다. 준비된 규칙을 Teal 연결선으로 조건 검사에 연결하고, 사과 사진 → 조건 검사 → `사과 판정 / 예시`를 보여줍니다. 조건·임계값을 실제 측정하거나 규칙 엔진을 실행한 결과가 아닙니다.
 - **MACHINE LEARNING:** 서로 다른 붉은 사과/초록 사과/토마토 **일러스트 3개와 정답 라벨** → 학습 → 파라미터가 최적화된 모델의 모식도입니다. 이후 같은 사과 사진 → 학습된 CNN의 상징 → `사과 예측 / 예시`를 보여줍니다. 이번 예제는 지도학습이며 모든 머신러닝에 라벨이 필수라고 일반화하지 않습니다.
 - **CNN 표현의 제한:** 대표 맵 0/3/6/9는 #2와 같은 사진·고정 방향성 필터·ReLU의 실제 계산입니다. #2/#6과 같은 오른쪽 위 Stack 방향·Blue 경계로 표시하지만 학습된 CNN의 실측 활성화가 아닙니다. 화면에 `맵: 고정 필터 설명용`, 접근성 설명과 명세에 전체 조건을 기록합니다. 모델 학습·추론·성능 비교를 실행했다고 주장하지 않습니다.
-- **대칭·색상:** 입력 사진 파일·크기·기준선, 준비/예측 라벨과 구분선, 표의 세 행, 장점/한계 위치를 맞춥니다. Amber는 사람의 조건, Blue는 흐름·학습·CNN, Teal은 준비된 체계의 적용 연결과 예시 결과입니다. 두 카드 전체는 모두 White입니다.
+- **대칭·색상:** 입력 사진 파일·크기·기준선, 준비/예측 라벨과 구분선, 표의 세 행, 장점/한계 위치를 맞춥니다. 카드 상단의 방법 Label·제목·소개 사이는 각각 8px이며, 데스크톱에서는 카드 위 여백을 재배분해 Figure 크기와 푸터 위치를 유지합니다. Amber는 사람의 조건, Blue는 흐름·학습·CNN, Teal은 준비된 체계의 적용 연결과 예시 결과입니다. 두 카드 전체는 모두 White입니다.
 - **반응형·검증:** 900px 이하 카드 1열, 650px 이하 Figure·표를 읽기 배치로 조정합니다. `python scripts/check_comparison.py`가 6개 화면의 실제 Pretendard/−1pt·독립 맵 계산·대칭·화살표·실시간 리사이즈를 검사합니다. [전용 검증 JSON](previews/review/comparison-validation.json), [공통 회귀 JSON](previews/review/reference-validation.json)을 확인합니다.
 - **구현·가이드·프리뷰:** [HTML](templates/html/comparison.html), [전용 CSS](templates/html/comparison-reference.css), [전용 JS](templates/html/comparison-reference.js), [상세 명세](docs/REFERENCE_PAGE_SPECS.md#03-comparison), [Figure 표준](docs/FIGURE_PRODUCTION_STANDARD.md), [수정 전 PNG](previews/review/comparison-before.png), [최신 PNG](previews/html-comparison.png).
 

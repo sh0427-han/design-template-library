@@ -17,6 +17,8 @@ LAYOUT = r'''() => {
    return {a:{x:a.x,y:a.y},b:{x:b.x,y:b.y},stroke:getComputedStyle(svg.querySelector('path')).stroke,d:svg.querySelector('path').getAttribute('d')};
   });
   return {method:card.dataset.method,box:box(card),background:getComputedStyle(card).backgroundColor,
+   heading:box(card.querySelector('.comparison-heading')),label:box(card.querySelector('.pill')),
+   scale:card.getBoundingClientRect().width/card.offsetWidth,
    title:box(card.querySelector('h2')),intro:box(card.querySelector('.comparison-heading p')),
    prep:box(prep),predict:box(predict),prepLabel:box(prep.querySelector('h3')),predictLabel:box(predict.querySelector('h3')),
    photo:box(photo),photoSource:photo.getAttribute('src'),photoLoaded:photo.complete&&photo.naturalWidth>0,
@@ -70,6 +72,12 @@ def check_comparison(page,width,photo_source='assets/concept-apple-photo.jpg'):
         assert [d['label'] for d in c['criteria']]==['판단 기준','기준 변경','적용 조건']
         assert [d['text'] for d in c['criteria']]==texts
         assert [d['label'] for d in c['foot']]==['장점','한계']
+        # Separate the method label, title and introduction, including at zoom.
+        gaps=[(c['title']['y']-c['label']['bottom'])/c['scale'],
+              (c['intro']['y']-c['title']['bottom'])/c['scale']]
+        assert min(gaps)>=7.5,(width,c['method'],'crowded heading',gaps)
+        assert c['heading']['y']<=c['label']['y'] and c['intro']['bottom']<=c['heading']['bottom']+0.5
+        assert c['intro']['bottom']<c['prep']['y'],(width,c['method'],'heading overlaps preparation')
         assert c['prep']['bottom']<c['predict']['y']
         for row in c['rows']:
             assert abs(row['art']['cx']-row['box']['cx'])<1,(width,c['method'],'actual figure center',row)
@@ -96,7 +104,7 @@ def check_comparison(page,width,photo_source='assets/concept-apple-photo.jpg'):
         for label in c['phaseLabels']:
             assert not (label['x']<tip[0]<label['right'] and label['y']<tip[1] and label['bottom']>bus_point[1]),(width,'transfer crosses phase label',label)
     for key in ['width','height']:assert abs(left['box'][key]-right['box'][key])<1,(width,'card size',key)
-    for key in ['title','intro','prep','predict','prepLabel','predictLabel','photo','result']:
+    for key in ['label','title','intro','prep','predict','prepLabel','predictLabel','photo','result']:
         assert abs((left[key]['y']-left['box']['y'])-(right[key]['y']-right['box']['y']))<1,(width,'matching vertical offsets',key)
     assert abs(left['photo']['width']-right['photo']['width'])<1
     for ca,cb in zip(left['criteria'],right['criteria']):

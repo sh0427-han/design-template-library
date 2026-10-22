@@ -1,7 +1,7 @@
 /* #3 only: equal white cards, separate preparation/application, shared axes. */
 .comparison-slide .compare-grid {grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;}
-.comparison-slide .compare-card {display:grid;grid-template-rows:78px 250px 102px minmax(48px,1fr);gap:6px;padding:18px 26px;background:var(--white);min-width:0;}
-.comparison-slide .comparison-heading {display:grid;grid-template-rows:22px 34px 22px;}
+.comparison-slide .compare-card {display:grid;grid-template-rows:94px 250px 102px minmax(48px,1fr);gap:6px;padding:18px 26px;background:var(--white);min-width:0;}
+.comparison-slide .comparison-heading {display:grid;grid-template-rows:22px 34px 22px;row-gap:8px;}
 .comparison-slide .pill {padding:2px 10px;font-size:14px;line-height:18px;height:22px;justify-self:start;}
 .comparison-slide .comparison-heading h2 {margin:0;font-size:29px;line-height:34px;}
 .comparison-slide .comparison-heading p {margin:0;font-size:19px;line-height:22px;}
@@ -47,13 +47,17 @@
 .comparison-slide .compare-foot {margin:0;padding:0;display:grid;align-content:end;gap:0;}
 .comparison-slide .compare-foot p {display:grid;grid-template-columns:30px 1fr;gap:10px;font-size:18px;line-height:24px;color:var(--muted);margin:0;}
 .comparison-slide .compare-foot b {color:var(--deep);font-weight:750;}
+/* Reuse outer whitespace for the taller heading; keep figure sizes and footer. */
+@media(min-width:901px) {
+ .comparison-slide .content {margin-top:13px;}
+}
 @media(max-width:900px) {
  .comparison-slide .compare-grid {grid-template-columns:minmax(0,1fr);gap:22px;}
- .comparison-slide .compare-card {grid-template-rows:78px 250px 102px 48px;}
+ .comparison-slide .compare-card {grid-template-rows:94px 250px 102px 48px;}
 }
 /* Below 650px, retain readable text instead of shrinking a wide SVG. */
 @media(max-width:650px) {
- .comparison-slide .compare-card {padding:18px;grid-template-rows:126px 266px 162px 96px;gap:10px;}
+ .comparison-slide .compare-card {padding:18px;grid-template-rows:142px 266px 162px 96px;gap:10px;}
  .comparison-slide .comparison-heading {grid-template-rows:22px 60px 44px;}
  .comparison-slide .comparison-heading h2 {font-size:25px;line-height:30px;display:flex;align-items:center;}
  .comparison-slide .comparison-heading p {font-size:18px;line-height:22px;}
