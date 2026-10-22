@@ -1,14 +1,16 @@
 """Validate the shared Pretendard font in gallery and CNN scroll/slide.
 
 Also refresh the three HTML dual-mode preview images after font changes.
-The PPTX and unrelated HTML source documents are not modified.
+Gallery and the two modes use the same bundled font; their content is preserved.
 """
 from functools import partial
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 import threading
+import json
 
 from playwright.sync_api import sync_playwright
+from reference_validation import browser_options
 
 ROOT = Path(__file__).resolve().parents[1]
 PREVIEWS = ROOT / "previews"
@@ -38,11 +40,10 @@ def main():
     )
     threading.Thread(target=server.serve_forever, daemon=True).start()
     checks = 0
+    cases = []
     try:
         with sync_playwright() as playwright:
-            browser = playwright.chromium.launch(
-                headless=True, args=["--no-sandbox"]
-            )
+            browser = playwright.chromium.launch(**browser_options())
             page = browser.new_page(device_scale_factor=1)
             errors = []
             page.on("pageerror", lambda error: errors.append(str(error)))
@@ -67,14 +68,12 @@ def main():
                         float(result["letterSpacing"].removesuffix("px")) + 4 / 3
                     ) < .02, (kind, width, result)
                     assert result["loadedFaces"] > 0, (
-                        kind, width, "font did not load from CDN", result
+                        kind, width, "local Pretendard did not load", result
                     )
                     assert result["scrollWidth"] <= width, (
                         kind, width, "horizontal overflow", result
                     )
                     if width == 1500:
-                        if kind == "gallery":
-                            continue
                         if kind == "scroll":
                             page.screenshot(
                                 path=str(PREVIEWS / "dual-mode-scroll.jpg"),
@@ -97,12 +96,22 @@ def main():
                                 path=str(PREVIEWS / "dual-mode-lab-slide.jpg"),
                                 type="jpeg", quality=90,
                             )
-                    checks += 1
+                    cdp=page.context.new_cdp_session(page)
+                    cdp.send('DOM.enable');cdp.send('CSS.enable')
+                    root=cdp.send('DOM.getDocument')['root']['nodeId']
+                    selector='.slide-sheet[aria-hidden="false"] h2' if kind=='slides' else 'h1'
+                    heading=cdp.send('DOM.querySelector',{'nodeId':root,'selector':selector})['nodeId']
+                    assert heading,(kind,selector)
+                    fonts=cdp.send('CSS.getPlatformFontsForNode',{'nodeId':heading})['fonts']
+                    assert fonts and all(f['familyName']=='Pretendard Variable' and f['isCustomFont'] for f in fonts),(kind,fonts)
+                    cdp.detach();checks += 1
+                    cases.append({'kind':kind,'viewport':[width,height],'font':result,'actual_heading_fonts':fonts})
             assert not errors, errors
             browser.close()
     finally:
         server.shutdown()
         server.server_close()
+    (PREVIEWS/'review/dual-mode-validation.json').write_text(json.dumps({'status':'passed','cases':cases,'page_errors':errors},ensure_ascii=False,indent=2)+'\n')
     print("PASS: shared Pretendard family, real font load, -1pt and "
           f"horizontal bounds on {checks} screen combinations")
 

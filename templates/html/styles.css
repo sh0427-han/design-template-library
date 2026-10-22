@@ -1,5 +1,11 @@
 /* Shared HTML typography: Pretendard Variable (v1.3.9), with platform fallbacks. */
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
+@font-face {
+  font-family: "Pretendard Variable";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("assets/fonts/pretendard/PretendardVariable.woff2") format("woff2");
+}
 
 :root {
   --font-sans: "Pretendard Variable", "Pretendard", "Malgun Gothic", "Apple SD Gothic Neo", system-ui, sans-serif;

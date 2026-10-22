@@ -1,0 +1,288 @@
+{
+  "observed_date": "2026-10-22",
+  "main": "9ad6c458665ffd7ed83318ad20f04d68a22218f0",
+  "remote_branches": [
+    {
+      "name": "design/concept-architecture-figure-refinement",
+      "sha": "d963bda0c56dce45d393833ee3e8731c482dddcc"
+    },
+    {
+      "name": "design/professional-figures-architecture-process-comparison",
+      "sha": "325a8fd78173fe443d0627b8adc6e8048ed0dca2"
+    },
+    {
+      "name": "design/refine-eight-references",
+      "sha": "5d59c58161fce35e84d4cdb0b5bdce2ac24c2f42"
+    },
+    {
+      "name": "feat/align-concept-figures-20261021",
+      "sha": "02e61ef5987c5c92ac3c311f6c48c6be130751cb"
+    },
+    {
+      "name": "feat/architecture-paper-cnn-vector-20261021",
+      "sha": "2c9be907e8928b580ba670838b2ab07aa5327293"
+    },
+    {
+      "name": "feat/dual-mode-scroll-slide-20261020",
+      "sha": "6be69e80a5ea312fefe4249bd3e68fdadb1fb416"
+    },
+    {
+      "name": "feat/eight-reference-types-20261021",
+      "sha": "d4d66e07716d6b09a9bb74ea15ed93b44e983be3"
+    },
+    {
+      "name": "feat/initialize-design-template-library",
+      "sha": "8f4513692d535d349937c7912089e6d6db7413aa"
+    },
+    {
+      "name": "feat/realistic-concept-and-paper-architecture-20261021",
+      "sha": "5b151cced25c5b8ef8a7bb8152465a8defe1467b"
+    },
+    {
+      "name": "feat/refine-concept-reference-20261021",
+      "sha": "fe5caa2f1932f2ddf191949baa5389aa7a7dd54d"
+    },
+    {
+      "name": "feat/step-by-step-multiply-sum-20261022",
+      "sha": "aef62e751aaa650ab111861d2d006581768d637c"
+    },
+    {
+      "name": "main",
+      "sha": "9ad6c458665ffd7ed83318ad20f04d68a22218f0"
+    }
+  ],
+  "open_prs": [
+    {
+      "number": 9,
+      "title": "8종 HTML Figure 개선: #06 CNN 활성화 맵, #02 흐름, #03 비교 시각화",
+      "url": "https://github.com/sh0427-han/design-template-library/pull/9",
+      "head": "325a8fd78173fe443d0627b8adc6e8048ed0dca2",
+      "branch": "design/professional-figures-architecture-process-comparison",
+      "files": [
+        ".github/workflows/review-professional-figures.yml",
+        "AGENTS.md",
+        "README.md",
+        "TEMPLATE_CATALOG.md",
+        "docs/REFERENCE_REUSE_WORKFLOW.md",
+        "previews/html-architecture.jpg",
+        "previews/html-comparison.png",
+        "previews/html-process.png",
+        "scripts/check_professional_figures.py",
+        "templates/html/architecture.html",
+        "templates/html/assets/cnn-feature-maps.js",
+        "templates/html/comparison.html",
+        "templates/html/index.html",
+        "templates/html/process.html"
+      ],
+      "commits": [
+        {
+          "sha": "a689cb758a011026b739358eeaa71b0612c9bede",
+          "title": "add deterministic source-image CNN feature map rendering shared by Ar…"
+        },
+        {
+          "sha": "796afe2c109c4b5751b7146874b8b3269bfab92d",
+          "title": "figure: compute CNN convolution and pooling maps from the actual appl…"
+        },
+        {
+          "sha": "41524cef2503e346c45224be829539ff898877a9",
+          "title": "figure: show consistent apple input and real computed feature map mot…"
+        },
+        {
+          "sha": "a7094917262586b50aafc829a54afb33d5f9ae07",
+          "title": "figure: contrast rule conditions and learned visual features using th…"
+        },
+        {
+          "sha": "af930caae1c7cbf7e50824a1a91670cf3b8dbf11",
+          "title": "reuse computed convolution motif in Comparison alongside Process and …"
+        },
+        {
+          "sha": "987c502f4b1e5b4af987e33df7401bfc7c0ee3ad",
+          "title": "test: validate photo-derived maps and same-input figures across three…"
+        },
+        {
+          "sha": "8f0457a2443707f7af248cae83942ec54a3a9ddb",
+          "title": "ci: review three HTML figure templates in real Chromium and commit se…"
+        },
+        {
+          "sha": "0adbb062ead69dd9d4898a519cd02b0336e4759b",
+          "title": "docs: define rules, editable reference HTML and screenshots roles in …"
+        },
+        {
+          "sha": "37f94de3f697d6f569550a6d836ea47287d5a356",
+          "title": "test: account for Architecture SVG embedded input photograph"
+        },
+        {
+          "sha": "5f05e3531c678b9f56272c162ef3657a7ec3825f",
+          "title": "chore: render refined Architecture, Process and Comparison figures"
+        },
+        {
+          "sha": "0a4cee287321103bf9d041de9228b22ec656815a",
+          "title": "docs: link canonical HTML reference reuse workflow"
+        },
+        {
+          "sha": "1c5cbeec03e7e2b48093aab18dbf3263c71711bd",
+          "title": "docs: tell Codex to reuse guidelines and editable HTML, not only scre…"
+        },
+        {
+          "sha": "055f47be9ad4e36eb92449e1b0b5cc48d66de2d6",
+          "title": "docs: catalog computed map figure behavior and selection guide"
+        },
+        {
+          "sha": "9f76263719e154da07ae323327aa8b2deeba9daa",
+          "title": "figure: increase activation-map contrast without changing convolution…"
+        },
+        {
+          "sha": "07f7463108420e6d2ec84559da319146a8c9dd9e",
+          "title": "chore: render refined Architecture, Process and Comparison figures"
+        },
+        {
+          "sha": "325a8fd78173fe443d0627b8adc6e8048ed0dca2",
+          "title": "gallery: show the latest verified Process Comparison Architecture fig…"
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "title": "refine #6 CNN figure: single RGB image and geometric internal arrows",
+      "url": "https://github.com/sh0427-han/design-template-library/pull/10",
+      "head": "2c9be907e8928b580ba670838b2ab07aa5327293",
+      "branch": "feat/architecture-paper-cnn-vector-20261021",
+      "files": [
+        "TEMPLATE_CATALOG.md",
+        "docs/FIGURE_PRODUCTION_STANDARD.md",
+        "previews/html-architecture.jpg",
+        "templates/html/architecture.html"
+      ],
+      "commits": [
+        {
+          "sha": "9a9f9a76319942adf0f9a2c38882e5329d0a631a",
+          "title": "feat(architecture): render CNN feature stacks and 1D GAP-to-logits flow"
+        },
+        {
+          "sha": "4c9cbb48628633058b91fb704b677983e65b4668",
+          "title": "docs(catalog): document updated Architecture tensor flow"
+        },
+        {
+          "sha": "e3ca0140d75793adaca9edbfc7cafd4a86000085",
+          "title": "feat(architecture): separate feature extractor and Flatten classifier…"
+        },
+        {
+          "sha": "bce9aad72ded41da3fcb9445c1c673700a9f73af",
+          "title": "feat(architecture): show stride-2 spatial reduction and Softmax proba…"
+        },
+        {
+          "sha": "09057cc51409b9431563bf85e9dd14db528a29ee",
+          "title": "refactor(architecture): label FC layer and explain operations in place"
+        },
+        {
+          "sha": "e9bb5e3deee1bcbc09f8d9e779f835753760e4db",
+          "title": "feat(architecture): visualize two Conv-ReLU-MaxPool blocks and class …"
+        },
+        {
+          "sha": "ddf573f11ee9ec91c236ca26411dc5875da0f845",
+          "title": "refine(architecture): clarify Conv ReLU Pool roles and block boundaries"
+        },
+        {
+          "sha": "d2d05b29c5ebbe3b864cb4e6487e9414b2a39488",
+          "title": "refine(architecture): align CNN arrows and tighten grouped module spa…"
+        },
+        {
+          "sha": "0ac7ddcb60f546fd432cbcf1e5367947dd03d04f",
+          "title": "fix(architecture): join connector arrowheads and center stage artwork"
+        },
+        {
+          "sha": "2c9be907e8928b580ba670838b2ab07aa5327293",
+          "title": "refine(architecture): single photo, centered teal internal arrows, re…"
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "title": "refine Step-by-Step: verified Pretendard preview and convolution calculation",
+      "url": "https://github.com/sh0427-han/design-template-library/pull/11",
+      "head": "aef62e751aaa650ab111861d2d006581768d637c",
+      "branch": "feat/step-by-step-multiply-sum-20261022",
+      "files": [
+        ".github/workflows/render-step-pretendard.yml",
+        "TEMPLATE_CATALOG.md",
+        "previews/html-step-by-step.jpg",
+        "previews/review/step-pretendard-validation.json",
+        "scripts/render_step_pretendard.py",
+        "templates/html/step-by-step.html"
+      ],
+      "commits": [
+        {
+          "sha": "6cd72b51b6fa72a1774150cc650aeefa25772c6f",
+          "title": "refine(step-by-step): show elementwise products before sum and map ou…"
+        },
+        {
+          "sha": "1cabe474ca4abf6c7fd8a8a2d606334c93143e5e",
+          "title": "fix(step-by-step): vertically center matrix diagrams independently of…"
+        },
+        {
+          "sha": "cd379247f82984781a10a27fea2d0a1c6e2f7be0",
+          "title": "refine(step-by-step): align card dividers and clarify sum of products"
+        },
+        {
+          "sha": "1de80670d81ce18b196200283bd16ee7a77e0a4f",
+          "title": "docs(step-by-step): explain elementwise multiplication symbol for beg…"
+        },
+        {
+          "sha": "4c001d1ae017a1ca012c046f3445b7731d784dc6",
+          "title": "docs(step-by-step): simplify filter-sliding explanation for beginners"
+        },
+        {
+          "sha": "6f985bc49c86aac7a127f2d98447cc29ac8aeaee",
+          "title": "ci(step): verify and capture true Pretendard browser preview"
+        },
+        {
+          "sha": "aef62e751aaa650ab111861d2d006581768d637c",
+          "title": "chore(step): render preview using verified Pretendard"
+        }
+      ]
+    }
+  ],
+  "local_approved_sources": {
+    "interactive": {
+      "branch": "design/interactive-threshold-feedback",
+      "head": "ae26ba0f83365756671cdc7ee5cb743534e46ffe"
+    },
+    "experiment": {
+      "branch": "design/experiment-confusion-matrix-metrics",
+      "head": "3ad7079a7754c5d9d20ab73db60ea308720eb348"
+    }
+  },
+  "local_archived_work": {
+    "branch": "archive/step-local-experiment-20261022",
+    "head": "1e03306ba633c79b91cec10b5546927fe36e4046",
+    "included_in_main": false,
+    "reason": "Earlier interactive Step-by-Step experiment; PR #11 is the canonical #4"
+  },
+  "overlap": {
+    "TEMPLATE_CATALOG.md": [
+      "PR #9",
+      "PR #10",
+      "PR #11",
+      "local #5",
+      "local #7"
+    ],
+    "templates/html/architecture.html": [
+      "PR #9 (excluded)",
+      "PR #10 (selected)"
+    ],
+    "common_font_and_checks": [
+      "main",
+      "local #5",
+      "PR #9",
+      "PR #11"
+    ],
+    "resolution": "Select source snapshots; rewrite common docs/checks against final implementation. No sequential PR merges."
+  },
+  "remote_recheck": {
+    "account": "sh0427-han-private",
+    "push_permission": false,
+    "main_unchanged": true,
+    "pr_heads_unchanged": true,
+    "publication": "not performed; attempted original #5 push received GitHub 403"
+  }
+}

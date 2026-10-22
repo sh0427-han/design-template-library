@@ -1,0 +1,132 @@
+{
+  "status": "passed",
+  "cases": [
+    {
+      "kind": "gallery",
+      "viewport": [
+        1500,
+        950
+      ],
+      "font": {
+        "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+        "letterSpacing": "-1.33333px",
+        "loadedFaces": 1,
+        "scrollWidth": 1500
+      },
+      "actual_heading_fonts": [
+        {
+          "familyName": "Pretendard Variable",
+          "postScriptName": "PretendardVariable-Regular",
+          "isCustomFont": true,
+          "glyphCount": 14
+        }
+      ]
+    },
+    {
+      "kind": "scroll",
+      "viewport": [
+        1500,
+        950
+      ],
+      "font": {
+        "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+        "letterSpacing": "-1.33333px",
+        "loadedFaces": 1,
+        "scrollWidth": 1500
+      },
+      "actual_heading_fonts": [
+        {
+          "familyName": "Pretendard Variable",
+          "postScriptName": "PretendardVariable-Regular",
+          "isCustomFont": true,
+          "glyphCount": 21
+        }
+      ]
+    },
+    {
+      "kind": "slides",
+      "viewport": [
+        1500,
+        950
+      ],
+      "font": {
+        "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+        "letterSpacing": "-1.33333px",
+        "loadedFaces": 1,
+        "scrollWidth": 1500
+      },
+      "actual_heading_fonts": [
+        {
+          "familyName": "Pretendard Variable",
+          "postScriptName": "PretendardVariable-Regular",
+          "isCustomFont": true,
+          "glyphCount": 14
+        }
+      ]
+    },
+    {
+      "kind": "gallery",
+      "viewport": [
+        390,
+        844
+      ],
+      "font": {
+        "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+        "letterSpacing": "-1.33333px",
+        "loadedFaces": 1,
+        "scrollWidth": 390
+      },
+      "actual_heading_fonts": [
+        {
+          "familyName": "Pretendard Variable",
+          "postScriptName": "PretendardVariable-Regular",
+          "isCustomFont": true,
+          "glyphCount": 14
+        }
+      ]
+    },
+    {
+      "kind": "scroll",
+      "viewport": [
+        390,
+        844
+      ],
+      "font": {
+        "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+        "letterSpacing": "-1.33333px",
+        "loadedFaces": 1,
+        "scrollWidth": 390
+      },
+      "actual_heading_fonts": [
+        {
+          "familyName": "Pretendard Variable",
+          "postScriptName": "PretendardVariable-Regular",
+          "isCustomFont": true,
+          "glyphCount": 21
+        }
+      ]
+    },
+    {
+      "kind": "slides",
+      "viewport": [
+        390,
+        844
+      ],
+      "font": {
+        "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+        "letterSpacing": "-1.33333px",
+        "loadedFaces": 1,
+        "scrollWidth": 390
+      },
+      "actual_heading_fonts": [
+        {
+          "familyName": "Pretendard Variable",
+          "postScriptName": "PretendardVariable-Regular",
+          "isCustomFont": true,
+          "glyphCount": 11
+        }
+      ]
+    }
+  ],
+  "page_errors": []
+}

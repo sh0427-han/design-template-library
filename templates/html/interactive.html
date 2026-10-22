@@ -1,26 +1,154 @@
 <!doctype html>
-    <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Interactive | Design Template Library</title>
-    <link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="reference-types.css"><link rel="stylesheet" href="reference-layout.css">
+<html lang="ko"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>임계값과 분류 결과 | Design Template Library</title>
+<link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="reference-types.css"><link rel="stylesheet" href="reference-layout.css">
+<style>
+/* #5 only: inherit canonical typography and colors; preserve the other references. */
+.interactive-slide h1 {line-height:1.35;margin-bottom:3px;}
+.interactive-slide .kicker {line-height:1.2;}
+.interactive-slide .footer {line-height:1.2;}
+.interactive-slide .ref-k,.interactive-slide .sample-note {line-height:1.25;}
+.interactive-slide .content {display:flex;flex-direction:column;margin-top:23px;}
+.interactive-slide .live-grid {display:grid;grid-template-columns:1.07fr 1fr;gap:20px;flex:1;min-height:0;}
+.interactive-slide .live-card {padding:20px;min-width:0;min-height:0;background:var(--white);border:1px solid var(--border);border-radius:17px;display:flex;flex-direction:column;}
+.interactive-slide .live-card h2 {font-size:25px;line-height:1.3;color:var(--navy);margin:6px 0 6px;}
+.interactive-slide .live-card > * {flex-shrink:0;}
+.interactive-slide .live-heading {display:flex;justify-content:space-between;align-items:baseline;gap:12px;}
+.interactive-slide .sample-note {font-size:17px;color:var(--muted);white-space:nowrap;}
+.interactive-slide .threshold-panel {display:grid;grid-template-columns:140px 1fr;gap:12px;align-items:center;}
+.interactive-slide .threshold-meta {margin:0;gap:10px;line-height:1.2;}
+.interactive-slide .threshold-meta label {font-size:21px;font-weight:750;color:var(--navy);}
+.interactive-slide #threshold-value {font-size:29px;color:var(--blue);}
+.interactive-slide .threshold-control {display:grid;grid-template-columns:36px 1fr 36px;gap:8px;align-items:center;}
+.interactive-slide .threshold-control > span {font-size:16px;color:var(--muted);}
+.interactive-slide .threshold-control > span:last-child {text-align:right;}
+.interactive-slide .threshold-input {height:28px;accent-color:var(--blue);}
+.interactive-slide .decision-help {display:flex;justify-content:space-between;align-items:center;gap:16px;margin:6px 0 4px;}
+.interactive-slide .decision-rule {font-size:18px;line-height:1.4;color:var(--deep);margin:0;}
+.interactive-slide .threshold-legend {display:inline-flex;align-items:center;gap:8px;font-size:16px;line-height:1.4;color:var(--muted);white-space:nowrap;border-left:1px solid var(--border);padding-left:16px;}
+.interactive-slide .legend-line {width:20px;border-top:2px dashed var(--amber);flex-shrink:0;}
+.interactive-slide .score-heading,.interactive-slide .score-row {display:grid;grid-template-columns:30px minmax(0,1fr) 40px 74px 42px;gap:8px;}
+.interactive-slide .score-heading {font-size:16px;margin:4px 9px 4px 95px;line-height:1.4;}
+.interactive-slide .sample-groups {display:grid;gap:8px;}
+.interactive-slide .sample-group {display:grid;grid-template-columns:76px minmax(0,1fr);gap:10px;border:1px solid var(--border);border-radius:10px;padding:4px 8px;min-width:0;}
+.interactive-slide .group-label {display:flex;flex-direction:column;justify-content:center;gap:3px;border-right:1px solid var(--border);padding-right:8px;}
+.interactive-slide .group-label h3 {font-size:18px;color:var(--deep);line-height:1.35;margin:0;}
+.interactive-slide .group-label span {font-size:16px;color:var(--muted);}
+.interactive-slide .score-list {margin:0;gap:3px;align-content:start;}
+.interactive-slide .score-row {font-size:18px;min-height:27px;line-height:1.35;}
+.interactive-slide .score-row > :not(.score-track),.interactive-slide .score-heading > :not(:nth-child(2)) {text-align:center;}
+.interactive-slide .score-track {height:18px;}
+.interactive-slide .score-track::after {top:-4px;height:26px;}
+.interactive-slide .score-number {font-size:17px;color:var(--deep);}
+.interactive-slide .prediction-cell {display:grid;grid-template-columns:14px 1fr;gap:4px;align-items:center;}
+.interactive-slide .prediction-arrow {color:var(--muted);font-size:17px;}
+.interactive-slide .sample-prediction {display:block;font-size:17px;font-weight:750;color:var(--muted);background:var(--white);border:1px solid var(--border);border-radius:6px;padding:2px 5px;line-height:1.3;text-align:center;}
+.interactive-slide [data-prediction="1"] .sample-prediction {color:var(--blue);border-color:var(--blue);background:var(--pale-blue);}
+.interactive-slide [data-prediction="0"] .score-fill {background:var(--muted);opacity:.6;}
+.interactive-slide .outcome {font-size:16px;padding:4px 2px;line-height:1.3;}
+.interactive-slide .score-summary {font-size:17px;color:var(--deep);margin:10px 0 0;padding-top:8px;line-height:1.4;border-top:1px solid var(--border);}
+.interactive-slide .live-context {font-size:17px;color:var(--muted);line-height:1.4;margin:0;}
+.interactive-slide .live-cm-wrap {position:relative;width:100%;max-width:480px;align-self:center;}
+.interactive-slide .live-cm {border-collapse:separate;border-spacing:6px 4px;table-layout:fixed;width:100%;margin:3px 0 2px;}
+.interactive-slide .live-cm col.axis {width:38px;}
+.interactive-slide .live-cm col.row-label {width:78px;}
+.interactive-slide .live-cm th {font-size:18px;line-height:1.3;text-align:center;vertical-align:middle;font-weight:650;color:var(--deep);padding:0;}
+.interactive-slide .live-cm .gt-axis {font-size:20px;font-weight:800;color:var(--blue);padding-bottom:5px;border-bottom:1px solid #b8c8d9;}
+.interactive-slide .live-cm .pred-axis {font-size:17px;font-weight:800;color:var(--blue);}
+.interactive-slide .live-pred-divider {position:absolute;left:var(--divider-x,0);top:var(--divider-y,0);height:var(--divider-height,0);width:0;border-right:1px solid #b8c8d9;pointer-events:none;}
+.interactive-slide .live-cm td {height:56px;padding:3px 0;text-align:center;vertical-align:middle;border-radius:9px;}
+.interactive-slide .cm-correct {background:var(--pale-teal);color:#126b65;}
+.interactive-slide .cm-error {background:#fff0e0;color:#945616;}
+.interactive-slide .live-cm small {display:block;font-size:15px;font-weight:800;line-height:1.1;}
+.interactive-slide .live-cm strong {display:block;font-size:30px;line-height:1.1;font-weight:800;}
+.interactive-slide .live-metrics {display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:auto;padding-top:6px;}
+.interactive-slide .live-metric {border:1px solid var(--border);border-radius:10px;padding:8px 12px;min-width:0;background:var(--white);}
+.interactive-slide .live-metric header {display:flex;justify-content:space-between;gap:6px;align-items:baseline;line-height:1.2;}
+.interactive-slide .live-metric h3 {font-size:18px;color:var(--deep);margin:0;}
+.interactive-slide .live-metric header b {font-size:28px;color:var(--navy);white-space:nowrap;}
+.interactive-slide .metric-meaning {font-size:16px;color:var(--muted);line-height:1.35;margin:3px 0 5px;}
+.interactive-slide .live-metric-formula {font-size:18px;color:var(--deep);line-height:1.4;}
+.interactive-slide .live-metric-calculation {font-size:18px;font-weight:750;color:var(--blue);line-height:1.4;margin:5px 0 0;}
+.interactive-slide .ref-takeaway {flex-shrink:0;margin-top:14px;padding:10px 16px;font-size:20px;}
+.interactive-slide .sr-only {position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);}
+@media(max-width:900px) {
+ .interactive-slide .live-grid {grid-template-columns:1fr;gap:18px;}
+ .interactive-slide .live-card {padding:22px;}
+ .interactive-slide .score-summary {margin-top:12px;}
+ .interactive-slide .live-cm td {height:76px;}
+ .interactive-slide .live-metrics {margin-top:10px;}
+}
+@media(max-width:520px) {
+ .interactive-slide.reference-slide {padding:28px 20px;}
+ .interactive-slide .live-card {padding:16px;}
+ .interactive-slide .live-card h2 {font-size:24px;}
+ .interactive-slide .live-heading {display:block;}
+ .interactive-slide .sample-note {font-size:16px;}
+ .interactive-slide .threshold-panel {display:block;margin-top:8px;}
+ .interactive-slide .threshold-meta {margin-bottom:3px;}
+ .interactive-slide .decision-help {flex-direction:column;align-items:flex-start;gap:4px;margin-bottom:8px;}
+ .interactive-slide .threshold-legend {border-left:0;padding-left:0;}
+ .interactive-slide .sample-group {grid-template-columns:45px minmax(0,1fr);gap:7px;padding:6px;}
+ .interactive-slide .group-label {padding-right:5px;}
+ .interactive-slide .group-label h3 {font-size:16px;}
+ .interactive-slide .group-label span {font-size:15px;}
+ .interactive-slide .score-heading {margin-left:59px;margin-right:7px;}
+ .interactive-slide .score-heading,.interactive-slide .score-row {grid-template-columns:23px minmax(0,1fr) 29px 56px 28px;gap:4px;}
+ .interactive-slide .score-heading {font-size:14px;}
+ .interactive-slide .score-row,.interactive-slide .score-number,.interactive-slide .sample-prediction {font-size:15px;}
+ .interactive-slide .prediction-cell {grid-template-columns:14px 1fr;gap:2px;}
+ .interactive-slide .prediction-arrow {font-size:14px;}
+ .interactive-slide .sample-prediction {padding:2px 3px;}
+ .interactive-slide .outcome {font-size:14px;}
+ .interactive-slide .decision-rule,.interactive-slide .score-summary {font-size:17px;}
+ .interactive-slide .live-cm {border-spacing:4px;}
+ .interactive-slide .live-cm col.axis {width:31px;}
+ .interactive-slide .live-cm col.row-label {width:63px;}
+ .interactive-slide .live-cm th {font-size:17px;}
+ .interactive-slide .live-cm .pred-axis {font-size:16px;}
+ .interactive-slide .live-cm td {height:72px;}
+ .interactive-slide .live-metrics {grid-template-columns:1fr;}
+ .interactive-slide .live-metric {padding:12px 14px;}
+ .interactive-slide .metric-meaning {font-size:17px;}
+ .interactive-slide .live-metric-formula,.interactive-slide .live-metric-calculation {font-size:20px;}
+}
+</style>
+<script src="interactive-reference.js" defer></script>
 </head>
-    <body><main class="deck reference-deck"><section class="slide ref-slide reference-slide interactive-slide" aria-label="interactive 디자인 레퍼런스">
-    <header><div class="ref-overline"><div class="kicker">INTERACTIVE / 05</div></div>
-    <h1>임계값과 분류 결과</h1><p class="subtitle">판정 기준 조절에 따른 양성 예측·Precision·Recall의 변화</p></header>
-    <div class="content"><div class="ref-grid interactive-grid">
-  <section class="ref-card"><div class="ref-overline"><div><div class="ref-k">LIVE CONTROL</div><h2 class="ref-h">판정 임계값 조절</h2></div><div class="ref-chip">6개 샘플</div></div>
-    <div class="threshold-meta"><label style="font-size:17px;font-weight:800;color:#12233F" for="threshold">Threshold</label><strong id="threshold-value" style="font-size:28px;color:#3168C8">0.60</strong></div>
-    <input class="threshold-input" id="threshold" type="range" min="0" max="100" value="60" step="5" aria-label="임계값 변경">
-    <p class="ref-note">점수 ≥ 임계값: 이상(양성) · 주황 점선: 현재 임계값</p>
-    <div class="score-heading"><span>샘플</span><span>이상 점수</span><span>점수 / 실제</span><span>판정</span></div><div id="score-list" class="score-list"></div>
+<body><main class="deck reference-deck"><section class="slide ref-slide reference-slide interactive-slide" aria-label="Interactive 임계값 실습">
+<header><div class="kicker">INTERACTIVE / 05</div><h1>임계값과 분류 결과</h1><p class="subtitle">임계값 조절 → 샘플별 판정 → 혼동행렬과 평가 지표</p></header>
+<div class="content"><div class="live-grid">
+  <section class="ref-card live-card" aria-labelledby="control-title">
+    <div class="live-heading"><div class="ref-k">LIVE CONTROL</div><span class="sample-note" id="sample-note">예시 6개 · 양성: 이상</span></div>
+    <h2 id="control-title">점수와 임계값으로 판정</h2>
+    <div class="threshold-panel"><div class="threshold-meta"><label for="threshold">임계값</label><strong id="threshold-value">0.60</strong></div>
+    <div class="threshold-control"><span>0.00</span><input class="threshold-input" id="threshold" type="range" min="0" max="100" value="60" step="5" aria-label="판정 임계값"><span>1.00</span></div>
+    </div><div class="decision-help"><p class="decision-rule">점수 ≥ 임계값 → 이상</p><span class="threshold-legend"><i class="legend-line" aria-hidden="true"></i><span><span class="sr-only">주황 점선: </span>현재 임계값</span></span></div>
+    <div class="score-heading" aria-hidden="true"><span>샘플</span><span>이상 점수</span><span>점수</span><span>예측</span><span>유형</span></div>
+    <div id="score-list" class="sample-groups" aria-label="실제값별 샘플과 모델 예측"></div>
+    <p class="score-summary" id="score-summary"></p>
   </section>
-  <section class="ref-card" aria-live="polite" aria-atomic="true"><div class="ref-k">CONFUSION MATRIX</div><h2 class="ref-h">예측 결과와 평가</h2>
-    <div class="cm-grid" id="cm-grid"><span></span><span class="cm-caption">예측 음성</span><span class="cm-caption">예측 양성</span>
-      <span class="cm-caption">실제 음성</span><span class="cm-correct" id="cm-tn">2</span><span class="cm-error" id="cm-fp">1</span>
-      <span class="cm-caption">실제 양성</span><span class="cm-error" id="cm-fn">1</span><span class="cm-correct" id="cm-tp">2</span></div>
-    <p class="ref-note cm-legend">TN 정상 적중 · FP 오탐<br>FN 미탐 · TP 이상 적중</p><div class="ref-pair" style="margin-top:21px"><div class="ref-metric"><span>Precision</span><b id="precision">66.7%</b></div><div class="ref-metric"><span>Recall</span><b id="recall">66.7%</b></div></div>
-    <p class="ref-note" style="margin-top:16px"><span class="note-sentence">임계값 상승 → 양성 판정·Recall은 증가하지 않음.</span><span class="note-sentence">Precision은 샘플 구성에 따라 변동.</span></p>
-  </section></div>
-  <script src="interactive-reference.js" defer></script></div>
-    <footer class="footer"><span>Design Template Library · Interactive</span><span>05 / 08</span></footer>
-    </section></main></body></html>
-
+  <section class="ref-card live-card" aria-labelledby="evaluation-title">
+    <div class="ref-k">CONFUSION MATRIX</div><h2 id="evaluation-title">판정 개수에서 지표로</h2>
+    <p class="live-context" id="live-context">실제 정상 3개 · 실제 이상 3개</p>
+    <div class="live-cm-wrap"><table class="live-cm">
+      <caption class="sr-only">GT 실제값 열과 모델 예측 행으로 표시한 혼동행렬</caption>
+      <colgroup><col class="axis"><col class="row-label"><col><col></colgroup>
+      <thead><tr><th colspan="2" aria-hidden="true"></th><th class="gt-axis" colspan="2" scope="colgroup">GT (실제값)</th></tr>
+      <tr><th colspan="2" aria-hidden="true"></th><th scope="col" id="live-gt-anomaly">실제 이상</th><th scope="col" id="live-gt-normal">실제 정상</th></tr></thead>
+      <tbody><tr><th rowspan="2" scope="rowgroup" class="pred-axis"><span class="pred-axis-label">모델<br>예측</span></th><th scope="row" id="live-pred-anomaly">예측 이상</th>
+      <td class="cm-correct" data-code="TP" headers="live-pred-anomaly live-gt-anomaly"><small>TP</small><strong id="cm-tp">2</strong></td>
+      <td class="cm-error" data-code="FP" headers="live-pred-anomaly live-gt-normal"><small>FP</small><strong id="cm-fp">1</strong></td></tr>
+      <tr><th scope="row" id="live-pred-normal">예측 정상</th><td class="cm-error" data-code="FN" headers="live-pred-normal live-gt-anomaly"><small>FN</small><strong id="cm-fn">1</strong></td>
+      <td class="cm-correct" data-code="TN" headers="live-pred-normal live-gt-normal"><small>TN</small><strong id="cm-tn">2</strong></td></tr></tbody>
+    </table><span class="live-pred-divider" aria-hidden="true"></span></div>
+    <div class="live-metrics">
+      <article class="live-metric"><header><h3>Precision</h3><b id="precision">66.7%</b></header><p class="metric-meaning">이상 예측 중 실제 이상 비율</p><div class="live-metric-formula">TP / (TP + FP)</div><p id="precision-calculation" class="live-metric-calculation"></p></article>
+      <article class="live-metric"><header><h3>Recall</h3><b id="recall">66.7%</b></header><p class="metric-meaning">실제 이상 중 찾아낸 비율</p><div class="live-metric-formula">TP / (TP + FN)</div><p id="recall-calculation" class="live-metric-calculation"></p></article>
+    </div>
+  </section>
+</div><div class="ref-takeaway"><strong>임계값 = 이상으로 판정하는 최소 점수</strong><span>낮추면 더 민감하게 · 높이면 더 엄격하게</span></div></div>
+<div id="evaluation-status" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
+<footer class="footer"><span>Design Template Library · Interactive</span><span>05 / 08</span></footer>
+</section></main></body></html>

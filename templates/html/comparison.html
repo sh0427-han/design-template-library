@@ -1,13 +1,38 @@
 <!doctype html>
 <html lang="ko">
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Comparison | Design Template Library</title><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="reference-layout.css">
-</head>
+<style>
+/* Identical photo, two ways of defining the decision logic. */
+.comparison-slide .compare-card {padding:22px 30px}
+.comparison-slide .compare-card h2 {margin:13px 0 8px;font-size:29px}
+.comparison-slide .compare-card p {font-size:20px}
+.comparison-slide .compare-figure {
+ display:flex;align-items:center;justify-content:center;gap:14px;
+ margin:12px auto 6px;min-height:85px;max-width:390px;
+}
+.comparison-slide .compare-figure img {height:78px;width:78px;object-fit:cover;border-radius:4px}
+.comparison-slide .compare-arrow {font-size:29px;font-weight:750;color:var(--blue)}
+.comparison-slide .rule-conditions {display:flex;flex-direction:column;gap:6px;align-items:center}
+.comparison-slide .rule-conditions span {
+ display:block;white-space:nowrap;padding:5px 10px;border:1px solid #edcda6;
+ background:#fff7ee;border-radius:5px;color:#8b5316;font-size:15px;font-weight:800
+}
+.comparison-slide .compare-feature-svg {width:110px;height:85px;overflow:visible}
+.comparison-slide .compare-criteria {margin:15px 0 0}
+.comparison-slide .compare-criteria > div {padding:10px 0;font-size:19px}
+.comparison-slide .compare-foot {font-size:18px;line-height:1.43;padding-top:9px}
+@media (max-width:520px) {
+ .comparison-slide .compare-card {padding:18px}
+ .comparison-slide .compare-figure {gap:8px}
+ .comparison-slide .compare-criteria > div {font-size:18px}
+}
+</style></head>
 <body><main class="deck reference-deck"><section class="slide reference-slide comparison-slide" aria-label="비교 설명">
   <header><div class="ref-overline"><div class="kicker">COMPARISON / 03</div></div><h1>규칙 기반과 머신러닝</h1><p class="subtitle">같은 사과 이미지 분류 과제에서 비교하는 판단 기준·변경 방식·적용 조건</p></header>
   <div class="content"><div class="compare-grid">
-    <article class="card compare-card"><div class="pill">RULE-BASED</div><h2>사람이 규칙을 정의</h2><p>색상·윤곽 조건을 개발자가 직접 지정</p><dl class="compare-criteria"><div><dt>판단 기준</dt><dd>색상 비율 + 둥근 윤곽 조건</dd></div><div><dt>기준 변경</dt><dd>조건·임계값 직접 수정</dd></div><div><dt>적용 조건</dt><dd>조명·배경이 일정한 환경</dd></div></dl><div class="compare-foot">명확한 조건에서 구현·검증이 용이<br>색상·모양이 비슷한 대상의 구분에 한계</div></article>
-    <article class="card compare-card"><div class="pill ml">MACHINE LEARNING</div><h2>데이터에서 규칙을 학습</h2><p>라벨이 있는 이미지로 모델 파라미터 추정</p><dl class="compare-criteria"><div><dt>판단 기준</dt><dd>학습 데이터의 시각 패턴</dd></div><div><dt>기준 변경</dt><dd>데이터 보완 + 재학습</dd></div><div><dt>적용 조건</dt><dd>대표성 있는 학습·평가 데이터</dd></div></dl><div class="compare-foot">복잡한 시각 패턴의 구분에 활용<br>데이터 편향·환경 변화에 따른 성능 검증 필요</div></article>
+    <article class="card compare-card"><div class="pill">RULE-BASED</div><h2>사람이 규칙을 정의</h2><p>색상·윤곽 조건을 개발자가 직접 지정</p><div class="compare-figure" aria-label="같은 사과 사진을 색상·윤곽 규칙으로 처리"><img src="assets/concept-apple-photo.jpg" alt="사과 사진"><span class="compare-arrow" aria-hidden="true">→</span><div class="rule-conditions"><span>색상 조건</span><span>형태 조건</span></div></div><dl class="compare-criteria"><div><dt>판단 기준</dt><dd>색상 비율 + 둥근 윤곽 조건</dd></div><div><dt>기준 변경</dt><dd>조건·임계값 직접 수정</dd></div><div><dt>적용 조건</dt><dd>조명·배경이 일정한 환경</dd></div></dl><div class="compare-foot">명확한 조건에서 구현·검증이 용이<br>색상·모양이 비슷한 대상의 구분에 한계</div></article>
+    <article class="card compare-card"><div class="pill ml">MACHINE LEARNING</div><h2>데이터에서 규칙을 학습</h2><p>라벨이 있는 이미지로 모델 파라미터 추정</p><div class="compare-figure" aria-label="같은 사과 사진의 특징 표현을 모델에서 학습"><img src="assets/concept-apple-photo.jpg" alt="동일한 사과 사진"><span class="compare-arrow" aria-hidden="true">→</span><svg class="compare-feature-svg" viewBox="0 0 132 115" role="img" aria-label="사과 이미지의 방향성 특징 맵"><rect x="15" y="22" width="76" height="76" fill="#bdd3f6" stroke="#6391c9" rx="3"/></svg></div><dl class="compare-criteria"><div><dt>판단 기준</dt><dd>학습 데이터의 시각 패턴</dd></div><div><dt>기준 변경</dt><dd>데이터 보완 + 재학습</dd></div><div><dt>적용 조건</dt><dd>대표성 있는 학습·평가 데이터</dd></div></dl><div class="compare-foot">복잡한 시각 패턴의 구분에 활용<br>데이터 편향·환경 변화에 따른 성능 검증 필요</div></article>
   </div></div>
   <footer class="footer"><span>Design Template Library · Comparison</span><span>03 / 08</span></footer>
-</section></main></body></html>
+</section></main><script src="assets/cnn-feature-maps.js" defer></script></body></html>
 

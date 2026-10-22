@@ -1,0 +1,60 @@
+{
+  "repo": "sh0427-han/design-template-library",
+  "main_base": "9ad6c458665ffd7ed83318ad20f04d68a22218f0",
+  "integration_branch": "integration/finalize-html-references-20261022",
+  "sources": {
+    "pr9": {
+      "pr": 9,
+      "branch": "design/professional-figures-architecture-process-comparison",
+      "head": "325a8fd78173fe443d0627b8adc6e8048ed0dca2"
+    },
+    "pr10": {
+      "pr": 10,
+      "branch": "feat/architecture-paper-cnn-vector-20261021",
+      "head": "2c9be907e8928b580ba670838b2ab07aa5327293"
+    },
+    "pr11": {
+      "pr": 11,
+      "branch": "feat/step-by-step-multiply-sum-20261022",
+      "head": "aef62e751aaa650ab111861d2d006581768d637c"
+    },
+    "interactive": {
+      "branch": "design/interactive-threshold-feedback",
+      "head": "ae26ba0f83365756671cdc7ee5cb743534e46ffe"
+    },
+    "experiment": {
+      "branch": "design/experiment-confusion-matrix-metrics",
+      "head": "3ad7079a7754c5d9d20ab73db60ea308720eb348"
+    }
+  },
+  "selection": {
+    "concept": "main",
+    "process": "pr9",
+    "comparison": "pr9",
+    "step-by-step": "pr11",
+    "interactive": "interactive",
+    "architecture": "pr10",
+    "experiment": "experiment",
+    "executive-summary": "main"
+  },
+  "excluded": [
+    "PR #9 older Architecture superseded by PR #10",
+    "Local uncommitted older Step-by-Step experiment; preserved outside main",
+    "Unapproved #8 redesign proposals"
+  ],
+  "integration_adjustments": [
+    "Common local Pretendard and actual glyph validation",
+    "SVG Hadamard symbol to avoid font fallback",
+    "Mobile Step-by-Step equation wraps inside card padding",
+    "Architecture recentering after font load",
+    "Remove old Architecture/GAP-only code from Process/Comparison map helper",
+    "Common math/geometry scripts and read-only CI",
+    "Documentation and real preview synchronization"
+  ],
+  "preserved_local_work": {
+    "branch": "archive/step-local-experiment-20261022",
+    "head": "1e03306ba633c79b91cec10b5546927fe36e4046",
+    "included_in_main": false,
+    "reason": "Earlier interactive Step-by-Step experiment; PR #11 is the canonical #4"
+  }
+}
