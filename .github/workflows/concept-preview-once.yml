@@ -1,4 +1,5 @@
 name: Concept preview sync (temporary)
+# Uses the branch head and revised vertical mobile geometry tests.
 on:
   push:
     branches:
