@@ -6,7 +6,7 @@
 | --- | --- | --- | --- | --- |
 | 01 | Concept | 추상 개념을 구체적 사례와 숫자로 풀 때 | 사진/픽셀 카드 + RGB/Shape 카드 + 마지막 캡션 | [HTML](templates/html/concept.html) · [PNG](previews/html-concept.png) |
 | 02 | Process | 입력에서 결과까지 역할과 순서를 설명할 때 | Input → Feature → Task → Output + 마지막 캡션 | [HTML](templates/html/process.html) · [PNG](previews/html-process.png) |
-| 03 | Comparison | 동일한 과제에서 두 접근을 같은 기준으로 비교할 때 | 같은 입력·같은 3개 비교 행의 좌우 카드 | [HTML](templates/html/comparison.html) · [PNG](previews/html-comparison.png) |
+| 03 | Comparison | 판단 기준의 준비 방법과 예측 과정을 비교할 때 | 준비/예측 도식 + 같은 입력·3개 비교 행의 좌우 White 카드 | [HTML](templates/html/comparison.html) · [PNG](previews/html-comparison.png) |
 | 04 | Step-by-Step | 하나의 연산을 초급자에게 풀어 보여줄 때 | 입력/커널/출력 대응 + 원소별 곱/전체 합 | [HTML](templates/html/step-by-step.html) · [JPG](previews/html-step-by-step.jpg) |
 | 05 | Interactive | 변수를 조절하며 결과의 변화를 학습할 때 | 실제값별 샘플 그룹 + 혼동행렬/지표 | [HTML](templates/html/interactive.html) · [JPG](previews/html-interactive.jpg) |
 | 06 | Architecture | 모델·시스템의 모듈과 데이터 차원을 설명할 때 | 6개 Stage, 반복 Conv Block, Feature Extractor/Classifier 범위 | [HTML](templates/html/architecture.html) · [JPG](previews/html-architecture.jpg) |
@@ -37,13 +37,16 @@
 - **구현·검증:** 공통 `assets/cnn-feature-maps.js`는 그대로 유지하며 #2 표시만 `process-reference.js`에서 처리합니다. `python scripts/check_process.py`는 6개 화면의 독립 계산·색상·정렬·실제 Pretendard/−1pt와 12개 실패/재사용 사례를 검사합니다. 결과는 [전용 JSON](previews/review/process-validation.json), #3 포함 전체 회귀는 [공통 JSON](previews/review/reference-validation.json)에 기록합니다.
 - **가이드·프리뷰:** [HTML](templates/html/process.html), [상세 명세](docs/REFERENCE_PAGE_SPECS.md#02-process), [재사용 워크플로](docs/REFERENCE_REUSE_WORKFLOW.md), [main 기준 이전 PNG](previews/review/process-before.png), [최신 PNG](previews/html-process.png).
 
-## 03 Comparison · 같은 문제의 두 접근
+## 03 Comparison · 판단 기준의 준비와 새 이미지 예측
 
-- **사용 목적·청중:** 알고리즘·설계·도입 방법을 동일한 조건과 기준으로 비교하는 강의·기술 보고.
-- **현재 구조:** 왼쪽 규칙 기반 / 오른쪽 머신러닝. 양쪽에 같은 사과 사진을 놓고 판단 기준·기준 변경·적용 조건을 같은 행에 배치합니다.
-- **현재 Figure:** 색상·형태 조건을 직접 지정하는 방식과 사진 기반 대표 특징 맵을 나란히 보여줍니다. 특징 모티프는 #2와 같은 고정 필터 엔진입니다.
-- **주의:** 데이터 기반 방법이 무조건 우월하다는 결론을 만들지 않습니다. 대표성·편향·환경 변화에 따른 검증 조건을 유지합니다. 한쪽에만 다른 난이도의 입력을 쓰지 않습니다.
-- **가이드:** [상세 명세](docs/REFERENCE_PAGE_SPECS.md#03-comparison), [비교 설계 절차](docs/FIGURE_PRODUCTION_STANDARD.md).
+- **사용 목적·청중:** 규칙 기반과 지도학습 이미지 분류를 처음 비교하는 학습자. 기준을 만드는 방법과 이미지를 처리하는 방법을 분리해 설명하는 강의·기술 자료에 적합합니다.
+- **현재 구조:** 같은 크기의 White 카드 2개에 Label/Title/소개 → 01 준비 → 02 예측 → 판단 기준/기준 변경/적용 조건 → 장점/한계를 같은 높이로 배치합니다. 큰 중첩 카드는 추가하지 않습니다.
+- **RULE-BASED:** 사람이 붉은색 영역·둥근 윤곽 조건을 설정하고 AND로 조합해 판단 규칙을 만드는 도식입니다. 준비된 규칙을 Teal 연결선으로 조건 검사에 연결하고, 사과 사진 → 조건 검사 → `사과 판정 / 예시`를 보여줍니다. 조건·임계값을 실제 측정하거나 규칙 엔진을 실행한 결과가 아닙니다.
+- **MACHINE LEARNING:** 서로 다른 붉은 사과/초록 사과/토마토 **일러스트 3개와 정답 라벨** → 학습 → 파라미터가 최적화된 모델의 모식도입니다. 이후 같은 사과 사진 → 학습된 CNN의 상징 → `사과 예측 / 예시`를 보여줍니다. 이번 예제는 지도학습이며 모든 머신러닝에 라벨이 필수라고 일반화하지 않습니다.
+- **CNN 표현의 제한:** 대표 맵 0/3/6/9는 #2와 같은 사진·고정 방향성 필터·ReLU의 실제 계산입니다. #2/#6과 같은 오른쪽 위 Stack 방향·Blue 경계로 표시하지만 학습된 CNN의 실측 활성화가 아닙니다. 화면에 `맵: 고정 필터 설명용`, 접근성 설명과 명세에 전체 조건을 기록합니다. 모델 학습·추론·성능 비교를 실행했다고 주장하지 않습니다.
+- **대칭·색상:** 입력 사진 파일·크기·기준선, 준비/예측 라벨과 구분선, 표의 세 행, 장점/한계 위치를 맞춥니다. Amber는 사람의 조건, Blue는 흐름·학습·CNN, Teal은 준비된 체계의 적용 연결과 예시 결과입니다. 두 카드 전체는 모두 White입니다.
+- **반응형·검증:** 900px 이하 카드 1열, 650px 이하 Figure·표를 읽기 배치로 조정합니다. `python scripts/check_comparison.py`가 6개 화면의 실제 Pretendard/−1pt·독립 맵 계산·대칭·화살표·실시간 리사이즈를 검사합니다. [전용 검증 JSON](previews/review/comparison-validation.json), [공통 회귀 JSON](previews/review/reference-validation.json)을 확인합니다.
+- **구현·가이드·프리뷰:** [HTML](templates/html/comparison.html), [전용 CSS](templates/html/comparison-reference.css), [전용 JS](templates/html/comparison-reference.js), [상세 명세](docs/REFERENCE_PAGE_SPECS.md#03-comparison), [Figure 표준](docs/FIGURE_PRODUCTION_STANDARD.md), [수정 전 PNG](previews/review/comparison-before.png), [최신 PNG](previews/html-comparison.png).
 
 ## 04 Step-by-Step · 원소별 곱과 전체 합
 

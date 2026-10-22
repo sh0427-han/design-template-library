@@ -1,38 +1,76 @@
 <!doctype html>
 <html lang="ko">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Comparison | Design Template Library</title><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="reference-layout.css">
-<style>
-/* Identical photo, two ways of defining the decision logic. */
-.comparison-slide .compare-card {padding:22px 30px}
-.comparison-slide .compare-card h2 {margin:13px 0 8px;font-size:29px}
-.comparison-slide .compare-card p {font-size:20px}
-.comparison-slide .compare-figure {
- display:flex;align-items:center;justify-content:center;gap:14px;
- margin:12px auto 6px;min-height:85px;max-width:390px;
-}
-.comparison-slide .compare-figure img {height:78px;width:78px;object-fit:cover;border-radius:4px}
-.comparison-slide .compare-arrow {font-size:29px;font-weight:750;color:var(--blue)}
-.comparison-slide .rule-conditions {display:flex;flex-direction:column;gap:6px;align-items:center}
-.comparison-slide .rule-conditions span {
- display:block;white-space:nowrap;padding:5px 10px;border:1px solid #edcda6;
- background:#fff7ee;border-radius:5px;color:#8b5316;font-size:15px;font-weight:800
-}
-.comparison-slide .compare-feature-svg {width:110px;height:85px;overflow:visible}
-.comparison-slide .compare-criteria {margin:15px 0 0}
-.comparison-slide .compare-criteria > div {padding:10px 0;font-size:19px}
-.comparison-slide .compare-foot {font-size:18px;line-height:1.43;padding-top:9px}
-@media (max-width:520px) {
- .comparison-slide .compare-card {padding:18px}
- .comparison-slide .compare-figure {gap:8px}
- .comparison-slide .compare-criteria > div {font-size:18px}
-}
-</style></head>
-<body><main class="deck reference-deck"><section class="slide reference-slide comparison-slide" aria-label="비교 설명">
-  <header><div class="ref-overline"><div class="kicker">COMPARISON / 03</div></div><h1>규칙 기반과 머신러닝</h1><p class="subtitle">같은 사과 이미지 분류 과제에서 비교하는 판단 기준·변경 방식·적용 조건</p></header>
-  <div class="content"><div class="compare-grid">
-    <article class="card compare-card"><div class="pill">RULE-BASED</div><h2>사람이 규칙을 정의</h2><p>색상·윤곽 조건을 개발자가 직접 지정</p><div class="compare-figure" aria-label="같은 사과 사진을 색상·윤곽 규칙으로 처리"><img src="assets/concept-apple-photo.jpg" alt="사과 사진"><span class="compare-arrow" aria-hidden="true">→</span><div class="rule-conditions"><span>색상 조건</span><span>형태 조건</span></div></div><dl class="compare-criteria"><div><dt>판단 기준</dt><dd>색상 비율 + 둥근 윤곽 조건</dd></div><div><dt>기준 변경</dt><dd>조건·임계값 직접 수정</dd></div><div><dt>적용 조건</dt><dd>조명·배경이 일정한 환경</dd></div></dl><div class="compare-foot">명확한 조건에서 구현·검증이 용이<br>색상·모양이 비슷한 대상의 구분에 한계</div></article>
-    <article class="card compare-card"><div class="pill ml">MACHINE LEARNING</div><h2>데이터에서 규칙을 학습</h2><p>라벨이 있는 이미지로 모델 파라미터 추정</p><div class="compare-figure" aria-label="같은 사과 사진의 특징 표현을 모델에서 학습"><img src="assets/concept-apple-photo.jpg" alt="동일한 사과 사진"><span class="compare-arrow" aria-hidden="true">→</span><svg class="compare-feature-svg" viewBox="0 0 132 115" role="img" aria-label="사과 이미지의 방향성 특징 맵"><rect x="15" y="22" width="76" height="76" fill="#bdd3f6" stroke="#6391c9" rx="3"/></svg></div><dl class="compare-criteria"><div><dt>판단 기준</dt><dd>학습 데이터의 시각 패턴</dd></div><div><dt>기준 변경</dt><dd>데이터 보완 + 재학습</dd></div><div><dt>적용 조건</dt><dd>대표성 있는 학습·평가 데이터</dd></div></dl><div class="compare-foot">복잡한 시각 패턴의 구분에 활용<br>데이터 편향·환경 변화에 따른 성능 검증 필요</div></article>
-  </div></div>
-  <footer class="footer"><span>Design Template Library · Comparison</span><span>03 / 08</span></footer>
-</section></main><script src="assets/cnn-feature-maps.js" defer></script></body></html>
-
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>규칙 기반과 머신러닝 | Design Template Library</title>
+<link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="reference-layout.css">
+<link rel="stylesheet" href="comparison-reference.css">
+<script src="assets/cnn-feature-maps.js" defer></script>
+<script src="comparison-reference.js" defer></script>
+</head>
+<body><main class="deck reference-deck"><section class="slide reference-slide comparison-slide" aria-label="규칙 기반과 지도학습 이미지 분류의 준비 및 예측 비교">
+ <header><div class="ref-overline"><div class="kicker">COMPARISON / 03</div></div><h1>규칙 기반과 머신러닝</h1><p class="subtitle">판단 기준을 만드는 방법과 새로운 이미지를 처리하는 방법 비교</p></header>
+ <div class="content"><div class="compare-grid">
+  <article class="card compare-card" data-method="rule" aria-labelledby="rule-title">
+   <div class="comparison-heading"><div class="pill">RULE-BASED</div><h2 id="rule-title">사람이 규칙을 정의</h2><p>색상·형태 조건을 개발자가 직접 설정</p></div>
+   <div class="comparison-diagram">
+    <section class="comparison-phase phase-prepare" aria-label="준비 단계: 사람이 판단 규칙 설정">
+     <div class="phase-heading"><h3>01 준비</h3><span>기준 설정 · 예시</span></div>
+     <div class="prepare-flow" data-center-row>
+      <div class="rule-source">
+       <svg class="person-symbol" viewBox="0 0 32 54" role="img" aria-label="판단 조건을 정하는 개발자"><g data-visual-bound fill="none" stroke="#8b5316" stroke-width="1.8"><circle cx="16" cy="11" r="7"/><path d="M4 47 V35 Q4 25 16 25 Q28 25 28 35 V47 M10 38 V50 M22 38 V50"/></g></svg>
+       <div class="rule-conditions" data-visual-bound><div><small>색상</small><span>붉은색 영역</span></div><div><small>형태</small><span>둥근 윤곽</span></div></div>
+      </div>
+      <div class="prepare-transition"><span class="transition-label"><span>조건</span> <span>조합</span></span><svg class="comparison-arrow" viewBox="0 0 32 16" aria-hidden="true"><path d="M1 8 H30 M24 2 L30 8 L24 14"/></svg></div>
+      <div class="prepared-system prepared-rule" data-visual-bound data-prepared-system><strong>판단 규칙</strong><small>색상 AND 형태</small></div>
+     </div>
+    </section>
+    <section class="comparison-phase phase-predict" aria-label="예측 단계: 준비한 규칙을 새 이미지에 적용">
+     <div class="phase-heading"><h3>02 예측</h3><span>새 이미지에 적용</span></div>
+     <div class="inference-flow" data-center-row>
+      <img class="inference-photo" src="assets/concept-apple-photo.jpg" alt="예측 단계에 입력하는 사과 사진" data-visual-bound>
+      <svg class="comparison-arrow" viewBox="0 0 32 16" aria-hidden="true"><path d="M1 8 H30 M24 2 L30 8 L24 14"/></svg>
+      <div class="condition-check" data-visual-bound data-inference-system><strong>조건 검사</strong><small>설정한 규칙 적용</small></div>
+      <svg class="comparison-arrow" viewBox="0 0 32 16" aria-hidden="true"><path d="M1 8 H30 M24 2 L30 8 L24 14"/></svg>
+      <div class="inference-result" data-visual-bound><strong>사과 판정</strong><small>예시</small></div>
+     </div>
+    </section>
+    <svg class="system-transfer" aria-hidden="true"><path/></svg>
+   </div>
+   <dl class="compare-criteria"><div><dt>판단 기준</dt><dd>개발자가 조건 직접 정의</dd></div><div><dt>기준 변경</dt><dd>규칙·임계값 수정</dd></div><div><dt>적용 조건</dt><dd>조건을 명확히 정의할 수 있는 환경</dd></div></dl>
+   <div class="compare-foot"><p><b>장점</b><span>명확한 조건에서 구현·검증이 쉬움</span></p><p><b>한계</b><span>복잡한 변화에 대응할수록 규칙 관리 부담</span></p></div>
+  </article>
+  <article class="card compare-card" data-method="ml" aria-labelledby="ml-title">
+   <div class="comparison-heading"><div class="pill ml">MACHINE LEARNING</div><h2 id="ml-title">데이터에서 판단 기준을 학습</h2><p>라벨이 있는 이미지로 모델 파라미터 학습</p></div>
+   <div class="comparison-diagram">
+    <section class="comparison-phase phase-prepare" aria-label="준비 단계: 이미지와 정답 라벨로 모델 파라미터 학습, 일러스트 예시">
+     <div class="phase-heading"><h3>01 준비</h3><span>지도학습 · 일러스트 예시</span></div>
+     <div class="prepare-flow" data-center-row>
+      <!-- Distinct editable illustrations, not dataset photos or copies of the prediction photograph. -->
+      <div class="training-data" aria-label="학습 이미지와 정답 라벨의 일러스트 예시 3개">
+       <div class="training-sample" data-class="사과"><svg viewBox="0 0 48 48" role="img" aria-label="붉은 사과 학습 예시 일러스트"><g data-visual-bound><path d="M24 15 C8 6 4 23 13 38 Q24 47 35 37 C44 22 38 7 24 15Z" fill="#d65c57"/><path d="M24 17 Q21 10 25 5" fill="none" stroke="#796349" stroke-width="2"/><path d="M25 11 Q30 2 38 7 Q34 14 25 11" fill="#739b65"/></g></svg><span data-visual-bound>사과</span></div>
+       <div class="training-sample" data-class="사과"><svg viewBox="0 0 48 48" role="img" aria-label="초록 사과 학습 예시 일러스트"><g data-visual-bound><path d="M22 14 C7 8 4 27 15 39 Q28 47 37 33 C43 19 34 8 22 14Z" fill="#93ae68"/><path d="M23 16 Q28 10 25 4" fill="none" stroke="#796349" stroke-width="2"/><path d="M26 11 Q19 2 12 7 Q16 14 26 11" fill="#527c52"/></g></svg><span data-visual-bound>사과</span></div>
+       <div class="training-sample" data-class="토마토"><svg viewBox="0 0 48 48" role="img" aria-label="토마토 학습 예시 일러스트"><g data-visual-bound><ellipse cx="24" cy="28" rx="19" ry="15" fill="#e58161"/><path d="M24 5 L27 14 L37 11 L31 19 L37 25 L25 21 L16 26 L18 18 L10 13 L21 14Z" fill="#64885d"/></g></svg><span data-visual-bound>토마토</span></div>
+      </div>
+      <div class="prepare-transition"><span class="transition-label">학습</span><svg class="comparison-arrow" viewBox="0 0 32 16" aria-hidden="true"><path d="M1 8 H30 M24 2 L30 8 L24 14"/></svg></div>
+      <div class="prepared-system prepared-model" data-visual-bound data-prepared-system><strong>학습된 모델</strong><small>파라미터 최적화</small></div>
+     </div>
+    </section>
+    <section class="comparison-phase phase-predict" aria-label="예측 단계: 학습 완료된 CNN을 새 이미지에 적용하는 모식도. 표시 맵은 실제 학습 모델이 아니라 고정 필터 반응의 설명용 시각화">
+     <div class="phase-heading"><h3>02 예측</h3><span>맵: 고정 필터 설명용</span></div>
+     <div class="inference-flow" data-center-row>
+      <img class="inference-photo" src="assets/concept-apple-photo.jpg" alt="규칙 기반과 동일한 예측 입력 사과 사진" data-visual-bound>
+      <svg class="comparison-arrow" viewBox="0 0 32 16" aria-hidden="true"><path d="M1 8 H30 M24 2 L30 8 L24 14"/></svg>
+      <div class="inference-model"><svg class="compare-feature-svg" viewBox="0 0 136 124" role="img" aria-label="학습된 CNN을 나타내는 모식도. 사과 사진에서 계산한 고정 필터 대표 채널 0, 3, 6, 9를 사용하며 학습된 모델의 실측 활성화가 아님"><g data-inference-system data-visual-bound><rect x="38" y="16" width="66" height="66" fill="#dce8fa" stroke="#6e94c6"/><rect x="28" y="24" width="66" height="66" fill="#e4edfb" stroke="#6e94c6"/><rect x="18" y="32" width="66" height="66" fill="#eaf1ff" stroke="#4679b8"/></g></svg><span class="model-label" data-visual-bound>학습된 CNN</span><span class="map-fallback" hidden>맵 표시 불가</span></div>
+      <svg class="comparison-arrow" viewBox="0 0 32 16" aria-hidden="true"><path d="M1 8 H30 M24 2 L30 8 L24 14"/></svg>
+      <div class="inference-result" data-visual-bound><strong>사과 예측</strong><small>예시</small></div>
+     </div>
+    </section>
+    <svg class="system-transfer" aria-hidden="true"><path/></svg>
+   </div>
+   <dl class="compare-criteria"><div><dt>판단 기준</dt><dd>학습 데이터로 모델 파라미터 추정</dd></div><div><dt>기준 변경</dt><dd>데이터·학습 설정 보완 후 재학습</dd></div><div><dt>적용 조건</dt><dd>대표성 있는 데이터와 성능 검증 필요</dd></div></dl>
+   <div class="compare-foot"><p><b>장점</b><span>복잡한 시각 패턴을 데이터에서 학습</span></p><p><b>한계</b><span>데이터 대표성·환경 변화 검증 필요</span></p></div>
+  </article>
+ </div></div>
+ <footer class="footer"><span>Design Template Library · Comparison</span><span>03 / 08</span></footer>
+</section></main></body></html>
