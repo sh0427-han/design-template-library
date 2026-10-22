@@ -113,4 +113,4 @@ python scripts/validate_references.py --templates architecture step-by-step --ev
 - [검토 체크리스트](docs/REFERENCE_REVIEW_GUIDE.md) · [프리뷰와 증거](previews/review/README.md)
 - [통합 출처·검증·GitHub 상태](docs/INTEGRATION_REPORT_2026-10-22.md)
 
-로컬 검증 완료, 사용자 디자인 승인, 원격 Push, PR 생성, main Merge는 서로 다른 상태입니다. 실제 GitHub 결과는 통합 보고서와 최종 원격 확인을 기준으로 판단합니다.
+8종 최종 통합의 출처·CI·Merge 기록은 [PR #12](https://github.com/sh0427-han/design-template-library/pull/12)와 [통합 보고서](docs/INTEGRATION_REPORT_2026-10-22.md)에서 확인합니다. 로컬 검증·사용자 디자인 승인·원격 게시·main 반영은 실제 증거로 구분합니다.

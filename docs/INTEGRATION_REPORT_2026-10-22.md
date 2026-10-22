@@ -2,7 +2,9 @@
 
 ## 상태
 
-**로컬 통합·검증을 진행한 브랜치이며, main Merge 완료 상태가 아닙니다.** 원격 쓰기는 현재 인증 계정 `sh0427-han-private`의 저장소 권한 부족으로 차단되어 있습니다. 실제 Push는 403으로 거절됐습니다. 통합 PR URL·Merge SHA는 아직 없습니다.
+최종 설계·출처·검증을 [통합 PR #12](https://github.com/sh0427-han/design-template-library/pull/12)로 묶었습니다. #5·#7의 원본 브랜치와 통합 브랜치는 원격 Push를 완료했습니다. 처음 발생한 쓰기 권한 문제는 collaborator 등록 후 `push=true`로 해결됐습니다.
+
+main 반영 여부·Merge SHA·CI 결과는 위 PR의 실제 상태와 [main 커밋 기록](https://github.com/sh0427-han/design-template-library/commits/main)을 기준으로 확인합니다. 이 보고서와 아래 8개 소스·폰트·프리뷰·명세는 같은 통합 PR에 포함됩니다.
 
 - 저장소: `sh0427-han/design-template-library`
 - 기준 main: `9ad6c458665ffd7ed83318ad20f04d68a22218f0`
@@ -10,20 +12,20 @@
 - 기계 판독 가능한 출처: [integration-sources.json](integration-sources.json)
 - 전체 원격 브랜치·PR별 33개 커밋·변경 파일·충돌 목록: [integration-inventory.json](integration-inventory.json)
 - 통합 PR 게시문: [INTEGRATION_PR.md](INTEGRATION_PR.md)
-- 게시 절차: `python scripts/publish_integration.py --merge`, 아래 권한 조건 충족 후 실행
+- 게시·검증·Merge·기존 PR 정리 명령: `python scripts/publish_integration.py --merge`
 
-## 8개 페이지의 선택과 main 반영 여부
+## 8개 페이지의 최종 선택과 main 통합 단위
 
-| 페이지 | 선택한 출처 | 실제 통합 내용 | 검증 | main 반영 |
+| 페이지 | 선택한 출처 | 실제 통합 내용 | 검증 | main 통합 PR |
 | --- | --- | --- | --- | --- |
-| 01 Concept | 기존 main | 사진·선택 픽셀·RGB/HEX/HWC 유지, 공통 로컬 폰트 | 래스터 16셀·선택 RGB·막대·6화면 | 미반영 |
-| 02 Process | PR #9 | 사진 기반 고정 필터 특징 모티프와 4단계 역할 | 독립 필터 샘플·맵 색·사진·6화면 | 미반영 |
-| 03 Comparison | PR #9 | 같은 입력·규칙/학습·3개 비교 기준 | 사진 동일성·계산 모티프·6화면 | 미반영 |
-| 04 Step-by-Step | PR #11 | 5×5/3×3/3×3, 9개 곱, 합 −6, 구분선 | 전체 출력 독립 계산·기호/실제 글꼴·6화면 | 미반영 |
-| 05 Interactive | 로컬 `ae26ba0` | 이상 우선 그룹·범례 분리·예측·행렬·대입식·공유본 | 126 기본+42 재사용+12 폰트 예외·입력·오프라인 | 미반영 |
-| 06 Architecture | PR #10 | 두 Conv/ReLU/Pool Block→Flatten 8192→FC→Softmax | Shape·확률·사진 1개·화살표·축·6화면 | 미반영 |
-| 07 Experiment | 로컬 `3ad7079` | 승인된 TP FP / FN TN와 4개 지표·구분선 | 독립 분수·두 F1 식·정렬·6화면 | 미반영 |
-| 08 Executive Summary | 기존 main | 기존 정상 레이아웃·KPI/단위/정규화 유지 | 변화율·막대 비율·축·기준선·6화면 | 미반영 |
+| 01 Concept | 기존 main | 사진·선택 픽셀·RGB/HEX/HWC 유지, 공통 로컬 폰트 | 래스터 16셀·선택 RGB·막대·6화면 | #12 |
+| 02 Process | PR #9 | 사진 기반 고정 필터 특징 모티프와 4단계 역할 | 독립 필터 샘플·맵 색·사진·6화면 | #12 |
+| 03 Comparison | PR #9 | 같은 입력·규칙/학습·3개 비교 기준 | 사진 동일성·계산 모티프·6화면 | #12 |
+| 04 Step-by-Step | PR #11 | 5×5/3×3/3×3, 9개 곱, 합 −6, 구분선 | 전체 출력 독립 계산·기호/실제 글꼴·6화면 | #12 |
+| 05 Interactive | `ae26ba0`, 원본 Push 완료 | 이상 우선 그룹·범례 분리·예측·행렬·대입식·공유본 | 126 기본+42 재사용+12 폰트 예외·입력·오프라인 | #12 |
+| 06 Architecture | PR #10 | 두 Conv/ReLU/Pool Block→Flatten 8192→FC→Softmax | Shape·확률·사진 1개·화살표·축·6화면 | #12 |
+| 07 Experiment | `3ad7079`, 원본 Push 완료 | 승인된 TP FP / FN TN와 4개 지표·구분선 | 독립 분수·두 F1 식·정렬·6화면 | #12 |
+| 08 Executive Summary | 기존 main | 기존 정상 레이아웃·KPI/단위/정규화 유지 | 변화율·막대 비율·축·기준선·6화면 | #12 |
 
 대표 파일은 [카탈로그](../TEMPLATE_CATALOG.md)에 8개 소스·프리뷰별로 연결되어 있습니다. 이 표의 검증 근거는 [공통 JSON](../previews/review/reference-validation.json)과 [Interactive JSON](../previews/review/interactive-validation.json)입니다. 페이지별 승인 상태와 기술 검사 통과, 원격 반영 상태를 구분합니다.
 
@@ -80,17 +82,24 @@ python scripts/check_documentation.py
 
 #5의 단일 HTML은 CSS·JS·폰트와 라이선스를 내장합니다. 관리형 Chromium의 file origin 차단 때문에 오프라인 검증은 생성된 실제 HTML 바이트를 별도 offline context에 로드하는 방식입니다. file origin 자체를 검사했다는 주장은 하지 않습니다.
 
-## GitHub 차단과 정확한 다음 단계
+## GitHub 게시와 원격 결과 확인
 
-CLI 사용자 조회는 `sh0427-han-private`, repository permissions는 `pull=true / push=false / admin=false`였습니다. `git push origin design/interactive-threshold-feedback`는 해당 계정에 403으로 거절됐습니다. 다른 계정의 비밀 값을 찾거나 인증 헤더·신뢰 설정을 바꾸지 않았습니다.
+초기 CLI 사용자 조회는 `sh0427-han-private`, repository permissions는 `pull=true / push=false / admin=false`였고 #5 Push가 403으로 거절됐습니다. collaborator 등록 후 같은 계정으로 `push=true`를 확인하고 #5·#7·통합 브랜치를 정상 Push했습니다. 이 초기 차단은 해결됐으며 현재 미해결 문제로 취급하지 않습니다.
 
-저장소에 쓰기·Merge 권한이 있는 인증을 연결하거나, 현재 연결된 계정에 필요한 저장소 권한을 부여한 후 실행합니다.
+통합 PR은 [#12](https://github.com/sh0427-han/design-template-library/pull/12)입니다. 공통 GitHub Actions의 `validate` 성공과 최종 head 일치를 확인한 뒤 Merge합니다. 게시 명령은 다음과 같습니다.
 
 ```bash
-# integration 브랜치의 깨끗한 checkout에서
 python scripts/publish_integration.py --merge
 ```
 
 이 명령은 현재 계정/권한·검증 상태·소스 해시·#5 커밋 존재를 확인한 후 #5/#7 원본 브랜치와 통합 브랜치를 정상 Push하고, 통합 PR 생성/조회·CI 확인·head 고정 Merge·main 확인을 수행합니다. Force Push는 하지 않습니다. Merge 후 PR #9/#10/#11의 head가 manifest와 같은 경우에만 통합 PR 링크를 남기고 닫습니다. 새 커밋이 있는 PR은 자동 정리하지 않습니다.
 
-원격 반영이 성공하면 실제 PR URL·Merge commit·최종 main SHA·기존 PR 처리 결과를 명령 결과에 기록합니다. 현재는 **통합 PR URL 없음 / Merge SHA 없음 / 원격 PR #9·#10·#11 열림**이며 main은 기준 SHA입니다. 권한이 해결되지 않은 상태에서 통합 완료 또는 main 반영 완료로 보고하지 않습니다.
+실제 PR URL·Merge commit·최종 main SHA·기존 PR 처리 결과는 게시 명령의 `/tmp/design-template-integration-publish.json`과 최종 작업 보고에 기록합니다. 저장소의 확정 Merge 기록은 다음 명령으로 다시 조회할 수 있습니다.
+
+```bash
+gh pr view 12 --repo sh0427-han/design-template-library --json url,state,mergedAt,mergeCommit,statusCheckRollup
+git fetch origin main
+git rev-parse origin/main
+```
+
+문서에 미래의 Merge SHA를 임의로 적지 않습니다. main 반영은 PR의 `MERGED` 상태와 통합 head의 main 포함 여부, 최종 파일 비교로 확인합니다. PR #9·#10·#11 정리도 실제 Merge 이후에만 실행합니다.

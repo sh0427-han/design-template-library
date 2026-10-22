@@ -1,6 +1,6 @@
 # Changelog
 
-## 2026-10-22 · 최종 HTML 통합 준비
+## 2026-10-22 · 최종 HTML 통합
 
 - #2·#3은 PR #9, #4는 PR #11, #6은 PR #10의 최종 소스를 선택.
 - 로컬 #5·#7 승인본과 상세 패턴 문서를 통합 브랜치에 포함.
@@ -11,7 +11,7 @@
 - README·카탈로그·디자인 시스템·Figure 표준·페이지 명세·재사용 문서 최신화.
 - PR별 자동 커밋 워크플로를 읽기 전용 공통 CI로 통합.
 
-위 항목의 원격 Push·PR·main 반영 상태는 [통합 보고서](docs/INTEGRATION_REPORT_2026-10-22.md)에 따로 기록합니다. 로컬 통합을 main Merge 완료로 표시하지 않습니다.
+위 항목은 [통합 PR #12](https://github.com/sh0427-han/design-template-library/pull/12)에 포함됩니다. #5·#7 원본과 통합 브랜치 Push를 완료했으며, 검증·선택·원격 결과 확인 방법은 [통합 보고서](docs/INTEGRATION_REPORT_2026-10-22.md)에 기록합니다.
 
 ## 2026-10-21
 

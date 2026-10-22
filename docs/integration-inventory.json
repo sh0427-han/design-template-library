@@ -278,11 +278,23 @@
     ],
     "resolution": "Select source snapshots; rewrite common docs/checks against final implementation. No sequential PR merges."
   },
-  "remote_recheck": {
+  "initial_access_check": {
     "account": "sh0427-han-private",
     "push_permission": false,
     "main_unchanged": true,
     "pr_heads_unchanged": true,
     "publication": "not performed; attempted original #5 push received GitHub 403"
+  },
+  "publication": {
+    "account": "sh0427-han-private",
+    "push_permission": true,
+    "access_resolution": "Repository collaborator access granted by the user; same CLI identity now has Write permission",
+    "integration_pr": "https://github.com/sh0427-han/design-template-library/pull/12",
+    "source_branches_pushed": [
+      "design/interactive-threshold-feedback",
+      "design/experiment-confusion-matrix-metrics"
+    ],
+    "integration_branch_pushed": "integration/finalize-html-references-20261022",
+    "merge_and_ci_status": "Read actual PR state and GitHub Actions checks at integration_pr; final main verified after merge"
   }
 }
