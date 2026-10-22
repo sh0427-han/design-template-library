@@ -118,7 +118,11 @@ def main():
     assert abs(r['dividerGaps']['left']-r['dividerGaps']['right'])<.25 and min(r['dividerGaps'].values())>2
     assert not r['badTypography'] and r['fontsLoaded']>0
     assert r['captionLast'] and r['pageWidth']<=width
-    assert r['groups']==[{'truth':0,'count':'3개','samples':[1,3,6]},{'truth':1,'count':'3개','samples':[2,4,5]}]
+    assert r['groups']==[{'truth':1,'count':'3개','samples':[2,4,5]},{'truth':0,'count':'3개','samples':[1,3,6]}]
+    rule=page.locator('.decision-rule').bounding_box();legend=page.locator('.threshold-legend').bounding_box()
+    assert page.locator('.decision-rule').inner_text()=='점수 ≥ 임계값 → 이상'
+    if width>520: assert rule['x']+rule['width']+12<legend['x']
+    else: assert rule['y']+rule['height']+2<legend['y']
     assert not r['cardContentEscapes']
     assert page.locator('.ref-takeaway strong').inner_text()=='임계값 = 이상으로 판정하는 최소 점수'
     assert r['content']['bottom']<r['footer']['y']+1
@@ -163,7 +167,7 @@ def main():
       assert page.locator('#'+metric+'-calculation').inner_text()==f"{expected['tp']} / ({expected['tp']} + {expected[extra]}) = {value}"
      geometry=page.evaluate(CHECK)
      assert not geometry['overflow'] and not geometry['cardContentEscapes'],(width,threshold,geometry)
-     assert geometry['groups']==[{'truth':0,'count':'2개','samples':[3,6]},{'truth':1,'count':'4개','samples':[1,2,4,5]}]
+     assert geometry['groups']==[{'truth':1,'count':'4개','samples':[1,2,4,5]},{'truth':0,'count':'2개','samples':[3,6]}]
      report['reuse']['checks']+=1
     page.locator('#threshold').fill('60');report['reuse']['viewports'].append({'viewport':[width,height],**page.evaluate(CHECK)})
     page.locator('.slide').screenshot(path=str(out/f'interactive-reuse-{width}.png'),animations='disabled')
@@ -187,6 +191,12 @@ def main():
    assert page.locator('.sample-prediction').evaluate_all('(badges)=>badges.every(b=>b.getAnimations().length===0)')
    report['prediction_transition']={'from':.60,'to':.70,'changed_default_sample':4,'dom_identity_retained':True,'reduced_motion_checked':True}
    page.emulate_media(reduced_motion='no-preference')
+   # Compare two fresh default renders so previous live animations do not leave
+   # different compositor layers around rounded edges in the reference capture.
+   page.unroute('**/interactive-reference.js')
+   page.set_viewport_size({'width':1600,'height':950})
+   page.goto(f'http://127.0.0.1:{server.server_port}/templates/html/interactive.html',wait_until='networkidle');page.evaluate('document.fonts.ready');page.locator('h1').click()
+   page.locator('.slide').screenshot(path=str(out/'interactive-content.png'),mask=[page.locator('#threshold')],animations='disabled')
    # Shareable HTML: inline local dependencies; only the original web font
    # remains remote, with the normal system-font fallback when offline.
    portable=(ROOT/'templates/html/interactive.html').read_text()

@@ -13,7 +13,7 @@
   document.getElementById('live-context').textContent=`실제 정상 ${samples.length-positives}개 · 실제 이상 ${positives}개`;
   const rows = new Map();
   // Ground-truth groups and sample identities stay fixed while predictions move.
-  [0,1].forEach(truth => {
+  [1,0].forEach(truth => {
     const label = truth ? '이상' : '정상';
     const group = document.createElement('section');
     group.className='sample-group'; group.dataset.truth=String(truth);

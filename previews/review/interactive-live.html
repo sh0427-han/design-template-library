@@ -505,7 +505,10 @@ h1 { margin: 15px 0 9px; font-size: 55px; line-height: 1.16; color: var(--navy);
 .interactive-slide .threshold-control > span {font-size:16px;color:var(--muted);}
 .interactive-slide .threshold-control > span:last-child {text-align:right;}
 .interactive-slide .threshold-input {height:28px;accent-color:var(--blue);}
-.interactive-slide .decision-rule {font-size:18px;line-height:1.4;color:var(--deep);margin:6px 0 4px;}
+.interactive-slide .decision-help {display:flex;justify-content:space-between;align-items:center;gap:16px;margin:6px 0 4px;}
+.interactive-slide .decision-rule {font-size:18px;line-height:1.4;color:var(--deep);margin:0;}
+.interactive-slide .threshold-legend {display:inline-flex;align-items:center;gap:8px;font-size:16px;line-height:1.4;color:var(--muted);white-space:nowrap;border-left:1px solid var(--border);padding-left:16px;}
+.interactive-slide .legend-line {width:20px;border-top:2px dashed var(--amber);flex-shrink:0;}
 .interactive-slide .score-heading,.interactive-slide .score-row {display:grid;grid-template-columns:30px minmax(0,1fr) 40px 74px 42px;gap:8px;}
 .interactive-slide .score-heading {font-size:16px;margin:4px 9px 4px 95px;line-height:1.4;}
 .interactive-slide .sample-groups {display:grid;gap:8px;}
@@ -565,6 +568,8 @@ h1 { margin: 15px 0 9px; font-size: 55px; line-height: 1.16; color: var(--navy);
  .interactive-slide .sample-note {font-size:16px;}
  .interactive-slide .threshold-panel {display:block;margin-top:8px;}
  .interactive-slide .threshold-meta {margin-bottom:3px;}
+ .interactive-slide .decision-help {flex-direction:column;align-items:flex-start;gap:4px;margin-bottom:8px;}
+ .interactive-slide .threshold-legend {border-left:0;padding-left:0;}
  .interactive-slide .sample-group {grid-template-columns:45px minmax(0,1fr);gap:7px;padding:6px;}
  .interactive-slide .group-label {padding-right:5px;}
  .interactive-slide .group-label h3 {font-size:16px;}
@@ -600,7 +605,7 @@ h1 { margin: 15px 0 9px; font-size: 55px; line-height: 1.16; color: var(--navy);
     <h2 id="control-title">점수와 임계값으로 판정</h2>
     <div class="threshold-panel"><div class="threshold-meta"><label for="threshold">임계값</label><strong id="threshold-value">0.60</strong></div>
     <div class="threshold-control"><span>0.00</span><input class="threshold-input" id="threshold" type="range" min="0" max="100" value="60" step="5" aria-label="판정 임계값"><span>1.00</span></div>
-    </div><p class="decision-rule">점수 ≥ 임계값 → 이상 · 주황 점선: 현재 임계값</p>
+    </div><div class="decision-help"><p class="decision-rule">점수 ≥ 임계값 → 이상</p><span class="threshold-legend"><i class="legend-line" aria-hidden="true"></i><span><span class="sr-only">주황 점선: </span>현재 임계값</span></span></div>
     <div class="score-heading" aria-hidden="true"><span>샘플</span><span>이상 점수</span><span>점수</span><span>예측</span><span>유형</span></div>
     <div id="score-list" class="sample-groups" aria-label="실제값별 샘플과 모델 예측"></div>
     <p class="score-summary" id="score-summary"></p>
@@ -643,7 +648,7 @@ h1 { margin: 15px 0 9px; font-size: 55px; line-height: 1.16; color: var(--navy);
   document.getElementById('live-context').textContent=`실제 정상 ${samples.length-positives}개 · 실제 이상 ${positives}개`;
   const rows = new Map();
   // Ground-truth groups and sample identities stay fixed while predictions move.
-  [0,1].forEach(truth => {
+  [1,0].forEach(truth => {
     const label = truth ? '이상' : '정상';
     const group = document.createElement('section');
     group.className='sample-group'; group.dataset.truth=String(truth);
