@@ -69,6 +69,17 @@ def check_concept(page):
     assert extra['selectedOutline']=='solid'
     for key,expected in [('left',.65),('top',.475),('width',.05),('height',.05)]:
         assert abs(extra['roi'][key]-expected)<.003,(key,extra['roi'])
+    if extra['viewport']==390:
+        debug=page.evaluate('''() => {const panel=document.querySelector('.visual-panel');
+            const figure=document.querySelector('.image-figure');
+            const data=e=>{const r=e.getBoundingClientRect();return {
+                selector:e.className,width:r.width,height:r.height,
+                x:r.x,y:r.y,right:r.right,bottom:r.bottom,
+                scrollWidth:e.scrollWidth,clientWidth:e.clientWidth,
+                scrollHeight:e.scrollHeight,clientHeight:e.clientHeight}};
+            return [panel,figure,...panel.querySelectorAll('.image-unit,.pixel-unit,.image-frame,.pixel-frame,.pixel-block,.figure-label,.zoom-arrow')].map(data);
+        }''')
+        print('CONCEPT_390_LAYOUT_DIAGNOSTIC',debug,flush=True)
     fig=extra['fig']
     assert abs(fig['frame']['cy']-fig['pixels']['cy'])<1.5,(extra['viewport'],fig)
     assert abs(fig['arrow']['cy']-fig['frame']['cy'])<1.5,(extra['viewport'],fig)
