@@ -1,0 +1,1303 @@
+{
+  "script": "scripts/render_step_pretendard.py",
+  "font": "Pretendard Variable v1.3.9 via repository CSS",
+  "result": "PASS",
+  "viewports": [
+    {
+      "viewport": [
+        1600,
+        950
+      ],
+      "fontcheck": {
+        "loadedCounts": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "koreanSupported": true,
+        "faces": 13
+      },
+      "layout": {
+        "computedFont": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+        "letterSpacing": "-1.33333px",
+        "loadedFaces": 13,
+        "loadedFonts": [
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          }
+        ],
+        "pageScrollWidth": 1600,
+        "slide": {
+          "x": 80,
+          "y": 70,
+          "right": 1520,
+          "bottom": 880,
+          "cx": 800,
+          "cy": 475
+        },
+        "panels": [
+          {
+            "x": 146,
+            "y": 259.328125,
+            "right": 842.765625,
+            "bottom": 805,
+            "cx": 494.3828125,
+            "cy": 532.1640625
+          },
+          {
+            "x": 856.765625,
+            "y": 259.328125,
+            "right": 1454,
+            "bottom": 805,
+            "cx": 1155.3828125,
+            "cy": 532.1640625
+          }
+        ],
+        "footer": {
+          "x": 146,
+          "y": 820,
+          "right": 1454,
+          "bottom": 850,
+          "cx": 800,
+          "cy": 835
+        },
+        "lines": [
+          {
+            "x": 165,
+            "y": 702,
+            "right": 823.765625,
+            "bottom": 788,
+            "cx": 494.3828125,
+            "cy": 745
+          },
+          {
+            "x": 875.765625,
+            "y": 702,
+            "right": 1435,
+            "bottom": 788,
+            "cx": 1155.3828125,
+            "cy": 745
+          }
+        ],
+        "titleBoxes": [
+          {
+            "x": 208.375,
+            "y": 387.140625,
+            "right": 414.375,
+            "bottom": 407.140625,
+            "cx": 311.375,
+            "cy": 397.140625
+          },
+          {
+            "x": 454.375,
+            "y": 387.140625,
+            "right": 600.375,
+            "bottom": 407.140625,
+            "cx": 527.375,
+            "cy": 397.140625
+          },
+          {
+            "x": 640.375,
+            "y": 387.140625,
+            "right": 780.375,
+            "bottom": 407.140625,
+            "cx": 710.375,
+            "cy": 397.140625
+          },
+          {
+            "x": 895.984375,
+            "y": 355.703125,
+            "right": 1029.984375,
+            "bottom": 375.703125,
+            "cx": 962.984375,
+            "cy": 365.703125
+          },
+          {
+            "x": 1058.765625,
+            "y": 355.703125,
+            "right": 1192.765625,
+            "bottom": 375.703125,
+            "cx": 1125.765625,
+            "cy": 365.703125
+          },
+          {
+            "x": 1226.765625,
+            "y": 355.703125,
+            "right": 1414.765625,
+            "bottom": 375.703125,
+            "cx": 1320.765625,
+            "cy": 365.703125
+          }
+        ],
+        "imagesBroken": [],
+        "selectedInput": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9"
+        ],
+        "selectedOutput": "−6",
+        "products": [
+          "1",
+          "0",
+          "−3",
+          "4",
+          "0",
+          "−6",
+          "7",
+          "0",
+          "−9"
+        ],
+        "equation": "1 + 0 − 3 + 4 + 0 − 6 + 7 + 0 − 9 = −6"
+      }
+    },
+    {
+      "viewport": [
+        1440,
+        810
+      ],
+      "fontcheck": {
+        "loadedCounts": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "koreanSupported": true,
+        "faces": 13
+      },
+      "layout": {
+        "computedFont": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+        "letterSpacing": "-1.33333px",
+        "loadedFaces": 13,
+        "loadedFonts": [
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          }
+        ],
+        "pageScrollWidth": 1440,
+        "slide": {
+          "x": 35.5625,
+          "y": 20,
+          "right": 1404.4375,
+          "bottom": 790,
+          "cx": 720,
+          "cy": 405
+        },
+        "panels": [
+          {
+            "x": 98.296875,
+            "y": 199.953125,
+            "right": 760.65625,
+            "bottom": 718.78125,
+            "cx": 429.4765625,
+            "cy": 459.3671875
+          },
+          {
+            "x": 773.953125,
+            "y": 199.953125,
+            "right": 1341.703125,
+            "bottom": 718.78125,
+            "cx": 1057.828125,
+            "cy": 459.3671875
+          }
+        ],
+        "footer": {
+          "x": 98.296875,
+          "y": 733.03125,
+          "right": 1341.703125,
+          "bottom": 761.484375,
+          "cx": 720,
+          "cy": 747.2578125
+        },
+        "lines": [
+          {
+            "x": 116.40625,
+            "y": 620.828125,
+            "right": 742.546875,
+            "bottom": 702.578125,
+            "cx": 429.4765625,
+            "cy": 661.703125
+          },
+          {
+            "x": 792.0625,
+            "y": 620.828125,
+            "right": 1323.59375,
+            "bottom": 702.578125,
+            "cx": 1057.828125,
+            "cy": 661.703125
+          }
+        ],
+        "titleBoxes": [
+          {
+            "x": 157.71875,
+            "y": 322.015625,
+            "right": 353.453125,
+            "bottom": 341.015625,
+            "cx": 255.5859375,
+            "cy": 331.515625
+          },
+          {
+            "x": 391.453125,
+            "y": 322.015625,
+            "right": 530.203125,
+            "bottom": 341.015625,
+            "cx": 460.828125,
+            "cy": 331.515625
+          },
+          {
+            "x": 568.203125,
+            "y": 322.015625,
+            "right": 701.234375,
+            "bottom": 341.015625,
+            "cx": 634.71875,
+            "cy": 331.515625
+          },
+          {
+            "x": 811.296875,
+            "y": 292.375,
+            "right": 938.65625,
+            "bottom": 311.375,
+            "cx": 874.9765625,
+            "cy": 301.875
+          },
+          {
+            "x": 966,
+            "y": 292.375,
+            "right": 1093.359375,
+            "bottom": 311.375,
+            "cx": 1029.6796875,
+            "cy": 301.875
+          },
+          {
+            "x": 1125.671875,
+            "y": 292.375,
+            "right": 1304.359375,
+            "bottom": 311.375,
+            "cx": 1215.015625,
+            "cy": 301.875
+          }
+        ],
+        "imagesBroken": [],
+        "selectedInput": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9"
+        ],
+        "selectedOutput": "−6",
+        "products": [
+          "1",
+          "0",
+          "−3",
+          "4",
+          "0",
+          "−6",
+          "7",
+          "0",
+          "−9"
+        ],
+        "equation": "1 + 0 − 3 + 4 + 0 − 6 + 7 + 0 − 9 = −6"
+      }
+    },
+    {
+      "viewport": [
+        1366,
+        768
+      ],
+      "fontcheck": {
+        "loadedCounts": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "koreanSupported": true,
+        "faces": 13
+      },
+      "layout": {
+        "computedFont": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+        "letterSpacing": "-1.33333px",
+        "loadedFaces": 13,
+        "loadedFonts": [
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          }
+        ],
+        "pageScrollWidth": 1366,
+        "slide": {
+          "x": 35.890625,
+          "y": 20,
+          "right": 1330.109375,
+          "bottom": 748,
+          "cx": 683,
+          "cy": 384
+        },
+        "panels": [
+          {
+            "x": 95.203125,
+            "y": 191.1875,
+            "right": 721.4375,
+            "bottom": 680.703125,
+            "cx": 408.3203125,
+            "cy": 435.9453125
+          },
+          {
+            "x": 734.015625,
+            "y": 191.1875,
+            "right": 1270.796875,
+            "bottom": 680.703125,
+            "cx": 1002.40625,
+            "cy": 435.9453125
+          }
+        ],
+        "footer": {
+          "x": 95.203125,
+          "y": 694.171875,
+          "right": 1270.796875,
+          "bottom": 721.046875,
+          "cx": 683,
+          "cy": 707.609375
+        },
+        "lines": [
+          {
+            "x": 112.375,
+            "y": 588.046875,
+            "right": 704.265625,
+            "bottom": 665.328125,
+            "cx": 408.3203125,
+            "cy": 626.6875
+          },
+          {
+            "x": 751.1875,
+            "y": 588.046875,
+            "right": 1253.625,
+            "bottom": 665.328125,
+            "cx": 1002.40625,
+            "cy": 626.6875
+          }
+        ],
+        "titleBoxes": [
+          {
+            "x": 151.359375,
+            "y": 306.203125,
+            "right": 336.4375,
+            "bottom": 324.171875,
+            "cx": 243.8984375,
+            "cy": 315.1875
+          },
+          {
+            "x": 372.375,
+            "y": 306.203125,
+            "right": 503.546875,
+            "bottom": 324.171875,
+            "cx": 437.9609375,
+            "cy": 315.1875
+          },
+          {
+            "x": 539.484375,
+            "y": 306.203125,
+            "right": 665.265625,
+            "bottom": 324.171875,
+            "cx": 602.375,
+            "cy": 315.1875
+          },
+          {
+            "x": 769.34375,
+            "y": 278.515625,
+            "right": 889.734375,
+            "bottom": 296.484375,
+            "cx": 829.5390625,
+            "cy": 287.5
+          },
+          {
+            "x": 915.578125,
+            "y": 278.515625,
+            "right": 1035.96875,
+            "bottom": 296.484375,
+            "cx": 975.7734375,
+            "cy": 287.5
+          },
+          {
+            "x": 1066.5,
+            "y": 278.515625,
+            "right": 1235.453125,
+            "bottom": 296.484375,
+            "cx": 1150.9765625,
+            "cy": 287.5
+          }
+        ],
+        "imagesBroken": [],
+        "selectedInput": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9"
+        ],
+        "selectedOutput": "−6",
+        "products": [
+          "1",
+          "0",
+          "−3",
+          "4",
+          "0",
+          "−6",
+          "7",
+          "0",
+          "−9"
+        ],
+        "equation": "1 + 0 − 3 + 4 + 0 − 6 + 7 + 0 − 9 = −6"
+      }
+    },
+    {
+      "viewport": [
+        1280,
+        720
+      ],
+      "fontcheck": {
+        "loadedCounts": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "koreanSupported": true,
+        "faces": 13
+      },
+      "layout": {
+        "computedFont": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+        "letterSpacing": "-1.33333px",
+        "loadedFaces": 13,
+        "loadedFonts": [
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          }
+        ],
+        "pageScrollWidth": 1280,
+        "slide": {
+          "x": 35.5625,
+          "y": 20,
+          "right": 1244.4375,
+          "bottom": 700,
+          "cx": 640,
+          "cy": 360
+        },
+        "panels": [
+          {
+            "x": 90.96875,
+            "y": 179.140625,
+            "right": 675.90625,
+            "bottom": 637.015625,
+            "cx": 383.4375,
+            "cy": 408.078125
+          },
+          {
+            "x": 687.65625,
+            "y": 179.140625,
+            "right": 1189.03125,
+            "bottom": 637.015625,
+            "cx": 938.34375,
+            "cy": 408.078125
+          }
+        ],
+        "footer": {
+          "x": 90.96875,
+          "y": 649.59375,
+          "right": 1189.03125,
+          "bottom": 674.828125,
+          "cx": 640,
+          "cy": 662.2109375
+        },
+        "lines": [
+          {
+            "x": 107.078125,
+            "y": 550.40625,
+            "right": 659.796875,
+            "bottom": 622.59375,
+            "cx": 383.4375,
+            "cy": 586.5
+          },
+          {
+            "x": 703.765625,
+            "y": 550.40625,
+            "right": 1172.921875,
+            "bottom": 622.59375,
+            "cx": 938.34375,
+            "cy": 586.5
+          }
+        ],
+        "titleBoxes": [
+          {
+            "x": 143.46875,
+            "y": 286.78125,
+            "right": 316.296875,
+            "bottom": 303.5625,
+            "cx": 229.8828125,
+            "cy": 295.171875
+          },
+          {
+            "x": 349.84375,
+            "y": 286.78125,
+            "right": 472.359375,
+            "bottom": 303.5625,
+            "cx": 411.1015625,
+            "cy": 295.171875
+          },
+          {
+            "x": 505.90625,
+            "y": 286.78125,
+            "right": 623.40625,
+            "bottom": 303.5625,
+            "cx": 564.65625,
+            "cy": 295.171875
+          },
+          {
+            "x": 720.703125,
+            "y": 260.734375,
+            "right": 833.140625,
+            "bottom": 277.515625,
+            "cx": 776.921875,
+            "cy": 269.125
+          },
+          {
+            "x": 857.265625,
+            "y": 260.734375,
+            "right": 969.703125,
+            "bottom": 277.515625,
+            "cx": 913.484375,
+            "cy": 269.125
+          },
+          {
+            "x": 998.21875,
+            "y": 260.734375,
+            "right": 1155.984375,
+            "bottom": 277.515625,
+            "cx": 1077.1015625,
+            "cy": 269.125
+          }
+        ],
+        "imagesBroken": [],
+        "selectedInput": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9"
+        ],
+        "selectedOutput": "−6",
+        "products": [
+          "1",
+          "0",
+          "−3",
+          "4",
+          "0",
+          "−6",
+          "7",
+          "0",
+          "−9"
+        ],
+        "equation": "1 + 0 − 3 + 4 + 0 − 6 + 7 + 0 − 9 = −6"
+      }
+    },
+    {
+      "viewport": [
+        900,
+        900
+      ],
+      "fontcheck": {
+        "loadedCounts": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "koreanSupported": true,
+        "faces": 13
+      },
+      "layout": {
+        "computedFont": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+        "letterSpacing": "-1.33333px",
+        "loadedFaces": 13,
+        "loadedFonts": [
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          }
+        ],
+        "pageScrollWidth": 900,
+        "slide": {
+          "x": 16,
+          "y": 16,
+          "right": 884,
+          "bottom": 1200.15625,
+          "cx": 450,
+          "cy": 608.078125
+        },
+        "panels": [
+          {
+            "x": 40,
+            "y": 164.40625,
+            "right": 860,
+            "bottom": 591.78125,
+            "cx": 450,
+            "cy": 378.09375
+          },
+          {
+            "x": 40,
+            "y": 607.78125,
+            "right": 860,
+            "bottom": 1127.15625,
+            "cx": 450,
+            "cy": 867.46875
+          }
+        ],
+        "footer": {
+          "x": 40,
+          "y": 1142.15625,
+          "right": 860,
+          "bottom": 1170.15625,
+          "cx": 450,
+          "cy": 1156.15625
+        },
+        "lines": [
+          {
+            "x": 57,
+            "y": 488.78125,
+            "right": 843,
+            "bottom": 574.78125,
+            "cx": 450,
+            "cy": 531.78125
+          },
+          {
+            "x": 57,
+            "y": 1024.15625,
+            "right": 843,
+            "bottom": 1110.15625,
+            "cx": 450,
+            "cy": 1067.15625
+          }
+        ],
+        "titleBoxes": [
+          {
+            "x": 164,
+            "y": 252.78125,
+            "right": 370,
+            "bottom": 272.78125,
+            "cx": 267,
+            "cy": 262.78125
+          },
+          {
+            "x": 410,
+            "y": 252.78125,
+            "right": 556,
+            "bottom": 272.78125,
+            "cx": 483,
+            "cy": 262.78125
+          },
+          {
+            "x": 596,
+            "y": 252.78125,
+            "right": 736,
+            "bottom": 272.78125,
+            "cx": 666,
+            "cy": 262.78125
+          },
+          {
+            "x": 190.609375,
+            "y": 706.15625,
+            "right": 324.609375,
+            "bottom": 726.15625,
+            "cx": 257.609375,
+            "cy": 716.15625
+          },
+          {
+            "x": 353.390625,
+            "y": 706.15625,
+            "right": 487.390625,
+            "bottom": 726.15625,
+            "cx": 420.390625,
+            "cy": 716.15625
+          },
+          {
+            "x": 521.390625,
+            "y": 706.15625,
+            "right": 709.390625,
+            "bottom": 726.15625,
+            "cx": 615.390625,
+            "cy": 716.15625
+          }
+        ],
+        "imagesBroken": [],
+        "selectedInput": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9"
+        ],
+        "selectedOutput": "−6",
+        "products": [
+          "1",
+          "0",
+          "−3",
+          "4",
+          "0",
+          "−6",
+          "7",
+          "0",
+          "−9"
+        ],
+        "equation": "1 + 0 − 3 + 4 + 0 − 6 + 7 + 0 − 9 = −6"
+      }
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "fontcheck": {
+        "loadedCounts": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "koreanSupported": true,
+        "faces": 13
+      },
+      "layout": {
+        "computedFont": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+        "letterSpacing": "-1.33333px",
+        "loadedFaces": 13,
+        "loadedFonts": [
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          },
+          {
+            "family": "Pretendard Variable",
+            "weight": "45 920",
+            "status": "loaded"
+          }
+        ],
+        "pageScrollWidth": 390,
+        "slide": {
+          "x": 10,
+          "y": 10,
+          "right": 380,
+          "bottom": 2076.5625,
+          "cx": 195,
+          "cy": 1043.28125
+        },
+        "panels": [
+          {
+            "x": 26,
+            "y": 175.828125,
+            "right": 364,
+            "bottom": 1063.953125,
+            "cx": 195,
+            "cy": 619.890625
+          },
+          {
+            "x": 26,
+            "y": 1079.953125,
+            "right": 364,
+            "bottom": 2007.5625,
+            "cx": 195,
+            "cy": 1543.7578125
+          }
+        ],
+        "footer": {
+          "x": 26,
+          "y": 2022.5625,
+          "right": 364,
+          "bottom": 2050.5625,
+          "cx": 195,
+          "cy": 2036.5625
+        },
+        "lines": [
+          {
+            "x": 41,
+            "y": 946.953125,
+            "right": 349,
+            "bottom": 1046.953125,
+            "cx": 195,
+            "cy": 996.953125
+          },
+          {
+            "x": 41,
+            "y": 1890.5625,
+            "right": 349,
+            "bottom": 1990.5625,
+            "cx": 195,
+            "cy": 1940.5625
+          }
+        ],
+        "titleBoxes": [
+          {
+            "x": 41,
+            "y": 324.953125,
+            "right": 349,
+            "bottom": 344.953125,
+            "cx": 195,
+            "cy": 334.953125
+          },
+          {
+            "x": 41,
+            "y": 571.953125,
+            "right": 349,
+            "bottom": 591.953125,
+            "cx": 195,
+            "cy": 581.953125
+          },
+          {
+            "x": 41,
+            "y": 762.953125,
+            "right": 349,
+            "bottom": 782.953125,
+            "cx": 195,
+            "cy": 772.953125
+          },
+          {
+            "x": 41,
+            "y": 1199.5625,
+            "right": 349,
+            "bottom": 1219.5625,
+            "cx": 195,
+            "cy": 1209.5625
+          },
+          {
+            "x": 41,
+            "y": 1392.5625,
+            "right": 349,
+            "bottom": 1412.5625,
+            "cx": 195,
+            "cy": 1402.5625
+          },
+          {
+            "x": 41,
+            "y": 1585.5625,
+            "right": 349,
+            "bottom": 1605.5625,
+            "cx": 195,
+            "cy": 1595.5625
+          }
+        ],
+        "imagesBroken": [],
+        "selectedInput": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9"
+        ],
+        "selectedOutput": "−6",
+        "products": [
+          "1",
+          "0",
+          "−3",
+          "4",
+          "0",
+          "−6",
+          "7",
+          "0",
+          "−9"
+        ],
+        "equation": "1 + 0 − 3 + 4 + 0 − 6 + 7 + 0 − 9 = −6"
+      }
+    }
+  ]
+}
