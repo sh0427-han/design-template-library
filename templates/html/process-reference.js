@@ -17,7 +17,6 @@
   const svg = slide.querySelector('.process-feature-svg');
   const fallback = slide.querySelector('.feature-fallback');
   const photo = slide.querySelector('.process-photo');
-  slide.querySelectorAll('[data-example-score]').forEach((text, i) => {text.textContent = String(logits[i]);});
   slide.querySelectorAll('.output-item').forEach((item, i) => {
     item.dataset.probability = String(probabilities[i]);
     item.dataset.highest = String(logits[i] === peak);
@@ -27,7 +26,6 @@
   const exampleDescription = [...slide.querySelectorAll('.output-item')].map(item =>
     `${item.dataset.class} ${item.querySelector('.probability-value').textContent}`).join(', ');
   slide.querySelector('.process-output-svg').setAttribute('aria-label', `예시 확률: ${exampleDescription}, 합계 100%`);
-  slide.querySelector('.process-task-svg').setAttribute('aria-label', `요약된 특징 벡터를 분류 Head가 예시 점수 ${logits.join(', ')}으로 변환하는 모식도`);
 
   function centerArtwork(target) {
     const artwork = target.querySelector('[data-process-artwork]');
@@ -58,13 +56,18 @@
     const artwork = document.createElementNS('http://www.w3.org/2000/svg', 'g');
     artwork.setAttribute('data-process-artwork', '');
     images.forEach((image, i) => {
-      const depth = 3 - i, x = 8 + depth * 20, y = 45 - depth * 12;
+      // Same upper-right depth direction and restrained plane outlines as #6.
+      // Keep every computed 64x64 data URL intact; never copy its schematic data.
+      const depth = 3 - i, x = 10 + depth * 15, y = 38 - depth * 10;
       const frame = frames[i];
-      Object.entries({x:x-2, y:y-2, width:112, height:112}).forEach(([key,value]) => frame.setAttribute(key,String(value)));
-      Object.entries({x, y, width:108, height:108}).forEach(([key,value]) => image.setAttribute(key,String(value)));
+      Object.entries({x:x-2, y:y-2, width:120, height:120, rx:1.5,
+        fill:'#b7cdea', stroke:depth===0?'#4679b8':'#6e94c6',
+        'stroke-width':depth===0?1.5:1.05}).forEach(([key,value]) => frame.setAttribute(key,String(value)));
+      Object.entries({x, y, width:116, height:116}).forEach(([key,value]) => image.setAttribute(key,String(value)));
+      image.dataset.channel = String(state.featureChannels[depth]);
       artwork.append(frame, image);
     });
-    svg.replaceChildren(artwork); svg.setAttribute('viewBox', '0 0 184 162');
+    svg.replaceChildren(artwork); svg.setAttribute('viewBox', '0 0 184 164');
     figure.dataset.featureState = 'ready'; fallback.hidden = true;
     centerArtwork(svg); state.status = 'ready';
   }

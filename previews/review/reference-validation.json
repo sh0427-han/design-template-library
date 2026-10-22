@@ -1,6 +1,6 @@
 {
   "status": "passed",
-  "started_utc": "2026-10-22T12:37:31.661223+00:00",
+  "started_utc": "2026-10-22T13:53:53.992839+00:00",
   "viewports": [
     [
       1600,
@@ -194,6 +194,9 @@
                 "cx": 293,
                 "cy": 636.890625
               },
+              "background": "rgb(255, 255, 255)",
+              "border": "rgb(221, 228, 239)",
+              "borderWidth": "2px",
               "cxError": 0,
               "cyError": 0,
               "paddingEscapes": false
@@ -231,14 +234,14 @@
                 "cy": 460.890625
               },
               "artwork": {
-                "x": 554.5555419921875,
-                "y": 395.11285400390625,
-                "right": 707.4444580078125,
-                "bottom": 526.6683959960938,
-                "width": 152.888916015625,
-                "height": 131.5555419921875,
+                "x": 550.51220703125,
+                "y": 387.7198791503906,
+                "right": 711.48779296875,
+                "bottom": 534.0613403320312,
+                "width": 160.9755859375,
+                "height": 146.34146118164062,
                 "cx": 631,
-                "cy": 460.890625
+                "cy": 460.89060974121094
               },
               "title": {
                 "x": 504,
@@ -260,8 +263,11 @@
                 "cx": 631,
                 "cy": 636.890625
               },
+              "background": "rgb(234, 241, 255)",
+              "border": "rgb(49, 104, 200)",
+              "borderWidth": "2px",
               "cxError": 0,
-              "cyError": 0,
+              "cyError": 1.52587890625e-05,
               "paddingEscapes": false
             },
             {
@@ -297,12 +303,12 @@
                 "cy": 460.890625
               },
               "artwork": {
-                "x": 874.76611328125,
-                "y": 414.2696533203125,
-                "right": 1063.23388671875,
-                "bottom": 507.5115966796875,
-                "width": 188.4677734375,
-                "height": 93.241943359375,
+                "x": 863.8548583984375,
+                "y": 424.18902587890625,
+                "right": 1074.1451416015625,
+                "bottom": 497.59222412109375,
+                "width": 210.290283203125,
+                "height": 73.4031982421875,
                 "cx": 969,
                 "cy": 460.890625
               },
@@ -326,6 +332,9 @@
                 "cx": 969,
                 "cy": 636.890625
               },
+              "background": "rgb(255, 255, 255)",
+              "border": "rgb(221, 228, 239)",
+              "borderWidth": "2px",
               "cxError": 0,
               "cyError": 0,
               "paddingEscapes": false
@@ -392,6 +401,9 @@
                 "cx": 1307,
                 "cy": 636.890625
               },
+              "background": "rgb(255, 255, 255)",
+              "border": "rgb(221, 228, 239)",
+              "borderWidth": "2px",
               "cxError": 0,
               "cyError": 1.52587890625e-05,
               "paddingEscapes": false
@@ -464,18 +476,45 @@
               "fill": "rgb(133, 188, 182)"
             }
           ],
-          "scores": [
+          "exampleLogits": [
             2,
             1,
             0
           ],
+          "maps": [
+            {
+              "channel": 9,
+              "x": 55,
+              "y": 8,
+              "width": 116,
+              "height": 116
+            },
+            {
+              "channel": 6,
+              "x": 40,
+              "y": 18,
+              "width": 116,
+              "height": 116
+            },
+            {
+              "channel": 3,
+              "x": 25,
+              "y": 28,
+              "width": 116,
+              "height": 116
+            },
+            {
+              "channel": 0,
+              "x": 10,
+              "y": 38,
+              "width": 116,
+              "height": 116
+            }
+          ],
           "photos": 1,
           "featureImages": 4,
           "figureNotes": [
-            "64×64×3 · 리샘플",
-            "대표 특징 맵 · 고정 필터 설명용",
-            "특징 → 분류 점수 · 모식도",
-            "예시 확률 · 합계 100%"
+            "예시 확률"
           ],
           "captionLast": true,
           "zoom": 1,
@@ -489,9 +528,9 @@
         }
       },
       "fonts": {
-        "elements": 35,
+        "elements": 27,
         "families": {
-          "Pretendard Variable": 329
+          "Pretendard Variable": 264
         },
         "fallback": [],
         "unpainted": [],
@@ -1968,6 +2007,9 @@
                 "cx": 238.0390625,
                 "cy": 557.9921875
               },
+              "background": "rgb(255, 255, 255)",
+              "border": "rgb(221, 228, 239)",
+              "borderWidth": "1.05195px",
               "cxError": 0.015625,
               "cyError": 0.0078125,
               "paddingEscapes": false
@@ -2005,13 +2047,13 @@
                 "cy": 390.6953125
               },
               "artwork": {
-                "x": 486.68170166015625,
-                "y": 328.16436767578125,
-                "right": 632.0057983398438,
-                "bottom": 453.21063232421875,
-                "width": 145.3240966796875,
-                "height": 125.0462646484375,
-                "cx": 559.34375,
+                "x": 482.8331604003906,
+                "y": 321.1324462890625,
+                "right": 635.8543090820312,
+                "bottom": 460.2425537109375,
+                "width": 153.02114868164062,
+                "height": 139.110107421875,
+                "cx": 559.3437347412109,
                 "cy": 390.6875
               },
               "title": {
@@ -2034,7 +2076,10 @@
                 "cx": 559.34375,
                 "cy": 557.9921875
               },
-              "cxError": 0,
+              "background": "rgb(234, 241, 255)",
+              "border": "rgb(49, 104, 200)",
+              "borderWidth": "1.05195px",
+              "cxError": 1.52587890625e-05,
               "cyError": 0.0078125,
               "paddingEscapes": false
             },
@@ -2071,12 +2116,12 @@
                 "cy": 390.6953125
               },
               "artwork": {
-                "x": 791.0555419921875,
-                "y": 346.3703308105469,
-                "right": 970.2100830078125,
-                "bottom": 435.0046691894531,
-                "width": 179.154541015625,
-                "height": 88.63433837890625,
+                "x": 780.6834716796875,
+                "y": 355.7995300292969,
+                "right": 980.5821533203125,
+                "bottom": 425.5754699707031,
+                "width": 199.898681640625,
+                "height": 69.77593994140625,
                 "cx": 880.6328125,
                 "cy": 390.6875
               },
@@ -2100,6 +2145,9 @@
                 "cx": 880.6484375,
                 "cy": 557.9921875
               },
+              "background": "rgb(255, 255, 255)",
+              "border": "rgb(221, 228, 239)",
+              "borderWidth": "1.05195px",
               "cxError": 0.015625,
               "cyError": 0.0078125,
               "paddingEscapes": false
@@ -2166,6 +2214,9 @@
                 "cx": 1201.953125,
                 "cy": 557.9921875
               },
+              "background": "rgb(255, 255, 255)",
+              "border": "rgb(221, 228, 239)",
+              "borderWidth": "1.05195px",
               "cxError": 0,
               "cyError": 0.0078125,
               "paddingEscapes": false
@@ -2238,18 +2289,45 @@
               "fill": "rgb(133, 188, 182)"
             }
           ],
-          "scores": [
+          "exampleLogits": [
             2,
             1,
             0
           ],
+          "maps": [
+            {
+              "channel": 9,
+              "x": 55,
+              "y": 8,
+              "width": 116,
+              "height": 116
+            },
+            {
+              "channel": 6,
+              "x": 40,
+              "y": 18,
+              "width": 116,
+              "height": 116
+            },
+            {
+              "channel": 3,
+              "x": 25,
+              "y": 28,
+              "width": 116,
+              "height": 116
+            },
+            {
+              "channel": 0,
+              "x": 10,
+              "y": 38,
+              "width": 116,
+              "height": 116
+            }
+          ],
           "photos": 1,
           "featureImages": 4,
           "figureNotes": [
-            "64×64×3 · 리샘플",
-            "대표 특징 맵 · 고정 필터 설명용",
-            "특징 → 분류 점수 · 모식도",
-            "예시 확률 · 합계 100%"
+            "예시 확률"
           ],
           "captionLast": true,
           "zoom": 0.950617,
@@ -2263,9 +2341,9 @@
         }
       },
       "fonts": {
-        "elements": 35,
+        "elements": 27,
         "families": {
-          "Pretendard Variable": 329
+          "Pretendard Variable": 264
         },
         "fallback": [],
         "unpainted": [],
@@ -3742,6 +3820,9 @@
                 "cx": 227.328125,
                 "cy": 529.2421875
               },
+              "background": "rgb(255, 255, 255)",
+              "border": "rgb(221, 228, 239)",
+              "borderWidth": "1.11264px",
               "cxError": 0,
               "cyError": 0.015625,
               "paddingEscapes": false
@@ -3779,14 +3860,14 @@
                 "cy": 371.0859375
               },
               "artwork": {
-                "x": 462.3961181640625,
-                "y": 311.9595031738281,
-                "right": 599.8070068359375,
-                "bottom": 430.19677734375,
-                "width": 137.410888671875,
-                "height": 118.23727416992188,
+                "x": 458.76470947265625,
+                "y": 305.3173522949219,
+                "right": 603.4384155273438,
+                "bottom": 436.8388977050781,
+                "width": 144.6737060546875,
+                "height": 131.52154541015625,
                 "cx": 531.1015625,
-                "cy": 371.07814025878906
+                "cy": 371.078125
               },
               "title": {
                 "x": 416.15625,
@@ -3808,8 +3889,11 @@
                 "cx": 531.109375,
                 "cy": 529.2421875
               },
+              "background": "rgb(234, 241, 255)",
+              "border": "rgb(49, 104, 200)",
+              "borderWidth": "1.11264px",
               "cxError": 0.0078125,
-              "cyError": 0.0077972412109375,
+              "cyError": 0.0078125,
               "paddingEscapes": false
             },
             {
@@ -3845,14 +3929,14 @@
                 "cy": 371.0859375
               },
               "artwork": {
-                "x": 750.1974487304688,
-                "y": 329.17730712890625,
-                "right": 919.5838012695312,
-                "bottom": 412.97894287109375,
-                "width": 169.3863525390625,
-                "height": 83.8016357421875,
+                "x": 740.390869140625,
+                "y": 338.0923767089844,
+                "right": 929.390380859375,
+                "bottom": 404.06390380859375,
+                "width": 188.99951171875,
+                "height": 65.97152709960938,
                 "cx": 834.890625,
-                "cy": 371.078125
+                "cy": 371.07814025878906
               },
               "title": {
                 "x": 719.9375,
@@ -3874,8 +3958,11 @@
                 "cx": 834.890625,
                 "cy": 529.2421875
               },
+              "background": "rgb(255, 255, 255)",
+              "border": "rgb(221, 228, 239)",
+              "borderWidth": "1.11264px",
               "cxError": 0,
-              "cyError": 0.0078125,
+              "cyError": 0.0077972412109375,
               "paddingEscapes": false
             },
             {
@@ -3940,6 +4027,9 @@
                 "cx": 1138.671875,
                 "cy": 529.2421875
               },
+              "background": "rgb(255, 255, 255)",
+              "border": "rgb(221, 228, 239)",
+              "borderWidth": "1.11264px",
               "cxError": 0,
               "cyError": 0.0077972412109375,
               "paddingEscapes": false
@@ -4012,18 +4102,45 @@
               "fill": "rgb(133, 188, 182)"
             }
           ],
-          "scores": [
+          "exampleLogits": [
             2,
             1,
             0
           ],
+          "maps": [
+            {
+              "channel": 9,
+              "x": 55,
+              "y": 8,
+              "width": 116,
+              "height": 116
+            },
+            {
+              "channel": 6,
+              "x": 40,
+              "y": 18,
+              "width": 116,
+              "height": 116
+            },
+            {
+              "channel": 3,
+              "x": 25,
+              "y": 28,
+              "width": 116,
+              "height": 116
+            },
+            {
+              "channel": 0,
+              "x": 10,
+              "y": 38,
+              "width": 116,
+              "height": 116
+            }
+          ],
           "photos": 1,
           "featureImages": 4,
           "figureNotes": [
-            "64×64×3 · 리샘플",
-            "대표 특징 맵 · 고정 필터 설명용",
-            "특징 → 분류 점수 · 모식도",
-            "예시 확률 · 합계 100%"
+            "예시 확률"
           ],
           "captionLast": true,
           "zoom": 0.898765,
@@ -4037,9 +4154,9 @@
         }
       },
       "fonts": {
-        "elements": 35,
+        "elements": 27,
         "families": {
-          "Pretendard Variable": 329
+          "Pretendard Variable": 264
         },
         "fallback": [],
         "unpainted": [],
@@ -5516,6 +5633,9 @@
                 "cx": 214.375,
                 "cy": 495.265625
               },
+              "background": "rgb(255, 255, 255)",
+              "border": "rgb(221, 228, 239)",
+              "borderWidth": "1.19118px",
               "cxError": 0,
               "cyError": 0,
               "paddingEscapes": false
@@ -5553,12 +5673,12 @@
                 "cy": 347.546875
               },
               "artwork": {
-                "x": 433.956787109375,
-                "y": 292.3323669433594,
-                "right": 562.293212890625,
-                "bottom": 402.7613830566406,
-                "width": 128.33642578125,
-                "height": 110.42901611328125,
+                "x": 430.55926513671875,
+                "y": 286.12347412109375,
+                "right": 565.6907348632812,
+                "bottom": 408.97027587890625,
+                "width": 135.1314697265625,
+                "height": 122.8468017578125,
                 "cx": 498.125,
                 "cy": 347.546875
               },
@@ -5582,6 +5702,9 @@
                 "cx": 498.125,
                 "cy": 495.265625
               },
+              "background": "rgb(234, 241, 255)",
+              "border": "rgb(49, 104, 200)",
+              "borderWidth": "1.19118px",
               "cxError": 0,
               "cyError": 0,
               "paddingEscapes": false
@@ -5619,14 +5742,14 @@
                 "cy": 347.546875
               },
               "artwork": {
-                "x": 702.7583618164062,
-                "y": 308.4088439941406,
-                "right": 860.9760131835938,
-                "bottom": 386.6849365234375,
-                "width": 158.2176513671875,
-                "height": 78.27609252929688,
+                "x": 693.598388671875,
+                "y": 316.736083984375,
+                "right": 870.135986328125,
+                "bottom": 378.357666015625,
+                "width": 176.53759765625,
+                "height": 61.62158203125,
                 "cx": 781.8671875,
-                "cy": 347.54689025878906
+                "cy": 347.546875
               },
               "title": {
                 "x": 674.578125,
@@ -5648,8 +5771,11 @@
                 "cx": 781.875,
                 "cy": 495.265625
               },
+              "background": "rgb(255, 255, 255)",
+              "border": "rgb(221, 228, 239)",
+              "borderWidth": "1.19118px",
               "cxError": 0.0078125,
-              "cyError": 1.52587890625e-05,
+              "cyError": 0,
               "paddingEscapes": false
             },
             {
@@ -5714,6 +5840,9 @@
                 "cx": 1065.625,
                 "cy": 495.265625
               },
+              "background": "rgb(255, 255, 255)",
+              "border": "rgb(221, 228, 239)",
+              "borderWidth": "1.19118px",
               "cxError": 0.007843017578125,
               "cyError": 0,
               "paddingEscapes": false
@@ -5786,18 +5915,45 @@
               "fill": "rgb(133, 188, 182)"
             }
           ],
-          "scores": [
+          "exampleLogits": [
             2,
             1,
             0
           ],
+          "maps": [
+            {
+              "channel": 9,
+              "x": 55,
+              "y": 8,
+              "width": 116,
+              "height": 116
+            },
+            {
+              "channel": 6,
+              "x": 40,
+              "y": 18,
+              "width": 116,
+              "height": 116
+            },
+            {
+              "channel": 3,
+              "x": 25,
+              "y": 28,
+              "width": 116,
+              "height": 116
+            },
+            {
+              "channel": 0,
+              "x": 10,
+              "y": 38,
+              "width": 116,
+              "height": 116
+            }
+          ],
           "photos": 1,
           "featureImages": 4,
           "figureNotes": [
-            "64×64×3 · 리샘플",
-            "대표 특징 맵 · 고정 필터 설명용",
-            "특징 → 분류 점수 · 모식도",
-            "예시 확률 · 합계 100%"
+            "예시 확률"
           ],
           "captionLast": true,
           "zoom": 0.839506,
@@ -5811,9 +5967,9 @@
         }
       },
       "fonts": {
-        "elements": 35,
+        "elements": 27,
         "families": {
-          "Pretendard Variable": 329
+          "Pretendard Variable": 264
         },
         "fallback": [],
         "unpainted": [],
@@ -7290,6 +7446,9 @@
                 "cx": 450,
                 "cy": 467.40625
               },
+              "background": "rgb(255, 255, 255)",
+              "border": "rgb(221, 228, 239)",
+              "borderWidth": "2px",
               "cxError": 0,
               "cyError": 0,
               "paddingEscapes": false
@@ -7327,12 +7486,12 @@
                 "cy": 705.40625
               },
               "artwork": {
-                "x": 382.04937744140625,
-                "y": 646.9371337890625,
-                "right": 517.9506225585938,
-                "bottom": 763.8753662109375,
-                "width": 135.9012451171875,
-                "height": 116.938232421875,
+                "x": 385.6097412109375,
+                "y": 646.8696899414062,
+                "right": 514.3902587890625,
+                "bottom": 763.9428100585938,
+                "width": 128.780517578125,
+                "height": 117.0731201171875,
                 "cx": 450,
                 "cy": 705.40625
               },
@@ -7356,6 +7515,9 @@
                 "cx": 450,
                 "cy": 869.40625
               },
+              "background": "rgb(234, 241, 255)",
+              "border": "rgb(49, 104, 200)",
+              "borderWidth": "2px",
               "cxError": 0,
               "cyError": 0,
               "paddingEscapes": false
@@ -7393,12 +7555,12 @@
                 "cy": 1107.40625
               },
               "artwork": {
-                "x": 365.5555419921875,
-                "y": 1065.62841796875,
-                "right": 534.4444580078125,
-                "bottom": 1149.18408203125,
-                "width": 168.888916015625,
-                "height": 83.5556640625,
+                "x": 355.77777099609375,
+                "y": 1074.517333984375,
+                "right": 544.2222290039062,
+                "bottom": 1140.295166015625,
+                "width": 188.4444580078125,
+                "height": 65.77783203125,
                 "cx": 450,
                 "cy": 1107.40625
               },
@@ -7422,6 +7584,9 @@
                 "cx": 450,
                 "cy": 1271.40625
               },
+              "background": "rgb(255, 255, 255)",
+              "border": "rgb(221, 228, 239)",
+              "borderWidth": "2px",
               "cxError": 0,
               "cyError": 0,
               "paddingEscapes": false
@@ -7488,6 +7653,9 @@
                 "cx": 450,
                 "cy": 1673.40625
               },
+              "background": "rgb(255, 255, 255)",
+              "border": "rgb(221, 228, 239)",
+              "borderWidth": "2px",
               "cxError": 0,
               "cyError": 0,
               "paddingEscapes": false
@@ -7560,18 +7728,45 @@
               "fill": "rgb(133, 188, 182)"
             }
           ],
-          "scores": [
+          "exampleLogits": [
             2,
             1,
             0
           ],
+          "maps": [
+            {
+              "channel": 9,
+              "x": 55,
+              "y": 8,
+              "width": 116,
+              "height": 116
+            },
+            {
+              "channel": 6,
+              "x": 40,
+              "y": 18,
+              "width": 116,
+              "height": 116
+            },
+            {
+              "channel": 3,
+              "x": 25,
+              "y": 28,
+              "width": 116,
+              "height": 116
+            },
+            {
+              "channel": 0,
+              "x": 10,
+              "y": 38,
+              "width": 116,
+              "height": 116
+            }
+          ],
           "photos": 1,
           "featureImages": 4,
           "figureNotes": [
-            "64×64×3 · 리샘플",
-            "대표 특징 맵 · 고정 필터 설명용",
-            "특징 → 분류 점수 · 모식도",
-            "예시 확률 · 합계 100%"
+            "예시 확률"
           ],
           "captionLast": true,
           "zoom": 1,
@@ -7585,9 +7780,9 @@
         }
       },
       "fonts": {
-        "elements": 35,
+        "elements": 27,
         "families": {
-          "Pretendard Variable": 329
+          "Pretendard Variable": 264
         },
         "fallback": [],
         "unpainted": [],
@@ -9006,64 +9201,67 @@
               "stage": "input",
               "card": {
                 "x": 26,
-                "y": 182.828125,
+                "y": 156.609375,
                 "right": 364,
-                "bottom": 528.828125,
+                "bottom": 502.609375,
                 "width": 338,
                 "height": 346,
                 "cx": 195,
-                "cy": 355.828125
+                "cy": 329.609375
               },
               "label": {
                 "x": 46,
-                "y": 204.828125,
+                "y": 178.609375,
                 "right": 344,
-                "bottom": 224.828125,
+                "bottom": 198.609375,
                 "width": 298,
                 "height": 20,
                 "cx": 195,
-                "cy": 214.828125
+                "cy": 188.609375
               },
               "figure": {
                 "x": 46,
-                "y": 234.828125,
+                "y": 208.609375,
                 "right": 344,
-                "bottom": 394.828125,
+                "bottom": 368.609375,
                 "width": 298,
                 "height": 160,
                 "cx": 195,
-                "cy": 314.828125
+                "cy": 288.609375
               },
               "artwork": {
                 "x": 135,
-                "y": 254.828125,
+                "y": 228.609375,
                 "right": 255,
-                "bottom": 374.828125,
+                "bottom": 348.609375,
                 "width": 120,
                 "height": 120,
                 "cx": 195,
-                "cy": 314.828125
+                "cy": 288.609375
               },
               "title": {
                 "x": 46,
-                "y": 404.828125,
+                "y": 378.609375,
                 "right": 344,
-                "bottom": 440.828125,
+                "bottom": 414.609375,
                 "width": 298,
                 "height": 36,
                 "cx": 195,
-                "cy": 422.828125
+                "cy": 396.609375
               },
               "description": {
                 "x": 46,
-                "y": 450.828125,
+                "y": 424.609375,
                 "right": 344,
-                "bottom": 506.828125,
+                "bottom": 480.609375,
                 "width": 298,
                 "height": 56,
                 "cx": 195,
-                "cy": 478.828125
+                "cy": 452.609375
               },
+              "background": "rgb(255, 255, 255)",
+              "border": "rgb(221, 228, 239)",
+              "borderWidth": "2px",
               "cxError": 0,
               "cyError": 0,
               "paddingEscapes": false
@@ -9072,64 +9270,67 @@
               "stage": "feature",
               "card": {
                 "x": 26,
-                "y": 584.828125,
+                "y": 558.609375,
                 "right": 364,
-                "bottom": 930.828125,
+                "bottom": 904.609375,
                 "width": 338,
                 "height": 346,
                 "cx": 195,
-                "cy": 757.828125
+                "cy": 731.609375
               },
               "label": {
                 "x": 46,
-                "y": 606.828125,
+                "y": 580.609375,
                 "right": 344,
-                "bottom": 626.828125,
+                "bottom": 600.609375,
                 "width": 298,
                 "height": 20,
                 "cx": 195,
-                "cy": 616.828125
+                "cy": 590.609375
               },
               "figure": {
                 "x": 46,
-                "y": 636.828125,
+                "y": 610.609375,
                 "right": 344,
-                "bottom": 796.828125,
+                "bottom": 770.609375,
                 "width": 298,
                 "height": 160,
                 "cx": 195,
-                "cy": 716.828125
+                "cy": 690.609375
               },
               "artwork": {
-                "x": 127.04938507080078,
-                "y": 658.3590087890625,
-                "right": 262.9506301879883,
-                "bottom": 775.2972412109375,
-                "width": 135.9012451171875,
-                "height": 116.938232421875,
+                "x": 130.60975646972656,
+                "y": 632.0728149414062,
+                "right": 259.3902587890625,
+                "bottom": 749.1459350585938,
+                "width": 128.78050231933594,
+                "height": 117.0731201171875,
                 "cx": 195.00000762939453,
-                "cy": 716.828125
+                "cy": 690.609375
               },
               "title": {
                 "x": 46,
-                "y": 806.828125,
+                "y": 780.609375,
                 "right": 344,
-                "bottom": 842.828125,
+                "bottom": 816.609375,
                 "width": 298,
                 "height": 36,
                 "cx": 195,
-                "cy": 824.828125
+                "cy": 798.609375
               },
               "description": {
                 "x": 46,
-                "y": 852.828125,
+                "y": 826.609375,
                 "right": 344,
-                "bottom": 908.828125,
+                "bottom": 882.609375,
                 "width": 298,
                 "height": 56,
                 "cx": 195,
-                "cy": 880.828125
+                "cy": 854.609375
               },
+              "background": "rgb(234, 241, 255)",
+              "border": "rgb(49, 104, 200)",
+              "borderWidth": "2px",
               "cxError": 7.62939453125e-06,
               "cyError": 0,
               "paddingEscapes": false
@@ -9138,64 +9339,67 @@
               "stage": "task",
               "card": {
                 "x": 26,
-                "y": 986.828125,
+                "y": 960.609375,
                 "right": 364,
-                "bottom": 1332.828125,
+                "bottom": 1306.609375,
                 "width": 338,
                 "height": 346,
                 "cx": 195,
-                "cy": 1159.828125
+                "cy": 1133.609375
               },
               "label": {
                 "x": 46,
-                "y": 1008.828125,
+                "y": 982.609375,
                 "right": 344,
-                "bottom": 1028.828125,
+                "bottom": 1002.609375,
                 "width": 298,
                 "height": 20,
                 "cx": 195,
-                "cy": 1018.828125
+                "cy": 992.609375
               },
               "figure": {
                 "x": 46,
-                "y": 1038.828125,
+                "y": 1012.609375,
                 "right": 344,
-                "bottom": 1198.828125,
+                "bottom": 1172.609375,
                 "width": 298,
                 "height": 160,
                 "cx": 195,
-                "cy": 1118.828125
+                "cy": 1092.609375
               },
               "artwork": {
-                "x": 110.55555725097656,
-                "y": 1077.05029296875,
-                "right": 279.4444580078125,
-                "bottom": 1160.60595703125,
-                "width": 168.88890075683594,
-                "height": 83.5556640625,
+                "x": 100.77777862548828,
+                "y": 1059.720458984375,
+                "right": 289.2222366333008,
+                "bottom": 1125.498291015625,
+                "width": 188.4444580078125,
+                "height": 65.77783203125,
                 "cx": 195.00000762939453,
-                "cy": 1118.828125
+                "cy": 1092.609375
               },
               "title": {
                 "x": 46,
-                "y": 1208.828125,
+                "y": 1182.609375,
                 "right": 344,
-                "bottom": 1244.828125,
+                "bottom": 1218.609375,
                 "width": 298,
                 "height": 36,
                 "cx": 195,
-                "cy": 1226.828125
+                "cy": 1200.609375
               },
               "description": {
                 "x": 46,
-                "y": 1254.828125,
+                "y": 1228.609375,
                 "right": 344,
-                "bottom": 1310.828125,
+                "bottom": 1284.609375,
                 "width": 298,
                 "height": 56,
                 "cx": 195,
-                "cy": 1282.828125
+                "cy": 1256.609375
               },
+              "background": "rgb(255, 255, 255)",
+              "border": "rgb(221, 228, 239)",
+              "borderWidth": "2px",
               "cxError": 7.62939453125e-06,
               "cyError": 0,
               "paddingEscapes": false
@@ -9204,64 +9408,67 @@
               "stage": "output",
               "card": {
                 "x": 26,
-                "y": 1388.828125,
+                "y": 1362.609375,
                 "right": 364,
-                "bottom": 1734.828125,
+                "bottom": 1708.609375,
                 "width": 338,
                 "height": 346,
                 "cx": 195,
-                "cy": 1561.828125
+                "cy": 1535.609375
               },
               "label": {
                 "x": 46,
-                "y": 1410.828125,
+                "y": 1384.609375,
                 "right": 344,
-                "bottom": 1430.828125,
+                "bottom": 1404.609375,
                 "width": 298,
                 "height": 20,
                 "cx": 195,
-                "cy": 1420.828125
+                "cy": 1394.609375
               },
               "figure": {
                 "x": 46,
-                "y": 1440.828125,
+                "y": 1414.609375,
                 "right": 344,
-                "bottom": 1600.828125,
+                "bottom": 1574.609375,
                 "width": 298,
                 "height": 160,
                 "cx": 195,
-                "cy": 1520.828125
+                "cy": 1494.609375
               },
               "artwork": {
                 "x": 100.68915557861328,
-                "y": 1467.2481689453125,
+                "y": 1441.0294189453125,
                 "right": 289.3108596801758,
-                "bottom": 1574.4080810546875,
+                "bottom": 1548.1893310546875,
                 "width": 188.6217041015625,
                 "height": 107.159912109375,
                 "cx": 195.00000762939453,
-                "cy": 1520.828125
+                "cy": 1494.609375
               },
               "title": {
                 "x": 46,
-                "y": 1610.828125,
+                "y": 1584.609375,
                 "right": 344,
-                "bottom": 1646.828125,
+                "bottom": 1620.609375,
                 "width": 298,
                 "height": 36,
                 "cx": 195,
-                "cy": 1628.828125
+                "cy": 1602.609375
               },
               "description": {
                 "x": 46,
-                "y": 1656.828125,
+                "y": 1630.609375,
                 "right": 344,
-                "bottom": 1712.828125,
+                "bottom": 1686.609375,
                 "width": 298,
                 "height": 56,
                 "cx": 195,
-                "cy": 1684.828125
+                "cy": 1658.609375
               },
+              "background": "rgb(255, 255, 255)",
+              "border": "rgb(221, 228, 239)",
+              "borderWidth": "2px",
               "cxError": 7.62939453125e-06,
               "cyError": 0,
               "paddingEscapes": false
@@ -9271,11 +9478,11 @@
             {
               "start": {
                 "x": 195,
-                "y": 543.828125
+                "y": 517.609375
               },
               "end": {
                 "x": 195,
-                "y": 569.828125
+                "y": 543.609375
               },
               "d": "M1 8 H27 M21 2 L27 8 L21 14",
               "stroke": "rgb(49, 104, 200)"
@@ -9283,11 +9490,11 @@
             {
               "start": {
                 "x": 195,
-                "y": 945.828125
+                "y": 919.609375
               },
               "end": {
                 "x": 195,
-                "y": 971.828125
+                "y": 945.609375
               },
               "d": "M1 8 H27 M21 2 L27 8 L21 14",
               "stroke": "rgb(49, 104, 200)"
@@ -9295,11 +9502,11 @@
             {
               "start": {
                 "x": 195,
-                "y": 1347.828125
+                "y": 1321.609375
               },
               "end": {
                 "x": 195,
-                "y": 1373.828125
+                "y": 1347.609375
               },
               "d": "M1 8 H27 M21 2 L27 8 L21 14",
               "stroke": "rgb(49, 104, 200)"
@@ -9334,18 +9541,45 @@
               "fill": "rgb(133, 188, 182)"
             }
           ],
-          "scores": [
+          "exampleLogits": [
             2,
             1,
             0
           ],
+          "maps": [
+            {
+              "channel": 9,
+              "x": 55,
+              "y": 8,
+              "width": 116,
+              "height": 116
+            },
+            {
+              "channel": 6,
+              "x": 40,
+              "y": 18,
+              "width": 116,
+              "height": 116
+            },
+            {
+              "channel": 3,
+              "x": 25,
+              "y": 28,
+              "width": 116,
+              "height": 116
+            },
+            {
+              "channel": 0,
+              "x": 10,
+              "y": 38,
+              "width": 116,
+              "height": 116
+            }
+          ],
           "photos": 1,
           "featureImages": 4,
           "figureNotes": [
-            "64×64×3 · 리샘플",
-            "대표 특징 맵 · 고정 필터 설명용",
-            "특징 → 분류 점수 · 모식도",
-            "예시 확률 · 합계 100%"
+            "예시 확률"
           ],
           "captionLast": true,
           "zoom": 1,
@@ -9359,9 +9593,9 @@
         }
       },
       "fonts": {
-        "elements": 35,
+        "elements": 27,
         "families": {
-          "Pretendard Variable": 327
+          "Pretendard Variable": 263
         },
         "fallback": [],
         "unpainted": [],
@@ -9387,9 +9621,9 @@
           "x": 10,
           "y": 10,
           "width": 370,
-          "height": 1922.328125,
+          "height": 1896.109375,
           "right": 380,
-          "bottom": 1932.328125
+          "bottom": 1906.109375
         },
         "outside": [],
         "overflow": [],
@@ -9398,7 +9632,7 @@
         "clippedText": [],
         "arrowErrors": [],
         "titleLines": 1,
-        "subtitleLines": 2,
+        "subtitleLines": 1,
         "pageWidth": 390,
         "card_padding": []
       }
@@ -10691,14 +10925,14 @@
     "templates/html/experiment.html": "711282187d6138e69e2b92ab6f2730387be8cb491d8401d0928d33c96caf62dd",
     "templates/html/interactive-reference.js": "0756c5facbf831184f561e3941bf37ef0a30a83af3118e6374735d37119951f7",
     "templates/html/reference-layout.css": "53d908fa3a4cb3e6c8e4c1e7b884df44494b7e4e81a2eda06adb170cbef39f26",
-    "templates/html/process-reference.js": "fcae827e54c3e84b5f4e0dd3afb5380a7ae7b4ac4e170e08e9d0e9339f800287",
+    "templates/html/process-reference.js": "45c87456d287c678681d06df8a6b91ed87a1a01b54a61e3592efad2f72ab0866",
     "templates/html/styles.css": "e3decf7af6e7acc2d36f675714f502508c5c5876fdc3310fdce877694468dff3",
     "templates/html/step-by-step.html": "8e7eed2d4bbeaeea3fb644973a0ff99f9e0c075bababf93a8964636197143d3c",
     "templates/html/interactive.html": "999cc515d9f3ad03dbee7c1437959b79463ad251e890142233471e4ff7722869",
     "templates/html/concept.html": "9d50ae70c9d63dc257738e2260d3eccf415029baff5726b8f21f13a09da5b018",
     "templates/html/reference-types.css": "976c72a1d4e736fc6d7f7c328445f4e7feead457f4ef7165ca3926b5615e18b7",
     "templates/html/architecture.html": "0b40aa7f35960458292b8fd691a0ffcac83e8646993dda516b85e809efac28e1",
-    "templates/html/process.html": "5f6255dc4400a75cd40c4caae26e2625e8d79bb05d56c7cc2118ed23a97b46ad",
+    "templates/html/process.html": "b9a29bd335efc98fd193795c291ba3d7950c4f5a24817fa5bfd8d8b829056542",
     "templates/html/font-comparison.html": "03591c1effa0a60af07955046d486ebb813464f8c26c7cd7a45ef70e272022d7",
     "templates/html/assets/concept-apple-photo.jpg": "6a7524a8f5fce2700d50970d21ad7a9912c07ace760d08fd603ba79728e15efc",
     "templates/html/assets/cnn-feature-maps.js": "b8a71c04fced7a9df2a568c2cd3577af3ddde56b3903cfd2b7d1031fc19d2c05",
@@ -10718,7 +10952,7 @@
         "task_and_output_retained": true
       },
       "actual_font_families": {
-        "Pretendard Variable": 353
+        "Pretendard Variable": 288
       }
     },
     {
@@ -10733,7 +10967,7 @@
         "task_and_output_retained": true
       },
       "actual_font_families": {
-        "Pretendard Variable": 355
+        "Pretendard Variable": 290
       }
     },
     {
@@ -10748,7 +10982,7 @@
         "task_and_output_retained": true
       },
       "actual_font_families": {
-        "Pretendard Variable": 353
+        "Pretendard Variable": 288
       }
     },
     {
@@ -10763,7 +10997,7 @@
         "task_and_output_retained": true
       },
       "actual_font_families": {
-        "Pretendard Variable": 369
+        "Pretendard Variable": 304
       }
     },
     {
@@ -10778,7 +11012,7 @@
         "task_and_output_retained": true
       },
       "actual_font_families": {
-        "Pretendard Variable": 355
+        "Pretendard Variable": 290
       }
     },
     {
@@ -10852,6 +11086,9 @@
               "cx": 293,
               "cy": 636.890625
             },
+            "background": "rgb(255, 255, 255)",
+            "border": "rgb(221, 228, 239)",
+            "borderWidth": "2px",
             "cxError": 0,
             "cyError": 0,
             "paddingEscapes": false
@@ -10889,14 +11126,14 @@
               "cy": 460.890625
             },
             "artwork": {
-              "x": 554.5555419921875,
-              "y": 395.11285400390625,
-              "right": 707.4444580078125,
-              "bottom": 526.6683959960938,
-              "width": 152.888916015625,
-              "height": 131.5555419921875,
+              "x": 550.51220703125,
+              "y": 387.7198791503906,
+              "right": 711.48779296875,
+              "bottom": 534.0613403320312,
+              "width": 160.9755859375,
+              "height": 146.34146118164062,
               "cx": 631,
-              "cy": 460.890625
+              "cy": 460.89060974121094
             },
             "title": {
               "x": 504,
@@ -10918,8 +11155,11 @@
               "cx": 631,
               "cy": 636.890625
             },
+            "background": "rgb(234, 241, 255)",
+            "border": "rgb(49, 104, 200)",
+            "borderWidth": "2px",
             "cxError": 0,
-            "cyError": 0,
+            "cyError": 1.52587890625e-05,
             "paddingEscapes": false
           },
           {
@@ -10955,12 +11195,12 @@
               "cy": 460.890625
             },
             "artwork": {
-              "x": 874.76611328125,
-              "y": 414.2696533203125,
-              "right": 1063.23388671875,
-              "bottom": 507.5115966796875,
-              "width": 188.4677734375,
-              "height": 93.241943359375,
+              "x": 863.8548583984375,
+              "y": 424.18902587890625,
+              "right": 1074.1451416015625,
+              "bottom": 497.59222412109375,
+              "width": 210.290283203125,
+              "height": 73.4031982421875,
               "cx": 969,
               "cy": 460.890625
             },
@@ -10984,6 +11224,9 @@
               "cx": 969,
               "cy": 636.890625
             },
+            "background": "rgb(255, 255, 255)",
+            "border": "rgb(221, 228, 239)",
+            "borderWidth": "2px",
             "cxError": 0,
             "cyError": 0,
             "paddingEscapes": false
@@ -11050,6 +11293,9 @@
               "cx": 1307,
               "cy": 636.890625
             },
+            "background": "rgb(255, 255, 255)",
+            "border": "rgb(221, 228, 239)",
+            "borderWidth": "2px",
             "cxError": 0,
             "cyError": 1.52587890625e-05,
             "paddingEscapes": false
@@ -11122,18 +11368,45 @@
             "fill": "rgb(133, 188, 182)"
           }
         ],
-        "scores": [
+        "exampleLogits": [
           1,
           2,
           0
         ],
+        "maps": [
+          {
+            "channel": 9,
+            "x": 55,
+            "y": 8,
+            "width": 116,
+            "height": 116
+          },
+          {
+            "channel": 6,
+            "x": 40,
+            "y": 18,
+            "width": 116,
+            "height": 116
+          },
+          {
+            "channel": 3,
+            "x": 25,
+            "y": 28,
+            "width": 116,
+            "height": 116
+          },
+          {
+            "channel": 0,
+            "x": 10,
+            "y": 38,
+            "width": 116,
+            "height": 116
+          }
+        ],
         "photos": 1,
         "featureImages": 4,
         "figureNotes": [
-          "64×64×3 · 리샘플",
-          "대표 특징 맵 · 고정 필터 설명용",
-          "특징 → 분류 점수 · 모식도",
-          "예시 확률 · 합계 100%"
+          "예시 확률"
         ],
         "captionLast": true,
         "zoom": 1,
@@ -11146,7 +11419,7 @@
         "four_computed_maps": true
       },
       "actual_font_families": {
-        "Pretendard Variable": 329
+        "Pretendard Variable": 264
       }
     },
     {
@@ -11161,7 +11434,7 @@
         "task_and_output_retained": true
       },
       "actual_font_families": {
-        "Pretendard Variable": 351
+        "Pretendard Variable": 287
       }
     },
     {
@@ -11176,7 +11449,7 @@
         "task_and_output_retained": true
       },
       "actual_font_families": {
-        "Pretendard Variable": 353
+        "Pretendard Variable": 289
       }
     },
     {
@@ -11191,7 +11464,7 @@
         "task_and_output_retained": true
       },
       "actual_font_families": {
-        "Pretendard Variable": 351
+        "Pretendard Variable": 287
       }
     },
     {
@@ -11206,7 +11479,7 @@
         "task_and_output_retained": true
       },
       "actual_font_families": {
-        "Pretendard Variable": 367
+        "Pretendard Variable": 303
       }
     },
     {
@@ -11221,7 +11494,7 @@
         "task_and_output_retained": true
       },
       "actual_font_families": {
-        "Pretendard Variable": 353
+        "Pretendard Variable": 289
       }
     },
     {
@@ -11237,64 +11510,67 @@
             "stage": "input",
             "card": {
               "x": 26,
-              "y": 182.828125,
+              "y": 156.609375,
               "right": 364,
-              "bottom": 528.828125,
+              "bottom": 502.609375,
               "width": 338,
               "height": 346,
               "cx": 195,
-              "cy": 355.828125
+              "cy": 329.609375
             },
             "label": {
               "x": 46,
-              "y": 204.828125,
+              "y": 178.609375,
               "right": 344,
-              "bottom": 224.828125,
+              "bottom": 198.609375,
               "width": 298,
               "height": 20,
               "cx": 195,
-              "cy": 214.828125
+              "cy": 188.609375
             },
             "figure": {
               "x": 46,
-              "y": 234.828125,
+              "y": 208.609375,
               "right": 344,
-              "bottom": 394.828125,
+              "bottom": 368.609375,
               "width": 298,
               "height": 160,
               "cx": 195,
-              "cy": 314.828125
+              "cy": 288.609375
             },
             "artwork": {
               "x": 135,
-              "y": 254.828125,
+              "y": 228.609375,
               "right": 255,
-              "bottom": 374.828125,
+              "bottom": 348.609375,
               "width": 120,
               "height": 120,
               "cx": 195,
-              "cy": 314.828125
+              "cy": 288.609375
             },
             "title": {
               "x": 46,
-              "y": 404.828125,
+              "y": 378.609375,
               "right": 344,
-              "bottom": 440.828125,
+              "bottom": 414.609375,
               "width": 298,
               "height": 36,
               "cx": 195,
-              "cy": 422.828125
+              "cy": 396.609375
             },
             "description": {
               "x": 46,
-              "y": 450.828125,
+              "y": 424.609375,
               "right": 344,
-              "bottom": 506.828125,
+              "bottom": 480.609375,
               "width": 298,
               "height": 56,
               "cx": 195,
-              "cy": 478.828125
+              "cy": 452.609375
             },
+            "background": "rgb(255, 255, 255)",
+            "border": "rgb(221, 228, 239)",
+            "borderWidth": "2px",
             "cxError": 0,
             "cyError": 0,
             "paddingEscapes": false
@@ -11303,64 +11579,67 @@
             "stage": "feature",
             "card": {
               "x": 26,
-              "y": 584.828125,
+              "y": 558.609375,
               "right": 364,
-              "bottom": 930.828125,
+              "bottom": 904.609375,
               "width": 338,
               "height": 346,
               "cx": 195,
-              "cy": 757.828125
+              "cy": 731.609375
             },
             "label": {
               "x": 46,
-              "y": 606.828125,
+              "y": 580.609375,
               "right": 344,
-              "bottom": 626.828125,
+              "bottom": 600.609375,
               "width": 298,
               "height": 20,
               "cx": 195,
-              "cy": 616.828125
+              "cy": 590.609375
             },
             "figure": {
               "x": 46,
-              "y": 636.828125,
+              "y": 610.609375,
               "right": 344,
-              "bottom": 796.828125,
+              "bottom": 770.609375,
               "width": 298,
               "height": 160,
               "cx": 195,
-              "cy": 716.828125
+              "cy": 690.609375
             },
             "artwork": {
-              "x": 127.04938507080078,
-              "y": 658.3590087890625,
-              "right": 262.9506301879883,
-              "bottom": 775.2972412109375,
-              "width": 135.9012451171875,
-              "height": 116.938232421875,
+              "x": 130.60975646972656,
+              "y": 632.0728149414062,
+              "right": 259.3902587890625,
+              "bottom": 749.1459350585938,
+              "width": 128.78050231933594,
+              "height": 117.0731201171875,
               "cx": 195.00000762939453,
-              "cy": 716.828125
+              "cy": 690.609375
             },
             "title": {
               "x": 46,
-              "y": 806.828125,
+              "y": 780.609375,
               "right": 344,
-              "bottom": 842.828125,
+              "bottom": 816.609375,
               "width": 298,
               "height": 36,
               "cx": 195,
-              "cy": 824.828125
+              "cy": 798.609375
             },
             "description": {
               "x": 46,
-              "y": 852.828125,
+              "y": 826.609375,
               "right": 344,
-              "bottom": 908.828125,
+              "bottom": 882.609375,
               "width": 298,
               "height": 56,
               "cx": 195,
-              "cy": 880.828125
+              "cy": 854.609375
             },
+            "background": "rgb(234, 241, 255)",
+            "border": "rgb(49, 104, 200)",
+            "borderWidth": "2px",
             "cxError": 7.62939453125e-06,
             "cyError": 0,
             "paddingEscapes": false
@@ -11369,64 +11648,67 @@
             "stage": "task",
             "card": {
               "x": 26,
-              "y": 986.828125,
+              "y": 960.609375,
               "right": 364,
-              "bottom": 1332.828125,
+              "bottom": 1306.609375,
               "width": 338,
               "height": 346,
               "cx": 195,
-              "cy": 1159.828125
+              "cy": 1133.609375
             },
             "label": {
               "x": 46,
-              "y": 1008.828125,
+              "y": 982.609375,
               "right": 344,
-              "bottom": 1028.828125,
+              "bottom": 1002.609375,
               "width": 298,
               "height": 20,
               "cx": 195,
-              "cy": 1018.828125
+              "cy": 992.609375
             },
             "figure": {
               "x": 46,
-              "y": 1038.828125,
+              "y": 1012.609375,
               "right": 344,
-              "bottom": 1198.828125,
+              "bottom": 1172.609375,
               "width": 298,
               "height": 160,
               "cx": 195,
-              "cy": 1118.828125
+              "cy": 1092.609375
             },
             "artwork": {
-              "x": 110.55555725097656,
-              "y": 1077.05029296875,
-              "right": 279.4444580078125,
-              "bottom": 1160.60595703125,
-              "width": 168.88890075683594,
-              "height": 83.5556640625,
+              "x": 100.77777862548828,
+              "y": 1059.720458984375,
+              "right": 289.2222366333008,
+              "bottom": 1125.498291015625,
+              "width": 188.4444580078125,
+              "height": 65.77783203125,
               "cx": 195.00000762939453,
-              "cy": 1118.828125
+              "cy": 1092.609375
             },
             "title": {
               "x": 46,
-              "y": 1208.828125,
+              "y": 1182.609375,
               "right": 344,
-              "bottom": 1244.828125,
+              "bottom": 1218.609375,
               "width": 298,
               "height": 36,
               "cx": 195,
-              "cy": 1226.828125
+              "cy": 1200.609375
             },
             "description": {
               "x": 46,
-              "y": 1254.828125,
+              "y": 1228.609375,
               "right": 344,
-              "bottom": 1310.828125,
+              "bottom": 1284.609375,
               "width": 298,
               "height": 56,
               "cx": 195,
-              "cy": 1282.828125
+              "cy": 1256.609375
             },
+            "background": "rgb(255, 255, 255)",
+            "border": "rgb(221, 228, 239)",
+            "borderWidth": "2px",
             "cxError": 7.62939453125e-06,
             "cyError": 0,
             "paddingEscapes": false
@@ -11435,64 +11717,67 @@
             "stage": "output",
             "card": {
               "x": 26,
-              "y": 1388.828125,
+              "y": 1362.609375,
               "right": 364,
-              "bottom": 1734.828125,
+              "bottom": 1708.609375,
               "width": 338,
               "height": 346,
               "cx": 195,
-              "cy": 1561.828125
+              "cy": 1535.609375
             },
             "label": {
               "x": 46,
-              "y": 1410.828125,
+              "y": 1384.609375,
               "right": 344,
-              "bottom": 1430.828125,
+              "bottom": 1404.609375,
               "width": 298,
               "height": 20,
               "cx": 195,
-              "cy": 1420.828125
+              "cy": 1394.609375
             },
             "figure": {
               "x": 46,
-              "y": 1440.828125,
+              "y": 1414.609375,
               "right": 344,
-              "bottom": 1600.828125,
+              "bottom": 1574.609375,
               "width": 298,
               "height": 160,
               "cx": 195,
-              "cy": 1520.828125
+              "cy": 1494.609375
             },
             "artwork": {
               "x": 100.68915557861328,
-              "y": 1467.2481689453125,
+              "y": 1441.0294189453125,
               "right": 289.3108596801758,
-              "bottom": 1574.4080810546875,
+              "bottom": 1548.1893310546875,
               "width": 188.6217041015625,
               "height": 107.159912109375,
               "cx": 195.00000762939453,
-              "cy": 1520.828125
+              "cy": 1494.609375
             },
             "title": {
               "x": 46,
-              "y": 1610.828125,
+              "y": 1584.609375,
               "right": 344,
-              "bottom": 1646.828125,
+              "bottom": 1620.609375,
               "width": 298,
               "height": 36,
               "cx": 195,
-              "cy": 1628.828125
+              "cy": 1602.609375
             },
             "description": {
               "x": 46,
-              "y": 1656.828125,
+              "y": 1630.609375,
               "right": 344,
-              "bottom": 1712.828125,
+              "bottom": 1686.609375,
               "width": 298,
               "height": 56,
               "cx": 195,
-              "cy": 1684.828125
+              "cy": 1658.609375
             },
+            "background": "rgb(255, 255, 255)",
+            "border": "rgb(221, 228, 239)",
+            "borderWidth": "2px",
             "cxError": 7.62939453125e-06,
             "cyError": 0,
             "paddingEscapes": false
@@ -11502,11 +11787,11 @@
           {
             "start": {
               "x": 195,
-              "y": 543.828125
+              "y": 517.609375
             },
             "end": {
               "x": 195,
-              "y": 569.828125
+              "y": 543.609375
             },
             "d": "M1 8 H27 M21 2 L27 8 L21 14",
             "stroke": "rgb(49, 104, 200)"
@@ -11514,11 +11799,11 @@
           {
             "start": {
               "x": 195,
-              "y": 945.828125
+              "y": 919.609375
             },
             "end": {
               "x": 195,
-              "y": 971.828125
+              "y": 945.609375
             },
             "d": "M1 8 H27 M21 2 L27 8 L21 14",
             "stroke": "rgb(49, 104, 200)"
@@ -11526,11 +11811,11 @@
           {
             "start": {
               "x": 195,
-              "y": 1347.828125
+              "y": 1321.609375
             },
             "end": {
               "x": 195,
-              "y": 1373.828125
+              "y": 1347.609375
             },
             "d": "M1 8 H27 M21 2 L27 8 L21 14",
             "stroke": "rgb(49, 104, 200)"
@@ -11565,18 +11850,45 @@
             "fill": "rgb(133, 188, 182)"
           }
         ],
-        "scores": [
+        "exampleLogits": [
           1,
           2,
           0
         ],
+        "maps": [
+          {
+            "channel": 9,
+            "x": 55,
+            "y": 8,
+            "width": 116,
+            "height": 116
+          },
+          {
+            "channel": 6,
+            "x": 40,
+            "y": 18,
+            "width": 116,
+            "height": 116
+          },
+          {
+            "channel": 3,
+            "x": 25,
+            "y": 28,
+            "width": 116,
+            "height": 116
+          },
+          {
+            "channel": 0,
+            "x": 10,
+            "y": 38,
+            "width": 116,
+            "height": 116
+          }
+        ],
         "photos": 1,
         "featureImages": 4,
         "figureNotes": [
-          "64×64×3 · 리샘플",
-          "대표 특징 맵 · 고정 필터 설명용",
-          "특징 → 분류 점수 · 모식도",
-          "예시 확률 · 합계 100%"
+          "예시 확률"
         ],
         "captionLast": true,
         "zoom": 1,
@@ -11589,7 +11901,7 @@
         "four_computed_maps": true
       },
       "actual_font_families": {
-        "Pretendard Variable": 327
+        "Pretendard Variable": 263
       }
     }
   ],
@@ -11598,7 +11910,7 @@
   "http_errors": [],
   "canonical_preview_sha256": {
     "previews/html-concept.png": "18f66f5c8b8cc366d00fdd53234a7c51e0cfd5804c46c896fb73e58c99fa2554",
-    "previews/html-process.png": "f653e16e35182f4cbc06ef5fd95b4548dc063cbb3f0c2b26f8680377e688e874",
+    "previews/html-process.png": "d8916db34b4a920e3996c380dd89aae8bae57ff1aa4147ad240a08f09e51c172",
     "previews/html-comparison.png": "ef24a100f037534d0828e2e38ef9e0cba12338a001d068a82e48b2111887e71a",
     "previews/html-step-by-step.jpg": "2390409158a2cb310ddaa9b183fd83c7809b93b5e00f232cbf62612e54fe907f",
     "previews/html-interactive.jpg": "77dc52445344c0722eb29cb283a7034af3a61b5e19653cf6c452d62d45ce9be1",
@@ -11606,7 +11918,7 @@
     "previews/html-experiment.jpg": "cbce9de643d76ecd0201be3e671128e3d309d81b49a4b51e2c9bdec0f137fe50",
     "previews/html-executive-summary.jpg": "0446024bf52616cdc0f2ab604c44e5e4f6482722e7d7648c16d238756500372c"
   },
-  "finished_utc": "2026-10-22T12:38:22.853413+00:00",
+  "finished_utc": "2026-10-22T13:54:45.900230+00:00",
   "canonical_preview_updates": [
     "process"
   ]
