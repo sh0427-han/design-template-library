@@ -8,15 +8,15 @@
   zoom:min(1, calc((100vw - 40px) / 1440px), calc((100vh - 40px) / 810px));
 }
 .reference-slide header {flex:0 0 auto;}
-.reference-slide h1 {margin:7px 0 6px;font-size:49px;line-height:1.13;}
-.reference-slide .subtitle {font-size:21px;line-height:1.38;}
+.reference-slide h1 {margin:7px 0 6px;font-size:49px;line-height:var(--line-height-display);}
+.reference-slide .subtitle {font-size:21px;line-height:var(--line-height-subtitle);}
 .reference-slide .content {margin-top:25px;min-height:0;}
 .reference-slide .footer {flex:0 0 auto;margin-top:15px;padding-top:11px;font-size:15px;}
 .reference-slide .ref-overline {display:flex;align-items:center;justify-content:space-between;gap:12px;}
 .reference-slide header .ref-overline {justify-content:flex-start;}
 .reference-slide .ref-k {font-size:16px;}
 .reference-slide .ref-h {margin:6px 0 16px;font-size:25px;}
-.reference-slide .ref-note {font-size:17px;line-height:1.45;}
+.reference-slide .ref-note {font-size:17px;line-height:var(--line-height-body);}
 .reference-slide .ref-desc {font-size:19px;}
 .reference-slide p,.reference-slide .ref-desc,.reference-slide .compare-foot,
 .reference-slide .exec-action,.reference-slide .arch-detail,.reference-slide .step-point {text-wrap:pretty;}
@@ -127,7 +127,7 @@
 @media(max-width:900px) {
   .reference-deck {padding:16px;align-content:start;}
   .reference-slide {zoom:1;width:100%;height:auto;min-height:0;aspect-ratio:auto;padding:30px 24px;overflow:visible;}
-  .reference-slide h1 {font-size:36px;line-height:1.2;}
+  .reference-slide h1 {font-size:36px;line-height:var(--line-height-title);}
   .reference-slide .subtitle {font-size:19px;}
   .reference-slide .kicker {font-size:15px;}
   .reference-slide .ref-link {font-size:15px;}
@@ -204,10 +204,10 @@
 .outcome {padding:3px;line-height:1.3;}
 .score-row {line-height:1.4;}
 .cm-grid {grid-template-rows:28px repeat(2,72px);margin-top:6px;}
-.interactive-slide .cm-legend {font-size:16px;line-height:1.4;margin-top:8px;}
+.interactive-slide .cm-legend {font-size:16px;line-height:var(--line-height-note);margin-top:8px;}
 .interactive-slide .ref-pair {margin-top:12px!important;}
 .ref-metric {padding:10px;}
-.ref-metric b {line-height:1.25;margin-top:5px;}
+.ref-metric b {line-height:var(--line-height-compact);margin-top:5px;}
 .interactive-slide .ref-card > .ref-note:last-child {margin-bottom:0;}
 .exp-metric {padding:12px 18px;}
 .exp-metric b {display:block;line-height:1.2;margin-top:5px;}

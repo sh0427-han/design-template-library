@@ -77,7 +77,8 @@ def check_comparison(page,width,photo_source='assets/concept-apple-photo.jpg'):
               (c['intro']['y']-c['title']['bottom'])/c['scale']]
         assert min(gaps)>=7.5,(width,c['method'],'crowded heading',gaps)
         assert c['heading']['y']<=c['label']['y'] and c['intro']['bottom']<=c['heading']['bottom']+0.5
-        assert c['intro']['bottom']<c['prep']['y'],(width,c['method'],'heading overlaps preparation')
+        section_gap=(c['prep']['y']-c['intro']['bottom'])/c['scale']
+        assert section_gap>=15.5,(width,c['method'],'preparation crowds introduction',section_gap)
         assert c['prep']['bottom']<c['predict']['y']
         for row in c['rows']:
             assert abs(row['art']['cx']-row['box']['cx'])<1,(width,c['method'],'actual figure center',row)

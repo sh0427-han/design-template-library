@@ -186,9 +186,10 @@ SVG 사람 기호와 작은 조건 표를 묶습니다. 조건은 `색상: 붉�
 ### 배치와 대칭 규격
 
 - 기본 1440×810 및 공통 Header/Footer·로컬 Pretendard Variable·전역 −1pt를 상속합니다. 두 카드는 동일한 White 배경과 Border입니다.
-- 카드 간격 22px, 패딩 위아래 18/좌우 26px. 카드 grid 행은 `94px 250px 102px minmax(48px,1fr)`, 행 간격 6px입니다.
-- Header 내부 행 `22/34/22px` 사이에 `row-gap:8px`을 두어 총 94px을 확보합니다. 방법 Label → 제목 → 소개는 별도 요소이므로 행간(`line-height`) 대신 **요소 사이 간격**을 조절합니다. 작은 방법 Label, 29px 제목, 19px 소개의 크기와 줄 높이는 유지합니다. 단계 Label은 15px, 조건 17px, 핵심 노드 20px, 예시 결과 21px, 비교표 19px, 장점/한계 18px입니다. 조건·자료·한계의 짧은 표기는 14–16px이며 중요한 Figure 전체를 작게 축소하지 않습니다.
-- 900px 초과에서는 #3 전용 `.content`의 상단 여백을 공통값 25px에서 13px로 줄입니다. 제목 영역의 증가분 16px 중 12px을 카드 위 여백에서 확보하고, 나머지 4px은 장점/한계 구역의 가변 여유가 흡수합니다. 1440×810 설계 좌표 기준 카드 위 경계는 12px 올라가고 도식·비교표 시작선은 4px 내려갑니다. 카드 아래 경계·장점/한계 본문의 아래 기준선·푸터는 유지합니다. 카드 내부 패딩·사진·노드·Figure·표의 크기를 줄이지 않습니다. 이 보정은 공통 CSS와 다른 페이지에 적용하지 않습니다.
+- 카드 간격 22px, 패딩 위아래 18/좌우 26px. 카드 grid 행은 `102px 250px 102px minmax(48px,1fr)`, 행 간격은 공통 `--gap-related:8px`입니다.
+- Header 내부 행 `22/34/22px` 사이에 `--gap-related:8px`을 두어 텍스트 구역 94px을 확보합니다. 소개 뒤 여백 8px과 카드 행 간격 8px을 합쳐 **소개 → 01 준비는 `--gap-section:16px`**입니다. 첫 Grid 트랙은 94+8=102px입니다. `--comparison-heading-track = --comparison-heading-lines + --gap-related + --gap-section`으로 관련 수치를 연결합니다. 일반 화면의 `--comparison-heading-lines`는 22+34+22=78px입니다.
+- 방법 Label → 제목 → 소개는 별도 요소이므로 문장 행간(`line-height`)과 요소 사이 간격을 구분합니다. 작은 방법 Label, 29px 제목/34px 행 높이, 19px 소개/22px 행 높이는 유지합니다. 공통 행간·8/16/24px 구역 간격과 적용 범위는 [디자인 시스템](../DESIGN_SYSTEM.md#행간과-요소-사이-간격)에 정의합니다. 단계 Label은 15px, 조건 17px, 핵심 노드 20px, 예시 결과 21px, 비교표 19px, 장점/한계 18px입니다. 조건·자료·한계의 짧은 표기는 14–16px이며 중요한 Figure 전체를 작게 축소하지 않습니다.
+- 900px 초과에서는 #3 전용 캔버스 위 패딩 40px(공통 54px), `.content` 상단 여백 13px(공통 25px)을 사용합니다. 이전 8px 제목 간격 적용본에 비해 첫 트랙 94→102px와 카드 간격 6→8px로 총 14px이 더 필요하므로 위 패딩에서 14px을 확보합니다. 카드 위 경계와 제목은 14px 올라가고 도식은 4px, 비교표는 2px 올라갑니다. 장점/한계와 카드 아래 경계·Footer의 기준선은 유지합니다. 설계 좌표의 반올림 오차는 0.1px 이내로 확인합니다. 카드 내부 패딩·사진·노드·Figure·표·글자 크기는 유지하며 다른 페이지의 배치는 바꾸지 않습니다.
 - Diagram 행은 준비 94px / 간격 10px / 예측 146px. 예측 구역 시작에 1px Border 구분선과 위 패딩 8px을 둡니다. 라벨 높이 18px, 준비 Figure 74px, 예측 Figure 118px입니다.
 - 준비 흐름은 `206/56/150px` 열을 가운데 배치합니다. 왼쪽은 사람 32px + 간격 10px + 조건 표 164px, 오른쪽은 세 일러스트 각각 62px + 간격 10px입니다. 준비된 시스템 노드는 높이 58px입니다.
 - 예측 흐름 열은 `96/44/170/44/130px`. 사진은 80×80px, 왼쪽 조건 검사 노드는 142×58px, 오른쪽 Stack SVG는 136×90px입니다. 실제 Stack의 중심과 사진·화살표의 Y축을 맞추고 `학습된 CNN` 라벨을 아래에 별도로 둡니다.
@@ -205,17 +206,17 @@ Blue는 준비/예측의 가로 처리 흐름, Teal은 준비된 체계의 적�
 
 ### 반응형·실패 동작·재사용
 
-900px 이하에서 두 카드를 순서대로 1열로 배치합니다. 읽기 모드에서는 카드 위 공통 여백 25px을 유지하고 카드 높이가 제목 간격 증가분 16px만큼 자연스럽게 늘어납니다. 650px 이하의 Header는 `22/60/44px` 행과 두 개의 8px 간격으로 총 142px이며, 양쪽 제목·소개에 동일한 줄바꿈 공간을 확보합니다. 작은 화면에서 넓은 도식을 통째로 축소하지 않고 준비의 source/전환/시스템 열을 `1fr/30px/104px`로 재배치합니다. 예측은 `72/22/1fr/22/72px`, 사진은 72×72px, 화살표 폭 20px입니다. 준비/예측 높이는 110/146px, 비교표 각 행은 54px, 장점/한계 각 행은 48px입니다. 좁은 화면에서도 같은 입력과 비교 기준을 삭제하지 않습니다.
+900px 이하에서 두 카드를 순서대로 1열로 배치합니다. 읽기 모드에서는 공통 캔버스 위 패딩과 Content 상단 여백 25px을 유지하고 카드 높이가 자연스럽게 늘어납니다. 650px 이하의 Header는 `22/60/44px` 행과 두 개의 8px 간격으로 텍스트 구역 142px이며, 소개 뒤 8px과 다음 행 간격 8px을 별도로 확보합니다. 첫 트랙은 150px이고 양쪽 제목·소개에 동일한 줄바꿈 공간을 둡니다. 카드의 나머지 행은 `266/162/96px`, 행 간격은 8px입니다. 작은 화면에서 넓은 도식을 통째로 축소하지 않고 준비의 source/전환/시스템 열을 `1fr/30px/104px`로 재배치합니다. 예측은 `72/22/1fr/22/72px`, 사진은 72×72px, 화살표 폭 20px입니다. 준비/예측 높이는 110/146px, 비교표 각 행은 54px, 장점/한계 각 행은 48px입니다. 좁은 화면에서도 같은 입력과 비교 기준을 삭제하지 않습니다.
 
 공통 엔진이나 계산이 없으면 기본 편집 가능한 CNN 평면 기호와 실패 안내를 사용합니다. 계산 성공 시에만 실제 대표 맵 4장을 표시합니다. 다른 자료를 제작할 때 조건·훈련 자료 유형·Task·출력 의미를 함께 바꾸고, 실측·계산·모식도의 경계를 다시 명시합니다. 규칙 기반=항상 단순함 또는 머신러닝=항상 우월함이라는 결론을 복제하지 않습니다.
 
 **삭제 금지:** 준비와 예측의 구분, 사람이 정의한 조건/학습으로 최적화한 파라미터의 차이, 세 학습 일러스트와 정답 라벨, 준비된 시스템→적용 연결, 동일 예측 사진과 두 예시 출력, 고정 필터 맵의 제한, 같은 3개 비교 기준과 양쪽 장점/한계.
 
-**구현:** [comparison.html](../templates/html/comparison.html), [comparison-reference.css](../templates/html/comparison-reference.css), [comparison-reference.js](../templates/html/comparison-reference.js). 공통 CSS·고정 필터 엔진·#2/#6 HTML은 변경하지 않습니다.
+**구현:** [comparison.html](../templates/html/comparison.html), [comparison-reference.css](../templates/html/comparison-reference.css), [comparison-reference.js](../templates/html/comparison-reference.js). 공통 CSS에는 행간·간격 토큰을 정의하고 기존과 같은 행간 값의 선언을 연결합니다. #3의 간격과 바깥 여백 조정은 전용 CSS에 둡니다. 고정 필터 엔진·#2/#6 HTML은 변경하지 않습니다.
 
 **프리뷰:** [이전 PNG](../previews/review/comparison-before.png), [최신 PNG](../previews/html-comparison.png).
 
-**검증:** `python scripts/check_comparison.py`는 여섯 크기의 실제 Chromium 렌더링·독립 필터 계산 112개/표시 픽셀 28개·실제 글리프 폰트·−1pt·방법 Label·제목·소개 사이 실제 간격과 제목 구역 경계·카드/단계/사진/결과/표/장점한계의 상대 좌표·도형 중심·연결 경계·Label 교차·푸터·잘림·모바일 폭을 검사합니다. 동일 문서를 새로 고치지 않고 390/600/900/1280/1600으로 바꿔 화살표와 도형의 재배치를 확인합니다. 결과는 [comparison-validation.json](../previews/review/comparison-validation.json), #2/#6 포함 전체 회귀는 [reference-validation.json](../previews/review/reference-validation.json)에 기록합니다. 수치 검사 후 Desktop/Mobile 캡처를 직접 검토합니다.
+**검증:** `python scripts/check_comparison.py`는 여섯 크기의 실제 Chromium 렌더링·독립 필터 계산 112개/표시 픽셀 28개·실제 글리프 폰트·−1pt·방법 Label·제목·소개 사이 8px 및 소개→준비 16px의 실제 간격과 제목 구역 경계·카드/단계/사진/결과/표/장점한계의 상대 좌표·도형 중심·연결 경계·Label 교차·푸터·잘림·모바일 폭을 검사합니다. 동일 문서를 새로 고치지 않고 390/600/900/1280/1600으로 바꿔 화살표와 도형의 재배치를 확인합니다. 결과는 [comparison-validation.json](../previews/review/comparison-validation.json), #2/#6 포함 전체 회귀는 [reference-validation.json](../previews/review/reference-validation.json)에 기록합니다. 수치 검사 후 Desktop/Mobile 캡처를 직접 검토합니다.
 
 **현재 구현 검증 결과:** Chromium 154의 6개 요청 화면과 동일 문서의 5개 resize 상태를 통과했습니다. 화면마다 실제 텍스트 요소 60개가 모두 로컬 Pretendard Variable로 그려졌고 폴백·미출력·−1pt 자간 오류가 없었습니다. 실제 Figure 경계의 X 중심 최대 오차는 0.0054931640625 CSS px(약 0.006px)였습니다. #2/#6을 포함한 전체 48개 화면 회귀를 통과했으며 6개 크기의 캡처를 직접 검토했습니다. 결과는 위 JSON의 소스/프리뷰 해시에 대응하며 새 자료에 그대로 적용되는 보장은 아닙니다.
 
