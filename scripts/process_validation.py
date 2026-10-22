@@ -46,9 +46,10 @@ def check_process(page,width,logits=(2,1,0)):
     assert page.locator('[data-stage="feature"] figcaption').count()==0
     assert '고정 필터' in page.locator('.process-feature-svg').get_attribute('aria-label')
     assert '학습된 모델의 추론 결과가 아님' in page.locator('.process-feature-svg').get_attribute('aria-label')
-    assert page.locator('.process-task-svg text').all_text_contents()==['분류 처리']
-    assert page.locator('.process-task-svg rect').count()==1 and page.locator('.process-task-svg circle').count()==0
-    assert page.locator('[data-example-score]').count()==0
+    assert page.locator('.process-task-svg text').all_text_contents()==['분류','Head',*map(str,logits)]
+    assert page.locator('.process-task-svg circle').count()==3
+    assert page.locator('[data-example-score]').all_text_contents()==list(map(str,logits))
+    assert ', '.join(map(str,logits)) in page.locator('.process-task-svg').get_attribute('aria-label')
     assert page.locator('.ref-takeaway span').inner_text()=='CNN은 이미지에서 특징을 추출하고, Task Head는 이를 목적에 맞는 예측으로 변환'
     assert page.locator('.feature-fallback').is_hidden()
     assert page.locator('.process-feature-svg').get_attribute('data-image-derived')=='true'

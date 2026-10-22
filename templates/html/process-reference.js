@@ -17,6 +17,7 @@
   const svg = slide.querySelector('.process-feature-svg');
   const fallback = slide.querySelector('.feature-fallback');
   const photo = slide.querySelector('.process-photo');
+  slide.querySelectorAll('[data-example-score]').forEach((text, i) => {text.textContent = String(logits[i]);});
   slide.querySelectorAll('.output-item').forEach((item, i) => {
     item.dataset.probability = String(probabilities[i]);
     item.dataset.highest = String(logits[i] === peak);
@@ -26,6 +27,7 @@
   const exampleDescription = [...slide.querySelectorAll('.output-item')].map(item =>
     `${item.dataset.class} ${item.querySelector('.probability-value').textContent}`).join(', ');
   slide.querySelector('.process-output-svg').setAttribute('aria-label', `예시 확률: ${exampleDescription}, 합계 100%`);
+  slide.querySelector('.process-task-svg').setAttribute('aria-label', `요약된 특징 벡터를 분류 Head가 예시 점수 ${logits.join(', ')}으로 변환하는 모식도`);
 
   function centerArtwork(target) {
     const artwork = target.querySelector('[data-process-artwork]');
