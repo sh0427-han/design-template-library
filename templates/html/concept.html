@@ -248,6 +248,8 @@
     .reference-slide.concept-slide .zoom-arrow { height:256px; }
     }
     @media (max-width:520px) {
+      /* Give the grid a definite viewport-width track; auto tracks shrink to 238px. */
+      .concept-deck { grid-template-columns:minmax(0,1fr); }
       .reference-slide.concept-slide .concept-panel { padding:18px; }
       .reference-slide.concept-slide .image-figure {
         grid-template-columns:minmax(0,1fr) 24px minmax(0,1fr);
@@ -284,7 +286,7 @@
   </style>
 </head>
 <body>
-<main class="deck reference-deck">
+<main class="deck reference-deck concept-deck">
   <section class="slide concept-slide reference-slide" aria-label="Concept 레퍼런스" data-sampled="loading">
     <header>
       <div class="ref-overline"><div class="kicker">CONCEPT / 01</div></div>
