@@ -12,6 +12,7 @@ from pathlib import Path
 import hashlib,json,math,struct,threading
 from playwright.sync_api import sync_playwright
 from reference_validation import NAMES,SIZES,GEOMETRY,CARD_PADDING,EXPERIMENT_GEOMETRY,actual_fonts,browser_options,check_executive
+from process_validation import check_process,check_process_robustness
 ROOT=Path(__file__).resolve().parents[1]
 class Quiet(SimpleHTTPRequestHandler):
     def log_message(self,*_):pass
@@ -132,6 +133,7 @@ def check_experiment(page):
 def write_compatibility_reports(report):
     """Keep legacy report URLs on the same execution as the full 48-case proof."""
     groups={
+        'process-validation.json':['process'],
         'concept-architecture-validation.json':['concept','architecture'],
         'professional-figures-validation.json':['process','comparison','architecture'],
         'step-pretendard-validation.json':['step-by-step'],
@@ -145,7 +147,10 @@ def write_compatibility_reports(report):
 
 def main(argv=None):
     parser=ArgumentParser(description=__doc__);parser.add_argument('--templates',nargs='+',choices=NAMES,default=list(NAMES));parser.add_argument('--evidence-dir',type=Path,default=Path('/tmp/reference-integration-review'));parser.add_argument('--report',type=Path)
+    parser.add_argument('--update-previews',nargs='*',choices=NAMES,help='Only regenerate these canonical previews; default is every selected template')
     args=parser.parse_args(argv);args.evidence_dir.mkdir(parents=True,exist_ok=True)
+    updated_previews=args.templates if args.update_previews is None else args.update_previews
+    assert set(updated_previews)<=set(args.templates),'Preview targets must be selected templates'
     report_path=args.report or ROOT/'previews/review'/('reference-validation.json' if len(args.templates)==8 else 'selected-reference-validation.json');report_path.parent.mkdir(parents=True,exist_ok=True)
     report={'status':'running','started_utc':datetime.now(timezone.utc).isoformat(),'viewports':[list(v) for v in SIZES],'templates':list(args.templates),'cases':[],'font_delivery':'original local Pretendard v1.3.9, no CDN interception','source_sha256':{str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in (ROOT/'templates/html').rglob('*') if p.is_file() and p.suffix in ('.html','.css','.js','.woff2','.png','.jpg')}}
     server=ThreadingHTTPServer(('127.0.0.1',0),partial(Quiet,directory=str(ROOT)));threading.Thread(target=server.serve_forever,daemon=True).start()
@@ -160,7 +165,9 @@ def main(argv=None):
                     if name in ('process','comparison'):page.wait_for_function("window.CNNFeatureMaps?.status==='ready'")
                     if name=='concept':page.wait_for_function("document.querySelector('.slide').dataset.sampled==='true'")
                     if name=='concept':technical=check_concept(page)
-                    elif name in ('process','comparison'):technical=check_motif(page,name)
+                    elif name in ('process','comparison'):
+                        technical=check_motif(page,name)
+                        if name=='process':technical['prediction_flow']=check_process(page,width)
                     elif name=='step-by-step':technical=check_step(page,width)
                     elif name=='interactive':technical=check_interactive(page)
                     elif name=='architecture':technical=check_architecture(page,width)
@@ -177,11 +184,13 @@ def main(argv=None):
                         b=geometry['slide'];assert b['right']<=width+1 and b['bottom']<=height+1 and abs(b['width']/b['height']-16/9)<.002
                     broken=page.locator('img').evaluate_all('(es)=>es.filter(e=>!e.complete||!e.naturalWidth).map(e=>e.src)');assert not broken,broken
                     page.locator('.slide').screenshot(path=str(args.evidence_dir/f'{name}-{width}x{height}.png'),animations='disabled')
-                    if width==1600:
+                    if width==1600 and name in updated_previews:
                         ext='png' if name in ('concept','process','comparison') else 'jpg';kwargs={'quality':94} if ext=='jpg' else {}
                         page.locator('.slide').screenshot(path=str(ROOT/f'previews/html-{name}.{ext}'),animations='disabled',**kwargs)
                     report['cases'].append({'template':name,'viewport':[width,height],'technical':technical,'fonts':fonts,'geometry':geometry})
                     print('PASS',name,width,height,flush=True)
+            if 'process' in args.templates:
+                report['process_robustness']=check_process_robustness(browser,f'http://127.0.0.1:{server.server_port}',args.evidence_dir)
             assert not errors and not failed and not http,(errors,failed,http)
             report.update(status='passed',page_errors=errors,failed_requests=failed,http_errors=http);browser.close()
     except Exception as exc:report.update(status='failed',error=str(exc));raise
@@ -189,6 +198,7 @@ def main(argv=None):
         server.shutdown();server.server_close()
         report['canonical_preview_sha256']={str(path.relative_to(ROOT)):hashlib.sha256(path.read_bytes()).hexdigest() for name in args.templates for path in [ROOT/f'previews/html-{name}.{"png" if name in ("concept","process","comparison") else "jpg"}'] if path.exists()}
         report['finished_utc']=datetime.now(timezone.utc).isoformat()
+        report['canonical_preview_updates']=list(updated_previews)
         report_path.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
         if len(args.templates)==8 and report_path.name=='reference-validation.json':write_compatibility_reports(report)
     print(f'PASS {len(report["cases"])} final-source viewports; report: {report_path}')

@@ -1,22 +1,112 @@
 <!doctype html>
 <html lang="ko">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Process | Design Template Library</title><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="reference-layout.css">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CNN의 예측 흐름 | Design Template Library</title>
+<link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="reference-layout.css">
 <style>
-.process-slide .process-photo-icon {display:flex;align-items:center;justify-content:center}
-.process-slide .process-photo-icon img {width:80px;height:80px;object-fit:cover;border-radius:4px}
-.process-slide .feature-symbol {width:116px;height:94px;margin-bottom:7px}
-.process-slide .process-feature-svg {height:94px;width:116px;display:block;overflow:visible}
-</style></head>
-<body><main class="deck reference-deck"><section class="slide reference-slide process-slide" aria-label="CNN 데이터 흐름">
-  <header><div class="ref-overline"><div class="kicker">PROCESS / 02</div></div><h1>CNN의 예측 흐름</h1><p class="subtitle">이미지 → 특징 추출 → 목적별 처리 → 예측 결과</p></header>
-  <div class="content" style="flex-direction:column;justify-content:center">
-    <div class="flow">
-      <div class="node"><div class="node-step">INPUT</div><div class="process-symbol process-photo-icon"><img src="assets/concept-apple-photo.jpg" alt="" loading="eager"></div><div class="node-title">입력 이미지</div><div class="node-desc">RGB 픽셀 데이터</div></div><div class="flow-arrow" aria-hidden="true">→</div>
-      <div class="node feature"><div class="node-step">FEATURE</div><div class="process-symbol feature-symbol" aria-hidden="true"><svg class="process-feature-svg" viewBox="0 0 132 115" focusable="false"><rect x="15" y="22" width="76" height="76" rx="3" fill="#bdd3f6" stroke="#6391c9"></rect></svg></div><div class="node-title">CNN</div><div class="node-desc">계층적 특징 추출</div></div><div class="flow-arrow" aria-hidden="true">→</div>
-      <div class="node"><div class="node-step">TASK</div><svg class="process-symbol" viewBox="0 0 100 80" aria-hidden="true"><path d="M20 16L80 40M20 40H80M20 64L80 40" fill="none" stroke="currentColor" stroke-width="3"/><g fill="currentColor"><circle cx="20" cy="16" r="7"/><circle cx="20" cy="40" r="7"/><circle cx="20" cy="64" r="7"/><circle cx="80" cy="40" r="10"/></g></svg><div class="node-title">Task Head</div><div class="node-desc">분류 등 목적별 처리</div></div><div class="flow-arrow" aria-hidden="true">→</div>
-      <div class="node output"><div class="node-step">OUTPUT</div><div class="process-symbol output-symbol" aria-hidden="true"><i></i><i></i><i></i></div><div class="node-title">예측 결과</div><div class="node-desc">클래스 점수 등</div></div>
-    </div><div class="insight ref-takeaway"><strong>역할 분리</strong> &nbsp; 특징 추출기: 이미지 표현 학습 · Task head: 목적에 맞는 출력 변환</div>
+/* Process-only layout: label, centered figure, title, then aligned description. */
+.process-slide .content {display:flex;flex-direction:column;justify-content:center;}
+.process-slide .flow {display:grid;grid-template-columns:minmax(0,1fr) 44px minmax(0,1fr) 44px minmax(0,1fr) 44px minmax(0,1fr);gap:0;align-items:stretch;}
+.process-slide .node {display:grid;grid-template-rows:20px 176px 36px 56px;gap:12px;justify-content:stretch;min-width:0;min-height:0;height:376px;padding:24px 18px;border-width:2px;}
+/* Emphasize CNN only; equal border widths preserve all four card dimensions. */
+.process-slide .node:not(.feature) {background:var(--white);border-color:var(--border);}
+.process-slide .node-step {font-size:16px;line-height:20px;margin:0;}
+.process-slide .node-title {font-size:29px;line-height:36px;margin:0;}
+.process-slide .node-desc {font-size:20px;line-height:28px;margin:0;}
+.process-slide .node-desc span {display:block;}
+.process-slide .process-figure {position:relative;height:176px;min-width:0;margin:0;}
+.process-slide .process-art {position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:100%;height:144px;display:flex;align-items:center;justify-content:center;}
+.process-slide .process-photo {width:124px;height:124px;object-fit:cover;}
+.process-slide .process-feature-svg {display:block;width:184px;height:160px;overflow:visible;}
+.process-slide .process-task-svg,.process-slide .process-output-svg {display:block;width:246px;max-width:100%;height:144px;overflow:visible;}
+.process-slide .figure-note {position:absolute;bottom:0;left:0;width:100%;margin:0;font-size:14px;line-height:16px;color:var(--muted);white-space:nowrap;}
+.process-slide .feature-fallback,.process-slide .photo-fallback {font-size:17px;line-height:1.5;color:var(--muted);text-align:center;}
+.process-slide [hidden] {display:none!important;}
+.process-slide .process-figure[data-feature-state]:not([data-feature-state="ready"]) .process-feature-svg {display:none;}
+.process-slide .process-connector {position:relative;width:44px;height:376px;color:var(--blue);}
+.process-slide .process-connector svg {position:absolute;left:8px;top:138px;width:28px;height:16px;overflow:visible;}
+.process-slide .process-connector path {fill:none;stroke:currentColor;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round;}
+.process-slide .process-task-svg .internal-arrow {fill:none;stroke:var(--teal);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.process-slide .process-output-svg text {fill:var(--deep);font-size:18px;font-weight:650;}
+.process-slide .process-output-svg .probability-value {font-weight:800;}
+.process-slide .output-item .probability-bar {fill:#85bcb6;}
+.process-slide .output-item[data-highest="true"] .probability-bar {fill:var(--teal);}
+.process-slide .output-item[data-highest="true"] text {fill:#126b65;font-weight:800;}
+.process-slide .insight {margin-top:14px;font-size:19px;}
+@media(max-width:900px) {
+ .process-slide .flow {grid-template-columns:minmax(0,1fr);gap:12px;}
+ .process-slide .node {height:346px;grid-template-rows:20px 160px 36px 56px;gap:10px;padding:20px 18px;}
+ .process-slide .process-figure {height:160px;}
+ .process-slide .process-art {height:128px;}
+ .process-slide .process-art svg {height:128px;}
+ .process-slide .process-photo {width:120px;height:120px;}
+ .process-slide .process-connector {width:40px;height:32px;justify-self:center;display:grid;place-items:center;}
+ .process-slide .process-connector svg {position:static;transform:rotate(90deg);}
+}
+</style>
+<script src="assets/cnn-feature-maps.js" defer></script>
+<script src="process-reference.js" defer></script>
+</head>
+<body><main class="deck reference-deck"><section class="slide reference-slide process-slide" aria-label="CNN의 입력 이미지에서 예측 확률까지 이어지는 네 단계">
+ <header><div class="ref-overline"><div class="kicker">PROCESS / 02</div></div><h1>CNN의 예측 흐름</h1><p class="subtitle">이미지 → 특징 추출 → 목적별 처리 → 예측 결과</p></header>
+ <div class="content">
+  <div class="flow" aria-label="Input → Feature → Task → Output">
+   <section class="node" data-stage="input" aria-labelledby="process-input-title">
+    <div class="node-step">INPUT</div>
+    <figure class="process-figure">
+     <div class="process-art"><img class="process-photo" src="assets/concept-apple-photo.jpg" alt="입력으로 사용하는 사과 사진 한 장" loading="eager"><span class="photo-fallback" hidden>입력 이미지를<br>불러오지 못함</span></div>
+    </figure>
+    <h2 class="node-title" id="process-input-title">입력 이미지</h2><p class="node-desc">RGB 픽셀 데이터</p>
+   </section>
+   <div class="process-connector" aria-hidden="true"><svg viewBox="0 0 28 16" focusable="false"><path d="M1 8 H27 M21 2 L27 8 L21 14"/></svg></div>
+   <section class="node feature" data-stage="feature" aria-labelledby="process-feature-title">
+    <div class="node-step">FEATURE</div>
+    <figure class="process-figure" data-feature-state="pending">
+     <!-- Real fixed-filter responses, not the schematic patterns from #6.
+          Details belong in REFERENCE_PAGE_SPECS.md rather than the figure. -->
+     <div class="process-art"><svg class="process-feature-svg" viewBox="0 0 184 164" role="img" aria-label="사과 사진의 설명용 고정 필터 16채널 중 대표 채널 0, 3, 6, 9의 실제 반응 맵 네 장. 학습된 모델의 추론 결과가 아님"></svg><span class="feature-fallback" role="status">특징 맵 표시에는<br>JavaScript가 필요함</span></div>
+    </figure>
+    <h2 class="node-title" id="process-feature-title">CNN</h2><p class="node-desc">이미지에서 특징 추출</p>
+   </section>
+   <div class="process-connector" aria-hidden="true"><svg viewBox="0 0 28 16" focusable="false"><path d="M1 8 H27 M21 2 L27 8 L21 14"/></svg></div>
+   <section class="node" data-stage="task" aria-labelledby="process-task-title">
+    <div class="node-step">TASK</div>
+    <figure class="process-figure">
+     <div class="process-art"><svg class="process-task-svg" viewBox="0 0 248 144" role="img" aria-label="요약된 특징 벡터를 분류 Head가 세 개의 예시 점수 2, 1, 0으로 변환하는 모식도">
+      <g data-process-artwork>
+       <g aria-hidden="true" fill="#85bcb6" stroke="#498b9e" stroke-width=".7">
+        <rect x="20" y="30" width="14" height="10"/><rect x="20" y="42" width="14" height="10" fill="#c4e3df"/><rect x="20" y="54" width="14" height="10"/><rect x="20" y="66" width="14" height="10" fill="#d9eeeb"/><rect x="20" y="78" width="14" height="10"/><rect x="20" y="90" width="14" height="10" fill="#c4e3df"/><rect x="20" y="102" width="14" height="12"/>
+       </g>
+       <path class="internal-arrow" d="M42 72 H67 M62 68 L67 72 L62 76"/>
+       <rect x="75" y="42" width="68" height="60" rx="7" fill="#fff" stroke="#7193be" stroke-width="1.5"/>
+       <text x="109" y="67" text-anchor="middle" fill="#1b3558" font-size="17" font-weight="750">분류</text><text x="109" y="87" text-anchor="middle" fill="#3168c8" font-size="17" font-weight="800">Head</text>
+       <path class="internal-arrow" d="M151 72 H170 M165 68 L170 72 L165 76"/>
+       <path d="M178 37 V107 M178 37 H186 M178 72 H186 M178 107 H186" fill="none" stroke="#8aa7c0" stroke-width="1.3"/>
+       <g fill="#eaf1ff" stroke="#7193be" stroke-width="1.4"><circle cx="198" cy="37" r="12"/><circle cx="198" cy="72" r="12"/><circle cx="198" cy="107" r="12"/></g>
+       <g text-anchor="middle" fill="#1b3558" font-size="16" font-weight="800"><text x="198" y="42" data-example-score="0">2</text><text x="198" y="77" data-example-score="1">1</text><text x="198" y="112" data-example-score="2">0</text></g>
+      </g>
+     </svg></div>
+    </figure>
+    <h2 class="node-title" id="process-task-title">Task Head</h2><p class="node-desc">특징을 목적에 맞게 처리</p>
+   </section>
+   <div class="process-connector" aria-hidden="true"><svg viewBox="0 0 28 16" focusable="false"><path d="M1 8 H27 M21 2 L27 8 L21 14"/></svg></div>
+   <section class="node output" data-stage="output" aria-labelledby="process-output-title">
+    <div class="node-step">OUTPUT</div>
+    <figure class="process-figure">
+     <div class="process-art"><svg class="process-output-svg" viewBox="0 0 240 150" role="img" aria-label="예시 확률: 사과 66.5퍼센트, 토마토 24.5퍼센트, 기타 9.0퍼센트, 합계 100퍼센트">
+      <g data-process-artwork>
+       <g class="output-item" data-class="사과" data-highest="true" data-probability="0.6652409557748218"><text x="10" y="23">사과</text><text class="probability-value" x="230" y="23" text-anchor="end">66.5%</text><rect class="probability-track" x="10" y="31" width="220" height="10" rx="3" fill="#d2e6e3"/><rect class="probability-bar" x="10" y="31" width="146.3530102704608" height="10" rx="3"/></g>
+       <g class="output-item" data-class="토마토" data-highest="false" data-probability="0.24472847105479764"><text x="10" y="68">토마토</text><text class="probability-value" x="230" y="68" text-anchor="end">24.5%</text><rect class="probability-track" x="10" y="76" width="220" height="10" rx="3" fill="#d2e6e3"/><rect class="probability-bar" x="10" y="76" width="53.84026363205548" height="10" rx="3"/></g>
+       <g class="output-item" data-class="기타" data-highest="false" data-probability="0.09003057317038046"><text x="10" y="113">기타</text><text class="probability-value" x="230" y="113" text-anchor="end">9.0%</text><rect class="probability-track" x="10" y="121" width="220" height="10" rx="3" fill="#d2e6e3"/><rect class="probability-bar" x="10" y="121" width="19.8067260974837" height="10" rx="3"/></g>
+      </g>
+     </svg></div>
+     <figcaption class="figure-note">예시 확률</figcaption>
+    </figure>
+    <h2 class="node-title" id="process-output-title">예측 결과</h2><p class="node-desc">클래스별 예측 확률</p>
+   </section>
   </div>
-  <footer class="footer"><span>Design Template Library · Process</span><span>02 / 08</span></footer>
-</section></main><script src="assets/cnn-feature-maps.js" defer></script></body></html>
-
+  <div class="insight ref-takeaway"><strong>역할 분리</strong><span>CNN은 이미지에서 특징을 추출하고, Task Head는 이를 목적에 맞는 예측으로 변환</span></div>
+ </div>
+ <footer class="footer"><span>Design Template Library · Process</span><span>02 / 08</span></footer>
+</section></main></body></html>

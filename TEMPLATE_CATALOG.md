@@ -1,6 +1,6 @@
 # Template Catalog · 8 HTML Reference Patterns
 
-이 카탈로그는 **내용에 맞는 시각 패턴을 선택하는 지도**입니다. 정확한 데이터·수식·기하 조건은 [REFERENCE_PAGE_SPECS.md](docs/REFERENCE_PAGE_SPECS.md), 공통 토큰은 [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md)를 따릅니다. 아래 설명은 통합 브랜치의 최종 소스를 기준으로 하며, GitHub 반영 상태는 [통합 보고서](docs/INTEGRATION_REPORT_2026-10-22.md)에서 구분합니다.
+이 카탈로그는 **내용에 맞는 시각 패턴을 선택하는 지도**입니다. 정확한 데이터·수식·기하 조건은 [REFERENCE_PAGE_SPECS.md](docs/REFERENCE_PAGE_SPECS.md), 공통 토큰은 [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md)를 따릅니다. 아래 설명은 현재 checkout의 HTML 원본을 기준으로 합니다. 초기 8종 통합의 출처·GitHub 이력은 [통합 보고서](docs/INTEGRATION_REPORT_2026-10-22.md)에 보존합니다.
 
 | 번호 | 이름 | 선택할 때 | 실제 레이아웃 | 원본 · 최신 대표 프리뷰 |
 | --- | --- | --- | --- | --- |
@@ -23,14 +23,19 @@
 - **주의:** 새 사진을 쓰면 픽셀·색상·채널 막대·HEX를 실제 래스터에서 다시 계산합니다. 예전 숫자나 장식 색상을 남기지 않습니다. 사진 자체에 불필요한 추가 프레임·그림자를 붙이지 않습니다.
 - **가이드:** [상세 명세](docs/REFERENCE_PAGE_SPECS.md#01-concept), [Figure 제작](docs/FIGURE_PRODUCTION_STANDARD.md).
 
-## 02 Process · 입력과 단계별 역할
+## 02 Process · 입력 이미지에서 클래스별 예측 확률로
 
-- **사용 목적·청중:** 데이터 처리 파이프라인, 센서 처리, 추론 절차 등 순서와 책임을 구분하는 설명.
-- **현재 구조:** 입력 이미지 → CNN 특징 추출 → Task Head → 클래스 점수 등 결과. 마지막 캡션에서 특징 추출과 목적별 출력 변환의 역할을 묶습니다.
-- **현재 데이터:** 사진을 64×64로 리샘플하고 휘도로 바꾼 뒤, 미리 지정한 방향성 3×3 필터 16개와 ReLU로 특징 맵을 계산합니다. 대표 4개 맵을 표시합니다.
-- **주의:** 고정 필터로 그린 설명용 맵을 학습된 CNN의 실제 추론이라고 주장하지 않습니다. #6의 모식도와 같은 계산 결과라고도 하지 않습니다. Feature/Output의 작은 의미 색상을 유지합니다.
-- **구현:** `assets/cnn-feature-maps.js`가 #2·#3의 공통 사진 기반 특징 표현을 생성합니다.
-- **가이드:** [상세 명세](docs/REFERENCE_PAGE_SPECS.md#02-process), [재사용 워크플로](docs/REFERENCE_REUSE_WORKFLOW.md).
+- **사용 목적·청중:** CNN 예측을 처음 배우는 학습자. 입력→특징 추출→목적별 처리→출력의 역할을 한 장으로 설명하는 강의·기술 자료에 적합합니다. #6 Architecture의 내부 Conv/ReLU/Pool/Flatten/FC/Softmax 설명과 구분합니다.
+- **현재 구조:** 같은 크기의 INPUT / FEATURE / TASK / OUTPUT 카드 4개. Stage Label → 독립 Figure → Title → Description의 행을 맞추고 Blue 화살표 3개로 연결합니다. 마지막 흰색/Teal 캡션은 CNN과 Task Head의 역할을 요약합니다.
+- **배경 정책:** 학습 주제인 **FEATURE만 Pale Blue/Blue 경계**로 강조합니다. INPUT/TASK/OUTPUT은 White/일반 Border이며 네 카드 모두 2px 경계·같은 높이입니다. Output의 최대 확률 막대에만 Teal을 강조색으로 씁니다. 이 규칙은 `.process-slide` 안에서만 적용합니다.
+- **INPUT:** 기존 사과 사진 한 장, 제목 `입력 이미지`, 설명 `RGB 픽셀 데이터`. #6처럼 추가 프레임·배경·그림자 없이 정사각형으로 표시합니다. 64×64 리샘플 조건은 슬라이드의 별도 각주 대신 상세 명세에 둡니다.
+- **FEATURE:** 같은 사진의 휘도·고정 3×3 방향성 필터 16개·ReLU에서 대표 채널 0/3/6/9를 계산합니다. Blue 활성화 맵 4장의 정사각형 평면을 오른쪽 위 방향으로 겹칩니다. #6의 Stack 방향·평면 테두리 스타일을 따르되 설명용 패턴을 복사하지 않습니다. 제목 `CNN`, 설명 `이미지에서 특징 추출` 외에 문장형 각주는 추가하지 않습니다. 계산 조건·한계는 aria-label/코드/명세에 둡니다.
+- **TASK:** 짧은 특징 벡터 → 분류 Head → 예시 점수 3개의 기존 그림을 사용합니다. 7개 셀은 차원을 뜻하지 않는 요약 기호이며, 점수 `[2,1,0]`은 Output 예시 확률과 같은 데이터입니다. 내부 화살표는 Teal입니다. 제목 `Task Head`, 설명 `특징을 목적에 맞게 처리`와 White 카드 배경은 유지합니다. Flatten 계산·복잡한 FC 연결·Softmax 수식은 #6과 문서에서 설명합니다. 이번 예시는 분류이며 Task Head의 일반적 역할을 분류에 한정하지 않습니다.
+- **OUTPUT:** 사과 66.5% / 토마토 24.5% / 기타 9.0%의 수평 막대. 별도 예시 logits `[2,1,0]`의 Softmax이며 합은 100.0%입니다. 길이는 반올림 전 확률에 비례하고 최대 클래스는 Teal, 나머지는 낮은 채도입니다. White 카드 안에 작은 `예시 확률`을 표시합니다.
+- **주의:** 사진→고정 필터 맵은 실제 계산이지만 예시 확률은 그 맵에서 직접 계산된 학습 모델의 추론 결과가 아닙니다. #2에는 전체 역할 흐름만, #6에는 내부 연산·차원만 설명합니다. 모델 정확도나 성능이라고 표현하지 않습니다.
+- **정렬·반응형:** 1440×810 원본에서 카드 높이 376px, Figure 슬롯 176px. 실제 Figure 경계의 중심과 Blue 화살표를 맞춥니다. Label/Title/Description은 독립 행입니다. 900px 이하에서는 카드 1열·아래 방향 화살표·같은 단계 순서를 사용합니다.
+- **구현·검증:** 공통 `assets/cnn-feature-maps.js`는 그대로 유지하며 #2 표시만 `process-reference.js`에서 처리합니다. `python scripts/check_process.py`는 6개 화면의 독립 계산·색상·정렬·실제 Pretendard/−1pt와 12개 실패/재사용 사례를 검사합니다. 결과는 [전용 JSON](previews/review/process-validation.json), #3 포함 전체 회귀는 [공통 JSON](previews/review/reference-validation.json)에 기록합니다.
+- **가이드·프리뷰:** [HTML](templates/html/process.html), [상세 명세](docs/REFERENCE_PAGE_SPECS.md#02-process), [재사용 워크플로](docs/REFERENCE_REUSE_WORKFLOW.md), [main 기준 이전 PNG](previews/review/process-before.png), [최신 PNG](previews/html-process.png).
 
 ## 03 Comparison · 같은 문제의 두 접근
 
