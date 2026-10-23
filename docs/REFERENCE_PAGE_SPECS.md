@@ -44,7 +44,7 @@
 
 ### 검증·재사용
 
-python scripts/validate_references.py --templates concept 명령으로 1600×950, 1440×810, 1366×768, 1280×720, 900×900, 390×844 화면을 Chromium에서 검사합니다. 검증은 실제 원본 독립 리샘플, R/G/B 세 평면 × 6400개 픽셀의 채널 성분, ROI/16셀/선택 index/Swatch/RGB/HEX/강도 막대, 3개 판의 동일 크기와 깊이 배치, 두 패널 정렬, 폰트 실제 글리프와 −1pt·Footer 및 JS 오류를 포함합니다.
+python scripts/validate_references.py --templates concept 명령으로 1600×950, 1440×810, 1366×768, 1280×720, 900×900, 390×844 화면을 Chromium에서 검사합니다. 검증은 실제 원본 독립 리샘플, R/G/B 세 평면 × 6400개 픽셀의 채널 성분, ROI/16셀/선택 index/Swatch/RGB/HEX/강도 막대, 3개 판의 동일 크기와 깊이 배치, R 판 ROI의 위치·크기, 원본 사진 ROI 없음, C=3의 판 바깥 배치, H=4 가이드와 선 간격, 단일 패널 4단계 정렬, 폰트 실제 글리프와 −1pt·Footer 및 JS 오류를 포함합니다.
 
 사진/ROI/Canvas 크기를 바꾸면 세 채널 Canvas·ROI 테두리·4×4 색 격자·선택값·HEX·막대·프리뷰·본 문서의 수치를 동시에 갱신해야 합니다. 원본과 다른 데이터를 혼합해 같은 RGB Figure라고 표현하지 않습니다.
 
