@@ -7,175 +7,172 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="reference-layout.css">
   <style>
-/* Concept / 01 — photographed image → three full-size RGB planes → ROI → one pixel. */
+/* Concept / 01: one continuous image → channel stack → ROI → pixel-value flow. */
 .concept-slide {padding:54px 66px 30px;color:var(--ink);background:var(--canvas);}
 .concept-slide h1 {margin:7px 0 6px;font-size:49px;line-height:1.13;}
 .concept-slide .subtitle {font-size:21px;line-height:1.38;}
-.concept-stage {
-  display:grid;grid-template-columns:minmax(0,2.12fr) minmax(0,1fr);
-  gap:22px;flex:1;min-height:0;margin-top:25px;
-}
+.concept-stage {display:flex;flex:1;min-height:0;margin-top:25px;}
 .reference-slide.concept-slide .concept-panel {
-  display:flex;flex-direction:column;min-width:0;min-height:0;
-  padding:22px 24px;background:var(--white);border:1px solid var(--border);
-  border-radius:18px;
+  display:flex;flex-direction:column;flex:1;min-width:0;min-height:0;
+  padding:22px 25px;border:1px solid var(--border);
+  border-radius:18px;background:var(--white);
 }
 .concept-panel h2 {margin:0;color:var(--navy);font-size:23px;font-weight:800;}
 .concept-flow {
-  display:grid;grid-template-columns:minmax(0,1fr) 26px minmax(0,1.2fr) 26px minmax(0,.9fr);
-  align-items:center;gap:8px;flex:1;min-height:0;margin-top:12px;
+  display:grid;
+  grid-template-columns:minmax(0,.95fr) 25px minmax(0,1.15fr) 25px minmax(0,.85fr) 25px minmax(0,1.25fr);
+  align-items:center;gap:9px;flex:1;min-height:0;margin-top:14px;
 }
 .concept-step {
-  display:flex;flex-direction:column;align-items:center;
-  justify-content:center;min-width:0;gap:8px;height:100%;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  width:100%;min-width:0;height:100%;gap:9px;
 }
-.concept-step-figure {display:grid;place-items:center;width:100%;height:246px;min-width:0;}
-.photo-wrap {position:relative;width:min(100%,194px);aspect-ratio:1;}
+.concept-step-figure {display:grid;place-items:center;width:100%;height:254px;min-width:0;}
+.photo-wrap {position:relative;width:min(100%,207px);aspect-ratio:1;}
 .concept-photo {display:block;width:100%;height:100%;object-fit:contain;}
-.photo-roi {
-  position:absolute;box-sizing:border-box;left:65%;top:47.5%;width:5%;height:5%;
-  border:2px solid var(--white);box-shadow:0 0 0 1.4px var(--navy);
-  pointer-events:none;
+.concept-step-label {
+  color:var(--navy);font-size:17px;font-weight:800;
+  text-align:center;line-height:1.28;white-space:nowrap;
 }
-.concept-step-label {color:var(--navy);font-size:17px;font-weight:800;text-align:center;line-height:1.25;}
-.concept-step-note {color:var(--muted);font-size:13px;line-height:1.3;text-align:center;min-height:17px;}
+.concept-step-note {
+  color:var(--muted);font-size:13px;text-align:center;
+  line-height:1.35;min-height:18px;white-space:nowrap;
+}
 .flow-link {
-  display:grid;place-items:center;width:100%;height:246px;
+  display:grid;place-items:center;width:100%;height:254px;
   transform:translateY(-17px);color:var(--blue);
 }
-.flow-link svg {width:26px;height:24px;display:block;}
-/* Each plane is a genuine 80×80 raster: R / G / B values independently painted. */
-.channel-stack {width:244px;height:240px;position:relative;flex:none;}
+.flow-link svg {display:block;width:25px;height:23px;}
+.channel-stack {width:244px;height:245px;position:relative;flex:none;}
 .channel-layer {
-  position:absolute;width:157px;height:157px;background:#091526;
-  border:2px solid #fff;box-shadow:0 1px 5px #12233f24;
+  position:absolute;width:157px;height:157px;
+  background:#091526;border:2px solid #fff;
+  box-shadow:0 1px 5px #12233f24;
 }
-.channel-layer[data-plane="B"] {left:69px;top:10px;z-index:1;border-color:#8eb8e7;}
-.channel-layer[data-plane="G"] {left:42px;top:35px;z-index:2;border-color:#8acfb3;}
-.channel-layer[data-plane="R"] {left:15px;top:60px;z-index:3;border-color:#eaa7a7;}
+.channel-layer[data-plane="B"] {left:69px;top:18px;z-index:1;border-color:#8eb8e7;}
+.channel-layer[data-plane="G"] {left:42px;top:43px;z-index:2;border-color:#8acfb3;}
+.channel-layer[data-plane="R"] {left:15px;top:68px;z-index:3;border-color:#eaa7a7;}
 .channel-layer::after {
   content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
   background-image:
-    linear-gradient(to right, rgba(255,255,255,.33) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255,255,255,.33) 1px, transparent 1px);
+    linear-gradient(to right,rgba(255,255,255,.33) 1px,transparent 1px),
+    linear-gradient(to bottom,rgba(255,255,255,.33) 1px,transparent 1px);
   background-size:12.5% 12.5%;
 }
-/* The coarse 8×8 grid is only a visual guide; source data stays 80×80. */
+/* Guide grid = 8×8 visually; every channel canvas still stores 80×80 real values. */
 .channel-canvas {display:block;width:100%;height:100%;image-rendering:auto;}
 .plane-id {
-  position:absolute;right:0;top:0;z-index:2;display:grid;place-items:center;
-  width:22px;height:22px;color:#fff;font-size:14px;font-weight:850;
-  background:var(--navy);border-bottom-left-radius:4px;
+  position:absolute;top:0;right:0;z-index:3;display:grid;place-items:center;
+  width:22px;height:22px;border-bottom-left-radius:4px;
+  color:#fff;background:var(--navy);font-size:14px;font-weight:850;
 }
 .channel-layer[data-plane="R"] .plane-id {background:#b63c47;}
 .channel-layer[data-plane="G"] .plane-id {background:#238463;}
 .channel-layer[data-plane="B"] .plane-id {background:#3168c8;}
+.matrix-roi {
+  position:absolute;left:65%;top:47.5%;width:5%;height:5%;box-sizing:border-box;
+  border:2px solid #fff;outline:1px solid var(--navy);z-index:4;
+  pointer-events:none;
+}
 .stack-axis {position:absolute;color:var(--navy);font-size:14px;font-weight:800;line-height:1;white-space:nowrap;}
-.stack-axis-h {left:0;top:137px;}
-.stack-axis-w {left:91px;bottom:6px;}
-.stack-axis-c {right:1px;top:0;color:var(--blue);font-size:15px;}
-.pixel-frame {display:grid;place-items:center;width:100%;height:246px;}
-.pixel-matrix {width:max-content;position:relative;}
+.stack-axis-h {left:0;top:143px;}
+.stack-axis-w {left:91px;bottom:0;}
+/* Outside the top-right envelope of the backmost B plane. */
+.stack-axis-c {top:-8px;right:0;color:var(--blue);font-size:15px;}
+.pixel-frame {display:grid;place-items:center;width:100%;height:254px;}
+.pixel-matrix {position:relative;width:max-content;}
 .dimension-width {
-  position:absolute;left:0;right:0;top:-26px;
-  padding-bottom:4px;border-bottom:1px solid #91a6c1;
-  color:var(--deep);font-size:14px;font-weight:750;text-align:center;
+  position:absolute;left:0;right:0;top:-28px;padding-bottom:5px;
+  border-bottom:1px solid #91a6c1;color:var(--deep);
+  font-size:14px;font-weight:750;text-align:center;
 }
 .dimension-height {
-  position:absolute;left:-25px;top:0;bottom:0;width:19px;
+  position:absolute;left:-39px;top:0;bottom:0;width:25px;
   display:grid;place-items:center;border-right:1px solid #91a6c1;
   color:var(--deep);font-size:14px;font-weight:750;
 }
 .dimension-height span {transform:rotate(-90deg);white-space:nowrap;}
 .pixel-block {display:grid;grid-template-columns:repeat(4,36px);grid-template-rows:repeat(4,36px);gap:3px;}
 .pixel-block span {
-  display:block;width:36px;height:36px;border:1px solid #ffffffbb;
-  background:#e9eef5;border-radius:1px;
+  display:block;width:36px;height:36px;
+  border:1px solid #ffffffbb;border-radius:1px;background:#e9eef5;
 }
 .pixel-block .selected {position:relative;z-index:4;outline:3px solid var(--navy);outline-offset:1px;}
 .pixel-block .selected::after,.selected-color .swatch::after {
   content:"";position:absolute;right:-5px;top:-5px;width:7px;height:7px;
   border:1px solid #fff;border-radius:50%;background:var(--navy);
 }
-.concept-flow-summary {
-  display:flex;align-items:center;justify-content:center;gap:10px;
-  padding:9px 0 0;border-top:1px solid var(--border);
-  color:var(--deep);font-size:17px;line-height:1.3;
-}
-.concept-flow-summary strong {color:var(--navy);font-size:23px;font-weight:800;}
-.concept-flow-summary span {color:var(--muted);font-size:14px;}
-.value-panel {justify-content:space-between;gap:16px;}
-.selected-color {
-  display:flex;align-items:center;gap:13px;min-width:0;padding:13px;
-  background:#f7f9fd;border:1px solid var(--border);border-radius:12px;
-}
+/* The fourth stage stays inside the same white concept panel. */
+.detail-frame {min-width:0;}
+.pixel-detail {display:flex;flex-direction:column;justify-content:center;gap:18px;width:100%;min-width:0;}
+.selected-color {display:flex;align-items:center;justify-content:center;gap:10px;min-width:0;}
 .selected-color .swatch {
-  position:relative;flex:none;width:62px;height:55px;border:2px solid var(--navy);
-  border-radius:8px;background:#dbe4f0;
+  position:relative;flex:none;width:54px;height:54px;
+  border:2px solid var(--navy);border-radius:7px;background:#dbe4f0;
 }
-.selected-color strong {display:block;color:var(--navy);font-size:21px;line-height:1.27;}
-.selected-color small {display:block;color:var(--muted);margin-top:3px;font-size:14px;line-height:1.4;}
-.channel-values {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;}
-.channel-value {
-  min-width:0;padding:12px 10px;border:1px solid var(--border);
-  border-radius:12px;background:#f7f9fd;
+.selected-color .value-text {min-width:0;}
+.selected-color strong {display:block;color:var(--navy);font-size:20px;line-height:1.27;white-space:nowrap;}
+.selected-color small {display:block;color:var(--muted);font-size:13px;line-height:1.4;white-space:nowrap;margin-top:3px;}
+.channel-values {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;min-width:0;}
+.channel-value {min-width:0;padding:10px 8px;background:#f7f9fd;border:1px solid var(--border);border-radius:9px;}
+.channel-value .head {display:flex;justify-content:space-between;align-items:center;font-size:15px;font-weight:800;color:var(--deep);}
+.channel-value .dot {width:11px;height:11px;border-radius:50%;}
+.channel-value .number {
+  color:var(--navy);font-size:26px;font-weight:800;line-height:1.4;
+  white-space:nowrap;font-variant-numeric:tabular-nums;
 }
-.channel-value .head {display:flex;justify-content:space-between;align-items:center;font-size:16px;font-weight:800;color:var(--deep);}
-.channel-value .dot {width:13px;height:13px;border-radius:50%;}
-.channel-value .number {color:var(--navy);font-size:29px;font-weight:800;line-height:1.4;font-variant-numeric:tabular-nums;}
 .channel-value .track {width:100%;height:7px;background:#e1e8f0;border-radius:7px;overflow:hidden;}
-.channel-value .bar {height:100%;width:0;border-radius:7px;}
-.pixel-equation {font-size:16px;color:var(--deep);line-height:1.4;text-align:center;}
-.pixel-equation strong {color:var(--navy);font-size:20px;}
-.tensor-shape {
-  display:flex;align-items:center;justify-content:space-between;gap:9px;
-  padding:12px 14px;border:1px solid #cadef8;background:var(--pale-blue);border-radius:12px;
+.channel-value .bar {width:0;height:100%;border-radius:7px;}
+.concept-flow-summary {
+  display:flex;justify-content:center;align-items:baseline;gap:12px;
+  margin-top:3px;padding-top:12px;border-top:1px solid var(--border);
+  color:var(--deep);font-size:16px;line-height:1.35;
 }
-.tensor-shape .formula {color:var(--navy);font-size:29px;font-weight:800;white-space:nowrap;}
-.tensor-shape .channel-count {color:var(--blue);}
-.tensor-shape .label {font-size:14px;color:var(--deep);text-align:right;line-height:1.3;}
+.concept-flow-summary strong {font-size:26px;font-weight:800;color:var(--navy);}
+.concept-flow-summary span {color:var(--muted);font-size:14px;}
 .concept-slide .concept-takeaway {flex:none;margin-top:14px;}
 .concept-slide .footer {flex:none;margin-top:15px;padding-top:11px;font-size:14px;}
 @media(max-width:900px) {
-  .concept-stage {grid-template-columns:minmax(0,1fr);gap:17px;}
   .reference-slide.concept-slide .concept-panel {padding:21px 22px;}
-  .concept-flow {min-height:350px;}
-  .concept-step-figure,.pixel-frame,.flow-link {height:247px;}
-  .value-panel {gap:18px;}
+  .concept-flow {gap:6px;grid-template-columns:minmax(0,.95fr) 22px minmax(0,1.15fr) 22px minmax(0,.85fr) 22px minmax(0,1.25fr);}
+  .concept-step-figure,.pixel-frame,.flow-link {height:250px;}
 }
 @media(max-width:520px) {
   .concept-deck {width:100%;grid-template-columns:minmax(0,1fr);}
   .reference-slide.concept-slide {width:calc(100vw - 20px);}
-  .reference-slide.concept-slide .concept-panel {padding:17px 18px;}
+  .reference-slide.concept-slide .concept-panel {padding:18px 17px;}
   .concept-panel h2 {font-size:22px;}
-  .concept-flow {display:flex;flex-direction:column;gap:0;min-height:0;margin-top:17px;}
-  .concept-step {height:auto;gap:8px;}
+  .concept-flow {display:flex;flex-direction:column;gap:0;min-height:0;margin-top:15px;}
+  .concept-step {height:auto;gap:7px;}
   .concept-step-figure {height:194px;}
   .photo-wrap {width:min(100%,184px);}
-  .channel-stack {width:200px;height:205px;transform:none;}
+  .channel-stack {width:200px;height:211px;}
   .channel-layer {width:130px;height:130px;}
-  .channel-layer[data-plane="B"] {left:57px;top:9px;}
-  .channel-layer[data-plane="G"] {left:35px;top:30px;}
-  .channel-layer[data-plane="R"] {left:13px;top:51px;}
-  .stack-axis-h {top:114px;}
-  .stack-axis-w {left:78px;bottom:8px;}
-  .matrix-step .concept-step-figure {height:205px;}
+  .channel-layer[data-plane="B"] {left:57px;top:19px;}
+  .channel-layer[data-plane="G"] {left:35px;top:40px;}
+  .channel-layer[data-plane="R"] {left:13px;top:61px;}
+  .stack-axis-c {top:-4px;right:0;}
+  .stack-axis-h {top:127px;}
+  .stack-axis-w {left:78px;bottom:2px;}
+  .matrix-step .concept-step-figure {height:225px;}
   .flow-link {height:46px;transform:none;}
   .flow-link svg {transform:rotate(90deg);}
-  .pixel-frame {height:190px;}
+  .pixel-frame {height:188px;}
   .pixel-block {grid-template-columns:repeat(4,33px);grid-template-rows:repeat(4,33px);}
   .pixel-block span {width:33px;height:33px;}
   .dimension-width,.dimension-height {font-size:12px;}
-  .concept-flow-summary {flex-wrap:wrap;gap:5px;text-align:center;margin-top:17px;}
-  .concept-flow-summary strong {font-size:20px;}
-  .concept-flow-summary span {font-size:12px;}
-  .channel-values {gap:6px;}
-  .channel-value {padding:10px 5px;}
-  .channel-value .number {font-size:22px;white-space:nowrap;}
-  .selected-color strong {font-size:20px;}
+  .dimension-height {left:-36px;width:23px;}
+  .detail-frame {height:174px;}
+  .pixel-detail {width:min(100%,236px);gap:16px;}
+  .selected-color strong {font-size:18px;}
   .selected-color small {font-size:12px;}
-  .tensor-shape {flex-wrap:wrap;}
-  .tensor-shape .label {text-align:left;}
+  .channel-value {padding:8px 6px;}
+  .channel-value .number {font-size:23px;}
+  .concept-step-label {font-size:16px;}
+  .concept-step-note {font-size:12px;}
+  .concept-flow-summary {flex-wrap:wrap;gap:4px;text-align:center;margin-top:14px;}
+  .concept-flow-summary strong {font-size:22px;}
+  .concept-flow-summary span {font-size:12px;}
 }
 </style>
 </head>
@@ -185,18 +182,16 @@
     <header>
       <div class="ref-overline"><div class="kicker">CONCEPT / 01</div></div>
       <h1>이미지의 숫자 구조</h1>
-      <p class="subtitle">사진 → 같은 크기의 R/G/B 행렬 3개 → 일부 확대 → 픽셀의 숫자 값</p>
+      <p class="subtitle">입력 사진 → RGB 숫자 행렬 → 일부 확대 → 픽셀 하나의 RGB 값</p>
     </header>
     <div class="concept-stage">
-      <article class="concept-panel visual-panel" aria-label="실제 사진에서 RGB 채널 행렬과 픽셀로 이어지는 흐름">
-        <h2>이미지 → RGB 채널 → 픽셀 확대</h2>
+      <article class="concept-panel visual-panel" aria-label="입력 이미지에서 RGB 행렬, 4×4 확대, 선택 픽셀 숫자로 이어지는 과정">
+        <h2>이미지 → RGB 채널 → 픽셀 확대 → RGB 값</h2>
         <div class="concept-flow">
-          <div class="concept-step">
+          <div class="concept-step image-step">
             <div class="concept-step-figure image-frame">
               <div class="photo-wrap">
-                <img src="assets/concept-apple-photo.jpg" id="concept-image" class="concept-photo"
-                     width="540" height="540" alt="밝은 배경의 빨간 사과 사진"/>
-                <span class="photo-roi" aria-hidden="true"></span>
+                <img src="assets/concept-apple-photo.jpg" id="concept-image" class="concept-photo" width="540" height="540" alt="밝은 배경의 사과 원본 사진"/>
               </div>
             </div>
             <span class="concept-step-label">입력 이미지</span>
@@ -205,17 +200,21 @@
           <span class="flow-link" aria-hidden="true"><svg viewBox="0 0 36 24" fill="none"><path d="M2 12 H32 M24 4 L32 12 L24 20" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           <div class="concept-step matrix-step">
             <div class="concept-step-figure matrix-frame">
-              <div class="channel-stack" role="group" aria-label="높이 H, 너비 W가 동일한 R, G, B 세 행렬을 깊이 방향으로 겹쳐 표현">
+              <div class="channel-stack" role="group" aria-label="동일한 높이와 너비의 실제 R, G, B 채널 행렬 세 장">
                 <span class="stack-axis stack-axis-c">C = 3</span>
-                <div class="channel-layer" data-plane="B"><canvas class="channel-canvas" data-channel="B" width="80" height="80" aria-label="B 채널의 80×80 값"></canvas><b class="plane-id">B</b></div>
-                <div class="channel-layer" data-plane="G"><canvas class="channel-canvas" data-channel="G" width="80" height="80" aria-label="G 채널의 80×80 값"></canvas><b class="plane-id">G</b></div>
-                <div class="channel-layer" data-plane="R"><canvas class="channel-canvas" data-channel="R" width="80" height="80" aria-label="R 채널의 80×80 값"></canvas><b class="plane-id">R</b></div>
+                <div class="channel-layer" data-plane="B"><canvas class="channel-canvas" data-channel="B" width="80" height="80" aria-label="B 채널 80×80 값"></canvas><b class="plane-id">B</b></div>
+                <div class="channel-layer" data-plane="G"><canvas class="channel-canvas" data-channel="G" width="80" height="80" aria-label="G 채널 80×80 값"></canvas><b class="plane-id">G</b></div>
+                <div class="channel-layer" data-plane="R">
+                  <canvas class="channel-canvas" data-channel="R" width="80" height="80" aria-label="R 채널 80×80 값"></canvas>
+                  <b class="plane-id">R</b>
+                  <span class="matrix-roi" aria-hidden="true" title="동일한 RGB 좌표의 4×4 영역"></span>
+                </div>
                 <span class="stack-axis stack-axis-h">H</span>
                 <span class="stack-axis stack-axis-w">W</span>
               </div>
             </div>
             <span class="concept-step-label">R · G · B 행렬 3장</span>
-            <span class="concept-step-note">같은 H×W, 채널마다 숫자 1개</span>
+            <span class="concept-step-note">같은 H×W, ROI 선택</span>
           </div>
           <span class="flow-link" aria-hidden="true"><svg viewBox="0 0 36 24" fill="none"><path d="M2 12 H32 M24 4 L32 12 L24 20" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           <div class="concept-step pixel-step">
@@ -223,32 +222,40 @@
               <div class="pixel-matrix">
                 <span class="dimension-width">W = 4</span>
                 <span class="dimension-height"><span>H = 4</span></span>
-                <div class="pixel-block" role="img" aria-label="원본 사진에서 계산한 4행 4열의 RGB 픽셀 16개"><span></span><span></span><span></span><span></span><span></span><span></span><span class="selected" data-selected-index="6"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+                <div class="pixel-block" role="img" aria-label="RGB 행렬에서 선택한 영역의 4행 4열 RGB 픽셀"><span></span><span></span><span></span><span></span><span></span><span></span><span class="selected" data-selected-index="6"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
               </div>
             </div>
             <span class="concept-step-label">일부 영역 확대</span>
-            <span class="concept-step-note">4×4 = 16개 픽셀</span>
+            <span class="concept-step-note">4×4 = 16픽셀</span>
+          </div>
+          <span class="flow-link" aria-hidden="true"><svg viewBox="0 0 36 24" fill="none"><path d="M2 12 H32 M24 4 L32 12 L24 20" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <div class="concept-step rgb-step">
+            <div class="concept-step-figure detail-frame">
+              <div class="pixel-detail">
+                <div class="selected-color">
+                  <span class="swatch" role="img" aria-label="4×4 픽셀 배열에서 선택한 픽셀의 실제 색상"></span>
+                  <div class="value-text"><strong id="selected-rgb">RGB 계산 중</strong><small>HEX <span id="selected-hex">—</span> · 0–255</small></div>
+                </div>
+                <div class="channel-values">
+                  <div class="channel-value"><div class="head">R <span class="dot" style="background:#e8695c"></span></div><div class="number">—</div><div class="track"><div class="bar" style="background:#e8695c"></div></div></div>
+                  <div class="channel-value"><div class="head">G <span class="dot" style="background:#5db88b"></span></div><div class="number">—</div><div class="track"><div class="bar" style="background:#5db88b"></div></div></div>
+                  <div class="channel-value"><div class="head">B <span class="dot" style="background:#558ecb"></span></div><div class="number">—</div><div class="track"><div class="bar" style="background:#558ecb"></div></div></div>
+                </div>
+              </div>
+            </div>
+            <span class="concept-step-label">선택한 1픽셀</span>
+            <span class="concept-step-note">한 위치 = RGB 3개 값</span>
           </div>
         </div>
-        <div class="concept-flow-summary"><strong>H × W × 3</strong><span>높이 × 너비 × RGB 채널 수 · 3차원 배열(HWC)</span></div>
-      </article>
-      <article class="concept-panel value-panel" aria-label="선택한 픽셀 하나의 세 RGB 값">
-        <h2>선택 픽셀 → RGB 세 값</h2>
-        <div class="selected-color">
-          <span class="swatch" role="img" aria-label="4×4 확대 Figure에서 선택한 픽셀과 동일한 색"></span>
-          <div><strong id="selected-rgb">RGB 값 계산 중</strong>
-          <small>HEX <span id="selected-hex">—</span> · 채널당 0–255</small></div>
+        <div class="concept-flow-summary">
+          <strong>H × W × 3</strong>
+          <span>모든 위치의 RGB 3값 · 3차원 배열(HWC)</span>
+          <span>·</span>
+          <span>확대한 영역: 4×4×3 = 48개 값</span>
         </div>
-        <div class="channel-values">
-          <div class="channel-value"><div class="head">R <span class="dot" style="background:#e8695c"></span></div><div class="number">—</div><div class="track"><div class="bar" style="background:#e8695c"></div></div></div>
-          <div class="channel-value"><div class="head">G <span class="dot" style="background:#5db88b"></span></div><div class="number">—</div><div class="track"><div class="bar" style="background:#5db88b"></div></div></div>
-          <div class="channel-value"><div class="head">B <span class="dot" style="background:#558ecb"></span></div><div class="number">—</div><div class="track"><div class="bar" style="background:#558ecb"></div></div></div>
-        </div>
-        <div class="pixel-equation">픽셀 한 위치 = <strong>RGB 숫자 3개</strong></div>
-        <div class="tensor-shape"><span class="formula">4 × 4 × <span class="channel-count">3</span></span><span class="label">16픽셀 × RGB 3개<br><strong>총 48개 값</strong></span></div>
       </article>
     </div>
-    <div class="concept-takeaway ref-takeaway"><strong>핵심 개념</strong><span>이미지의 모든 (H, W) 위치에 R · G · B 값이 하나씩 있으므로 <strong>H×W×3 배열</strong></span></div>
+    <div class="concept-takeaway ref-takeaway"><strong>핵심 개념</strong><span>높이(H) × 너비(W)의 모든 픽셀에 R · G · B 값이 하나씩 있으므로 <strong>H×W×3 배열</strong></span></div>
     <footer class="footer"><span>Design Template Library · Concept</span><span>01 / 08</span></footer>
   </section>
 </main>
