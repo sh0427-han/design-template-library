@@ -1,0 +1,30 @@
+name: Refresh Concept Preview (Temporary)
+on:
+  pull_request:
+    branches: [main]
+permissions:
+  contents: write
+jobs:
+  preview:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'feat/concept-pixel-rgb-final-refinement'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feat/concept-pixel-rgb-final-refinement
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install playwright
+      - run: python -m playwright install --with-deps chromium
+      - run: python scripts/validate_references.py --templates concept --report /tmp/concept-preview-validation.json
+      - name: Commit real Chromium preview
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add previews/html-concept.png
+          if ! git diff --cached --quiet; then
+            git commit -m "docs(concept): refresh Chromium screenshot for RGB/G/B crop"
+            git push origin HEAD:refs/heads/feat/concept-pixel-rgb-final-refinement
+          fi
