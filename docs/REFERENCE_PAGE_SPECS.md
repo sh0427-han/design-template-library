@@ -31,7 +31,7 @@
 1. 원본 이미지는 templates/html/assets/concept-apple-photo.jpg 하나입니다. image.decode() 완료 후 80×80 Canvas, imageSmoothingEnabled=true 및 imageSmoothingQuality=high로 drawImage(image,0,0,80,80)를 수행합니다. 원본 전체 사진의 실제 파일 크기와 리샘플 분석 공간 80×80은 구별합니다.
 2. 해당 80×80 전체 RGBA 버퍼의 각 (y,x)에서 R/G/B 값을 추출해 동일한 80×80 R/G/B Canvas에 각각 그립니다. 채널 C가 0/1/2일 때 채널 평면의 해당 RGB 성분만 실제 원본의 8-bit 값을 넣고 다른 두 성분은 0, alpha=255입니다. 실제 채널 intensity가 틴트된 형태로 표현되며 다른 랜덤 픽셀·학습된 Feature Map·3개의 사진 복제품이 아닙니다.
 3. 겹친 세 Canvas 판은 크기가 같고 R/G/B 문자 식별과 H, W, C=3 축을 갖습니다. 이중 H/W는 위치를 가리키고 C는 채널 개수를 가리킵니다. 화면의 앞뒤 순서는 데이터 계산 순서가 아니므로 0-based RGB 인덱스를 바꾸지 않습니다.
-4. ROI는 getImageData(52,38,4,4)로 0-based 시작 (52,38), 4×4=16픽셀입니다. CSS ROI 표시의 left=65%, top=47.5%, width=height=5%는 실제 리샘플 좌표로부터 구합니다. 4×4 각각의 RGB는 RGBA 배열의 i번째 위치 (4i,4i+1,4i+2)에서 읽습니다.
+4. ROI는 getImageData(52,38,4,4)로 0-based 시작 (52,38), 4×4=16픽셀입니다. 원본 사진에는 ROI를 표시하지 않고 R 채널 Canvas 앞의 `.matrix-roi`만 사용합니다. R 판이 세 채널의 **동일한 공간 좌표**를 대표하며 ROI의 CSS left=65%, top=47.5%, width=height=5%는 실제 리샘플 좌표로부터 구합니다. 4×4 각각의 RGB는 RGBA 배열의 i번째 위치 (4i,4i+1,4i+2)에서 읽습니다.
 5. 선택 index 6은 ROI 로컬 (x=2,y=1), 전체 리샘플 (x=54,y=39)입니다. 기준 Chromium 검산 RGB (223,54,56), HEX #DF3638이며 환경 변화 시 Canvas 계산 결과를 우선합니다. 채널 세 값은 각각 0~255; 막대 width(%)=100×value/255, 클래스 확률이 아닙니다.
 6. 실제 선택 픽셀의 세 숫자에서 RGB 문자열, 대문자 16진수 HEX, Swatch, 세 막대를 한 번에 갱신합니다. 이미지 디코딩/계산 전에는 중립 placeholder이며 실패 시 오류 메시지·중립 Swatch·0% 막대·data-sampled=error 상태로 표시합니다.
 7. 확대 4×4 RGB 픽셀의 원소 개수는 4×4×3=48이며 전체 일반 이미지의 배열 Shape는 H×W×3(HWC)입니다. HWC는 하나의 표현이며 CHW 레이아웃도 존재합니다. 48은 픽셀 개수 16과 구별하며 바이트 단위 저장 크기와도 구분합니다.
