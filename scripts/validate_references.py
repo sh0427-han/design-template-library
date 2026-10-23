@@ -70,6 +70,7 @@ def check_concept(page):
             selectedTitle:document.querySelector('.pixel-block .selected').title,
             channels:[...document.querySelectorAll('.channel-value .number')].map(e=>Number(e.textContent)),
             bars:[...document.querySelectorAll('.channel-value .bar')].map(e=>parseFloat(e.style.width)),
+            numberWidths:[...document.querySelectorAll('.channel-value .number')].map(e=>({scroll:e.scrollWidth,client:e.clientWidth})),
             swatch:getComputedStyle(document.querySelector('.selected-color .swatch')).backgroundColor,
             selectedColor:getComputedStyle(painted[6]).backgroundColor,
             rgbText:document.querySelector('#selected-rgb').textContent,
@@ -104,6 +105,7 @@ def check_concept(page):
     assert r['display']==['rgb('+', '.join(map(str,c))+')' for c in r['colors']]
     rgb=r['colors'][6]
     assert r['channels']==rgb
+    assert all(n['scroll']<=n['client']+1 for n in r['numberWidths']),(r['viewport'],r['numberWidths'])
     assert r['selectedTitle']=='RGB ('+', '.join(map(str,rgb))+')'
     assert r['rgbText']=='RGB ('+', '.join(map(str,rgb))+')'
     assert r['hex']=='#'+''.join(f'{v:02X}' for v in rgb)
