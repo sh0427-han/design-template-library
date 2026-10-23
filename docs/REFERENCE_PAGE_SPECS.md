@@ -12,54 +12,41 @@
 
 ## 01 Concept
 
-**교육 목표:** 초급자가 사진 → 개별 픽셀 → 한 픽셀의 R/G/B 세 값 → 전체 이미지의 H×W×3 배열을 그림의 실제 값으로 이해합니다. 핵심 메시지는 사람에게 하나의 사진으로 보이는 입력이 컴퓨터에는 수많은 픽셀의 숫자 배열이라는 것입니다. 이 페이지는 CNN·Kernel·Feature Map·Classification을 설명하지 않습니다.
+**목적:** 사람이 보는 하나의 사진이 높이(H)×너비(W) 크기의 숫자 행렬 세 장(R, G, B)이라는 사실을 먼저 보여준 다음, 해당 행렬의 4×4 영역을 확대하여 하나의 픽셀이 RGB 세 정수 값으로 이루어짐을 연결합니다. 세 장을 겹친 Figure는 H/W 공간축과 채널축 C=3을 시각화하며, 3D 공간에 이미지가 물리적으로 쌓인다는 뜻은 아닙니다. CNN/Kernel/Feature Map/Classification을 다루지 않습니다.
 
-### 요소와 의미
+### 최종 시각 흐름
 
-| 위치 | 요소 | 기능 및 검증 가능한 관계 |
+| 순서 | 화면의 Figure | 전달할 사실 |
 | --- | --- | --- |
-| 왼쪽 카드 | 이미지 → 픽셀 / 사과 사진 / 입력 이미지 | 저장소 원본 사진 단 한 장, 정사각형, 추가 장식 프레임·그림자 금지 |
-| 왼쪽 카드 | 사진 위 ROI → Blue 단일 화살표 → 픽셀 확대 (4×4) | 사진의 실제 선택 영역이 오른쪽 16개 색상 셀의 원본 |
-| 4×4 격자 | `W = 4`(가로)와 `H = 4`(세로) 안내선, Navy 선택 index 6 | 실제 픽셀 4행×4열=16개, 각 셀은 RGB 3값을 보유. 선택 셀은 오른쪽 Swatch·RGB·HEX에 대응 |
-| 오른쪽 카드 상단 | 선택 픽셀의 RGB 값 / Swatch / RGB 및 HEX | Swatch와 텍스트는 실제 Canvas 선택 픽셀에서 동시에 계산 |
-| 오른쪽 카드 중단 | R/G/B 세 개의 수치 및 막대 | 0~255의 8-bit 채널 값; 막대는 강도 비율이지 분류 확률이 아님 |
-| 오른쪽 카드 하단 | `4 × 4 × 3 = 48개 값`(확대한 4×4 영역) → `H × W × 3` / 이미지 텐서 | 실제 16개 픽셀 각각 3개 RGB 값이므로 총 48개 8-bit 채널값. 이를 일반적인 HWC로 확장하며 Blue 3은 채널 수 |
-| 하단 캡션 | 픽셀 하나 → RGB 3개 값 · 이미지 전체 → 3차원 배열(HWC) | 한 픽셀과 전체 배열의 연결 |
+| 1 | 입력 이미지: 실제 사과 사진 1장 | 사람에게 한 장의 사진으로 보이는 RGB 데이터 |
+| 2 | 같은 크기의 R/G/B 행렬 3장: 실제 각 채널 강도를 반영한 이미지 판을 깊이 방향으로 겹침 | 각 채널은 H×W의 스칼라 행렬, 깊이/채널축은 C=3, 전체는 H×W×3 |
+| 3 | 부분 확대: 사진의 선택 영역을 4행×4열 실제 색상 격자로 확대 | 16개 픽셀은 같은 원본/같은 좌표에서 추출되며 임의 예시 색상이 아님 |
+| 4 | 선택 픽셀: Navy 선택 index 6 → 동일 색 Swatch → R/G/B 숫자와 막대 | 한 픽셀 위치에 RGB 세 정수가 있음 |
+| 5 | 4×4×3 = 48개 값 및 하단 핵심 문구 | 48은 확대 영역의 채널 값 개수, 전체 이미지의 크기는 H×W×3 |
 
-HWC는 이미지 표현의 한 방식입니다. 일부 프레임워크/텐서는 CHW를 사용하며, 이 슬라이드에서는 그 차이를 별도 도식으로 소개하지 않습니다.
+### Canvas 계산 및 재현 계약
 
-### 원본, 좌표, 연산 계약
+1. 원본 이미지는 templates/html/assets/concept-apple-photo.jpg 하나입니다. image.decode() 완료 후 80×80 Canvas, imageSmoothingEnabled=true 및 imageSmoothingQuality=high로 drawImage(image,0,0,80,80)를 수행합니다. 원본 전체 사진의 실제 파일 크기와 리샘플 분석 공간 80×80은 구별합니다.
+2. 해당 80×80 전체 RGBA 버퍼의 각 (y,x)에서 R/G/B 값을 추출해 동일한 80×80 R/G/B Canvas에 각각 그립니다. 채널 C가 0/1/2일 때 채널 평면의 해당 RGB 성분만 실제 원본의 8-bit 값을 넣고 다른 두 성분은 0, alpha=255입니다. 실제 채널 intensity가 틴트된 형태로 표현되며 다른 랜덤 픽셀·학습된 Feature Map·3개의 사진 복제품이 아닙니다.
+3. 겹친 세 Canvas 판은 크기가 같고 R/G/B 문자 식별과 H, W, C=3 축을 갖습니다. 이중 H/W는 위치를 가리키고 C는 채널 개수를 가리킵니다. 화면의 앞뒤 순서는 데이터 계산 순서가 아니므로 0-based RGB 인덱스를 바꾸지 않습니다.
+4. ROI는 getImageData(52,38,4,4)로 0-based 시작 (52,38), 4×4=16픽셀입니다. CSS ROI 표시의 left=65%, top=47.5%, width=height=5%는 실제 리샘플 좌표로부터 구합니다. 4×4 각각의 RGB는 RGBA 배열의 i번째 위치 (4i,4i+1,4i+2)에서 읽습니다.
+5. 선택 index 6은 ROI 로컬 (x=2,y=1), 전체 리샘플 (x=54,y=39)입니다. 기준 Chromium 검산 RGB (223,54,56), HEX #DF3638이며 환경 변화 시 Canvas 계산 결과를 우선합니다. 채널 세 값은 각각 0~255; 막대 width(%)=100×value/255, 클래스 확률이 아닙니다.
+6. 실제 선택 픽셀의 세 숫자에서 RGB 문자열, 대문자 16진수 HEX, Swatch, 세 막대를 한 번에 갱신합니다. 이미지 디코딩/계산 전에는 중립 placeholder이며 실패 시 오류 메시지·중립 Swatch·0% 막대·data-sampled=error 상태로 표시합니다.
+7. 확대 4×4 RGB 픽셀의 원소 개수는 4×4×3=48이며 전체 일반 이미지의 배열 Shape는 H×W×3(HWC)입니다. HWC는 하나의 표현이며 CHW 레이아웃도 존재합니다. 48은 픽셀 개수 16과 구별하며 바이트 단위 저장 크기와도 구분합니다.
 
-- 이미지 파일: templates/html/assets/concept-apple-photo.jpg. 화면은 object-fit:contain의 정사각형 단일 사진으로 구성합니다. CSS 사진 크기와 계산용 리샘플 크기를 혼동하지 않습니다.
-- Canvas 2D: canvas.width = canvas.height = 80, imageSmoothingEnabled = true, imageSmoothingQuality = high. 다음 drawImage(image, 0, 0, 80, 80)로 RGB 래스터를 생성합니다.
-- ROI: getImageData(52, 38, 4, 4).data. 0-based 시작 좌표 x=52/y=38, 크기 4×4, 총 16개 픽셀. 인덱스 i는 row-major 순서, RGB 성분은 rgba[4i], rgba[4i+1], rgba[4i+2]이며 alpha를 RGB에 섞지 않습니다.
-- 선택 index 6 = 로컬 x=2,y=1 = 전체 리샘플 x=54,y=39. 16개 중 선택은 반드시 하나입니다.
-- 선택값 [r,g,b]에서 RGB (r, g, b), CSS rgb(r,g,b), 각 채널을 2자리 대문자 16진수로 이어 쓴 HEX #RRGGBB를 계산합니다. 채널 값은 0~255 정수입니다.
-- 막대 너비(%) = 100 × 채널 값 / 255. 숫자·막대·Swatch·HEX·선택 셀은 동일한 선택 픽셀 색상을 출처로 사용합니다.
-- 참고 검산값: 현재 사진과 기준 Chromium에서 [223,54,56], #DF3638. 해당 값은 정적 DOM에 채워 넣지 않으며 이미지/리샘플 환경이 달라지면 계산 결과를 우선합니다.
-- 사진 ROI 표시: left = 52/80 = 65%, top = 38/80 = 47.5%, width = height = 4/80 = 5%. 테두리를 포함한 border-box 크기이며, ROI 자체의 표시 비율을 임의로 늘리지 않습니다.
+### 구성과 반응형
 
-### 시각 연결 및 구현 규칙
+- 제목은 이미지의 숫자 구조, 부제는 사진 → 같은 크기의 R/G/B 행렬 3개 → 일부 확대 → 픽셀의 숫자 값입니다. 왼쪽 넓은 White 패널 안에 입력 사진 → 실제 채널 평면 Stack → 4×4 실제 확대 Figure와 Blue 연결 화살표를 넣고, 오른쪽 White 패널 안에 선택 픽셀 Swatch, RGB/HEX·세 숫자·막대와 4×4×3 예시를 배치합니다. 마지막 하단 요약은 H×W×3 배열과 사진 각 위치의 RGB 세 값 관계를 직접 설명합니다.
+- 로컬 Pretendard Variable WOFF2, 전체 자간 −1pt, Navy/Blue/Teal 팔레트·공통 1440×810 16:9 Slide를 유지합니다. 별도 장식 프레임·복잡한 3D 큐브 및 의미 없는 설명 카드를 추가하지 않습니다.
+- 900px 이하에서는 두 패널을 세로로, 520px 이하에서는 사진·R/G/B Stack·4×4 확대를 세로 한 축에 배치하고 화살표를 아래로 회전합니다. Footer·패딩·가로 오버플로·가독성을 실측합니다.
 
-좌우 White 카드 **2개**를 유지합니다. 왼쪽 제목은 이미지 → 픽셀, 오른쪽 제목은 선택 픽셀의 RGB 값입니다. 사진과 4×4 픽셀 Figure는 같은 축과 라벨 기준선에 놓고, 중간 Blue 화살표 하나가 확대 방향을 나타냅니다. 큰 돋보기, 사진을 둘러싼 장식 프레임, 설명용 추가 카드, 여러 개의 교차 연결선은 만들지 않습니다.
+### 검증·재사용
 
-왼쪽 데스크톱 Figure 열은 minmax(0,1fr) / 42px / minmax(0,1fr), 사진·픽셀 슬롯 높이는 274px, 사진 최대 너비는 262px입니다. 4×4 셀은 각 50×50px, gap 3px로 격자 너비 209px를 이룹니다. 픽셀 격자 바로 위 가는 가이드가 `W=4`, 격자 왼쪽 세로 가이드가 `H=4`를 가리킵니다. 이 선은 ROI를 확대하는 상단 사진에 직접 그리지 않고 실제 4×4 셀 경계만 대상으로 합니다. 작은 ROI는 밝은 테두리+Navy 대비로 표시합니다. 선택 index 6의 격자 테두리·작은 Navy 표시와 오른쪽 Swatch의 테두리·표시를 대응시켜 한 픽셀이 오른쪽 세 채널로 읽힌다는 의미를 전달합니다.
+python scripts/validate_references.py --templates concept 명령으로 1600×950, 1440×810, 1366×768, 1280×720, 900×900, 390×844 화면을 Chromium에서 검사합니다. 검증은 실제 원본 독립 리샘플, R/G/B 세 평면 × 6400개 픽셀의 채널 성분, ROI/16셀/선택 index/Swatch/RGB/HEX/강도 막대, 3개 판의 동일 크기와 깊이 배치, 두 패널 정렬, 폰트 실제 글리프와 −1pt·Footer 및 JS 오류를 포함합니다.
 
-오른쪽 기존 Pale Blue 텐서 영역 상단의 `4×4×3 = 48개 값`은 고정 ROI 4×4의 픽셀 16개에 채널이 각 3개 있다는 **배열 원소 수 계산**입니다. 해당 48은 이미지의 해상도나 80×80 전체 이미지의 픽셀 수가 아니며 저장 용량(바이트) 또는 클래스 확률을 뜻하지 않습니다. 수식 옆에 `16픽셀 × RGB 3개`를 병기하고 기존 `H×W×3` 바로 위에 보조 표현으로 위치하며 추가 카드를 만들지 않습니다. 오른쪽 Swatch 색/HEX/RGB, R/G/B 3개 수치와 막대는 한 번의 Canvas 성공 후 같은 데이터로 갱신합니다. 숫자 기준선·바 시작점은 채널별로 통일하고 R→G→B 순서를 유지합니다. 이미지 텐서 영역은 기존 Pale Blue를 유지하며 3을 Blue로 강조합니다. 가장 아래의 요약 문구·Footer와는 여백을 유지합니다.
+사진/ROI/Canvas 크기를 바꾸면 세 채널 Canvas·ROI 테두리·4×4 색 격자·선택값·HEX·막대·프리뷰·본 문서의 수치를 동시에 갱신해야 합니다. 원본과 다른 데이터를 혼합해 같은 RGB Figure라고 표현하지 않습니다.
 
-초기 DOM의 RGB는 계산 중, HEX와 채널 수치는 —, 막대 길이는 0%, Swatch와 16셀은 중립 색입니다. 원본 image.decode() 또는 Canvas 읽기 실패 시 data-sampled=error, 오류 문구, 중립 Swatch·—·0% 막대 상태를 표시하고 콘솔에 오류를 남깁니다. 정상 계산 후에만 data-sampled=true가 됩니다. 완료 전 임의 RGB를 노출하지 않습니다.
-
-공통 디자인은 styles.css의 로컬 Pretendard Variable WOFF2, Navy/Blue/Teal 팔레트, 모든 문자의 −1pt 자간을 사용합니다. 스타일 로딩 순서는 styles.css → reference-layout.css → concept.html의 #1 전용 스타일이며 다른 페이지로 새로운 CSS가 전파되지 않습니다. 중복된 과거 CSS와 Override 대신 하나의 #1 규칙 세트와 900px, 520px 반응형 브레이크포인트를 사용합니다.
-
-### 모바일, 검사, 재사용
-
-1440×810 16:9 Slide를 기준으로 1600×950, 1440×810, 1366×768, 1280×720, 900×900, 390×844 여섯 화면을 검사합니다. 900px 이하에서는 두 카드가 세로로 배치되고, 520px 이하에서는 사진 최대 160px → 아래쪽으로 회전한 확대 화살표 → 28px 정사각형 픽셀 16개를 **세로 한 축**에 배치해 좁은 Grid 열에서도 격자가 잘리지 않도록 합니다. 사진 ROI의 정규화 위치/크기는 화면과 무관하게 동일합니다. 사진·픽셀·화살표 중심, 두 라벨의 y좌표, 카드 경계·패딩, RGB/HEX/Swatch/막대, 가로 오버플로, 하단 메시지와 Footer 간격을 검사합니다.
-
-검증: python scripts/validate_references.py --templates concept; 전체 8개 회귀는 python scripts/validate_references.py. Playwright Chromium에서 실제 원본 파일과 Pretendard WOFF2를 로드하고 폰트 글리프·−1pt, 독립 80×80 Canvas 샘플, 모든 16셀, index 6, HEX/Swatch, 100×채널/255 막대 길이를 대조합니다. 실제 브라우저를 거치지 않은 코드 검토는 프리뷰·폰트·반응형 검증의 대체가 아닙니다.
-
-새 이미지로 교체할 때는 (1) 원본 파일과 비율 확인 (2) 기존 ROI가 의미 있는 위치인지 판정, 바뀐다면 표시 비율도 같이 수정 (3) 80×80 리샘플 후 16개 픽셀 색상 재계산 (4) 선택 좌표/index·RGB/HEX·Swatch·막대와 접근성 제목 일치 확인 (5) 여섯 화면에서 정렬과 폰트 확인 (6) Chromium PNG 프리뷰 재생성 (7) 이 명세의 기준 RGB/HEX·파일 경로·검증 조건을 갱신합니다.
-
-**구현:** [concept.html](../templates/html/concept.html) · [사과 사진](../templates/html/assets/concept-apple-photo.jpg) · [PNG 프리뷰](../previews/html-concept.png) · [검증 스크립트](../scripts/validate_references.py).
+**소스:** [concept.html](../templates/html/concept.html) · [사과 사진](../templates/html/assets/concept-apple-photo.jpg) · [프리뷰](../previews/html-concept.png) · [검증](../scripts/validate_references.py).
 
 ## 02 Process
 
