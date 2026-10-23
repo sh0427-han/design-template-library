@@ -91,9 +91,10 @@ def check_concept(page):
         const heightGuide=document.querySelector('.dimension-height');
         const example=document.querySelector('.tensor-example');
         const main=document.querySelector('.tensor-main');
-        const columnGap=parseFloat(getComputedStyle(grid).columnGap);
-        const rowGap=parseFloat(getComputedStyle(grid).rowGap);
-        const cell=grid.querySelector('span');
+        const cells=[...grid.querySelectorAll('span')];
+        const cell=cells[0];
+        const gapX=box(cells[1]).left-box(cells[0]).right;
+        const gapY=box(cells[4]).top-box(cells[0]).bottom;
         return {
             subtitle:document.querySelector('.concept-slide .subtitle').textContent,
             w:widthGuide.textContent.trim(),
@@ -103,7 +104,7 @@ def check_concept(page):
             formula:main.querySelector('.formula').textContent.replace(/\\s+/g,'').trim(),
             grid:box(grid),wBox:box(widthGuide),hBox:box(heightGuide),
             example:box(example),tensor:box(document.querySelector('.tensor-shape')),
-            cell:box(cell),columnGap,rowGap
+            cell:box(cell),gapX,gapY
         };
     }''')
     assert relation['subtitle']=='사진 → 픽셀 → RGB 값 → H×W×3 배열'
@@ -113,9 +114,9 @@ def check_concept(page):
     assert relation['formula']=='H×W×3'
     assert 4*4==len(r['colors']) and 4*4*len(rgb)==48
     assert abs(relation['grid']['width']-(4*relation['cell']['width']+
-               3*relation['columnGap']))<1
+               3*relation['gapX']))<1
     assert abs(relation['grid']['height']-(4*relation['cell']['height']+
-               3*relation['rowGap']))<1
+               3*relation['gapY']))<1
     assert abs(relation['wBox']['cx']-relation['grid']['cx'])<1
     assert relation['wBox']['bottom']<relation['grid']['top']
     assert abs(relation['hBox']['cy']-relation['grid']['cy'])<1
