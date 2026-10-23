@@ -63,4 +63,6 @@
 
 [두 보기의 재사용 명세](DUAL_MODE_REFERENCE_REUSE.md)는 기존 8개 HTML을 직접 실행하여 디자인 복사본 없이 표시하는 예제입니다. Scroll/Slide는 보기와 탐색만 다르고, 실제 그림·스타일·계산은 같은 원본이 담당합니다. #5 실습은 두 모드의 기능이며 세 번째 형식이 아닙니다. 원본 스타일과 상대 bounding box를 직접 렌더링과 대조하고, [모드 계약](../templates/dual-mode-learning/MODES.md)에 따라 현재 예제와 임계값을 유지합니다. 새 강의에 모든 8개 유형이나 iframe 구현을 강제하는 규칙은 아닙니다.
 
-[로지스틱 회귀 3장](../examples/logistic-regression/README.md)은 이 절차로 **새 내용**을 만든 사례입니다. 설계를 먼저 Commit하고 Concept/Step-by-Step/Interactive의 역할만 선택했습니다. 같은 콘텐츠 DOM과 모델 함수를 두 모드가 공유하며 iframe·사진·CNN 도식을 새 주제에 강제하지 않습니다. 최종 규격뿐 아니라 변경 데이터와 수치/탐색 경계에서 발견한 보완점도 기록합니다.
+[로지스틱 회귀 본편2장·선택 부록](../examples/logistic-regression/README.md)은 이 절차로 **새 내용**을 만든 사례입니다. 설계를 먼저 Commit하고 본편에는 Concept/Step-by-Step을 선택했습니다. 임계값 Interactive는 확률 계산의 필수가 아니므로 `?appendix=1`의 선택 부록으로 분리했습니다. 같은 DOM 생성·모델을 두 모드가 공유하며 iframe·사진·CNN 도식을 강제하지 않습니다.
+
+**재사용 검증을 위해 유형 수나 장 수를 채우지 않습니다.** 본편의 학습 목표에 필수인 단계만 선택합니다. 후속 응용은 필요하면 선택 부록으로 명확히 구분하고 기본 페이지 수·목차·탐색에 끼워 넣지 않습니다. 본편/부록 선택은 Scroll/Slide의 제3 출력 형식이 아니며 같은 두 진입점의 콘텐츠 범위입니다.

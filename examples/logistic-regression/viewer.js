@@ -1,11 +1,12 @@
-import {pages, renderLesson} from './lesson.js';
+import {getPages, renderLesson} from './lesson.js';
 
 try {
   const mode=document.body.dataset.mode;
   const query=new URLSearchParams(location.search),rawThreshold=query.get('threshold'),rawSample=query.get('sample');
+  const includeAppendix=query.get('appendix')==='1',pages=getPages(includeAppendix);
   const threshold=rawThreshold!==null&&/^(100|\d{1,2})$/.test(rawThreshold)?Number(rawThreshold):60;
   const sample=rawSample!==null&&/^[1-6]$/.test(rawSample)?Number(rawSample)-1:3;
-  const sections=renderLesson(document.querySelector('[data-lesson-root]'),{threshold,sample});
+  const sections=renderLesson(document.querySelector('[data-lesson-root]'),{threshold,sample,includeAppendix});
   const indexFromHash=()=>Math.max(0,pages.findIndex(p=>location.hash===`#ref-${p.id}`));
   let current=indexFromHash();
   const observer=new ResizeObserver(entries=>{for(const {target} of entries)target.style.setProperty('--reference-scale',target.clientWidth/1440);});
@@ -17,6 +18,10 @@ try {
     history.replaceState(null,'',url);
     const target=new URL(mode==='slides'?'scroll.html':'slides.html',url);target.search=url.search;target.hash=url.hash;
     document.querySelector('.mode-link').href=target.href;
+    const appendixTarget=new URL(url);appendixTarget.searchParams.delete('appendix');
+    if(!includeAppendix){appendixTarget.searchParams.set('appendix','1');appendixTarget.hash='ref-threshold';}
+    else if(current===2)appendixTarget.hash='ref-calculation';
+    const appendixLink=document.querySelector('.appendix-link');appendixLink.href=appendixTarget.href;appendixLink.textContent=includeAppendix?'본편 2장으로':'선택 부록 · 임계값';
   }
   function navigate(index,scroll=true) {
     current=Math.max(0,Math.min(pages.length-1,index));
@@ -24,7 +29,7 @@ try {
       sections.forEach((s,i)=>{s.setAttribute('aria-hidden',String(i!==current));s.inert=i!==current;});
       document.getElementById('prev').disabled=current===0;document.getElementById('next').disabled=current===pages.length-1;
       document.getElementById('current-title').textContent=pages[current].name;
-      document.getElementById('progress').textContent=`${current+1} / ${pages.length}`;
+      document.getElementById('progress').textContent=current===2?'부록 A':`${current+1} / 2${includeAppendix?' · 부록 포함':''}`;
     } else {
       document.querySelectorAll('#toc-list a').forEach((a,i)=>{if(i===current)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');});
       if(scroll)sections[current].scrollIntoView();
@@ -41,7 +46,7 @@ try {
     });
   } else {
     const toc=document.getElementById('toc-list');
-    toc.innerHTML=pages.map((p,i)=>`<a href="#ref-${p.id}"><span>${String(i+1).padStart(2,'0')}</span><span>${p.name}</span></a>`).join('');
+    toc.innerHTML=pages.map((p,i)=>`<a href="#ref-${p.id}"><span>${i===2?'A':String(i+1).padStart(2,'0')}</span><span>${p.name}</span></a>`).join('');
     let scheduled=false;
     window.addEventListener('scroll',()=>{if(!scheduled){scheduled=true;requestAnimationFrame(()=>{
       scheduled=false;

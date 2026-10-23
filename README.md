@@ -111,7 +111,7 @@ python scripts/validate_references.py --templates architecture step-by-step --ev
 
 ### 새 개념으로 재사용 검증
 
-[로지스틱 회귀 3장](examples/logistic-regression/README.md)은 문서 우선 설계로 Concept·Step-by-Step·Interactive를 다른 개념에 적용한 자료입니다. [Scroll](examples/logistic-regression/scroll.html) / [Slide](examples/logistic-regression/slides.html)는 같은 입력·계수·계산·콘텐츠를 사용합니다. 8종 원본을 늘리지 않고 별도 `examples/`에서 검토합니다. 실제 계산·24개 PC 화면·101개 임계값·변경 데이터·모드 전환과 원본 회귀를 검증합니다.
+[로지스틱 회귀 본편2장·선택 부록](examples/logistic-regression/README.md)은 문서 우선 설계로 Concept·Step-by-Step을 적용하고 임계값 Interactive는 선택 부록으로 분리한 자료입니다. [Scroll](examples/logistic-regression/scroll.html) / [Slide](examples/logistic-regression/slides.html)는 같은 입력·계산·콘텐츠를 사용합니다. 8종 원본을 늘리지 않고 별도 `examples/`에서 검토합니다. 본편16개·부록 포함24개 PC 화면, 두 시그모이드 그래프·축 교점·101개 임계값·변경 데이터·모드/부록 전환을 검증합니다.
 
 ## 문서 지도와 통합 상태
 

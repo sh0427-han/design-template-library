@@ -5,16 +5,16 @@ export const pages = [
    subtitle: '입력 특성 → 선형 점수 → 확률 변환 → 양성 확률'},
   {id: 'calculation', name: '확률 계산', type: 'STEP-BY-STEP', title: '한 샘플의 확률 계산',
    subtitle: '같은 입력과 계수로 가중합부터 시그모이드까지 계산'},
-  {id: 'threshold', name: '임계값 판정', type: 'INTERACTIVE', title: '임계값에 따른 판정 변화',
-   subtitle: '임계값(Threshold): 양성으로 판정하는 최소 확률 · 확률은 고정, 기준만 이동'},
 ];
+export const appendixPage = {id:'threshold',name:'부록 · 임계값 판정',type:'APPENDIX',title:'임계값에 따른 판정 변화',subtitle:'임계값(Threshold): 양성으로 판정하는 최소 확률 · 확률은 고정, 기준만 이동'};
+export const getPages = includeAppendix => includeAppendix ? [...pages,appendixPage] : pages;
 
 const state = {model: normalizeModel(DEFAULT_MODEL), selected: 3, threshold: 60};
 let root;
 const arrow = () => '<svg class="lr-connector" viewBox="0 0 32 16" aria-hidden="true"><path d="M2 8 H29 M23 2 L29 8 L23 14"/></svg>';
 const heading = (label, title, description = '') => `<div class="lr-heading"><div class="lr-label">${label}</div><h2>${title}</h2>${description ? `<p>${description}</p>` : ''}</div>`;
 const takeaway = (label, text) => `<div class="ref-takeaway"><strong>${label}</strong><span>${text}</span></div>`;
-const footer = index => `<footer class="footer"><span>Design Template Library · 로지스틱 회귀</span><span>${String(index+1).padStart(2,'0')} / 03</span></footer>`;
+const footer = index => `<footer class="footer"><span>Design Template Library · 로지스틱 회귀</span><span>${index===2?'부록 A':`${String(index+1).padStart(2,'0')} / 02`}</span></footer>`;
 const number = x => (Math.abs(x) < 0.0000000001 ? 0 : x).toFixed(2).replace('-', '−');
 const percent = p => `${(p*100).toFixed(1)}%`;
 const numeric = new Set(['x1','x2','w1','w2','bias','product1','product2','z','decimal','percent','threshold','thresholdPercent']);
@@ -27,40 +27,41 @@ const symbol = (x,n) => n===undefined?mi(x):`<msub>${mi(x)}${mn(n)}</msub>`;
 const mv = key => `<mn data-value="${key}"></mn>`;
 const sum = () => `${mv('product1')}<mo data-value="product2Sign"></mo>${mv('product2Magnitude')}<mo data-value="biasSign"></mo>${mv('biasMagnitude')}`;
 const weighted = () => `${mi('z')}${mo('=')}${symbol('w',1)}${symbol('x',1)}${mo('+')}${symbol('w',2)}${symbol('x',2)}${mo('+')}${mi('b')}`;
+const sigmoidExpression = exponent => `<mfrac>${mn(1)}<mrow>${mn(1)}${mo('+')}<msup><mi mathvariant="normal">e</mi>${exponent}</msup></mrow></mfrac>`;
+const sigmoidGeneral = () => m(mi('σ')+'<mo stretchy="false">(</mo>'+mi('z')+'<mo stretchy="false">)</mo>'+mo('=')+sigmoidExpression(`<mrow>${mo('−')}${mi('z')}</mrow>`));
 
 function concept() {
-  const stage = (figure, label, note) => `<div class="lr-step"><div class="lr-figure">${figure}</div><div class="lr-step-label">${label}</div><p class="lr-step-note">${note}</p></div>`;
+  const stage = (figure, label) => `<div class="lr-step"><div class="lr-figure">${figure}</div><div class="lr-step-label">${label}</div></div>`;
   return `<div class="lr-body"><section class="lr-panel lr-concept-panel">
-    <div class="lr-concept-heading"><h2>로지스틱 회귀(Logistic Regression)</h2><span class="lr-example">예시 입력·계수 · 학습 과정 제외</span><p>양성(1)·음성(0) 중 양성의 확률을 예측하는 분류 모델<br>가중치 ${m(mi('w'))}: 특성에 곱하는 계수 · 절편 ${m(mi('b'))}: 입력과 무관하게 더하는 값</p></div>
+    <div class="lr-concept-heading"><h2>로지스틱 회귀(Logistic Regression)</h2><span class="lr-example">예시 입력·계수 · 학습 과정 제외</span><p>양성(1)·음성(0) 중 양성의 확률을 예측하는 분류 모델</p></div>
     <div class="lr-flow">
-      ${stage(`<div class="lr-inputs">${[1,2].map(i=>`<div><div class="lr-feature-value">${m(symbol('x',i))}<strong>${value('x'+i)}</strong></div><div class="lr-feature-weight"><span>가중치</span>${m(symbol('w',i)+mo('=')+mv('w'+i))}</div></div>`).join('')}</div>`, '입력 특성', '특성마다 가중치를 곱함')}
+      ${stage(`<div class="lr-inputs">${[1,2].map(i=>`<div><div class="lr-feature-value">${m(symbol('x',i)+mo('=')+mv('x'+i))}</div><div class="lr-feature-weight">${m(symbol('w',i)+mo('=')+mv('w'+i))}</div></div>`).join('')}</div>`, '입력 특성')}
       ${arrow()}
-      ${stage(`<div class="lr-score"><div class="lr-score-general">${m(weighted())}</div><span class="lr-score-bias">절편 ${m(mi('b')+mo('=')+mv('bias'))}</span><div class="lr-score-substitute">${m(sum())}</div><strong>${m(mi('z')+mo('=')+mv('z'))}</strong><span>확률 변환 전 점수</span></div>`, '가중합 + 절편', '두 곱의 합에 절편을 더함')}
+      ${stage(`<div class="lr-score"><div class="lr-score-general">${m(weighted())}</div><strong>${m(mi('z')+mo('=')+mv('z'))}</strong></div>`, '가중합 + 절편')}
       ${arrow()}
-      ${stage('<svg class="lr-curve" role="img" aria-label="선형 점수를 양성 확률로 변환하는 시그모이드 곡선" viewBox="0 0 300 210"></svg>', '시그모이드(Sigmoid)', '실수 점수 → 0과 1 사이')}
+      ${stage(`<div class="lr-sigmoid-stage"><div class="lr-sigmoid-formula">${sigmoidGeneral()}</div><svg class="lr-curve" role="img" aria-label="선형 점수를 양성 확률로 변환하는 시그모이드 곡선" viewBox="0 0 300 210"></svg></div>`, '시그모이드(Sigmoid)')}
       ${arrow()}
-      ${stage(`<div class="lr-probability"><span>양성 확률 ${m(mi('p'))}</span><strong>${value('percent')}</strong><div class="lr-prob-track"><i data-prob-fill></i></div></div>`, '확률 출력', '선택 샘플의 양성 가능성')}
+      ${stage(`<div class="lr-probability"><span>양성 확률 ${m(mi('p'))}</span><strong>${value('percent')}</strong><div class="lr-prob-track"><i data-prob-fill></i></div></div>`, '확률 출력')}
     </div>
-    <div class="lr-symbols"><span>${m(mi('x'))}<span>입력 특성</span></span><span>${m(mi('z'))}<span>가중합에 절편을 더한 점수</span></span><span>${m(mi('σ'))}<span>시그모이드 함수</span></span><span>${m(mi('p'))}<span>양성 예측 확률</span></span></div>
+    <div class="lr-symbols"><div><span>${m(mi('x'))} 입력 특성</span><small>가중치 ${m(mi('w'))}: 특성에 곱하는 계수</small></div><div><span>${m(mi('z'))} 확률 변환 전 점수</span><small>절편 ${m(mi('b')+mo('=')+mv('bias'))}: 입력과 무관하게 더하는 값</small></div><div><span>${m(mi('σ'))} 시그모이드 함수</span><small>${m('<mi mathvariant="normal">e</mi>'+mo('≈')+mn('2.718'))} · 실수 점수를 0~1로 변환</small></div><div><span>${m(mi('p'))} 양성 예측 확률</span><small>확률과 최종 클래스 판정은 구분</small></div></div>
     </section></div>${takeaway('확률의 의미', '입력에서 계산한 선형 점수를 양성 클래스의 확률로 변환')}`;
 }
 
 function calculation() {
   return `<div class="lr-body lr-two-columns lr-calculation">
     <section class="lr-panel lr-calc-panel">
-      ${heading('01 · WEIGHTED SUM', '입력과 계수의 곱', `가중치 ${m(mi('w'))}는 특성에 곱하는 계수,<br>절편 ${m(mi('b'))}는 입력과 무관하게 더하는 값`)}
-      <div class="lr-calc-main"><table class="lr-product-table"><thead><tr><th>입력 ${m(mi('x'))}</th><th>가중치 ${m(mi('w'))}</th><th>곱 ${m(mi('w')+mo('×')+mi('x'))}</th></tr></thead><tbody>
-        <tr><td>${m(symbol('x',1)+mo('=')+mv('x1'))}</td><td>${value('w1')}</td><td>${value('product1')}</td></tr>
-        <tr><td>${m(symbol('x',2)+mo('=')+mv('x2'))}</td><td>${value('w2')}</td><td>${value('product2')}</td></tr>
-      </tbody></table><div class="lr-bias"><span>절편 ${m(mi('b'))}</span><strong>${value('bias')}</strong></div>
+      ${heading('01 · LINEAR SCORE', '곱하고 더해 점수 계산', '입력과 가중치의 곱에 절편을 더함')}
+      <div class="lr-calc-main"><div class="lr-weighted-formula">${m(weighted())}</div><div class="lr-products">${[1,2].map(i=>`<div class="lr-product-step">${m(symbol('w',i)+symbol('x',i)+mo('=')+mv('w'+i)+mo('×')+mv('x'+i)+mo('=')+`<mn class="lr-product-result" data-value="product${i}"></mn>`)}</div>`).join('')}</div>
+      <div class="lr-bias"><span>절편</span>${m(mi('b')+mo('=')+mv('bias'))}</div>
       <div class="lr-sum"><span>${m(mi('z')+mo('=')+sum())}</span><strong>${m(mo('=')+mv('z'))}</strong></div></div>
-      <div class="lr-card-note">일반식: ${m(weighted())}</div>
+      <div class="lr-card-note">각 곱의 결과와 절편을 모두 더한 값이 ${m(mi('z'))}</div>
     </section>
     <section class="lr-panel lr-calc-panel">
-      ${heading('02 · SIGMOID', '점수를 확률로 변환', '시그모이드(Sigmoid): 실수 점수를<br>0과 1 사이의 값으로 변환하는 함수')}
-      <div class="lr-prob-calculation"><div class="lr-general">${m(mi('p')+mo('=')+`<mfrac>${mn(1)}<mrow>${mn(1)}${mo('+')}<msup><mi mathvariant="normal">e</mi><mrow>${mo('−')}${mi('z')}</mrow></msup></mrow></mfrac>`)}</div>
-      <div class="lr-substitute">${m(mo('=')+`<mfrac>${mn(1)}<mrow>${mn(1)}${mo('+')}<msup><mi mathvariant="normal">e</mi>${mv('negativeZ')}</msup></mrow></mfrac>`)}</div>
+      ${heading('02 · SIGMOID', '점수를 확률로 변환', '같은 점수와 확률을 식과 그래프로 연결')}
+      <div class="lr-sigmoid-comparison"><div class="lr-prob-calculation"><div class="lr-general lr-sigmoid-formula">${m(mi('p')+mo('=')+sigmoidExpression(`<mrow>${mo('−')}${mi('z')}</mrow>`))}</div>
+      <div class="lr-substitute lr-sigmoid-formula">${m(mo('=')+sigmoidExpression(mv('negativeZ')))}</div>
       <div class="lr-decimal">${m(mo('≈')+mv('decimal'))}</div><div class="lr-final-prob">${value('percent')}</div></div>
+      <figure class="lr-calculation-graph"><svg class="lr-curve lr-detail-curve" data-variant="detail" role="img" aria-label="계산한 점수와 확률을 축에 표시한 시그모이드 곡선" viewBox="0 0 360 260"></svg><figcaption>${m(mi('z')+mo('=')+mv('z'))} → ${m(mi('p')+mo('≈')+mv('decimal'))}</figcaption></figure></div>
       <div class="lr-card-note">${m('<mi mathvariant="normal">e</mi>'+mo('≈')+mn('2.718'))} · 표시는 반올림, 판정은 원래 확률 사용</div>
     </section>
     </div>${takeaway('계산의 연결', `왼쪽에서 계산한 ${m(mi('z'))}를 오른쪽 확률식에 그대로 대입`)}`;
@@ -88,15 +89,21 @@ function threshold() {
 }
 
 function drawCurve(row) {
-  const svg = root.querySelector('.lr-curve');
+  for(const svg of root.querySelectorAll('.lr-curve')) {
+  const detail=svg.dataset.variant==='detail';
   const limit = Math.max(4, Math.ceil(Math.abs(row.z)/4)*4);
-  const x = z => 40+(z+limit)/(2*limit)*240, y = p => 172-p*150;
+  const left=detail?56:40,top=detail?30:22,width=detail?272:240,height=detail?180:150,bottom=top+height;
+  const x = z => left+(z+limit)/(2*limit)*width, y = p => bottom-p*height;
   const d = Array.from({length: 161}, (_, i) => {const z=-limit+i*2*limit/160;return `${i?'L':'M'}${x(z).toFixed(3)},${y(sigmoid(z)).toFixed(3)}`;}).join(' ');
   svg.dataset.limit=String(limit);
-  svg.innerHTML = `<g class="lr-plot-grid"><path d="M40 22 V172 H280"/><path class="lr-midline" d="M40 97 H280 M160 22 V172"/></g>
-    <g class="lr-axis-text math-number"><text x="19" y="27">1</text><text x="9" y="102">0.5</text><text x="19" y="177">0</text><text x="40" y="194" text-anchor="middle">−${limit}</text><text x="160" y="194" text-anchor="middle">0</text><text x="280" y="194" text-anchor="middle">${limit}</text><text x="42" y="15">𝑝</text><text x="291" y="176">𝑧</text></g>
-    <path class="lr-sigmoid-path" d="${d}"/><path class="lr-point-guides" d="M${x(row.z)} 172 V${y(row.p)} H40"/>
+  const yTicks=[0,.5,1].filter(p=>!detail||Math.abs(y(p)-y(row.p))>18).map(p=>`<text x="${left-10}" y="${y(p)+5}" text-anchor="end">${p}</text>`).join('');
+  const xTicks=[-limit,0,limit].filter(z=>!detail||Math.abs(x(z)-x(row.z))>28).map(z=>`<text x="${x(z)}" y="${bottom+23}" text-anchor="middle">${String(z).replace('-','−')}</text>`).join('');
+  svg.innerHTML = `<g class="lr-plot-grid"><path d="M${left} ${top} V${bottom} H${left+width}"/><path class="lr-midline" d="M${left} ${y(.5)} H${left+width} M${x(0)} ${top} V${bottom}"/></g>
+    <g class="lr-axis-text math-number">${yTicks}${xTicks}<text x="${left+2}" y="${top-12}">𝑝</text><text x="${left+width+11}" y="${bottom+4}">𝑧</text></g>
+    <path class="lr-sigmoid-path" d="${d}"/><path class="lr-point-guides" d="M${x(row.z)} ${bottom} V${y(row.p)} H${left}"/>
+    ${detail?`<g class="lr-selected-axis math-number"><text data-axis="z" x="${x(row.z)}" y="${bottom+23}" text-anchor="middle">${number(row.z)}</text><text data-axis="p" x="${left-10}" y="${y(row.p)+5}" text-anchor="end">${row.p.toFixed(3)}</text></g>`:''}
     <circle class="lr-curve-point" cx="${x(row.z)}" cy="${y(row.p)}" r="6"/>`;
+  }
 }
 
 function update(announce = false) {
@@ -111,7 +118,9 @@ function update(announce = false) {
     prediction:prediction?'양성(1)':'음성(0)',comparison:prediction?'확률이 기준 이상 → 양성':'확률이 기준 미만 → 음성'};
   root.querySelectorAll('[data-value]').forEach(el=>{el.textContent=values[el.dataset.value];});
   root.querySelector('[data-prob-fill]').style.width=`${100*row.p}%`;
-  const slider=root.querySelector('#threshold');slider.value=String(state.threshold);slider.setAttribute('aria-valuetext',`${t.toFixed(2)}, ${positives}개 양성`);
+  const slider=root.querySelector('#threshold');
+  if(slider) {
+  slider.value=String(state.threshold);slider.setAttribute('aria-valuetext',`${t.toFixed(2)}, ${positives}개 양성`);
   const table=root.querySelector('.lr-sample-rows');
   if(table.children.length!==rows.length) {
     table.innerHTML=rows.map(r=>`<div class="lr-sample-row" data-sample-index="${r.index}"><button type="button" data-select="${r.index}" aria-label="샘플 ${r.index+1} 선택">${r.index+1}</button><div class="lr-sample-track"><i class="lr-sample-fill"></i><i class="lr-threshold-line"></i></div><span class="lr-sample-percent math-number"></span><span class="lr-badge"></span></div>`).join('');
@@ -126,8 +135,9 @@ function update(announce = false) {
     const badge=el.querySelector('.lr-badge');badge.textContent=pred?'양성 1':'음성 0';badge.dataset.prediction=String(pred);
   });
   root.querySelector('[data-decision]').dataset.prediction=String(prediction);
+  }
   drawCurve(row);
-  if(announce)root.querySelector('#prediction-status').textContent=`임계값 ${t.toFixed(2)}. 양성 ${positives}개, 음성 ${rows.length-positives}개. 샘플 ${state.selected+1}은 ${values.prediction}.`;
+  if(announce&&slider)root.querySelector('#prediction-status').textContent=`임계값 ${t.toFixed(2)}. 양성 ${positives}개, 음성 ${rows.length-positives}개. 샘플 ${state.selected+1}은 ${values.prediction}.`;
   root.dispatchEvent(new CustomEvent('lessonstatechange',{bubbles:true}));
 }
 
@@ -143,8 +153,9 @@ export function setSelection(index, announce=true) {
 export function renderLesson(container, initial={}) {
   root=container;
   state.threshold=initial.threshold??60;state.selected=initial.sample??3;
+  const activePages=getPages(initial.includeAppendix);
   const figures=[concept,calculation,threshold];
-  root.innerHTML=pages.map((page,i)=>`<section class="reference-section" id="ref-${page.id}" aria-label="${i+1}. ${page.name}"><div class="reference-viewport"><article class="slide reference-slide logistic-slide" data-page="${page.id}"><header><div class="kicker">${page.type} / ${String(i+1).padStart(2,'0')}</div><h1>${page.title}</h1><p class="subtitle">${page.subtitle}</p></header>${figures[i]()}${footer(i)}</article></div></section>`).join('');
+  root.innerHTML=activePages.map((page,i)=>`<section class="reference-section" id="ref-${page.id}" aria-label="${page.name}"><div class="reference-viewport"><article class="slide reference-slide logistic-slide" data-page="${page.id}"><header><div class="kicker">${page.type} / ${i===2?'A':String(i+1).padStart(2,'0')}</div><h1>${page.title}</h1><p class="subtitle">${page.subtitle}</p></header>${figures[i]()}${footer(i)}</article></div></section>`).join('');
   root.addEventListener('input',event=>{if(event.target.id==='threshold')setThreshold(Number(event.target.value));});
   root.addEventListener('click',event=>{const button=event.target.closest('[data-select]');if(button)setSelection(Number(button.dataset.select));});
   update();
