@@ -1,4 +1,5 @@
 name: Concept RGB matrix preview once
+# Rerender with matrix-grid overlay and corrected axis lettering.
 on:
   push:
     branches: [feat/concept-pixel-rgb-final-refinement]
