@@ -90,10 +90,14 @@ def check_concept(page):
                     display:getComputedStyle(e).display,
                     font:getComputedStyle(e).fontSize,
                     plane:e.closest('.pixel-plane').dataset.cropPlane})),
-            cropOutlines:['G','B'].map(channel=>{
-                const node=document.querySelector('.pixel-plane-'+channel.toLowerCase());
-                return {name:channel,base:getComputedStyle(node.querySelector('.pixel-channel-grid')).outlineColor,
-                    badge:getComputedStyle(node.querySelector('.plane-badge')).backgroundColor};
+            cropOutlines:['R','G','B'].map(channel=>{
+                const node=document.querySelector('.pixel-plane-'+(channel==='R'?'rgb':channel.toLowerCase()));
+                const grid=node.querySelector('.pixel-block,.pixel-channel-grid');
+                const style=getComputedStyle(grid);
+                return {name:channel,base:style.outlineColor,
+                    badge:getComputedStyle(node.querySelector('.plane-badge')).backgroundColor,
+                    width:style.outlineWidth,outlineStyle:style.outlineStyle,
+                    radius:style.borderRadius,shadow:style.boxShadow};
             }),
             selectedIndex:cells.indexOf(selected),
             declaredIndex:Number(selected.dataset.selectedIndex),
@@ -221,9 +225,22 @@ def check_concept(page):
     badges=r['cropBadges']
     assert [(b['plane'],b['label']) for b in badges]==[
         ('B','B'),('G','G'),('RGB','R')],(r['viewport'],badges)
-    assert r['cropOutlines']==[
-        {'name':'G','base':'rgb(39, 148, 103)','badge':'rgb(39, 148, 103)'},
-        {'name':'B','base':'rgb(66, 126, 197)','badge':'rgb(66, 126, 197)'}]
+    expected_frame_colors={'R':'rgb(182, 60, 71)',
+                           'G':'rgb(39, 148, 103)',
+                           'B':'rgb(66, 126, 197)'}
+    frames=r['cropOutlines']
+    assert [f['name'] for f in frames]==['R','G','B']
+    assert all(f['base']==f['badge']==expected_frame_colors[f['name']]
+               for f in frames),(r['viewport'],frames)
+    # One outline treatment on R/G/B. No extra border that changes the
+    # 4x4 pixel-grid layout; selected index 6 retains its own white/navy halo.
+    assert all(f['outlineStyle']=='solid' for f in frames),frames
+    assert len({f['width'] for f in frames})==1
+    assert len({f['radius'] for f in frames})==1
+    assert len({f['shadow'] for f in frames})==1
+    assert all(float(f['width'].removesuffix('px'))>=1.5
+               and float(f['radius'].removesuffix('px'))>=1
+               and f['shadow']!='none' for f in frames),frames
     for i,b in enumerate(badges):
         plane=r['cropPlanes'][i]['grid']
         assert b['display']=='grid' and float(b['font'].removesuffix('px'))>=9
@@ -350,6 +367,8 @@ def check_concept(page):
             'one_pixel_swatch_width_px':r['cropSwatch']['width'],
             'one_pixel_detail_width_px':r['detail']['width'],
             'h_label_rotated_vertically':True,
+            'crop_frame_colors':{'R':'#b63c47','G':'#279467','B':'#427ec5'},
+            'crop_frame_uniform':True,
             'crop_display_tints':{'G':'#279467','B':'#427ec5'},
             'crop_display_formula':'rgb(255+(base-255)*(0.22+0.78*v/255))',
             'crop_plane_badges':['B','G','R'],

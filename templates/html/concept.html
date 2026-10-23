@@ -102,11 +102,18 @@
   display:block;width:28px;height:28px;
   border:1px solid #ffffffcc;border-radius:1px;background:#e9eef5;
 }
-/* Single source of truth for crop channel hues: badges, outlines and JS. */
+/* Shared frame geometry and per-channel colors for ALL three crop planes.
+   Outlines preserve the exact 4x4 grid dimensions and ROI pixel coordinates. */
 .pixel-plane-b {--crop-channel-base:#427ec5;}
 .pixel-plane-g {--crop-channel-base:#279467;}
-.pixel-plane-b .pixel-channel-grid,
-.pixel-plane-g .pixel-channel-grid {outline:2px solid var(--crop-channel-base);}
+.pixel-plane-rgb {--crop-channel-base:#b63c47;}
+.pixel-plane .pixel-channel-grid,
+.pixel-plane .pixel-block {
+  outline:2px solid var(--crop-channel-base);
+  outline-offset:0;
+  border-radius:2px;
+  box-shadow:0 1px 5px #12233f24;
+}
 .pixel-plane .plane-badge {
   position:absolute;right:1px;top:1px;z-index:6;
   display:grid;place-items:center;width:15px;height:15px;
