@@ -81,9 +81,51 @@ def check_concept(page):
     if extra['viewport']>900:
         assert abs(fig['panels'][0]['y']-fig['panels'][1]['y'])<1.5
         assert abs(fig['panels'][0]['bottom']-fig['panels'][1]['bottom'])<1.5
+    relation=page.evaluate('''() => {
+        const box=e=>{const r=e.getBoundingClientRect();
+            return {left:r.left,right:r.right,top:r.top,bottom:r.bottom,
+                    width:r.width,height:r.height,cx:r.left+r.width/2,
+                    cy:r.top+r.height/2}};
+        const grid=document.querySelector('.pixel-block');
+        const widthGuide=document.querySelector('.dimension-width');
+        const heightGuide=document.querySelector('.dimension-height');
+        const example=document.querySelector('.tensor-example');
+        const main=document.querySelector('.tensor-main');
+        const columnGap=parseFloat(getComputedStyle(grid).columnGap);
+        const rowGap=parseFloat(getComputedStyle(grid).rowGap);
+        const cell=grid.querySelector('span');
+        return {
+            subtitle:document.querySelector('.concept-slide .subtitle').textContent,
+            w:widthGuide.textContent.trim(),
+            h:heightGuide.textContent.trim(),
+            count:example.querySelector('strong').textContent.trim(),
+            countNote:example.querySelector('span').textContent.trim(),
+            formula:main.querySelector('.formula').textContent.replace(/\\s+/g,'').trim(),
+            grid:box(grid),wBox:box(widthGuide),hBox:box(heightGuide),
+            example:box(example),tensor:box(document.querySelector('.tensor-shape')),
+            cell:box(cell),columnGap,rowGap
+        };
+    }''')
+    assert relation['subtitle']=='사진 → 픽셀 → RGB 값 → H×W×3 배열'
+    assert relation['w']=='W = 4' and relation['h']=='H = 4'
+    assert relation['count']=='4 × 4 × 3 = 48개 값'
+    assert relation['countNote']=='확대한 4×4 영역'
+    assert relation['formula']=='H×W×3'
+    assert 4*4==len(r['colors']) and 4*4*len(rgb)==48
+    assert abs(relation['grid']['width']-(4*relation['cell']['width']+
+               3*relation['columnGap']))<1
+    assert abs(relation['grid']['height']-(4*relation['cell']['height']+
+               3*relation['rowGap']))<1
+    assert abs(relation['wBox']['cx']-relation['grid']['cx'])<1
+    assert relation['wBox']['bottom']<relation['grid']['top']
+    assert abs(relation['hBox']['cy']-relation['grid']['cy'])<1
+    assert relation['hBox']['right']<relation['grid']['left']
+    assert relation['tensor']['top']<=relation['example']['top']
+    assert relation['example']['bottom']<=relation['tensor']['bottom']
     return {'resample':[80,80],'roi':[52,38,4,4],'selected_index':6,
             'selected_xy':[54,39],'rgb':rgb,'hex':r['hex'],
             'all_16_swatches_match':True,'swatch_matches_rgb':True,
+            'hwc_example':[4,4,3],'rgb_values':48,'dimensions_verified':True,
             'roi_normalized':extra['roi'],'figure_alignment_verified':True}
 
 def check_motif(page,name):
