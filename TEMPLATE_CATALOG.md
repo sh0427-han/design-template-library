@@ -100,6 +100,16 @@
 - **주의:** 수치는 예시이며 실측 성과나 도입 안전성의 근거로 사용하지 않습니다. 실제 보고로 재사용할 때 집계 기간·측정 조건·출처·판단 기준을 확보해야 합니다. 제공되지 않은 미검출 허용 기준을 만들지 않습니다.
 - **가이드:** [상세 명세](docs/REFERENCE_PAGE_SPECS.md#08-executive-summary), [재사용 워크플로](docs/REFERENCE_REUSE_WORKFLOW.md).
 
+## Scroll / Slide 연결 데모 · 5개 공통 학습 블록
+
+8개 독립 레퍼런스에서 적합한 Figure·간격·수식 대응을 선택해 동일 콘텐츠를 두 모드로 구성합니다. #4와 같은 입력/커널 및 −6 계산, #2의 처리 흐름, #3의 대칭 비교, #5의 실습 연결을 사용합니다. 모든 블록을 8장으로 강제하지 않으며 전체 CNN 분류 구조·혼동행렬·KPI를 불필요하게 복제하지 않습니다.
+
+- **원본:** [Scroll](templates/dual-mode-learning/scroll.html), [Slide](templates/dual-mode-learning/slides.html). 공통 lesson/render/lab/state를 사용합니다.
+- **상태:** 전환·새로고침·딥링크 시 현재 단계와 필터·위치를 유지합니다. 정적 JPG는 실행 입력이 아닙니다.
+- **규격:** 로컬 Pretendard, 숫자까지 −1pt, 공통 line-height/8·16·24px 간격, White 카드, 마지막 Teal 핵심 캡션. PC 4개 창 크기에서 5블록×2모드를 검사합니다.
+- **프리뷰:** [Scroll](previews/dual-mode-scroll.jpg), [Slide](previews/dual-mode-slide.jpg), [실습](previews/dual-mode-lab-slide.jpg). 종전 `dual-mode-process-slide.jpg`는 첫 Concept 장의 잘못된 이름이어서 새 Slide 경로로 정리했습니다. #2 Process 원본/PNG는 유지합니다.
+- **가이드:** [재사용·계산·배치 상세 명세](docs/DUAL_MODE_REFERENCE_REUSE.md), [모드 계약](templates/dual-mode-learning/MODES.md), [검증 결과](previews/review/dual-mode-validation.json).
+
 ## 공통 확인
 
 새 제작 대상은 PC 웹페이지이며 PC 4개 크기의 검토를 기준으로 합니다. 아래 링크의 예제별 작은 화면 동작·6개 크기 검증은 기존 구현 기록입니다.

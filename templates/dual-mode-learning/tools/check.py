@@ -8,7 +8,7 @@ REQUIRED = [
     'assets/css/tokens.css', 'assets/css/components.css',
     'assets/css/scroll.css', 'assets/css/slides.css',
     'assets/js/lesson.js', 'assets/js/lab.js', 'assets/js/render.js',
-    'assets/js/scroll.js', 'assets/js/slides.js',
+    'assets/js/scroll.js', 'assets/js/slides.js', 'assets/js/state.js',
 ]
 missing = [str(path) for name in REQUIRED if not (path := ROOT / name).is_file()]
 assert not missing, f'Missing files: {missing}'

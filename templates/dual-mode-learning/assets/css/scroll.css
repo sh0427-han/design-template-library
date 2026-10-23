@@ -1,43 +1,30 @@
-body.scroll-mode { background: var(--canvas); }
-.scroll-header { height: 70px; display: flex; align-items: center; justify-content: space-between; gap: 16px; border-bottom: 1px solid var(--line); padding: 0 max(24px, calc((100vw - 1340px)/2)); background: rgba(255,255,255,.94); position: sticky; top: 0; z-index: 5; backdrop-filter: blur(10px); }
-.mode-link { display: inline-flex; align-items: center; gap: 7px; padding: 8px 13px; border-radius: 8px; text-decoration: none; color: var(--accent); font-weight: 700; font-size: 13px; border: 1px solid #d7e0ff; background: var(--accent-soft); }
-.scroll-layout { display: grid; grid-template-columns: 218px minmax(0,850px); column-gap: clamp(30px,5vw,80px); max-width: 1340px; margin: 0 auto; padding: 52px 24px 100px; }
-.toc { position: sticky; top: 110px; align-self: start; }
-.toc-title { text-transform: uppercase; font-size: 11px; font-weight: 800;  color: var(--muted); padding: 0 12px 12px; }
-.toc a { display: block; border-radius: 8px; padding: 9px 12px; color: #526079; text-decoration: none; font-size: 13px; line-height: 1.4; }
-.toc a:hover { background: #edf1f8; color: var(--accent); }
-.scroll-article { min-width: 0; }
-.chapter-head { margin-bottom: 70px; border-bottom: 1px solid var(--line); padding: 0 0 38px; }
-.chapter-head h1 { margin: 12px 0 14px; font-size: clamp(36px, 4vw, 54px); line-height: 1.2;  }
-.chapter-head p { color: var(--muted); max-width: 62ch; }
-.lesson-section { scroll-margin-top: 105px; margin: 0 0 86px; }
-.lesson-section .lesson-title { font-size: clamp(26px, 3vw, 34px); }
-.lesson-section .lesson-body { max-width: 75ch; }
-.lesson-section .flow-graphic { margin-top: 24px; }
-.lesson-section .source-note { margin-top: 16px; }
-.scroll-footer { border-top: 1px solid var(--line); padding-top: 22px; color: var(--muted); font-size: 13px; }
-@media (max-width: 900px) { .scroll-layout { grid-template-columns: 1fr; max-width: 900px; padding-top: 34px; } .toc { position: static; display: flex; flex-wrap: wrap; gap: 2px; margin-bottom: 30px; } .toc-title { width: 100%; } .toc a { padding: 7px 10px; } }
-/* Left-anchored reader layout: use the available browser width for diagrams. */
-.scroll-header { padding-left: 30px; padding-right: 30px; }
-.scroll-layout {
-  max-width: none;
-  margin: 0;
-  padding: 48px 34px 110px;
-  grid-template-columns: 232px minmax(0,1fr);
-  column-gap: clamp(28px,3.4vw,56px);
+body.scroll-mode { background:var(--canvas); }
+.scroll-header { height:70px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 30px;border-bottom:1px solid var(--border);background:var(--white);position:sticky;top:0;z-index:5; }
+.scroll-layout { display:grid;grid-template-columns:220px minmax(0,1fr);column-gap:32px;padding:40px 32px 80px; }
+.toc { position:sticky;top:110px;align-self:start; }
+.toc-title { font-size:12px;font-weight:800;color:var(--muted);padding:0 12px 12px; }
+.toc a { display:block;border-radius:8px;padding:10px 12px;color:var(--muted);text-decoration:none;font-size:15px;line-height:var(--line-height-note); }
+.toc a:hover,.toc a[aria-current] { background:var(--pale-blue);color:var(--blue); }
+.scroll-article { min-width:0;width:min(100%,1370px); }
+.chapter-head { display:flex;flex-direction:column;gap:16px;margin-bottom:48px;border-bottom:1px solid var(--border);padding-bottom:32px; }
+.chapter-head h1 { margin:0;color:var(--navy);font-size:42px;line-height:var(--line-height-title); }
+.chapter-head p { margin:0;color:var(--muted);font-size:20px;line-height:var(--line-height-subtitle); }
+.lesson-section { scroll-margin-top:100px;display:flex;flex-direction:column;gap:24px;margin-bottom:64px; }
+.lesson-section .lesson-title { font-size:34px; }
+.lesson-section .lesson-lead { font-size:20px; }
+.lesson-section .lesson-footer { padding-top:8px; }
+.scroll-footer { padding-top:20px;border-top:1px solid var(--border);color:var(--muted);font-size:13px; }
+@media(min-width:901px) and (max-width:1399px) {
+  .scroll-layout { grid-template-columns:180px minmax(0,1fr);gap:24px;padding:32px 24px 80px; }
+  .scroll-mode .work-layout { grid-template-columns:minmax(0,1fr); }
+  .scroll-mode .calculation { border-left:0;border-top:1px solid var(--border);padding:20px 0 0;display:grid;grid-template-columns:1fr 300px 1fr;gap:20px;align-items:center; }
+  .scroll-mode .calculation h3 { margin:0; }.scroll-mode .sum-result { margin:0; }
+  .scroll-mode .size-equation { gap:12px;flex-wrap:wrap; }.scroll-mode .size-equation strong { font-size:20px; }
+  .scroll-mode .feature-preview { padding:18px; }
 }
-.scroll-article { width: min(100%, 1370px); margin: 0; }
-.chapter-head { margin-bottom: 56px; }
-.chapter-head p, .lesson-section .lesson-lead { max-width: 90ch; }
-.lesson-section .lesson-body { max-width: 85ch; line-height: 1.8; }
-.lesson-section .learning-content { width: 100%; }
-.lesson-section .teaching-matrix { margin-left: auto; margin-right: auto; }
-.lesson-section .scroll-note { max-width: 85ch; }
-.lesson-section .motivation-layout, .lesson-section .locality-layout { max-width: 1150px; }
-.lesson-section .process-block, .lesson-section .feature-block { max-width: 1240px; }
-.lesson-section.kind-lab [data-lab] { max-width: 1240px; }
 @media(max-width:900px) {
- .scroll-layout { grid-template-columns: 1fr; padding: 26px 22px 90px; }
- .scroll-article { width: 100%; }
- .scroll-header { padding-left: 22px; padding-right: 22px; }
+  .scroll-layout { grid-template-columns:1fr;padding:24px 18px 64px; }
+  .toc { position:static;margin-bottom:32px; }.toc a { padding:8px 12px; }
+  .scroll-header { padding:0 16px; }.scroll-header .brand { font-size:11px; }.scroll-header .pill { display:none; }
+  .chapter-head h1 { font-size:32px; }.lesson-section .lesson-title { font-size:28px; }
 }

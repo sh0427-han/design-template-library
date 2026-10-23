@@ -1,76 +1,51 @@
-# Dual-mode Learning & Presentation Template
+# Scroll / Slide 공통 콘텐츠 데모
 
-하나의 콘텐츠/디자인 시스템을 **Scroll(웹 교과서)** 및 **Slide(강의/발표)** 환경에서 공유하는 순수 HTML/CSS/JavaScript 템플릿입니다. 별도 빌드 시스템과 외부 CDN을 요구하지 않습니다.
+CNN의 국소 연산을 다섯 학습 블록으로 설명하는 편집 가능한 HTML/CSS/JavaScript 예제입니다. 8개 독립 레퍼런스의 최신 시각 규격을 사용하고, 콘텐츠·수치 계산은 한 소스에서 공유합니다. 별도 빌드·CDN·PPTX가 필요하지 않습니다.
 
-## 시작하기
+## 실행과 검증
+
+저장소 루트에서 실행합니다.
 
 ```bash
-# repository root
 python -m http.server 8000
+# 브라우저: http://localhost:8000/templates/dual-mode-learning/index.html
+python templates/dual-mode-learning/tools/check.py
+python scripts/check_sources.py
+python scripts/verify_pretendard.py
 ```
 
-- 시작 페이지: http://localhost:8000/templates/dual-mode-learning/index.html
-- 웹 교과서: http://localhost:8000/templates/dual-mode-learning/scroll.html
-- 발표 슬라이드: http://localhost:8000/templates/dual-mode-learning/slides.html
+- [Scroll 원본](scroll.html): 왼쪽 목차와 세로 학습 문서.
+- [Slide 원본](slides.html): 1440×810 논리 캔버스와 이전·다음·키보드 탐색.
+- 두 모드의 링크는 현재 학습 단계와 필터·입력 위치를 전달합니다. 예: `slides.html?filter=average&position=4#experiment`.
+- 새로고침·딥링크도 같은 선택을 복원합니다. 초기화는 세로 경계 필터와 첫 위치로 돌아갑니다.
 
-## 단일 소스 원칙
+## 파일의 역할
 
-1. `assets/js/lesson.js`에서 콘텐츠를 작성합니다. 각 section은 `id`, `eyebrow`, `title`, `lead`, `body`, `kind`를 갖습니다.
-2. 기존 `templates/html/styles.css`를 기준으로 색상과 `-1pt` 자간을 공통 사용합니다. `assets/css/tokens.css`에는 추가 의미적 별칭만 둡니다.
-3. `assets/css/components.css`에서 공통 컴포넌트 스타일을 관리합니다.
-4. 모드마다 **화면 배치와 탐색 방식만** 별도로 정의합니다. `scroll.css`/`slides.css`, `scroll.js`/`slides.js`를 참고하세요.
-5. 실습(Interactive Figure)은 `assets/js/lab.js`에 작성하며 두 모드 모두 재사용합니다.
+| 파일 | 역할 |
+| --- | --- |
+| `assets/js/lesson.js` | 공통 제목·부제·조건·심화 설명·마지막 핵심 캡션 |
+| `assets/js/lab.js` | #4와 같은 5×5 입력, 3종 커널, 원소별 곱·합·출력 계산, 실습 조작 |
+| `assets/js/render.js` | 같은 데이터의 행렬·흐름·비교 Figure와 섹션 구조 |
+| `assets/js/state.js` | URL의 필터·위치 읽기/검사/저장 및 모드 링크 |
+| `assets/js/scroll.js` | 목차·현재 읽는 단계·모드 전환 링크 |
+| `assets/js/slides.js` | 슬라이드·해시·키보드·전체 캔버스 배율 |
+| `assets/css/tokens.css` | 공통 `../html/styles.css`를 가져오는 의미 별칭 |
+| `assets/css/components.css` | 모드가 공유하는 Figure·행렬·계산표·캡션 |
+| `assets/css/scroll.css`, `slides.css` | 배치·설명 밀도·탐색 UI의 차이 |
 
-## 포함된 예제
+## 레퍼런스 재사용
 
-CNN convolution의 원리·국소 연산·입출력 크기·실습·Feature Map 비교까지 이어지는 5개 예시 슬라이드를 사용합니다. Scroll 페이지에서는 문서형으로 연결하고, Slide 페이지에서는 5장 슬라이드로 표시합니다. 실습 컴포넌트는 실제 5×5 입력과 3×3 필터로 계산한 결과를 보여주며 필터 및 입력 영역 위치를 바꿀 수 있습니다. 1개 콘텐츠와 1개 계산 로직을 공유합니다.
+#4의 행렬과 계산, #2의 처리 흐름, #3의 동등한 비교, #5의 조작/결과 연결, #7의 수식 대응을 참고합니다. #6의 전체 CNN 분류기를 국소 연산 예제에 복제하지 않으며 #8의 보고용 KPI도 넣지 않습니다. 별도 검토 중인 #1 원본은 변경하지 않습니다.
 
-> **주의**: 이 저장소는 디자인 시스템/화면 모드의 작동을 확인하는 독립 데모입니다. 실제 Vision AI 강의 55장을 이 템플릿으로 옮기거나 기존 공개 GitHub 저장소에 배포하지 않았습니다.
+전체 입력·커널·출력, 5개 블록의 구조와 크기, 색·정렬, 모드 상태, 검증 및 미리보기 정리 근거는 [재사용 상세 명세](../../docs/DUAL_MODE_REFERENCE_REUSE.md)에 기록합니다. [공통 디자인](../../DESIGN_SYSTEM.md), [컴포넌트 규격](../../docs/DESIGN_COMPONENT_RECIPES.md), [Figure 표준](../../docs/FIGURE_PRODUCTION_STANDARD.md)을 함께 봅니다.
 
-## 파일 구조
+## 프리뷰와 적용 범위
 
-```
-.
-├── DESIGN.md                 # 공통 디자인 규칙 (AI 참고용)
-├── MODES.md                  # Scroll / Slide 모드 규칙
-├── index.html                # 두 모드 선택
-├── scroll.html               # 웹 교과서 진입점
-├── slides.html               # 발표 슬라이드 진입점
-├── assets/
-│   ├── css/
-│   │   ├── tokens.css        # 공통 토큰
-│   │   ├── components.css    # 공통 UI 컴포넌트
-│   │   ├── scroll.css        # Scroll 전용
-│   │   └── slides.css        # Slide 전용
-│   └── js/
-│       ├── lesson.js         # 공통 콘텐츠
-│       ├── render.js         # 공통 콘텐츠 렌더러
-│       ├── lab.js            # 공통 인터랙티브 실습
-│       ├── scroll.js         # Scroll 탐색
-│       └── slides.js         # Slide 탐색
-└── tools/check.py            # 정적 검증
-```
+- [Scroll](../../previews/dual-mode-scroll.jpg), [Slide 첫 장](../../previews/dual-mode-slide.jpg), [Slide 실습](../../previews/dual-mode-lab-slide.jpg).
+- 종전 `dual-mode-process-slide.jpg`는 첫 Concept 장을 담은 잘못된 이름이어서 삭제하고 `dual-mode-slide.jpg`로 교체했습니다. 갤러리와 생성 스크립트도 새 경로를 사용합니다.
+- JPG는 QA/탐색용입니다. 실제 전환·탐색·계산은 HTML/JS로 동작하며 JPG를 입력으로 사용하지 않습니다.
+- PC 4개 창 크기에서 전체 5개 블록의 두 모드를 검증합니다. 기존 390px 폰트/가로 경계 검사는 호환 기록으로 유지하며 새로운 모바일 디자인 요구사항은 아닙니다.
+- 모든 숫자·라벨까지 로컬 Pretendard Variable 및 −1pt를 사용합니다. monospace 예외는 제거했습니다.
+- 고정 필터 계산을 학습된 CNN 추론이나 실제 사진의 측정 결과로 설명하지 않습니다.
 
-## 레퍼런스 개선 원칙
-
-- 기존 `concept`, `process`, `comparison`과 새 Scroll/Slide 예제를 모두 디자인 예시로 관리하며 반복적으로 수정합니다.
-- 슬라이드에 불필요한 제작 설명 문구를 표시하지 않습니다. 부제목은 가능한 한 한 줄로 배치합니다.
-- Scroll Mode는 데스크톱 브라우저에서 왼쪽 목차 기준으로 본문을 정렬하며, 다이어그램이 가용 가로 공간을 사용합니다.
-- PNG/JPG 미리보기는 검토 편의를 위한 결과물이며, 원본 텍스트/그래프/계산 로직은 HTML/CSS/JavaScript에 있습니다.
-
-## 출처 및 디자인 참고
-
-- 디자인 및 인터랙티브 설명 방식 참고: [AIBook - Attention](https://aibook.euiyun.com/chapters/attention.html#sim-editor)
-- AIBook의 소스코드, 이미지 또는 저작물은 복제하지 않았습니다. 학습 목적의 레이아웃 패턴을 참고해 독립적으로 구현했습니다.
-
-## 확인 상태
-
-- Python 정적 구조 검증 및 Node.js JS 구문 검사를 실행할 수 있습니다.
-- 브라우저 렌더링은 별도로 실행하여 `previews/`에 결과를 저장하고 검증합니다.
-- 웹 UI는 독립적인 학습용 예제이며 실제 학습 모델 결과가 아닙니다.
-
-## 통합 레퍼런스와 검증
-
-8개 독립 패턴의 최신 데이터·수식·구성은 [페이지 상세 명세](../../docs/REFERENCE_PAGE_SPECS.md)를 봅니다. 이 연속 강의는 같은 원리의 별도 5장 콘텐츠이며, #4의 행렬이나 #6의 전체 분류 모델과 동일한 예제 데이터라고 설명하지 않습니다. 기본 글꼴은 공통 CSS의 로컬 Pretendard입니다. 기존 숫자 행렬·코드 영역의 monospace 설정은 이 데모의 명시적인 컴포넌트 역할입니다.
-
-저장소 루트에서 `python templates/dual-mode-learning/tools/check.py`, `python scripts/verify_pretendard.py`로 구조·공통 폰트·탐색을 확인합니다. JavaScript 구문은 `python scripts/check_sources.py`가 함께 검사합니다.
+디자인/학습 인터랙션 참고: [AIBook Attention](https://aibook.euiyun.com/chapters/attention.html#sim-editor). 소스·이미지 복제 없이 독립 구현했습니다.

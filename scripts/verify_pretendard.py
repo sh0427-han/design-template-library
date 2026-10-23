@@ -1,16 +1,18 @@
 """Validate the shared Pretendard font in gallery and CNN scroll/slide.
 
-Also refresh the three HTML dual-mode preview images after font changes.
-Gallery and the two modes use the same bundled font; their content is preserved.
+Refresh the three preview images and validate all five sections in four PC sizes.
+Gallery and both modes use the same bundled font and editable lesson/math sources.
 """
 from functools import partial
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 import threading
 import json
+import hashlib
 
 from playwright.sync_api import sync_playwright
 from reference_validation import browser_options
+from verify_dual_mode import validate_dual_mode
 
 ROOT = Path(__file__).resolve().parents[1]
 PREVIEWS = ROOT / "previews"
@@ -73,6 +75,8 @@ def main():
                     assert result["scrollWidth"] <= width, (
                         kind, width, "horizontal overflow", result
                     )
+                    broken = page.locator('img').evaluate_all('async(es)=>{for(const e of es)e.loading="eager";await Promise.all(es.map(e=>e.decode().catch(()=>null)));return es.filter(e=>!e.complete||!e.naturalWidth).map(e=>e.src)}')
+                    assert not broken, (kind, broken)
                     if width == 1500:
                         if kind == "scroll":
                             page.screenshot(
@@ -82,7 +86,7 @@ def main():
                         if kind == "slides":
                             page.locator("#slide-root .slide-sheet").first.wait_for()
                             page.screenshot(
-                                path=str(PREVIEWS / "dual-mode-process-slide.jpg"),
+                                path=str(PREVIEWS / "dual-mode-slide.jpg"),
                                 type="jpeg", quality=90,
                             )
                             page.goto(
@@ -107,13 +111,15 @@ def main():
                     cdp.detach();checks += 1
                     cases.append({'kind':kind,'viewport':[width,height],'font':result,'actual_heading_fonts':fonts})
             assert not errors, errors
+            detailed = validate_dual_mode(browser, f"http://127.0.0.1:{server.server_port}", ROOT, Path('/tmp/dual-mode-review'))
             browser.close()
     finally:
         server.shutdown()
         server.server_close()
-    (PREVIEWS/'review/dual-mode-validation.json').write_text(json.dumps({'status':'passed','cases':cases,'page_errors':errors},ensure_ascii=False,indent=2)+'\n')
+    (PREVIEWS/'review/dual-mode-validation.json').write_text(json.dumps({'status':'passed','cases':cases,'page_errors':errors,'pc_validation':detailed,'preview_sha256':{name:hashlib.sha256((PREVIEWS/name).read_bytes()).hexdigest() for name in ('dual-mode-scroll.jpg','dual-mode-slide.jpg','dual-mode-lab-slide.jpg')}},ensure_ascii=False,indent=2)+'\n')
     print("PASS: shared Pretendard family, real font load, -1pt and "
-          f"horizontal bounds on {checks} screen combinations")
+          f"horizontal bounds on {checks} compatibility screens; "
+          f"{len(detailed['cases'])} PC layouts and 54 lab states")
 
 
 if __name__ == "__main__":

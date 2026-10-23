@@ -1,6 +1,6 @@
 {
   "status": "passed",
-  "started_utc": "2026-10-22T23:23:03.732385+00:00",
+  "started_utc": "2026-10-23T05:57:04.314724+00:00",
   "viewports": [
     [
       1600,
@@ -15745,7 +15745,7 @@
   "source_sha256": {
     "templates/html/executive-summary.html": "9717607f3a1c742fe72dd63990d2edaccb5bb0c33b844a43943cdea9b56fe37c",
     "templates/html/comparison.html": "e90611664ef0a3ab1d94f6a226de42e14f4272acbdb30f90e9b770392d892c74",
-    "templates/html/index.html": "fe3f81b518278aa88fd47e061543e713fe4b153adfaf8547b6a0e9dd6342f043",
+    "templates/html/index.html": "6d909acb6b6e3501fba28a52546194a315d2d2eb078fd3a4b270232e11d84e88",
     "templates/html/experiment.html": "711282187d6138e69e2b92ab6f2730387be8cb491d8401d0928d33c96caf62dd",
     "templates/html/interactive-reference.js": "0756c5facbf831184f561e3941bf37ef0a30a83af3118e6374735d37119951f7",
     "templates/html/comparison-reference.css": "2a4afa51bfd30efe7f59422c3fa5483f74ac6c3a2b2c64288bb476dfce14f422",
@@ -16781,8 +16781,6 @@
     "previews/html-experiment.jpg": "cbce9de643d76ecd0201be3e671128e3d309d81b49a4b51e2c9bdec0f137fe50",
     "previews/html-executive-summary.jpg": "0446024bf52616cdc0f2ab604c44e5e4f6482722e7d7648c16d238756500372c"
   },
-  "finished_utc": "2026-10-22T23:23:57.291055+00:00",
-  "canonical_preview_updates": [
-    "comparison"
-  ]
+  "finished_utc": "2026-10-23T05:57:57.526585+00:00",
+  "canonical_preview_updates": []
 }

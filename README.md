@@ -117,3 +117,7 @@ python scripts/validate_references.py --templates architecture step-by-step --ev
 - [통합 출처·검증·GitHub 상태](docs/INTEGRATION_REPORT_2026-10-22.md)
 
 8종 최종 통합의 출처·CI·Merge 기록은 [PR #12](https://github.com/sh0427-han/design-template-library/pull/12)와 [통합 보고서](docs/INTEGRATION_REPORT_2026-10-22.md)에서 확인합니다. 로컬 검증·사용자 디자인 승인·원격 게시·main 반영은 실제 증거로 구분합니다.
+
+## Scroll / Slide 전환 예제의 재사용
+
+8개 레퍼런스는 필요한 도식 패턴을 선택하는 원본이며, [공통 콘텐츠 전환 데모](templates/dual-mode-learning/README.md)는 같은 5개 학습 블록·계산·선택 상태를 문서와 발표에서 공유합니다. [상세 재사용 명세](docs/DUAL_MODE_REFERENCE_REUSE.md)에 레퍼런스별 적용 판단, 행렬·수식, 간격·폰트, URL 상태, PC 검증과 프리뷰 경로를 정리했습니다. `python scripts/verify_pretendard.py`는 두 모드의 40개 PC 레이아웃과 각 27개 실습 상태까지 검사합니다.

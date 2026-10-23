@@ -1,85 +1,84 @@
-// Convolution demonstrator: one input channel, stride=1, padding=0.
+import { readLabState, saveLabState } from './state.js';
+// Same editable input and edge kernel as reference #4; one channel, S1/P0/bias0.
 export const image = [
-  [1, 1, 1, 1, 1],
-  [1, 0, 0, 0, 1],
-  [1, 0, 1, 0, 1],
-  [1, 0, 0, 0, 1],
-  [1, 1, 1, 1, 1],
+  [1,2,3,1,0], [4,5,6,2,1], [7,8,9,3,1], [2,1,0,4,2], [1,3,2,1,0],
 ];
 export const kernels = {
-  average: { label: '평균 필터 (1/9)', data: [[1,1,1],[1,1,1],[1,1,1]], divisor: 9 },
-  vertical: { label: '세로 경계 필터', data: [[-1,0,1],[-1,0,1],[-1,0,1]], divisor: 1 },
-  identity: { label: '중앙 픽셀 통과', data: [[0,0,0],[0,1,0],[0,0,0]], divisor: 1 },
+  vertical: { label: '세로 경계', data: [[1,0,-1],[1,0,-1],[1,0,-1]], divisor: 1 },
+  average: { label: '평균', data: [[1,1,1],[1,1,1],[1,1,1]], divisor: 9 },
+  identity: { label: '중앙 픽셀', data: [[0,0,0],[0,1,0],[0,0,0]], divisor: 1 },
 };
+export const formatNumber = value => (Number.isInteger(value) ? String(value) : value.toFixed(2)).replace('-', '−');
+export function products(kernel, x=0, y=0) {
+  return kernel.data.flatMap((row, ky) => row.map((weight, kx) => ({
+    input: image[y+ky][x+kx], weight, value: image[y+ky][x+kx]*weight,
+  })));
+}
 export function convolution(kernel) {
-  const output = [];
-  for (let y = 0; y < 3; y++) {
-    const row = [];
-    for (let x = 0; x < 3; x++) {
-      let sum = 0;
-      for (let ky = 0; ky < 3; ky++) {
-        for (let kx = 0; kx < 3; kx++) {
-          sum += image[y + ky][x + kx] * kernel.data[ky][kx];
-        }
-      }
-      row.push(sum / kernel.divisor);
+  return Array.from({length:3}, (_,y) => Array.from({length:3}, (_,x) =>
+    products(kernel,x,y).reduce((sum,p) => sum+p.value,0) / kernel.divisor));
+}
+export function matrixHtml(matrix, kind='input', position=null) {
+  const columns = matrix[0].length;
+  return `<div class="teaching-matrix size-${columns} ${kind}" role="group" aria-label="${columns}열 ${matrix.length}행 ${kind === 'input' ? '입력' : kind === 'output' ? '출력' : '커널'} 행렬">${matrix.flatMap((row,y) => row.map((value,x) => {
+    const selected = position && (kind==='input' ? x>=position.x && x<position.x+3 && y>=position.y && y<position.y+3 : kind==='output' && x===position.x && y===position.y);
+    const tone = kind==='input' ? 'input-value' : value>0 ? 'pos' : value<0 ? 'neg' : 'zero';
+    return `<span class="teaching-cell ${tone}${selected ? (kind==='input' ? ' focus' : ' active') : ''}" data-value="${value}" aria-label="${y+1}행 ${x+1}열 ${formatNumber(value)}">${formatNumber(value)}</span>`;
+  })).join('')}</div>`;
+}
+export function productHtml(kernel, x=0, y=0) {
+  return `<div class="product-grid">${products(kernel,x,y).map(p => `<div><small>${formatNumber(p.input)} × ${formatNumber(p.weight)}</small><strong data-product="${p.value}">${formatNumber(p.value)}</strong></div>`).join('')}</div>`;
+}
+export function flowHtml(kernel, position={x:0,y:0}) {
+  return `<div class="matrix-flow">
+    <div class="matrix-node"><h3>입력 5×5</h3>${matrixHtml(image,'input',position)}</div>
+    <span class="flow-connector" aria-hidden="true">${arrow()}</span>
+    <div class="matrix-node"><h3>커널 3×3</h3>${matrixHtml(kernel.data,'kernel')}<small>${kernel.divisor===9 ? '곱의 합 ÷ 9' : '대응 원소의 곱을 합산'}</small></div>
+    <span class="flow-connector" aria-hidden="true">${arrow()}</span>
+    <div class="matrix-node"><h3>출력 3×3</h3>${matrixHtml(convolution(kernel),'output',position)}</div></div>`;
+}
+export function arrow() {
+  return '<svg viewBox="0 0 32 16" aria-hidden="true"><path d="M1 8H30M24 2L30 8L24 14"/></svg>';
+}
+// Center arrows on the rendered matrices, rather than on label/card rectangles.
+export function alignFlowArrows(root=document) {
+  for (const flow of root.querySelectorAll('.matrix-flow,.process-graphic')) {
+    const scale=flow.closest('.slide-sheet') ? flow.closest('.slide-sheet').getBoundingClientRect().width/1440 : 1;
+    for (const link of flow.querySelectorAll('.flow-connector')) {
+      const svg=link.querySelector('svg');svg.style.transform='';
+      if(getComputedStyle(flow).gridTemplateColumns.split(' ').length===1) continue;
+      const a=link.previousElementSibling?.querySelector('.teaching-matrix')?.getBoundingClientRect();
+      const b=link.nextElementSibling?.querySelector('.teaching-matrix')?.getBoundingClientRect();
+      if(!a?.width || !b?.width) continue;
+      const r=svg.getBoundingClientRect();
+      const target=(a.y+a.height/2+b.y+b.height/2)/2;
+      svg.style.transform=`translateY(${(target-r.y-r.height/2)/scale}px)`;
     }
-    output.push(row);
   }
-  return output;
-}
-function formatNumber(value) {
-  return Number.isInteger(value) ? String(value) : value.toFixed(2);
-}
-function matrixHtml(matrix, columns, kind, selectedPosition, offset) {
-  const cells = matrix.flatMap((row, y) => row.map((value, x) => {
-    const inSelection = columns === 5 && x >= selectedPosition.x &&
-      x < selectedPosition.x + 3 && y >= selectedPosition.y && y < selectedPosition.y + 3;
-    const outSelection = columns === 3 && kind === 'output' &&
-      x === selectedPosition.x && y === selectedPosition.y;
-    const color = kind === 'input' ? (value ? 'color:#fff;background:#62758f' : 'color:#3e5068;background:#e8edf4') : '';
-    return `<div class="cell${inSelection ? ' selected' : ''}${outSelection ? ' active' : ''}" style="${color}" aria-label="${x + offset}열 ${y + offset}행, 값 ${formatNumber(value)}">${formatNumber(value)}</div>`;
-  }));
-  return `<div class="matrix in${columns}${kind === 'output' ? ' output' : ''}">${cells.join('')}</div>`;
 }
 export function mountLab(container) {
-  let filter = 'average';
-  let index = 0;
-  container.innerHTML = `<div class="lab-root">
-    <div class="lab-header"><span class="lab-name">LIVE · Convolution Lab</span>
-    <div class="lab-tools"><label for="kernel-${container.id}">필터</label><select id="kernel-${container.id}" data-role="kernel">
-    ${Object.entries(kernels).map(([key, v]) => `<option value="${key}">${v.label}</option>`).join('')}
-    </select></div></div>
-    <div class="lab-grid">
-      <div class="lab-pane"><h4>INPUT · 5×5</h4><div data-role="input"></div></div>
-      <div class="lab-pane"><h4>KERNEL · 3×3</h4><div data-role="filter"></div></div>
-      <div class="lab-pane"><h4>OUTPUT · 3×3</h4><div data-role="output"></div></div>
-    </div>
-    <div class="lab-footer"><div><button type="button" data-role="prev">← 이전 위치</button> <button type="button" data-role="next">다음 위치 →</button></div>
-      <button type="button" data-role="reset" aria-label="필터와 위치를 초기화">초기화</button><span class="lab-result" data-role="result" aria-live="polite"></span></div>
-    <div class="lab-hint">주황색 영역이 현재 연산할 입력 부분입니다. (Stride=1, Padding=0)</div>
-    <div class="lab-formula" data-role="formula"></div>
-  </div>`;
+  let {filter, position:index} = readLabState();
+  container.innerHTML = `<div class="lab-root figure-card">
+    <div class="lab-header"><span class="panel-label">LIVE · CONVOLUTION</span><label class="lab-tools">필터 선택 <select data-role="kernel">${Object.entries(kernels).map(([key,k])=>`<option value="${key}">${k.label}</option>`).join('')}</select></label></div>
+    <div class="work-layout"><div data-role="flow"></div><aside class="calculation"><h3>9개 원소별 곱</h3><div data-role="products"></div><div class="sum-result" data-role="formula" aria-live="polite"></div></aside></div>
+    <div class="lab-footer"><div class="position-controls"><button type="button" data-role="prev">← 이전 위치</button><span data-role="position"></span><button type="button" data-role="next">다음 위치 →</button></div><span class="lab-status" data-role="result" aria-live="polite"></span><button type="button" data-role="reset">초기화</button></div></div>`;
   const $ = role => container.querySelector(`[data-role="${role}"]`);
-  function draw() {
-    const x = index % 3;
-    const y = Math.floor(index / 3);
-    const kernel = kernels[filter];
-    const output = convolution(kernel);
-    const pos = {x, y};
-    $('input').innerHTML = matrixHtml(image, 5, 'input', pos, 1);
-    $('filter').innerHTML = matrixHtml(kernel.data, 3, 'filter', pos, 1);
-    $('output').innerHTML = matrixHtml(output, 3, 'output', pos, 1);
-    $('result').textContent = `위치 (${x+1}, ${y+1}) · 출력값 ${formatNumber(output[y][x])}`;
-    $('formula').textContent = `3×3 원소별 곱의 합 ÷ ${kernel.divisor} = ${formatNumber(output[y][x])}`;
-    $('prev').disabled = index === 0;
-    $('next').disabled = index === 8;
+  $('kernel').value=filter;
+  function draw(persist=false) {
+    const x=index%3, y=Math.floor(index/3), kernel=kernels[filter];
+    const sum=products(kernel,x,y).reduce((a,p)=>a+p.value,0);
+    $('flow').innerHTML=flowHtml(kernel,{x,y});
+    $('products').innerHTML=productHtml(kernel,x,y);
+    $('formula').innerHTML=`<span>곱의 합 ${formatNumber(sum)}${kernel.divisor===9 ? ' ÷ 9' : ''}</span><strong>= ${formatNumber(sum/kernel.divisor)}</strong>`;
+    $('position').textContent=`${index+1} / 9`;
+    $('result').textContent=`입력 시작: ${y+1}행 ${x+1}열 → 출력: ${y+1}행 ${x+1}열 · 값 ${formatNumber(sum/kernel.divisor)}`;
+    $('prev').disabled=index===0; $('next').disabled=index===8;
+    requestAnimationFrame(()=>alignFlowArrows(container));
+    if (persist) saveLabState(filter,index);
   }
-  $('kernel').addEventListener('change', event => { filter = event.target.value; draw(); });
-  $('reset').addEventListener('click', () => {
-    filter = 'average'; index = 0; $('kernel').value = filter; draw();
-  });
-  $('prev').addEventListener('click', () => { index = Math.max(0, index - 1); draw(); });
-  $('next').addEventListener('click', () => { index = Math.min(8, index + 1); draw(); });
+  $('kernel').addEventListener('change', e => { filter=e.target.value; draw(true); });
+  $('prev').addEventListener('click', () => { index=Math.max(0,index-1); draw(true); });
+  $('next').addEventListener('click', () => { index=Math.min(8,index+1); draw(true); });
+  $('reset').addEventListener('click', () => { filter='vertical';index=0;$('kernel').value=filter;draw(true); });
   draw();
 }
