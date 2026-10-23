@@ -15,13 +15,13 @@
 
 모든 레퍼런스는 HTML Scroll/Slide에 재사용하는 패턴입니다. PPTX가 아니며 8개를 한 자료에 모두 넣어야 하는 것도 아닙니다.
 
-## 01 Concept · 구체적 사례에서 숫자 구조로
+## 01 Concept · 사진에서 RGB 3차원 배열까지
 
-- **목적:** Vision AI 입문자가 실사 사진의 픽셀, 각 RGB 8-bit 채널 세 값, 이미지 전체의 H×W×3(HWC) 배열을 하나의 그림에서 이해합니다. CNN·Kernel·Feature Map·Classification은 제외합니다.
-- **Figure 흐름:** 사진의 ROI → Blue 확대 화살표 → 실제 4×4 색상 셀(`H=4`, `W=4`) → 선택 index 6의 Navy 표시와 같은 색 Swatch → RGB/HEX 및 R/G/B 막대 → `4×4×3=48개 값`(16픽셀 × RGB 3개) → 일반적인 `H×W×3` 텐서. 부제는 `사진 → 픽셀 → RGB 값 → H×W×3 배열`로 개념 순서를 안내합니다. 48개 값은 **확대한 4×4 영역**에 해당하며 전체 사과 사진의 값 개수가 아닙니다.
-- **데이터:** 원본은 [사과 사진](templates/html/assets/concept-apple-photo.jpg) 한 장. 사진을 고품질 80×80 Canvas에 리샘플한 뒤 (52,38)부터 4×4의 RGB를 행 우선으로 읽습니다. 선택 index 6 = 로컬 (2,1), 전체 (54,39). 검산용 기준 Chromium 결과는 R=223/G=54/B=56, HEX #DF3638이며 새 환경에서는 실제 계산값을 우선합니다.
-- **연결·디자인:** ROI 위치 left 65%/top 47.5%, 크기 5%×5%는 실제 리샘플 좌표와 같습니다. 선택 셀과 Swatch는 Navy 테두리·작은 공통 선택 표시, 3개 채널 막대는 동일 기준선에서 값/255×100%로 계산합니다(분류 확률 아님). 초기값은 중립 placeholder이며 잘못된 RGB 숫자를 하드코딩하지 않습니다. White 카드 2개, 로컬 Pretendard Variable, 전체 자간 −1pt, Navy/Blue/Teal을 보존합니다.
-- **재현:** [편집 가능한 HTML](templates/html/concept.html) · [PNG 프리뷰](previews/html-concept.png) · [상세 명세](docs/REFERENCE_PAGE_SPECS.md#01-concept) · [Figure 제작 표준](docs/FIGURE_PRODUCTION_STANDARD.md). 새 이미지로 교체할 경우 ROI·16개 픽셀·선택 좌표·수치·HEX·Swatch·막대·접근성 문구·프리뷰를 동기 검증합니다. 6개 Chromium 화면에서 위치·폰트·오버플로·Footer를 검사합니다.
+- **학습 목적:** RGB 사진 → 동일한 높이와 너비의 R/G/B 숫자 행렬 3장 → 선택 4×4 영역 → 선택 픽셀의 세 숫자 → H×W×3 배열을 하나의 Figure로 이해. CNN/Kernel/Feature Map/Classification 제외.
+- **Figure:** 원본 사과 사진, 실제 채널별 값으로 그린 R/G/B 평면 3개(H/W/C=3 축), 같은 이미지에서 얻은 4×4 확대, 선택 index 6의 RGB/HEX 및 3채널 막대. 평면은 색칠한 가짜 행렬이 아니라 같은 원본의 80×80 리샘플에서 각 채널 강도를 별도 Canvas에 그린 것으로, 깊이 방향 3개 판은 채널 축의 도식입니다.
+- **수치 계약:** 리샘플 80×80, ROI x=52/y=38/width=4/height=4, 표시 ROI left 65%/top 47.5%/width 5%/height 5%. 선택 index 6 = 로컬 (2,1), 전체 (54,39). Chromium 검산 RGB 223/54/56, HEX #DF3638. 원본 사진과 추출 조건은 변경하지 않았습니다. 4×4 ROI의 원소 수는 4×4×3=48, 전체 이미지가 48값이라는 뜻은 아닙니다. 채널 막대 = value/255×100%.
+- **배치·디자인:** 두 개의 White 패널(넓은 Figure 흐름 / 선택 픽셀 상세), Blue 방향 화살표, Navy 선택 테두리, 로컬 Pretendard Variable, 전체 자간 −1pt 유지. 모바일에서는 세 Figure를 세로로 배치하며 숫자는 동일합니다. 모든 평면과 선택값은 Canvas 작업 성공 후 동시에 표시하고 초기에는 중립 상태를 사용합니다.
+- **소스·검증:** [HTML](templates/html/concept.html) · [사진](templates/html/assets/concept-apple-photo.jpg) · [PNG 프리뷰](previews/html-concept.png) · [상세 명세](docs/REFERENCE_PAGE_SPECS.md#01-concept). [검증 스크립트](scripts/validate_references.py)로 실제 이미지에서 채널별 6400개 픽셀, 16개 확대 색상, RGB/HEX, 정렬·반응형 6화면·로컬 Pretendard를 재검증합니다.
 
 ## 02 Process · 입력 이미지에서 클래스별 예측 확률로
 
