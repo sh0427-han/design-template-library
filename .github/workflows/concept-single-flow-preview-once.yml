@@ -1,4 +1,5 @@
 name: Concept one-panel pixel flow preview
+# Recheck the tablet/mobile vertical four-stage layout.
 on:
   push:
     branches: [feat/concept-pixel-rgb-final-refinement]
