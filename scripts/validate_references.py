@@ -22,112 +22,124 @@ class Quiet(SimpleHTTPRequestHandler):
         super().do_GET()
 
 def check_concept(page):
-    r=page.evaluate('''()=>{const im=document.querySelector('#concept-image'),cv=document.createElement('canvas');cv.width=cv.height=80;const c=cv.getContext('2d',{willReadFrequently:true});c.imageSmoothingEnabled=true;c.imageSmoothingQuality='high';c.drawImage(im,0,0,80,80);const raw=c.getImageData(52,38,4,4).data,colors=Array.from({length:16},(_,i)=>[...raw.slice(i*4,i*4+3)]);return {colors,displayed:[...document.querySelectorAll('.pixel-block span')].map(e=>e.style.backgroundColor),numbers:[...document.querySelectorAll('.channel-value .number')].map(e=>Number(e.textContent)),bars:[...document.querySelectorAll('.channel-value .bar')].map(e=>parseFloat(e.style.width)),rgb:document.querySelector('#selected-rgb').textContent,hex:document.querySelector('#selected-hex').textContent}}''')
-    assert r['displayed']==['rgb('+', '.join(map(str,c))+')' for c in r['colors']]
-    rgb=r['colors'][6];assert r['numbers']==rgb
-    assert r['rgb']=='RGB ('+', '.join(map(str,rgb))+')'
-    assert r['hex']=='#'+''.join(f'{v:02X}' for v in rgb)
-    assert all(abs(a-100*b/255)<.001 for a,b in zip(r['bars'],rgb))
-    extra=page.evaluate('''() => {
-        const box=e=>{const b=e.getBoundingClientRect();return {x:b.x,y:b.y,
-            right:b.right,bottom:b.bottom,width:b.width,height:b.height,
-            cx:b.x+b.width/2,cy:b.y+b.height/2}};
-        const image=document.querySelector('#concept-image');
-        const frame=box(document.querySelector('.image-frame'));
-        const pixels=box(document.querySelector('.pixel-frame'));
-        const arrow=box(document.querySelector('.zoom-arrow'));
+    """Independently verify RGB planes, the sampled 4x4 grid and HWC geometry."""
+    r = page.evaluate('''() => {
+        const im=document.querySelector('#concept-image');
+        const cv=document.createElement('canvas');
+        cv.width=cv.height=80;
+        const ctx=cv.getContext('2d',{willReadFrequently:true});
+        ctx.imageSmoothingEnabled=true;
+        ctx.imageSmoothingQuality='high';
+        ctx.drawImage(im,0,0,80,80);
+        const full=ctx.getImageData(0,0,80,80).data;
+        const rgba=ctx.getImageData(52,38,4,4).data;
+        const colors=Array.from({length:16},(_,i)=>[...rgba.slice(i*4,i*4+3)]);
+        const box=e=>{const b=e.getBoundingClientRect();return {
+            x:b.x,y:b.y,right:b.right,bottom:b.bottom,width:b.width,
+            height:b.height,cx:b.x+b.width/2,cy:b.y+b.height/2}};
+        const rgb=colors[6];
+        const painted=[...document.querySelectorAll('.pixel-block span')];
+        const planes=[...document.querySelectorAll('.channel-canvas')];
+        const planeResults=planes.map(canvas=>{
+            const c=canvas.getContext('2d',{willReadFrequently:true});
+            const data=c.getImageData(0,0,80,80).data;
+            const channel={R:0,G:1,B:2}[canvas.dataset.channel];
+            let errors=0;
+            for(let i=0;i<6400;i++){
+                for(let k=0;k<3;k++){
+                    const expected=k===channel?full[i*4+k]:0;
+                    if(data[i*4+k]!==expected)errors++;
+                }
+                if(data[i*4+3]!==255)errors++;
+            }
+            return {name:canvas.dataset.channel,width:canvas.width,
+                height:canvas.height,errors,box:box(canvas),
+                layer:box(canvas.closest('.channel-layer'))};
+        });
         const photo=box(document.querySelector('.photo-wrap'));
         const roi=box(document.querySelector('.photo-roi'));
-        const panels=[...document.querySelectorAll('.concept-panel')].map(box);
-        const labels=[...document.querySelectorAll('.figure-label')].map(box);
-        const selected=document.querySelector('.pixel-block .selected');
-        const swatch=document.querySelector('.selected-color .swatch');
+        const figSelectors=['.image-frame','.matrix-frame','.pixel-frame'];
+        const stepFigures=figSelectors.map(s=>box(document.querySelector(s)));
+        const axes=[...document.querySelectorAll('.stack-axis')].map(e=>e.textContent.trim());
+        const flow=document.querySelector('.concept-flow');
         return {
-            viewport:innerWidth,imageLoaded:image.complete && image.naturalWidth>0,
-            state:document.querySelector('.concept-slide').dataset.sampled,
-            selectedIndex:[...selected.parentNode.children].indexOf(selected),
-            declaredIndex:Number(selected.dataset.selectedIndex),
-            selectedTitle:selected.title,
-            swatchComputed:getComputedStyle(swatch).backgroundColor,
-            pixelComputed:getComputedStyle(selected).backgroundColor,
-            selectedOutline:getComputedStyle(selected).outlineStyle,
+            status:document.querySelector('.concept-slide').dataset.sampled,
+            colors,
+            display:painted.map(e=>e.style.backgroundColor),
+            selectedIndex:painted.indexOf(document.querySelector('.pixel-block .selected')),
+            selectedTitle:document.querySelector('.pixel-block .selected').title,
+            channels:[...document.querySelectorAll('.channel-value .number')].map(e=>Number(e.textContent)),
+            bars:[...document.querySelectorAll('.channel-value .bar')].map(e=>parseFloat(e.style.width)),
+            swatch:getComputedStyle(document.querySelector('.selected-color .swatch')).backgroundColor,
+            selectedColor:getComputedStyle(painted[6]).backgroundColor,
+            rgbText:document.querySelector('#selected-rgb').textContent,
+            hex:document.querySelector('#selected-hex').textContent,
             roi:{left:(roi.x-photo.x)/photo.width,top:(roi.y-photo.y)/photo.height,
                 width:roi.width/photo.width,height:roi.height/photo.height},
-            fig:{frame,pixels,arrow,labels,panels},
-            placeholderCount:[...document.querySelectorAll('.channel-value .number')]
-                .filter(e=>e.textContent==='—').length,
-            channelCount:document.querySelectorAll('.channel-value').length,
-            actualCellCount:document.querySelectorAll('.pixel-block span').length
+            planes:planeResults,
+            axes,
+            flowSize:[...flow.querySelectorAll(':scope > .concept-step')].length,
+            arrows:[...flow.querySelectorAll(':scope > .flow-link')].map(box),
+            figures:stepFigures,
+            summary:document.querySelector('.concept-flow-summary').textContent,
+            selectedNote:document.querySelector('.pixel-equation').textContent,
+            tensor:document.querySelector('.tensor-shape').textContent,
+            labels:[...document.querySelectorAll('.concept-step-label')].map(e=>e.textContent),
+            pixelNotes:[...document.querySelectorAll('.concept-step-note')].map(e=>e.textContent),
+            boxes:{
+                visual:box(document.querySelector('.visual-panel')),
+                values:box(document.querySelector('.value-panel')),
+                flow:box(flow)
+            },
+            viewport:innerWidth
         };
     }''')
-    assert extra['state']=='true' and extra['imageLoaded']
-    assert extra['selectedIndex']==extra['declaredIndex']==6
-    assert extra['actualCellCount']==16 and extra['channelCount']==3
-    assert extra['placeholderCount']==0
-    assert extra['selectedTitle']=='RGB ('+', '.join(map(str,rgb))+')'
-    assert extra['pixelComputed']==extra['swatchComputed']=='rgb('+', '.join(map(str,rgb))+')'
-    assert extra['selectedOutline']=='solid'
-    for key,expected in [('left',.65),('top',.475),('width',.05),('height',.05)]:
-        assert abs(extra['roi'][key]-expected)<.003,(key,extra['roi'])
-    fig=extra['fig']
-    if extra['viewport']>520:
-        assert abs(fig['frame']['cy']-fig['pixels']['cy'])<1.5,(extra['viewport'],fig)
-        assert abs(fig['arrow']['cy']-fig['frame']['cy'])<1.5,(extra['viewport'],fig)
-        assert abs(fig['labels'][0]['y']-fig['labels'][1]['y'])<1.5,(extra['viewport'],fig)
-    else:
-        assert abs(fig['frame']['cx']-fig['pixels']['cx'])<1.5,(extra['viewport'],fig)
-        assert abs(fig['arrow']['cx']-fig['frame']['cx'])<1.5,(extra['viewport'],fig)
-        assert fig['frame']['bottom']<fig['arrow']['cy']<fig['pixels']['y'],(extra['viewport'],fig)
-    if extra['viewport']>900:
-        assert abs(fig['panels'][0]['y']-fig['panels'][1]['y'])<1.5
-        assert abs(fig['panels'][0]['bottom']-fig['panels'][1]['bottom'])<1.5
-    relation=page.evaluate('''() => {
-        const box=e=>{const r=e.getBoundingClientRect();
-            return {left:r.left,right:r.right,top:r.top,bottom:r.bottom,
-                    width:r.width,height:r.height,cx:r.left+r.width/2,
-                    cy:r.top+r.height/2}};
-        const grid=document.querySelector('.pixel-block');
-        const widthGuide=document.querySelector('.dimension-width');
-        const heightGuide=document.querySelector('.dimension-height');
-        const example=document.querySelector('.tensor-example');
-        const main=document.querySelector('.tensor-main');
-        const cells=[...grid.querySelectorAll('span')];
-        const cell=cells[0];
-        const gapX=box(cells[1]).left-box(cells[0]).right;
-        const gapY=box(cells[4]).top-box(cells[0]).bottom;
-        return {
-            subtitle:document.querySelector('.concept-slide .subtitle').textContent,
-            w:widthGuide.textContent.trim(),
-            h:heightGuide.textContent.trim(),
-            count:example.querySelector('strong').textContent.trim(),
-            countNote:example.querySelector('span').textContent.trim(),
-            formula:main.querySelector('.formula').textContent.replace(/\\s+/g,'').trim(),
-            grid:box(grid),wBox:box(widthGuide),hBox:box(heightGuide),
-            example:box(example),tensor:box(document.querySelector('.tensor-shape')),
-            cell:box(cell),gapX,gapY
-        };
-    }''')
-    assert relation['subtitle']=='사진 → 픽셀 → RGB 값 → H×W×3 배열'
-    assert relation['w']=='W = 4' and relation['h']=='H = 4'
-    assert relation['count']=='4 × 4 × 3 = 48개 값'
-    assert relation['countNote']=='16픽셀 × RGB 3개'
-    assert relation['formula']=='H×W×3'
-    assert 4*4==len(r['colors']) and 4*4*len(rgb)==48
-    assert abs(relation['grid']['width']-(4*relation['cell']['width']+
-               3*relation['gapX']))<1
-    assert abs(relation['grid']['height']-(4*relation['cell']['height']+
-               3*relation['gapY']))<1
-    assert abs(relation['wBox']['cx']-relation['grid']['cx'])<1
-    assert relation['wBox']['bottom']<relation['grid']['top']
-    assert abs(relation['hBox']['cy']-relation['grid']['cy'])<1
-    assert relation['hBox']['right']<relation['grid']['left']
-    assert relation['tensor']['top']<=relation['example']['top']
-    assert relation['example']['bottom']<=relation['tensor']['bottom']
-    return {'resample':[80,80],'roi':[52,38,4,4],'selected_index':6,
-            'selected_xy':[54,39],'rgb':rgb,'hex':r['hex'],
-            'all_16_swatches_match':True,'swatch_matches_rgb':True,
-            'hwc_example':[4,4,3],'rgb_values':48,'dimensions_verified':True,
-            'roi_normalized':extra['roi'],'figure_alignment_verified':True}
+    assert r['status']=='true'
+    assert r['flowSize']==3 and len(r['arrows'])==2
+    assert r['axes']==['C = 3','H','W']
+    assert r['labels']==['입력 이미지','R · G · B 행렬 3장','일부 영역 확대']
+    assert r['pixelNotes']==[
+        '하나의 RGB 사진','같은 H×W, 채널마다 숫자 1개','4×4 = 16개 픽셀']
+    assert len(r['colors'])==16 and r['selectedIndex']==6
+    assert r['display']==['rgb('+', '.join(map(str,c))+')' for c in r['colors']]
+    rgb=r['colors'][6]
+    assert r['channels']==rgb
+    assert r['selectedTitle']=='RGB ('+', '.join(map(str,rgb))+')'
+    assert r['rgbText']=='RGB ('+', '.join(map(str,rgb))+')'
+    assert r['hex']=='#'+''.join(f'{v:02X}' for v in rgb)
+    assert r['swatch']==r['selectedColor']=='rgb('+', '.join(map(str,rgb))+')'
+    assert all(abs(a-100*b/255)<.001 for a,b in zip(r['bars'],rgb))
+    assert [(p['name'],p['width'],p['height'],p['errors']) for p in r['planes']]==[
+        ('B',80,80,0),('G',80,80,0),('R',80,80,0)]
+    assert r['planes'][0]['layer']['x']>r['planes'][1]['layer']['x']>r['planes'][2]['layer']['x']
+    assert r['planes'][0]['layer']['y']<r['planes'][1]['layer']['y']<r['planes'][2]['layer']['y']
+    assert all(abs(p['layer']['width']-r['planes'][0]['layer']['width'])<1
+               for p in r['planes'])
+    assert all(abs(p['layer']['height']-r['planes'][0]['layer']['height'])<1
+               for p in r['planes'])
+    for k,v in [('left',.65),('top',.475),('width',.05),('height',.05)]:
+        assert abs(r['roi'][k]-v)<.003,(k,r['roi'])
+    assert 'H × W × 3' in r['summary'] and '3차원 배열(HWC)' in r['summary']
+    assert 'RGB 숫자 3개' in r['selectedNote']
+    assert '4 × 4 × 3' in r['tensor'] and '총 48개 값' in r['tensor']
+    assert 4*4*3==48 and 4*4==len(r['colors'])
+    if r['viewport']>900:
+        figures=r['figures']
+        assert max(f['cy'] for f in figures)-min(f['cy'] for f in figures)<1.5
+        assert abs(r['boxes']['visual']['y']-r['boxes']['values']['y'])<1.5
+        assert abs(r['boxes']['visual']['bottom']-r['boxes']['values']['bottom'])<1.5
+        assert r['boxes']['visual']['right']<r['boxes']['values']['x']
+    elif r['viewport']<=520:
+        assert r['figures'][0]['bottom']<r['figures'][1]['y']
+        assert r['figures'][1]['bottom']<r['figures'][2]['y']
+        assert r['boxes']['visual']['bottom']<r['boxes']['values']['y']
+    return {
+        'resample':[80,80],'roi':[52,38,4,4],'selected_index':6,
+        'selected_xy':[54,39],'rgb':rgb,'hex':r['hex'],
+        'rgb_planes_order':['B','G','R'],'plane_pixel_checks':80*80*4*3,
+        'rgb_planes_are_real_samples':True,'all_16_colors_match':True,
+        'shape':'H×W×3','patch_values':48,'roi_normalized':r['roi']
+    }
 
 def check_motif(page,name):
     points=[0,1,63,64,65,32*64+32,4095]
