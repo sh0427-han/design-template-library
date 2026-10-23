@@ -24,6 +24,8 @@
 | 4 | 선택 픽셀: Navy 선택 index 6 → 동일 색 Swatch → R/G/B 숫자와 막대 | 한 픽셀 위치에 RGB 세 정수가 있음 |
 | 5 | 4×4×3 = 48개 값 및 하단 핵심 문구 | 48은 확대 영역의 채널 값 개수, 전체 이미지의 크기는 H×W×3 |
 
+각 채널 판 위의 8×8 가는 격자선은 **행렬이라는 개념을 설명하는 시각적 가이드**입니다. 실제 픽셀 샘플은 각 채널마다 80×80이며 격자를 8×8로 다운샘플링한 것이 아닙니다.
+
 ### Canvas 계산 및 재현 계약
 
 1. 원본 이미지는 templates/html/assets/concept-apple-photo.jpg 하나입니다. image.decode() 완료 후 80×80 Canvas, imageSmoothingEnabled=true 및 imageSmoothingQuality=high로 drawImage(image,0,0,80,80)를 수행합니다. 원본 전체 사진의 실제 파일 크기와 리샘플 분석 공간 80×80은 구별합니다.
