@@ -168,7 +168,9 @@ def check_concept(page):
     unscaled_grid=141 if r['viewport']<=520 else 153
     scale=r['pixelGrid']['width']/unscaled_grid
     tol=max(.75,1.5*scale)
-    assert r['hGuideLine']=='1px' and r['wGuideLine']=='1px'
+    # Chromium may report fractional computed border widths under CSS zoom.
+    assert all(0<float(r[k].removesuffix('px'))<=2
+               for k in ('hGuideLine','wGuideLine')),(r['viewport'],r)
     for guide_edge,grid_edge in [('x','x'),('right','right')]:
         assert abs(r['wGuide'][guide_edge]-r['pixelGrid'][grid_edge])<=tol,(
             r['viewport'],'W',guide_edge,r['wGuide'],r['pixelGrid'])
