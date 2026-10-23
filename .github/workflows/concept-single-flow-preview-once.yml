@@ -1,0 +1,30 @@
+name: Concept one-panel pixel flow preview
+on:
+  push:
+    branches: [feat/concept-pixel-rgb-final-refinement]
+    paths: [.github/workflows/concept-single-flow-preview-once.yml]
+permissions:
+  contents: write
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feat/concept-pixel-rgb-final-refinement
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install playwright
+      - run: python -m playwright install chromium
+      - name: Verify four-stage single-panel Concept at six viewports
+        run: python scripts/validate_references.py --templates concept
+      - name: Commit canonical Chromium preview
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add previews/html-concept.png
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(concept): update one-panel RGB-pixel figure screenshot"
+            git push origin HEAD:feat/concept-pixel-rgb-final-refinement
+          fi
