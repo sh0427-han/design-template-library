@@ -273,7 +273,16 @@ def check_concept(page):
             'crop_channel_depth':3,'crop_stack_order':['B','G','RGB'],
             'crop_rgb_16_match':True,'crop_g_16_match':True,
             'crop_b_16_match':True,'merge_uses_same_rgb':True,
-            'shape':'H×W×3','patch_values':48,'matrix_roi_normalized':r['matrixROI']}
+            'shape':'H×W×3','patch_values':48,'matrix_roi_normalized':r['matrixROI'],
+            'guide_alignment_px':{
+                'w_left':round(r['wGuide']['x']-r['pixelGrid']['x'],3),
+                'w_right':round(r['wGuide']['right']-r['pixelGrid']['right'],3),
+                'h_top':round(r['hGuide']['y']-r['pixelGrid']['y'],3),
+                'h_bottom':round(r['hGuide']['bottom']-r['pixelGrid']['bottom'],3),
+                'w_label_center':round(r['wGuideText']['cx']-r['pixelGrid']['cx'],3),
+                'h_label_center':round(r['hGuideText']['cy']-r['pixelGrid']['cy'],3)},
+            'crop_display_base':34,'crop_display_formula':'Math.round(90 + v * 0.65)',
+            'selected_halo_px':2,'selected_navy_outline_px':5}
 
 def check_motif(page,name):
     points=[0,1,63,64,65,32*64+32,4095]
@@ -447,13 +456,5 @@ def main(argv=None):
         report_path.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
         if len(args.templates)==8 and report_path.name=='reference-validation.json':write_compatibility_reports(report)
     print(f'PASS {len(report["cases"])} final-source viewports; report: {report_path}')
-    # Temporary CI handoff of the generated binary preview (removed in next commit).
-    import base64,os
-    if os.environ.get('GITHUB_ACTIONS')=='true':
-        encoded=base64.b64encode(
-            (ROOT/'previews/html-concept.png').read_bytes()).decode('ascii')
-        for i in range(0,len(encoded),4096):
-            print('CONCEPT_PREVIEW_B64='+encoded[i:i+4096],flush=True)
-
 
 if __name__=='__main__':main()
