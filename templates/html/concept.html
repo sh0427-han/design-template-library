@@ -85,7 +85,7 @@
 }
 /* Smaller crop keeps the 4x4 selection visually subordinate to the full image. */
 .pixel-stack {
-  position:relative;flex:none;width:164px;height:164px;
+  position:relative;flex:none;width:164px;height:191px;
   /* Center the visible envelope: H text + 130px front + R/G/B corner tabs. */
   transform:translateX(22px);
 }
@@ -116,39 +116,24 @@
   box-shadow:0 1px 3px #12233f33;
 }
 .pixel-matrix {position:relative;width:max-content;}
-/* W follows the REAR B grid, while H follows the FRONT RGB grid. */
-.dimension-width {
-  position:absolute;left:0;top:-25px;width:100%;height:1px;
-  box-sizing:border-box;border-bottom:1px solid #91a6c1;
-  color:var(--deep);font-size:13px;font-weight:750;
+/* Text-only dimensions: H left of RGB, W below the complete stack and
+   horizontally aligned with the rear B channel. No dimension guide lines. */
+.dimension-text {
+  position:absolute;z-index:8;display:block;color:var(--deep);
+  font-size:13px;font-weight:750;line-height:17px;
+  white-space:nowrap;text-align:center;
 }
-.dimension-width > span {
-  position:absolute;left:50%;bottom:8px;transform:translateX(-50%);
-  line-height:18px;white-space:nowrap;
-}
-.dimension-height {
-  position:absolute;left:-49px;top:0;width:31px;height:100%;
-  box-sizing:border-box;display:grid;place-items:center;
-  border-right:1px solid #91a6c1;
-  color:var(--deep);font-size:13px;font-weight:750;
-}
-.dimension-height span {
-  display:block;transform:rotate(-90deg);white-space:nowrap;line-height:17px;
-}
+.dimension-text-h {left:-39px;top:50%;transform:translateY(-50%);}
+.dimension-text-w {left:34px;top:171px;width:130px;}
 .pixel-block {display:grid;grid-template-columns:repeat(4,31px);grid-template-rows:repeat(4,31px);gap:2px;}
 .pixel-block span {
-  display:block;width:36px;height:36px;
+  display:block;width:31px;height:31px;
   border:1px solid #ffffffbb;border-radius:1px;background:#e9eef5;
 }
 .pixel-block .selected {
   position:relative;z-index:8;outline:none;border-color:#fff;
   box-shadow:0 0 0 2px #fff,0 0 0 5px var(--navy);
 }
-.pixel-channel-indicator {
-  position:absolute;right:-3px;top:-40px;z-index:5;
-  min-height:20px;color:var(--navy);font-size:13px;white-space:nowrap;
-}
-.pixel-channel-indicator strong {font-size:15px;color:var(--blue);font-weight:800;}
 .pixel-block .selected::after,.selected-color .swatch::after {
   content:"";position:absolute;right:-5px;top:-5px;width:7px;height:7px;
   border:1px solid #fff;border-radius:50%;background:var(--navy);
@@ -231,21 +216,20 @@
   .flow-link {height:46px;transform:none;}
   .flow-link svg {transform:rotate(90deg);}
   .reference-slide.concept-slide .pixel-frame {height:209px;padding-top:18px;gap:8px;}
-  .pixel-stack {width:150px;height:150px;transform:translateX(21px);}
+  .pixel-stack {width:150px;height:177px;transform:translateX(21px);}
   .pixel-plane-b {left:28px;top:0;}
   .pixel-plane-g {left:14px;top:14px;}
   .pixel-plane-rgb {left:0;top:28px;}
   .pixel-plane .plane-badge {width:12px;height:12px;font-size:10px;right:1px;top:1px;}
-  .pixel-channel-indicator {top:-24px;}
-  .dimension-width {top:-24px;}
   .reference-slide.concept-slide .pixel-block,
   .reference-slide.concept-slide .pixel-channel-grid {
     grid-template-columns:repeat(4,29px);grid-template-rows:repeat(4,29px);gap:2px;
   }
   .reference-slide.concept-slide .pixel-block span,
   .reference-slide.concept-slide .pixel-channel-grid span {width:29px;height:29px;}
-  .dimension-width,.dimension-height {font-size:12px;}
-  .dimension-height {left:-45px;width:29px;}
+  .dimension-text {font-size:12px;line-height:16px;}
+  .dimension-text-h {left:-36px;}
+  .dimension-text-w {left:28px;top:158px;width:122px;}
   .detail-frame {height:166px;}
   .pixel-detail {width:min(100%,228px);gap:14px;}
   .selected-color strong {font-size:17px;}
@@ -309,7 +293,6 @@
               <div class="pixel-stack" role="group" aria-label="동일 ROI의 RGB 합성값과 G, B 채널">
                 <div class="pixel-plane pixel-plane-b" data-crop-plane="B" aria-label="4×4 B 채널">
                   <span class="plane-badge" aria-hidden="true">B</span>
-                  <span class="dimension-width"><span>W = 4</span></span>
                   <div class="pixel-channel-grid" aria-hidden="true"></div>
                 </div>
                 <div class="pixel-plane pixel-plane-g" data-crop-plane="G" aria-label="4×4 G 채널">
@@ -319,11 +302,11 @@
                 <div class="pixel-plane pixel-plane-rgb" data-crop-plane="RGB" aria-label="4×4 RGB 합성">
                   <span class="plane-badge" aria-hidden="true" title="선택 영역의 RGB 합성 표시">R</span>
                   <div class="pixel-matrix">
-                    <span class="dimension-height"><span>H = 4</span></span>
+                    <span class="dimension-text dimension-text-h">H = 4</span>
                     <div class="pixel-block" role="img" aria-label="RGB 행렬에서 선택한 영역의 4행 4열 RGB 픽셀"><span></span><span></span><span></span><span></span><span></span><span></span><span class="selected" data-selected-index="6"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
                   </div>
                 </div>
-                <div class="pixel-channel-indicator" aria-label="각 픽셀에 R G B 채널값 3개"><strong>C = 3</strong></div>
+                <span class="dimension-text dimension-text-w">W = 4</span>
               </div>
             </div>
             <span class="concept-step-label">일부 영역 확대</span>
