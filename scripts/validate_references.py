@@ -110,7 +110,7 @@ def check_concept(page):
     assert relation['subtitle']=='사진 → 픽셀 → RGB 값 → H×W×3 배열'
     assert relation['w']=='W = 4' and relation['h']=='H = 4'
     assert relation['count']=='4 × 4 × 3 = 48개 값'
-    assert relation['countNote']=='확대한 4×4 영역'
+    assert relation['countNote']=='16픽셀 × RGB 3개'
     assert relation['formula']=='H×W×3'
     assert 4*4==len(r['colors']) and 4*4*len(rgb)==48
     assert abs(relation['grid']['width']-(4*relation['cell']['width']+
