@@ -117,14 +117,19 @@ def check_concept(page):
             planes,
             axes:[...document.querySelectorAll('.stack-axis')].map(e=>e.textContent.trim()),
             cAxis:box(document.querySelector('.stack-axis-c')),
-            hText:box(heightText),wText:box(widthText),pixelGrid,
+            hText:box(heightText.querySelector('span')),
+            hAxis:box(heightText),wText:box(widthText),pixelGrid,
+            hTransform:getComputedStyle(heightText.querySelector('span')).transform,
+            cropSwatch:box(document.querySelector('.selected-color .swatch')),
+            detail:box(document.querySelector('.pixel-detail')),
+            cssGridColumn:getComputedStyle(document.querySelector('.pixel-block')).gridTemplateColumns,
             cropCLabelCount:document.querySelectorAll('.pixel-stack .pixel-channel-indicator').length,
             dimensionLines:document.querySelectorAll('.pixel-stack .dimension-width,.pixel-stack .dimension-height').length,
             hBorder:getComputedStyle(heightText).borderRightWidth,
             wBorder:getComputedStyle(widthText).borderBottomWidth,
             visualCenters:(()=>{
                 const figureBox=selector=>box(document.querySelector(selector));
-                const cropParts=[heightText,widthText,
+                const cropParts=[heightText.querySelector('span'),widthText,
                     document.querySelector('.pixel-plane-rgb .pixel-block'),
                     document.querySelector('.pixel-plane-g .pixel-channel-grid'),
                     document.querySelector('.pixel-plane-b .pixel-channel-grid')].map(box);
@@ -189,7 +194,7 @@ def check_concept(page):
     assert r['cAxis']['bottom']<r['planes'][0]['layer']['y'],(r['viewport'],r['cAxis'])
     # getBoundingClientRect reports scaled coordinates; check border line endpoints,
     # not merely the midpoint of either dimension label.
-    unscaled_grid=122 if r['viewport']<=520 else 130
+    unscaled_grid=110 if r['viewport']<=520 else 118
     scale=r['pixelGrid']['width']/unscaled_grid
     tol=max(.75,1.5*scale)
     # No C=3 in the crop and no dimension guide lines.
@@ -199,11 +204,16 @@ def check_concept(page):
     assert float(r['wBorder'].removesuffix('px'))==0
     b_grid=r['cropPlanes'][0]['grid']
     assert abs(r['hText']['cy']-r['pixelGrid']['cy'])<=tol
-    assert abs(r['wText']['cx']-b_grid['cx'])<=tol
+    assert abs(r['wText']['cx']-r['pixelGrid']['cx'])<=tol
+    assert r['hText']['height']>r['hText']['width']*1.2,(
+        'H must be vertical',r['hText'])
+    assert r['hTransform']!='none' and abs(r['hText']['cy']-r['hAxis']['cy'])<=tol
     assert r['hText']['right']<=r['pixelGrid']['x']-6*scale
     assert r['wText']['y']>=max(p['grid']['bottom'] for p in r['cropPlanes'])+5*scale
     assert r['wText']['bottom']<=r['cropChannels']['box']['bottom']+2
-    assert r['pixelGrid']['width']<=130*scale+.1
+    assert r['pixelGrid']['width']<=118*scale+.1
+    assert r['cropSwatch']['width'] <= (40 if r['viewport']<=520 else 42)*scale+.15
+    assert r['detail']['width'] <= (214 if r['viewport']<=520 else 236)*scale+.15
     assert all(abs(value)<3.1 for value in r['visualCenters'].values()),(
         r['viewport'],r['visualCenters'])
     # Explicit corner badges must be entirely visible, correctly labelled
@@ -276,7 +286,7 @@ def check_concept(page):
     assert crop[0]['box']['x']>crop[1]['box']['x']>crop[2]['box']['x']
     assert crop[0]['box']['y']<crop[1]['box']['y']<crop[2]['box']['y']
     # Compare relative layer offsets at the actual responsive scale.
-    offset=(14 if r['viewport']<=520 else 17)*scale
+    offset=(12 if r['viewport']<=520 else 15)*scale
     assert abs(crop[1]['box']['x']-crop[2]['box']['x']-offset)<1
     assert abs(crop[2]['box']['y']-crop[1]['box']['y']-offset)<1
     assert abs(crop[0]['box']['x']-crop[2]['box']['x']-2*offset)<1
@@ -331,11 +341,15 @@ def check_concept(page):
             'crop_b_16_match':True,'merge_uses_same_rgb':True,
             'shape':'H×W×3','patch_values':48,'matrix_roi_normalized':r['matrixROI'],
             'text_axis_alignment_px':{
-                'w_center_on_b':round(r['wText']['cx']-b_grid['cx'],3),
+                'w_center_on_front_rgb':round(r['wText']['cx']-r['pixelGrid']['cx'],3),
                 'h_center_on_rgb':round(r['hText']['cy']-r['pixelGrid']['cy'],3),
                 'w_gap_below_stack':round(r['wText']['y']-max(p['grid']['bottom'] for p in crop),3),
                 'h_gap_left_rgb':round(r['pixelGrid']['x']-r['hText']['right'],3)},
             'crop_c_label_removed':True,'crop_guides_removed':True,
+            'crop_grid_width_px':r['pixelGrid']['width'],
+            'one_pixel_swatch_width_px':r['cropSwatch']['width'],
+            'one_pixel_detail_width_px':r['detail']['width'],
+            'h_label_rotated_vertically':True,
             'crop_display_tints':{'G':'#279467','B':'#427ec5'},
             'crop_display_formula':'rgb(255+(base-255)*(0.22+0.78*v/255))',
             'crop_plane_badges':['B','G','R'],
