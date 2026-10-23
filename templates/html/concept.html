@@ -5,231 +5,466 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Concept | Design Template Library</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="reference-layout.css">
   <style>
-    .concept-slide {
-      width: min(1440px,100%); height:810px; min-height:0; aspect-ratio:16/9;
-      padding:54px 66px 30px; gap:0; color:var(--ink); background:var(--canvas);
-    }
-    .concept-slide header { flex:0 0 auto; }
-    .concept-slide h1 { margin:7px 0 6px; font-size:49px; line-height:1.13; }
-    .concept-slide .subtitle { font-size:21px; line-height:1.38; }
-    .concept-stage {
-      display:grid; grid-template-columns:1.02fr .98fr; gap:22px;
-      margin-top:25px; flex:1; min-height:0;
-    }
-    .concept-panel {
-      background:#fff; border:1px solid var(--border); border-radius:18px;
-      min-width:0; min-height:0; padding:22px 26px;
-    }
-    .panel-head { display:flex; align-items:center; justify-content:space-between; gap:12px; }
-    .panel-head h2 { color:var(--navy); font-size:23px; margin:0; }
-    .visual-panel { display:flex; flex-direction:column; }
-    .image-figure { display:flex; align-items:center; flex:1; min-height:0; margin-top:12px; }
-    .figure-unit { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; min-width:0; }
-    .image-unit { width:min(265px,46%); flex:0 0 auto; }
-    .pixel-unit { flex:0 0 auto; }
-    .image-frame { background:linear-gradient(150deg,#f7fcff,#e5f0fa); height:274px; width:100%; border-radius:16px; display:grid; place-items:center; border:1px solid #dbe7f1; overflow:hidden; }
-    .image-frame svg { width:min(100%,245px); height:248px; }
-    .photo-wrap { width:min(100%,262px);aspect-ratio:1;position:relative;overflow:hidden;border-radius:13px;box-shadow:0 4px 20px #12233F14; }
-    .concept-photo {display:block;width:100%;height:100%;object-fit:cover;}
-    .photo-roi {position:absolute;left:62.963%;top:44.444%;width:11.852%;height:11.852%;border:2.5px solid #fff;box-shadow:0 0 0 2px #12233F,inset 0 0 0 1px #12233F;outline-offset:0;pointer-events:none;}
-    .image-frame {padding:6px;}
-    .image-frame .photo-wrap {max-height:100%;}
-    .concept-panel .pixel-block span {border-radius:2px;}
-    .pixel-frame { height:274px; display:grid; place-items:center; }
-    .zoom-arrow { flex:1; min-width:20px; display:grid; place-items:center; font-size:29px; color:var(--blue); font-weight:800; margin-bottom:31px; }
-    .figure-label { font-size:17px; line-height:1.25; font-weight:800; color:var(--deep); text-align:center; white-space:nowrap; }
-    .pixel-block { display:grid; grid-template-columns:repeat(4,48px); grid-template-rows:repeat(4,48px); gap:3px; justify-content:center; }
-    .pixel-block span { width:48px; height:48px; border:2px solid rgba(255,255,255,.72); border-radius:4px; }
-    .pixel-block .selected {outline:4px solid var(--navy);outline-offset:-4px;position:relative;}
-    .photo-sample-note {font-size:14px;color:var(--muted);line-height:1.2;text-align:center;margin-top:1px;}
-    .value-panel {display:flex;flex-direction:column;justify-content:space-between;gap:14px;}
-    .value-title {color:var(--navy);font-size:23px;font-weight:800;margin:0;}
-    .selected-color {display:flex;align-items:center;gap:17px;background:#f7f9fd;border:1px solid var(--border);border-radius:13px;padding:13px 16px;}
-    .selected-color .swatch {height:45px;width:64px;flex:0 0 auto;border-radius:10px;background:rgb(232,51,52);}
-    .selected-color strong {display:block;color:var(--navy);font-size:22px;}
-    .selected-color small {display:block;color:var(--muted);font-size:14px;margin-top:2px;}
-    .channel-values {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;}
-    .channel-value {background:#f7f9fd;border:1px solid var(--border);border-radius:13px;padding:12px 13px;}
-    .channel-value .head {display:flex;align-items:center;justify-content:space-between;font-size:17px;font-weight:800;color:var(--deep);}
-    .channel-value .dot {height:15px;width:15px;border-radius:50%;}
-    .channel-value .number {font-size:29px;font-weight:800;color:var(--navy);margin-top:6px;}
-    .channel-value .track {height:7px;background:#e0e8f1;border-radius:7px;overflow:hidden;margin-top:8px;}
-    .channel-value .bar {height:100%;border-radius:7px;}
-    .tensor-shape {display:flex;align-items:center;justify-content:space-between;gap:14px;padding:16px 17px;background:var(--pale-blue);border:1px solid #cadef8;border-radius:13px;}
-    .tensor-shape .formula {font-size:31px;color:var(--navy);font-weight:800;white-space:nowrap;}
-    .tensor-shape .label {font-size:15px;line-height:1.43;color:var(--deep);text-align:right;}
-    .concept-takeaway {flex:0 0 auto;display:flex;align-items:center;gap:15px;margin-top:14px;padding:12px 17px;border-left:4px solid var(--teal);background:#e9f5f4;border-radius:0 10px 10px 0;color:var(--deep);font-size:19px;font-weight:650;}
-    .concept-takeaway strong{color:#117a74;white-space:nowrap;}
-    .concept-slide .footer { flex:0 0 auto; margin-top:15px; padding-top:11px;font-size:14px; }
-    @media(max-width:1100px) {
-      .concept-slide {height:auto;min-height:680px;aspect-ratio:auto;padding:34px 30px 25px;}
-      .concept-slide h1{font-size:40px;}
-      .concept-stage{grid-template-columns:1fr 1fr;gap:13px;}
-      .concept-panel{padding:17px;}
-      .image-frame,.pixel-frame{height:238px;}
-      .image-frame svg{height:215px;}
-      .pixel-block{grid-template-columns:repeat(4,33px);grid-template-rows:repeat(4,33px);gap:2px;}
-      .pixel-block span{height:33px;width:33px;}
-      .value-title,.panel-head h2{font-size:19px;}
-      .channel-value{padding:9px;}.channel-value .number{font-size:23px;}
-      .tensor-shape .formula{font-size:23px;}
-    }
-    @media(max-width:760px){
-      .concept-stage{grid-template-columns:1fr;}
-      .concept-slide{padding:25px 18px;}
-      .concept-slide h1{font-size:34px;}
-      .concept-slide .subtitle{font-size:18px;}
-      .image-frame,.pixel-frame{height:230px;}
-      .image-frame svg{height:220px;}
-      .pixel-block{grid-template-columns:repeat(4,42px);grid-template-rows:repeat(4,42px);}
-      .pixel-block span{height:42px;width:42px;}
-      .value-panel{gap:14px;}
-      .concept-takeaway{font-size:17px;}
-      .image-unit{width:min(265px,46%);}
-    }
-    @media(max-width:490px){.photo-sample-note{font-size:12px;}
-      .pixel-block{grid-template-columns:repeat(4,28px);grid-template-rows:repeat(4,28px);gap:2px;}
-      .pixel-block span{height:28px;width:28px;}
-      .figure-label{font-size:14px;}
-    }
-
-    /* Concept: unframed photographic figure and true per-pixel RGB mapping. */
-    .concept-stage{grid-template-columns:1.05fr .95fr;gap:25px}
-    .concept-panel.visual-panel{display:flex;flex-direction:column;min-width:0;padding:22px 26px;background:#fff;border:1px solid var(--border);border-radius:18px}
-    .visual-panel .panel-head{padding-left:4px}
-    .image-figure{display:grid;grid-template-columns:minmax(0,1fr) 47px minmax(0,1fr);align-items:center;gap:3px;width:100%;margin-top:16px}
-    .figure-unit{width:100%;height:100%;gap:12px;justify-content:center}
-    .image-unit{width:100%;min-width:0}
-    .image-frame{width:100%;height:274px;padding:0;background:transparent;border:none;border-radius:0;overflow:visible;display:grid;place-items:center}
-    .photo-wrap{width:min(100%,262px);aspect-ratio:1;max-height:none;border-radius:0;box-shadow:none;overflow:visible}
-    .concept-photo{width:100%;height:100%;object-fit:contain}
-    .photo-roi{left:65%;top:47.5%;width:5%;height:5%;border:2px solid white;box-shadow:0 0 0 1.5px var(--navy);background:transparent;pointer-events:none}
-    .pixel-frame{width:100%;height:274px}
-    .pixel-block{grid-template-columns:repeat(4,44px);grid-template-rows:repeat(4,44px);gap:3px}
-    .pixel-block span{width:44px;height:44px;border:1px solid #ffffffcc;border-radius:1px}
-    .pixel-block .selected{outline:3px solid var(--navy);outline-offset:1px;z-index:1}
-    .zoom-arrow{height:274px;min-width:0;align-self:center;margin:0;transform:translateY(-16.5px);display:grid;place-items:center;font-size:28px}
-    .figure-label{font-size:17px}
-    .photo-sample-note{margin-top:auto;padding-top:7px;font-size:13px;text-align:center}
-    .selected-color{background:#f7f9fd}
-    .selected-color .swatch{background:#dbe4f0}
-    .concept-panel .pixel-block span{border-radius:1px}
-    @media(max-width:900px){
-      .concept-stage{grid-template-columns:1fr;gap:20px}
-      .reference-slide .concept-panel.visual-panel{padding:20px}
-      .image-figure{grid-template-columns:minmax(0,1fr) 38px minmax(0,1fr)}
-      .image-frame,.pixel-frame,.zoom-arrow{height:256px}
-      .pixel-block{grid-template-columns:repeat(4,40px);grid-template-rows:repeat(4,40px)}
-      .pixel-block span{height:40px;width:40px}
-    }
-    @media(max-width:520px){
-      /* Override later reference-layout.css's legacy 44%-width image rule. */
-      .reference-slide.concept-slide .image-unit{width:100%}
-      .reference-slide.concept-slide .image-frame,
-      .reference-slide.concept-slide .pixel-frame,
-      .reference-slide.concept-slide .zoom-arrow{height:172px}
-      .reference-slide.concept-slide .pixel-block{
-        grid-template-columns:repeat(4,26px);
-        grid-template-rows:repeat(4,26px);
-      }
-      .reference-slide.concept-slide .pixel-block span{height:26px;width:26px}
-      .concept-stage{gap:15px}
-      .image-figure{gap:0;grid-template-columns:minmax(0,1fr) 24px minmax(0,1fr);margin-top:7px}
-      .image-frame,.pixel-frame,.zoom-arrow{height:172px}
-      .pixel-block{grid-template-columns:repeat(4,26px);grid-template-rows:repeat(4,26px);gap:2px}
-      .pixel-block span{height:26px;width:26px}
-      .zoom-arrow{font-size:22px;transform:translateY(-14px)}
-      .photo-wrap{width:min(100%,160px)}
-      .figure-label{font-size:14px;white-space:normal;text-align:center}
-      .photo-sample-note{font-size:12px}
-    }
-  </style>
-<link rel="stylesheet" href="reference-layout.css">
+/* Concept / 01: one continuous image → channel stack → ROI → pixel-value flow. */
+.concept-slide {padding:54px 66px 30px;color:var(--ink);background:var(--canvas);}
+.concept-slide h1 {margin:7px 0 6px;font-size:49px;line-height:1.13;}
+.concept-slide .subtitle {font-size:21px;line-height:1.38;}
+.concept-stage {display:flex;flex:1;min-height:0;margin-top:25px;}
+.reference-slide.concept-slide .concept-panel {
+  display:flex;flex-direction:column;flex:1;min-width:0;min-height:0;
+  padding:22px 25px;border:1px solid var(--border);
+  border-radius:18px;background:var(--white);
+}
+.concept-panel h2 {margin:0;color:var(--navy);font-size:23px;font-weight:800;}
+.concept-flow {
+  display:grid;
+  grid-template-columns:minmax(0,.95fr) 25px minmax(0,1.15fr) 25px minmax(0,.85fr) 25px minmax(0,1.25fr);
+  align-items:center;gap:9px;flex:1;min-height:0;margin-top:14px;
+}
+.concept-step {
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  width:100%;min-width:0;height:100%;gap:9px;
+}
+.concept-step-figure {display:grid;place-items:center;width:100%;height:254px;min-width:0;}
+.photo-wrap {position:relative;width:min(100%,207px);aspect-ratio:1;}
+.concept-photo {display:block;width:100%;height:100%;object-fit:contain;}
+.concept-step-label {
+  color:var(--navy);font-size:17px;font-weight:800;
+  text-align:center;line-height:1.28;white-space:nowrap;
+}
+.concept-step-note {
+  color:var(--muted);font-size:13px;text-align:center;
+  line-height:1.35;min-height:18px;white-space:nowrap;
+}
+.flow-link {
+  display:grid;place-items:center;width:100%;height:254px;
+  transform:translateY(-17px);color:var(--blue);
+}
+.flow-link svg {display:block;width:25px;height:23px;}
+.channel-stack {width:244px;height:245px;position:relative;flex:none;}
+.channel-layer {
+  position:absolute;width:157px;height:157px;
+  background:#091526;border:2px solid #fff;
+  box-shadow:0 1px 5px #12233f24;
+}
+.channel-layer[data-plane="B"] {left:69px;top:18px;z-index:1;border-color:#8eb8e7;}
+.channel-layer[data-plane="G"] {left:42px;top:43px;z-index:2;border-color:#8acfb3;}
+.channel-layer[data-plane="R"] {left:15px;top:68px;z-index:3;border-color:#eaa7a7;}
+.channel-layer::after {
+  content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background-image:
+    linear-gradient(to right,rgba(255,255,255,.33) 1px,transparent 1px),
+    linear-gradient(to bottom,rgba(255,255,255,.33) 1px,transparent 1px);
+  background-size:12.5% 12.5%;
+}
+/* Guide grid = 8×8 visually; every channel canvas still stores 80×80 real values. */
+.channel-canvas {display:block;width:100%;height:100%;image-rendering:auto;}
+.plane-id {
+  position:absolute;top:0;right:0;z-index:3;display:grid;place-items:center;
+  width:22px;height:22px;border-bottom-left-radius:4px;
+  color:#fff;background:var(--navy);font-size:14px;font-weight:850;
+}
+.channel-layer[data-plane="R"] .plane-id {background:#b63c47;}
+.channel-layer[data-plane="G"] .plane-id {background:#238463;}
+.channel-layer[data-plane="B"] .plane-id {background:#3168c8;}
+.matrix-roi {
+  position:absolute;left:65%;top:47.5%;width:5%;height:5%;box-sizing:border-box;
+  border:2px solid #fff;outline:1px solid var(--navy);z-index:4;
+  pointer-events:none;
+}
+.stack-axis {position:absolute;color:var(--navy);font-size:14px;font-weight:800;line-height:1;white-space:nowrap;}
+.stack-axis-h {left:0;top:143px;}
+.stack-axis-w {left:91px;bottom:0;}
+/* Outside the top-right envelope of the backmost B plane. */
+.stack-axis-c {top:-8px;right:0;color:var(--blue);font-size:15px;}
+.pixel-frame {
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:9px;width:100%;height:254px;min-width:0;padding-top:14px;
+}
+/* Smaller crop keeps the 4x4 selection visually subordinate to the full image. */
+.pixel-stack {
+  position:relative;flex:none;width:150px;height:179px;
+  /* Visually center the smaller 118px RGB grid and the H/W labels together. */
+  transform:translateX(15px);
+}
+.pixel-plane {position:absolute;width:max-content;height:max-content;}
+/* 16px reveal prevents the 15px B/G badges from touching front grids. */
+.pixel-plane-b {left:32px;top:0;z-index:1;}
+.pixel-plane-g {left:16px;top:16px;z-index:2;}
+.pixel-plane-rgb {left:0;top:32px;z-index:3;}
+.pixel-channel-grid {
+  display:grid;grid-template-columns:repeat(4,28px);
+  grid-template-rows:repeat(4,28px);gap:2px;
+}
+.pixel-channel-grid span {
+  display:block;width:28px;height:28px;
+  border:1px solid #ffffffcc;border-radius:1px;background:#e9eef5;
+}
+/* Shared frame geometry and per-channel colors for ALL three crop planes.
+   Outlines preserve the exact 4x4 grid dimensions and ROI pixel coordinates. */
+.pixel-plane-b {--crop-channel-base:#427ec5;}
+.pixel-plane-g {--crop-channel-base:#279467;}
+.pixel-plane-rgb {--crop-channel-base:#b63c47;}
+.pixel-plane .pixel-channel-grid,
+.pixel-plane .pixel-block {
+  outline:2px solid var(--crop-channel-base);
+  outline-offset:0;
+  border-radius:2px;
+  box-shadow:0 1px 5px #12233f24;
+}
+.pixel-plane .plane-badge {
+  position:absolute;right:1px;top:1px;z-index:6;
+  display:grid;place-items:center;width:15px;height:15px;
+  border:1px solid #fff;border-radius:3px;
+  background:var(--crop-channel-base,var(--navy));color:#fff;
+  font-size:11px;font-weight:850;line-height:1;
+  box-shadow:0 1px 3px #12233f33;
+}
+.pixel-matrix {position:relative;width:max-content;}
+/* Only dimension TEXT: H vertical at the RGB front grid's left edge,
+   W horizontally centered under that same grid. No dimension guide lines. */
+.dimension-text {
+  position:absolute;z-index:8;color:var(--deep);
+  font-size:13px;font-weight:750;line-height:17px;
+  white-space:nowrap;text-align:center;
+}
+.dimension-text-h {
+  left:-29px;top:0;width:18px;height:100%;
+  display:grid;place-items:center;
+}
+.dimension-text-h > span {display:block;transform:rotate(-90deg);white-space:nowrap;}
+.dimension-text-w {left:0;top:160px;width:118px;display:block;}
+.pixel-block {display:grid;grid-template-columns:repeat(4,28px);grid-template-rows:repeat(4,28px);gap:2px;}
+.pixel-block span {
+  display:block;width:28px;height:28px;
+  border:1px solid #ffffffbb;border-radius:1px;background:#e9eef5;
+}
+.pixel-block .selected {
+  position:relative;z-index:8;outline:none;border-color:#fff;
+  box-shadow:0 0 0 2px #fff,0 0 0 5px var(--navy);
+}
+.pixel-block .selected::after,.selected-color .swatch::after {
+  content:"";position:absolute;right:-5px;top:-5px;width:7px;height:7px;
+  border:1px solid #fff;border-radius:50%;background:var(--navy);
+}
+/* The fourth stage stays inside the same white concept panel. */
+.detail-frame {min-width:0;}
+.pixel-detail {
+  display:flex;flex-direction:column;justify-content:center;
+  gap:12px;width:min(100%,236px);min-width:0;
+}
+.selected-color {display:flex;align-items:center;justify-content:center;gap:10px;min-width:0;}
+.selected-color .swatch {
+  position:relative;flex:none;width:42px;height:42px;
+  border:2px solid var(--navy);border-radius:7px;background:#dbe4f0;
+}
+.selected-color .value-text {min-width:0;}
+.selected-color strong {display:block;color:var(--navy);font-size:17px;line-height:1.25;white-space:nowrap;}
+.reference-slide.concept-slide .selected-color small {
+  display:block;color:var(--muted);font-size:12px;
+  line-height:1.35;white-space:nowrap;margin-top:2px;
+}
+.channel-values {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;min-width:0;}
+.channel-value {min-width:0;padding:7px 6px;background:#f7f9fd;border:1px solid var(--border);border-radius:9px;}
+.channel-value .head {display:flex;justify-content:space-between;align-items:center;font-size:14px;font-weight:800;color:var(--deep);}
+.channel-value .dot {width:11px;height:11px;border-radius:50%;}
+.channel-value .number {
+  color:var(--navy);font-size:21px;font-weight:800;line-height:1.35;
+  white-space:nowrap;font-variant-numeric:tabular-nums;
+}
+.channel-value .track {width:100%;height:7px;background:#e1e8f0;border-radius:7px;overflow:hidden;}
+.channel-value .bar {width:0;height:100%;border-radius:7px;}
+.concept-flow-summary {
+  display:flex;justify-content:center;align-items:center;gap:12px;
+  margin-top:3px;padding-top:12px;border-top:1px solid var(--border);
+  color:var(--deep);font-size:16px;line-height:1.35;
+}
+.merge-copy {font-size:16px;font-weight:700;white-space:nowrap;}
+.merge-values {display:flex;align-items:center;gap:9px;white-space:nowrap;}
+.merge-values .merge-channel {font-size:15px;font-weight:750;color:var(--navy);}
+.merge-values .merge-channel strong {font-size:18px;font-variant-numeric:tabular-nums;}
+.merge-values .merge-channel[data-channel="R"] {color:#b63c47;}
+.merge-values .merge-channel[data-channel="G"] {color:#238463;}
+.merge-values .merge-channel[data-channel="B"] {color:#3168c8;}
+.merge-separator {font-size:17px;color:var(--muted);}
+.merge-arrow {font-size:21px;color:var(--blue);}
+.merge-result {display:flex;align-items:center;gap:8px;font-size:15px;font-weight:750;white-space:nowrap;}
+.merge-result .merge-swatch {
+  display:block;width:29px;height:29px;flex:none;border:2px solid var(--navy);
+  background:#dbe4f0;border-radius:5px;
+}
+.concept-slide .concept-takeaway {flex:none;margin-top:14px;}
+.concept-slide .footer {flex:none;margin-top:15px;padding-top:11px;font-size:14px;}
+@media(max-width:900px) {
+  .reference-slide.concept-slide .concept-panel {padding:21px 22px;}
+  .concept-flow {display:flex;flex-direction:column;gap:0;min-height:0;margin-top:16px;}
+  .concept-step {height:auto;gap:8px;}
+  .concept-step-figure,.reference-slide.concept-slide .pixel-frame {height:250px;}
+  .flow-link {height:46px;transform:none;}
+  .flow-link svg {transform:rotate(90deg);}
+  .pixel-detail {width:min(100%,236px);}
+}
+@media(max-width:520px) {
+  .concept-deck {width:100%;grid-template-columns:minmax(0,1fr);}
+  .reference-slide.concept-slide {width:calc(100vw - 20px);}
+  .reference-slide.concept-slide .concept-panel {padding:18px 17px;}
+  .concept-panel h2 {font-size:22px;}
+  .concept-flow {display:flex;flex-direction:column;gap:0;min-height:0;margin-top:15px;}
+  .concept-step {height:auto;gap:7px;}
+  .concept-step-figure {height:194px;}
+  .photo-wrap {width:min(100%,184px);}
+  .channel-stack {width:200px;height:211px;}
+  .channel-layer {width:130px;height:130px;}
+  .channel-layer[data-plane="B"] {left:57px;top:19px;}
+  .channel-layer[data-plane="G"] {left:35px;top:40px;}
+  .channel-layer[data-plane="R"] {left:13px;top:61px;}
+  .stack-axis-c {top:-4px;right:0;}
+  .stack-axis-h {top:127px;}
+  .stack-axis-w {left:78px;bottom:2px;}
+  .matrix-step .concept-step-figure {height:225px;}
+  .flow-link {height:46px;transform:none;}
+  .flow-link svg {transform:rotate(90deg);}
+  .reference-slide.concept-slide .pixel-frame {height:209px;padding-top:18px;gap:8px;}
+  .pixel-stack {width:134px;height:163px;transform:translateX(15px);}
+  .pixel-plane-b {left:24px;top:0;}
+  .pixel-plane-g {left:12px;top:12px;}
+  .pixel-plane-rgb {left:0;top:24px;}
+  .pixel-plane .plane-badge {width:11px;height:11px;font-size:10px;right:1px;top:1px;}
+  .reference-slide.concept-slide .pixel-block,
+  .reference-slide.concept-slide .pixel-channel-grid {
+    grid-template-columns:repeat(4,26px);grid-template-rows:repeat(4,26px);gap:2px;
+  }
+  .reference-slide.concept-slide .pixel-block span,
+  .reference-slide.concept-slide .pixel-channel-grid span {width:26px;height:26px;}
+  .dimension-text {font-size:12px;line-height:16px;}
+  .dimension-text-h {left:-28px;width:18px;}
+  .dimension-text-w {left:0;top:145px;width:110px;}
+  .detail-frame {height:166px;}
+  .pixel-detail {width:min(100%,214px);gap:12px;}
+  .selected-color .swatch {width:40px;height:40px;}
+  .selected-color strong {font-size:16px;}
+  .reference-slide.concept-slide .channel-value {padding:7px 5px;}
+  .channel-value .number {font-size:20px;}
+  .concept-step-label {font-size:16px;}
+  .concept-step-note {font-size:12px;}
+  .concept-flow-summary {flex-wrap:wrap;gap:5px 12px;text-align:center;margin-top:14px;}
+  .merge-copy {flex-basis:100%;font-size:14px;}
+  .merge-values {gap:6px;}
+  .merge-values .merge-channel {font-size:13px;}
+  .merge-values .merge-channel strong {font-size:17px;}
+  .merge-result {font-size:13px;}
+  .merge-result .merge-swatch {width:25px;height:25px;}
+}
+</style>
 </head>
 <body>
-<main class="deck reference-deck">
-  <section class="slide concept-slide reference-slide" aria-label="Concept 레퍼런스">
+<main class="deck reference-deck concept-deck">
+  <section class="slide concept-slide reference-slide" aria-label="Concept 레퍼런스" data-sampled="loading">
     <header>
       <div class="ref-overline"><div class="kicker">CONCEPT / 01</div></div>
       <h1>이미지의 숫자 구조</h1>
-      <p class="subtitle">픽셀 색상은 8-bit RGB 세 값으로, 이미지 전체는 높이 × 너비 × 채널로 표현</p>
+      <p class="subtitle">입력 사진 → RGB 숫자 행렬 → 일부 확대 → 픽셀 하나의 RGB 값</p>
     </header>
     <div class="concept-stage">
-      <article class="concept-panel visual-panel" aria-label="사과 이미지의 픽셀 표현">
-        <div class="panel-head"><h2>이미지 → 픽셀</h2></div>
-        <div class="image-figure">
-          <div class="figure-unit image-unit">
-            <div class="image-frame" role="img" aria-label="사과 사진과 선택 영역">
-            <div class="photo-wrap" role="img" aria-label="실사형 사과 이미지에서 선택한 정사각형 영역">
-              <img src="assets/concept-apple-photo.jpg" id="concept-image" class="concept-photo" width="540" height="540" alt="밝은 배경에 놓인 붉은 사과" />
-              <span class="photo-roi" aria-hidden="true"></span>
+      <article class="concept-panel visual-panel" aria-label="입력 이미지에서 RGB 행렬, 4×4 확대, 선택 픽셀 숫자로 이어지는 과정">
+        <h2>이미지 → RGB 채널 → 픽셀 확대 → RGB 값</h2>
+        <div class="concept-flow">
+          <div class="concept-step image-step">
+            <div class="concept-step-figure image-frame">
+              <div class="photo-wrap">
+                <img src="assets/concept-apple-photo.jpg" id="concept-image" class="concept-photo" width="540" height="540" alt="밝은 배경의 사과 원본 사진"/>
+              </div>
             </div>
-            </div>
-            <span class="figure-label">입력 이미지</span>
+            <span class="concept-step-label">입력 이미지</span>
+            <span class="concept-step-note">하나의 RGB 사진</span>
           </div>
-          <span class="zoom-arrow" aria-hidden="true">→</span>
-          <div class="figure-unit pixel-unit">
+          <span class="flow-link" aria-hidden="true"><svg viewBox="0 0 36 24" fill="none"><path d="M2 12 H32 M24 4 L32 12 L24 20" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <div class="concept-step matrix-step">
+            <div class="concept-step-figure matrix-frame">
+              <div class="channel-stack" role="group" aria-label="동일한 높이와 너비의 실제 R, G, B 채널 행렬 세 장">
+                <span class="stack-axis stack-axis-c">C = 3</span>
+                <div class="channel-layer" data-plane="B"><canvas class="channel-canvas" data-channel="B" width="80" height="80" aria-label="B 채널 80×80 값"></canvas><b class="plane-id">B</b></div>
+                <div class="channel-layer" data-plane="G"><canvas class="channel-canvas" data-channel="G" width="80" height="80" aria-label="G 채널 80×80 값"></canvas><b class="plane-id">G</b></div>
+                <div class="channel-layer" data-plane="R">
+                  <canvas class="channel-canvas" data-channel="R" width="80" height="80" aria-label="R 채널 80×80 값"></canvas>
+                  <b class="plane-id">R</b>
+                  <span class="matrix-roi" aria-hidden="true" title="동일한 RGB 좌표의 4×4 영역"></span>
+                </div>
+                <span class="stack-axis stack-axis-h">H</span>
+                <span class="stack-axis stack-axis-w">W</span>
+              </div>
+            </div>
+            <span class="concept-step-label">R · G · B 행렬 3장</span>
+            <span class="concept-step-note">같은 H×W, ROI 선택</span>
+          </div>
+          <span class="flow-link" aria-hidden="true"><svg viewBox="0 0 36 24" fill="none"><path d="M2 12 H32 M24 4 L32 12 L24 20" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <div class="concept-step pixel-step">
             <div class="pixel-frame">
-              <div class="pixel-block" role="img" aria-label="사과의 빨간 영역을 확대해 표현한 4 곱하기 4 픽셀 배열"><span></span><span></span><span></span><span></span><span></span><span></span><span class="selected"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+              <div class="pixel-stack" role="group" aria-label="동일 ROI의 RGB 합성값과 G, B 채널">
+                <div class="pixel-plane pixel-plane-b" data-crop-plane="B" aria-label="4×4 B 채널">
+                  <span class="plane-badge" aria-hidden="true">B</span>
+                  <div class="pixel-channel-grid" aria-hidden="true"></div>
+                </div>
+                <div class="pixel-plane pixel-plane-g" data-crop-plane="G" aria-label="4×4 G 채널">
+                  <span class="plane-badge" aria-hidden="true">G</span>
+                  <div class="pixel-channel-grid" aria-hidden="true"></div>
+                </div>
+                <div class="pixel-plane pixel-plane-rgb" data-crop-plane="RGB" aria-label="4×4 RGB 합성">
+                  <span class="plane-badge" aria-hidden="true" title="선택 영역의 RGB 합성 표시">R</span>
+                  <div class="pixel-matrix">
+                    <span class="dimension-text dimension-text-h"><span>H = 4</span></span>
+                    <div class="pixel-block" role="img" aria-label="RGB 행렬에서 선택한 영역의 4행 4열 RGB 픽셀"><span></span><span></span><span></span><span></span><span></span><span></span><span class="selected" data-selected-index="6"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+                  </div>
+                </div>
+                <span class="dimension-text dimension-text-w">W = 4</span>
+              </div>
             </div>
-            <span class="figure-label">픽셀 확대 (4×4)</span>
+            <span class="concept-step-label">일부 영역 확대</span>
+            <span class="concept-step-note">4×4×3 = 48개 값</span>
+          </div>
+          <span class="flow-link" aria-hidden="true"><svg viewBox="0 0 36 24" fill="none"><path d="M2 12 H32 M24 4 L32 12 L24 20" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <div class="concept-step rgb-step">
+            <div class="concept-step-figure detail-frame">
+              <div class="pixel-detail">
+                <div class="selected-color">
+                  <span class="swatch" role="img" aria-label="4×4 픽셀 배열에서 선택한 픽셀의 실제 색상"></span>
+                  <div class="value-text"><strong id="selected-rgb">RGB 계산 중</strong><small>HEX <span id="selected-hex">—</span> · 0–255</small></div>
+                </div>
+                <div class="channel-values">
+                  <div class="channel-value"><div class="head">R <span class="dot" style="background:#e8695c"></span></div><div class="number">—</div><div class="track"><div class="bar" style="background:#e8695c"></div></div></div>
+                  <div class="channel-value"><div class="head">G <span class="dot" style="background:#5db88b"></span></div><div class="number">—</div><div class="track"><div class="bar" style="background:#5db88b"></div></div></div>
+                  <div class="channel-value"><div class="head">B <span class="dot" style="background:#558ecb"></span></div><div class="number">—</div><div class="track"><div class="bar" style="background:#558ecb"></div></div></div>
+                </div>
+              </div>
+            </div>
+            <span class="concept-step-label">선택한 1픽셀</span>
+            <span class="concept-step-note">한 위치 = RGB 3개 값</span>
           </div>
         </div>
-        <div class="photo-sample-note">80×80 리샘플 이미지의 선택된 4×4 픽셀</div>
-      </article>
-      <article class="concept-panel value-panel">
-        <div class="panel-head"><h2>선택 픽셀의 RGB 값</h2></div>
-        <div class="selected-color"><span class="swatch"></span><div><strong><span id="selected-rgb">RGB 값 계산 중</span></strong><small>HEX &nbsp;<span id="selected-hex">—</span> · 채널 범위 0–255</small></div></div>
-        <div class="channel-values">
-          <div class="channel-value"><div class="head">R <span class="dot" style="background:#e8695c"></span></div><div class="number">232</div><div class="track"><div class="bar" style="width:91.0%;background:#e8695c"></div></div></div>
-          <div class="channel-value"><div class="head">G <span class="dot" style="background:#5db88b"></span></div><div class="number">51</div><div class="track"><div class="bar" style="width:20.0%;background:#5db88b"></div></div></div>
-          <div class="channel-value"><div class="head">B <span class="dot" style="background:#558ecb"></span></div><div class="number">52</div><div class="track"><div class="bar" style="width:20.4%;background:#558ecb"></div></div></div>
+        <div class="concept-flow-summary" aria-label="같은 픽셀 위치의 R G B 값을 결합해 하나의 색으로 표시">
+          <span class="merge-copy">같은 위치의 R/G/B 값을 조합하면</span>
+          <div class="merge-values">
+            <span class="merge-channel" data-channel="R">R <strong id="merge-r">—</strong></span>
+            <span class="merge-separator">+</span>
+            <span class="merge-channel" data-channel="G">G <strong id="merge-g">—</strong></span>
+            <span class="merge-separator">+</span>
+            <span class="merge-channel" data-channel="B">B <strong id="merge-b">—</strong></span>
+          </div>
+          <span class="merge-arrow" aria-hidden="true">→</span>
+          <span class="merge-result"><span class="merge-swatch" role="img" aria-label="선택한 픽셀의 결합 RGB 색상"></span>1픽셀의 색</span>
         </div>
-        <div class="tensor-shape"><span class="formula">H × W × 3</span><span class="label">높이 × 너비 × RGB 채널<br><strong>이미지 텐서</strong></span></div>
       </article>
     </div>
-    <div class="concept-takeaway ref-takeaway"><strong>핵심 개념</strong><span>픽셀 하나 → RGB 3개 값 &nbsp;·&nbsp; 이미지 전체 → 3차원 배열(HWC)</span></div>
+    <div class="concept-takeaway ref-takeaway"><strong>핵심 개념</strong><span>높이(H) × 너비(W)의 모든 픽셀에 R · G · B 값이 하나씩 있으므로 <strong>H×W×3 배열</strong></span></div>
     <footer class="footer"><span>Design Template Library · Concept</span><span>01 / 08</span></footer>
   </section>
 </main>
 
 <script>
-/* Sample the displayed photograph as an 80×80 RGB image. The 4×4 block is
-   read from the same canvas raster, so every swatch/value is image-derived. */
+/* All three planes, all 16 enlarged pixels and the chosen RGB share one raster. */
 (async () => {
-  const image = document.getElementById('concept-image');
-  const slide = document.querySelector('.concept-slide');
+  const image=document.getElementById('concept-image');
+  const slide=document.querySelector('.concept-slide');
+  const selected_index=6;
+  const cells=[...document.querySelectorAll('.pixel-plane-rgb .pixel-block > span')];
+  const green_grid=document.querySelector('.pixel-plane-g .pixel-channel-grid');
+  const blue_grid=document.querySelector('.pixel-plane-b .pixel-channel-grid');
+  const channels=[...document.querySelectorAll('.channel-value')];
+  const rgb_label=document.getElementById('selected-rgb');
+  const hex_label=document.getElementById('selected-hex');
+  const swatch=document.querySelector('.selected-color .swatch');
+  const planes=[...document.querySelectorAll('.channel-canvas')];
+  const merge_numbers=['merge-r','merge-g','merge-b'].map(id=>document.getElementById(id));
+  const merge_swatch=document.querySelector('.merge-swatch');
   try {
     await image.decode();
-    const canvas = document.createElement('canvas');
-    canvas.width = canvas.height = 80;
-    const ctx = canvas.getContext('2d', {willReadFrequently:true});
-    ctx.imageSmoothingEnabled = true;
-    ctx.imageSmoothingQuality = 'high';
-    ctx.drawImage(image, 0, 0, 80, 80);
-    const rgba = ctx.getImageData(52, 38, 4, 4).data;
-    const colors = Array.from({length:16}, (_,i) =>
+    if(!image.naturalWidth || !image.naturalHeight)throw new Error('Source photograph unavailable');
+    const canvas=document.createElement('canvas');
+    canvas.width=canvas.height=80;
+    const ctx=canvas.getContext('2d',{willReadFrequently:true});
+    if(!ctx)throw new Error('Canvas 2D context unavailable');
+    ctx.imageSmoothingEnabled=true;
+    ctx.imageSmoothingQuality='high';
+    ctx.drawImage(image,0,0,80,80);
+    const full=ctx.getImageData(0,0,80,80).data;
+    const rgba=ctx.getImageData(52,38,4,4).data;
+    const colors=Array.from({length:16},(_,i)=>
       [rgba[i*4],rgba[i*4+1],rgba[i*4+2]]);
-    document.querySelectorAll('.pixel-block span').forEach((pixel,i) => {
-      pixel.style.backgroundColor = 'rgb(' + colors[i].join(',') + ')';
-      pixel.title = 'RGB (' + colors[i].join(', ') + ')';
+    if(colors.length!==cells.length || selected_index>=colors.length ||
+       colors.some(c=>c.some(v=>!Number.isInteger(v)||v<0||v>255)))
+      throw new Error('Invalid 4×4 RGB sample');
+    const mapping={R:0,G:1,B:2};
+    for(const plane of planes) {
+      const channel=mapping[plane.dataset.channel];
+      if(channel===undefined)throw new Error('Unknown color channel');
+      const context=plane.getContext('2d',{willReadFrequently:true});
+      if(!context)throw new Error('Channel canvas unavailable');
+      const pixels=context.createImageData(80,80);
+      for(let i=0;i<80*80;i++) {
+        pixels.data[i*4+channel]=full[i*4+channel];
+        pixels.data[i*4+3]=255;
+      }
+      context.putImageData(pixels,0,0);
+    }
+    // Read the exact channel outline hue from CSS; never hard-code a
+    // second, potentially mismatched G/B palette in JavaScript.
+    // Only display colors are tinted. All RGB/HEX values remain raw samples.
+    const get_channel_base=grid=>{
+      const css=getComputedStyle(grid).outlineColor;
+      const nums=css.match(/\d+(?:\.\d+)?/g);
+      if(!nums||nums.length<3)throw new Error('Invalid G/B channel tint: '+css);
+      return nums.slice(0,3).map(Number);
+    };
+    const tint_channel=(value,base)=>{
+      const t=0.22+(value/255)*0.78;
+      return base.map(component=>Math.round(255+(component-255)*t));
+    };
+    const paint_channel=(grid,channel)=>{
+      const base=get_channel_base(grid);
+      const items=colors.map(color=>{
+        const cell=document.createElement('span');
+        const components=tint_channel(color[channel],base);
+        cell.style.backgroundColor='rgb('+components.join(',')+')';
+        cell.dataset.rawValue=String(color[channel]);
+        cell.title=['R','G','B'][channel]+' '+color[channel];
+        return cell;
+      });
+      grid.replaceChildren(...items);
+    };
+    paint_channel(green_grid,1);
+    paint_channel(blue_grid,2);
+    const selected=colors[selected_index];
+    const rgb='rgb('+selected.join(',')+')';
+    const hex='#'+selected.map(v=>v.toString(16).padStart(2,'0')).join('').toUpperCase();
+    cells.forEach((cell,i)=>{
+      cell.style.backgroundColor='rgb('+colors[i].join(',')+')';
+      cell.title='RGB ('+colors[i].join(', ')+')';
     });
-    const [r,g,b] = colors[6];
-    const rgb = 'rgb(' + [r,g,b].join(',') + ')';
-    const hex = '#' + [r,g,b].map(v=>v.toString(16).padStart(2,'0')).join('').toUpperCase();
-    document.getElementById('selected-rgb').textContent = 'RGB ('+[r,g,b].join(', ')+')';
-    document.getElementById('selected-hex').textContent = hex;
-    document.querySelector('.selected-color .swatch').style.backgroundColor = rgb;
-    document.querySelectorAll('.channel-value').forEach((node,i) => {
-      node.querySelector('.number').textContent = [r,g,b][i];
-      node.querySelector('.bar').style.width = (100*[r,g,b][i]/255)+'%';
+    swatch.style.backgroundColor=rgb;
+    merge_swatch.style.backgroundColor=rgb;
+    merge_numbers.forEach((node,index)=>{node.textContent=selected[index];});
+    rgb_label.textContent='RGB ('+selected.join(', ')+')';
+    hex_label.textContent=hex;
+    channels.forEach((node,i)=>{
+      node.querySelector('.number').textContent=selected[i];
+      node.querySelector('.bar').style.width=(100*selected[i]/255)+'%';
     });
-    slide.dataset.sampled = 'true';
-  } catch(e) {
-    document.getElementById('selected-rgb').textContent = '이미지 픽셀 읽기 실패';
-    slide.dataset.sampled = 'error';
-    console.error(e);
+    slide.dataset.sampled='true';
+  }catch(error){
+    rgb_label.textContent='픽셀 읽기 실패';
+    hex_label.textContent='—';
+    cells.forEach(cell=>{cell.title='이미지 읽기 실패';});
+    channels.forEach(node=>{
+      node.querySelector('.number').textContent='—';
+      node.querySelector('.bar').style.width='0%';
+    });
+    swatch.style.backgroundColor='#dbe4f0';
+    merge_swatch.style.backgroundColor='#dbe4f0';
+    merge_numbers.forEach(node=>{node.textContent='—';});
+    slide.dataset.sampled='error';
+    console.error(error);
   }
 })();
 </script>

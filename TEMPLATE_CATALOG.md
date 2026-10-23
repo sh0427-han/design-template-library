@@ -4,7 +4,7 @@
 
 | 번호 | 이름 | 선택할 때 | 실제 레이아웃 | 원본 · 최신 대표 프리뷰 |
 | --- | --- | --- | --- | --- |
-| 01 | Concept | 추상 개념을 구체적 사례와 숫자로 풀 때 | 사진/픽셀 카드 + RGB/Shape 카드 + 마지막 캡션 | [HTML](templates/html/concept.html) · [PNG](previews/html-concept.png) |
+| 01 | Concept | 추상 개념을 구체적 사례와 숫자로 풀 때 | 단일 카드: 사진 → RGB 행렬 ROI → 4×4 확대 → 1픽셀 RGB 값 | [HTML](templates/html/concept.html) · [PNG](previews/html-concept.png) |
 | 02 | Process | 입력에서 결과까지 역할과 순서를 설명할 때 | Input → Feature → Task → Output + 마지막 캡션 | [HTML](templates/html/process.html) · [PNG](previews/html-process.png) |
 | 03 | Comparison | 판단 기준의 준비 방법과 예측 과정을 비교할 때 | 준비/예측 도식 + 같은 입력·3개 비교 행의 좌우 White 카드 | [HTML](templates/html/comparison.html) · [PNG](previews/html-comparison.png) |
 | 04 | Step-by-Step | 하나의 연산을 초급자에게 풀어 보여줄 때 | 입력/커널/출력 대응 + 원소별 곱/전체 합 | [HTML](templates/html/step-by-step.html) · [JPG](previews/html-step-by-step.jpg) |
@@ -15,13 +15,16 @@
 
 모든 레퍼런스는 HTML Scroll/Slide에 재사용하는 패턴입니다. PPTX가 아니며 8개를 한 자료에 모두 넣어야 하는 것도 아닙니다.
 
-## 01 Concept · 구체적 사례에서 숫자 구조로
+## 01 Concept · 사진에서 RGB 3차원 배열까지
 
-- **사용 목적·청중:** 이미지·데이터 구조를 처음 접하는 학습자, 변수나 센서 값을 소개하는 기술 설명.
-- **핵심 Figure:** 저장소의 사과 사진 한 장 → 선택한 4×4 픽셀 확대 → 선택 셀의 RGB/HEX → `H×W×3`.
-- **현재 예제:** 80×80 리샘플 Canvas의 `(52,38)`부터 4×4를 읽고 0-based index 6의 실제 픽셀을 모든 표시값에 연결합니다. 기준 Chromium에서는 RGB `(223,54,56)`, HEX `#DF3638`입니다.
-- **주의:** 새 사진을 쓰면 픽셀·색상·채널 막대·HEX를 실제 래스터에서 다시 계산합니다. 예전 숫자나 장식 색상을 남기지 않습니다. 사진 자체에 불필요한 추가 프레임·그림자를 붙이지 않습니다.
-- **가이드:** [상세 명세](docs/REFERENCE_PAGE_SPECS.md#01-concept), [Figure 제작](docs/FIGURE_PRODUCTION_STANDARD.md).
+- **학습 목적:** RGB 사진 → 동일한 높이와 너비의 R/G/B 숫자 행렬 3장 → 선택 4×4 영역 → 선택 픽셀의 세 숫자 → H×W×3 배열을 하나의 Figure로 이해. CNN/Kernel/Feature Map/Classification 제외.
+- **Figure:** 원본 사과 사진, 실제 채널별 값으로 그린 R/G/B 평면 3개(H/W/C=3 축), 같은 이미지에서 얻은 4×4 확대, 선택 index 6의 RGB/HEX 및 3채널 막대. 평면은 색칠한 가짜 행렬이 아니라 같은 원본의 80×80 리샘플에서 각 채널 강도를 별도 Canvas에 그린 것으로, 깊이 방향 3개 판은 채널 축의 도식입니다.
+- **격자 표시:** 각 채널 판 위에 8×8 얇은 안내선을 겹쳐 수치 행렬임을 나타냅니다. 이는 설명용 격자이며 실제 픽셀 데이터는 채널당 80×80로 동일합니다.
+- **확대 영역의 채널 깊이:** 동일 ROI `(52,38,4,4)`에서 얻은 `[R,G,B]` 16개를 공유합니다. 전면은 실제 RGB 합성 4×4(순수 R 평면이 아님), 중간 G와 후면 B는 기존 채널 윤곽에 사용하던 초록 `#279467`/파랑 `#427ec5`를 **단일 기준색**으로 사용합니다. CSS `outlineColor`를 JS가 직접 읽어 표시색 `t=0.22+0.78v/255`, `display=Math.round(255+(base−255)×t)`로 보간합니다. 밝은 표시색만 보정하며 실제 0~255 채널값·선택 RGB/HEX·막대는 그대로 둡니다. DOM·시각적 깊이는 B→G→RGB이며 데스크톱 오프셋은 G(+16px,−16px)/B(+32px,−32px), 520px 이하 모바일은 G(+12px,−12px)/B(+24px,−24px)입니다. R/G/B 각 레이어의 우상단 15px 배지(모바일 11px)는 앞 레이어에 가려지지 않도록 전면/중간/후면 높이차를 확보합니다. 전면은 교육용 실제 RGB 합성색이지만 `R` 배지를 대표 표기로 사용합니다. RGB 전면 격자 너비는 데스크톱 118px(28px×4+2px×3), 모바일 110px(26px×4+2px×3)로 추가 축소합니다. 일부 영역 확대의 가로·세로선과 C=3 표기를 삭제합니다. **H=4는 전면 RGB 격자 왼쪽 중앙에 90도 회전한 세로 글자**, **W=4는 전면 R(RGB 합성) 격자 중앙에 맞춘 확대 격자 아래의 가로 글자**로 표시합니다. 전면 R 격자에도 G/B와 동일한 **2px 외곽선·2px 모서리·연한 그림자**를 적용합니다. RGB 합성색 전면은 R 배지 색 `#b63c47`, 중간 G는 `#279467`, 후면 B는 `#427ec5`를 외곽선과 배지에 똑같이 사용합니다. 외곽선은 격자 크기에 영향을 주지 않는 `outline` 방식이고 선택 셀의 Navy/White 강조는 유지합니다. R/G/B 우상단 배지와 아래 `4×4×3 = 48개 값` 캡션은 유지합니다. 4단계 Figure는 이미지별 시각 중심으로 가운데 배치하되 하단 라벨·설명 위치는 유지합니다. 선택한 1픽셀 Swatch는 48→42px(모바일 40px), 상세 영역은 데스크톱 258→236px/모바일 228→214px로 함께 축소합니다. 확대 격자 좌하단의 `RGB` 표기와 확대 Figure의 `C=3`은 표시하지 않습니다. 왼쪽 전체 R/G/B 행렬의 `C=3`는 유지하며, 채널 수 3은 각 픽셀의 RGB 세 성분을 뜻합니다. 선택 index 6 선택은 전면에만 흰색 2px Halo와 Navy 5px 외곽선을 사용합니다. 16개 셀은 숫자 대신 실제 합성색 블록을 유지합니다. `4×4×3=48개 값`은 16픽셀×3성분입니다.
+- **수치 계약:** 리샘플 80×80, ROI x=52/y=38/width=4/height=4, 표시 ROI left 65%/top 47.5%/width 5%/height 5%. 선택 index 6 = 로컬 (2,1), 전체 (54,39). Chromium 검산 RGB 223/54/56, HEX #DF3638. 원본 사진과 추출 조건은 변경하지 않았습니다. 4×4 ROI의 원소 수는 4×4×3=48, 전체 이미지가 48값이라는 뜻은 아닙니다. 채널 막대 = value/255×100%.
+- **배치·디자인:** 한 개의 White 패널 안에서 입력 사진 → 3개 채널 행렬 → 해당 행렬에서 4×4 ROI 확대 → 선택한 1픽셀의 RGB/HEX/채널 막대까지 화살표 3개로 연결합니다. ROI는 원본 사진에 표시하지 않고 **앞쪽 R 채널 행렬 위에만** 표시합니다(세 채널의 같은 위치를 대표). 왼쪽 행렬 위의 C=3만 유지하고 확대 Figure에는 가이드선 없이 세로 H=4·하단 W=4만 표시합니다. Navy/Blue/Teal, 로컬 Pretendard Variable, −1pt 유지. 모바일에서는 4단계를 세로로 배치하며 실제 계산은 동일합니다.
+- **하단의 역할:** 가로 구분선 아래에는 H×W×3 정의를 재반복하지 않고 `같은 위치의 R/G/B를 조합 → 한 픽셀의 RGB 색상`을 보여줍니다. R/G/B 숫자, 합성 Swatch는 선택 index 6의 실제 Canvas 결과를 공유합니다. 산술 합산이 아니라 채널별 성분의 조합입니다. 최종 하단 핵심 개념에만 전체 H×W×3 배열을 남깁니다.
+- **소스·검증:** [HTML](templates/html/concept.html) · [사진](templates/html/assets/concept-apple-photo.jpg) · [PNG 프리뷰](previews/html-concept.png) · [상세 명세](docs/REFERENCE_PAGE_SPECS.md#01-concept). [검증 스크립트](scripts/validate_references.py)로 실제 이미지에서 채널별 6400개 픽셀, 확대 RGB/G/B의 각각 16개 셀·채널 성분·위치·index 6·RGB/HEX, B 기준 W·전면 기준 H 텍스트 중심/충분한 여백 및 가이드선 부재·G/B 채널 프레임 색상과 통일한 밝은 표시색 및 원본 수치 분리·선택 Halo/Navy·반응형 6화면·로컬 Pretendard를 검증합니다.
 
 ## 02 Process · 입력 이미지에서 클래스별 예측 확률로
 

@@ -23,13 +23,361 @@ class Quiet(SimpleHTTPRequestHandler):
         super().do_GET()
 
 def check_concept(page):
-    r=page.evaluate('''()=>{const im=document.querySelector('#concept-image'),cv=document.createElement('canvas');cv.width=cv.height=80;const c=cv.getContext('2d',{willReadFrequently:true});c.imageSmoothingEnabled=true;c.imageSmoothingQuality='high';c.drawImage(im,0,0,80,80);const raw=c.getImageData(52,38,4,4).data,colors=Array.from({length:16},(_,i)=>[...raw.slice(i*4,i*4+3)]);return {colors,displayed:[...document.querySelectorAll('.pixel-block span')].map(e=>e.style.backgroundColor),numbers:[...document.querySelectorAll('.channel-value .number')].map(e=>Number(e.textContent)),bars:[...document.querySelectorAll('.channel-value .bar')].map(e=>parseFloat(e.style.width)),rgb:document.querySelector('#selected-rgb').textContent,hex:document.querySelector('#selected-hex').textContent}}''')
-    assert r['displayed']==['rgb('+', '.join(map(str,c))+')' for c in r['colors']]
-    rgb=r['colors'][6];assert r['numbers']==rgb
+    """Verify real RGB planes, ROI source, four-stage flow and pixel numbers."""
+    r=page.evaluate('''() => {
+        const im=document.querySelector('#concept-image');
+        const cv=document.createElement('canvas');
+        cv.width=cv.height=80;
+        const ctx=cv.getContext('2d',{willReadFrequently:true});
+        ctx.imageSmoothingEnabled=true;
+        ctx.imageSmoothingQuality='high';
+        ctx.drawImage(im,0,0,80,80);
+        const full=ctx.getImageData(0,0,80,80).data;
+        const rgba=ctx.getImageData(52,38,4,4).data;
+        const colors=Array.from({length:16},(_,i)=>[...rgba.slice(i*4,i*4+3)]);
+        const box=e=>{const b=e.getBoundingClientRect();return {
+            x:b.x,y:b.y,right:b.right,bottom:b.bottom,width:b.width,
+            height:b.height,cx:b.x+b.width/2,cy:b.y+b.height/2}};
+        const selected=document.querySelector('.pixel-block .selected');
+        const cells=[...document.querySelectorAll('.pixel-plane-rgb .pixel-block > span')];
+        const cropPlanes=[...document.querySelectorAll('.pixel-stack > .pixel-plane')].map(node=>{
+            const grid=node.querySelector('.pixel-block,.pixel-channel-grid');
+            const planeCells=[...grid.querySelectorAll(':scope > span')];
+            return {
+                name:node.dataset.cropPlane,box:box(node),grid:box(grid),
+                cells:planeCells.map(e=>e.style.backgroundColor),
+                rawValues:planeCells.map(e=>e.dataset.rawValue||null),
+                selected:planeCells.filter(e=>e.classList.contains('selected')).length
+            };
+        });
+        const planes=[...document.querySelectorAll('.channel-canvas')].map(canvas=>{
+            const c=canvas.getContext('2d',{willReadFrequently:true});
+            const data=c.getImageData(0,0,80,80).data;
+            const channel={R:0,G:1,B:2}[canvas.dataset.channel];
+            let errors=0;
+            for(let i=0;i<6400;i++){
+                for(let k=0;k<3;k++){
+                    if(data[i*4+k] !== (k===channel?full[i*4+k]:0)) errors++;
+                }
+                if(data[i*4+3]!==255)errors++;
+            }
+            return {name:canvas.dataset.channel,width:canvas.width,
+                height:canvas.height,errors,box:box(canvas),
+                layer:box(canvas.closest('.channel-layer'))};
+        });
+        const roi=document.querySelector('.matrix-roi');
+        const rbox=box(roi),cbox=box(document.querySelector('.channel-layer[data-plane="R"] canvas'));
+        const pixelGrid=box(document.querySelector('.pixel-block'));
+        const heightText=document.querySelector('.dimension-text-h');
+        const widthText=document.querySelector('.dimension-text-w');
+        const flow=document.querySelector('.concept-flow');
+        const rgbBox=box(document.querySelector('.selected-color'));
+        return {
+            state:document.querySelector('.concept-slide').dataset.sampled,
+            imageComplete:im.complete && im.naturalWidth>0,
+            planeROIs:document.querySelectorAll('.matrix-roi').length,
+            photoROIs:document.querySelectorAll('.photo-roi').length,
+            matrixParent:roi.closest('.channel-layer').dataset.plane,
+            matrixROI:{
+                left:(rbox.x-cbox.x)/cbox.width,
+                top:(rbox.y-cbox.y)/cbox.height,
+                width:rbox.width/cbox.width,height:rbox.height/cbox.height
+            },
+            colors,painted:cells.map(e=>e.style.backgroundColor),cropPlanes,
+            cropStack:box(document.querySelector('.pixel-stack')),
+            cropBadges:[...document.querySelectorAll('.pixel-stack .plane-badge')]
+                .map(e=>({label:e.textContent.trim(),box:box(e),
+                    background:getComputedStyle(e).backgroundColor,
+                    display:getComputedStyle(e).display,
+                    font:getComputedStyle(e).fontSize,
+                    plane:e.closest('.pixel-plane').dataset.cropPlane})),
+            cropOutlines:['R','G','B'].map(channel=>{
+                const node=document.querySelector('.pixel-plane-'+(channel==='R'?'rgb':channel.toLowerCase()));
+                const grid=node.querySelector('.pixel-block,.pixel-channel-grid');
+                const style=getComputedStyle(grid);
+                return {name:channel,base:style.outlineColor,
+                    badge:getComputedStyle(node.querySelector('.plane-badge')).backgroundColor,
+                    width:style.outlineWidth,outlineStyle:style.outlineStyle,
+                    radius:style.borderRadius,shadow:style.boxShadow};
+            }),
+            selectedIndex:cells.indexOf(selected),
+            declaredIndex:Number(selected.dataset.selectedIndex),
+            selectedTitle:selected.title,
+            channels:[...document.querySelectorAll('.channel-value .number')]
+                .map(e=>Number(e.textContent)),
+            numberWidths:[...document.querySelectorAll('.channel-value .number')]
+                .map(e=>({scroll:e.scrollWidth,client:e.clientWidth})),
+            bars:[...document.querySelectorAll('.channel-value .bar')]
+                .map(e=>parseFloat(e.style.width)),
+            rgb:document.querySelector('#selected-rgb').textContent,
+            hex:document.querySelector('#selected-hex').textContent,
+            swatch:getComputedStyle(document.querySelector('.selected-color .swatch')).backgroundColor,
+            selectedColor:getComputedStyle(selected).backgroundColor,
+            selectedStyle:{
+                border:getComputedStyle(selected).borderColor,
+                outline:getComputedStyle(selected).outlineStyle,
+                shadow:getComputedStyle(selected).boxShadow,
+                zIndex:getComputedStyle(selected).zIndex
+            },
+            planes,
+            axes:[...document.querySelectorAll('.stack-axis')].map(e=>e.textContent.trim()),
+            cAxis:box(document.querySelector('.stack-axis-c')),
+            hText:box(heightText.querySelector('span')),
+            hAxis:box(heightText),wText:box(widthText),pixelGrid,
+            hTransform:getComputedStyle(heightText.querySelector('span')).transform,
+            cropSwatch:box(document.querySelector('.selected-color .swatch')),
+            detail:box(document.querySelector('.pixel-detail')),
+            cssGridColumn:getComputedStyle(document.querySelector('.pixel-block')).gridTemplateColumns,
+            cropCLabelCount:document.querySelectorAll('.pixel-stack .pixel-channel-indicator').length,
+            dimensionLines:document.querySelectorAll('.pixel-stack .dimension-width,.pixel-stack .dimension-height').length,
+            hBorder:getComputedStyle(heightText).borderRightWidth,
+            wBorder:getComputedStyle(widthText).borderBottomWidth,
+            visualCenters:(()=>{
+                const figureBox=selector=>box(document.querySelector(selector));
+                const cropParts=[heightText.querySelector('span'),widthText,
+                    document.querySelector('.pixel-plane-rgb .pixel-block'),
+                    document.querySelector('.pixel-plane-g .pixel-channel-grid'),
+                    document.querySelector('.pixel-plane-b .pixel-channel-grid')].map(box);
+                const cropLeft=Math.min(...cropParts.map(x=>x.x));
+                const cropRight=Math.max(...cropParts.map(x=>x.right));
+                const centerOf=selector=>figureBox(selector).cx;
+                return {
+                    photo:centerOf('.photo-wrap')-centerOf('.image-frame'),
+                    matrix:centerOf('.channel-stack')-centerOf('.matrix-frame'),
+                    crop:(cropLeft+cropRight)/2-centerOf('.pixel-frame'),
+                    detail:centerOf('.pixel-detail')-centerOf('.detail-frame')
+                };
+            })(),
+            arrows:[...flow.querySelectorAll(':scope > .flow-link')].map(box),
+            steps:[...flow.querySelectorAll(':scope > .concept-step')].map(box),
+            figures:['.image-frame','.matrix-frame','.pixel-frame','.detail-frame']
+                .map(s=>box(document.querySelector(s))),
+            labels:[...flow.querySelectorAll('.concept-step-label')].map(e=>e.textContent.trim()),
+            notes:[...flow.querySelectorAll('.concept-step-note')].map(e=>e.textContent.trim()),
+            panelCount:document.querySelectorAll('.concept-panel').length,
+            panel:box(document.querySelector('.concept-panel')),
+            detailInside:document.querySelector('.rgb-step').closest('.concept-panel')===
+                document.querySelector('.matrix-step').closest('.concept-panel'),
+            rgbBox,summary:document.querySelector('.concept-flow-summary').textContent,
+            cropChannels:{
+                planeNames:[...document.querySelectorAll('.pixel-stack > .pixel-plane')]
+                    .map(e=>e.dataset.cropPlane),
+                box:box(document.querySelector('.pixel-stack')),
+                frame:box(document.querySelector('.pixel-frame')),
+                note:document.querySelector('.pixel-step .concept-step-note').textContent.trim()
+            },
+            merge:{
+                copy:document.querySelector('.merge-copy').textContent.trim(),
+                values:['merge-r','merge-g','merge-b'].map(id=>Number(document.getElementById(id).textContent)),
+                swatch:getComputedStyle(document.querySelector('.merge-swatch')).backgroundColor,
+                elementCount:document.querySelectorAll('.merge-channel').length,
+                box:box(document.querySelector('.concept-flow-summary'))
+            },
+            footer:box(document.querySelector('.footer')),
+            viewport:innerWidth
+        };
+    }''')
+    assert r['state']=='true' and r['imageComplete']
+    assert r['panelCount']==1 and r['detailInside']
+    assert len(r['steps'])==4 and len(r['arrows'])==3
+    assert r['labels']==[
+        '입력 이미지','R · G · B 행렬 3장','일부 영역 확대','선택한 1픽셀']
+    assert r['notes']==[
+        '하나의 RGB 사진','같은 H×W, ROI 선택',
+        '4×4×3 = 48개 값','한 위치 = RGB 3개 값']
+    assert r['photoROIs']==0 and r['planeROIs']==1
+    assert r['matrixParent']=='R'
+    assert [(p['name'],p['width'],p['height'],p['errors']) for p in r['planes']]==[
+        ('B',80,80,0),('G',80,80,0),('R',80,80,0)]
+    assert r['planes'][0]['layer']['x']>r['planes'][1]['layer']['x']>r['planes'][2]['layer']['x']
+    assert r['planes'][0]['layer']['y']<r['planes'][1]['layer']['y']<r['planes'][2]['layer']['y']
+    assert all(abs(p['layer']['width']-r['planes'][0]['layer']['width'])<1 for p in r['planes'])
+    assert all(abs(p['layer']['height']-r['planes'][0]['layer']['height'])<1 for p in r['planes'])
+    for key,val in [('left',.65),('top',.475),('width',.05),('height',.05)]:
+        assert abs(r['matrixROI'][key]-val)<.02,(r['viewport'],key,r['matrixROI'])
+    assert r['axes']==['C = 3','H','W']
+    assert r['cAxis']['bottom']<r['planes'][0]['layer']['y'],(r['viewport'],r['cAxis'])
+    # getBoundingClientRect reports scaled coordinates; check border line endpoints,
+    # not merely the midpoint of either dimension label.
+    unscaled_grid=110 if r['viewport']<=520 else 118
+    scale=r['pixelGrid']['width']/unscaled_grid
+    tol=max(.75,1.5*scale)
+    # No C=3 in the crop and no dimension guide lines.
+    # Left three-channel stack must still retain its C=3.
+    assert r['cropCLabelCount']==0 and r['dimensionLines']==0
+    assert float(r['hBorder'].removesuffix('px'))==0
+    assert float(r['wBorder'].removesuffix('px'))==0
+    b_grid=r['cropPlanes'][0]['grid']
+    assert abs(r['hText']['cy']-r['pixelGrid']['cy'])<=tol
+    assert abs(r['wText']['cx']-r['pixelGrid']['cx'])<=tol
+    assert r['hText']['height']>r['hText']['width']*1.2,(
+        'H must be vertical',r['hText'])
+    assert r['hTransform']!='none' and abs(r['hText']['cy']-r['hAxis']['cy'])<=tol
+    assert r['hText']['right']<=r['pixelGrid']['x']-6*scale
+    assert r['wText']['y']>=max(p['grid']['bottom'] for p in r['cropPlanes'])+5*scale
+    assert r['wText']['bottom']<=r['cropChannels']['box']['bottom']+2
+    assert r['pixelGrid']['width']<=118*scale+.1
+    assert r['cropSwatch']['width'] <= (40 if r['viewport']<=520 else 42)*scale+.15
+    assert r['detail']['width'] <= (214 if r['viewport']<=520 else 236)*scale+.15
+    assert all(abs(value)<3.1 for value in r['visualCenters'].values()),(
+        r['viewport'],r['visualCenters'])
+    # Explicit corner badges must be entirely visible, correctly labelled
+    # and color-matched to their OWN panel outlines.
+    badges=r['cropBadges']
+    assert [(b['plane'],b['label']) for b in badges]==[
+        ('B','B'),('G','G'),('RGB','R')],(r['viewport'],badges)
+    expected_frame_colors={'R':'rgb(182, 60, 71)',
+                           'G':'rgb(39, 148, 103)',
+                           'B':'rgb(66, 126, 197)'}
+    frames=r['cropOutlines']
+    assert [f['name'] for f in frames]==['R','G','B']
+    assert all(f['base']==f['badge']==expected_frame_colors[f['name']]
+               for f in frames),(r['viewport'],frames)
+    # One outline treatment on R/G/B. No extra border that changes the
+    # 4x4 pixel-grid layout; selected index 6 retains its own white/navy halo.
+    assert all(f['outlineStyle']=='solid' for f in frames),frames
+    assert len({f['width'] for f in frames})==1
+    assert len({f['radius'] for f in frames})==1
+    assert len({f['shadow'] for f in frames})==1
+    # Chromium reports transformed CSS outline widths differently from
+    # grid bounding boxes at noninteger zoom. Equality across R/G/B and
+    # a positive painted stroke, not nominal device pixels, is the contract.
+    assert all(.5<=float(f['width'].removesuffix('px'))<=3
+               and float(f['radius'].removesuffix('px'))>=1
+               and f['shadow']!='none' for f in frames),(r['viewport'],frames)
+    for i,b in enumerate(badges):
+        plane=r['cropPlanes'][i]['grid']
+        assert b['display']=='grid' and float(b['font'].removesuffix('px'))>=9
+        assert plane['right']-b['box']['right']>=0
+        assert b['box']['x']>=plane['x'] and b['box']['y']>=plane['y']
+        assert b['box']['bottom']<=plane['bottom']
+    # Text labels must not touch the rear planes or each other.
+    def overlaps(a,b):
+        return (a['x']<b['right'] and a['right']>b['x']
+                and a['y']<b['bottom'] and a['bottom']>b['y'])
+    for label in [r['hText'],r['wText']]:
+        assert not any(overlaps(label,p['grid']) for p in r['cropPlanes']),(
+            r['viewport'],label,r['cropPlanes'])
+    assert not overlaps(r['hText'],r['wText'])
+    for badge in badges:
+        assert not overlaps(badge['box'],r['wText'])
+        assert not overlaps(badge['box'],r['hText'])
+    assert not any(overlaps(a['box'],b['box'])
+                   for i,a in enumerate(badges) for b in badges[i+1:])
+    # Badge visibility: rear top-right tabs cannot be covered by front grids.
+    assert all(not any(overlaps(badges[i]['box'],p['grid'])
+                       for p in r['cropPlanes'][i+1:])
+               for i in range(2))
+    assert len(r['colors'])==16 and r['selectedIndex']==r['declaredIndex']==6
+    assert r['painted']==['rgb('+', '.join(map(str,c))+')' for c in r['colors']]
+    rgb=r['colors'][6]
+    assert r['channels']==rgb
+    assert page.locator('.pixel-plane-rgb').evaluate(
+        "e=>getComputedStyle(e,'::after').content")=='none'
+    assert r['cropChannels']['planeNames']==['B','G','RGB']
+    crop=r['cropPlanes']
+    assert [p['name'] for p in crop]==['B','G','RGB']
+    assert all(len(p['cells'])==16 for p in crop)
+    assert [p['selected'] for p in crop]==[0,0,1]
+    assert crop[2]['cells']==r['painted']
+    # Independent calculation of the JS display-only tint (Math.round).
+    # Python round() uses ties-to-even; JS uses floor(x + 0.5) for x >= 0.
+    def tint_channel(value,tint):
+        level=.22+value/255*.78
+        return tuple(math.floor(255+(v-255)*level+.5) for v in tint)
+    def css_rgb(rgb):
+        return 'rgb('+', '.join(map(str,rgb))+')'
+    green_tint=(39,148,103)  # exact CSS G outline #279467
+    blue_tint=(66,126,197)   # exact CSS B outline #427ec5
+    assert crop[1]['cells']==[
+        css_rgb(tint_channel(color[1],green_tint)) for color in r['colors']]
+    assert crop[0]['cells']==[
+        css_rgb(tint_channel(color[2],blue_tint)) for color in r['colors']]
+    assert crop[1]['rawValues']==[str(c[1]) for c in r['colors']]
+    assert crop[0]['rawValues']==[str(c[2]) for c in r['colors']]
+    assert crop[2]['rawValues']==[None]*16
+    assert all(tint_channel(a,t)[i]>=tint_channel(b,t)[i]
+               for index,t in [(1,green_tint),(2,blue_tint)]
+               for a,b in zip(sorted(c[index] for c in r['colors'])[:-1],
+                              sorted(c[index] for c in r['colors'])[1:])
+               for i in range(3))
+    assert all(abs(p['grid']['width']-crop[2]['grid']['width'])<1
+               and abs(p['grid']['height']-crop[2]['grid']['height'])<1
+               for p in crop)
+    assert crop[0]['box']['x']>crop[1]['box']['x']>crop[2]['box']['x']
+    assert crop[0]['box']['y']<crop[1]['box']['y']<crop[2]['box']['y']
+    # Compare relative layer offsets at the actual responsive scale.
+    offset=(12 if r['viewport']<=520 else 16)*scale
+    assert abs(crop[1]['box']['x']-crop[2]['box']['x']-offset)<1
+    assert abs(crop[2]['box']['y']-crop[1]['box']['y']-offset)<1
+    assert abs(crop[0]['box']['x']-crop[2]['box']['x']-2*offset)<1
+    assert abs(crop[2]['box']['y']-crop[0]['box']['y']-2*offset)<1
+    # Crop stack is the figure envelope; the deleted C label no longer sits above B.
+    assert r['cropChannels']['box']['right']<=r['cropChannels']['frame']['right']+2
+    assert all(p['box']['x']>=r['cropChannels']['frame']['x']-1
+               and p['box']['right']<=r['cropChannels']['frame']['right']+1
+               and p['box']['y']>=r['cropChannels']['frame']['y']-1
+               and p['box']['bottom']<=r['cropChannels']['frame']['bottom']+1
+               for p in crop)
+    assert r['cropChannels']['note']=='4×4×3 = 48개 값'
+    assert r['cropChannels']['frame']['y']<=r['cropChannels']['box']['y']
+    assert r['cropChannels']['box']['bottom']<=r['cropChannels']['frame']['bottom']+1
+    assert r['merge']['copy']=='같은 위치의 R/G/B 값을 조합하면'
+    assert r['merge']['elementCount']==3 and r['merge']['values']==rgb
+    assert r['selectedTitle']=='RGB ('+', '.join(map(str,rgb))+')'
     assert r['rgb']=='RGB ('+', '.join(map(str,rgb))+')'
     assert r['hex']=='#'+''.join(f'{v:02X}' for v in rgb)
+    assert r['swatch']==r['selectedColor']==r['merge']['swatch']==(
+        'rgb('+', '.join(map(str,rgb))+')')
+    assert r['pixelGrid']['width']<150*scale
+    assert r['rgbBox']['width']>=48*scale
+    style=r['selectedStyle']
+    assert style['border']=='rgb(255, 255, 255)' and style['outline']=='none'
+    assert style['zIndex']=='8'
+    assert 'rgb(255, 255, 255) 0px 0px 0px 2px' in style['shadow'],style
+    assert 'rgb(18, 35, 63) 0px 0px 0px 5px' in style['shadow'],style
     assert all(abs(a-100*b/255)<.001 for a,b in zip(r['bars'],rgb))
-    return {'resample':[80,80],'roi':[52,38,4,4],'selected_index':6,'rgb':rgb,'hex':r['hex'],'all_16_swatches_match':True}
+    assert all(n['scroll']<=n['client']+1 for n in r['numberWidths'])
+    assert 'H × W × 3' not in r['summary']
+    assert '1픽셀의 색' in r['summary']
+    assert 'R' in r['summary'] and 'G' in r['summary'] and 'B' in r['summary']
+    assert r['merge']['box']['x']>=r['panel']['x']
+    assert r['merge']['box']['right']<=r['panel']['right']
+    assert r['rgbBox']['x']>=r['panel']['x'] and r['rgbBox']['right']<=r['panel']['right']
+    assert r['panel']['bottom']<r['footer']['y']
+    if r['viewport']>900:
+        assert max(f['cy'] for f in r['figures'])-min(f['cy'] for f in r['figures'])<1.5
+        assert all(r['steps'][i]['right']<r['steps'][i+1]['x'] for i in range(3))
+    else:
+        assert all(r['figures'][i]['bottom']<r['figures'][i+1]['y'] for i in range(3))
+        assert all(r['arrows'][i]['cy']>r['figures'][i]['bottom'] and
+                   r['arrows'][i]['cy']<r['figures'][i+1]['y'] for i in range(3))
+    return {'resample':[80,80],'roi':[52,38,4,4],'roi_on_matrix':True,
+            'selected_index':6,'selected_xy':[54,39],'rgb':rgb,'hex':r['hex'],
+            'rgb_planes_order':['B','G','R'],
+            'plane_pixel_checks':80*80*4*3,'rgb_planes_are_real_samples':True,
+            'all_16_colors_match':True,'single_panel_four_stages':True,
+            'crop_channel_depth':3,'crop_stack_order':['B','G','RGB'],
+            'crop_rgb_16_match':True,'crop_g_16_match':True,
+            'crop_b_16_match':True,'merge_uses_same_rgb':True,
+            'shape':'H×W×3','patch_values':48,'matrix_roi_normalized':r['matrixROI'],
+            'text_axis_alignment_px':{
+                'w_center_on_front_rgb':round(r['wText']['cx']-r['pixelGrid']['cx'],3),
+                'h_center_on_rgb':round(r['hText']['cy']-r['pixelGrid']['cy'],3),
+                'w_gap_below_stack':round(r['wText']['y']-max(p['grid']['bottom'] for p in crop),3),
+                'h_gap_left_rgb':round(r['pixelGrid']['x']-r['hText']['right'],3)},
+            'crop_c_label_removed':True,'crop_guides_removed':True,
+            'crop_grid_width_px':r['pixelGrid']['width'],
+            'one_pixel_swatch_width_px':r['cropSwatch']['width'],
+            'one_pixel_detail_width_px':r['detail']['width'],
+            'h_label_rotated_vertically':True,
+            'crop_frame_colors':{'R':'#b63c47','G':'#279467','B':'#427ec5'},
+            'crop_frame_uniform':True,
+            'crop_display_tints':{'G':'#279467','B':'#427ec5'},
+            'crop_display_formula':'rgb(255+(base-255)*(0.22+0.78*v/255))',
+            'crop_plane_badges':['B','G','R'],
+            'figure_center_errors_px':r['visualCenters'],
+            'selected_halo_px':2,'selected_navy_outline_px':5}
 
 def check_motif(page,name):
     points=[0,1,63,64,65,32*64+32,4095]
