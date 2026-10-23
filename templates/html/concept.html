@@ -53,6 +53,14 @@
 .channel-layer[data-plane="B"] {left:69px;top:10px;z-index:1;border-color:#8eb8e7;}
 .channel-layer[data-plane="G"] {left:42px;top:35px;z-index:2;border-color:#8acfb3;}
 .channel-layer[data-plane="R"] {left:15px;top:60px;z-index:3;border-color:#eaa7a7;}
+.channel-layer::after {
+  content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,.33) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,.33) 1px, transparent 1px);
+  background-size:12.5% 12.5%;
+}
+/* The coarse 8×8 grid is only a visual guide; source data stays 80×80. */
 .channel-canvas {display:block;width:100%;height:100%;image-rendering:auto;}
 .plane-id {
   position:absolute;right:0;top:0;z-index:2;display:grid;place-items:center;
