@@ -4,7 +4,7 @@
 
 | 번호 | 이름 | 선택할 때 | 실제 레이아웃 | 원본 · 최신 대표 프리뷰 |
 | --- | --- | --- | --- | --- |
-| 01 | Concept | 추상 개념을 구체적 사례와 숫자로 풀 때 | 사진/픽셀 카드 + RGB/Shape 카드 + 마지막 캡션 | [HTML](templates/html/concept.html) · [PNG](previews/html-concept.png) |
+| 01 | Concept | 추상 개념을 구체적 사례와 숫자로 풀 때 | 단일 카드: 사진 → RGB 행렬 ROI → 4×4 확대 → 1픽셀 RGB 값 | [HTML](templates/html/concept.html) · [PNG](previews/html-concept.png) |
 | 02 | Process | 입력에서 결과까지 역할과 순서를 설명할 때 | Input → Feature → Task → Output + 마지막 캡션 | [HTML](templates/html/process.html) · [PNG](previews/html-process.png) |
 | 03 | Comparison | 동일한 과제에서 두 접근을 같은 기준으로 비교할 때 | 같은 입력·같은 3개 비교 행의 좌우 카드 | [HTML](templates/html/comparison.html) · [PNG](previews/html-comparison.png) |
 | 04 | Step-by-Step | 하나의 연산을 초급자에게 풀어 보여줄 때 | 입력/커널/출력 대응 + 원소별 곱/전체 합 | [HTML](templates/html/step-by-step.html) · [JPG](previews/html-step-by-step.jpg) |
