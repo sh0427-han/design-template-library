@@ -21,6 +21,7 @@
 ## Core rules
 
 - One main concept per slide; use diagrams and data flows where helpful.
+- Follow [the first-use terminology rules](DESIGN_SYSTEM.md#용어와-약어의-첫-등장): introduce an unfamiliar term by its full name and a short meaning before abbreviating it. Define terms per independent reference or the connected lesson's first use, and preserve the essential definition across Scroll/Slide.
 - Ensure technical accuracy, especially equations, tensor layouts, CNN flows and metrics.
 - Use the shared HTML/CSS/JavaScript design system for Scroll and Slide; keep content and calculations consistent across modes.
 - Apply **condensed character spacing of 1.0 pt (`-1pt`) to ALL HTML text** (title, body, label, caption, footer, gallery). Use shared tokens; never override individual labels/headings without explicit instruction.
