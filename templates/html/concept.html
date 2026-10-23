@@ -83,6 +83,21 @@
   display:flex;flex-direction:column;align-items:center;justify-content:center;
   gap:9px;width:100%;height:254px;min-width:0;padding-top:23px;
 }
+.pixel-stack {position:relative;flex:none;width:173px;height:173px;}
+.pixel-plane {position:absolute;width:max-content;height:max-content;}
+.pixel-plane-b {left:20px;top:0;z-index:1;}
+.pixel-plane-g {left:10px;top:10px;z-index:2;}
+.pixel-plane-rgb {left:0;top:20px;z-index:3;}
+.pixel-channel-grid {
+  display:grid;grid-template-columns:repeat(4,36px);
+  grid-template-rows:repeat(4,36px);gap:3px;
+}
+.pixel-channel-grid span {
+  display:block;width:36px;height:36px;
+  border:1px solid #ffffff88;border-radius:1px;background:#e9eef5;
+}
+.pixel-plane-b .pixel-channel-grid {outline:2px solid #427ec5;}
+.pixel-plane-g .pixel-channel-grid {outline:2px solid #279467;}
 .pixel-matrix {position:relative;width:max-content;}
 .dimension-width {
   position:absolute;left:0;right:0;top:-28px;padding-bottom:5px;
@@ -102,15 +117,10 @@
 }
 .pixel-block .selected {position:relative;z-index:4;outline:3px solid var(--navy);outline-offset:1px;}
 .pixel-channel-indicator {
-  display:flex;justify-content:center;align-items:center;gap:7px;
-  min-height:24px;color:var(--navy);font-size:13px;white-space:nowrap;
+  position:absolute;right:-3px;top:-42px;z-index:5;
+  min-height:20px;color:var(--navy);font-size:13px;white-space:nowrap;
 }
 .pixel-channel-indicator strong {font-size:15px;color:var(--blue);font-weight:800;}
-.pixel-channel-indicator .channels {display:flex;align-items:center;gap:4px;}
-.pixel-channel-indicator .channel-tag {display:flex;align-items:center;gap:3px;font-size:12px;font-weight:750;}
-.pixel-channel-indicator .channel-tag::before {
-  content:"";display:block;width:7px;height:7px;border-radius:1px;background:var(--tag-color);
-}
 .pixel-block .selected::after,.selected-color .swatch::after {
   content:"";position:absolute;right:-5px;top:-5px;width:7px;height:7px;
   border:1px solid #fff;border-radius:50%;background:var(--navy);
@@ -187,8 +197,17 @@
   .flow-link {height:46px;transform:none;}
   .flow-link svg {transform:rotate(90deg);}
   .reference-slide.concept-slide .pixel-frame {height:209px;padding-top:24px;gap:8px;}
-  .reference-slide.concept-slide .pixel-block {grid-template-columns:repeat(4,33px);grid-template-rows:repeat(4,33px);}
-  .reference-slide.concept-slide .pixel-block span {width:33px;height:33px;}
+  .pixel-stack {width:157px;height:157px;}
+  .pixel-plane-b {left:16px;top:0;}
+  .pixel-plane-g {left:8px;top:8px;}
+  .pixel-plane-rgb {left:0;top:16px;}
+  .pixel-channel-indicator {top:-38px;}
+  .reference-slide.concept-slide .pixel-block,
+  .reference-slide.concept-slide .pixel-channel-grid {
+    grid-template-columns:repeat(4,33px);grid-template-rows:repeat(4,33px);
+  }
+  .reference-slide.concept-slide .pixel-block span,
+  .reference-slide.concept-slide .pixel-channel-grid span {width:33px;height:33px;}
   .dimension-width,.dimension-height {font-size:12px;}
   .dimension-height {left:-36px;width:23px;}
   .detail-frame {height:174px;}
@@ -252,18 +271,21 @@
           <span class="flow-link" aria-hidden="true"><svg viewBox="0 0 36 24" fill="none"><path d="M2 12 H32 M24 4 L32 12 L24 20" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           <div class="concept-step pixel-step">
             <div class="pixel-frame">
-              <div class="pixel-matrix">
-                <span class="dimension-width">W = 4</span>
-                <span class="dimension-height"><span>H = 4</span></span>
-                <div class="pixel-block" role="img" aria-label="RGB 행렬에서 선택한 영역의 4행 4열 RGB 픽셀"><span></span><span></span><span></span><span></span><span></span><span></span><span class="selected" data-selected-index="6"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
-              </div>
-              <div class="pixel-channel-indicator" aria-label="확대 영역도 RGB 채널 세 개를 유지">
-                <strong>C = 3</strong>
-                <span class="channels" aria-hidden="true">
-                  <span class="channel-tag" style="--tag-color:#b63c47">R</span>
-                  <span class="channel-tag" style="--tag-color:#238463">G</span>
-                  <span class="channel-tag" style="--tag-color:#3168c8">B</span>
-                </span>
+              <div class="pixel-stack" role="group" aria-label="동일 ROI의 RGB 합성값과 G, B 채널">
+                <div class="pixel-plane pixel-plane-b" data-crop-plane="B" aria-label="4×4 B 채널">
+                  <div class="pixel-channel-grid" aria-hidden="true"></div>
+                </div>
+                <div class="pixel-plane pixel-plane-g" data-crop-plane="G" aria-label="4×4 G 채널">
+                  <div class="pixel-channel-grid" aria-hidden="true"></div>
+                </div>
+                <div class="pixel-plane pixel-plane-rgb" data-crop-plane="RGB" aria-label="4×4 RGB 합성">
+                  <div class="pixel-matrix">
+                    <span class="dimension-width">W = 4</span>
+                    <span class="dimension-height"><span>H = 4</span></span>
+                    <div class="pixel-block" role="img" aria-label="RGB 행렬에서 선택한 영역의 4행 4열 RGB 픽셀"><span></span><span></span><span></span><span></span><span></span><span></span><span class="selected" data-selected-index="6"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+                  </div>
+                </div>
+                <div class="pixel-channel-indicator" aria-label="각 픽셀에 R G B 채널값 3개"><strong>C = 3</strong></div>
               </div>
             </div>
             <span class="concept-step-label">일부 영역 확대</span>
@@ -313,7 +335,9 @@
   const image=document.getElementById('concept-image');
   const slide=document.querySelector('.concept-slide');
   const selected_index=6;
-  const cells=[...document.querySelectorAll('.pixel-block span')];
+  const cells=[...document.querySelectorAll('.pixel-plane-rgb .pixel-block > span')];
+  const green_grid=document.querySelector('.pixel-plane-g .pixel-channel-grid');
+  const blue_grid=document.querySelector('.pixel-plane-b .pixel-channel-grid');
   const channels=[...document.querySelectorAll('.channel-value')];
   const rgb_label=document.getElementById('selected-rgb');
   const hex_label=document.getElementById('selected-hex');
@@ -351,6 +375,19 @@
       }
       context.putImageData(pixels,0,0);
     }
+    const paint_channel=(grid,channel)=>{
+      const items=colors.map(color=>{
+        const cell=document.createElement('span');
+        const components=[0,0,0];
+        components[channel]=color[channel];
+        cell.style.backgroundColor='rgb('+components.join(',')+')';
+        cell.title=['R','G','B'][channel]+' '+color[channel];
+        return cell;
+      });
+      grid.replaceChildren(...items);
+    };
+    paint_channel(green_grid,1);
+    paint_channel(blue_grid,2);
     const selected=colors[selected_index];
     const rgb='rgb('+selected.join(',')+')';
     const hex='#'+selected.map(v=>v.toString(16).padStart(2,'0')).join('').toUpperCase();
