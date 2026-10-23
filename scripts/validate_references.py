@@ -176,7 +176,10 @@ def check_concept(page):
                for p in crop)
     assert crop[0]['box']['x']>crop[1]['box']['x']>crop[2]['box']['x']
     assert crop[0]['box']['y']<crop[1]['box']['y']<crop[2]['box']['y']
-    offset=8 if r['viewport']<=520 else 10
+    # getBoundingClientRect reflects the responsive scale of the parent slide.
+    unscaled_grid=141 if r['viewport']<=520 else 153
+    scale=crop[2]['grid']['width']/unscaled_grid
+    offset=(8 if r['viewport']<=520 else 10)*scale
     assert abs(crop[1]['box']['x']-crop[2]['box']['x']-offset)<1
     assert abs(crop[2]['box']['y']-crop[1]['box']['y']-offset)<1
     assert abs(crop[0]['box']['x']-crop[2]['box']['x']-2*offset)<1
