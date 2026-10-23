@@ -19,6 +19,7 @@
 
 - **학습 목적:** RGB 사진 → 동일한 높이와 너비의 R/G/B 숫자 행렬 3장 → 선택 4×4 영역 → 선택 픽셀의 세 숫자 → H×W×3 배열을 하나의 Figure로 이해. CNN/Kernel/Feature Map/Classification 제외.
 - **Figure:** 원본 사과 사진, 실제 채널별 값으로 그린 R/G/B 평면 3개(H/W/C=3 축), 같은 이미지에서 얻은 4×4 확대, 선택 index 6의 RGB/HEX 및 3채널 막대. 평면은 색칠한 가짜 행렬이 아니라 같은 원본의 80×80 리샘플에서 각 채널 강도를 별도 Canvas에 그린 것으로, 깊이 방향 3개 판은 채널 축의 도식입니다.
+- **격자 표시:** 각 채널 판 위에 8×8 얇은 안내선을 겹쳐 수치 행렬임을 나타냅니다. 이는 설명용 격자이며 실제 픽셀 데이터는 채널당 80×80로 동일합니다.
 - **수치 계약:** 리샘플 80×80, ROI x=52/y=38/width=4/height=4, 표시 ROI left 65%/top 47.5%/width 5%/height 5%. 선택 index 6 = 로컬 (2,1), 전체 (54,39). Chromium 검산 RGB 223/54/56, HEX #DF3638. 원본 사진과 추출 조건은 변경하지 않았습니다. 4×4 ROI의 원소 수는 4×4×3=48, 전체 이미지가 48값이라는 뜻은 아닙니다. 채널 막대 = value/255×100%.
 - **배치·디자인:** 두 개의 White 패널(넓은 Figure 흐름 / 선택 픽셀 상세), Blue 방향 화살표, Navy 선택 테두리, 로컬 Pretendard Variable, 전체 자간 −1pt 유지. 모바일에서는 세 Figure를 세로로 배치하며 숫자는 동일합니다. 모든 평면과 선택값은 Canvas 작업 성공 후 동시에 표시하고 초기에는 중립 상태를 사용합니다.
 - **소스·검증:** [HTML](templates/html/concept.html) · [사진](templates/html/assets/concept-apple-photo.jpg) · [PNG 프리뷰](previews/html-concept.png) · [상세 명세](docs/REFERENCE_PAGE_SPECS.md#01-concept). [검증 스크립트](scripts/validate_references.py)로 실제 이미지에서 채널별 6400개 픽셀, 16개 확대 색상, RGB/HEX, 정렬·반응형 6화면·로컬 Pretendard를 재검증합니다.
