@@ -1,5 +1,5 @@
 name: Concept preview refresh (temporary)
-# Capture the final scaled-grid verification.
+# Capture the final 16-pixel and 3-channel explanation.
 on:
   push:
     branches:
