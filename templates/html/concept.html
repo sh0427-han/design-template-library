@@ -83,7 +83,11 @@
   display:flex;flex-direction:column;align-items:center;justify-content:center;
   gap:9px;width:100%;height:254px;min-width:0;padding-top:23px;
 }
-.pixel-stack {position:relative;flex:none;width:173px;height:173px;}
+.pixel-stack {
+  position:relative;flex:none;width:173px;height:173px;
+  /* Visually center the annotated figure, not just the RGB cell rectangle. */
+  transform:translateX(14px);
+}
 .pixel-plane {position:absolute;width:max-content;height:max-content;}
 .pixel-plane-b {left:20px;top:0;z-index:1;}
 .pixel-plane-g {left:10px;top:10px;z-index:2;}
@@ -94,7 +98,7 @@
 }
 .pixel-channel-grid span {
   display:block;width:36px;height:36px;
-  border:1px solid #ffffff88;border-radius:1px;background:#e9eef5;
+  border:1px solid #ffffffcc;border-radius:1px;background:#e9eef5;
 }
 .pixel-plane-b .pixel-channel-grid {outline:2px solid #427ec5;}
 .pixel-plane-g .pixel-channel-grid {outline:2px solid #279467;}
@@ -105,25 +109,23 @@
   background:#3168c8;
 }
 .pixel-plane-g::after {background:#238463;}
-.pixel-plane-rgb::after {
-  content:"RGB";position:absolute;left:0;bottom:-13px;
-  color:var(--navy);font-size:11px;font-weight:800;line-height:12px;
-}
-.pixel-plane-rgb .dimension-width {top:-42px;}
 .pixel-matrix {position:relative;width:max-content;}
 .dimension-width {
-  /* One horizontal border spanning exactly the front RGB grid. */
-  position:absolute;left:0;width:100%;top:-28px;padding-bottom:5px;
-  border-bottom:1px solid #91a6c1;color:var(--deep);
-  font-size:14px;font-weight:750;text-align:center;
+  /* Both guide and label share the exact width of the front RGB pixel-block. */
+  position:absolute;left:0;top:-32px;width:100%;height:25px;
+  box-sizing:border-box;display:flex;justify-content:center;align-items:flex-start;
+  padding:0;border-bottom:1px solid #91a6c1;
+  color:var(--deep);font-size:14px;font-weight:750;line-height:18px;
+  text-align:center;white-space:nowrap;
 }
 .dimension-height {
-  /* One vertical border spanning exactly the front RGB grid. */
-  position:absolute;left:-39px;top:0;height:100%;width:25px;
-  display:grid;place-items:center;border-right:1px solid #91a6c1;
+  /* The vertical guide spans exactly the height of the same pixel-block. */
+  position:absolute;left:-42px;top:0;height:100%;width:28px;
+  box-sizing:border-box;display:grid;place-items:center;
+  border-right:1px solid #91a6c1;
   color:var(--deep);font-size:14px;font-weight:750;
 }
-.dimension-height span {transform:rotate(-90deg);white-space:nowrap;}
+.dimension-height span {display:block;transform:rotate(-90deg);white-space:nowrap;}
 .pixel-block {display:grid;grid-template-columns:repeat(4,36px);grid-template-rows:repeat(4,36px);gap:3px;}
 .pixel-block span {
   display:block;width:36px;height:36px;
@@ -219,7 +221,7 @@
   .pixel-plane-g {left:8px;top:8px;}
   .pixel-plane-rgb {left:0;top:16px;}
   .pixel-channel-indicator {top:-38px;}
-  .pixel-plane-rgb .dimension-width {top:-32px;}
+  .dimension-width {top:-30px;height:23px;line-height:17px;}
   .reference-slide.concept-slide .pixel-block,
   .reference-slide.concept-slide .pixel-channel-grid {
     grid-template-columns:repeat(4,33px);grid-template-rows:repeat(4,33px);
@@ -227,7 +229,7 @@
   .reference-slide.concept-slide .pixel-block span,
   .reference-slide.concept-slide .pixel-channel-grid span {width:33px;height:33px;}
   .dimension-width,.dimension-height {font-size:12px;}
-  .dimension-height {left:-36px;width:23px;}
+  .dimension-height {left:-39px;width:25px;}
   .detail-frame {height:174px;}
   .pixel-detail {width:min(100%,236px);gap:16px;}
   .selected-color strong {font-size:18px;}
@@ -298,7 +300,7 @@
                 </div>
                 <div class="pixel-plane pixel-plane-rgb" data-crop-plane="RGB" aria-label="4×4 RGB 합성">
                   <div class="pixel-matrix">
-                    <span class="dimension-width">W = 4</span>
+                    <span class="dimension-width"><span>W = 4</span></span>
                     <span class="dimension-height"><span>H = 4</span></span>
                     <div class="pixel-block" role="img" aria-label="RGB 행렬에서 선택한 영역의 4행 4열 RGB 픽셀"><span></span><span></span><span></span><span></span><span></span><span></span><span class="selected" data-selected-index="6"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
                   </div>
@@ -393,14 +395,13 @@
       }
       context.putImageData(pixels,0,0);
     }
-    // Display-only contrast boost: original ROI colors drive all numerical outputs.
-    const DISPLAY_BASE=34;
-    const boostChannel=value=>Math.min(255,Math.round(90+value*0.65));
+    // Use exactly the same channel color mapping as the left R/G/B canvases.
+    // White cell borders improve legibility without changing channel colors.
     const paint_channel=(grid,channel)=>{
       const items=colors.map(color=>{
         const cell=document.createElement('span');
-        const components=[DISPLAY_BASE,DISPLAY_BASE,DISPLAY_BASE];
-        components[channel]=boostChannel(color[channel]);
+        const components=[0,0,0];
+        components[channel]=color[channel];
         cell.style.backgroundColor='rgb('+components.join(',')+')';
         cell.dataset.rawValue=String(color[channel]);
         cell.title=['R','G','B'][channel]+' '+color[channel];

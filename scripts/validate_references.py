@@ -69,8 +69,7 @@ def check_concept(page):
         const pixelGrid=box(document.querySelector('.pixel-block'));
         const heightGuide=document.querySelector('.dimension-height');
         const widthGuide=document.querySelector('.dimension-width');
-        const widthRange=document.createRange();
-        widthRange.selectNodeContents(widthGuide);
+        const widthText=widthGuide.querySelector('span');
         const flow=document.querySelector('.concept-flow');
         const rgbBox=box(document.querySelector('.selected-color'));
         return {
@@ -111,7 +110,24 @@ def check_concept(page):
             hGuide:box(heightGuide),hGuideText:box(heightGuide.querySelector('span')),
             hGuideLine:getComputedStyle(heightGuide).borderRightWidth,
             pixelGrid,
-            wGuide:box(widthGuide),wGuideText:box(widthRange),
+            wGuide:box(widthGuide),wGuideText:box(widthText),
+            visualCenters:(()=>{
+                const figureBox=selector=>box(document.querySelector(selector));
+                const cropParts=[heightGuide.querySelector('span'),widthText,
+                    document.querySelector('.pixel-plane-rgb .pixel-block'),
+                    document.querySelector('.pixel-plane-g .pixel-channel-grid'),
+                    document.querySelector('.pixel-plane-b .pixel-channel-grid'),
+                    document.querySelector('.pixel-channel-indicator')].map(box);
+                const cropLeft=Math.min(...cropParts.map(x=>x.x));
+                const cropRight=Math.max(...cropParts.map(x=>x.right));
+                const centerOf=selector=>figureBox(selector).cx;
+                return {
+                    photo:centerOf('.photo-wrap')-centerOf('.image-frame'),
+                    matrix:centerOf('.channel-stack')-centerOf('.matrix-frame'),
+                    crop:(cropLeft+cropRight)/2-centerOf('.pixel-frame'),
+                    detail:centerOf('.pixel-detail')-centerOf('.detail-frame')
+                };
+            })(),
             wGuideLine:getComputedStyle(widthGuide).borderBottomWidth,
             arrows:[...flow.querySelectorAll(':scope > .flow-link')].map(box),
             steps:[...flow.querySelectorAll(':scope > .concept-step')].map(box),
@@ -181,7 +197,13 @@ def check_concept(page):
     assert r['hGuide']['right']-r['hGuideText']['right']>1*scale
     assert abs(r['hGuideText']['cy']-r['pixelGrid']['cy'])<=tol
     assert abs(r['wGuideText']['cx']-r['pixelGrid']['cx'])<=tol
-    assert r['wGuide']['bottom']<r['pixelGrid']['y']
+    # Guide is intentionally immediately outside the front grid; the label
+    # belongs on the outer side of that line rather than floating far away.
+    assert 3*scale<r['pixelGrid']['y']-r['wGuide']['bottom']<10*scale
+    assert r['wGuideText']['bottom']<r['wGuide']['bottom']
+    assert 8*scale<r['pixelGrid']['x']-r['hGuide']['right']<19*scale
+    assert all(abs(value)<3.1 for value in r['visualCenters'].values()),(
+        r['viewport'],r['visualCenters'])
     # Text labels must not touch the rear planes or each other.
     def overlaps(a,b):
         return (a['x']<b['right'] and a['right']>b['x']
@@ -195,6 +217,8 @@ def check_concept(page):
     assert r['painted']==['rgb('+', '.join(map(str,c))+')' for c in r['colors']]
     rgb=r['colors'][6]
     assert r['channels']==rgb
+    assert page.locator('.pixel-plane-rgb').evaluate(
+        "e=>getComputedStyle(e,'::after').content")=='none'
     assert r['cropChannels']['label']=='C = 3'
     assert r['cropChannels']['planeNames']==['B','G','RGB']
     crop=r['cropPlanes']
@@ -204,18 +228,17 @@ def check_concept(page):
     assert crop[2]['cells']==r['painted']
     # Independent Python reconstruction of JS Math.round for nonnegative values.
     # Python round() is ties-to-even and must not be used here.
-    boost=lambda value:min(255,math.floor(90+value*.65+.5))
     assert crop[1]['cells']==[
-        f'rgb(34, {boost(color[1])}, 34)' for color in r['colors']]
+        f'rgb(0, {color[1]}, 0)' for color in r['colors']]
     assert crop[0]['cells']==[
-        f'rgb(34, 34, {boost(color[2])})' for color in r['colors']]
+        f'rgb(0, 0, {color[2]})' for color in r['colors']]
     assert crop[1]['rawValues']==[str(c[1]) for c in r['colors']]
     assert crop[0]['rawValues']==[str(c[2]) for c in r['colors']]
     assert crop[2]['rawValues']==[None]*16
-    assert all(90<=boost(c[i])<=255 for c in r['colors'] for i in (1,2))
-    assert all(boost(a)<=boost(b) for i in (1,2)
-               for a,b in zip(sorted(c[i] for c in r['colors'])[:-1],
-                              sorted(c[i] for c in r['colors'])[1:]))
+    # The back planes and the 80x80 canvases use the SAME raw tint rule.
+    assert all(c[0].startswith('rgb(0, 0, ') for c in [(x,) for x in crop[0]['cells']])
+    assert all(c[0].startswith('rgb(0, ') and c[0].endswith(', 0)')
+               for c in [(x,) for x in crop[1]['cells']])
     assert all(abs(p['grid']['width']-crop[2]['grid']['width'])<1
                and abs(p['grid']['height']-crop[2]['grid']['height'])<1
                for p in crop)
@@ -281,7 +304,8 @@ def check_concept(page):
                 'h_bottom':round(r['hGuide']['bottom']-r['pixelGrid']['bottom'],3),
                 'w_label_center':round(r['wGuideText']['cx']-r['pixelGrid']['cx'],3),
                 'h_label_center':round(r['hGuideText']['cy']-r['pixelGrid']['cy'],3)},
-            'crop_display_base':34,'crop_display_formula':'Math.round(90 + v * 0.65)',
+            'crop_display_base':0,'crop_display_formula':'rgb(0,G,0) / rgb(0,0,B)',
+            'figure_center_errors_px':r['visualCenters'],
             'selected_halo_px':2,'selected_navy_outline_px':5}
 
 def check_motif(page,name):
