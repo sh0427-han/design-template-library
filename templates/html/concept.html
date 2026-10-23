@@ -98,6 +98,18 @@
 }
 .pixel-plane-b .pixel-channel-grid {outline:2px solid #427ec5;}
 .pixel-plane-g .pixel-channel-grid {outline:2px solid #279467;}
+.pixel-plane-b::after,.pixel-plane-g::after {
+  content:attr(data-crop-plane);position:absolute;right:0;top:0;
+  display:grid;place-items:center;width:11px;height:11px;
+  color:white;font-size:10px;font-weight:800;line-height:1;
+  background:#3168c8;
+}
+.pixel-plane-g::after {background:#238463;}
+.pixel-plane-rgb::after {
+  content:"RGB";position:absolute;left:0;bottom:-13px;
+  color:var(--navy);font-size:11px;font-weight:800;line-height:12px;
+}
+.pixel-plane-rgb .dimension-width {top:-42px;}
 .pixel-matrix {position:relative;width:max-content;}
 .dimension-width {
   position:absolute;left:0;right:0;top:-28px;padding-bottom:5px;
@@ -202,6 +214,7 @@
   .pixel-plane-g {left:8px;top:8px;}
   .pixel-plane-rgb {left:0;top:16px;}
   .pixel-channel-indicator {top:-38px;}
+  .pixel-plane-rgb .dimension-width {top:-32px;}
   .reference-slide.concept-slide .pixel-block,
   .reference-slide.concept-slide .pixel-channel-grid {
     grid-template-columns:repeat(4,33px);grid-template-rows:repeat(4,33px);
