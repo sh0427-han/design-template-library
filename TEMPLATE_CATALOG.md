@@ -18,7 +18,7 @@
 ## 01 Concept · 구체적 사례에서 숫자 구조로
 
 - **목적:** Vision AI 입문자가 실사 사진의 픽셀, 각 RGB 8-bit 채널 세 값, 이미지 전체의 H×W×3(HWC) 배열을 하나의 그림에서 이해합니다. CNN·Kernel·Feature Map·Classification은 제외합니다.
-- **Figure 흐름:** 왼쪽 사진의 ROI → Blue 확대 화살표 → 실제 4×4 색상 셀 → index 6의 Navy 선택 표시와 오른쪽 같은 색 Swatch → RGB/HEX, R/G/B 막대 → H × W × 3 텐서. 사진과 픽셀은 각기 하나의 Figure와 간단한 라벨을 사용합니다.
+- **Figure 흐름:** 사진의 ROI → Blue 확대 화살표 → 실제 4×4 색상 셀(`H=4`, `W=4`) → 선택 index 6의 Navy 표시와 같은 색 Swatch → RGB/HEX 및 R/G/B 막대 → `4×4×3=48개 값` → 일반적인 `H×W×3` 텐서. 부제는 `사진 → 픽셀 → RGB 값 → H×W×3 배열`로 개념 순서를 안내합니다. 48개 값은 **확대한 4×4 영역**에 해당하며 전체 사과 사진의 값 개수가 아닙니다.
 - **데이터:** 원본은 [사과 사진](templates/html/assets/concept-apple-photo.jpg) 한 장. 사진을 고품질 80×80 Canvas에 리샘플한 뒤 (52,38)부터 4×4의 RGB를 행 우선으로 읽습니다. 선택 index 6 = 로컬 (2,1), 전체 (54,39). 검산용 기준 Chromium 결과는 R=223/G=54/B=56, HEX #DF3638이며 새 환경에서는 실제 계산값을 우선합니다.
 - **연결·디자인:** ROI 위치 left 65%/top 47.5%, 크기 5%×5%는 실제 리샘플 좌표와 같습니다. 선택 셀과 Swatch는 Navy 테두리·작은 공통 선택 표시, 3개 채널 막대는 동일 기준선에서 값/255×100%로 계산합니다(분류 확률 아님). 초기값은 중립 placeholder이며 잘못된 RGB 숫자를 하드코딩하지 않습니다. White 카드 2개, 로컬 Pretendard Variable, 전체 자간 −1pt, Navy/Blue/Teal을 보존합니다.
 - **재현:** [편집 가능한 HTML](templates/html/concept.html) · [PNG 프리뷰](previews/html-concept.png) · [상세 명세](docs/REFERENCE_PAGE_SPECS.md#01-concept) · [Figure 제작 표준](docs/FIGURE_PRODUCTION_STANDARD.md). 새 이미지로 교체할 경우 ROI·16개 픽셀·선택 좌표·수치·HEX·Swatch·막대·접근성 문구·프리뷰를 동기 검증합니다. 6개 Chromium 화면에서 위치·폰트·오버플로·Footer를 검사합니다.
