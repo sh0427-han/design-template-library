@@ -30,5 +30,15 @@ def main():
     interactive=json.loads((ROOT/'previews/review/interactive-validation.json').read_text())
     assert interactive['status']=='passed' and interactive['math_checks']==126 and interactive['reuse']['checks']==42
     assert interactive['portable_html']['content_within_tolerance'] and interactive['offline_portable']['default']['fallback_elements']==0
+    pilot_root=ROOT/'examples/logistic-regression'
+    pilot=json.loads((pilot_root/'previews/validation.json').read_text())
+    assert pilot['status']=='passed' and len(pilot['cases'])==24 and pilot['math_checks']==606 and pilot['alternate_data_checks']==404
+    assert {(c['mode'],c['template'],tuple(c['viewport'])) for c in pilot['cases']}=={(m,n,s) for m in ('slides','scroll') for n in ('concept','calculation','threshold') for s in ((1600,950),(1440,810),(1366,768),(1280,720))}
+    for path,expected in pilot['source_sha256'].items():
+        assert hashlib.sha256((ROOT/path).read_bytes()).hexdigest()==expected,('pilot rendered source changed',path)
+    assert hashlib.sha256((pilot_root/'DESIGN.md').read_bytes()).hexdigest()==pilot['design_sha256'],'pilot design changed after validation'
+    assert sorted(p.name for p in (pilot_root/'previews').glob('*.jpg'))==['scroll.jpg','slide.jpg']
+    for name,expected in pilot['preview_sha256'].items():
+        assert hashlib.sha256((pilot_root/'previews'/name).read_bytes()).hexdigest()==expected,('pilot preview changed',name)
     print(f'PASS {len(docs)} Markdown files / {links} local links; eight final specs, source/preview hashes and Interactive reuse evidence')
 if __name__=='__main__':main()

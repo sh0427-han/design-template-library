@@ -5287,7 +5287,8 @@
     "mode_roundtrip": {
       "reference": "interactive",
       "threshold": 80,
-      "reload": true
+      "reload": true,
+      "last_reference": "executive-summary"
     },
     "keyboard": {
       "iframe_navigation": true,
@@ -5296,7 +5297,7 @@
     "source_sha256": {
       "templates/dual-mode-learning/scroll.html": "96d5b5e82639769644b1d313bf887b4c74bb9bd898f00977e706c6ac5faa573a",
       "templates/dual-mode-learning/slides.html": "2bcb425d00da9e8d7d344b67135e4ed95a4f344a8dbf54bdfc0457e16ec08e67",
-      "templates/dual-mode-learning/assets/js/scroll.js": "b33b36569ce8cd12fac6aa76e65daad022b42efedd54ae78729e8cd425527288",
+      "templates/dual-mode-learning/assets/js/scroll.js": "fa1a152d89bb68fcbede0a48d40d2e01b6509955b24c050c455a619ee682f32b",
       "templates/dual-mode-learning/assets/js/render.js": "ea7769505895adcba0a11971b799546c0fddfe8d4390a9f545a6b2aa6a59bb50",
       "templates/dual-mode-learning/assets/js/state.js": "40ed83ef33ba9eac71791032a84fad8cb77de91458c183a0f62e2cc427680485",
       "templates/dual-mode-learning/assets/js/lesson.js": "30ea45a0901fba3be7a4e41a98fb1143d6f76f39e6e9c69b8e21170d6a77ca4c",

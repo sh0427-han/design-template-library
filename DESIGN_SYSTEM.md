@@ -104,6 +104,15 @@ html { letter-spacing: var(--character-spacing); }
 - #4의 원소별 곱 기호는 원본 폰트가 해당 글리프를 제공하지 않아 동일 모양의 SVG 원·점을 사용합니다. 기호를 표시하려고 다른 텍스트 폰트를 섞지 않습니다.
 - `font-display: swap`의 초기 폴백은 가능하지만 최종 프리뷰는 로딩 완료 후 실제 Pretendard로만 생성합니다.
 
+폼 요소는 브라우저 기본 스타일이 글꼴·자간을 재설정할 수 있습니다. 상위 `html`의 −1pt와 `font:inherit`만으로 버튼까지 적용됐다고 판단하지 않습니다. 새 자료의 범위 안에서 다음을 명시하고 실제 버튼·입력·선택 UI도 검사합니다. `font` 단축 속성은 `letter-spacing`을 포함하지 않습니다.
+
+```css
+.lesson button, .lesson input, .lesson select, .lesson textarea {
+  font: inherit;
+  letter-spacing: inherit;
+}
+```
+
 ## 행간과 요소 사이 간격
 
 **행간**은 한 요소 안에서 줄바꿈된 텍스트의 `line-height`, **요소 사이 간격**은 라벨·제목·소개·다음 단계 사이의 `gap` 또는 `margin`입니다. 두 값을 별도로 설계합니다. 라벨과 제목이 붙는 문제를 본문의 행간만 늘려 해결하지 않습니다.
@@ -151,7 +160,7 @@ html { letter-spacing: var(--character-spacing); }
 
 ## 16:9 프레임과 Typography
 
-[reference-layout.css](templates/html/reference-layout.css)는 8종에만 명시적으로 로드합니다.
+[reference-layout.css](templates/html/reference-layout.css)는 8종과 [새 개념 재사용 검증본](examples/logistic-regression/README.md)에 명시적으로 로드하는 16:9 프레임입니다. 갤러리·다른 문서에 자동 적용하지 않습니다.
 
 | 요소 | 기준 규격 | 역할·주의 |
 | --- | --- | --- |
@@ -279,6 +288,8 @@ Footer 전체 높이에 padding과 border가 포함됐다면 다시 더하지 �
 Slide는 16:9 캔버스를 창의 너비와 높이에 맞춰 비례 축소하며, Scroll은 PC에서 자연스럽게 문서를 스크롤하도록 구성합니다. 같은 PC 범위 안에서는 비교 카드의 병렬 구조·단계 순서·도식의 중심축을 유지합니다. 내용이 많으면 Scroll이나 추가 슬라이드로 나눕니다.
 
 한국어는 `word-break:keep-all`, 문단은 `text-wrap:pretty`를 기본 사용합니다. 긴 제목에는 필요한 줄 수를 확보하고 양쪽 비교 카드에 같은 제목 영역을 둡니다. 수식·단위·화살표·Footer가 잘리거나 가로로 넘치지 않도록 확인합니다. 키보드/포인터와 모션 감소 설정도 검토합니다. [PC 창 크기와 텍스트 규격](docs/DESIGN_COMPONENT_RECIPES.md#3-pc-창-크기와-텍스트-처리)을 함께 봅니다.
+
+Scroll의 현재 장·목차·Slide 전환 링크는 같은 위치를 가리켜야 합니다. 마지막 장이 viewport보다 짧으면 문서 끝에서 상단 읽기 기준선에 도달할 수 없습니다. 이때 문서 끝을 별도로 판정해 마지막 장을 선택하고, 마지막 장에서 모드 왕복과 새로고침도 확인합니다. 현재 뷰어는 끝까지 남은 거리 2px 이하를 사용합니다.
 
 ## 조작 상태·이미지·접근성
 

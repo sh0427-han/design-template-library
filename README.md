@@ -75,6 +75,7 @@ python scripts/verify_character_spacing.py
 python scripts/validate_references.py
 python scripts/check_interactive.py
 python scripts/verify_pretendard.py
+python scripts/verify_logistic_reuse.py
 python templates/dual-mode-learning/tools/check.py
 python scripts/check_documentation.py
 ```
@@ -105,6 +106,10 @@ python scripts/validate_references.py --templates architecture step-by-step --ev
 6. 수학·실제 폰트·PC 4개 화면·실제 캡처를 검증하고 관련 문서·카탈로그·프리뷰를 동기화합니다.
 
 외부 Figure를 쓸 때는 가까이에 원문 URL을 표시합니다. 고정 필터, 모식도, 설명용 logits, 예시 KPI를 실제 학습 모델의 성능으로 주장하지 않습니다.
+
+### 새 개념으로 재사용 검증
+
+[로지스틱 회귀 3장](examples/logistic-regression/README.md)은 문서 우선 설계로 Concept·Step-by-Step·Interactive를 다른 개념에 적용한 자료입니다. [Scroll](examples/logistic-regression/scroll.html) / [Slide](examples/logistic-regression/slides.html)는 같은 입력·계수·계산·콘텐츠를 사용합니다. 8종 원본을 늘리지 않고 별도 `examples/`에서 검토합니다. 실제 계산·24개 PC 화면·101개 임계값·변경 데이터·모드 전환과 원본 회귀를 검증합니다.
 
 ## 문서 지도와 통합 상태
 

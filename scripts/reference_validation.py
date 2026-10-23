@@ -141,9 +141,14 @@ def browser_options():
     return dict(headless=True,**({'executable_path':executable} if executable else {}))
 
 
-def actual_fonts(page):
+def actual_fonts(page, selector='.slide *'):
     """Check CSS tracking AND the fonts Chromium actually used for each text node."""
-    entries=page.evaluate('''() => [...document.querySelectorAll('.slide *')].filter(e=>!e.closest('.sr-only')&&e.getBoundingClientRect().width&&e.getBoundingClientRect().height&&[...e.childNodes].some(n=>n.nodeType===3&&n.textContent.trim())).map((e,i)=>{e.dataset.fontAudit=String(i);const s=getComputedStyle(e);return {index:i,tag:e.tagName,className:typeof e.className==='string'?e.className:e.className.baseVal,text:[...e.childNodes].filter(n=>n.nodeType===3).map(n=>n.textContent).join('').trim(),spacing:s.letterSpacing,requested:s.fontFamily}})''')
+    # A multi-page viewer keeps hidden slides in the DOM. Clear the previous
+    # audit's IDs so CDP cannot accidentally resolve a hidden element instead.
+    entries=page.evaluate('''selector => {
+      document.querySelectorAll('[data-font-audit]').forEach(e=>e.removeAttribute('data-font-audit'));
+      return [...document.querySelectorAll(selector)].filter(e=>!e.closest('.sr-only')&&e.getBoundingClientRect().width&&e.getBoundingClientRect().height&&[...e.childNodes].some(n=>n.nodeType===3&&n.textContent.trim())).map((e,i)=>{e.dataset.fontAudit=String(i);const s=getComputedStyle(e);return {index:i,tag:e.tagName,className:typeof e.className==='string'?e.className:e.className.baseVal,text:[...e.childNodes].filter(n=>n.nodeType===3).map(n=>n.textContent).join('').trim(),spacing:s.letterSpacing,requested:s.fontFamily}});
+    }''', selector)
     cdp=page.context.new_cdp_session(page);cdp.send('DOM.enable');cdp.send('CSS.enable')
     root=cdp.send('DOM.getDocument',{'depth':-1})['root']['nodeId'];families={};fallback=[];unpainted=[]
     try:

@@ -15,10 +15,11 @@ class Scripts(HTMLParser):
 
 def main():
     count=0
-    for path in (ROOT/'templates').rglob('*.js'):
+    maintained=[ROOT/'templates',ROOT/'examples']
+    for path in (p for folder in maintained for p in folder.rglob('*.js')):
         subprocess.run(['node','--input-type=module','--check'],input=path.read_text(),check=True,capture_output=True,text=True);count+=1
     with tempfile.TemporaryDirectory(prefix='reference-js-') as directory:
-        for html in (ROOT/'templates').rglob('*.html'):
+        for html in (p for folder in maintained for p in folder.rglob('*.html')):
             parser=Scripts();parser.feed(html.read_text())
             for i,script in enumerate(parser.scripts):
                 file=Path(directory)/f'inline-{count}.js';file.write_text(script)

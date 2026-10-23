@@ -162,6 +162,14 @@ def validate_dual_mode(browser,base,root,evidence):
         page.locator('body').press('Home');assert page.locator('#progress').inner_text()=='1 / 8'
         page.goto(prefix+'scroll.html#ref-comparison',wait_until='networkidle');get_frame(page,'comparison')
         page.locator('.mode-link').click();page.wait_for_url('**/slides.html?**#ref-comparison');assert page.locator('#progress').inner_text()=='3 / 8'
+        # At document end the last card cannot always reach the 140px reading
+        # line; the active item and the mode-switch link must still select #8.
+        page.goto(prefix+'scroll.html?threshold=80#ref-executive-summary',wait_until='networkidle');get_frame(page,'executive-summary')
+        page.evaluate('window.scrollTo(0,document.documentElement.scrollHeight)')
+        page.wait_for_function("document.querySelector('.mode-link').hash==='#ref-executive-summary'")
+        assert page.locator('#toc-list a[aria-current]').get_attribute('href')=='#ref-executive-summary'
+        page.locator('.mode-link').click();page.wait_for_url('**/slides.html?**#ref-executive-summary')
+        assert page.locator('#progress').inner_text()=='8 / 8' and 'threshold=80' in page.url
         page.goto(prefix+'slides.html?threshold=invalid#experiment',wait_until='networkidle')
         assert get_frame(page,'interactive').locator('#threshold').input_value()=='60'
         assert not errors and not failed,(errors,failed)
@@ -172,4 +180,4 @@ def validate_dual_mode(browser,base,root,evidence):
         case['technical_passed']=True
     files=list((root/'templates/dual-mode-learning').rglob('*'))+list((root/'templates/html').rglob('*'))
     hashes={str(p.relative_to(root)):hashlib.sha256(p.read_bytes()).hexdigest() for p in files if p.is_file() and p.suffix in ('.js','.css','.html','.woff2','.png','.jpg')}
-    return {'status':'passed','viewports':SIZES,'references':NAMES,'cases':cases,'technical_checks':technical_checks,'mode_roundtrip':{'reference':'interactive','threshold':80,'reload':True},'keyboard':{'iframe_navigation':True,'input_not_intercepted':True},'source_sha256':hashes,'page_errors':errors,'failed_requests':failed}
+    return {'status':'passed','viewports':SIZES,'references':NAMES,'cases':cases,'technical_checks':technical_checks,'mode_roundtrip':{'reference':'interactive','threshold':80,'reload':True,'last_reference':'executive-summary'},'keyboard':{'iframe_navigation':True,'input_not_intercepted':True},'source_sha256':hashes,'page_errors':errors,'failed_requests':failed}

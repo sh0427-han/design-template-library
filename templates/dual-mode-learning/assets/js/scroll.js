@@ -11,7 +11,10 @@ references.forEach((ref,i)=>{
 let active=target;
 function update() {
   const reached=sections.filter(s=>s.getBoundingClientRect().top<=140);
-  active=(reached.at(-1)||sections[0]).id.slice(4);
+  // The last source may be shorter than the viewport, so its top cannot reach
+  // the reading line when the document is already scrolled to the bottom.
+  const atEnd=document.documentElement.scrollHeight-innerHeight-scrollY<=2;
+  active=(atEnd?sections.at(-1):(reached.at(-1)||sections[0])).id.slice(4);
   for(const a of toc.querySelectorAll('a')) {
     if(a.hash===`#ref-${active}`)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');
   }

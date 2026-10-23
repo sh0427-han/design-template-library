@@ -22,7 +22,7 @@ slides.html?threshold=80#ref-interactive
 - 현재 레퍼런스는 hash, #5의 임계값은 정수 query `threshold=0…100`입니다. 기본값은 원본과 같은 60, 잘못된 값은 60으로 해석합니다.
 - 조작은 원본 슬라이더의 input 이벤트/계산을 그대로 사용합니다. 보기 코드는 선택값을 URL과 반대 모드 링크에 전달합니다.
 - 모드 왕복·새로고침·공유 링크에서 현재 예제와 임계값을 복원합니다.
-- Scroll은 위쪽 140px을 지난 마지막 섹션을 현재 읽는 예제로 취급합니다. 목차 `aria-current`와 Slide 링크를 갱신합니다.
+- Scroll은 위쪽 140px을 지난 마지막 섹션을 현재 읽는 예제로 취급합니다. 단, 문서 끝까지 남은 거리가 2px 이하이면 마지막 섹션을 선택합니다. 마지막 장이 짧아 상단 기준선까지 올라오지 못해도 목차 `aria-current`와 Slide 링크가 같은 마지막 장을 가리켜야 합니다.
 - Slide는 버튼·키보드·해시로 바꾼 예제와 진행 표시를 함께 갱신합니다.
 - iframe 안에 포커스가 있어도 탐색키가 동작합니다. input/select/textarea/button/link/contenteditable과 modifier 키는 가로채지 않습니다.
 
