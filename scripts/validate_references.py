@@ -45,6 +45,7 @@ def check_concept(page):
             return {
                 name:node.dataset.cropPlane,box:box(node),grid:box(grid),
                 cells:planeCells.map(e=>e.style.backgroundColor),
+                rawValues:planeCells.map(e=>e.dataset.rawValue||null),
                 selected:planeCells.filter(e=>e.classList.contains('selected')).length
             };
         });
@@ -67,6 +68,9 @@ def check_concept(page):
         const rbox=box(roi),cbox=box(document.querySelector('.channel-layer[data-plane="R"] canvas'));
         const pixelGrid=box(document.querySelector('.pixel-block'));
         const heightGuide=document.querySelector('.dimension-height');
+        const widthGuide=document.querySelector('.dimension-width');
+        const widthRange=document.createRange();
+        widthRange.selectNodeContents(widthGuide);
         const flow=document.querySelector('.concept-flow');
         const rgbBox=box(document.querySelector('.selected-color'));
         return {
@@ -95,12 +99,20 @@ def check_concept(page):
             hex:document.querySelector('#selected-hex').textContent,
             swatch:getComputedStyle(document.querySelector('.selected-color .swatch')).backgroundColor,
             selectedColor:getComputedStyle(selected).backgroundColor,
+            selectedStyle:{
+                border:getComputedStyle(selected).borderColor,
+                outline:getComputedStyle(selected).outlineStyle,
+                shadow:getComputedStyle(selected).boxShadow,
+                zIndex:getComputedStyle(selected).zIndex
+            },
             planes,
             axes:[...document.querySelectorAll('.stack-axis')].map(e=>e.textContent.trim()),
             cAxis:box(document.querySelector('.stack-axis-c')),
             hGuide:box(heightGuide),hGuideText:box(heightGuide.querySelector('span')),
+            hGuideLine:getComputedStyle(heightGuide).borderRightWidth,
             pixelGrid,
-            wGuide:box(document.querySelector('.dimension-width')),
+            wGuide:box(widthGuide),wGuideText:box(widthRange),
+            wGuideLine:getComputedStyle(widthGuide).borderBottomWidth,
             arrows:[...flow.querySelectorAll(':scope > .flow-link')].map(box),
             steps:[...flow.querySelectorAll(':scope > .concept-step')].map(box),
             figures:['.image-frame','.matrix-frame','.pixel-frame','.detail-frame']
@@ -151,11 +163,32 @@ def check_concept(page):
         assert abs(r['matrixROI'][key]-val)<.02,(r['viewport'],key,r['matrixROI'])
     assert r['axes']==['C = 3','H','W']
     assert r['cAxis']['bottom']<r['planes'][0]['layer']['y'],(r['viewport'],r['cAxis'])
-    assert r['pixelGrid']['x']-r['hGuide']['right']>5,(r['viewport'],r['hGuide'])
-    assert r['hGuide']['right']-r['hGuideText']['right']>1,(r['viewport'],r['hGuideText'])
-    assert abs(r['hGuide']['cy']-r['pixelGrid']['cy'])<1.5
-    assert abs(r['wGuide']['cx']-r['pixelGrid']['cx'])<1.5
+    # getBoundingClientRect reports scaled coordinates; check border line endpoints,
+    # not merely the midpoint of either dimension label.
+    unscaled_grid=141 if r['viewport']<=520 else 153
+    scale=r['pixelGrid']['width']/unscaled_grid
+    tol=max(.75,1.5*scale)
+    assert r['hGuideLine']=='1px' and r['wGuideLine']=='1px'
+    for guide_edge,grid_edge in [('x','x'),('right','right')]:
+        assert abs(r['wGuide'][guide_edge]-r['pixelGrid'][grid_edge])<=tol,(
+            r['viewport'],'W',guide_edge,r['wGuide'],r['pixelGrid'])
+    for edge in ['y','bottom']:
+        assert abs(r['hGuide'][edge]-r['pixelGrid'][edge])<=tol,(
+            r['viewport'],'H',edge,r['hGuide'],r['pixelGrid'])
+    assert r['pixelGrid']['x']-r['hGuide']['right']>5*scale
+    assert r['hGuide']['right']-r['hGuideText']['right']>1*scale
+    assert abs(r['hGuideText']['cy']-r['pixelGrid']['cy'])<=tol
+    assert abs(r['wGuideText']['cx']-r['pixelGrid']['cx'])<=tol
     assert r['wGuide']['bottom']<r['pixelGrid']['y']
+    # Text labels must not touch the rear planes or each other.
+    def overlaps(a,b):
+        return (a['x']<b['right'] and a['right']>b['x']
+                and a['y']<b['bottom'] and a['bottom']>b['y'])
+    for label in [r['hGuideText'],r['wGuideText'],r['cAxis']]:
+        assert not any(overlaps(label,p['grid']) for p in r['cropPlanes'][:2]),(
+            r['viewport'],label,r['cropPlanes'])
+    assert not overlaps(r['hGuideText'],r['wGuideText'])
+    assert not overlaps(r['wGuideText'],r['cAxis'])
     assert len(r['colors'])==16 and r['selectedIndex']==r['declaredIndex']==6
     assert r['painted']==['rgb('+', '.join(map(str,c))+')' for c in r['colors']]
     rgb=r['colors'][6]
@@ -167,18 +200,26 @@ def check_concept(page):
     assert all(len(p['cells'])==16 for p in crop)
     assert [p['selected'] for p in crop]==[0,0,1]
     assert crop[2]['cells']==r['painted']
+    # Independent Python reconstruction of JS Math.round for nonnegative values.
+    # Python round() is ties-to-even and must not be used here.
+    boost=lambda value:min(255,math.floor(90+value*.65+.5))
     assert crop[1]['cells']==[
-        f'rgb(0, {color[1]}, 0)' for color in r['colors']]
+        f'rgb(34, {boost(color[1])}, 34)' for color in r['colors']]
     assert crop[0]['cells']==[
-        f'rgb(0, 0, {color[2]})' for color in r['colors']]
+        f'rgb(34, 34, {boost(color[2])})' for color in r['colors']]
+    assert crop[1]['rawValues']==[str(c[1]) for c in r['colors']]
+    assert crop[0]['rawValues']==[str(c[2]) for c in r['colors']]
+    assert crop[2]['rawValues']==[None]*16
+    assert all(90<=boost(c[i])<=255 for c in r['colors'] for i in (1,2))
+    assert all(boost(a)<=boost(b) for i in (1,2)
+               for a,b in zip(sorted(c[i] for c in r['colors'])[:-1],
+                              sorted(c[i] for c in r['colors'])[1:]))
     assert all(abs(p['grid']['width']-crop[2]['grid']['width'])<1
                and abs(p['grid']['height']-crop[2]['grid']['height'])<1
                for p in crop)
     assert crop[0]['box']['x']>crop[1]['box']['x']>crop[2]['box']['x']
     assert crop[0]['box']['y']<crop[1]['box']['y']<crop[2]['box']['y']
-    # getBoundingClientRect reflects the responsive scale of the parent slide.
-    unscaled_grid=141 if r['viewport']<=520 else 153
-    scale=crop[2]['grid']['width']/unscaled_grid
+    # Compare relative layer offsets at the actual responsive scale.
     offset=(8 if r['viewport']<=520 else 10)*scale
     assert abs(crop[1]['box']['x']-crop[2]['box']['x']-offset)<1
     assert abs(crop[2]['box']['y']-crop[1]['box']['y']-offset)<1
@@ -201,6 +242,11 @@ def check_concept(page):
     assert r['hex']=='#'+''.join(f'{v:02X}' for v in rgb)
     assert r['swatch']==r['selectedColor']==r['merge']['swatch']==(
         'rgb('+', '.join(map(str,rgb))+')')
+    style=r['selectedStyle']
+    assert style['border']=='rgb(255, 255, 255)' and style['outline']=='none'
+    assert style['zIndex']=='8'
+    assert 'rgb(255, 255, 255) 0px 0px 0px 2px' in style['shadow'],style
+    assert 'rgb(18, 35, 63) 0px 0px 0px 5px' in style['shadow'],style
     assert all(abs(a-100*b/255)<.001 for a,b in zip(r['bars'],rgb))
     assert all(n['scroll']<=n['client']+1 for n in r['numberWidths'])
     assert 'H × W × 3' not in r['summary']

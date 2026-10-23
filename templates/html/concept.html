@@ -112,12 +112,14 @@
 .pixel-plane-rgb .dimension-width {top:-42px;}
 .pixel-matrix {position:relative;width:max-content;}
 .dimension-width {
-  position:absolute;left:0;right:0;top:-28px;padding-bottom:5px;
+  /* One horizontal border spanning exactly the front RGB grid. */
+  position:absolute;left:0;width:100%;top:-28px;padding-bottom:5px;
   border-bottom:1px solid #91a6c1;color:var(--deep);
   font-size:14px;font-weight:750;text-align:center;
 }
 .dimension-height {
-  position:absolute;left:-39px;top:0;bottom:0;width:25px;
+  /* One vertical border spanning exactly the front RGB grid. */
+  position:absolute;left:-39px;top:0;height:100%;width:25px;
   display:grid;place-items:center;border-right:1px solid #91a6c1;
   color:var(--deep);font-size:14px;font-weight:750;
 }
@@ -127,7 +129,10 @@
   display:block;width:36px;height:36px;
   border:1px solid #ffffffbb;border-radius:1px;background:#e9eef5;
 }
-.pixel-block .selected {position:relative;z-index:4;outline:3px solid var(--navy);outline-offset:1px;}
+.pixel-block .selected {
+  position:relative;z-index:8;outline:none;border-color:#fff;
+  box-shadow:0 0 0 2px #fff,0 0 0 5px var(--navy);
+}
 .pixel-channel-indicator {
   position:absolute;right:-3px;top:-42px;z-index:5;
   min-height:20px;color:var(--navy);font-size:13px;white-space:nowrap;
@@ -388,12 +393,16 @@
       }
       context.putImageData(pixels,0,0);
     }
+    // Display-only contrast boost: original ROI colors drive all numerical outputs.
+    const DISPLAY_BASE=34;
+    const boostChannel=value=>Math.min(255,Math.round(90+value*0.65));
     const paint_channel=(grid,channel)=>{
       const items=colors.map(color=>{
         const cell=document.createElement('span');
-        const components=[0,0,0];
-        components[channel]=color[channel];
+        const components=[DISPLAY_BASE,DISPLAY_BASE,DISPLAY_BASE];
+        components[channel]=boostChannel(color[channel]);
         cell.style.backgroundColor='rgb('+components.join(',')+')';
+        cell.dataset.rawValue=String(color[channel]);
         cell.title=['R','G','B'][channel]+' '+color[channel];
         return cell;
       });
