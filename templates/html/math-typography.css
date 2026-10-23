@@ -1,0 +1,23 @@
+/* Opt-in math typography. Ordinary Korean/English stays in Pretendard. */
+@font-face {
+  font-family: "STIX Two Math";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/stix-two-math/STIXTwoMath-Regular.woff2") format("woff2");
+}
+:root { --font-math: "STIX Two Math", math; }
+math.math, .math-number {
+  font-family: var(--font-math);
+  font-weight: 400;
+  font-style: normal;
+  font-synthesis: none;
+  letter-spacing: inherit;
+  line-height: 1.25;
+}
+math.math { font-size: 1em; math-style: normal; }
+math.math :where(mi,mn,mo,mrow,msub,msup,mfrac) {
+  font-family: inherit;
+  letter-spacing: inherit;
+  line-height: 1.25;
+}

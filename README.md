@@ -46,6 +46,8 @@ python -m http.server 8000
 
 기본 폰트는 **Pretendard Variable v1.3.9**, 자간은 모든 텍스트 **−1pt**입니다. 공식 WOFF2와 라이선스를 저장소에 포함해 CDN 연결 없이 로드합니다. [폰트 출처·해시·라이선스](templates/html/assets/fonts/pretendard/README.md)
 
+새 자료의 수식·변수·계수는 **STIX Two Math + Native MathML**로 분리합니다. 일반 영문은 Pretendard를 유지합니다. [적용 규격](DESIGN_SYSTEM.md#본문과-수식의-서체-분리) · [수학 폰트·라이선스](templates/html/assets/fonts/stix-two-math/README.md). 기존 8종의 폰트를 자동 변경하는 규칙은 아닙니다.
+
 ## 디렉터리 구조
 
 ```text

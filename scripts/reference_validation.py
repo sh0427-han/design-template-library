@@ -141,13 +141,13 @@ def browser_options():
     return dict(headless=True,**({'executable_path':executable} if executable else {}))
 
 
-def actual_fonts(page, selector='.slide *'):
+def actual_fonts(page, selector='.slide *', *, math_family=None):
     """Check CSS tracking AND the fonts Chromium actually used for each text node."""
     # A multi-page viewer keeps hidden slides in the DOM. Clear the previous
     # audit's IDs so CDP cannot accidentally resolve a hidden element instead.
     entries=page.evaluate('''selector => {
       document.querySelectorAll('[data-font-audit]').forEach(e=>e.removeAttribute('data-font-audit'));
-      return [...document.querySelectorAll(selector)].filter(e=>!e.closest('.sr-only')&&e.getBoundingClientRect().width&&e.getBoundingClientRect().height&&[...e.childNodes].some(n=>n.nodeType===3&&n.textContent.trim())).map((e,i)=>{e.dataset.fontAudit=String(i);const s=getComputedStyle(e);return {index:i,tag:e.tagName,className:typeof e.className==='string'?e.className:e.className.baseVal,text:[...e.childNodes].filter(n=>n.nodeType===3).map(n=>n.textContent).join('').trim(),spacing:s.letterSpacing,requested:s.fontFamily}});
+      return [...document.querySelectorAll(selector)].filter(e=>!e.closest('.sr-only')&&e.getBoundingClientRect().width&&e.getBoundingClientRect().height&&[...e.childNodes].some(n=>n.nodeType===3&&n.textContent.trim())).map((e,i)=>{e.setAttribute('data-font-audit',String(i));const s=getComputedStyle(e);return {index:i,tag:e.tagName,className:e.getAttribute('class')||'',isMath:!!e.closest('math.math,.math-number'),text:[...e.childNodes].filter(n=>n.nodeType===3).map(n=>n.textContent).join('').trim(),spacing:s.letterSpacing,requested:s.fontFamily}});
     }''', selector)
     cdp=page.context.new_cdp_session(page);cdp.send('DOM.enable');cdp.send('CSS.enable')
     root=cdp.send('DOM.getDocument',{'depth':-1})['root']['nodeId'];families={};fallback=[];unpainted=[]
@@ -156,13 +156,16 @@ def actual_fonts(page, selector='.slide *'):
             node=cdp.send('DOM.querySelector',{'nodeId':root,'selector':f'[data-font-audit="{entry["index"]}"]'})['nodeId']
             fonts=cdp.send('CSS.getPlatformFontsForNode',{'nodeId':node})['fonts']
             entry['actual']=fonts
+            entry['expected']=math_family if math_family and entry['isMath'] else 'Pretendard Variable'
             if not fonts:unpainted.append(entry)
             for f in fonts:
                 families[f['familyName']]=families.get(f['familyName'],0)+f['glyphCount']
-                if f['familyName']!='Pretendard Variable' or not f['isCustomFont']:fallback.append(entry)
+                if f['familyName']!=entry['expected'] or not f['isCustomFont']:fallback.append(entry)
     finally:cdp.detach()
     spacing=[e for e in entries if abs(float(e['spacing'].removesuffix('px'))+4/3)>.02]
     loaded=page.evaluate('''async()=>{const weights=[400,600,700,800];const counts=await Promise.all(weights.map(w=>document.fonts.load(`${w} 22px "Pretendard Variable"`,'한글 ABC 0123')));await document.fonts.ready;return {counts:counts.map(f=>f.length),faces:[...document.fonts].filter(f=>f.family.replace(/["']/g,'')==='Pretendard Variable'&&f.status==='loaded').map(f=>({family:f.family,weight:f.weight,status:f.status}))}}''')
+    if math_family:
+        loaded['math']=page.evaluate('''async family=>{const faces=await document.fonts.load(`400 22px "${family}"`,'𝑥𝑤𝑧𝑝σ0123−×≥');await document.fonts.ready;return {count:faces.length,faces:faces.map(f=>({family:f.family,status:f.status,weight:f.weight}))}}''',math_family)
     return {'elements':len(entries),'families':families,'fallback':fallback,'unpainted':unpainted,'bad_spacing':spacing,'loaded':loaded}
 
 EXPERIMENT_GEOMETRY="""() => {

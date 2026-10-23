@@ -117,6 +117,8 @@
 
 [로지스틱 회귀 재사용 검증본](examples/logistic-regression/README.md)은 #1/#4/#5의 역할을 선택해 새 개념 3장으로 만든 응용 예제입니다. 원본 8종과 구분하며 [설계 명세](examples/logistic-regression/DESIGN.md)에서 새 데이터·곡선·수식·조작·PC 높이 예산을 확인합니다.
 
+사용자 검토로 개념 장의 기호 정의를 Figure와 같은 열에 맞추고, 단독 점수 대신 가중치·절편·일반식·실제 합산을 연결했습니다. 세 장의 수학량은 로컬 STIX Two Math와 Native MathML, 본문과 일반 영문은 Pretendard입니다. [3장 검토 이미지](examples/logistic-regression/review/README.md)와 실제 글리프·24개 화면 검증을 함께 갱신합니다.
+
 새 제작 대상은 PC 웹페이지이며 PC 4개 크기의 검토를 기준으로 합니다. 아래 링크의 예제별 작은 화면 동작·6개 크기 검증은 기존 구현 기록입니다.
 
 모든 페이지는 실제 Pretendard, 전체 −1pt, 편집 가능한 소스, 실제 계산과 도식의 일치를 요구합니다. 프리뷰는 [공통 검증](previews/review/reference-validation.json)과 같은 원본이어야 합니다. 다른 데이터로 재사용한 경우 숫자만 바꾸지 말고 공식·Shape·색상 의미·설명 조건·반응형을 함께 확인합니다.

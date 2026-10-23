@@ -27,5 +27,7 @@ def main():
                 assert r.returncode==0,(str(html.relative_to(ROOT)),i,r.stderr);count+=1
     font=ROOT/'templates/html/assets/fonts/pretendard/PretendardVariable.woff2'
     assert hashlib.sha256(font.read_bytes()).hexdigest()=='9599f12fd42fc0bce1cd50b47a0c022e108d7aa64dd0d1bb0ed44f3282d900b4'
-    print(f'PASS {count} JavaScript sources / inline scripts; official font hash')
+    math_font=ROOT/'templates/html/assets/fonts/stix-two-math/STIXTwoMath-Regular.woff2'
+    assert hashlib.sha256(math_font.read_bytes()).hexdigest()=='d18b6ab10cd6670ec5d4067f3ad2678a156b6b6642d9a0985243a1da729e6a95'
+    print(f'PASS {count} JavaScript sources / inline scripts; Pretendard and STIX Two Math hashes')
 if __name__=='__main__':main()

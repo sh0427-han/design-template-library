@@ -11,69 +11,75 @@ export const pages = [
 
 const state = {model: normalizeModel(DEFAULT_MODEL), selected: 3, threshold: 60};
 let root;
-const sub = n => `<sub>${n}</sub>`;
 const arrow = () => '<svg class="lr-connector" viewBox="0 0 32 16" aria-hidden="true"><path d="M2 8 H29 M23 2 L29 8 L23 14"/></svg>';
 const heading = (label, title, description = '') => `<div class="lr-heading"><div class="lr-label">${label}</div><h2>${title}</h2>${description ? `<p>${description}</p>` : ''}</div>`;
 const takeaway = (label, text) => `<div class="ref-takeaway"><strong>${label}</strong><span>${text}</span></div>`;
 const footer = index => `<footer class="footer"><span>Design Template Library · 로지스틱 회귀</span><span>${String(index+1).padStart(2,'0')} / 03</span></footer>`;
-const frac = (top, bottom) => `<span class="lr-fraction"><span>${top}</span><span>${bottom}</span></span>`;
 const number = x => (Math.abs(x) < 0.0000000001 ? 0 : x).toFixed(2).replace('-', '−');
-const signed = x => `${x < 0 ? '−' : '+'} ${number(Math.abs(x))}`;
 const percent = p => `${(p*100).toFixed(1)}%`;
-const value = key => `<span data-value="${key}"></span>`;
+const numeric = new Set(['x1','x2','w1','w2','bias','product1','product2','z','decimal','percent','threshold','thresholdPercent']);
+const value = key => `<span${numeric.has(key)?' class="math-number"':''} data-value="${key}"></span>`;
+const m = body => `<math class="math" displaystyle="true" xmlns="http://www.w3.org/1998/Math/MathML"><mrow>${body}</mrow></math>`;
+const mi = x => `<mi>${x}</mi>`;
+const mo = x => `<mo>${x}</mo>`;
+const mn = x => `<mn>${x}</mn>`;
+const symbol = (x,n) => n===undefined?mi(x):`<msub>${mi(x)}${mn(n)}</msub>`;
+const mv = key => `<mn data-value="${key}"></mn>`;
+const sum = () => `${mv('product1')}<mo data-value="product2Sign"></mo>${mv('product2Magnitude')}<mo data-value="biasSign"></mo>${mv('biasMagnitude')}`;
+const weighted = () => `${mi('z')}${mo('=')}${symbol('w',1)}${symbol('x',1)}${mo('+')}${symbol('w',2)}${symbol('x',2)}${mo('+')}${mi('b')}`;
 
 function concept() {
   const stage = (figure, label, note) => `<div class="lr-step"><div class="lr-figure">${figure}</div><div class="lr-step-label">${label}</div><p class="lr-step-note">${note}</p></div>`;
   return `<div class="lr-body"><section class="lr-panel lr-concept-panel">
-    <div class="lr-concept-heading"><h2>로지스틱 회귀(Logistic Regression)</h2><p>양성(1)·음성(0) 두 클래스 중 양성의 확률을 계산하는 분류 모델</p></div>
+    <div class="lr-concept-heading"><h2>로지스틱 회귀(Logistic Regression)</h2><span class="lr-example">예시 입력·계수 · 학습 과정 제외</span><p>양성(1)·음성(0) 중 양성의 확률을 예측하는 분류 모델<br>가중치 ${m(mi('w'))}: 특성에 곱하는 계수 · 절편 ${m(mi('b'))}: 입력과 무관하게 더하는 값</p></div>
     <div class="lr-flow">
-      ${stage(`<div class="lr-inputs"><div><span>x${sub(1)}</span><strong>${value('x1')}</strong></div><div><span>x${sub(2)}</span><strong>${value('x2')}</strong></div></div>`, '입력 특성', '대상의 두 수치')}
+      ${stage(`<div class="lr-inputs">${[1,2].map(i=>`<div><div class="lr-feature-value">${m(symbol('x',i))}<strong>${value('x'+i)}</strong></div><div class="lr-feature-weight"><span>가중치</span>${m(symbol('w',i)+mo('=')+mv('w'+i))}</div></div>`).join('')}</div>`, '입력 특성', '특성마다 가중치를 곱함')}
       ${arrow()}
-      ${stage(`<div class="lr-score"><span>z</span><strong>${value('z')}</strong><span>선형 점수</span></div>`, '가중합 + 절편', '입력에 계수를 곱해 합산')}
+      ${stage(`<div class="lr-score"><div class="lr-score-general">${m(weighted())}</div><span class="lr-score-bias">절편 ${m(mi('b')+mo('=')+mv('bias'))}</span><div class="lr-score-substitute">${m(sum())}</div><strong>${m(mi('z')+mo('=')+mv('z'))}</strong><span>확률 변환 전 점수</span></div>`, '가중합 + 절편', '두 곱의 합에 절편을 더함')}
       ${arrow()}
       ${stage('<svg class="lr-curve" role="img" aria-label="선형 점수를 양성 확률로 변환하는 시그모이드 곡선" viewBox="0 0 300 210"></svg>', '시그모이드(Sigmoid)', '실수 점수 → 0과 1 사이')}
       ${arrow()}
-      ${stage(`<div class="lr-probability"><span>양성 확률 p</span><strong>${value('percent')}</strong><div class="lr-prob-track"><i data-prob-fill></i></div></div>`, '확률 출력', '선택 샘플의 양성 가능성')}
+      ${stage(`<div class="lr-probability"><span>양성 확률 ${m(mi('p'))}</span><strong>${value('percent')}</strong><div class="lr-prob-track"><i data-prob-fill></i></div></div>`, '확률 출력', '선택 샘플의 양성 가능성')}
     </div>
-    <div class="lr-symbols"><span><strong>x</strong> 입력 특성</span><span><strong>z</strong> 확률로 변환하기 전 점수</span><span><strong>p</strong> 양성 예측 확률</span><span class="lr-example">예시 입력·계수 · 학습 과정 제외</span></div>
+    <div class="lr-symbols"><span>${m(mi('x'))}<span>입력 특성</span></span><span>${m(mi('z'))}<span>가중합에 절편을 더한 점수</span></span><span>${m(mi('σ'))}<span>시그모이드 함수</span></span><span>${m(mi('p'))}<span>양성 예측 확률</span></span></div>
     </section></div>${takeaway('확률의 의미', '입력에서 계산한 선형 점수를 양성 클래스의 확률로 변환')}`;
 }
 
 function calculation() {
   return `<div class="lr-body lr-two-columns lr-calculation">
     <section class="lr-panel lr-calc-panel">
-      ${heading('01 · WEIGHTED SUM', '입력과 계수의 곱', '가중치 w는 특성에 곱하는 계수,<br>절편 b는 입력과 무관하게 더하는 값')}
-      <div class="lr-calc-main"><table class="lr-product-table"><thead><tr><th>입력 x</th><th>가중치 w</th><th>곱 w × x</th></tr></thead><tbody>
-        <tr><td>x${sub(1)} = ${value('x1')}</td><td>${value('w1')}</td><td>${value('product1')}</td></tr>
-        <tr><td>x${sub(2)} = ${value('x2')}</td><td>${value('w2')}</td><td>${value('product2')}</td></tr>
-      </tbody></table><div class="lr-bias"><span>절편 b</span><strong>${value('bias')}</strong></div>
-      <div class="lr-sum"><span>z = ${value('sum')}</span><strong>= ${value('z')}</strong></div></div>
-      <div class="lr-card-note">일반식: z = w${sub(1)}x${sub(1)} + w${sub(2)}x${sub(2)} + b</div>
+      ${heading('01 · WEIGHTED SUM', '입력과 계수의 곱', `가중치 ${m(mi('w'))}는 특성에 곱하는 계수,<br>절편 ${m(mi('b'))}는 입력과 무관하게 더하는 값`)}
+      <div class="lr-calc-main"><table class="lr-product-table"><thead><tr><th>입력 ${m(mi('x'))}</th><th>가중치 ${m(mi('w'))}</th><th>곱 ${m(mi('w')+mo('×')+mi('x'))}</th></tr></thead><tbody>
+        <tr><td>${m(symbol('x',1)+mo('=')+mv('x1'))}</td><td>${value('w1')}</td><td>${value('product1')}</td></tr>
+        <tr><td>${m(symbol('x',2)+mo('=')+mv('x2'))}</td><td>${value('w2')}</td><td>${value('product2')}</td></tr>
+      </tbody></table><div class="lr-bias"><span>절편 ${m(mi('b'))}</span><strong>${value('bias')}</strong></div>
+      <div class="lr-sum"><span>${m(mi('z')+mo('=')+sum())}</span><strong>${m(mo('=')+mv('z'))}</strong></div></div>
+      <div class="lr-card-note">일반식: ${m(weighted())}</div>
     </section>
     <section class="lr-panel lr-calc-panel">
       ${heading('02 · SIGMOID', '점수를 확률로 변환', '시그모이드(Sigmoid): 실수 점수를<br>0과 1 사이의 값으로 변환하는 함수')}
-      <div class="lr-prob-calculation"><div class="lr-general">p = ${frac('1', '1 + e<sup>−z</sup>')}</div>
-      <div class="lr-substitute">= ${frac('1', `1 + e<sup>${value('negativeZ')}</sup>`)}</div>
-      <div class="lr-decimal">≈ ${value('decimal')}</div><div class="lr-final-prob">${value('percent')}</div></div>
-      <div class="lr-card-note">e ≈ 2.718 · 표시는 반올림, 판정은 원래 확률 사용</div>
+      <div class="lr-prob-calculation"><div class="lr-general">${m(mi('p')+mo('=')+`<mfrac>${mn(1)}<mrow>${mn(1)}${mo('+')}<msup><mi mathvariant="normal">e</mi><mrow>${mo('−')}${mi('z')}</mrow></msup></mrow></mfrac>`)}</div>
+      <div class="lr-substitute">${m(mo('=')+`<mfrac>${mn(1)}<mrow>${mn(1)}${mo('+')}<msup><mi mathvariant="normal">e</mi>${mv('negativeZ')}</msup></mrow></mfrac>`)}</div>
+      <div class="lr-decimal">${m(mo('≈')+mv('decimal'))}</div><div class="lr-final-prob">${value('percent')}</div></div>
+      <div class="lr-card-note">${m('<mi mathvariant="normal">e</mi>'+mo('≈')+mn('2.718'))} · 표시는 반올림, 판정은 원래 확률 사용</div>
     </section>
-    </div>${takeaway('계산의 연결', '왼쪽에서 계산한 z를 오른쪽 확률식에 그대로 대입')}`;
+    </div>${takeaway('계산의 연결', `왼쪽에서 계산한 ${m(mi('z'))}를 오른쪽 확률식에 그대로 대입`)}`;
 }
 
 function threshold() {
   return `<div class="lr-body lr-two-columns lr-threshold">
     <section class="lr-panel lr-control-panel">
       ${heading('LIVE CONTROL', '샘플 확률과 판정')}
-      <div class="lr-slider-row"><label for="threshold">임계값 t</label><output for="threshold" data-value="threshold"></output><input id="threshold" type="range" min="0" max="100" step="1" value="60" aria-label="양성 판정의 임계값"></div>
-      <div class="lr-rule-row"><span>p ≥ t → 양성(1)</span><span class="lr-threshold-legend"><i></i>현재 임계값</span></div>
-      <div class="lr-sample-table"><div class="lr-sample-header"><span>샘플</span><div class="lr-prob-axis"><span>0%</span><span>50%</span><span>100%</span></div><span>확률 p</span><span>예측</span></div>
+      <div class="lr-slider-row"><label for="threshold">임계값 ${m(mi('t'))}</label><output class="math-number" for="threshold" data-value="threshold"></output><input id="threshold" type="range" min="0" max="100" step="1" value="60" aria-label="양성 판정의 임계값"></div>
+      <div class="lr-rule-row"><span>${m(mi('p')+mo('≥')+mi('t'))} → 양성(1)</span><span class="lr-threshold-legend"><i></i>현재 임계값</span></div>
+      <div class="lr-sample-table"><div class="lr-sample-header"><span>샘플</span><div class="lr-prob-axis"><span>0%</span><span>50%</span><span>100%</span></div><span>확률 ${m(mi('p'))}</span><span>예측</span></div>
       <div class="lr-sample-rows"></div></div>
       <div class="lr-counts"><span>양성 <strong data-value="positive"></strong>개</span><span>음성 <strong data-value="negative"></strong>개</span><span class="lr-muted">버튼으로 샘플 선택</span></div>
     </section>
     <section class="lr-panel lr-decision-panel">
       ${heading('SELECTED SAMPLE', '한 샘플의 판정')}
-      <div class="lr-selection-detail"><strong>샘플 ${value('sample')}</strong><span>x${sub(1)} = ${value('x1')} · x${sub(2)} = ${value('x2')} · z = ${value('z')}</span></div>
-      <div class="lr-comparison"><div class="lr-compare-block"><span>양성 확률 p</span><strong>${value('percent')}</strong><small>≈ ${value('decimal')}</small></div><span class="lr-relation" data-value="relation"></span><div class="lr-compare-block"><span>임계값 t</span><strong>${value('thresholdPercent')}</strong><small>${value('threshold')}</small></div></div>
+      <div class="lr-selection-detail"><strong>샘플 ${value('sample')}</strong><span>${m(symbol('x',1)+mo('=')+mv('x1'))} · ${m(symbol('x',2)+mo('=')+mv('x2'))} · ${m(mi('z')+mo('=')+mv('z'))}</span></div>
+      <div class="lr-comparison"><div class="lr-compare-block"><span>양성 확률 ${m(mi('p'))}</span><strong>${value('percent')}</strong><small>${m(mo('≈')+mv('decimal'))}</small></div><span class="lr-relation math-number" data-value="relation"></span><div class="lr-compare-block"><span>임계값 ${m(mi('t'))}</span><strong>${value('thresholdPercent')}</strong><small>${value('threshold')}</small></div></div>
       <div class="lr-decision" data-decision><span>예측 클래스</span><strong data-value="prediction"></strong><span data-value="comparison"></span></div>
       <div class="lr-card-note">임계값 변경은 판정 기준의 변경이며,<br>모델 재학습이나 확률 재계산이 아님</div>
     </section>
@@ -88,7 +94,7 @@ function drawCurve(row) {
   const d = Array.from({length: 161}, (_, i) => {const z=-limit+i*2*limit/160;return `${i?'L':'M'}${x(z).toFixed(3)},${y(sigmoid(z)).toFixed(3)}`;}).join(' ');
   svg.dataset.limit=String(limit);
   svg.innerHTML = `<g class="lr-plot-grid"><path d="M40 22 V172 H280"/><path class="lr-midline" d="M40 97 H280 M160 22 V172"/></g>
-    <g class="lr-axis-text"><text x="19" y="27">1</text><text x="9" y="102">0.5</text><text x="19" y="177">0</text><text x="40" y="194" text-anchor="middle">−${limit}</text><text x="160" y="194" text-anchor="middle">0</text><text x="280" y="194" text-anchor="middle">${limit}</text><text x="42" y="15">p</text><text x="291" y="176">z</text></g>
+    <g class="lr-axis-text math-number"><text x="19" y="27">1</text><text x="9" y="102">0.5</text><text x="19" y="177">0</text><text x="40" y="194" text-anchor="middle">−${limit}</text><text x="160" y="194" text-anchor="middle">0</text><text x="280" y="194" text-anchor="middle">${limit}</text><text x="42" y="15">𝑝</text><text x="291" y="176">𝑧</text></g>
     <path class="lr-sigmoid-path" d="${d}"/><path class="lr-point-guides" d="M${x(row.z)} 172 V${y(row.p)} H40"/>
     <circle class="lr-curve-point" cx="${x(row.z)}" cy="${y(row.p)}" r="6"/>`;
 }
@@ -98,7 +104,8 @@ function update(announce = false) {
   const prediction=predict(row.p,t), positives=rows.filter(r=>predict(r.p,t)).length;
   const values={x1:number(row.input[0]),x2:number(row.input[1]),w1:number(state.model.weights[0]),w2:number(state.model.weights[1]),
     bias:number(state.model.bias),product1:number(row.products[0]),product2:number(row.products[1]),z:number(row.z),
-    negativeZ:number(-row.z),sum:`${number(row.products[0])} ${signed(row.products[1])} ${signed(state.model.bias)}`,
+    negativeZ:number(-row.z),
+    product2Sign:row.products[1]<0?'−':'+',product2Magnitude:number(Math.abs(row.products[1])),biasSign:state.model.bias<0?'−':'+',biasMagnitude:number(Math.abs(state.model.bias)),
     percent:percent(row.p),decimal:row.p.toFixed(6),threshold:(t).toFixed(2),thresholdPercent:percent(t),
     positive:positives,negative:rows.length-positives,sample:state.selected+1,relation:prediction?'≥':'<',
     prediction:prediction?'양성(1)':'음성(0)',comparison:prediction?'확률이 기준 이상 → 양성':'확률이 기준 미만 → 음성'};
@@ -107,7 +114,7 @@ function update(announce = false) {
   const slider=root.querySelector('#threshold');slider.value=String(state.threshold);slider.setAttribute('aria-valuetext',`${t.toFixed(2)}, ${positives}개 양성`);
   const table=root.querySelector('.lr-sample-rows');
   if(table.children.length!==rows.length) {
-    table.innerHTML=rows.map(r=>`<div class="lr-sample-row" data-sample-index="${r.index}"><button type="button" data-select="${r.index}" aria-label="샘플 ${r.index+1} 선택">${r.index+1}</button><div class="lr-sample-track"><i class="lr-sample-fill"></i><i class="lr-threshold-line"></i></div><span class="lr-sample-percent"></span><span class="lr-badge"></span></div>`).join('');
+    table.innerHTML=rows.map(r=>`<div class="lr-sample-row" data-sample-index="${r.index}"><button type="button" data-select="${r.index}" aria-label="샘플 ${r.index+1} 선택">${r.index+1}</button><div class="lr-sample-track"><i class="lr-sample-fill"></i><i class="lr-threshold-line"></i></div><span class="lr-sample-percent math-number"></span><span class="lr-badge"></span></div>`).join('');
   }
   rows.forEach(r=>{
     const el=table.children[r.index],pred=predict(r.p,t);

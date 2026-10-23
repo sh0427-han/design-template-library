@@ -2,7 +2,7 @@
 from functools import partial
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
-import hashlib, json, math, re, threading, traceback
+import hashlib, json, math, re, shutil, threading, traceback
 from datetime import datetime, timezone
 
 from playwright.sync_api import sync_playwright
@@ -45,6 +45,7 @@ GEOMETRY = r'''id => {
   frame:{width:s.width,height:s.height},pageWidth:document.documentElement.scrollWidth,viewport:innerWidth,
   captionGap:Math.min(...panels.map(p=>caption.y-rect(p).bottom)),footerGap:footer.y-caption.bottom,
   labelY:[...slide.querySelectorAll('.lr-step-label')].map(e=>rect(e).y),
+  symbolAxisErrors:[...slide.querySelectorAll('.lr-symbols > span')].map((e,i)=>{const a=rect(e),b=rect(slide.querySelectorAll('.lr-step')[i]);return Math.abs(a.x+a.width/2-b.x-b.width/2)}),
   arrowAxisErrors:[...slide.querySelectorAll('.lr-connector')].map(a=>{const b=rect(a),p=rect(a.previousElementSibling.querySelector('.lr-figure')),n=rect(a.nextElementSibling.querySelector('.lr-figure'));return Math.max(Math.abs(b.y+b.height/2-p.y-p.height/2),Math.abs(b.y+b.height/2-n.y-n.height/2));}),
   noteY:[...slide.querySelectorAll('.lr-card-note')].map(e=>rect(e).y),
   headingGaps:[...slide.querySelectorAll('.lr-heading,.lr-concept-heading')].map(e=>getComputedStyle(e).rowGap),
@@ -89,8 +90,9 @@ def math_check(page, model):
     # Read the actual displayed factors/products as well as the model's output.
     num=lambda x: f'{0 if abs(x)<1e-10 else x:.2f}'.replace('-', '−')
     x=model['samples'][selected]
-    displayed=page.evaluate('''()=>Object.fromEntries(['x1','x2','w1','w2','bias','product1','product2','z','negativeZ','decimal'].map(key=>[key,[...document.querySelectorAll(`[data-value="${key}"]`)].map(e=>e.textContent)]))''')
-    expect=dict(x1=num(x[0]),x2=num(x[1]),w1=num(model['weights'][0]),w2=num(model['weights'][1]),bias=num(model['bias']),product1=num(x[0]*model['weights'][0]),product2=num(x[1]*model['weights'][1]),z=num(rows[selected][0]),negativeZ=num(-rows[selected][0]),decimal=f'{rows[selected][1]:.6f}')
+    displayed=page.evaluate('''()=>Object.fromEntries(['x1','x2','w1','w2','bias','product1','product2','product2Sign','product2Magnitude','biasSign','biasMagnitude','z','negativeZ','decimal'].map(key=>[key,[...document.querySelectorAll(`[data-value="${key}"]`)].map(e=>e.textContent)]))''')
+    product2=x[1]*model['weights'][1]
+    expect=dict(x1=num(x[0]),x2=num(x[1]),w1=num(model['weights'][0]),w2=num(model['weights'][1]),bias=num(model['bias']),product1=num(x[0]*model['weights'][0]),product2=num(product2),product2Sign='−' if product2<0 else '+',product2Magnitude=num(abs(product2)),biasSign='−' if model['bias']<0 else '+',biasMagnitude=num(abs(model['bias'])),z=num(rows[selected][0]),negativeZ=num(-rows[selected][0]),decimal=f'{rows[selected][1]:.6f}')
     assert all(values and set(values)=={expect[key]} for key,values in displayed.items()),(displayed,expect)
     return data
 
@@ -144,6 +146,7 @@ def main():
                         assert all(abs(p['y']-geometry['panels'][0]['y'])<.02 and abs(p['height']-geometry['panels'][0]['height'])<.02 for p in geometry['panels'])
                         if name=='concept':
                             assert max(geometry['labelY'])-min(geometry['labelY'])<.02 and max(geometry['arrowAxisErrors'])<.02
+                            assert len(geometry['symbolAxisErrors'])==4 and max(geometry['symbolAxisErrors'])<.02,geometry['symbolAxisErrors']
                             curve=geometry['curve'];z,prob=expected(DEFAULT)[3]
                             assert abs(curve['x']-(40+(z+curve['limit'])/(2*curve['limit'])*240))<1e-10
                             assert abs(curve['y']-(172-prob*150))<1e-10 and curve['path'].count('L')==160
@@ -155,8 +158,9 @@ def main():
                         if name=='threshold':
                             assert abs(geometry['sliderGap']-16)<.02
                             for line in geometry['thresholdLines']:assert abs(line['relativeX']+1-.6*line['trackWidth'])<.03
-                        fonts=actual_fonts(page,'.logistic-lesson *');assert fonts['elements']>0 and not any(fonts[k] for k in ['fallback','unpainted','bad_spacing']),fonts
-                        assert min(fonts['loaded']['counts'])>0
+                        fonts=actual_fonts(page,'.logistic-lesson *',math_family='STIX Two Math');assert fonts['elements']>0 and not any(fonts[k] for k in ['fallback','unpainted','bad_spacing']),fonts
+                        assert min(fonts['loaded']['counts'])>0 and fonts['loaded']['math']['count']>0
+                        assert fonts['families'].get('STIX Two Math',0)>0 and fonts['families'].get('Pretendard Variable',0)>0
                         fp=geometry.pop('fingerprints')
                         key=(width,name)
                         if mode=='slides':baseline[key]=fp;parity_error=0
@@ -210,18 +214,22 @@ def main():
             assert window_state(page)==(60,3) and '#ref-concept' in page.url
             assert not errors and not failed and not http,(errors,failed,http)
             report.update(status='passed',math_checks=checks,alternate_data_checks=reuse,threshold_states=101,keyboard=True,tie_is_positive=True,mode_roundtrip=True,invalid_data_rejections=5,extreme_logits=[-1000,1000],page_errors=errors,failed_requests=failed,http_errors=http)
+            (LESSON/'review').mkdir(exist_ok=True)
+            for name in PAGES:
+                shutil.copyfile(OUT/f'slides-{name}-1600x950.png',LESSON/f'review/{name}.png')
             browser.close()
     except Exception as exc:
         report.update(status='failed',error=str(exc));raise
     finally:
         server.shutdown();server.server_close()
         sources=[p for p in LESSON.iterdir() if p.suffix in ('.html','.css','.js')]
-        sources += [ROOT/'templates/html/styles.css',ROOT/'templates/html/reference-layout.css',ROOT/'templates/html/assets/fonts/pretendard/PretendardVariable.woff2']
+        sources += [ROOT/'templates/html/styles.css',ROOT/'templates/html/reference-layout.css',ROOT/'templates/html/math-typography.css',ROOT/'templates/html/assets/fonts/pretendard/PretendardVariable.woff2',ROOT/'templates/html/assets/fonts/stix-two-math/STIXTwoMath-Regular.woff2']
         sources += list((ROOT/'templates/dual-mode-learning/assets/css').glob('*.css'))
         sources += [Path(__file__).resolve(),ROOT/'scripts/reference_validation.py']
         report['source_sha256']={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(sources)}
         report['design_sha256']=hashlib.sha256((LESSON/'DESIGN.md').read_bytes()).hexdigest()
         report['preview_sha256']={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted((LESSON/'previews').glob('*.jpg'))}
+        report['review_preview_sha256']={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted((LESSON/'review').glob('*.png'))}
         report['finished_utc']=datetime.now(timezone.utc).isoformat()
         (LESSON/'previews/validation.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
     print(f'PASS {len(report["cases"])} lesson layouts; {checks} default / {reuse} alternate predictions; real fonts and two-mode state')

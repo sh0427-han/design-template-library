@@ -40,5 +40,8 @@ def main():
     assert sorted(p.name for p in (pilot_root/'previews').glob('*.jpg'))==['scroll.jpg','slide.jpg']
     for name,expected in pilot['preview_sha256'].items():
         assert hashlib.sha256((pilot_root/'previews'/name).read_bytes()).hexdigest()==expected,('pilot preview changed',name)
+    assert set(pilot['review_preview_sha256'])=={'concept.png','calculation.png','threshold.png'}
+    for name,expected in pilot['review_preview_sha256'].items():
+        assert hashlib.sha256((pilot_root/'review'/name).read_bytes()).hexdigest()==expected,('pilot review image changed',name)
     print(f'PASS {len(docs)} Markdown files / {links} local links; eight final specs, source/preview hashes and Interactive reuse evidence')
 if __name__=='__main__':main()
