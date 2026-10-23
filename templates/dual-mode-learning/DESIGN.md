@@ -31,7 +31,7 @@
 
 - 공통 기본 spacing token은 `--space-*`를 사용한다.
 - 제목/리드/본문/캡션의 계층은 각 모드에서 일관되게 유지한다.
-- 모바일 Scroll에서는 1열, desktop Scroll에서는 왼쪽 sticky TOC + 본문으로 구성한다.
+- 제작 대상은 PC 웹페이지이며 Scroll은 왼쪽 sticky TOC + 본문으로 구성한다. 새 자료는 PC 4개 크기를 기준으로 검토하고 모바일 전용 배치는 필수 조건에 포함하지 않는다.
 - Slide에서는 16:9 한 화면에 핵심 메시지 하나. 글자 축소보다 콘텐츠 분할을 우선한다.
 
 ## Interaction & Semantics

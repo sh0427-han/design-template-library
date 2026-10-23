@@ -2,6 +2,8 @@
 
 AI·ML 교육자료, 논문·기술 발표, 엔지니어링 보고를 위한 **편집 가능한 HTML 시각 설명 패턴**입니다. 결과물은 **HTML Scroll / Slide**이며 PPTX 생성·변환·동기화는 지원하지 않습니다.
 
+제작 대상은 PC에서 보는 웹페이지입니다. 새 자료의 필수 검토 크기는 1600×950 / 1440×810 / 1366×768 / 1280×720이며 모바일 전용 제작·검수는 요구하지 않습니다.
+
 정확한 수식과 데이터, 읽기 쉬운 Figure, 실제 브라우저 검증을 함께 재사용합니다. 프리뷰 이미지를 새 자료에 붙여 넣는 방식 대신 HTML/CSS/SVG/JavaScript 원본을 수정합니다.
 
 ## Scroll와 Slide, 8개 패턴의 관계
@@ -77,7 +79,7 @@ python templates/dual-mode-learning/tools/check.py
 python scripts/check_documentation.py
 ```
 
-`validate_references.py`는 최종 원본 8종을 **1600×950 / 1440×810 / 1366×768 / 1280×720 / 900×900 / 390×844**, 총 48개 조합에서 검증합니다. 수식·사진·특징 맵·행렬·실시간 판정·도형 정렬·화살표·오버플로·푸터·자간을 검사하고 대표 프리뷰를 갱신합니다. `document.fonts` 로딩뿐 아니라 CDP의 **실제 렌더링 글꼴**도 확인합니다.
+현재 저장소의 `validate_references.py`는 기존 호환성 회귀 검사로 원본 8종을 **1600×950 / 1440×810 / 1366×768 / 1280×720 / 900×900 / 390×844**, 총 48개 조합에서 검증합니다. 수식·사진·특징 맵·행렬·실시간 판정·도형 정렬·화살표·오버플로·푸터·자간을 검사하고 대표 프리뷰를 갱신합니다. `document.fonts` 로딩뿐 아니라 CDP의 **실제 렌더링 글꼴**도 확인합니다. 이 도구의 6개 실행 크기와 새 자료의 PC 4개 필수 제작 범위는 구분합니다.
 
 - 대표 이미지: `previews/html-*` — 1600×950 창 안의 1440×810 슬라이드 캡처
 - 전체 결과: [reference-validation.json](previews/review/reference-validation.json)
@@ -98,9 +100,9 @@ python scripts/validate_references.py --templates architecture step-by-step --ev
 1. [AGENTS.md](AGENTS.md)와 [디자인 시스템](DESIGN_SYSTEM.md)을 읽습니다.
 2. 청중·한 줄 학습 목표·입력·출력·수식·단순화 조건을 정합니다.
 3. [카탈로그](TEMPLATE_CATALOG.md)에서 패턴을 고르고 [상세 명세](docs/REFERENCE_PAGE_SPECS.md)를 확인합니다.
-4. [컴포넌트 설계 규격](docs/DESIGN_COMPONENT_RECIPES.md)의 기록표에 카드·행간/간격·도식·수식·상태·반응형·높이 예산을 정하고, [Figure 제작 표준](docs/FIGURE_PRODUCTION_STANDARD.md)에 따라 편집 가능한 도형과 데이터 흐름을 설계합니다.
+4. [컴포넌트 설계 규격](docs/DESIGN_COMPONENT_RECIPES.md)의 기록표에 카드·행간/간격·도식·수식·상태·PC 창 대응·높이 예산을 정하고, [Figure 제작 표준](docs/FIGURE_PRODUCTION_STANDARD.md)에 따라 편집 가능한 도형과 데이터 흐름을 설계합니다.
 5. [재사용 워크플로](docs/REFERENCE_REUSE_WORKFLOW.md)에 따라 실제 과제 데이터로 바꾸고 다른 데이터 구성으로도 확인합니다.
-6. 수학·실제 폰트·6개 화면·실제 캡처를 검증하고 관련 문서·카탈로그·프리뷰를 동기화합니다.
+6. 수학·실제 폰트·PC 4개 화면·실제 캡처를 검증하고 관련 문서·카탈로그·프리뷰를 동기화합니다.
 
 외부 Figure를 쓸 때는 가까이에 원문 URL을 표시합니다. 고정 필터, 모식도, 설명용 logits, 예시 KPI를 실제 학습 모델의 성능으로 주장하지 않습니다.
 
