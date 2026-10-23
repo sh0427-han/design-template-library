@@ -48,4 +48,14 @@ def main():
     report={'status':'passed','cases':cases,'page_errors':errors,'pc_validation':detailed,'preview_sha256':{n:hashlib.sha256((PREVIEWS/n).read_bytes()).hexdigest() for n in names}}
     (PREVIEWS/'review/dual-mode-validation.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
     print(f'PASS {len(detailed["cases"])} original-reference layouts, two modes/two previews, actual fonts, source-design parity and state roundtrip')
-if __name__=='__main__':main()
+if __name__=='__main__':
+    try:
+        main()
+    except Exception:
+        # Keep the diagnostic available through the Checks API as well as logs.
+        # The assertion data contains only rendered reference content and paths.
+        import traceback
+        detail=traceback.format_exc()[-6000:]
+        detail=detail.replace('%','%25').replace('\r','%0D').replace('\n','%0A')
+        print('::error title=Scroll / Slide validation::'+detail,flush=True)
+        raise

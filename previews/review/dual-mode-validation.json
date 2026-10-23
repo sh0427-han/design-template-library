@@ -201,7 +201,11 @@
         "source_design": {
           "elements": 78,
           "style_match": true,
-          "max_box_error_px": 0
+          "max_box_error_px": 0,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 80,
@@ -248,7 +252,11 @@
         "source_design": {
           "elements": 100,
           "style_match": true,
-          "max_box_error_px": 6.103515625e-05
+          "max_box_error_px": 6.103515625e-05,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 80,
@@ -295,7 +303,11 @@
         "source_design": {
           "elements": 161,
           "style_match": true,
-          "max_box_error_px": 6.103515625e-05
+          "max_box_error_px": 6.103515625e-05,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 80,
@@ -342,7 +354,11 @@
         "source_design": {
           "elements": 175,
           "style_match": true,
-          "max_box_error_px": 0.0001220703125
+          "max_box_error_px": 0.0001220703125,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 80,
@@ -389,7 +405,11 @@
         "source_design": {
           "elements": 163,
           "style_match": true,
-          "max_box_error_px": 0
+          "max_box_error_px": 0,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 80,
@@ -436,7 +456,11 @@
         "source_design": {
           "elements": 360,
           "style_match": true,
-          "max_box_error_px": 6.103515625e-05
+          "max_box_error_px": 6.103515625e-05,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 80,
@@ -483,7 +507,11 @@
         "source_design": {
           "elements": 99,
           "style_match": true,
-          "max_box_error_px": 0
+          "max_box_error_px": 0,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 80,
@@ -530,7 +558,11 @@
         "source_design": {
           "elements": 89,
           "style_match": true,
-          "max_box_error_px": 0
+          "max_box_error_px": 0,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 80,
@@ -577,7 +609,11 @@
         "source_design": {
           "elements": 78,
           "style_match": true,
-          "max_box_error_px": 0
+          "max_box_error_px": 0,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 248,
@@ -624,7 +660,11 @@
         "source_design": {
           "elements": 100,
           "style_match": true,
-          "max_box_error_px": 6.103515625e-05
+          "max_box_error_px": 6.103515625e-05,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 248,
@@ -671,7 +711,11 @@
         "source_design": {
           "elements": 161,
           "style_match": true,
-          "max_box_error_px": 6.103515625e-05
+          "max_box_error_px": 6.103515625e-05,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 248,
@@ -718,7 +762,11 @@
         "source_design": {
           "elements": 175,
           "style_match": true,
-          "max_box_error_px": 0.0001220703125
+          "max_box_error_px": 0.0001220703125,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 248,
@@ -765,7 +813,11 @@
         "source_design": {
           "elements": 163,
           "style_match": true,
-          "max_box_error_px": 0
+          "max_box_error_px": 0,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 248,
@@ -812,7 +864,11 @@
         "source_design": {
           "elements": 360,
           "style_match": true,
-          "max_box_error_px": 6.103515625e-05
+          "max_box_error_px": 6.103515625e-05,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 248,
@@ -859,7 +915,11 @@
         "source_design": {
           "elements": 99,
           "style_match": true,
-          "max_box_error_px": 0
+          "max_box_error_px": 0,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 248,
@@ -906,7 +966,11 @@
         "source_design": {
           "elements": 89,
           "style_match": true,
-          "max_box_error_px": 0
+          "max_box_error_px": 0,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 248,
@@ -953,7 +1017,11 @@
         "source_design": {
           "elements": 78,
           "style_match": true,
-          "max_box_error_px": 0
+          "max_box_error_px": 0,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 99.5625,
@@ -1000,7 +1068,11 @@
         "source_design": {
           "elements": 100,
           "style_match": true,
-          "max_box_error_px": 6.103515625e-05
+          "max_box_error_px": 6.103515625e-05,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 99.5625,
@@ -1047,7 +1119,11 @@
         "source_design": {
           "elements": 161,
           "style_match": true,
-          "max_box_error_px": 6.103515625e-05
+          "max_box_error_px": 6.103515625e-05,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 99.5625,
@@ -1094,7 +1170,11 @@
         "source_design": {
           "elements": 175,
           "style_match": true,
-          "max_box_error_px": 0.0001220703125
+          "max_box_error_px": 0.0001220703125,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 99.5625,
@@ -1141,7 +1221,11 @@
         "source_design": {
           "elements": 163,
           "style_match": true,
-          "max_box_error_px": 0
+          "max_box_error_px": 0,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 99.5625,
@@ -1188,7 +1272,11 @@
         "source_design": {
           "elements": 360,
           "style_match": true,
-          "max_box_error_px": 6.103515625e-05
+          "max_box_error_px": 6.103515625e-05,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 99.5625,
@@ -1235,7 +1323,11 @@
         "source_design": {
           "elements": 99,
           "style_match": true,
-          "max_box_error_px": 0
+          "max_box_error_px": 0,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 99.5625,
@@ -1282,7 +1374,11 @@
         "source_design": {
           "elements": 89,
           "style_match": true,
-          "max_box_error_px": 0
+          "max_box_error_px": 0,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 99.5625,
@@ -1329,7 +1425,11 @@
         "source_design": {
           "elements": 78,
           "style_match": true,
-          "max_box_error_px": 0
+          "max_box_error_px": 0,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 248,
@@ -1376,7 +1476,11 @@
         "source_design": {
           "elements": 100,
           "style_match": true,
-          "max_box_error_px": 6.103515625e-05
+          "max_box_error_px": 6.103515625e-05,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 248,
@@ -1423,7 +1527,11 @@
         "source_design": {
           "elements": 161,
           "style_match": true,
-          "max_box_error_px": 6.103515625e-05
+          "max_box_error_px": 6.103515625e-05,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 248,
@@ -1470,7 +1578,11 @@
         "source_design": {
           "elements": 175,
           "style_match": true,
-          "max_box_error_px": 0.0001220703125
+          "max_box_error_px": 0.0001220703125,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 248,
@@ -1517,7 +1629,11 @@
         "source_design": {
           "elements": 163,
           "style_match": true,
-          "max_box_error_px": 0
+          "max_box_error_px": 0,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 248,
@@ -1564,7 +1680,11 @@
         "source_design": {
           "elements": 360,
           "style_match": true,
-          "max_box_error_px": 6.103515625e-05
+          "max_box_error_px": 6.103515625e-05,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 248,
@@ -1611,7 +1731,11 @@
         "source_design": {
           "elements": 99,
           "style_match": true,
-          "max_box_error_px": 0
+          "max_box_error_px": 0,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 248,
@@ -1658,7 +1782,11 @@
         "source_design": {
           "elements": 89,
           "style_match": true,
-          "max_box_error_px": 0
+          "max_box_error_px": 0,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 248,
@@ -1705,7 +1833,11 @@
         "source_design": {
           "elements": 78,
           "style_match": true,
-          "max_box_error_px": 0
+          "max_box_error_px": 0,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 99.890625,
@@ -1752,7 +1884,11 @@
         "source_design": {
           "elements": 100,
           "style_match": true,
-          "max_box_error_px": 6.103515625e-05
+          "max_box_error_px": 6.103515625e-05,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 99.890625,
@@ -1799,7 +1935,11 @@
         "source_design": {
           "elements": 161,
           "style_match": true,
-          "max_box_error_px": 6.103515625e-05
+          "max_box_error_px": 6.103515625e-05,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 99.890625,
@@ -1846,7 +1986,11 @@
         "source_design": {
           "elements": 175,
           "style_match": true,
-          "max_box_error_px": 0.0001220703125
+          "max_box_error_px": 0.0001220703125,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 99.890625,
@@ -1893,7 +2037,11 @@
         "source_design": {
           "elements": 163,
           "style_match": true,
-          "max_box_error_px": 0
+          "max_box_error_px": 0,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 99.890625,
@@ -1940,7 +2088,11 @@
         "source_design": {
           "elements": 360,
           "style_match": true,
-          "max_box_error_px": 6.103515625e-05
+          "max_box_error_px": 6.103515625e-05,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 99.890625,
@@ -1987,7 +2139,11 @@
         "source_design": {
           "elements": 99,
           "style_match": true,
-          "max_box_error_px": 0
+          "max_box_error_px": 0,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 99.890625,
@@ -2034,7 +2190,11 @@
         "source_design": {
           "elements": 89,
           "style_match": true,
-          "max_box_error_px": 0
+          "max_box_error_px": 0,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 99.890625,
@@ -2081,7 +2241,11 @@
         "source_design": {
           "elements": 78,
           "style_match": true,
-          "max_box_error_px": 0
+          "max_box_error_px": 0,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 248,
@@ -2128,7 +2292,11 @@
         "source_design": {
           "elements": 100,
           "style_match": true,
-          "max_box_error_px": 6.103515625e-05
+          "max_box_error_px": 6.103515625e-05,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 248,
@@ -2175,7 +2343,11 @@
         "source_design": {
           "elements": 161,
           "style_match": true,
-          "max_box_error_px": 6.103515625e-05
+          "max_box_error_px": 6.103515625e-05,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 248,
@@ -2222,7 +2394,11 @@
         "source_design": {
           "elements": 175,
           "style_match": true,
-          "max_box_error_px": 0.0001220703125
+          "max_box_error_px": 0.0001220703125,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 248,
@@ -2269,7 +2445,11 @@
         "source_design": {
           "elements": 163,
           "style_match": true,
-          "max_box_error_px": 0
+          "max_box_error_px": 0,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 248,
@@ -2316,7 +2496,11 @@
         "source_design": {
           "elements": 360,
           "style_match": true,
-          "max_box_error_px": 6.103515625e-05
+          "max_box_error_px": 6.103515625e-05,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 248,
@@ -2363,7 +2547,11 @@
         "source_design": {
           "elements": 99,
           "style_match": true,
-          "max_box_error_px": 0
+          "max_box_error_px": 0,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 248,
@@ -2410,7 +2598,11 @@
         "source_design": {
           "elements": 89,
           "style_match": true,
-          "max_box_error_px": 0
+          "max_box_error_px": 0,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 248,
@@ -2457,7 +2649,11 @@
         "source_design": {
           "elements": 78,
           "style_match": true,
-          "max_box_error_px": 0
+          "max_box_error_px": 0,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 99.5625,
@@ -2504,7 +2700,11 @@
         "source_design": {
           "elements": 100,
           "style_match": true,
-          "max_box_error_px": 6.103515625e-05
+          "max_box_error_px": 6.103515625e-05,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 99.5625,
@@ -2551,7 +2751,11 @@
         "source_design": {
           "elements": 161,
           "style_match": true,
-          "max_box_error_px": 6.103515625e-05
+          "max_box_error_px": 6.103515625e-05,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 99.5625,
@@ -2598,7 +2802,11 @@
         "source_design": {
           "elements": 175,
           "style_match": true,
-          "max_box_error_px": 0.0001220703125
+          "max_box_error_px": 0.0001220703125,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 99.5625,
@@ -2645,7 +2853,11 @@
         "source_design": {
           "elements": 163,
           "style_match": true,
-          "max_box_error_px": 0
+          "max_box_error_px": 0,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 99.5625,
@@ -2692,7 +2904,11 @@
         "source_design": {
           "elements": 360,
           "style_match": true,
-          "max_box_error_px": 6.103515625e-05
+          "max_box_error_px": 6.103515625e-05,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 99.5625,
@@ -2739,7 +2955,11 @@
         "source_design": {
           "elements": 99,
           "style_match": true,
-          "max_box_error_px": 0
+          "max_box_error_px": 0,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 99.5625,
@@ -2786,7 +3006,11 @@
         "source_design": {
           "elements": 89,
           "style_match": true,
-          "max_box_error_px": 0
+          "max_box_error_px": 0,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 99.5625,
@@ -2833,7 +3057,11 @@
         "source_design": {
           "elements": 78,
           "style_match": true,
-          "max_box_error_px": 0
+          "max_box_error_px": 0,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 248,
@@ -2880,7 +3108,11 @@
         "source_design": {
           "elements": 100,
           "style_match": true,
-          "max_box_error_px": 6.103515625e-05
+          "max_box_error_px": 6.103515625e-05,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 248,
@@ -2927,7 +3159,11 @@
         "source_design": {
           "elements": 161,
           "style_match": true,
-          "max_box_error_px": 6.103515625e-05
+          "max_box_error_px": 6.103515625e-05,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 248,
@@ -2974,7 +3210,11 @@
         "source_design": {
           "elements": 175,
           "style_match": true,
-          "max_box_error_px": 0.0001220703125
+          "max_box_error_px": 0.0001220703125,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 248,
@@ -3021,7 +3261,11 @@
         "source_design": {
           "elements": 163,
           "style_match": true,
-          "max_box_error_px": 0
+          "max_box_error_px": 0,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 248,
@@ -3068,7 +3312,11 @@
         "source_design": {
           "elements": 360,
           "style_match": true,
-          "max_box_error_px": 6.103515625e-05
+          "max_box_error_px": 6.103515625e-05,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 248,
@@ -3115,7 +3363,11 @@
         "source_design": {
           "elements": 99,
           "style_match": true,
-          "max_box_error_px": 0
+          "max_box_error_px": 0,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 248,
@@ -3162,7 +3414,11 @@
         "source_design": {
           "elements": 89,
           "style_match": true,
-          "max_box_error_px": 0
+          "max_box_error_px": 0,
+          "box_tolerance_px": {
+            "html": 0.3,
+            "svg": 1
+          }
         },
         "bounds": {
           "x": 248,
@@ -3199,50 +3455,6 @@
         "technical_passed": true
       }
     ],
-    "mode_roundtrip": {
-      "reference": "interactive",
-      "threshold": 80,
-      "reload": true
-    },
-    "keyboard": {
-      "iframe_navigation": true,
-      "input_not_intercepted": true
-    },
-    "source_sha256": {
-      "templates/dual-mode-learning/scroll.html": "96d5b5e82639769644b1d313bf887b4c74bb9bd898f00977e706c6ac5faa573a",
-      "templates/dual-mode-learning/slides.html": "2bcb425d00da9e8d7d344b67135e4ed95a4f344a8dbf54bdfc0457e16ec08e67",
-      "templates/dual-mode-learning/assets/js/scroll.js": "b33b36569ce8cd12fac6aa76e65daad022b42efedd54ae78729e8cd425527288",
-      "templates/dual-mode-learning/assets/js/render.js": "ea7769505895adcba0a11971b799546c0fddfe8d4390a9f545a6b2aa6a59bb50",
-      "templates/dual-mode-learning/assets/js/state.js": "40ed83ef33ba9eac71791032a84fad8cb77de91458c183a0f62e2cc427680485",
-      "templates/dual-mode-learning/assets/js/lesson.js": "30ea45a0901fba3be7a4e41a98fb1143d6f76f39e6e9c69b8e21170d6a77ca4c",
-      "templates/dual-mode-learning/assets/js/slides.js": "5e489efaed68c01fc5cdbebef2710b3ac2bfb372f954b9a9dc95a7d6a8f445d5",
-      "templates/dual-mode-learning/assets/css/tokens.css": "43c885ad305d0ceb8895b3eb9088842ef99a3907fd1257ba14e1e0df8a16cb8f",
-      "templates/dual-mode-learning/assets/css/slides.css": "d4da50076686b4b9b3cd85b1aedac60359911ef254259dbde2b0c0a78f40f4a0",
-      "templates/dual-mode-learning/assets/css/scroll.css": "2978990697d2fc15807763a9c92472b5b8bb6537132383f4190580024ad92d1d",
-      "templates/dual-mode-learning/assets/css/components.css": "6284751b2d744133ffa2fb923a746372e8189289d057fc9c5aca3a254c2c0d8a",
-      "templates/html/executive-summary.html": "9717607f3a1c742fe72dd63990d2edaccb5bb0c33b844a43943cdea9b56fe37c",
-      "templates/html/comparison.html": "e90611664ef0a3ab1d94f6a226de42e14f4272acbdb30f90e9b770392d892c74",
-      "templates/html/index.html": "322dedee1a0cc94a136fc205e098a3c00c33f4a0169d082af3a909c0c50d41be",
-      "templates/html/experiment.html": "711282187d6138e69e2b92ab6f2730387be8cb491d8401d0928d33c96caf62dd",
-      "templates/html/interactive-reference.js": "0756c5facbf831184f561e3941bf37ef0a30a83af3118e6374735d37119951f7",
-      "templates/html/comparison-reference.css": "2a4afa51bfd30efe7f59422c3fa5483f74ac6c3a2b2c64288bb476dfce14f422",
-      "templates/html/reference-layout.css": "c29f52fd9852d80b29e277b7d60218a7b02da599a059a8395051caada3525bcc",
-      "templates/html/process-reference.js": "45629ef1192b6caa04aa05dd6ead9fd317eace58ba95ce873b966c27fd02a89d",
-      "templates/html/styles.css": "3c05e00284aae4ea538e697efae7682a2c9b35b318cab372fa8493613de4df22",
-      "templates/html/comparison-reference.js": "d427e9c2fcb0415c9ecd059ae723d53dc601b6f5350d3eb1872d1306aacf5469",
-      "templates/html/step-by-step.html": "8e7eed2d4bbeaeea3fb644973a0ff99f9e0c075bababf93a8964636197143d3c",
-      "templates/html/interactive.html": "999cc515d9f3ad03dbee7c1437959b79463ad251e890142233471e4ff7722869",
-      "templates/html/concept.html": "9d50ae70c9d63dc257738e2260d3eccf415029baff5726b8f21f13a09da5b018",
-      "templates/html/reference-types.css": "976c72a1d4e736fc6d7f7c328445f4e7feead457f4ef7165ca3926b5615e18b7",
-      "templates/html/architecture.html": "0b40aa7f35960458292b8fd691a0ffcac83e8646993dda516b85e809efac28e1",
-      "templates/html/process.html": "90039af9845ae77f566aad7f0e2ddb48d3bf4f4560d59f65ba6f1ddab3c0f874",
-      "templates/html/font-comparison.html": "03591c1effa0a60af07955046d486ebb813464f8c26c7cd7a45ef70e272022d7",
-      "templates/html/assets/concept-apple-photo.jpg": "6a7524a8f5fce2700d50970d21ad7a9912c07ace760d08fd603ba79728e15efc",
-      "templates/html/assets/cnn-feature-maps.js": "b8a71c04fced7a9df2a568c2cd3577af3ddde56b3903cfd2b7d1031fc19d2c05",
-      "templates/html/assets/fonts/pretendard/PretendardVariable.woff2": "9599f12fd42fc0bce1cd50b47a0c022e108d7aa64dd0d1bb0ed44f3282d900b4"
-    },
-    "page_errors": [],
-    "failed_requests": [],
     "technical_checks": {
       "concept": {
         "resample": [
@@ -5004,7 +5216,51 @@
           }
         ]
       }
-    }
+    },
+    "mode_roundtrip": {
+      "reference": "interactive",
+      "threshold": 80,
+      "reload": true
+    },
+    "keyboard": {
+      "iframe_navigation": true,
+      "input_not_intercepted": true
+    },
+    "source_sha256": {
+      "templates/dual-mode-learning/scroll.html": "96d5b5e82639769644b1d313bf887b4c74bb9bd898f00977e706c6ac5faa573a",
+      "templates/dual-mode-learning/slides.html": "2bcb425d00da9e8d7d344b67135e4ed95a4f344a8dbf54bdfc0457e16ec08e67",
+      "templates/dual-mode-learning/assets/js/scroll.js": "b33b36569ce8cd12fac6aa76e65daad022b42efedd54ae78729e8cd425527288",
+      "templates/dual-mode-learning/assets/js/render.js": "ea7769505895adcba0a11971b799546c0fddfe8d4390a9f545a6b2aa6a59bb50",
+      "templates/dual-mode-learning/assets/js/state.js": "40ed83ef33ba9eac71791032a84fad8cb77de91458c183a0f62e2cc427680485",
+      "templates/dual-mode-learning/assets/js/lesson.js": "30ea45a0901fba3be7a4e41a98fb1143d6f76f39e6e9c69b8e21170d6a77ca4c",
+      "templates/dual-mode-learning/assets/js/slides.js": "5e489efaed68c01fc5cdbebef2710b3ac2bfb372f954b9a9dc95a7d6a8f445d5",
+      "templates/dual-mode-learning/assets/css/tokens.css": "43c885ad305d0ceb8895b3eb9088842ef99a3907fd1257ba14e1e0df8a16cb8f",
+      "templates/dual-mode-learning/assets/css/slides.css": "d4da50076686b4b9b3cd85b1aedac60359911ef254259dbde2b0c0a78f40f4a0",
+      "templates/dual-mode-learning/assets/css/scroll.css": "2978990697d2fc15807763a9c92472b5b8bb6537132383f4190580024ad92d1d",
+      "templates/dual-mode-learning/assets/css/components.css": "6284751b2d744133ffa2fb923a746372e8189289d057fc9c5aca3a254c2c0d8a",
+      "templates/html/executive-summary.html": "9717607f3a1c742fe72dd63990d2edaccb5bb0c33b844a43943cdea9b56fe37c",
+      "templates/html/comparison.html": "e90611664ef0a3ab1d94f6a226de42e14f4272acbdb30f90e9b770392d892c74",
+      "templates/html/index.html": "322dedee1a0cc94a136fc205e098a3c00c33f4a0169d082af3a909c0c50d41be",
+      "templates/html/experiment.html": "711282187d6138e69e2b92ab6f2730387be8cb491d8401d0928d33c96caf62dd",
+      "templates/html/interactive-reference.js": "0756c5facbf831184f561e3941bf37ef0a30a83af3118e6374735d37119951f7",
+      "templates/html/comparison-reference.css": "2a4afa51bfd30efe7f59422c3fa5483f74ac6c3a2b2c64288bb476dfce14f422",
+      "templates/html/reference-layout.css": "c29f52fd9852d80b29e277b7d60218a7b02da599a059a8395051caada3525bcc",
+      "templates/html/process-reference.js": "45629ef1192b6caa04aa05dd6ead9fd317eace58ba95ce873b966c27fd02a89d",
+      "templates/html/styles.css": "3c05e00284aae4ea538e697efae7682a2c9b35b318cab372fa8493613de4df22",
+      "templates/html/comparison-reference.js": "d427e9c2fcb0415c9ecd059ae723d53dc601b6f5350d3eb1872d1306aacf5469",
+      "templates/html/step-by-step.html": "8e7eed2d4bbeaeea3fb644973a0ff99f9e0c075bababf93a8964636197143d3c",
+      "templates/html/interactive.html": "999cc515d9f3ad03dbee7c1437959b79463ad251e890142233471e4ff7722869",
+      "templates/html/concept.html": "9d50ae70c9d63dc257738e2260d3eccf415029baff5726b8f21f13a09da5b018",
+      "templates/html/reference-types.css": "976c72a1d4e736fc6d7f7c328445f4e7feead457f4ef7165ca3926b5615e18b7",
+      "templates/html/architecture.html": "0b40aa7f35960458292b8fd691a0ffcac83e8646993dda516b85e809efac28e1",
+      "templates/html/process.html": "90039af9845ae77f566aad7f0e2ddb48d3bf4f4560d59f65ba6f1ddab3c0f874",
+      "templates/html/font-comparison.html": "03591c1effa0a60af07955046d486ebb813464f8c26c7cd7a45ef70e272022d7",
+      "templates/html/assets/concept-apple-photo.jpg": "6a7524a8f5fce2700d50970d21ad7a9912c07ace760d08fd603ba79728e15efc",
+      "templates/html/assets/cnn-feature-maps.js": "b8a71c04fced7a9df2a568c2cd3577af3ddde56b3903cfd2b7d1031fc19d2c05",
+      "templates/html/assets/fonts/pretendard/PretendardVariable.woff2": "9599f12fd42fc0bce1cd50b47a0c022e108d7aa64dd0d1bb0ed44f3282d900b4"
+    },
+    "page_errors": [],
+    "failed_requests": []
   },
   "preview_sha256": {
     "dual-mode-scroll.jpg": "b5b82d65df55d2bb512f2619cec96b4ee68a751849e7f29b8c6abc6dcd5aedb3",

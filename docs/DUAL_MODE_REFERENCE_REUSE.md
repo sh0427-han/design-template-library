@@ -52,7 +52,7 @@ html, body { min-height:0; width:1440px; height:810px; overflow:hidden; backgrou
 [verify_pretendard.py](../scripts/verify_pretendard.py)가 [verify_dual_mode.py](../scripts/verify_dual_mode.py)를 실행합니다.
 
 1. 원본 8개를 직접 렌더링하고 모든 표시 요소의 글꼴·크기·굵기·행간·자간·색·배경·radius·padding 및 캔버스 기준 bounding box를 기준값으로 수집합니다.
-2. PC 1600×950/1440×810/1366×768/1280×720 × 두 모드 ×8개 = **64개 화면**을 원본과 대조합니다. 동일 CSS라는 선언만으로 통과하지 않으며 실제 style과 상대 위치를 비교합니다.
+2. PC 1600×950/1440×810/1366×768/1280×720 × 두 모드 ×8개 = **64개 화면**을 원본과 대조합니다. 동일 CSS라는 선언만으로 통과하지 않으며 실제 style과 상대 위치를 비교합니다. style은 정확히 일치해야 하며 HTML 위치 오차는0.3px 미만, 폰트의 실제 경계와 중앙 보정에 영향을 받는 SVG 위치 오차는 기존 도식 정렬 기준에 맞춰1px 미만입니다. 실제 최대 오차와 허용값을 JSON에 기록하며 글자 크기·padding 차이를 이 오차로 허용하지 않습니다.
 3. 원본 내부의 잘림·Footer 겹침·화살표, 부모 프레임의 16:9·경계·가로 넘침을 검사합니다.
 4. iframe 안의 실제 글리프를 CDP로 확인하고 `document.fonts`의 한글/영문 로딩, 모든 텍스트의−1pt를 확인합니다.
 5. 기존 페이지별 기술 검산을 사용해 픽셀·맵·Softmax·−6 계산·슬라이더 21상태·CNN Shape·지표·KPI를 확인합니다. #2의 원본 전용 최소 크기 검사는 직접 렌더링에 적용하고, iframe에서는 실제 서식/위치 동일성과 독립 맵/확률 계산을 확인합니다.

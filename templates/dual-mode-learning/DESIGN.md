@@ -32,6 +32,6 @@ html, body { min-height:0; width:1440px; height:810px; overflow:hidden; backgrou
 
 ## 실제 동일성 검증
 
-[검증 스크립트](../../scripts/verify_dual_mode.py)는 원본을 직접 열어 얻은 각 요소의 font-family/size/weight/line-height/tracking/color/background/radius/padding과 1440×810 기준 상대 bounding box를 두 보기와 비교합니다. CSS를 가져왔다는 이유만으로 통과하지 않습니다. 네 PC 크기에서 실제 글리프·독립 계산·잘림·iframe 크기·전환을 검사합니다. [검증 결과](../../previews/review/dual-mode-validation.json)에 기록합니다.
+[검증 스크립트](../../scripts/verify_dual_mode.py)는 원본을 직접 열어 얻은 각 요소의 font-family/size/weight/line-height/tracking/color/background/radius/padding과 1440×810 기준 상대 bounding box를 두 보기와 비교합니다. style은 정확한 일치, HTML 위치는0.3px 미만, SVG의 폰트 경계·중앙 보정 위치는 기존 정렬 검사와 같은1px 미만을 요구하며 실제 최대 오차를 기록합니다. CSS를 가져왔다는 이유만으로 통과하지 않습니다. 네 PC 크기에서 실제 글리프·독립 계산·잘림·iframe 크기·전환을 검사합니다. [검증 결과](../../previews/review/dual-mode-validation.json)에 기록합니다.
 
 이 구현은 레퍼런스 8개의 디자인을 정확히 비교하기 위한 보기입니다. 새 강의에는 필요한 패턴만 선택합니다. 모든 주제에 8개를 강제하거나, 이 보기의 iframe 구조를 모든 신규 자료의 유일한 구현 방식으로 강제하지 않습니다.
