@@ -15,6 +15,7 @@ LAYOUT = '''() => {
    cxError:Math.abs(shape.cx-f.cx),cyError:Math.abs(shape.cy-f.cy),
    paddingEscapes:shape.x<n.x+(parseFloat(s.paddingLeft)+parseFloat(s.borderLeftWidth))*scale-1||shape.right>n.right-(parseFloat(s.paddingRight)+parseFloat(s.borderRightWidth))*scale+1};
  });
+ const internalArrows=[...document.querySelectorAll('.process-task-svg .internal-arrow')].map(e=>e.getAttribute('d'));
  const arrows=[...document.querySelectorAll('.process-connector svg')].map(svg=>{
   const m=svg.getScreenCTM(),a=new DOMPoint(1,8).matrixTransform(m),b=new DOMPoint(27,8).matrixTransform(m);
   return {start:{x:a.x,y:a.y},end:{x:b.x,y:b.y},d:svg.querySelector('path').getAttribute('d'),stroke:getComputedStyle(svg.querySelector('path')).stroke};
@@ -22,7 +23,7 @@ LAYOUT = '''() => {
  const outputs=[...document.querySelectorAll('.output-item')].map(g=>({name:g.dataset.class,probability:Number(g.dataset.probability),text:g.querySelector('.probability-value').textContent,
   width:Number(g.querySelector('.probability-bar').getAttribute('width')),track:Number(g.querySelector('.probability-track').getAttribute('width')),highest:g.dataset.highest==='true',fill:getComputedStyle(g.querySelector('.probability-bar')).fill}));
  const maps=[...document.querySelectorAll('.process-feature-svg image')].map(e=>({channel:Number(e.dataset.channel),x:Number(e.getAttribute('x')),y:Number(e.getAttribute('y')),width:Number(e.getAttribute('width')),height:Number(e.getAttribute('height')),href:e.getAttribute('href')}));
- return {cards,arrows,outputs,exampleLogits:window.ProcessReference.exampleLogits,maps,
+ return {cards,arrows,internalArrows,outputs,exampleLogits:window.ProcessReference.exampleLogits,maps,
   photos:document.querySelectorAll('img').length,featureImages:document.querySelectorAll('.process-feature-svg image').length,
   figureNotes:[...document.querySelectorAll('.figure-note')].map(e=>e.textContent),
   captionLast:document.querySelector('.content').lastElementChild.classList.contains('ref-takeaway'),
@@ -96,11 +97,16 @@ def check_process(page,width,logits=(2,1,0)):
         before,after=r['cards'][i],r['cards'][i+1]
         if width>900:
             assert before['card']['right']<a['start']['x']<a['end']['x']<after['card']['x']
-            assert max(abs(a['start']['y']-before['artwork']['cy']),abs(a['end']['y']-after['artwork']['cy']))<1,a
+            assert max(abs(a['start']['y']-before['card']['cy']),abs(a['end']['y']-after['card']['cy']))<1,(
+                'Blue connector must align with the CARD vertical center, not the artwork',a,before['card'],after['card'])
         else:
             assert before['card']['bottom']<a['start']['y']<a['end']['y']<after['card']['y'],a
             assert max(abs(a['start']['x']-before['card']['cx']),abs(a['end']['x']-after['card']['cx']))<1,a
-    assert len(r['arrows'])==3 and page.locator('.process-task-svg .internal-arrow').count()==2
+    assert len(r['arrows'])==3
+    assert r['internalArrows']==[
+        'M42 72 H67 M62 68 L67 72 L62 76',
+        'M151 72 H170 M165 68 L170 72 L165 76'
+    ],'Keep the internal green Task Head arrows exactly as originally drawn'
     face=page.locator('.process-feature-svg image').last.bounding_box()
     assert face['width']/r['zoom']>=(90 if width>900 else 80)
     return {**r,'independent_softmax':expected,'displayed_total_percent':100.0,'four_computed_maps':True}

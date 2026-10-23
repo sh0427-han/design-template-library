@@ -63,6 +63,8 @@ python scripts/validate_references.py --templates concept 명령으로 1600×950
 
 **전체 구조:** INPUT → FEATURE → TASK → OUTPUT의 동일 크기 카드 4개와 Blue 외부 화살표 3개. 각 카드는 Stage Label, 독립 Figure 슬롯, Title, Description 순서입니다. 마지막 흰색 캡션/Teal 왼쪽 선에 `역할 분리`와 `CNN은 이미지에서 특징을 추출하고, Task Head는 이를 목적에 맞는 예측으로 변환`을 둡니다.
 
+**화살표 위치:** 카드 바깥 Blue 연결 화살표는 카드 컨테이너 전체 높이 기준으로 수직 중앙 정렬(`top: 50%` + `translateY(-50%)`)합니다. Figure 슬롯 속 그림 중앙과 혼동하지 않습니다. 좁은 화면에서 세로로 회전하는 기존 동작과 TASK Figure 안의 Teal 화살표 두 개는 그대로 유지합니다.
+
 | 단계 | Figure·의미 | 제목 | 설명 | 카드 배경·경계 |
 | --- | --- | --- | --- | --- |
 | INPUT | 기존 사과 사진 한 장, RGB 입력 | 입력 이미지 | RGB 픽셀 데이터 | White / Border |
