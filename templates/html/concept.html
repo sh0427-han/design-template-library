@@ -79,7 +79,10 @@
 .stack-axis-w {left:91px;bottom:0;}
 /* Outside the top-right envelope of the backmost B plane. */
 .stack-axis-c {top:-8px;right:0;color:var(--blue);font-size:15px;}
-.pixel-frame {display:grid;place-items:center;width:100%;height:254px;}
+.pixel-frame {
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:9px;width:100%;height:254px;min-width:0;padding-top:23px;
+}
 .pixel-matrix {position:relative;width:max-content;}
 .dimension-width {
   position:absolute;left:0;right:0;top:-28px;padding-bottom:5px;
@@ -98,6 +101,16 @@
   border:1px solid #ffffffbb;border-radius:1px;background:#e9eef5;
 }
 .pixel-block .selected {position:relative;z-index:4;outline:3px solid var(--navy);outline-offset:1px;}
+.pixel-channel-indicator {
+  display:flex;justify-content:center;align-items:center;gap:7px;
+  min-height:24px;color:var(--navy);font-size:13px;white-space:nowrap;
+}
+.pixel-channel-indicator strong {font-size:15px;color:var(--blue);font-weight:800;}
+.pixel-channel-indicator .channels {display:flex;align-items:center;gap:4px;}
+.pixel-channel-indicator .channel-tag {display:flex;align-items:center;gap:3px;font-size:12px;font-weight:750;}
+.pixel-channel-indicator .channel-tag::before {
+  content:"";display:block;width:7px;height:7px;border-radius:1px;background:var(--tag-color);
+}
 .pixel-block .selected::after,.selected-color .swatch::after {
   content:"";position:absolute;right:-5px;top:-5px;width:7px;height:7px;
   border:1px solid #fff;border-radius:50%;background:var(--navy);
@@ -124,12 +137,24 @@
 .channel-value .track {width:100%;height:7px;background:#e1e8f0;border-radius:7px;overflow:hidden;}
 .channel-value .bar {width:0;height:100%;border-radius:7px;}
 .concept-flow-summary {
-  display:flex;justify-content:center;align-items:baseline;gap:12px;
+  display:flex;justify-content:center;align-items:center;gap:12px;
   margin-top:3px;padding-top:12px;border-top:1px solid var(--border);
   color:var(--deep);font-size:16px;line-height:1.35;
 }
-.concept-flow-summary strong {font-size:26px;font-weight:800;color:var(--navy);}
-.concept-flow-summary span {color:var(--muted);font-size:14px;}
+.merge-copy {font-size:16px;font-weight:700;white-space:nowrap;}
+.merge-values {display:flex;align-items:center;gap:9px;white-space:nowrap;}
+.merge-values .merge-channel {font-size:15px;font-weight:750;color:var(--navy);}
+.merge-values .merge-channel strong {font-size:18px;font-variant-numeric:tabular-nums;}
+.merge-values .merge-channel[data-channel="R"] {color:#b63c47;}
+.merge-values .merge-channel[data-channel="G"] {color:#238463;}
+.merge-values .merge-channel[data-channel="B"] {color:#3168c8;}
+.merge-separator {font-size:17px;color:var(--muted);}
+.merge-arrow {font-size:21px;color:var(--blue);}
+.merge-result {display:flex;align-items:center;gap:8px;font-size:15px;font-weight:750;white-space:nowrap;}
+.merge-result .merge-swatch {
+  display:block;width:29px;height:29px;flex:none;border:2px solid var(--navy);
+  background:#dbe4f0;border-radius:5px;
+}
 .concept-slide .concept-takeaway {flex:none;margin-top:14px;}
 .concept-slide .footer {flex:none;margin-top:15px;padding-top:11px;font-size:14px;}
 @media(max-width:900px) {
@@ -161,7 +186,7 @@
   .matrix-step .concept-step-figure {height:225px;}
   .flow-link {height:46px;transform:none;}
   .flow-link svg {transform:rotate(90deg);}
-  .reference-slide.concept-slide .pixel-frame {height:188px;}
+  .reference-slide.concept-slide .pixel-frame {height:209px;padding-top:24px;gap:8px;}
   .reference-slide.concept-slide .pixel-block {grid-template-columns:repeat(4,33px);grid-template-rows:repeat(4,33px);}
   .reference-slide.concept-slide .pixel-block span {width:33px;height:33px;}
   .dimension-width,.dimension-height {font-size:12px;}
@@ -174,9 +199,13 @@
   .channel-value .number {font-size:23px;}
   .concept-step-label {font-size:16px;}
   .concept-step-note {font-size:12px;}
-  .concept-flow-summary {flex-wrap:wrap;gap:4px;text-align:center;margin-top:14px;}
-  .concept-flow-summary strong {font-size:22px;}
-  .concept-flow-summary span {font-size:12px;}
+  .concept-flow-summary {flex-wrap:wrap;gap:5px 12px;text-align:center;margin-top:14px;}
+  .merge-copy {flex-basis:100%;font-size:14px;}
+  .merge-values {gap:6px;}
+  .merge-values .merge-channel {font-size:13px;}
+  .merge-values .merge-channel strong {font-size:17px;}
+  .merge-result {font-size:13px;}
+  .merge-result .merge-swatch {width:25px;height:25px;}
 }
 </style>
 </head>
@@ -228,9 +257,17 @@
                 <span class="dimension-height"><span>H = 4</span></span>
                 <div class="pixel-block" role="img" aria-label="RGB 행렬에서 선택한 영역의 4행 4열 RGB 픽셀"><span></span><span></span><span></span><span></span><span></span><span></span><span class="selected" data-selected-index="6"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
               </div>
+              <div class="pixel-channel-indicator" aria-label="확대 영역도 RGB 채널 세 개를 유지">
+                <strong>C = 3</strong>
+                <span class="channels" aria-hidden="true">
+                  <span class="channel-tag" style="--tag-color:#b63c47">R</span>
+                  <span class="channel-tag" style="--tag-color:#238463">G</span>
+                  <span class="channel-tag" style="--tag-color:#3168c8">B</span>
+                </span>
+              </div>
             </div>
             <span class="concept-step-label">일부 영역 확대</span>
-            <span class="concept-step-note">4×4 = 16픽셀</span>
+            <span class="concept-step-note">4×4×3 = 48개 값</span>
           </div>
           <span class="flow-link" aria-hidden="true"><svg viewBox="0 0 36 24" fill="none"><path d="M2 12 H32 M24 4 L32 12 L24 20" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           <div class="concept-step rgb-step">
@@ -251,11 +288,17 @@
             <span class="concept-step-note">한 위치 = RGB 3개 값</span>
           </div>
         </div>
-        <div class="concept-flow-summary">
-          <strong>H × W × 3</strong>
-          <span>모든 위치의 RGB 3값 · 3차원 배열(HWC)</span>
-          <span>·</span>
-          <span>확대한 영역: 4×4×3 = 48개 값</span>
+        <div class="concept-flow-summary" aria-label="같은 픽셀 위치의 R G B 값을 결합해 하나의 색으로 표시">
+          <span class="merge-copy">같은 위치의 R/G/B 값을 조합하면</span>
+          <div class="merge-values">
+            <span class="merge-channel" data-channel="R">R <strong id="merge-r">—</strong></span>
+            <span class="merge-separator">+</span>
+            <span class="merge-channel" data-channel="G">G <strong id="merge-g">—</strong></span>
+            <span class="merge-separator">+</span>
+            <span class="merge-channel" data-channel="B">B <strong id="merge-b">—</strong></span>
+          </div>
+          <span class="merge-arrow" aria-hidden="true">→</span>
+          <span class="merge-result"><span class="merge-swatch" role="img" aria-label="선택한 픽셀의 결합 RGB 색상"></span>1픽셀의 색</span>
         </div>
       </article>
     </div>
@@ -276,6 +319,8 @@
   const hex_label=document.getElementById('selected-hex');
   const swatch=document.querySelector('.selected-color .swatch');
   const planes=[...document.querySelectorAll('.channel-canvas')];
+  const merge_numbers=['merge-r','merge-g','merge-b'].map(id=>document.getElementById(id));
+  const merge_swatch=document.querySelector('.merge-swatch');
   try {
     await image.decode();
     if(!image.naturalWidth || !image.naturalHeight)throw new Error('Source photograph unavailable');
@@ -314,6 +359,8 @@
       cell.title='RGB ('+colors[i].join(', ')+')';
     });
     swatch.style.backgroundColor=rgb;
+    merge_swatch.style.backgroundColor=rgb;
+    merge_numbers.forEach((node,index)=>{node.textContent=selected[index];});
     rgb_label.textContent='RGB ('+selected.join(', ')+')';
     hex_label.textContent=hex;
     channels.forEach((node,i)=>{
@@ -330,6 +377,8 @@
       node.querySelector('.bar').style.width='0%';
     });
     swatch.style.backgroundColor='#dbe4f0';
+    merge_swatch.style.backgroundColor='#dbe4f0';
+    merge_numbers.forEach(node=>{node.textContent='—';});
     slide.dataset.sampled='error';
     console.error(error);
   }
