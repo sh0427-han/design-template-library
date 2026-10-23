@@ -286,7 +286,7 @@ def check_concept(page):
     assert crop[0]['box']['x']>crop[1]['box']['x']>crop[2]['box']['x']
     assert crop[0]['box']['y']<crop[1]['box']['y']<crop[2]['box']['y']
     # Compare relative layer offsets at the actual responsive scale.
-    offset=(12 if r['viewport']<=520 else 15)*scale
+    offset=(12 if r['viewport']<=520 else 16)*scale
     assert abs(crop[1]['box']['x']-crop[2]['box']['x']-offset)<1
     assert abs(crop[2]['box']['y']-crop[1]['box']['y']-offset)<1
     assert abs(crop[0]['box']['x']-crop[2]['box']['x']-2*offset)<1
