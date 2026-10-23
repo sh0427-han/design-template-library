@@ -554,5 +554,13 @@ def main(argv=None):
         report_path.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
         if len(args.templates)==8 and report_path.name=='reference-validation.json':write_compatibility_reports(report)
     print(f'PASS {len(report["cases"])} final-source viewports; report: {report_path}')
+    # Temporary one-run transport of the verified Process PNG.
+    import base64
+    if 'process' in updated_previews:
+        encoded=base64.b64encode(
+            (ROOT/'previews/html-process.png').read_bytes()).decode('ascii')
+        for i in range(0,len(encoded),4096):
+            print('PROCESS_PREVIEW_B64='+encoded[i:i+4096],flush=True)
+
 
 if __name__=='__main__':main()
