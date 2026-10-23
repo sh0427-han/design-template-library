@@ -144,7 +144,7 @@ def check_concept(page):
     assert 'H × W × 3' in r['summary'] and '4×4×3 = 48개 값' in r['summary']
     assert r['rgbBox']['x']>=r['panel']['x'] and r['rgbBox']['right']<=r['panel']['right']
     assert r['panel']['bottom']<r['footer']['y']
-    if r['viewport']>520:
+    if r['viewport']>900:
         assert max(f['cy'] for f in r['figures'])-min(f['cy'] for f in r['figures'])<1.5
         assert all(r['steps'][i]['right']<r['steps'][i+1]['x'] for i in range(3))
     else:
