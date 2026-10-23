@@ -39,11 +39,11 @@ python scripts/verify_pretendard.py
 python scripts/check_documentation.py
 ```
 
-대표 프리뷰는 `previews/html-*`, 공통 결과는 [reference-validation.json](../previews/review/reference-validation.json), 화면별 PNG는 기본 `/tmp/reference-integration-review`입니다. [검토 가이드](REFERENCE_REVIEW_GUIDE.md)의 6개 화면과 직접 시각 확인을 수행합니다.
+대표 프리뷰는 `previews/html-*`, 공통 결과는 [reference-validation.json](../previews/review/reference-validation.json), 화면별 PNG는 기본 `/tmp/reference-integration-review`입니다. 새 자료는 [검토 가이드](REFERENCE_REVIEW_GUIDE.md)의 PC 4개 크기를 직접 확인합니다. 현재 공통 스크립트가 추가로 실행하는 작은 화면 검사는 기존 예제의 호환성 회귀 기록으로 구분합니다.
 
 ## 요청문 예시
 
-> 이 저장소의 AGENTS, DESIGN_SYSTEM, 컴포넌트 설계 규격, Figure 제작 표준과 페이지 상세 명세를 읽고, 대상 독자를 위한 HTML Scroll/Slide 자료를 만들어줘. 내용에 맞는 패턴만 선택하고 편집 가능한 도형·수식으로 재구성해줘. 카드·행간/간격·도식 높이·수식·상태·모바일 규격과 예외 이유를 먼저 기록해줘. 실제 데이터와 모식도를 구분하고, 로컬 Pretendard·전체 −1pt를 유지해줘. 독립 계산과 실제 글꼴·6개 화면을 검증하고 다른 데이터 구성에서도 재사용을 확인한 뒤 문서와 프리뷰를 갱신해줘.
+> 이 저장소의 AGENTS, DESIGN_SYSTEM, 컴포넌트 설계 규격, Figure 제작 표준과 페이지 상세 명세를 읽고, PC에서 보는 HTML Scroll/Slide 자료를 만들어줘. 내용에 맞는 패턴만 선택하고 편집 가능한 도형·수식으로 재구성해줘. 카드·행간/간격·도식 높이·수식·상태·PC 창 크기별 규격과 예외 이유를 먼저 기록해줘. 실제 데이터와 모식도를 구분하고, 로컬 Pretendard·전체 −1pt를 유지해줘. 독립 계산과 실제 글꼴·PC 4개 화면(1600×950/1440×810/1366×768/1280×720)을 검증하고 다른 데이터 구성에서도 재사용을 확인한 뒤 문서와 프리뷰를 갱신해줘.
 
 ## 다른 저장소에 적용
 
