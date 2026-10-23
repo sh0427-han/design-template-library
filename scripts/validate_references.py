@@ -22,8 +22,8 @@ class Quiet(SimpleHTTPRequestHandler):
         super().do_GET()
 
 def check_concept(page):
-    """Independently verify RGB planes, the sampled 4x4 grid and HWC geometry."""
-    r = page.evaluate('''() => {
+    """Verify real RGB planes, ROI source, four-stage flow and pixel numbers."""
+    r=page.evaluate('''() => {
         const im=document.querySelector('#concept-image');
         const cv=document.createElement('canvas');
         cv.width=cv.height=80;
@@ -37,18 +37,16 @@ def check_concept(page):
         const box=e=>{const b=e.getBoundingClientRect();return {
             x:b.x,y:b.y,right:b.right,bottom:b.bottom,width:b.width,
             height:b.height,cx:b.x+b.width/2,cy:b.y+b.height/2}};
-        const rgb=colors[6];
-        const painted=[...document.querySelectorAll('.pixel-block span')];
-        const planes=[...document.querySelectorAll('.channel-canvas')];
-        const planeResults=planes.map(canvas=>{
+        const selected=document.querySelector('.pixel-block .selected');
+        const cells=[...document.querySelectorAll('.pixel-block span')];
+        const planes=[...document.querySelectorAll('.channel-canvas')].map(canvas=>{
             const c=canvas.getContext('2d',{willReadFrequently:true});
             const data=c.getImageData(0,0,80,80).data;
             const channel={R:0,G:1,B:2}[canvas.dataset.channel];
             let errors=0;
             for(let i=0;i<6400;i++){
                 for(let k=0;k<3;k++){
-                    const expected=k===channel?full[i*4+k]:0;
-                    if(data[i*4+k]!==expected)errors++;
+                    if(data[i*4+k] !== (k===channel?full[i*4+k]:0)) errors++;
                 }
                 if(data[i*4+3]!==255)errors++;
             }
@@ -56,92 +54,109 @@ def check_concept(page):
                 height:canvas.height,errors,box:box(canvas),
                 layer:box(canvas.closest('.channel-layer'))};
         });
-        const photo=box(document.querySelector('.photo-wrap'));
-        const roi=box(document.querySelector('.photo-roi'));
-        const figSelectors=['.image-frame','.matrix-frame','.pixel-frame'];
-        const stepFigures=figSelectors.map(s=>box(document.querySelector(s)));
-        const axes=[...document.querySelectorAll('.stack-axis')].map(e=>e.textContent.trim());
+        const roi=document.querySelector('.matrix-roi');
+        const rbox=box(roi),cbox=box(document.querySelector('.channel-layer[data-plane="R"] canvas'));
+        const pixelGrid=box(document.querySelector('.pixel-block'));
+        const heightGuide=document.querySelector('.dimension-height');
         const flow=document.querySelector('.concept-flow');
+        const rgbBox=box(document.querySelector('.selected-color'));
         return {
-            status:document.querySelector('.concept-slide').dataset.sampled,
-            colors,
-            display:painted.map(e=>e.style.backgroundColor),
-            selectedIndex:painted.indexOf(document.querySelector('.pixel-block .selected')),
-            selectedTitle:document.querySelector('.pixel-block .selected').title,
-            channels:[...document.querySelectorAll('.channel-value .number')].map(e=>Number(e.textContent)),
-            bars:[...document.querySelectorAll('.channel-value .bar')].map(e=>parseFloat(e.style.width)),
-            numberWidths:[...document.querySelectorAll('.channel-value .number')].map(e=>({scroll:e.scrollWidth,client:e.clientWidth})),
-            swatch:getComputedStyle(document.querySelector('.selected-color .swatch')).backgroundColor,
-            selectedColor:getComputedStyle(painted[6]).backgroundColor,
-            rgbText:document.querySelector('#selected-rgb').textContent,
-            hex:document.querySelector('#selected-hex').textContent,
-            roi:{left:(roi.x-photo.x)/photo.width,top:(roi.y-photo.y)/photo.height,
-                width:roi.width/photo.width,height:roi.height/photo.height},
-            planes:planeResults,
-            axes,
-            flowSize:[...flow.querySelectorAll(':scope > .concept-step')].length,
-            arrows:[...flow.querySelectorAll(':scope > .flow-link')].map(box),
-            figures:stepFigures,
-            summary:document.querySelector('.concept-flow-summary').textContent,
-            selectedNote:document.querySelector('.pixel-equation').textContent,
-            tensor:document.querySelector('.tensor-shape').textContent,
-            labels:[...document.querySelectorAll('.concept-step-label')].map(e=>e.textContent),
-            pixelNotes:[...document.querySelectorAll('.concept-step-note')].map(e=>e.textContent),
-            boxes:{
-                visual:box(document.querySelector('.visual-panel')),
-                values:box(document.querySelector('.value-panel')),
-                flow:box(flow)
+            state:document.querySelector('.concept-slide').dataset.sampled,
+            imageComplete:im.complete && im.naturalWidth>0,
+            planeROIs:document.querySelectorAll('.matrix-roi').length,
+            photoROIs:document.querySelectorAll('.photo-roi').length,
+            matrixParent:roi.closest('.channel-layer').dataset.plane,
+            matrixROI:{
+                left:(rbox.x-cbox.x)/cbox.width,
+                top:(rbox.y-cbox.y)/cbox.height,
+                width:rbox.width/cbox.width,height:rbox.height/cbox.height
             },
+            colors,painted:cells.map(e=>e.style.backgroundColor),
+            selectedIndex:cells.indexOf(selected),
+            declaredIndex:Number(selected.dataset.selectedIndex),
+            selectedTitle:selected.title,
+            channels:[...document.querySelectorAll('.channel-value .number')]
+                .map(e=>Number(e.textContent)),
+            numberWidths:[...document.querySelectorAll('.channel-value .number')]
+                .map(e=>({scroll:e.scrollWidth,client:e.clientWidth})),
+            bars:[...document.querySelectorAll('.channel-value .bar')]
+                .map(e=>parseFloat(e.style.width)),
+            rgb:document.querySelector('#selected-rgb').textContent,
+            hex:document.querySelector('#selected-hex').textContent,
+            swatch:getComputedStyle(document.querySelector('.selected-color .swatch')).backgroundColor,
+            selectedColor:getComputedStyle(selected).backgroundColor,
+            planes,
+            axes:[...document.querySelectorAll('.stack-axis')].map(e=>e.textContent.trim()),
+            cAxis:box(document.querySelector('.stack-axis-c')),
+            hGuide:box(heightGuide),hGuideText:box(heightGuide.querySelector('span')),
+            pixelGrid,
+            wGuide:box(document.querySelector('.dimension-width')),
+            arrows:[...flow.querySelectorAll(':scope > .flow-link')].map(box),
+            steps:[...flow.querySelectorAll(':scope > .concept-step')].map(box),
+            figures:['.image-frame','.matrix-frame','.pixel-frame','.detail-frame']
+                .map(s=>box(document.querySelector(s))),
+            labels:[...flow.querySelectorAll('.concept-step-label')].map(e=>e.textContent.trim()),
+            notes:[...flow.querySelectorAll('.concept-step-note')].map(e=>e.textContent.trim()),
+            panelCount:document.querySelectorAll('.concept-panel').length,
+            panel:box(document.querySelector('.concept-panel')),
+            detailInside:document.querySelector('.rgb-step').closest('.concept-panel')===
+                document.querySelector('.matrix-step').closest('.concept-panel'),
+            rgbBox,summary:document.querySelector('.concept-flow-summary').textContent,
+            footer:box(document.querySelector('.footer')),
             viewport:innerWidth
         };
     }''')
-    assert r['status']=='true'
-    assert r['flowSize']==3 and len(r['arrows'])==2
-    assert r['axes']==['C = 3','H','W']
-    assert r['labels']==['입력 이미지','R · G · B 행렬 3장','일부 영역 확대']
-    assert r['pixelNotes']==[
-        '하나의 RGB 사진','같은 H×W, 채널마다 숫자 1개','4×4 = 16개 픽셀']
-    assert len(r['colors'])==16 and r['selectedIndex']==6
-    assert r['display']==['rgb('+', '.join(map(str,c))+')' for c in r['colors']]
-    rgb=r['colors'][6]
-    assert r['channels']==rgb
-    assert all(n['scroll']<=n['client']+1 for n in r['numberWidths']),(r['viewport'],r['numberWidths'])
-    assert r['selectedTitle']=='RGB ('+', '.join(map(str,rgb))+')'
-    assert r['rgbText']=='RGB ('+', '.join(map(str,rgb))+')'
-    assert r['hex']=='#'+''.join(f'{v:02X}' for v in rgb)
-    assert r['swatch']==r['selectedColor']=='rgb('+', '.join(map(str,rgb))+')'
-    assert all(abs(a-100*b/255)<.001 for a,b in zip(r['bars'],rgb))
+    assert r['state']=='true' and r['imageComplete']
+    assert r['panelCount']==1 and r['detailInside']
+    assert len(r['steps'])==4 and len(r['arrows'])==3
+    assert r['labels']==[
+        '입력 이미지','R · G · B 행렬 3장','일부 영역 확대','선택한 1픽셀']
+    assert r['notes']==[
+        '하나의 RGB 사진','같은 H×W, ROI 선택',
+        '4×4 = 16픽셀','한 위치 = RGB 3개 값']
+    assert r['photoROIs']==0 and r['planeROIs']==1
+    assert r['matrixParent']=='R'
     assert [(p['name'],p['width'],p['height'],p['errors']) for p in r['planes']]==[
         ('B',80,80,0),('G',80,80,0),('R',80,80,0)]
     assert r['planes'][0]['layer']['x']>r['planes'][1]['layer']['x']>r['planes'][2]['layer']['x']
     assert r['planes'][0]['layer']['y']<r['planes'][1]['layer']['y']<r['planes'][2]['layer']['y']
-    assert all(abs(p['layer']['width']-r['planes'][0]['layer']['width'])<1
-               for p in r['planes'])
-    assert all(abs(p['layer']['height']-r['planes'][0]['layer']['height'])<1
-               for p in r['planes'])
-    for k,v in [('left',.65),('top',.475),('width',.05),('height',.05)]:
-        assert abs(r['roi'][k]-v)<.003,(k,r['roi'])
-    assert 'H × W × 3' in r['summary'] and '3차원 배열(HWC)' in r['summary']
-    assert 'RGB 숫자 3개' in r['selectedNote']
-    assert '4 × 4 × 3' in r['tensor'] and '총 48개 값' in r['tensor']
-    assert 4*4*3==48 and 4*4==len(r['colors'])
-    if r['viewport']>900:
-        figures=r['figures']
-        assert max(f['cy'] for f in figures)-min(f['cy'] for f in figures)<1.5
-        assert abs(r['boxes']['visual']['y']-r['boxes']['values']['y'])<1.5
-        assert abs(r['boxes']['visual']['bottom']-r['boxes']['values']['bottom'])<1.5
-        assert r['boxes']['visual']['right']<r['boxes']['values']['x']
-    elif r['viewport']<=520:
-        assert r['figures'][0]['bottom']<r['figures'][1]['y']
-        assert r['figures'][1]['bottom']<r['figures'][2]['y']
-        assert r['boxes']['visual']['bottom']<r['boxes']['values']['y']
-    return {
-        'resample':[80,80],'roi':[52,38,4,4],'selected_index':6,
-        'selected_xy':[54,39],'rgb':rgb,'hex':r['hex'],
-        'rgb_planes_order':['B','G','R'],'plane_pixel_checks':80*80*4*3,
-        'rgb_planes_are_real_samples':True,'all_16_colors_match':True,
-        'shape':'H×W×3','patch_values':48,'roi_normalized':r['roi']
-    }
+    assert all(abs(p['layer']['width']-r['planes'][0]['layer']['width'])<1 for p in r['planes'])
+    assert all(abs(p['layer']['height']-r['planes'][0]['layer']['height'])<1 for p in r['planes'])
+    for key,val in [('left',.65),('top',.475),('width',.05),('height',.05)]:
+        assert abs(r['matrixROI'][key]-val)<.02,(r['viewport'],key,r['matrixROI'])
+    assert r['axes']==['C = 3','H','W']
+    assert r['cAxis']['bottom']<r['planes'][0]['layer']['y'],(r['viewport'],r['cAxis'])
+    assert r['pixelGrid']['x']-r['hGuide']['right']>5,(r['viewport'],r['hGuide'])
+    assert r['hGuide']['right']-r['hGuideText']['right']>1,(r['viewport'],r['hGuideText'])
+    assert abs(r['hGuide']['cy']-r['pixelGrid']['cy'])<1.5
+    assert abs(r['wGuide']['cx']-r['pixelGrid']['cx'])<1.5
+    assert r['wGuide']['bottom']<r['pixelGrid']['y']
+    assert len(r['colors'])==16 and r['selectedIndex']==r['declaredIndex']==6
+    assert r['painted']==['rgb('+', '.join(map(str,c))+')' for c in r['colors']]
+    rgb=r['colors'][6]
+    assert r['channels']==rgb
+    assert r['selectedTitle']=='RGB ('+', '.join(map(str,rgb))+')'
+    assert r['rgb']=='RGB ('+', '.join(map(str,rgb))+')'
+    assert r['hex']=='#'+''.join(f'{v:02X}' for v in rgb)
+    assert r['swatch']==r['selectedColor']=='rgb('+', '.join(map(str,rgb))+')'
+    assert all(abs(a-100*b/255)<.001 for a,b in zip(r['bars'],rgb))
+    assert all(n['scroll']<=n['client']+1 for n in r['numberWidths'])
+    assert 'H × W × 3' in r['summary'] and '4×4×3 = 48개 값' in r['summary']
+    assert r['rgbBox']['x']>=r['panel']['x'] and r['rgbBox']['right']<=r['panel']['right']
+    assert r['panel']['bottom']<r['footer']['y']
+    if r['viewport']>520:
+        assert max(f['cy'] for f in r['figures'])-min(f['cy'] for f in r['figures'])<1.5
+        assert all(r['steps'][i]['right']<r['steps'][i+1]['x'] for i in range(3))
+    else:
+        assert all(r['figures'][i]['bottom']<r['figures'][i+1]['y'] for i in range(3))
+        assert all(r['arrows'][i]['cy']>r['figures'][i]['bottom'] and
+                   r['arrows'][i]['cy']<r['figures'][i+1]['y'] for i in range(3))
+    return {'resample':[80,80],'roi':[52,38,4,4],'roi_on_matrix':True,
+            'selected_index':6,'selected_xy':[54,39],'rgb':rgb,'hex':r['hex'],
+            'rgb_planes_order':['B','G','R'],
+            'plane_pixel_checks':80*80*4*3,'rgb_planes_are_real_samples':True,
+            'all_16_colors_match':True,'single_panel_four_stages':True,
+            'shape':'H×W×3','patch_values':48,'matrix_roi_normalized':r['matrixROI']}
 
 def check_motif(page,name):
     points=[0,1,63,64,65,32*64+32,4095]
