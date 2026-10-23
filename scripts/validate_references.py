@@ -38,7 +38,16 @@ def check_concept(page):
             x:b.x,y:b.y,right:b.right,bottom:b.bottom,width:b.width,
             height:b.height,cx:b.x+b.width/2,cy:b.y+b.height/2}};
         const selected=document.querySelector('.pixel-block .selected');
-        const cells=[...document.querySelectorAll('.pixel-block span')];
+        const cells=[...document.querySelectorAll('.pixel-plane-rgb .pixel-block > span')];
+        const cropPlanes=[...document.querySelectorAll('.pixel-stack > .pixel-plane')].map(node=>{
+            const grid=node.querySelector('.pixel-block,.pixel-channel-grid');
+            const planeCells=[...grid.querySelectorAll(':scope > span')];
+            return {
+                name:node.dataset.cropPlane,box:box(node),grid:box(grid),
+                cells:planeCells.map(e=>e.style.backgroundColor),
+                selected:planeCells.filter(e=>e.classList.contains('selected')).length
+            };
+        });
         const planes=[...document.querySelectorAll('.channel-canvas')].map(canvas=>{
             const c=canvas.getContext('2d',{willReadFrequently:true});
             const data=c.getImageData(0,0,80,80).data;
@@ -71,7 +80,8 @@ def check_concept(page):
                 top:(rbox.y-cbox.y)/cbox.height,
                 width:rbox.width/cbox.width,height:rbox.height/cbox.height
             },
-            colors,painted:cells.map(e=>e.style.backgroundColor),
+            colors,painted:cells.map(e=>e.style.backgroundColor),cropPlanes,
+            cropStack:box(document.querySelector('.pixel-stack')),
             selectedIndex:cells.indexOf(selected),
             declaredIndex:Number(selected.dataset.selectedIndex),
             selectedTitle:selected.title,
@@ -104,7 +114,8 @@ def check_concept(page):
             rgbBox,summary:document.querySelector('.concept-flow-summary').textContent,
             cropChannels:{
                 label:document.querySelector('.pixel-channel-indicator strong').textContent.trim(),
-                tags:[...document.querySelectorAll('.pixel-channel-indicator .channel-tag')].map(e=>e.textContent.trim()),
+                planeNames:[...document.querySelectorAll('.pixel-stack > .pixel-plane')]
+                    .map(e=>e.dataset.cropPlane),
                 box:box(document.querySelector('.pixel-channel-indicator')),
                 frame:box(document.querySelector('.pixel-frame')),
                 note:document.querySelector('.pixel-step .concept-step-note').textContent.trim()
@@ -150,7 +161,33 @@ def check_concept(page):
     rgb=r['colors'][6]
     assert r['channels']==rgb
     assert r['cropChannels']['label']=='C = 3'
-    assert r['cropChannels']['tags']==['R','G','B']
+    assert r['cropChannels']['planeNames']==['B','G','RGB']
+    crop=r['cropPlanes']
+    assert [p['name'] for p in crop]==['B','G','RGB']
+    assert all(len(p['cells'])==16 for p in crop)
+    assert [p['selected'] for p in crop]==[0,0,1]
+    assert crop[2]['cells']==r['painted']
+    assert crop[1]['cells']==[
+        f'rgb(0, {color[1]}, 0)' for color in r['colors']]
+    assert crop[0]['cells']==[
+        f'rgb(0, 0, {color[2]})' for color in r['colors']]
+    assert all(abs(p['grid']['width']-crop[2]['grid']['width'])<1
+               and abs(p['grid']['height']-crop[2]['grid']['height'])<1
+               for p in crop)
+    assert crop[0]['box']['x']>crop[1]['box']['x']>crop[2]['box']['x']
+    assert crop[0]['box']['y']<crop[1]['box']['y']<crop[2]['box']['y']
+    offset=8 if r['viewport']<=520 else 10
+    assert abs(crop[1]['box']['x']-crop[2]['box']['x']-offset)<1
+    assert abs(crop[2]['box']['y']-crop[1]['box']['y']-offset)<1
+    assert abs(crop[0]['box']['x']-crop[2]['box']['x']-2*offset)<1
+    assert abs(crop[2]['box']['y']-crop[0]['box']['y']-2*offset)<1
+    assert r['cropChannels']['box']['bottom']<crop[0]['box']['y']-3
+    assert r['cropChannels']['box']['right']<=r['cropChannels']['frame']['right']+2
+    assert all(p['box']['x']>=r['cropChannels']['frame']['x']-1
+               and p['box']['right']<=r['cropChannels']['frame']['right']+1
+               and p['box']['y']>=r['cropChannels']['frame']['y']-1
+               and p['box']['bottom']<=r['cropChannels']['frame']['bottom']+1
+               for p in crop)
     assert r['cropChannels']['note']=='4×4×3 = 48개 값'
     assert r['cropChannels']['frame']['y']<=r['cropChannels']['box']['y']
     assert r['cropChannels']['box']['bottom']<=r['cropChannels']['frame']['bottom']+1
@@ -182,7 +219,9 @@ def check_concept(page):
             'rgb_planes_order':['B','G','R'],
             'plane_pixel_checks':80*80*4*3,'rgb_planes_are_real_samples':True,
             'all_16_colors_match':True,'single_panel_four_stages':True,
-            'crop_channel_depth':3,'merge_uses_same_rgb':True,
+            'crop_channel_depth':3,'crop_stack_order':['B','G','RGB'],
+            'crop_rgb_16_match':True,'crop_g_16_match':True,
+            'crop_b_16_match':True,'merge_uses_same_rgb':True,
             'shape':'H×W×3','patch_values':48,'matrix_roi_normalized':r['matrixROI']}
 
 def check_motif(page,name):
