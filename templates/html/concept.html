@@ -85,14 +85,15 @@
 }
 /* Smaller crop keeps the 4x4 selection visually subordinate to the full image. */
 .pixel-stack {
-  position:relative;flex:none;width:148px;height:148px;
-  /* Center the full visible envelope: H label + front RGB + rear G/B. */
-  transform:translateX(20px);
+  position:relative;flex:none;width:164px;height:164px;
+  /* Center the visible envelope: H text + 130px front + R/G/B corner tabs. */
+  transform:translateX(11px);
 }
 .pixel-plane {position:absolute;width:max-content;height:max-content;}
-.pixel-plane-b {left:18px;top:0;z-index:1;}
-.pixel-plane-g {left:9px;top:9px;z-index:2;}
-.pixel-plane-rgb {left:0;top:18px;z-index:3;}
+/* The 17px reveal keeps every 15px corner tab visible between layers. */
+.pixel-plane-b {left:34px;top:0;z-index:1;}
+.pixel-plane-g {left:17px;top:17px;z-index:2;}
+.pixel-plane-rgb {left:0;top:34px;z-index:3;}
 .pixel-channel-grid {
   display:grid;grid-template-columns:repeat(4,31px);
   grid-template-rows:repeat(4,31px);gap:2px;
@@ -101,19 +102,23 @@
   display:block;width:31px;height:31px;
   border:1px solid #ffffffcc;border-radius:1px;background:#e9eef5;
 }
-.pixel-plane-b .pixel-channel-grid {outline:2px solid #427ec5;}
-.pixel-plane-g .pixel-channel-grid {outline:2px solid #279467;}
-.pixel-plane-b::after,.pixel-plane-g::after {
-  content:attr(data-crop-plane);position:absolute;right:0;top:0;
-  display:grid;place-items:center;width:11px;height:11px;
-  color:white;font-size:10px;font-weight:800;line-height:1;
-  background:#3168c8;
+/* Single source of truth for crop channel hues: badges, outlines and JS. */
+.pixel-plane-b {--crop-channel-base:#427ec5;}
+.pixel-plane-g {--crop-channel-base:#279467;}
+.pixel-plane-b .pixel-channel-grid,
+.pixel-plane-g .pixel-channel-grid {outline:2px solid var(--crop-channel-base);}
+.pixel-plane .plane-badge {
+  position:absolute;right:1px;top:1px;z-index:6;
+  display:grid;place-items:center;width:15px;height:15px;
+  border:1px solid #fff;border-radius:3px;
+  background:var(--crop-channel-base,var(--navy));color:#fff;
+  font-size:11px;font-weight:850;line-height:1;
+  box-shadow:0 1px 3px #12233f33;
 }
-.pixel-plane-g::after {background:#238463;}
 .pixel-matrix {position:relative;width:max-content;}
-/* The guide lines follow the FRONT 4x4 pixel block, not the rear stack. */
+/* W follows the REAR B grid, while H follows the FRONT RGB grid. */
 .dimension-width {
-  position:absolute;left:0;top:-27px;width:100%;height:1px;
+  position:absolute;left:0;top:-25px;width:100%;height:1px;
   box-sizing:border-box;border-bottom:1px solid #91a6c1;
   color:var(--deep);font-size:13px;font-weight:750;
 }
@@ -140,7 +145,7 @@
   box-shadow:0 0 0 2px #fff,0 0 0 5px var(--navy);
 }
 .pixel-channel-indicator {
-  position:absolute;right:-3px;top:-42px;z-index:5;
+  position:absolute;right:-3px;top:-57px;z-index:5;
   min-height:20px;color:var(--navy);font-size:13px;white-space:nowrap;
 }
 .pixel-channel-indicator strong {font-size:15px;color:var(--blue);font-weight:800;}
@@ -226,12 +231,13 @@
   .flow-link {height:46px;transform:none;}
   .flow-link svg {transform:rotate(90deg);}
   .reference-slide.concept-slide .pixel-frame {height:209px;padding-top:18px;gap:8px;}
-  .pixel-stack {width:136px;height:136px;transform:translateX(20px);}
-  .pixel-plane-b {left:14px;top:0;}
-  .pixel-plane-g {left:7px;top:7px;}
-  .pixel-plane-rgb {left:0;top:14px;}
-  .pixel-channel-indicator {top:-38px;}
-  .dimension-width {top:-25px;}
+  .pixel-stack {width:150px;height:150px;transform:translateX(10px);}
+  .pixel-plane-b {left:28px;top:0;}
+  .pixel-plane-g {left:14px;top:14px;}
+  .pixel-plane-rgb {left:0;top:28px;}
+  .pixel-plane .plane-badge {width:12px;height:12px;font-size:10px;right:1px;top:1px;}
+  .pixel-channel-indicator {top:-56px;}
+  .dimension-width {top:-24px;}
   .reference-slide.concept-slide .pixel-block,
   .reference-slide.concept-slide .pixel-channel-grid {
     grid-template-columns:repeat(4,29px);grid-template-rows:repeat(4,29px);gap:2px;
@@ -302,14 +308,17 @@
             <div class="pixel-frame">
               <div class="pixel-stack" role="group" aria-label="동일 ROI의 RGB 합성값과 G, B 채널">
                 <div class="pixel-plane pixel-plane-b" data-crop-plane="B" aria-label="4×4 B 채널">
+                  <span class="plane-badge" aria-hidden="true">B</span>
+                  <span class="dimension-width"><span>W = 4</span></span>
                   <div class="pixel-channel-grid" aria-hidden="true"></div>
                 </div>
                 <div class="pixel-plane pixel-plane-g" data-crop-plane="G" aria-label="4×4 G 채널">
+                  <span class="plane-badge" aria-hidden="true">G</span>
                   <div class="pixel-channel-grid" aria-hidden="true"></div>
                 </div>
                 <div class="pixel-plane pixel-plane-rgb" data-crop-plane="RGB" aria-label="4×4 RGB 합성">
+                  <span class="plane-badge" aria-hidden="true" title="선택 영역의 RGB 합성 표시">R</span>
                   <div class="pixel-matrix">
-                    <span class="dimension-width"><span>W = 4</span></span>
                     <span class="dimension-height"><span>H = 4</span></span>
                     <div class="pixel-block" role="img" aria-label="RGB 행렬에서 선택한 영역의 4행 4열 RGB 픽셀"><span></span><span></span><span></span><span></span><span></span><span></span><span class="selected" data-selected-index="6"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
                   </div>
@@ -404,20 +413,24 @@
       }
       context.putImageData(pixels,0,0);
     }
-    // Use the bright G/B panel tints (#8acfb3/#8eb8e7) for DISPLAY only.
-    // The 16 original ROI samples drive RGB, HEX and all intensity bars.
-    const CHANNEL_TINTS={
-      1:[138,207,179],
-      2:[142,184,231]
+    // Read the exact channel outline hue from CSS; never hard-code a
+    // second, potentially mismatched G/B palette in JavaScript.
+    // Only display colors are tinted. All RGB/HEX values remain raw samples.
+    const get_channel_base=grid=>{
+      const css=getComputedStyle(grid).outlineColor;
+      const nums=css.match(/\d+(?:\.\d+)?/g);
+      if(!nums||nums.length<3)throw new Error('Invalid G/B channel tint: '+css);
+      return nums.slice(0,3).map(Number);
     };
-    const tint_channel=(value,tint)=>{
-      const t=0.28+(value/255)*0.72;
-      return tint.map(base=>Math.round(255+(base-255)*t));
+    const tint_channel=(value,base)=>{
+      const t=0.22+(value/255)*0.78;
+      return base.map(component=>Math.round(255+(component-255)*t));
     };
     const paint_channel=(grid,channel)=>{
+      const base=get_channel_base(grid);
       const items=colors.map(color=>{
         const cell=document.createElement('span');
-        const components=tint_channel(color[channel],CHANNEL_TINTS[channel]);
+        const components=tint_channel(color[channel],base);
         cell.style.backgroundColor='rgb('+components.join(',')+')';
         cell.dataset.rawValue=String(color[channel]);
         cell.title=['R','G','B'][channel]+' '+color[channel];

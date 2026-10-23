@@ -68,7 +68,7 @@ def check_concept(page):
         const rbox=box(roi),cbox=box(document.querySelector('.channel-layer[data-plane="R"] canvas'));
         const pixelGrid=box(document.querySelector('.pixel-block'));
         const heightGuide=document.querySelector('.dimension-height');
-        const widthGuide=document.querySelector('.dimension-width');
+        const widthGuide=document.querySelector('.pixel-plane-b .dimension-width');
         const widthText=widthGuide.querySelector('span');
         const flow=document.querySelector('.concept-flow');
         const rgbBox=box(document.querySelector('.selected-color'));
@@ -85,6 +85,17 @@ def check_concept(page):
             },
             colors,painted:cells.map(e=>e.style.backgroundColor),cropPlanes,
             cropStack:box(document.querySelector('.pixel-stack')),
+            cropBadges:[...document.querySelectorAll('.pixel-stack .plane-badge')]
+                .map(e=>({label:e.textContent.trim(),box:box(e),
+                    background:getComputedStyle(e).backgroundColor,
+                    display:getComputedStyle(e).display,
+                    font:getComputedStyle(e).fontSize,
+                    plane:e.closest('.pixel-plane').dataset.cropPlane})),
+            cropOutlines:['G','B'].map(channel=>{
+                const node=document.querySelector('.pixel-plane-'+channel.toLowerCase());
+                return {name:channel,base:getComputedStyle(node.querySelector('.pixel-channel-grid')).outlineColor,
+                    badge:getComputedStyle(node.querySelector('.plane-badge')).backgroundColor};
+            }),
             selectedIndex:cells.indexOf(selected),
             declaredIndex:Number(selected.dataset.selectedIndex),
             selectedTitle:selected.title,
@@ -187,33 +198,60 @@ def check_concept(page):
     # Chromium may report fractional computed border widths under CSS zoom.
     assert all(0<float(r[k].removesuffix('px'))<=2
                for k in ('hGuideLine','wGuideLine')),(r['viewport'],r)
+    # W is aligned to the BACK B-channel grid, not the front RGB grid.
+    b_grid=r['cropPlanes'][0]['grid']
     for guide_edge,grid_edge in [('x','x'),('right','right')]:
-        assert abs(r['wGuide'][guide_edge]-r['pixelGrid'][grid_edge])<=tol,(
-            r['viewport'],'W',guide_edge,r['wGuide'],r['pixelGrid'])
+        assert abs(r['wGuide'][guide_edge]-b_grid[grid_edge])<=tol,(
+            r['viewport'],'W/B',guide_edge,r['wGuide'],b_grid)
+    assert abs(r['wGuide']['x']-r['pixelGrid']['x'])>10*scale
     for edge in ['y','bottom']:
         assert abs(r['hGuide'][edge]-r['pixelGrid'][edge])<=tol,(
             r['viewport'],'H',edge,r['hGuide'],r['pixelGrid'])
     assert 13*scale<r['pixelGrid']['x']-r['hGuide']['right']<22*scale
     assert r['hGuide']['right']-r['hGuideText']['right']>2*scale
     assert abs(r['hGuideText']['cy']-r['pixelGrid']['cy'])<=tol
-    assert abs(r['wGuideText']['cx']-r['pixelGrid']['cx'])<=tol
+    assert abs(r['wGuideText']['cx']-b_grid['cx'])<=tol
     # Guide is intentionally immediately outside the front grid; the label
     # belongs on the outer side of that line rather than floating far away.
-    assert 20*scale<r['pixelGrid']['y']-r['wGuide']['bottom']<31*scale
+    assert 20*scale<b_grid['y']-r['wGuide']['bottom']<29*scale
     assert 5*scale<r['wGuide']['y']-r['wGuideText']['bottom']<15*scale
     assert 13*scale<r['pixelGrid']['x']-r['hGuide']['right']<22*scale
     assert r['pixelGrid']['width']<=130*scale+.1
     assert all(abs(value)<3.1 for value in r['visualCenters'].values()),(
         r['viewport'],r['visualCenters'])
+    # Explicit corner badges must be entirely visible, correctly labelled
+    # and color-matched to their OWN panel outlines.
+    badges=r['cropBadges']
+    assert [(b['plane'],b['label']) for b in badges]==[
+        ('B','B'),('G','G'),('RGB','R')],(r['viewport'],badges)
+    assert r['cropOutlines']==[
+        {'name':'G','base':'rgb(39, 148, 103)','badge':'rgb(39, 148, 103)'},
+        {'name':'B','base':'rgb(66, 126, 197)','badge':'rgb(66, 126, 197)'}]
+    for i,b in enumerate(badges):
+        plane=r['cropPlanes'][i]['grid']
+        assert b['display']=='grid' and float(b['font'].removesuffix('px'))>=9
+        assert plane['right']-b['box']['right']>=0
+        assert b['box']['x']>=plane['x'] and b['box']['y']>=plane['y']
+        assert b['box']['bottom']<=plane['bottom']
     # Text labels must not touch the rear planes or each other.
     def overlaps(a,b):
         return (a['x']<b['right'] and a['right']>b['x']
                 and a['y']<b['bottom'] and a['bottom']>b['y'])
     for label in [r['hGuideText'],r['wGuideText'],r['cAxis']]:
-        assert not any(overlaps(label,p['grid']) for p in r['cropPlanes'][:2]),(
+        assert not any(overlaps(label,p['grid']) for p in r['cropPlanes']),(
             r['viewport'],label,r['cropPlanes'])
     assert not overlaps(r['hGuideText'],r['wGuideText'])
     assert not overlaps(r['wGuideText'],r['cAxis'])
+    for badge in badges:
+        assert not overlaps(badge['box'],r['wGuideText'])
+        assert not overlaps(badge['box'],r['hGuideText'])
+        assert not overlaps(badge['box'],r['cAxis'])
+    assert not any(overlaps(a['box'],b['box'])
+                   for i,a in enumerate(badges) for b in badges[i+1:])
+    # Badge visibility: rear top-right tabs cannot be covered by front grids.
+    assert all(not any(overlaps(badges[i]['box'],p['grid'])
+                       for p in r['cropPlanes'][i+1:])
+               for i in range(2))
     assert len(r['colors'])==16 and r['selectedIndex']==r['declaredIndex']==6
     assert r['painted']==['rgb('+', '.join(map(str,c))+')' for c in r['colors']]
     rgb=r['colors'][6]
@@ -230,12 +268,12 @@ def check_concept(page):
     # Independent calculation of the JS display-only tint (Math.round).
     # Python round() uses ties-to-even; JS uses floor(x + 0.5) for x >= 0.
     def tint_channel(value,tint):
-        level=.28+value/255*.72
+        level=.22+value/255*.78
         return tuple(math.floor(255+(v-255)*level+.5) for v in tint)
     def css_rgb(rgb):
         return 'rgb('+', '.join(map(str,rgb))+')'
-    green_tint=(138,207,179)  # same green accent as left matrix panel
-    blue_tint=(142,184,231)   # same blue accent as left matrix panel
+    green_tint=(39,148,103)  # exact CSS G outline #279467
+    blue_tint=(66,126,197)   # exact CSS B outline #427ec5
     assert crop[1]['cells']==[
         css_rgb(tint_channel(color[1],green_tint)) for color in r['colors']]
     assert crop[0]['cells']==[
@@ -254,7 +292,7 @@ def check_concept(page):
     assert crop[0]['box']['x']>crop[1]['box']['x']>crop[2]['box']['x']
     assert crop[0]['box']['y']<crop[1]['box']['y']<crop[2]['box']['y']
     # Compare relative layer offsets at the actual responsive scale.
-    offset=(7 if r['viewport']<=520 else 9)*scale
+    offset=(14 if r['viewport']<=520 else 17)*scale
     assert abs(crop[1]['box']['x']-crop[2]['box']['x']-offset)<1
     assert abs(crop[2]['box']['y']-crop[1]['box']['y']-offset)<1
     assert abs(crop[0]['box']['x']-crop[2]['box']['x']-2*offset)<1
@@ -309,14 +347,15 @@ def check_concept(page):
             'crop_b_16_match':True,'merge_uses_same_rgb':True,
             'shape':'H×W×3','patch_values':48,'matrix_roi_normalized':r['matrixROI'],
             'guide_alignment_px':{
-                'w_left':round(r['wGuide']['x']-r['pixelGrid']['x'],3),
-                'w_right':round(r['wGuide']['right']-r['pixelGrid']['right'],3),
+                'w_left_b':round(r['wGuide']['x']-b_grid['x'],3),
+                'w_right_b':round(r['wGuide']['right']-b_grid['right'],3),
                 'h_top':round(r['hGuide']['y']-r['pixelGrid']['y'],3),
                 'h_bottom':round(r['hGuide']['bottom']-r['pixelGrid']['bottom'],3),
-                'w_label_center':round(r['wGuideText']['cx']-r['pixelGrid']['cx'],3),
+                'w_label_center_b':round(r['wGuideText']['cx']-b_grid['cx'],3),
                 'h_label_center':round(r['hGuideText']['cy']-r['pixelGrid']['cy'],3)},
-            'crop_display_tints':{'G':'#8acfb3','B':'#8eb8e7'},
-            'crop_display_formula':'rgb(255+(tint-255)*(0.28+0.72*v/255))',
+            'crop_display_tints':{'G':'#279467','B':'#427ec5'},
+            'crop_display_formula':'rgb(255+(base-255)*(0.22+0.78*v/255))',
+            'crop_plane_badges':['B','G','R'],
             'figure_center_errors_px':r['visualCenters'],
             'selected_halo_px':2,'selected_navy_outline_px':5}
 
