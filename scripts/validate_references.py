@@ -281,7 +281,7 @@ def check_concept(page):
     assert abs(crop[2]['box']['y']-crop[1]['box']['y']-offset)<1
     assert abs(crop[0]['box']['x']-crop[2]['box']['x']-2*offset)<1
     assert abs(crop[2]['box']['y']-crop[0]['box']['y']-2*offset)<1
-    assert r['cropChannels']['box']['bottom']<crop[0]['box']['y']-3
+    # Crop stack is the figure envelope; the deleted C label no longer sits above B.
     assert r['cropChannels']['box']['right']<=r['cropChannels']['frame']['right']+2
     assert all(p['box']['x']>=r['cropChannels']['frame']['x']-1
                and p['box']['right']<=r['cropChannels']['frame']['right']+1
