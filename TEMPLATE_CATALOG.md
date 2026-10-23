@@ -23,6 +23,7 @@
 - **확대 영역의 채널 깊이:** 4×4 RGB 합성 격자는 C=3을 잃은 2D 데이터가 아닙니다. 격자 바로 아래 `C=3 · R/G/B`를 표시하고 `4×4×3=48개 값`을 그 Figure의 라벨에 배치합니다. 한 픽셀만 선택해도 RGB 3값을 유지합니다.
 - **수치 계약:** 리샘플 80×80, ROI x=52/y=38/width=4/height=4, 표시 ROI left 65%/top 47.5%/width 5%/height 5%. 선택 index 6 = 로컬 (2,1), 전체 (54,39). Chromium 검산 RGB 223/54/56, HEX #DF3638. 원본 사진과 추출 조건은 변경하지 않았습니다. 4×4 ROI의 원소 수는 4×4×3=48, 전체 이미지가 48값이라는 뜻은 아닙니다. 채널 막대 = value/255×100%.
 - **배치·디자인:** 한 개의 White 패널 안에서 입력 사진 → 3개 채널 행렬 → 해당 행렬에서 4×4 ROI 확대 → 선택한 1픽셀의 RGB/HEX/채널 막대까지 화살표 3개로 연결합니다. ROI는 원본 사진에 표시하지 않고 **앞쪽 R 채널 행렬 위에만** 표시합니다(세 채널의 같은 위치를 대표). 행렬 밖 위쪽에 C=3을 배치하고 H=4 가이드·선 간격을 분리합니다. Navy/Blue/Teal, 로컬 Pretendard Variable, −1pt 유지. 모바일에서는 4단계를 세로로 배치하며 실제 계산은 동일합니다.
+- **하단의 역할:** 가로 구분선 아래에는 H×W×3 정의를 재반복하지 않고 `같은 위치의 R/G/B를 조합 → 한 픽셀의 RGB 색상`을 보여줍니다. R/G/B 숫자, 합성 Swatch는 선택 index 6의 실제 Canvas 결과를 공유합니다. 산술 합산이 아니라 채널별 성분의 조합입니다. 최종 하단 핵심 개념에만 전체 H×W×3 배열을 남깁니다.
 - **소스·검증:** [HTML](templates/html/concept.html) · [사진](templates/html/assets/concept-apple-photo.jpg) · [PNG 프리뷰](previews/html-concept.png) · [상세 명세](docs/REFERENCE_PAGE_SPECS.md#01-concept). [검증 스크립트](scripts/validate_references.py)로 실제 이미지에서 채널별 6400개 픽셀, 16개 확대 색상, RGB/HEX, 정렬·반응형 6화면·로컬 Pretendard를 재검증합니다.
 
 ## 02 Process · 입력 이미지에서 클래스별 예측 확률로
