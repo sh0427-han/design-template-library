@@ -102,6 +102,20 @@ def check_concept(page):
             detailInside:document.querySelector('.rgb-step').closest('.concept-panel')===
                 document.querySelector('.matrix-step').closest('.concept-panel'),
             rgbBox,summary:document.querySelector('.concept-flow-summary').textContent,
+            cropChannels:{
+                label:document.querySelector('.pixel-channel-indicator strong').textContent.trim(),
+                tags:[...document.querySelectorAll('.pixel-channel-indicator .channel-tag')].map(e=>e.textContent.trim()),
+                box:box(document.querySelector('.pixel-channel-indicator')),
+                frame:box(document.querySelector('.pixel-frame')),
+                note:document.querySelector('.pixel-step .concept-step-note').textContent.trim()
+            },
+            merge:{
+                copy:document.querySelector('.merge-copy').textContent.trim(),
+                values:['merge-r','merge-g','merge-b'].map(id=>Number(document.getElementById(id).textContent)),
+                swatch:getComputedStyle(document.querySelector('.merge-swatch')).backgroundColor,
+                elementCount:document.querySelectorAll('.merge-channel').length,
+                box:box(document.querySelector('.concept-flow-summary'))
+            },
             footer:box(document.querySelector('.footer')),
             viewport:innerWidth
         };
@@ -113,7 +127,7 @@ def check_concept(page):
         '입력 이미지','R · G · B 행렬 3장','일부 영역 확대','선택한 1픽셀']
     assert r['notes']==[
         '하나의 RGB 사진','같은 H×W, ROI 선택',
-        '4×4 = 16픽셀','한 위치 = RGB 3개 값']
+        '4×4×3 = 48개 값','한 위치 = RGB 3개 값']
     assert r['photoROIs']==0 and r['planeROIs']==1
     assert r['matrixParent']=='R'
     assert [(p['name'],p['width'],p['height'],p['errors']) for p in r['planes']]==[
@@ -135,13 +149,25 @@ def check_concept(page):
     assert r['painted']==['rgb('+', '.join(map(str,c))+')' for c in r['colors']]
     rgb=r['colors'][6]
     assert r['channels']==rgb
+    assert r['cropChannels']['label']=='C = 3'
+    assert r['cropChannels']['tags']==['R','G','B']
+    assert r['cropChannels']['note']=='4×4×3 = 48개 값'
+    assert r['cropChannels']['frame']['y']<=r['cropChannels']['box']['y']
+    assert r['cropChannels']['box']['bottom']<=r['cropChannels']['frame']['bottom']+1
+    assert r['merge']['copy']=='같은 위치의 R/G/B 값을 조합하면'
+    assert r['merge']['elementCount']==3 and r['merge']['values']==rgb
     assert r['selectedTitle']=='RGB ('+', '.join(map(str,rgb))+')'
     assert r['rgb']=='RGB ('+', '.join(map(str,rgb))+')'
     assert r['hex']=='#'+''.join(f'{v:02X}' for v in rgb)
-    assert r['swatch']==r['selectedColor']=='rgb('+', '.join(map(str,rgb))+')'
+    assert r['swatch']==r['selectedColor']==r['merge']['swatch']==(
+        'rgb('+', '.join(map(str,rgb))+')')
     assert all(abs(a-100*b/255)<.001 for a,b in zip(r['bars'],rgb))
     assert all(n['scroll']<=n['client']+1 for n in r['numberWidths'])
-    assert 'H × W × 3' in r['summary'] and '4×4×3 = 48개 값' in r['summary']
+    assert 'H × W × 3' not in r['summary']
+    assert '1픽셀의 색' in r['summary']
+    assert 'R' in r['summary'] and 'G' in r['summary'] and 'B' in r['summary']
+    assert r['merge']['box']['x']>=r['panel']['x']
+    assert r['merge']['box']['right']<=r['panel']['right']
     assert r['rgbBox']['x']>=r['panel']['x'] and r['rgbBox']['right']<=r['panel']['right']
     assert r['panel']['bottom']<r['footer']['y']
     if r['viewport']>900:
@@ -156,6 +182,7 @@ def check_concept(page):
             'rgb_planes_order':['B','G','R'],
             'plane_pixel_checks':80*80*4*3,'rgb_planes_are_real_samples':True,
             'all_16_colors_match':True,'single_panel_four_stages':True,
+            'crop_channel_depth':3,'merge_uses_same_rgb':True,
             'shape':'H×W×3','patch_values':48,'matrix_roi_normalized':r['matrixROI']}
 
 def check_motif(page,name):
