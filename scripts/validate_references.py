@@ -67,9 +67,8 @@ def check_concept(page):
         const roi=document.querySelector('.matrix-roi');
         const rbox=box(roi),cbox=box(document.querySelector('.channel-layer[data-plane="R"] canvas'));
         const pixelGrid=box(document.querySelector('.pixel-block'));
-        const heightGuide=document.querySelector('.dimension-height');
-        const widthGuide=document.querySelector('.pixel-plane-b .dimension-width');
-        const widthText=widthGuide.querySelector('span');
+        const heightText=document.querySelector('.dimension-text-h');
+        const widthText=document.querySelector('.dimension-text-w');
         const flow=document.querySelector('.concept-flow');
         const rgbBox=box(document.querySelector('.selected-color'));
         return {
@@ -118,17 +117,17 @@ def check_concept(page):
             planes,
             axes:[...document.querySelectorAll('.stack-axis')].map(e=>e.textContent.trim()),
             cAxis:box(document.querySelector('.stack-axis-c')),
-            hGuide:box(heightGuide),hGuideText:box(heightGuide.querySelector('span')),
-            hGuideLine:getComputedStyle(heightGuide).borderRightWidth,
-            pixelGrid,
-            wGuide:box(widthGuide),wGuideText:box(widthText),
+            hText:box(heightText),wText:box(widthText),pixelGrid,
+            cropCLabelCount:document.querySelectorAll('.pixel-stack .pixel-channel-indicator').length,
+            dimensionLines:document.querySelectorAll('.pixel-stack .dimension-width,.pixel-stack .dimension-height').length,
+            hBorder:getComputedStyle(heightText).borderRightWidth,
+            wBorder:getComputedStyle(widthText).borderBottomWidth,
             visualCenters:(()=>{
                 const figureBox=selector=>box(document.querySelector(selector));
-                const cropParts=[heightGuide.querySelector('span'),widthText,
+                const cropParts=[heightText,widthText,
                     document.querySelector('.pixel-plane-rgb .pixel-block'),
                     document.querySelector('.pixel-plane-g .pixel-channel-grid'),
-                    document.querySelector('.pixel-plane-b .pixel-channel-grid'),
-                    document.querySelector('.pixel-channel-indicator')].map(box);
+                    document.querySelector('.pixel-plane-b .pixel-channel-grid')].map(box);
                 const cropLeft=Math.min(...cropParts.map(x=>x.x));
                 const cropRight=Math.max(...cropParts.map(x=>x.right));
                 const centerOf=selector=>figureBox(selector).cx;
@@ -139,7 +138,6 @@ def check_concept(page):
                     detail:centerOf('.pixel-detail')-centerOf('.detail-frame')
                 };
             })(),
-            wGuideLine:getComputedStyle(widthGuide).borderBottomWidth,
             arrows:[...flow.querySelectorAll(':scope > .flow-link')].map(box),
             steps:[...flow.querySelectorAll(':scope > .concept-step')].map(box),
             figures:['.image-frame','.matrix-frame','.pixel-frame','.detail-frame']
@@ -152,10 +150,9 @@ def check_concept(page):
                 document.querySelector('.matrix-step').closest('.concept-panel'),
             rgbBox,summary:document.querySelector('.concept-flow-summary').textContent,
             cropChannels:{
-                label:document.querySelector('.pixel-channel-indicator strong').textContent.trim(),
                 planeNames:[...document.querySelectorAll('.pixel-stack > .pixel-plane')]
                     .map(e=>e.dataset.cropPlane),
-                box:box(document.querySelector('.pixel-channel-indicator')),
+                box:box(document.querySelector('.pixel-stack')),
                 frame:box(document.querySelector('.pixel-frame')),
                 note:document.querySelector('.pixel-step .concept-step-note').textContent.trim()
             },
@@ -195,27 +192,17 @@ def check_concept(page):
     unscaled_grid=122 if r['viewport']<=520 else 130
     scale=r['pixelGrid']['width']/unscaled_grid
     tol=max(.75,1.5*scale)
-    # Chromium may report fractional computed border widths under CSS zoom.
-    assert all(0<float(r[k].removesuffix('px'))<=2
-               for k in ('hGuideLine','wGuideLine')),(r['viewport'],r)
-    # W is aligned to the BACK B-channel grid, not the front RGB grid.
+    # No C=3 in the crop and no dimension guide lines.
+    # Left three-channel stack must still retain its C=3.
+    assert r['cropCLabelCount']==0 and r['dimensionLines']==0
+    assert float(r['hBorder'].removesuffix('px'))==0
+    assert float(r['wBorder'].removesuffix('px'))==0
     b_grid=r['cropPlanes'][0]['grid']
-    for guide_edge,grid_edge in [('x','x'),('right','right')]:
-        assert abs(r['wGuide'][guide_edge]-b_grid[grid_edge])<=tol,(
-            r['viewport'],'W/B',guide_edge,r['wGuide'],b_grid)
-    assert abs(r['wGuide']['x']-r['pixelGrid']['x'])>10*scale
-    for edge in ['y','bottom']:
-        assert abs(r['hGuide'][edge]-r['pixelGrid'][edge])<=tol,(
-            r['viewport'],'H',edge,r['hGuide'],r['pixelGrid'])
-    assert 13*scale<r['pixelGrid']['x']-r['hGuide']['right']<22*scale
-    assert r['hGuide']['right']-r['hGuideText']['right']>2*scale
-    assert abs(r['hGuideText']['cy']-r['pixelGrid']['cy'])<=tol
-    assert abs(r['wGuideText']['cx']-b_grid['cx'])<=tol
-    # Guide is intentionally immediately outside the front grid; the label
-    # belongs on the outer side of that line rather than floating far away.
-    assert 20*scale<b_grid['y']-r['wGuide']['bottom']<29*scale
-    assert 5*scale<r['wGuide']['y']-r['wGuideText']['bottom']<15*scale
-    assert 13*scale<r['pixelGrid']['x']-r['hGuide']['right']<22*scale
+    assert abs(r['hText']['cy']-r['pixelGrid']['cy'])<=tol
+    assert abs(r['wText']['cx']-b_grid['cx'])<=tol
+    assert r['hText']['right']<=r['pixelGrid']['x']-6*scale
+    assert r['wText']['y']>=max(p['grid']['bottom'] for p in r['cropPlanes'])+5*scale
+    assert r['wText']['bottom']<=r['cropChannels']['box']['bottom']+2
     assert r['pixelGrid']['width']<=130*scale+.1
     assert all(abs(value)<3.1 for value in r['visualCenters'].values()),(
         r['viewport'],r['visualCenters'])
@@ -237,15 +224,13 @@ def check_concept(page):
     def overlaps(a,b):
         return (a['x']<b['right'] and a['right']>b['x']
                 and a['y']<b['bottom'] and a['bottom']>b['y'])
-    for label in [r['hGuideText'],r['wGuideText'],r['cAxis']]:
+    for label in [r['hText'],r['wText']]:
         assert not any(overlaps(label,p['grid']) for p in r['cropPlanes']),(
             r['viewport'],label,r['cropPlanes'])
-    assert not overlaps(r['hGuideText'],r['wGuideText'])
-    assert not overlaps(r['wGuideText'],r['cAxis'])
+    assert not overlaps(r['hText'],r['wText'])
     for badge in badges:
-        assert not overlaps(badge['box'],r['wGuideText'])
-        assert not overlaps(badge['box'],r['hGuideText'])
-        assert not overlaps(badge['box'],r['cAxis'])
+        assert not overlaps(badge['box'],r['wText'])
+        assert not overlaps(badge['box'],r['hText'])
     assert not any(overlaps(a['box'],b['box'])
                    for i,a in enumerate(badges) for b in badges[i+1:])
     # Badge visibility: rear top-right tabs cannot be covered by front grids.
@@ -258,7 +243,6 @@ def check_concept(page):
     assert r['channels']==rgb
     assert page.locator('.pixel-plane-rgb').evaluate(
         "e=>getComputedStyle(e,'::after').content")=='none'
-    assert r['cropChannels']['label']=='C = 3'
     assert r['cropChannels']['planeNames']==['B','G','RGB']
     crop=r['cropPlanes']
     assert [p['name'] for p in crop]==['B','G','RGB']
@@ -346,13 +330,12 @@ def check_concept(page):
             'crop_rgb_16_match':True,'crop_g_16_match':True,
             'crop_b_16_match':True,'merge_uses_same_rgb':True,
             'shape':'H×W×3','patch_values':48,'matrix_roi_normalized':r['matrixROI'],
-            'guide_alignment_px':{
-                'w_left_b':round(r['wGuide']['x']-b_grid['x'],3),
-                'w_right_b':round(r['wGuide']['right']-b_grid['right'],3),
-                'h_top':round(r['hGuide']['y']-r['pixelGrid']['y'],3),
-                'h_bottom':round(r['hGuide']['bottom']-r['pixelGrid']['bottom'],3),
-                'w_label_center_b':round(r['wGuideText']['cx']-b_grid['cx'],3),
-                'h_label_center':round(r['hGuideText']['cy']-r['pixelGrid']['cy'],3)},
+            'text_axis_alignment_px':{
+                'w_center_on_b':round(r['wText']['cx']-b_grid['cx'],3),
+                'h_center_on_rgb':round(r['hText']['cy']-r['pixelGrid']['cy'],3),
+                'w_gap_below_stack':round(r['wText']['y']-max(p['grid']['bottom'] for p in crop),3),
+                'h_gap_left_rgb':round(r['pixelGrid']['x']-r['hText']['right'],3)},
+            'crop_c_label_removed':True,'crop_guides_removed':True,
             'crop_display_tints':{'G':'#279467','B':'#427ec5'},
             'crop_display_formula':'rgb(255+(base-255)*(0.22+0.78*v/255))',
             'crop_plane_badges':['B','G','R'],
