@@ -1,43 +1,12 @@
-body.scroll-mode { background: var(--canvas); }
-.scroll-header { height: 70px; display: flex; align-items: center; justify-content: space-between; gap: 16px; border-bottom: 1px solid var(--line); padding: 0 max(24px, calc((100vw - 1340px)/2)); background: rgba(255,255,255,.94); position: sticky; top: 0; z-index: 5; backdrop-filter: blur(10px); }
-.mode-link { display: inline-flex; align-items: center; gap: 7px; padding: 8px 13px; border-radius: 8px; text-decoration: none; color: var(--accent); font-weight: 700; font-size: 13px; border: 1px solid #d7e0ff; background: var(--accent-soft); }
-.scroll-layout { display: grid; grid-template-columns: 218px minmax(0,850px); column-gap: clamp(30px,5vw,80px); max-width: 1340px; margin: 0 auto; padding: 52px 24px 100px; }
-.toc { position: sticky; top: 110px; align-self: start; }
-.toc-title { text-transform: uppercase; font-size: 11px; font-weight: 800;  color: var(--muted); padding: 0 12px 12px; }
-.toc a { display: block; border-radius: 8px; padding: 9px 12px; color: #526079; text-decoration: none; font-size: 13px; line-height: 1.4; }
-.toc a:hover { background: #edf1f8; color: var(--accent); }
-.scroll-article { min-width: 0; }
-.chapter-head { margin-bottom: 70px; border-bottom: 1px solid var(--line); padding: 0 0 38px; }
-.chapter-head h1 { margin: 12px 0 14px; font-size: clamp(36px, 4vw, 54px); line-height: 1.2;  }
-.chapter-head p { color: var(--muted); max-width: 62ch; }
-.lesson-section { scroll-margin-top: 105px; margin: 0 0 86px; }
-.lesson-section .lesson-title { font-size: clamp(26px, 3vw, 34px); }
-.lesson-section .lesson-body { max-width: 75ch; }
-.lesson-section .flow-graphic { margin-top: 24px; }
-.lesson-section .source-note { margin-top: 16px; }
-.scroll-footer { border-top: 1px solid var(--line); padding-top: 22px; color: var(--muted); font-size: 13px; }
-@media (max-width: 900px) { .scroll-layout { grid-template-columns: 1fr; max-width: 900px; padding-top: 34px; } .toc { position: static; display: flex; flex-wrap: wrap; gap: 2px; margin-bottom: 30px; } .toc-title { width: 100%; } .toc a { padding: 7px 10px; } }
-/* Left-anchored reader layout: use the available browser width for diagrams. */
-.scroll-header { padding-left: 30px; padding-right: 30px; }
-.scroll-layout {
-  max-width: none;
-  margin: 0;
-  padding: 48px 34px 110px;
-  grid-template-columns: 232px minmax(0,1fr);
-  column-gap: clamp(28px,3.4vw,56px);
-}
-.scroll-article { width: min(100%, 1370px); margin: 0; }
-.chapter-head { margin-bottom: 56px; }
-.chapter-head p, .lesson-section .lesson-lead { max-width: 90ch; }
-.lesson-section .lesson-body { max-width: 85ch; line-height: 1.8; }
-.lesson-section .learning-content { width: 100%; }
-.lesson-section .teaching-matrix { margin-left: auto; margin-right: auto; }
-.lesson-section .scroll-note { max-width: 85ch; }
-.lesson-section .motivation-layout, .lesson-section .locality-layout { max-width: 1150px; }
-.lesson-section .process-block, .lesson-section .feature-block { max-width: 1240px; }
-.lesson-section.kind-lab [data-lab] { max-width: 1240px; }
-@media(max-width:900px) {
- .scroll-layout { grid-template-columns: 1fr; padding: 26px 22px 90px; }
- .scroll-article { width: 100%; }
- .scroll-header { padding-left: 22px; padding-right: 22px; }
-}
+body.scroll-mode { background:#e9eff7; }
+.scroll-mode .mode-bar { position:sticky;top:0;z-index:2;background:var(--white);border-bottom:1px solid var(--border); }
+.scroll-layout { display:grid;grid-template-columns:200px minmax(0,1fr);gap:24px;padding:24px;align-items:start; }
+.toc { position:sticky;top:calc(var(--mode-bar-height) + 24px); }
+.toc-title { margin:0 0 12px;padding:0 12px;font-size:12px;font-weight:800;color:var(--muted); }
+.toc a { display:flex;gap:12px;padding:10px 12px;border-radius:8px;font-size:15px;line-height:var(--line-height-note);text-decoration:none;color:var(--muted); }
+.toc a[aria-current],.toc a:hover { background:var(--pale-blue);color:var(--blue); }
+#lesson-root { display:grid;gap:32px;min-width:0; }
+.reference-section { scroll-margin-top:calc(var(--mode-bar-height) + 24px); }
+@media(max-width:1100px) { .scroll-layout { grid-template-columns:170px minmax(0,1fr);gap:16px;padding:20px; } }
+/* Compatibility only; the reference itself keeps the same PC composition. */
+@media(max-width:700px) { .scroll-layout { grid-template-columns:1fr; }.toc { position:static; }.mode-bar { padding:0 16px; }.library-link { font-size:12px; } }

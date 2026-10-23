@@ -13,7 +13,7 @@ AI·ML 교육자료, 논문·기술 발표, 엔지니어링 보고를 위한 **�
 | Scroll Mode | 연속 문서·목차·상세 설명·직접 조작하는 실습 |
 | Slide Mode | 16:9·페이지 단위 탐색·한 장에 한 개념 |
 | 8개 레퍼런스 | 두 모드에서 필요한 부분을 선택·조합하는 설명 패턴 |
-| 연속 CNN 예제 | 같은 콘텐츠와 계산을 두 모드로 렌더링하는 별도 5장 데모 |
+| Scroll / Slide 보기 | 기존 8개 원본을 연속 읽기/한 장씩 보기로 연결. 별도 디자인 없음 |
 
 8종을 모든 자료에 순서대로 넣지 않습니다. 청중과 학습 목표를 먼저 정한 뒤 가장 적합한 표현을 선택합니다. 두 모드에서는 콘텐츠·연산·색상·폰트를 공유하고 배치·탐색·설명 밀도만 구분합니다.
 
@@ -55,7 +55,7 @@ templates/html/                  # 8개 원본과 갤러리
   reference-types.css            # 유형별 기본 컴포넌트
   assets/                        # 사진·고정 필터 예제·Pretendard
   interactive-reference.js       # #5 단일 계산 경로
-templates/dual-mode-learning/    # 공통 콘텐츠의 Scroll / Slide 데모
+templates/dual-mode-learning/    # 기존 8개 원본의 Scroll / Slide 보기
 previews/                       # 실제 Chromium 대표 이미지
   review/                        # 검증 JSON·#5 공유용 단일 HTML
 scripts/                        # 공통 검증·프리뷰 생성·문서 검사
@@ -117,3 +117,9 @@ python scripts/validate_references.py --templates architecture step-by-step --ev
 - [통합 출처·검증·GitHub 상태](docs/INTEGRATION_REPORT_2026-10-22.md)
 
 8종 최종 통합의 출처·CI·Merge 기록은 [PR #12](https://github.com/sh0427-han/design-template-library/pull/12)와 [통합 보고서](docs/INTEGRATION_REPORT_2026-10-22.md)에서 확인합니다. 로컬 검증·사용자 디자인 승인·원격 게시·main 반영은 실제 증거로 구분합니다.
+
+## Scroll / Slide 전환 예제의 재사용
+
+[Scroll](templates/dual-mode-learning/scroll.html)과 [Slide](templates/dual-mode-learning/slides.html)는 같은 8개 원본 HTML을 직접 표시합니다. 별도 5장 CNN 디자인과 실습 전용 출력은 제거했습니다. 대표 프리뷰도 [Scroll](previews/dual-mode-scroll.jpg), [Slide](previews/dual-mode-slide.jpg) 두 개입니다. #5의 조작은 두 모드 안에서 같은 원본 JS로 동작합니다.
+
+[재사용 상세 명세](docs/DUAL_MODE_REFERENCE_REUSE.md)는 원본 경로·서식 경계·배율·URL 상태와 검증을 기록합니다. `python scripts/verify_pretendard.py`로 두 모드의 64개 PC 화면을 원본과 직접 대조하고 계산·실제 글리프·전환 상태를 확인합니다.

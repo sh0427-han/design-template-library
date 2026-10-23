@@ -1,74 +1,37 @@
-# Shared Design System (AI Instructions)
+# Scroll / Slide 보기의 디자인 계약
 
-## Goal
+## 두 출력과 하나의 원본
 
-기술적 정확성이 필요한 강의, 논문 발표, 보고 및 웹 교과서를 **HTML Scroll/Slide 두 방식**으로 제작한다. AIBook처럼 설명·시각화·직접 조작·결과 확인이 연결되는 교육 경험을 목표로 하되 기존 콘텐츠와 기능을 존중한다. **PPTX는 제작·변환 대상이 아니다.**
+출력은 `scroll.html`, `slides.html` 두 개이며 대표 프리뷰도 `dual-mode-scroll.jpg`, `dual-mode-slide.jpg` 두 개입니다. 실습은 #5 Interactive 원본 안의 기능입니다. 실습용 보기·별도 디자인·세 번째 canonical JPG를 추가하지 않습니다.
 
-## Single Source of Truth
+8개 원본은 [카탈로그](../../TEMPLATE_CATALOG.md)와 [페이지 명세](../../docs/REFERENCE_PAGE_SPECS.md)를 따릅니다. `lesson.js`는 원본 경로 목록만 관리하고 `render.js`가 같은 origin의 실제 HTML을 iframe으로 표시합니다. 이미지나 스크린샷으로 대체하지 않습니다. 원본을 수정하면 두 보기에 같은 변경이 적용됩니다.
 
-- Content: `assets/js/lesson.js`
-- Canonical design tokens & global character spacing: `../html/styles.css`
-- Semantic token aliases: `assets/css/tokens.css` (imports canonical file; colors must not diverge)
-- Shared Components: `assets/css/components.css`
-- Interactive Math/Logic: `assets/js/lab.js`
-- Presentation Adaptors: `assets/css/{scroll,slides}.css`, `assets/js/{scroll,slides}.js`
-- 콘텐츠/수식을 모드별 파일에 중복 작성하지 않는다.
+## 원본 서식의 경계
 
-## Visual System
+[DESIGN_SYSTEM.md](../../DESIGN_SYSTEM.md), [컴포넌트 규격](../../docs/DESIGN_COMPONENT_RECIPES.md), [Figure 표준](../../docs/FIGURE_PRODUCTION_STANDARD.md)에 있는 원본의 제목·부제·행간·카드·수식·캡션·푸터·SVG/CSS/JS가 그대로 실행됩니다.
 
-- 배경: 밝고 차분한 neutral palette, 본문 텍스트는 높은 대비
-- 글꼴: 공유 HTML 기본 폰트 **Pretendard Variable**. 수치/코드 영역의 monospace 설정은 기존과 동일
-- **모든 텍스트에 -1pt 좁은 자간을 적용**하며 기존 `templates/html/styles.css`의 `--character-spacing`을 상속한다.
-- 색상은 semantic token으로 지정: `--ink`, `--muted`, `--accent`, `--line`, `--surface`, `--surface-soft`
-- 설명은 좁은 읽기 폭을 유지하고, 시각화는 필요한 너비를 사용한다.
-- 컴포넌트: concept card, callout, step flow, figure, lab, source citation
-- 수식과 도식은 정확해야 하며 Input → Process → Output이 눈에 보여야 한다.
-- 불필요한 gradient/shadow/장식, 밀집된 텍스트는 피한다.
-- 외부 자산을 실제로 쓸 때는 Figure 가까이에 출처를 명시한다.
-- 효과/상호작용은 지식 전달에 기여하는 것만 추가한다.
+보기 쪽에서 제목 44px, 패딩 40/58/28px 등 또 다른 슬라이드 규격을 만들지 않습니다. 원본의 49px 제목, 21px 부제, 기본 54/66/30px 패딩 및 #3·#5·#7 등 검증된 예외도 원본을 그대로 따릅니다. 실제 Pretendard Variable과 전체 −1pt도 각 원본의 같은 로컬 CSS/WOFF2를 사용합니다.
 
-## Typography & Rhythm
+iframe 안에서 허용하는 변경은 페이지 바깥 배치뿐입니다.
 
-- 공통 기본 spacing token은 `--space-*`를 사용한다.
-- 제목/리드/본문/캡션의 계층은 각 모드에서 일관되게 유지한다.
-- 제작 대상은 PC 웹페이지이며 Scroll은 왼쪽 sticky TOC + 본문으로 구성한다. 새 자료는 PC 4개 크기를 기준으로 검토하고 모바일 전용 배치는 필수 조건에 포함하지 않는다.
-- Slide에서는 16:9 한 화면에 핵심 메시지 하나. 글자 축소보다 콘텐츠 분할을 우선한다.
+```css
+html, body { min-height:0; width:1440px; height:810px; overflow:hidden; background:transparent; }
+.reference-deck { padding:0; min-height:0; }
+.reference-slide { zoom:1; }
+```
 
-## Interaction & Semantics
+캔버스 내부의 텍스트·카드·도식 속성은 덮어쓰지 않습니다. 바깥 프레임을 가용 폭에 맞춰 `width/1440` 배율로 확대·축소하므로 레이아웃과 비율을 유지합니다. 프레임은 원본과 같은 16:9, radius10px, 공통 shadow입니다.
 
-- 입력 라벨과 계산값을 항상 연결한다.
-- Reset이나 기본값으로 되돌릴 수 있는 수단을 제공한다.
-- 키보드 포커스 가능 요소는 명확한 focus 스타일을 갖는다.
-- Slide 페이지 전환 단축키는 편집 가능한 입력 요소를 방해하지 않는다.
-- 정상적인 새로고침/딥링크 동작을 지원한다.
+## 보기 전용 구성
 
-## Reference and Scope
+- 상단 보기 전환 바 44px. Scroll/Slide 두 선택과 갤러리 링크만 둡니다.
+- Scroll: 목차 200px + gap24px, 바깥 패딩 24px, 원본 사이 32px. 1100px 이하 창에서는 목차 170px/gap16px/패딩 20px.
+- Slide: 상단 44px/하단 44px을 제외한 영역 중앙. 프레임 폭은 `min(1440px,100vw−40px,(100vh−112px)×16/9)`. 이전·다음·이름·현재/전체 표시만 둡니다.
+- 로딩 완료 전 상태 표시와 실패 시 메시지를 제공합니다. 원본 폰트와 이미지 로딩 후 콘텐츠를 노출합니다.
+- 키보드와 URL 상태는 [MODES.md](MODES.md)를 따릅니다.
 
-- Common source: [`../../DESIGN_SYSTEM.md`](../../DESIGN_SYSTEM.md).
-- AIBook Attention: https://aibook.euiyun.com/chapters/attention.html#sim-editor (interaction/layout inspiration, no code copied).
-- This example implements both HTML Scroll and Slide modes; the eight standalone HTML references are reusable visual patterns, not output formats. Legacy PPTX assets were removed; do not recreate them.
+## 실제 동일성 검증
 
-## Acceptance Criteria
+[검증 스크립트](../../scripts/verify_dual_mode.py)는 원본을 직접 열어 얻은 각 요소의 font-family/size/weight/line-height/tracking/color/background/radius/padding과 1440×810 기준 상대 bounding box를 두 보기와 비교합니다. style은 정확한 일치, HTML 위치는0.3px 미만, SVG의 폰트 경계·중앙 보정 위치는 기존 정렬 검사와 같은1px 미만을 요구하며 실제 최대 오차를 기록합니다. CSS를 가져왔다는 이유만으로 통과하지 않습니다. 네 PC 크기에서 실제 글리프·독립 계산·잘림·iframe 크기·전환을 검사합니다. [검증 결과](../../previews/review/dual-mode-validation.json)에 기록합니다.
 
-1. 공통 토큰 변경 시 두 모드의 주요 시각적 변화가 동일하다.
-2. 같은 `lesson.js` 텍스트가 두 모드에 동일하게 나타난다.
-3. 같은 `lab.js`의 수치 계산 결과가 두 모드에서 동일하다.
-4. Scroll에서는 페이지 전체가 자연스럽게 세로 스크롤된다.
-5. Slide에서는 화살표/버튼/해시로 전환되고 뷰포트 내 내용이 잘리지 않는다.
-6. 로컬 정적 서버에서 기능이 동작하며, 동봉된 Pretendard WOFF2가 실제로 로드되어야 최종 검증을 통과한다. 파일 누락 시 폴백을 사용할 수 있지만 최종 프리뷰로 제출하지 않는다.
-
-## Avoid
-
-- 각 모드마다 색상, 글꼴, 컴포넌트를 따로 복사해서 관리하기
-- Scroll에 맞춘 긴 문단을 축소해서 Slide 한 장에 몰아 넣기
-- CSS가 다른 모드의 스타일을 오염시키는 전역 선택자
-- 실제 계산값과 그림의 표시 숫자가 다른 교육용 모형
-
-## Reference-gallery refinement criteria (2026-10-20)
-
-- 8종 HTML 구성 패턴과 이 5장 HTML 실습은 **모두 함께 다듬는 레퍼런스 예시**입니다. 각 예시의 사용자 승인·검증·main 반영 상태를 구분해 기록합니다.
-- 빈 여백을 무조건 글로 채우지 않습니다. 각 화면에서 **계산 가능한 그림, 수치 비교, 처리 단계**가 충분한 크기로 보이도록 배치합니다.
-- 핵심 부제목은 공간이 허용하는 한 문장으로 표시합니다. 수동 `<br>`를 넣지 않으며 필요한 경우 영역을 넓힙니다.
-- 슬라이드·웹 교과서의 사용자 본문에서는 구현·제작 과정에 대한 메타 설명을 삭제합니다. 수치·가정·용어에 관한 필수 설명만 남깁니다.
-- Scroll에서는 왼쪽 TOC 바로 오른편에 본문을 정렬하며 브라우저 가로 공간을 넓게 사용합니다. 긴 문단의 읽기 폭만 별도로 제한합니다.
-- Slide에서는 16:9 고정비로 모든 슬라이드를 렌더링하여 도식 크기, 정보 밀도, 잘림/겹침을 **각 장별로** 검토합니다.
+이 구현은 레퍼런스 8개의 디자인을 정확히 비교하기 위한 보기입니다. 새 강의에는 필요한 패턴만 선택합니다. 모든 주제에 8개를 강제하거나, 이 보기의 iframe 구조를 모든 신규 자료의 유일한 구현 방식으로 강제하지 않습니다.

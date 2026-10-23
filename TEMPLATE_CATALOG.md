@@ -103,6 +103,16 @@
 - **주의:** 수치는 예시이며 실측 성과나 도입 안전성의 근거로 사용하지 않습니다. 실제 보고로 재사용할 때 집계 기간·측정 조건·출처·판단 기준을 확보해야 합니다. 제공되지 않은 미검출 허용 기준을 만들지 않습니다.
 - **가이드:** [상세 명세](docs/REFERENCE_PAGE_SPECS.md#08-executive-summary), [재사용 워크플로](docs/REFERENCE_REUSE_WORKFLOW.md).
 
+## Scroll / Slide · 같은 8개 원본의 두 가지 보기
+
+기존 8개 HTML을 [Scroll](templates/dual-mode-learning/scroll.html)에서는 목차와 함께 연속으로, [Slide](templates/dual-mode-learning/slides.html)에서는 한 장씩 표시합니다. 별도 5장 도식이나 다른 Typography/카드 서식을 만들지 않습니다. #5 Interactive는 두 보기 안에서 원본 계산으로 조작하며 세 번째 출력이 아닙니다.
+
+- **원본:** `templates/html/`의 위 8개. 보기에서 콘텐츠·그림·수식을 복사하지 않고 실제 HTML/JS를 실행합니다. #1 원본도 변경하지 않습니다.
+- **서식:** 원본 제목·부제·카드·푸터·간격·행간·Pretendard/−1pt 유지. 캔버스 바깥 gutter/zoom만 제거하고 부모 프레임 전체를 균일 배율로 표시합니다.
+- **상태:** 현재 예제와 #5 임계값은 URL로 전달하여 왕복·새로고침에도 복원합니다.
+- **프리뷰:** [Scroll](previews/dual-mode-scroll.jpg), [Slide](previews/dual-mode-slide.jpg) 두 개. 실습 전용 JPG와 이전 process-slide JPG는 제거했습니다. 기존 8개의 개별 preview는 그대로 유지합니다.
+- **가이드·검증:** [재사용 명세](docs/DUAL_MODE_REFERENCE_REUSE.md), [두 모드 계약](templates/dual-mode-learning/MODES.md), [64개 PC 화면/원본 서식 동일성 검증](previews/review/dual-mode-validation.json).
+
 ## 공통 확인
 
 새 제작 대상은 PC 웹페이지이며 PC 4개 크기의 검토를 기준으로 합니다. 아래 링크의 예제별 작은 화면 동작·6개 크기 검증은 기존 구현 기록입니다.

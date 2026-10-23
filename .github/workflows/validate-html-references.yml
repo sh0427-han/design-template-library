@@ -43,5 +43,7 @@ jobs:
           path: |
             previews/html-*.png
             previews/html-*.jpg
+            previews/dual-mode-*.jpg
             previews/review/*validation.json
             /tmp/reference-integration-review
+            /tmp/dual-mode-review
