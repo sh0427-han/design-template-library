@@ -238,9 +238,11 @@ def check_concept(page):
     assert len({f['width'] for f in frames})==1
     assert len({f['radius'] for f in frames})==1
     assert len({f['shadow'] for f in frames})==1
-    assert all(float(f['width'].removesuffix('px'))>=1.5
+    # Computed outline widths are scaled by CSS zoom in narrow viewports.
+    assert all(abs(float(f['width'].removesuffix('px'))-2*scale)
+                   <=max(.25,.3*scale)
                and float(f['radius'].removesuffix('px'))>=1
-               and f['shadow']!='none' for f in frames),frames
+               and f['shadow']!='none' for f in frames),(r['viewport'],scale,frames)
     for i,b in enumerate(badges):
         plane=r['cropPlanes'][i]['grid']
         assert b['display']=='grid' and float(b['font'].removesuffix('px'))>=9
