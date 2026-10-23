@@ -181,7 +181,7 @@ def check_concept(page):
     assert r['cAxis']['bottom']<r['planes'][0]['layer']['y'],(r['viewport'],r['cAxis'])
     # getBoundingClientRect reports scaled coordinates; check border line endpoints,
     # not merely the midpoint of either dimension label.
-    unscaled_grid=141 if r['viewport']<=520 else 153
+    unscaled_grid=122 if r['viewport']<=520 else 130
     scale=r['pixelGrid']['width']/unscaled_grid
     tol=max(.75,1.5*scale)
     # Chromium may report fractional computed border widths under CSS zoom.
@@ -193,15 +193,16 @@ def check_concept(page):
     for edge in ['y','bottom']:
         assert abs(r['hGuide'][edge]-r['pixelGrid'][edge])<=tol,(
             r['viewport'],'H',edge,r['hGuide'],r['pixelGrid'])
-    assert r['pixelGrid']['x']-r['hGuide']['right']>5*scale
-    assert r['hGuide']['right']-r['hGuideText']['right']>1*scale
+    assert 13*scale<r['pixelGrid']['x']-r['hGuide']['right']<22*scale
+    assert r['hGuide']['right']-r['hGuideText']['right']>2*scale
     assert abs(r['hGuideText']['cy']-r['pixelGrid']['cy'])<=tol
     assert abs(r['wGuideText']['cx']-r['pixelGrid']['cx'])<=tol
     # Guide is intentionally immediately outside the front grid; the label
     # belongs on the outer side of that line rather than floating far away.
-    assert 3*scale<r['pixelGrid']['y']-r['wGuide']['bottom']<10*scale
-    assert r['wGuideText']['bottom']<r['wGuide']['bottom']
-    assert 8*scale<r['pixelGrid']['x']-r['hGuide']['right']<19*scale
+    assert 20*scale<r['pixelGrid']['y']-r['wGuide']['bottom']<31*scale
+    assert 5*scale<r['wGuide']['y']-r['wGuideText']['bottom']<15*scale
+    assert 13*scale<r['pixelGrid']['x']-r['hGuide']['right']<22*scale
+    assert r['pixelGrid']['width']<=130*scale+.1
     assert all(abs(value)<3.1 for value in r['visualCenters'].values()),(
         r['viewport'],r['visualCenters'])
     # Text labels must not touch the rear planes or each other.
@@ -226,26 +227,34 @@ def check_concept(page):
     assert all(len(p['cells'])==16 for p in crop)
     assert [p['selected'] for p in crop]==[0,0,1]
     assert crop[2]['cells']==r['painted']
-    # Independent Python reconstruction of JS Math.round for nonnegative values.
-    # Python round() is ties-to-even and must not be used here.
+    # Independent calculation of the JS display-only tint (Math.round).
+    # Python round() uses ties-to-even; JS uses floor(x + 0.5) for x >= 0.
+    def tint_channel(value,tint):
+        level=.28+value/255*.72
+        return tuple(math.floor(255+(v-255)*level+.5) for v in tint)
+    def css_rgb(rgb):
+        return 'rgb('+', '.join(map(str,rgb))+')'
+    green_tint=(138,207,179)  # same green accent as left matrix panel
+    blue_tint=(142,184,231)   # same blue accent as left matrix panel
     assert crop[1]['cells']==[
-        f'rgb(0, {color[1]}, 0)' for color in r['colors']]
+        css_rgb(tint_channel(color[1],green_tint)) for color in r['colors']]
     assert crop[0]['cells']==[
-        f'rgb(0, 0, {color[2]})' for color in r['colors']]
+        css_rgb(tint_channel(color[2],blue_tint)) for color in r['colors']]
     assert crop[1]['rawValues']==[str(c[1]) for c in r['colors']]
     assert crop[0]['rawValues']==[str(c[2]) for c in r['colors']]
     assert crop[2]['rawValues']==[None]*16
-    # The back planes and the 80x80 canvases use the SAME raw tint rule.
-    assert all(c[0].startswith('rgb(0, 0, ') for c in [(x,) for x in crop[0]['cells']])
-    assert all(c[0].startswith('rgb(0, ') and c[0].endswith(', 0)')
-               for c in [(x,) for x in crop[1]['cells']])
+    assert all(tint_channel(a,t)[i]>=tint_channel(b,t)[i]
+               for index,t in [(1,green_tint),(2,blue_tint)]
+               for a,b in zip(sorted(c[index] for c in r['colors'])[:-1],
+                              sorted(c[index] for c in r['colors'])[1:])
+               for i in range(3))
     assert all(abs(p['grid']['width']-crop[2]['grid']['width'])<1
                and abs(p['grid']['height']-crop[2]['grid']['height'])<1
                for p in crop)
     assert crop[0]['box']['x']>crop[1]['box']['x']>crop[2]['box']['x']
     assert crop[0]['box']['y']<crop[1]['box']['y']<crop[2]['box']['y']
     # Compare relative layer offsets at the actual responsive scale.
-    offset=(8 if r['viewport']<=520 else 10)*scale
+    offset=(7 if r['viewport']<=520 else 9)*scale
     assert abs(crop[1]['box']['x']-crop[2]['box']['x']-offset)<1
     assert abs(crop[2]['box']['y']-crop[1]['box']['y']-offset)<1
     assert abs(crop[0]['box']['x']-crop[2]['box']['x']-2*offset)<1
@@ -267,6 +276,8 @@ def check_concept(page):
     assert r['hex']=='#'+''.join(f'{v:02X}' for v in rgb)
     assert r['swatch']==r['selectedColor']==r['merge']['swatch']==(
         'rgb('+', '.join(map(str,rgb))+')')
+    assert r['pixelGrid']['width']<150*scale
+    assert r['rgbBox']['width']>=48*scale
     style=r['selectedStyle']
     assert style['border']=='rgb(255, 255, 255)' and style['outline']=='none'
     assert style['zIndex']=='8'
@@ -304,7 +315,8 @@ def check_concept(page):
                 'h_bottom':round(r['hGuide']['bottom']-r['pixelGrid']['bottom'],3),
                 'w_label_center':round(r['wGuideText']['cx']-r['pixelGrid']['cx'],3),
                 'h_label_center':round(r['hGuideText']['cy']-r['pixelGrid']['cy'],3)},
-            'crop_display_base':0,'crop_display_formula':'rgb(0,G,0) / rgb(0,0,B)',
+            'crop_display_tints':{'G':'#8acfb3','B':'#8eb8e7'},
+            'crop_display_formula':'rgb(255+(tint-255)*(0.28+0.72*v/255))',
             'figure_center_errors_px':r['visualCenters'],
             'selected_halo_px':2,'selected_navy_outline_px':5}
 

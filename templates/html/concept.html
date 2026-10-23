@@ -81,23 +81,24 @@
 .stack-axis-c {top:-8px;right:0;color:var(--blue);font-size:15px;}
 .pixel-frame {
   display:flex;flex-direction:column;align-items:center;justify-content:center;
-  gap:9px;width:100%;height:254px;min-width:0;padding-top:23px;
+  gap:9px;width:100%;height:254px;min-width:0;padding-top:14px;
 }
+/* Smaller crop keeps the 4x4 selection visually subordinate to the full image. */
 .pixel-stack {
-  position:relative;flex:none;width:173px;height:173px;
-  /* Visually center the annotated figure, not just the RGB cell rectangle. */
-  transform:translateX(14px);
+  position:relative;flex:none;width:148px;height:148px;
+  /* Center the full visible envelope: H label + front RGB + rear G/B. */
+  transform:translateX(20px);
 }
 .pixel-plane {position:absolute;width:max-content;height:max-content;}
-.pixel-plane-b {left:20px;top:0;z-index:1;}
-.pixel-plane-g {left:10px;top:10px;z-index:2;}
-.pixel-plane-rgb {left:0;top:20px;z-index:3;}
+.pixel-plane-b {left:18px;top:0;z-index:1;}
+.pixel-plane-g {left:9px;top:9px;z-index:2;}
+.pixel-plane-rgb {left:0;top:18px;z-index:3;}
 .pixel-channel-grid {
-  display:grid;grid-template-columns:repeat(4,36px);
-  grid-template-rows:repeat(4,36px);gap:3px;
+  display:grid;grid-template-columns:repeat(4,31px);
+  grid-template-rows:repeat(4,31px);gap:2px;
 }
 .pixel-channel-grid span {
-  display:block;width:36px;height:36px;
+  display:block;width:31px;height:31px;
   border:1px solid #ffffffcc;border-radius:1px;background:#e9eef5;
 }
 .pixel-plane-b .pixel-channel-grid {outline:2px solid #427ec5;}
@@ -110,23 +111,26 @@
 }
 .pixel-plane-g::after {background:#238463;}
 .pixel-matrix {position:relative;width:max-content;}
+/* The guide lines follow the FRONT 4x4 pixel block, not the rear stack. */
 .dimension-width {
-  /* Both guide and label share the exact width of the front RGB pixel-block. */
-  position:absolute;left:0;top:-44px;width:100%;height:37px;
-  box-sizing:border-box;display:flex;justify-content:center;align-items:flex-start;
-  padding:0;border-bottom:1px solid #91a6c1;
-  color:var(--deep);font-size:14px;font-weight:750;line-height:18px;
-  text-align:center;white-space:nowrap;
+  position:absolute;left:0;top:-27px;width:100%;height:1px;
+  box-sizing:border-box;border-bottom:1px solid #91a6c1;
+  color:var(--deep);font-size:13px;font-weight:750;
+}
+.dimension-width > span {
+  position:absolute;left:50%;bottom:8px;transform:translateX(-50%);
+  line-height:18px;white-space:nowrap;
 }
 .dimension-height {
-  /* The vertical guide spans exactly the height of the same pixel-block. */
-  position:absolute;left:-42px;top:0;height:100%;width:28px;
+  position:absolute;left:-49px;top:0;width:31px;height:100%;
   box-sizing:border-box;display:grid;place-items:center;
   border-right:1px solid #91a6c1;
-  color:var(--deep);font-size:14px;font-weight:750;
+  color:var(--deep);font-size:13px;font-weight:750;
 }
-.dimension-height span {display:block;transform:rotate(-90deg);white-space:nowrap;}
-.pixel-block {display:grid;grid-template-columns:repeat(4,36px);grid-template-rows:repeat(4,36px);gap:3px;}
+.dimension-height span {
+  display:block;transform:rotate(-90deg);white-space:nowrap;line-height:17px;
+}
+.pixel-block {display:grid;grid-template-columns:repeat(4,31px);grid-template-rows:repeat(4,31px);gap:2px;}
 .pixel-block span {
   display:block;width:36px;height:36px;
   border:1px solid #ffffffbb;border-radius:1px;background:#e9eef5;
@@ -146,21 +150,27 @@
 }
 /* The fourth stage stays inside the same white concept panel. */
 .detail-frame {min-width:0;}
-.pixel-detail {display:flex;flex-direction:column;justify-content:center;gap:18px;width:100%;min-width:0;}
+.pixel-detail {
+  display:flex;flex-direction:column;justify-content:center;
+  gap:14px;width:min(100%,258px);min-width:0;
+}
 .selected-color {display:flex;align-items:center;justify-content:center;gap:10px;min-width:0;}
 .selected-color .swatch {
-  position:relative;flex:none;width:54px;height:54px;
+  position:relative;flex:none;width:48px;height:48px;
   border:2px solid var(--navy);border-radius:7px;background:#dbe4f0;
 }
 .selected-color .value-text {min-width:0;}
-.selected-color strong {display:block;color:var(--navy);font-size:20px;line-height:1.27;white-space:nowrap;}
-.selected-color small {display:block;color:var(--muted);font-size:13px;line-height:1.4;white-space:nowrap;margin-top:3px;}
+.selected-color strong {display:block;color:var(--navy);font-size:18px;line-height:1.25;white-space:nowrap;}
+.reference-slide.concept-slide .selected-color small {
+  display:block;color:var(--muted);font-size:12px;
+  line-height:1.35;white-space:nowrap;margin-top:2px;
+}
 .channel-values {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;min-width:0;}
-.channel-value {min-width:0;padding:10px 8px;background:#f7f9fd;border:1px solid var(--border);border-radius:9px;}
+.channel-value {min-width:0;padding:8px 7px;background:#f7f9fd;border:1px solid var(--border);border-radius:9px;}
 .channel-value .head {display:flex;justify-content:space-between;align-items:center;font-size:15px;font-weight:800;color:var(--deep);}
 .channel-value .dot {width:11px;height:11px;border-radius:50%;}
 .channel-value .number {
-  color:var(--navy);font-size:26px;font-weight:800;line-height:1.4;
+  color:var(--navy);font-size:23px;font-weight:800;line-height:1.35;
   white-space:nowrap;font-variant-numeric:tabular-nums;
 }
 .channel-value .track {width:100%;height:7px;background:#e1e8f0;border-radius:7px;overflow:hidden;}
@@ -193,7 +203,7 @@
   .concept-step-figure,.reference-slide.concept-slide .pixel-frame {height:250px;}
   .flow-link {height:46px;transform:none;}
   .flow-link svg {transform:rotate(90deg);}
-  .pixel-detail {width:min(100%,275px);}
+  .pixel-detail {width:min(100%,258px);}
 }
 @media(max-width:520px) {
   .concept-deck {width:100%;grid-template-columns:minmax(0,1fr);}
@@ -215,27 +225,26 @@
   .matrix-step .concept-step-figure {height:225px;}
   .flow-link {height:46px;transform:none;}
   .flow-link svg {transform:rotate(90deg);}
-  .reference-slide.concept-slide .pixel-frame {height:209px;padding-top:24px;gap:8px;}
-  .pixel-stack {width:157px;height:157px;}
-  .pixel-plane-b {left:16px;top:0;}
-  .pixel-plane-g {left:8px;top:8px;}
-  .pixel-plane-rgb {left:0;top:16px;}
+  .reference-slide.concept-slide .pixel-frame {height:209px;padding-top:18px;gap:8px;}
+  .pixel-stack {width:136px;height:136px;transform:translateX(20px);}
+  .pixel-plane-b {left:14px;top:0;}
+  .pixel-plane-g {left:7px;top:7px;}
+  .pixel-plane-rgb {left:0;top:14px;}
   .pixel-channel-indicator {top:-38px;}
-  .dimension-width {top:-37px;height:30px;line-height:17px;}
+  .dimension-width {top:-25px;}
   .reference-slide.concept-slide .pixel-block,
   .reference-slide.concept-slide .pixel-channel-grid {
-    grid-template-columns:repeat(4,33px);grid-template-rows:repeat(4,33px);
+    grid-template-columns:repeat(4,29px);grid-template-rows:repeat(4,29px);gap:2px;
   }
   .reference-slide.concept-slide .pixel-block span,
-  .reference-slide.concept-slide .pixel-channel-grid span {width:33px;height:33px;}
+  .reference-slide.concept-slide .pixel-channel-grid span {width:29px;height:29px;}
   .dimension-width,.dimension-height {font-size:12px;}
-  .dimension-height {left:-39px;width:25px;}
-  .detail-frame {height:174px;}
-  .pixel-detail {width:min(100%,236px);gap:16px;}
-  .selected-color strong {font-size:18px;}
-  .selected-color small {font-size:12px;}
-  .reference-slide.concept-slide .channel-value {padding:8px 6px;}
-  .channel-value .number {font-size:23px;}
+  .dimension-height {left:-45px;width:29px;}
+  .detail-frame {height:166px;}
+  .pixel-detail {width:min(100%,228px);gap:14px;}
+  .selected-color strong {font-size:17px;}
+  .reference-slide.concept-slide .channel-value {padding:7px 6px;}
+  .channel-value .number {font-size:21px;}
   .concept-step-label {font-size:16px;}
   .concept-step-note {font-size:12px;}
   .concept-flow-summary {flex-wrap:wrap;gap:5px 12px;text-align:center;margin-top:14px;}
@@ -395,13 +404,20 @@
       }
       context.putImageData(pixels,0,0);
     }
-    // Use exactly the same channel color mapping as the left R/G/B canvases.
-    // White cell borders improve legibility without changing channel colors.
+    // Use the bright G/B panel tints (#8acfb3/#8eb8e7) for DISPLAY only.
+    // The 16 original ROI samples drive RGB, HEX and all intensity bars.
+    const CHANNEL_TINTS={
+      1:[138,207,179],
+      2:[142,184,231]
+    };
+    const tint_channel=(value,tint)=>{
+      const t=0.28+(value/255)*0.72;
+      return tint.map(base=>Math.round(255+(base-255)*t));
+    };
     const paint_channel=(grid,channel)=>{
       const items=colors.map(color=>{
         const cell=document.createElement('span');
-        const components=[0,0,0];
-        components[channel]=color[channel];
+        const components=tint_channel(color[channel],CHANNEL_TINTS[channel]);
         cell.style.backgroundColor='rgb('+components.join(',')+')';
         cell.dataset.rawValue=String(color[channel]);
         cell.title=['R','G','B'][channel]+' '+color[channel];
