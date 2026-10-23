@@ -1,24 +1,16 @@
-"""Check static template consistency without third-party packages."""
+"""Check that both modes reuse the eight editable originals and only two outputs."""
 from pathlib import Path
 import re
-
-ROOT = Path(__file__).resolve().parents[1]
-REQUIRED = [
-    'DESIGN.md', 'MODES.md', 'index.html', 'scroll.html', 'slides.html',
-    'assets/css/tokens.css', 'assets/css/components.css',
-    'assets/css/scroll.css', 'assets/css/slides.css',
-    'assets/js/lesson.js', 'assets/js/lab.js', 'assets/js/render.js',
-    'assets/js/scroll.js', 'assets/js/slides.js', 'assets/js/state.js',
-]
-missing = [str(path) for name in REQUIRED if not (path := ROOT / name).is_file()]
-assert not missing, f'Missing files: {missing}'
-for name in ('scroll.html', 'slides.html'):
-    html = (ROOT / name).read_text(encoding='utf-8')
-    for required_css in ('tokens.css', 'components.css'):
-        assert required_css in html, f'{name} does not include {required_css}'
-assert 'renderLessons' in (ROOT / 'assets/js/scroll.js').read_text(encoding='utf-8')
-assert 'renderLessons' in (ROOT / 'assets/js/slides.js').read_text(encoding='utf-8')
-assert 'mountLab' in (ROOT / 'assets/js/render.js').read_text(encoding='utf-8')
-ids = re.findall(r"id: '([^']+)'", (ROOT / 'assets/js/lesson.js').read_text(encoding='utf-8'))
-assert len(ids) == len(set(ids)) == 5, f'Unexpected duplicate/missing sections: {ids}'
-print('PASS: files, common styles, shared content, shared lab and section IDs')
+ROOT=Path(__file__).resolve().parents[1]
+assert sorted(p.name for p in ROOT.glob('*.html'))==['scroll.html','slides.html']
+for name in ('scroll','slides'):
+    text=(ROOT/f'{name}.html').read_text()
+    for part in ('tokens.css','components.css',f'{name}.css',f'{name}.js'):assert part in text,(name,part)
+files=re.findall(r"file:'([^']+)'",(ROOT/'assets/js/lesson.js').read_text())
+assert len(files)==len(set(files))==8,files
+assert all((ROOT/'../html'/name).is_file() for name in files)
+assert not (ROOT/'assets/js/lab.js').exists(),'Use original Interactive logic, no duplicate lab engine'
+assert 'iframe' in (ROOT/'assets/js/render.js').read_text()
+assert 'renderReferences' in (ROOT/'assets/js/scroll.js').read_text()
+assert 'renderReferences' in (ROOT/'assets/js/slides.js').read_text()
+print('PASS two entrypoints, eight existing HTML sources and one shared renderer')

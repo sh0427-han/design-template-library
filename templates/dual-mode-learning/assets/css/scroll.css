@@ -1,30 +1,12 @@
-body.scroll-mode { background:var(--canvas); }
-.scroll-header { height:70px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 30px;border-bottom:1px solid var(--border);background:var(--white);position:sticky;top:0;z-index:5; }
-.scroll-layout { display:grid;grid-template-columns:220px minmax(0,1fr);column-gap:32px;padding:40px 32px 80px; }
-.toc { position:sticky;top:110px;align-self:start; }
-.toc-title { font-size:12px;font-weight:800;color:var(--muted);padding:0 12px 12px; }
-.toc a { display:block;border-radius:8px;padding:10px 12px;color:var(--muted);text-decoration:none;font-size:15px;line-height:var(--line-height-note); }
-.toc a:hover,.toc a[aria-current] { background:var(--pale-blue);color:var(--blue); }
-.scroll-article { min-width:0;width:min(100%,1370px); }
-.chapter-head { display:flex;flex-direction:column;gap:16px;margin-bottom:48px;border-bottom:1px solid var(--border);padding-bottom:32px; }
-.chapter-head h1 { margin:0;color:var(--navy);font-size:42px;line-height:var(--line-height-title); }
-.chapter-head p { margin:0;color:var(--muted);font-size:20px;line-height:var(--line-height-subtitle); }
-.lesson-section { scroll-margin-top:100px;display:flex;flex-direction:column;gap:24px;margin-bottom:64px; }
-.lesson-section .lesson-title { font-size:34px; }
-.lesson-section .lesson-lead { font-size:20px; }
-.lesson-section .lesson-footer { padding-top:8px; }
-.scroll-footer { padding-top:20px;border-top:1px solid var(--border);color:var(--muted);font-size:13px; }
-@media(min-width:901px) and (max-width:1399px) {
-  .scroll-layout { grid-template-columns:180px minmax(0,1fr);gap:24px;padding:32px 24px 80px; }
-  .scroll-mode .work-layout { grid-template-columns:minmax(0,1fr); }
-  .scroll-mode .calculation { border-left:0;border-top:1px solid var(--border);padding:20px 0 0;display:grid;grid-template-columns:1fr 300px 1fr;gap:20px;align-items:center; }
-  .scroll-mode .calculation h3 { margin:0; }.scroll-mode .sum-result { margin:0; }
-  .scroll-mode .size-equation { gap:12px;flex-wrap:wrap; }.scroll-mode .size-equation strong { font-size:20px; }
-  .scroll-mode .feature-preview { padding:18px; }
-}
-@media(max-width:900px) {
-  .scroll-layout { grid-template-columns:1fr;padding:24px 18px 64px; }
-  .toc { position:static;margin-bottom:32px; }.toc a { padding:8px 12px; }
-  .scroll-header { padding:0 16px; }.scroll-header .brand { font-size:11px; }.scroll-header .pill { display:none; }
-  .chapter-head h1 { font-size:32px; }.lesson-section .lesson-title { font-size:28px; }
-}
+body.scroll-mode { background:#e9eff7; }
+.scroll-mode .mode-bar { position:sticky;top:0;z-index:2;background:var(--white);border-bottom:1px solid var(--border); }
+.scroll-layout { display:grid;grid-template-columns:200px minmax(0,1fr);gap:24px;padding:24px;align-items:start; }
+.toc { position:sticky;top:calc(var(--mode-bar-height) + 24px); }
+.toc-title { margin:0 0 12px;padding:0 12px;font-size:12px;font-weight:800;color:var(--muted); }
+.toc a { display:flex;gap:12px;padding:10px 12px;border-radius:8px;font-size:15px;line-height:var(--line-height-note);text-decoration:none;color:var(--muted); }
+.toc a[aria-current],.toc a:hover { background:var(--pale-blue);color:var(--blue); }
+#lesson-root { display:grid;gap:32px;min-width:0; }
+.reference-section { scroll-margin-top:calc(var(--mode-bar-height) + 24px); }
+@media(max-width:1100px) { .scroll-layout { grid-template-columns:170px minmax(0,1fr);gap:16px;padding:20px; } }
+/* Compatibility only; the reference itself keeps the same PC composition. */
+@media(max-width:700px) { .scroll-layout { grid-template-columns:1fr; }.toc { position:static; }.mode-bar { padding:0 16px; }.library-link { font-size:12px; } }

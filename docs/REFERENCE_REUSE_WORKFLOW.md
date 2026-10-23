@@ -59,6 +59,6 @@
 
 최종 답변에서는 로컬 Commit, 원격 Push, PR, main 반영을 구분합니다. 인증·검증이 막힌 상태를 완료로 보고하지 않습니다. [통합 보고서](INTEGRATION_REPORT_2026-10-22.md)는 이 저장소의 현재 통합 출처와 상태를 보여줍니다.
 
-## Scroll / Slide 공통 콘텐츠의 실제 적용 예
+## Scroll / Slide 공통 원본의 실제 적용 예
 
-[5개 블록 재사용 명세](DUAL_MODE_REFERENCE_REUSE.md)는 8개 패턴 중 목적에 맞는 구성만 선택한 사례입니다. 패턴 HTML이나 프리뷰를 그대로 나열하는 것과, 공통 콘텐츠·계산·현재 학습 단계·실습 상태를 보존하며 두 모드로 구성하는 것은 구분합니다. [모드 계약](../templates/dual-mode-learning/MODES.md)에 따라 hash와 query 상태를 전달하고 실제 두 모드의 독립 계산과 기하를 검증합니다.
+[두 보기의 재사용 명세](DUAL_MODE_REFERENCE_REUSE.md)는 기존 8개 HTML을 직접 실행하여 디자인 복사본 없이 표시하는 예제입니다. Scroll/Slide는 보기와 탐색만 다르고, 실제 그림·스타일·계산은 같은 원본이 담당합니다. #5 실습은 두 모드의 기능이며 세 번째 형식이 아닙니다. 원본 스타일과 상대 bounding box를 직접 렌더링과 대조하고, [모드 계약](../templates/dual-mode-learning/MODES.md)에 따라 현재 예제와 임계값을 유지합니다. 새 강의에 모든 8개 유형이나 iframe 구현을 강제하는 규칙은 아닙니다.

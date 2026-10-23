@@ -1,176 +1,165 @@
-"""PC mode-conversion regression: real glyphs, bounds, independent math and URL state.
+"""Verify both modes display the original eight pages without a second design.
 
-Used by verify_pretendard.py so the existing CI entrypoint runs these checks too.
+Compare each mode's actual styles and normalized element bounds to a direct
+render of the original. Run its existing technical checks in the embedded HTML.
 """
 from pathlib import Path
-import hashlib
+import hashlib,math
+from reference_validation import GEOMETRY
+from validate_references import (check_concept,check_motif,check_step,check_interactive,
+                                check_architecture,check_experiment,check_executive)
+from process_validation import check_process
+from comparison_validation import check_comparison
 
-SIZES = ((1600,950),(1440,810),(1366,768),(1280,720))
-IDS = ('motivation','locality','pipeline','experiment','takeaway')
-INPUT = [[1,2,3,1,0],[4,5,6,2,1],[7,8,9,3,1],[2,1,0,4,2],[1,3,2,1,0]]
-KERNELS = {
-    'vertical': ([[1,0,-1]]*3,1),
-    'average': ([[1,1,1]]*3,9),
-    'identity': ([[0,0,0],[0,1,0],[0,0,0]],1),
-}
-
-def independent(key,position):
-    k,d=KERNELS[key];y,x=divmod(position,3)
-    terms=[INPUT[y+dy][x+dx]*k[dy][dx] for dy in range(3) for dx in range(3)]
-    return terms,sum(terms)/d
-
-GEOMETRY = '''(selector) => {
- const root=document.querySelector(selector), b=e=>e.getBoundingClientRect();
- const header=b(root.querySelector('.lesson-header')), content=b(root.querySelector('.lesson-content'));
- const takeaway=b(root.querySelector('.lesson-takeaway')), footer=b(root.querySelector('.lesson-footer'));
- const visible=[...root.querySelectorAll('*')].filter(e=>b(e).width&&b(e).height);
- const problems=[];
- for(const e of visible){
-   if(e.closest('.scroll-note')&&getComputedStyle(root).zoom!=='1'&&!b(e).width)continue;
-   const r=b(e), frame=b(root);
-   if(r.left<frame.left-1||r.right>frame.right+1)problems.push(['horizontal',e.className]);
-   if(root.classList.contains('slide-sheet')&&(r.top<frame.top-1||r.bottom>frame.bottom+1))problems.push(['vertical',e.className]);
-   for(const node of e.childNodes){
-     if(node.nodeType!==3||!node.textContent.trim())continue;
-     const range=document.createRange();range.selectNodeContents(node);
-     for(const t of range.getClientRects())if(t.left<r.left-1||t.right>r.right+1)problems.push(['text',e.className,node.textContent]);
-   }
- }
- const tops=[...root.querySelectorAll('.lesson-content > *')].filter(e=>b(e).height);
- const flow=[...root.querySelectorAll('.matrix-flow .teaching-matrix')].map(e=>b(e).y+b(e).height/2);
- const arrows=[...root.querySelectorAll('.flow-connector')].map(e=>{
-   const a=b(e.previousElementSibling.querySelector('.teaching-matrix')),c=b(e.nextElementSibling.querySelector('.teaching-matrix')),r=b(e.querySelector('svg'));
-   return {y:r.y+r.height/2,left:a.y+a.height/2,right:c.y+c.height/2};
+SIZES=((1600,950),(1440,810),(1366,768),(1280,720))
+NAMES=('concept','process','comparison','step-by-step','interactive','architecture','experiment','executive-summary')
+FINGERPRINT='''()=>{
+ const root=document.querySelector('.reference-slide'),origin=root.getBoundingClientRect();
+ const scale=origin.width/1440;
+ const properties=['fontFamily','fontSize','fontWeight','lineHeight','letterSpacing','color','backgroundColor','borderRadius','paddingTop','paddingRight','paddingBottom','paddingLeft'];
+ return [root,...root.querySelectorAll('*')].filter(e=>!e.closest('.sr-only')&&e.getBoundingClientRect().width&&e.getBoundingClientRect().height).map(e=>{
+   const r=e.getBoundingClientRect(),s=getComputedStyle(e);
+   return {tag:e.tagName,class:typeof e.className==='string'?e.className:e.className.baseVal,style:properties.map(p=>s[p]),box:[(r.x-origin.x)/scale,(r.y-origin.y)/scale,r.width/scale,r.height/scale]};
  });
- const comparisons=[...root.querySelectorAll('.feature-preview')].map(e=>({top:b(e).top,height:b(e).height,heading:b(e.querySelector('h3')).top,matrix:b(e.querySelector('.teaching-matrix')).top,result:b(e.querySelector('.comparison-value')).top}));
- return {problems,headerBottom:header.bottom,contentTop:content.top,firstFigureTop:tops.length?b(tops[0]).top:0,lastDetailBottom:tops.length?b(tops.at(-1)).bottom:0,captionTop:takeaway.top,captionBottom:takeaway.bottom,footerTop:footer.top,flowCenters:flow,arrows,comparison:comparisons,viewportOverflow:document.documentElement.scrollWidth>innerWidth};
 }'''
 
 
-def fonts(page,selector):
-    entries=page.evaluate('''selector=>[...document.querySelectorAll(`${selector} *`)].filter(e=>e.getBoundingClientRect().width&&e.getBoundingClientRect().height&&[...e.childNodes].some(n=>n.nodeType===3&&n.textContent.trim())&&!e.matches('option')).map((e,i)=>{e.dataset.modeFont=String(i);return {id:i,text:[...e.childNodes].filter(n=>n.nodeType===3).map(n=>n.textContent).join(''),spacing:getComputedStyle(e).letterSpacing}})''',selector)
+def ready(frame,name):
+    frame.wait_for_selector('.reference-slide');frame.evaluate('document.fonts.ready')
+    if name in ('process','comparison'):frame.wait_for_function("window.CNNFeatureMaps?.status==='ready'")
+    if name=='concept':frame.wait_for_function("document.querySelector('.slide').dataset.sampled==='true'")
+    frame.evaluate('async()=>{await Promise.all([...document.images].map(im=>im.decode()));}')
+
+
+def technical(frame,name):
+    if name=='concept':return check_concept(frame)
+    if name=='process':
+        motif=check_motif(frame,name)
+        values=frame.locator('.output-item').evaluate_all('(es)=>es.map(e=>({p:Number(e.dataset.probability),text:e.querySelector(".probability-value").textContent,width:Number(e.querySelector(".probability-bar").getAttribute("width")),track:Number(e.querySelector(".probability-track").getAttribute("width"))}))')
+        weights=[math.exp(v-2) for v in (2,1,0)];expected=[v/sum(weights) for v in weights]
+        for a,b in zip(values,expected):assert abs(a['p']-b)<1e-12 and abs(a['width']/a['track']-b)<1e-12 and a['text']==f'{b*100:.1f}%'
+        return {**motif,'independent_softmax':expected,'flow':'same DOM styles and normalized positions as directly validated original'}
+    if name=='comparison':return {**check_motif(frame,name),'comparison':check_comparison(frame,1440)}
+    if name=='step-by-step':return check_step(frame,1440)
+    if name=='interactive':return check_interactive(frame)
+    if name=='architecture':return check_architecture(frame,1440)
+    if name=='experiment':return check_experiment(frame)
+    return check_executive(frame,1440)
+
+
+def find_document(node,url):
+    if node.get('documentURL')==url:return node
+    for child in node.get('children',[])+([node['contentDocument']] if 'contentDocument' in node else []):
+        found=find_document(child,url)
+        if found:return found
+
+
+def fonts(page,frame):
+    entries=frame.evaluate('''()=>[...document.querySelectorAll('.slide *')].filter(e=>!e.closest('.sr-only')&&e.getBoundingClientRect().width&&e.getBoundingClientRect().height&&[...e.childNodes].some(n=>n.nodeType===3&&n.textContent.trim())).map((e,i)=>{e.dataset.modeFont=String(i);return {id:i,spacing:getComputedStyle(e).letterSpacing,text:[...e.childNodes].filter(n=>n.nodeType===3).map(n=>n.textContent).join('')}})''')
     cdp=page.context.new_cdp_session(page);cdp.send('DOM.enable');cdp.send('CSS.enable')
-    root=cdp.send('DOM.getDocument',{'depth':-1})['root']['nodeId'];families=set();glyphs=0
+    document=find_document(cdp.send('DOM.getDocument',{'depth':-1,'pierce':True})['root'],frame.url)
+    assert document,frame.url
+    families=set();glyphs=0
     try:
         for e in entries:
             assert abs(float(e['spacing'].removesuffix('px'))+4/3)<.02,e
-            node=cdp.send('DOM.querySelector',{'nodeId':root,'selector':f'[data-mode-font="{e["id"]}"]'})['nodeId']
+            node=cdp.send('DOM.querySelector',{'nodeId':document['nodeId'],'selector':f'[data-mode-font="{e["id"]}"]'})['nodeId']
             actual=cdp.send('CSS.getPlatformFontsForNode',{'nodeId':node})['fonts']
+            assert actual,('unpainted text',e)
             for f in actual:
                 assert f['familyName']=='Pretendard Variable' and f['isCustomFont'],(e,f)
                 families.add(f['familyName']);glyphs+=f['glyphCount']
-        loaded=page.evaluate('''async()=>{const results=await Promise.all([400,700,800].map(w=>document.fonts.load(`${w} 20px "Pretendard Variable"`,'한글 ABC 0123')));return results.map(a=>a.length)}''')
-        assert glyphs and families and all(loaded),(glyphs,families,loaded)
+        loaded=frame.evaluate('''async()=>{const a=await Promise.all([400,700,800].map(w=>document.fonts.load(`${w} 20px "Pretendard Variable"`,'한글 ABC 0123')));return a.map(v=>v.length)}''')
+        assert glyphs and all(loaded)
     finally:
-        cdp.detach()
-        page.evaluate("document.querySelectorAll('[data-mode-font]').forEach(e=>e.removeAttribute('data-mode-font'))")
+        cdp.detach();frame.evaluate("document.querySelectorAll('[data-mode-font]').forEach(e=>e.removeAttribute('data-mode-font'))")
     return {'text_nodes':len(entries),'actual_family':sorted(families),'glyphs':glyphs,'korean_latin_loads':loaded,'letter_spacing':'-1pt'}
 
 
-def geometry(page,selector):
-    g=page.evaluate(GEOMETRY,selector)
-    assert not g['problems'] and not g['viewportOverflow'],g
-    assert g['firstFigureTop']>=g['headerBottom']+8,g
-    assert g['lastDetailBottom']<=g['captionTop']-8,g
-    assert g['captionBottom']<=g['footerTop']-8,g
-    if g['flowCenters']:assert max(g['flowCenters'])-min(g['flowCenters'])<1,g
-    for a in g['arrows']:assert max(abs(a['y']-a['left']),abs(a['y']-a['right']))<1,a
-    if g['comparison']:
-        for key in ('top','height','heading','matrix','result'):
-            values=[b[key] for b in g['comparison']];assert max(values)-min(values)<1,(key,g)
-    return g
+def compare(actual,expected):
+    assert len(actual)==len(expected),(len(actual),len(expected))
+    error=0
+    for a,b in zip(actual,expected):
+        assert (a['tag'],a['class'],a['style'])==(b['tag'],b['class'],b['style']),(a,b)
+        delta=max(abs(x-y) for x,y in zip(a['box'],b['box']));error=max(error,delta)
+        assert delta<.3,(a,b,delta)
+    return {'elements':len(actual),'style_match':True,'max_box_error_px':error}
 
 
-def check_math(page,root):
-    values=page.locator(root+' .teaching-matrix.input .teaching-cell').first
-    assert values.count()
-    inputs=page.locator(root+' .teaching-matrix.input').first.locator('.teaching-cell').evaluate_all('(es)=>es.map(e=>Number(e.dataset.value))')
-    assert inputs==sum(INPUT,[])
-    products=page.locator(root+' [data-product]').evaluate_all('(es)=>es.map(e=>Number(e.dataset.product))')
-    assert products==independent('vertical',0)[0],products
-    out=page.locator(root+' .teaching-matrix.output .teaching-cell').evaluate_all('(es)=>es.map(e=>Number(e.dataset.value))')
-    assert out==[independent('vertical',p)[1] for p in range(9)],out
-    return {'input':INPUT,'products':products,'output':[out[i:i+3] for i in range(0,9,3)],'bias':0,'padding':0,'stride':1,'kernel_flipped':False}
+def get_frame(page,name):
+    section=page.locator('#ref-'+name)
+    section.wait_for(state='visible');section.scroll_into_view_if_needed()
+    section.locator('iframe').wait_for(state='visible')
+    page.wait_for_function('(id)=>document.getElementById(id).dataset.ready===\'true\'',arg='ref-'+name)
+    frame=section.locator('iframe').element_handle().content_frame()
+    ready(frame,name)
+    return frame
 
 
-def check_lab(page,mode_url):
-    page.goto(mode_url+'#experiment',wait_until='networkidle');page.evaluate('document.fonts.ready')
-    lab=page.locator('#experiment [data-lab]');states=[]
-    for key in KERNELS:
-        lab.locator('[data-role="kernel"]').select_option(key)
-        # Start each filter at first position; native input focus must not navigate slides.
-        for _ in range(8):
-            if lab.locator('[data-role="prev"]').is_enabled():lab.locator('[data-role="prev"]').click()
-        for pos in range(9):
-            expected,value=independent(key,pos)
-            actual=lab.locator('[data-product]').evaluate_all('(es)=>es.map(e=>Number(e.dataset.product))')
-            assert actual==expected,(key,pos,actual,expected)
-            output=lab.locator('.output .teaching-cell').evaluate_all('(es)=>es.map(e=>Number(e.dataset.value))')
-            assert output==[independent(key,p)[1] for p in range(9)],(key,pos,output)
-            active=lab.locator('.output .active');assert active.count()==1 and float(active.get_attribute('data-value'))==value
-            selected=lab.locator('.input .focus').evaluate_all('(es)=>es.map(e=>Number(e.dataset.value))')
-            y,x=divmod(pos,3);assert selected==[INPUT[y+dy][x+dx] for dy in range(3) for dx in range(3)]
-            formatted=str(int(value)) if value==int(value) else f'{value:.2f}'
-            assert lab.locator('[data-role="formula"] strong').inner_text()=='= '+formatted.replace('-','−')
-            assert ('position='+str(pos)) in page.url
-            assert ('filter='+key) in page.locator('.mode-link').get_attribute('href')
-            states.append({'filter':key,'position':pos,'output':value})
-            if pos<8:lab.locator('[data-role="next"]').click()
-        assert lab.locator('[data-role="next"]').is_disabled()
-    lab.locator('[data-role="reset"]').click()
-    assert lab.locator('[data-role="kernel"]').input_value()=='vertical'
-    assert lab.locator('[data-role="prev"]').is_disabled()
-    return states
+def bounds(page,name,mode):
+    result=page.locator('#ref-'+name+' .reference-viewport').evaluate('''e=>{const r=e.getBoundingClientRect(),f=e.querySelector('iframe').getBoundingClientRect();return {x:r.x,y:r.y,right:r.right,bottom:r.bottom,width:r.width,height:r.height,frame:{x:f.x,y:f.y,right:f.right,bottom:f.bottom},overflow:document.documentElement.scrollWidth>innerWidth,viewport:[innerWidth,innerHeight]}}''')
+    assert not result['overflow'],result
+    assert abs(result['width']/result['height']-16/9)<.002,result
+    assert result['x']>=0 and result['right']<=result['viewport'][0]+1,result
+    for k in ('x','y','right','bottom'):assert abs(result[k]-result['frame'][k])<1,result
+    if mode=='slides':assert result['y']>=44 and result['bottom']<=result['viewport'][1]-44,result
+    return result
 
 
 def validate_dual_mode(browser,base,root,evidence):
-    page=browser.new_page();errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
-    cases=[];prefix=base+'/templates/dual-mode-learning/'
+    page=browser.new_page(viewport={'width':1600,'height':950});direct=browser.new_page(viewport={'width':1600,'height':950})
+    errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
+    failed=[];page.on('requestfailed',lambda r:failed.append(r.url))
+    cases=[];baseline={};prefix=base+'/templates/dual-mode-learning/'
     evidence.mkdir(parents=True,exist_ok=True)
     try:
+        for name in NAMES:
+            direct.goto(base+'/templates/html/'+name+'.html',wait_until='networkidle');ready(direct,name)
+            baseline[name]=direct.evaluate(FINGERPRINT)
+            if name=='process':check_process(direct,1600)
         for size in SIZES:
             page.set_viewport_size({'width':size[0],'height':size[1]})
             for mode in ('slides','scroll'):
-                page.goto(prefix+mode+'.html',wait_until='networkidle');page.evaluate('document.fonts.ready')
-                for section in IDS:
-                    if mode=='slides':page.evaluate('(id)=>{location.hash=id}',section)
-                    else:page.locator('#'+section).scroll_into_view_if_needed()
-                    page.wait_for_timeout(40)
-                    selector='#'+section
-                    case={'mode':mode,'section':section,'viewport':list(size),'geometry':geometry(page,selector),'font':fonts(page,selector)}
-                    if section=='locality':case['math']=check_math(page,selector)
-                    if section=='takeaway':
-                        for key in KERNELS:
-                            actual=page.locator(selector+f' [data-filter="{key}"] .teaching-cell').evaluate_all('(es)=>es.map(e=>Number(e.dataset.value))')
-                            assert actual==[independent(key,p)[1] for p in range(9)],(key,actual)
+                page.goto(prefix+mode+'.html',wait_until='networkidle')
+                for name in NAMES:
+                    if mode=='slides':page.evaluate('(id)=>{location.hash=id}', 'ref-'+name)
+                    frame=get_frame(page,name)
+                    g=frame.evaluate(GEOMETRY)
+                    for key in ('outside','overflow','footerOverlap','spacing','clippedText','arrowErrors'):assert not g[key],(mode,name,size,key,g[key])
+                    exact=compare(frame.evaluate(FINGERPRINT),baseline[name])
+                    math=technical(frame,name)
+                    case={'mode':mode,'reference':name,'viewport':list(size),'source':frame.url.split(base)[-1], 'source_design':exact,'bounds':bounds(page,name,mode),'font':fonts(page,frame),'technical':math}
                     cases.append(case)
-                    if mode=='slides':page.screenshot(path=str(evidence/f'{size[0]}x{size[1]}-{section}.png'))
-            page.goto(prefix+'slides.html#locality',wait_until='networkidle')
-            page.locator('body').click(position={'x':5,'y':100});page.keyboard.press('ArrowRight')
-            assert page.locator('#progress').inner_text()=='3 / 5'
-            page.keyboard.press('End');assert page.locator('#progress').inner_text()=='5 / 5'
-            page.keyboard.press('Home');assert page.locator('#progress').inner_text()=='1 / 5'
-        page.set_viewport_size({'width':1440,'height':810})
-        states={mode:check_lab(page,prefix+mode+'.html') for mode in ('slides','scroll')}
-        assert states['slides']==states['scroll']
-        # Keep a nondefault filter and middle position through both mode switches and reload.
-        page.goto(prefix+'slides.html?filter=average&position=4#experiment',wait_until='networkidle')
-        page.locator('[data-role="kernel"]').focus();page.keyboard.press('ArrowRight')
-        assert page.locator('#progress').inner_text()=='4 / 5'
-        # Native select arrows may change the option; the presentation must stay put.
-        page.locator('[data-role="kernel"]').select_option('average')
+                    if mode=='slides':page.screenshot(path=str(evidence/f'{size[0]}x{size[1]}-{name}.png'))
+                    print('PASS',mode,name,*size,flush=True)
+        # Input events stay within the original Interactive page; the view stores only its value.
+        page.goto(prefix+'slides.html?threshold=45#ref-interactive',wait_until='networkidle')
+        frame=get_frame(page,'interactive');assert frame.locator('#threshold').input_value()=='45'
+        frame.locator('#threshold').focus();frame.locator('#threshold').press('ArrowRight')
+        assert page.locator('#progress').inner_text()=='5 / 8'
+        frame.locator('#threshold').fill('80')
+        before=frame.locator('.live-cm td').all_text_contents()
         for mode in ('scroll','slides'):
-            page.locator('.mode-link').click();page.wait_for_url('**/'+mode+'.html?**#experiment')
-            page.wait_for_timeout(80)
-            assert page.locator('#experiment [data-role="kernel"]').input_value()=='average'
-            assert page.locator('#experiment [data-role="position"]').inner_text()=='5 / 9'
-            assert page.url.endswith('#experiment')
-        page.reload(wait_until='networkidle');assert page.locator('[data-role="position"]').inner_text()=='5 / 9'
-        page.goto(prefix+'slides.html?filter=invalid&position=99#experiment',wait_until='networkidle')
-        assert page.locator('[data-role="kernel"]').input_value()=='vertical'
-        assert page.locator('[data-role="position"]').inner_text()=='1 / 9'
-        assert not errors,errors
-    finally:page.close()
-    files=list((root/'templates/dual-mode-learning').rglob('*'))+[root/'templates/html/styles.css']
-    hashes={str(p.relative_to(root)):hashlib.sha256(p.read_bytes()).hexdigest() for p in files if p.is_file() and p.suffix in ('.js','.css','.html')}
-    return {'status':'passed','viewports':SIZES,'cases':cases,'lab_states':states,'mode_roundtrip':{'filter':'average','position':4,'section':'experiment','reload':True},'keyboard':{'arrows_home_end':True,'select_not_intercepted':True},'source_sha256':hashes,'page_errors':errors}
+            page.locator('.mode-link').click();page.wait_for_url('**/'+mode+'.html?**#ref-interactive')
+            frame=get_frame(page,'interactive')
+            assert frame.locator('#threshold').input_value()=='80'
+            assert frame.locator('.live-cm td').all_text_contents()==before
+        page.reload(wait_until='networkidle');assert get_frame(page,'interactive').locator('#threshold').input_value()=='80'
+        # Keyboard navigation must also work after focus enters a reference iframe.
+        page.goto(prefix+'slides.html#ref-process',wait_until='networkidle');frame=get_frame(page,'process')
+        frame.locator('h1').click();frame.locator('body').press('ArrowRight');assert page.locator('#progress').inner_text()=='3 / 8'
+        page.locator('body').press('End');assert page.locator('#progress').inner_text()=='8 / 8'
+        page.locator('body').press('Home');assert page.locator('#progress').inner_text()=='1 / 8'
+        page.goto(prefix+'scroll.html#ref-comparison',wait_until='networkidle');get_frame(page,'comparison')
+        page.locator('.mode-link').click();page.wait_for_url('**/slides.html?**#ref-comparison');assert page.locator('#progress').inner_text()=='3 / 8'
+        page.goto(prefix+'slides.html?threshold=invalid#experiment',wait_until='networkidle')
+        assert get_frame(page,'interactive').locator('#threshold').input_value()=='60'
+        assert not errors and not failed,(errors,failed)
+    finally:page.close();direct.close()
+    technical_checks={}
+    for case in cases:
+        result=case.pop('technical');technical_checks.setdefault(case['reference'],result)
+        case['technical_passed']=True
+    files=list((root/'templates/dual-mode-learning').rglob('*'))+list((root/'templates/html').rglob('*'))
+    hashes={str(p.relative_to(root)):hashlib.sha256(p.read_bytes()).hexdigest() for p in files if p.is_file() and p.suffix in ('.js','.css','.html','.woff2','.png','.jpg')}
+    return {'status':'passed','viewports':SIZES,'references':NAMES,'cases':cases,'technical_checks':technical_checks,'mode_roundtrip':{'reference':'interactive','threshold':80,'reload':True},'keyboard':{'iframe_navigation':True,'input_not_intercepted':True},'source_sha256':hashes,'page_errors':errors,'failed_requests':failed}

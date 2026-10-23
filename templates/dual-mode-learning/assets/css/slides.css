@@ -1,35 +1,8 @@
-/* Fixed 1440×810 logical canvas; scale the whole sheet, never individual labels. */
-body.slide-mode { background:#e9eff7;height:100vh;overflow:hidden; }
-.slide-bar { height:60px;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:0 24px; }
-.slide-bar .meta { color:var(--muted);font-size:13px; }
-.slide-stage { height:calc(100vh - 124px);display:flex;align-items:center;justify-content:center; }
-.slide-sheet { display:none;flex:none;width:1440px;height:810px;zoom:var(--slide-scale,1);padding:40px 58px 28px;border-radius:10px;background:var(--canvas);box-shadow:var(--shadow);overflow:hidden; }
-.slide-sheet[aria-hidden='false'] { display:flex;flex-direction:column;gap:16px; }
-.slide-sheet .lesson-header { flex:none;margin-bottom:8px; }
-.slide-sheet .lesson-content { flex:1;display:flex;flex-direction:column;justify-content:center;gap:0;min-height:0; }
-.slide-sheet .scroll-note { display:none; }
-.slide-sheet .lesson-takeaway,.slide-sheet .lesson-footer { flex:none; }
-.slide-sheet .lesson-details { flex:none; }
-.slide-controls { height:64px;display:flex;justify-content:center;align-items:center;gap:16px; }
-.slide-controls button { border:1px solid var(--border);background:var(--white);border-radius:9px;padding:8px 16px;font-size:14px; }
-.slide-controls .progress { color:var(--muted);font-size:14px;font-weight:750;min-width:55px;text-align:center; }
-.slide-controls .track { height:5px;width:150px;border-radius:99px;background:var(--border);overflow:hidden; }
-.slide-controls .fill { height:100%;width:0;background:var(--blue); }
-/* Keep the logical slide composition when a browser window is narrow. */
-@media(max-width:900px) {
-  .slide-bar .meta { display:none; }.slide-bar { padding:0 12px; }
-  .slide-bar .brand { font-size:11px; }.slide-bar .pill { display:none; }
-  .slide-sheet .motivation-layout { grid-template-columns:1fr 1fr; }
-  .slide-sheet .feature-gallery { grid-template-columns:repeat(3,minmax(0,1fr)); }
-  .slide-sheet .work-layout { grid-template-columns:minmax(0,1fr) 290px; }
-  .slide-sheet .calculation { border-top:0;border-left:1px solid var(--border);padding:0 0 0 24px; }
-  .slide-sheet .lesson-title { font-size:44px; }.slide-sheet .lesson-lead { font-size:21px; }.slide-sheet .lesson-takeaway { font-size:19px; }
-}
-@media(max-width:600px) {
-  .slide-sheet .figure-card { padding:24px; }
-  .slide-sheet .matrix-flow { grid-template-columns:1.12fr 24px 1fr 24px 1fr; }
-  .slide-sheet .process-graphic { grid-template-columns:1fr 32px 1fr 32px 1fr; }
-  .slide-sheet .flow-connector { height:auto; }.slide-sheet .flow-connector svg { transform:none; }
-  .slide-sheet .size-equation { flex-wrap:nowrap;gap:24px; }.slide-sheet .size-equation strong { font-size:23px; }
-  .slide-sheet .lab-footer { flex-wrap:nowrap;gap:16px; }.slide-sheet .position-controls { gap:16px; }
-}
+body.slide-mode { height:100vh;overflow:hidden; }
+.slide-stage { height:calc(100vh - var(--mode-bar-height) - var(--mode-controls-height));display:flex;align-items:center;justify-content:center; }
+.slide-stage .reference-section { display:none;width:min(1440px,calc(100vw - 40px),calc((100vh - 112px)*16/9)); }
+.slide-stage .reference-section[aria-hidden='false'] { display:block; }
+.slide-controls { height:var(--mode-controls-height);display:flex;align-items:center;justify-content:center;gap:24px; }
+.slide-controls button { font:inherit;letter-spacing:inherit;font-size:14px;border:1px solid var(--border);border-radius:8px;background:var(--white);color:var(--navy);padding:5px 14px;cursor:pointer; }
+.slide-controls button:disabled { opacity:.4;cursor:default; }
+.progress { color:var(--muted);font-size:14px;min-width:48px;text-align:center; }

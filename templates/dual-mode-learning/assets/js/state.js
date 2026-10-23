@@ -1,26 +1,19 @@
-// URL state works across modes, reloads and copied deep links; no storage needed.
-export function readLabState() {
-  const params = new URLSearchParams(location.search);
-  const requested = params.get('filter');
-  const filter = ['vertical', 'average', 'identity'].includes(requested) ? requested : 'vertical';
-  const raw = params.get('position');
-  const position = raw !== null && /^[0-8]$/.test(raw) ? Number(raw) : 0;
-  return { filter, position };
+// The view and the interactive reference's threshold survive a mode switch.
+export function readThreshold() {
+  const raw=new URLSearchParams(location.search).get('threshold');
+  return raw!==null && /^(100|[0-9]{1,2})$/.test(raw) ? Number(raw) : 60;
 }
-export function saveLabState(filter, position) {
-  const url = new URL(location.href);
-  url.searchParams.set('filter', filter);
-  url.searchParams.set('position', String(position));
-  history.replaceState(null, '', url);
-  window.dispatchEvent(new CustomEvent('lessonstatechange'));
+export function setThreshold(value) {
+  const url=new URL(location.href);url.searchParams.set('threshold',String(value));
+  history.replaceState(null,'',url);window.dispatchEvent(new Event('referencestatechange'));
 }
-export function updateModeLink(sectionId) {
-  const link = document.querySelector('.mode-link');
-  if (!link) return;
-  const url = new URL(link.getAttribute('href'), location.href);
-  const { filter, position } = readLabState();
-  url.searchParams.set('filter', filter);
-  url.searchParams.set('position', String(position));
-  url.hash = sectionId;
-  link.href = url.href;
+export function updateModeLink(id) {
+  const link=document.querySelector('.mode-link');
+  const url=new URL(link.getAttribute('href'),location.href);
+  url.search='';url.searchParams.set('threshold',String(readThreshold()));url.hash=`ref-${id}`;
+  link.href=url.href;
+}
+export function setReference(id) {
+  const url=new URL(location.href);url.hash=`ref-${id}`;
+  history.replaceState(null,'',url);updateModeLink(id);
 }

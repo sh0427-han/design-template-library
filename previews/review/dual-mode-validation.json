@@ -4,128 +4,158 @@
     {
       "kind": "gallery",
       "viewport": [
-        1500,
+        1600,
         950
       ],
       "font": {
-        "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
-        "letterSpacing": "-1.33333px",
-        "loadedFaces": 1,
-        "scrollWidth": 1500
-      },
-      "actual_heading_fonts": [
-        {
-          "familyName": "Pretendard Variable",
-          "postScriptName": "PretendardVariable-Regular",
-          "isCustomFont": true,
-          "glyphCount": 14
-        }
-      ]
+        "family": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+        "spacing": "-1.33333px",
+        "loaded": 1,
+        "width": 1600
+      }
     },
     {
       "kind": "scroll",
       "viewport": [
-        1500,
+        1600,
         950
       ],
       "font": {
-        "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
-        "letterSpacing": "-1.33333px",
-        "loadedFaces": 1,
-        "scrollWidth": 1500
-      },
-      "actual_heading_fonts": [
-        {
-          "familyName": "Pretendard Variable",
-          "postScriptName": "PretendardVariable-Regular",
-          "isCustomFont": true,
-          "glyphCount": 21
-        }
-      ]
+        "family": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+        "spacing": "-1.33333px",
+        "loaded": 1,
+        "width": 1600
+      }
     },
     {
       "kind": "slides",
       "viewport": [
-        1500,
+        1600,
         950
       ],
       "font": {
-        "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
-        "letterSpacing": "-1.33333px",
-        "loadedFaces": 1,
-        "scrollWidth": 1500
-      },
-      "actual_heading_fonts": [
-        {
-          "familyName": "Pretendard Variable",
-          "postScriptName": "PretendardVariable-Regular",
-          "isCustomFont": true,
-          "glyphCount": 16
-        }
-      ]
+        "family": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+        "spacing": "-1.33333px",
+        "loaded": 1,
+        "width": 1600
+      }
     },
     {
       "kind": "gallery",
       "viewport": [
-        390,
-        844
+        1440,
+        810
       ],
       "font": {
-        "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
-        "letterSpacing": "-1.33333px",
-        "loadedFaces": 1,
-        "scrollWidth": 390
-      },
-      "actual_heading_fonts": [
-        {
-          "familyName": "Pretendard Variable",
-          "postScriptName": "PretendardVariable-Regular",
-          "isCustomFont": true,
-          "glyphCount": 14
-        }
-      ]
+        "family": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+        "spacing": "-1.33333px",
+        "loaded": 1,
+        "width": 1440
+      }
     },
     {
       "kind": "scroll",
       "viewport": [
-        390,
-        844
+        1440,
+        810
       ],
       "font": {
-        "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
-        "letterSpacing": "-1.33333px",
-        "loadedFaces": 1,
-        "scrollWidth": 390
-      },
-      "actual_heading_fonts": [
-        {
-          "familyName": "Pretendard Variable",
-          "postScriptName": "PretendardVariable-Regular",
-          "isCustomFont": true,
-          "glyphCount": 21
-        }
-      ]
+        "family": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+        "spacing": "-1.33333px",
+        "loaded": 1,
+        "width": 1440
+      }
     },
     {
       "kind": "slides",
       "viewport": [
-        390,
-        844
+        1440,
+        810
       ],
       "font": {
-        "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
-        "letterSpacing": "-1.33333px",
-        "loadedFaces": 1,
-        "scrollWidth": 390
-      },
-      "actual_heading_fonts": [
-        {
-          "familyName": "Pretendard Variable",
-          "postScriptName": "PretendardVariable-Regular",
-          "isCustomFont": true,
-          "glyphCount": 13
-        }
-      ]
+        "family": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+        "spacing": "-1.33333px",
+        "loaded": 1,
+        "width": 1440
+      }
+    },
+    {
+      "kind": "gallery",
+      "viewport": [
+        1366,
+        768
+      ],
+      "font": {
+        "family": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+        "spacing": "-1.33333px",
+        "loaded": 1,
+        "width": 1366
+      }
+    },
+    {
+      "kind": "scroll",
+      "viewport": [
+        1366,
+        768
+      ],
+      "font": {
+        "family": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+        "spacing": "-1.33333px",
+        "loaded": 1,
+        "width": 1366
+      }
+    },
+    {
+      "kind": "slides",
+      "viewport": [
+        1366,
+        768
+      ],
+      "font": {
+        "family": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+        "spacing": "-1.33333px",
+        "loaded": 1,
+        "width": 1366
+      }
+    },
+    {
+      "kind": "gallery",
+      "viewport": [
+        1280,
+        720
+      ],
+      "font": {
+        "family": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+        "spacing": "-1.33333px",
+        "loaded": 1,
+        "width": 1280
+      }
+    },
+    {
+      "kind": "scroll",
+      "viewport": [
+        1280,
+        720
+      ],
+      "font": {
+        "family": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+        "spacing": "-1.33333px",
+        "loaded": 1,
+        "width": 1280
+      }
+    },
+    {
+      "kind": "slides",
+      "viewport": [
+        1280,
+        720
+      ],
+      "font": {
+        "family": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+        "spacing": "-1.33333px",
+        "loaded": 1,
+        "width": 1280
+      }
     }
   ],
   "page_errors": [],
@@ -149,84 +179,55 @@
         720
       ]
     ],
+    "references": [
+      "concept",
+      "process",
+      "comparison",
+      "step-by-step",
+      "interactive",
+      "architecture",
+      "experiment",
+      "executive-summary"
+    ],
     "cases": [
       {
         "mode": "slides",
-        "section": "motivation",
+        "reference": "concept",
         "viewport": [
           1600,
           950
         ],
-        "geometry": {
-          "problems": [],
-          "headerBottom": 227.75,
-          "contentTop": 251.484375,
-          "firstFigureTop": 271.5625,
-          "lastDetailBottom": 726.90625,
-          "captionTop": 762.8125,
-          "captionBottom": 813.828125,
-          "footerTop": 829.65625,
-          "flowCenters": [],
-          "arrows": [],
-          "comparison": [],
-          "viewportOverflow": false
+        "source": "/templates/html/concept.html",
+        "source_design": {
+          "elements": 78,
+          "style_match": true,
+          "max_box_error_px": 0
+        },
+        "bounds": {
+          "x": 80,
+          "y": 70,
+          "right": 1520,
+          "bottom": 880,
+          "width": 1440,
+          "height": 810,
+          "frame": {
+            "x": 80,
+            "y": 70,
+            "right": 1520,
+            "bottom": 880
+          },
+          "overflow": false,
+          "viewport": [
+            1600,
+            950
+          ]
         },
         "font": {
-          "text_nodes": 47,
+          "text_nodes": 25,
           "actual_family": [
             "Pretendard Variable"
           ],
-          "glyphs": 342,
-          "korean_latin_loads": [
-            1,
-            1,
-            1
-          ],
-          "letter_spacing": "-1pt"
-        }
-      },
-      {
-        "mode": "slides",
-        "section": "locality",
-        "viewport": [
-          1600,
-          950
-        ],
-        "geometry": {
-          "problems": [],
-          "headerBottom": 227.75,
-          "contentTop": 251.484375,
-          "firstFigureTop": 270.671875,
-          "lastDetailBottom": 727.796875,
-          "captionTop": 762.8125,
-          "captionBottom": 813.828125,
-          "footerTop": 829.65625,
-          "flowCenters": [
-            487.6171875,
-            487.6171875,
-            487.6171875
-          ],
-          "arrows": [
-            {
-              "y": 487.6171875,
-              "left": 487.6171875,
-              "right": 487.6171875
-            },
-            {
-              "y": 487.6171875,
-              "left": 487.6171875,
-              "right": 487.6171875
-            }
-          ],
-          "comparison": [],
-          "viewportOverflow": false
-        },
-        "font": {
-          "text_nodes": 77,
-          "actual_family": [
-            "Pretendard Variable"
-          ],
-          "glyphs": 417,
+          "glyphs": 316,
           "korean_latin_loads": [
             1,
             1,
@@ -234,308 +235,234 @@
           ],
           "letter_spacing": "-1pt"
         },
-        "math": {
-          "input": [
-            [
-              1,
-              2,
-              3,
-              1,
-              0
-            ],
-            [
-              4,
-              5,
-              6,
-              2,
-              1
-            ],
-            [
-              7,
-              8,
-              9,
-              3,
-              1
-            ],
-            [
-              2,
-              1,
-              0,
-              4,
-              2
-            ],
-            [
-              1,
-              3,
-              2,
-              1,
-              0
-            ]
-          ],
-          "products": [
-            1,
-            0,
-            -3,
-            4,
-            0,
-            -6,
-            7,
-            0,
-            -9
-          ],
-          "output": [
-            [
-              -6,
-              9,
-              16
-            ],
-            [
-              -2,
-              5,
-              11
-            ],
-            [
-              -1,
-              4,
-              8
-            ]
-          ],
-          "bias": 0,
-          "padding": 0,
-          "stride": 1,
-          "kernel_flipped": false
-        }
+        "technical_passed": true
       },
       {
         "mode": "slides",
-        "section": "pipeline",
+        "reference": "process",
         "viewport": [
           1600,
           950
         ],
-        "geometry": {
-          "problems": [],
-          "headerBottom": 227.75,
-          "contentTop": 251.484375,
-          "firstFigureTop": 248.59375,
-          "lastDetailBottom": 749.890625,
-          "captionTop": 762.8125,
-          "captionBottom": 813.828125,
-          "footerTop": 829.65625,
-          "flowCenters": [],
-          "arrows": [
-            {
-              "y": 456.25018310546875,
-              "left": 456.25,
-              "right": 456.25
-            },
-            {
-              "y": 456.25018310546875,
-              "left": 456.25,
-              "right": 456.25
-            }
-          ],
-          "comparison": [],
-          "viewportOverflow": false
+        "source": "/templates/html/process.html",
+        "source_design": {
+          "elements": 100,
+          "style_match": true,
+          "max_box_error_px": 6.103515625e-05
+        },
+        "bounds": {
+          "x": 80,
+          "y": 70,
+          "right": 1520,
+          "bottom": 880,
+          "width": 1440,
+          "height": 810,
+          "frame": {
+            "x": 80,
+            "y": 70,
+            "right": 1520,
+            "bottom": 880
+          },
+          "overflow": false,
+          "viewport": [
+            1600,
+            950
+          ]
         },
         "font": {
-          "text_nodes": 63,
+          "text_nodes": 31,
           "actual_family": [
             "Pretendard Variable"
           ],
-          "glyphs": 398,
+          "glyphs": 268,
           "korean_latin_loads": [
             1,
             1,
             1
           ],
           "letter_spacing": "-1pt"
-        }
+        },
+        "technical_passed": true
       },
       {
         "mode": "slides",
-        "section": "experiment",
+        "reference": "comparison",
         "viewport": [
           1600,
           950
         ],
-        "geometry": {
-          "problems": [],
-          "headerBottom": 227.75,
-          "contentTop": 251.484375,
-          "firstFigureTop": 263.125,
-          "lastDetailBottom": 735.328125,
-          "captionTop": 762.8125,
-          "captionBottom": 813.828125,
-          "footerTop": 829.65625,
-          "flowCenters": [
-            461.3203125,
-            461.3203125,
-            461.3203125
+        "source": "/templates/html/comparison.html",
+        "source_design": {
+          "elements": 161,
+          "style_match": true,
+          "max_box_error_px": 6.103515625e-05
+        },
+        "bounds": {
+          "x": 80,
+          "y": 70,
+          "right": 1520,
+          "bottom": 880,
+          "width": 1440,
+          "height": 810,
+          "frame": {
+            "x": 80,
+            "y": 70,
+            "right": 1520,
+            "bottom": 880
+          },
+          "overflow": false,
+          "viewport": [
+            1600,
+            950
+          ]
+        },
+        "font": {
+          "text_nodes": 60,
+          "actual_family": [
+            "Pretendard Variable"
           ],
-          "arrows": [
-            {
-              "y": 461.3203125,
-              "left": 461.3203125,
-              "right": 461.3203125
-            },
-            {
-              "y": 461.3203125,
-              "left": 461.3203125,
-              "right": 461.3203125
-            }
+          "glyphs": 565,
+          "korean_latin_loads": [
+            1,
+            1,
+            1
           ],
-          "comparison": [],
-          "viewportOverflow": false
+          "letter_spacing": "-1pt"
+        },
+        "technical_passed": true
+      },
+      {
+        "mode": "slides",
+        "reference": "step-by-step",
+        "viewport": [
+          1600,
+          950
+        ],
+        "source": "/templates/html/step-by-step.html",
+        "source_design": {
+          "elements": 175,
+          "style_match": true,
+          "max_box_error_px": 0.0001220703125
+        },
+        "bounds": {
+          "x": 80,
+          "y": 70,
+          "right": 1520,
+          "bottom": 880,
+          "width": 1440,
+          "height": 810,
+          "frame": {
+            "x": 80,
+            "y": 70,
+            "right": 1520,
+            "bottom": 880
+          },
+          "overflow": false,
+          "viewport": [
+            1600,
+            950
+          ]
+        },
+        "font": {
+          "text_nodes": 111,
+          "actual_family": [
+            "Pretendard Variable"
+          ],
+          "glyphs": 820,
+          "korean_latin_loads": [
+            1,
+            1,
+            1
+          ],
+          "letter_spacing": "-1pt"
+        },
+        "technical_passed": true
+      },
+      {
+        "mode": "slides",
+        "reference": "interactive",
+        "viewport": [
+          1600,
+          950
+        ],
+        "source": "/templates/html/interactive.html",
+        "source_design": {
+          "elements": 163,
+          "style_match": true,
+          "max_box_error_px": 0
+        },
+        "bounds": {
+          "x": 80,
+          "y": 70,
+          "right": 1520,
+          "bottom": 880,
+          "width": 1440,
+          "height": 810,
+          "frame": {
+            "x": 80,
+            "y": 70,
+            "right": 1520,
+            "bottom": 880
+          },
+          "overflow": false,
+          "viewport": [
+            1600,
+            950
+          ]
         },
         "font": {
           "text_nodes": 83,
           "actual_family": [
             "Pretendard Variable"
           ],
-          "glyphs": 445,
+          "glyphs": 544,
           "korean_latin_loads": [
             1,
             1,
             1
           ],
           "letter_spacing": "-1pt"
-        }
+        },
+        "technical_passed": true
       },
       {
         "mode": "slides",
-        "section": "takeaway",
+        "reference": "architecture",
         "viewport": [
           1600,
           950
         ],
-        "geometry": {
-          "problems": [],
-          "headerBottom": 227.75,
-          "contentTop": 251.484375,
-          "firstFigureTop": 281.125,
-          "lastDetailBottom": 717.34375,
-          "captionTop": 762.8125,
-          "captionBottom": 813.828125,
-          "footerTop": 829.65625,
-          "flowCenters": [],
-          "arrows": [],
-          "comparison": [
-            {
-              "top": 281.125,
-              "height": 377.796875,
-              "heading": 341.09375,
-              "matrix": 415.71875,
-              "result": 580.015625
-            },
-            {
-              "top": 281.125,
-              "height": 377.796875,
-              "heading": 341.09375,
-              "matrix": 415.71875,
-              "result": 580.015625
-            },
-            {
-              "top": 281.125,
-              "height": 377.796875,
-              "heading": 341.09375,
-              "matrix": 415.71875,
-              "result": 580.015625
-            }
-          ],
-          "viewportOverflow": false
+        "source": "/templates/html/architecture.html",
+        "source_design": {
+          "elements": 360,
+          "style_match": true,
+          "max_box_error_px": 6.103515625e-05
+        },
+        "bounds": {
+          "x": 80,
+          "y": 70,
+          "right": 1520,
+          "bottom": 880,
+          "width": 1440,
+          "height": 810,
+          "frame": {
+            "x": 80,
+            "y": 70,
+            "right": 1520,
+            "bottom": 880
+          },
+          "overflow": false,
+          "viewport": [
+            1600,
+            950
+          ]
         },
         "font": {
-          "text_nodes": 50,
+          "text_nodes": 58,
           "actual_family": [
             "Pretendard Variable"
           ],
-          "glyphs": 385,
-          "korean_latin_loads": [
-            1,
-            1,
-            1
-          ],
-          "letter_spacing": "-1pt"
-        }
-      },
-      {
-        "mode": "scroll",
-        "section": "motivation",
-        "viewport": [
-          1600,
-          950
-        ],
-        "geometry": {
-          "problems": [],
-          "headerBottom": 239.5625,
-          "contentTop": 263.5625,
-          "firstFigureTop": 263.5625,
-          "lastDetailBottom": 825.921875,
-          "captionTop": 849.921875,
-          "captionBottom": 901.46875,
-          "footerTop": 925.46875,
-          "flowCenters": [],
-          "arrows": [],
-          "comparison": [],
-          "viewportOverflow": false
-        },
-        "font": {
-          "text_nodes": 49,
-          "actual_family": [
-            "Pretendard Variable"
-          ],
-          "glyphs": 458,
-          "korean_latin_loads": [
-            1,
-            1,
-            1
-          ],
-          "letter_spacing": "-1pt"
-        }
-      },
-      {
-        "mode": "scroll",
-        "section": "locality",
-        "viewport": [
-          1600,
-          950
-        ],
-        "geometry": {
-          "problems": [],
-          "headerBottom": 220.25,
-          "contentTop": 244.25,
-          "firstFigureTop": 244.25,
-          "lastDetailBottom": 808.4375,
-          "captionTop": 832.4375,
-          "captionBottom": 883.984375,
-          "footerTop": 907.984375,
-          "flowCenters": [
-            463.453125,
-            463.453125,
-            463.453125
-          ],
-          "arrows": [
-            {
-              "y": 463.453125,
-              "left": 463.453125,
-              "right": 463.453125
-            },
-            {
-              "y": 463.453125,
-              "left": 463.453125,
-              "right": 463.453125
-            }
-          ],
-          "comparison": [],
-          "viewportOverflow": false
-        },
-        "font": {
-          "text_nodes": 79,
-          "actual_family": [
-            "Pretendard Variable"
-          ],
-          "glyphs": 549,
+          "glyphs": 596,
           "korean_latin_loads": [
             1,
             1,
@@ -543,308 +470,46 @@
           ],
           "letter_spacing": "-1pt"
         },
-        "math": {
-          "input": [
-            [
-              1,
-              2,
-              3,
-              1,
-              0
-            ],
-            [
-              4,
-              5,
-              6,
-              2,
-              1
-            ],
-            [
-              7,
-              8,
-              9,
-              3,
-              1
-            ],
-            [
-              2,
-              1,
-              0,
-              4,
-              2
-            ],
-            [
-              1,
-              3,
-              2,
-              1,
-              0
-            ]
-          ],
-          "products": [
-            1,
-            0,
-            -3,
-            4,
-            0,
-            -6,
-            7,
-            0,
-            -9
-          ],
-          "output": [
-            [
-              -6,
-              9,
-              16
-            ],
-            [
-              -2,
-              5,
-              11
-            ],
-            [
-              -1,
-              4,
-              8
-            ]
-          ],
-          "bias": 0,
-          "padding": 0,
-          "stride": 1,
-          "kernel_flipped": false
-        }
-      },
-      {
-        "mode": "scroll",
-        "section": "pipeline",
-        "viewport": [
-          1600,
-          950
-        ],
-        "geometry": {
-          "problems": [],
-          "headerBottom": 198.765625,
-          "contentTop": 222.765625,
-          "firstFigureTop": 222.765625,
-          "lastDetailBottom": 831.5625,
-          "captionTop": 855.5625,
-          "captionBottom": 907.109375,
-          "footerTop": 931.109375,
-          "flowCenters": [],
-          "arrows": [
-            {
-              "y": 432.546875,
-              "left": 432.546875,
-              "right": 432.546875
-            },
-            {
-              "y": 432.546875,
-              "left": 432.546875,
-              "right": 432.546875
-            }
-          ],
-          "comparison": [],
-          "viewportOverflow": false
-        },
-        "font": {
-          "text_nodes": 65,
-          "actual_family": [
-            "Pretendard Variable"
-          ],
-          "glyphs": 556,
-          "korean_latin_loads": [
-            1,
-            1,
-            1
-          ],
-          "letter_spacing": "-1pt"
-        }
-      },
-      {
-        "mode": "scroll",
-        "section": "experiment",
-        "viewport": [
-          1600,
-          950
-        ],
-        "geometry": {
-          "problems": [],
-          "headerBottom": 211.890625,
-          "contentTop": 235.890625,
-          "firstFigureTop": 235.890625,
-          "lastDetailBottom": 817.015625,
-          "captionTop": 841.015625,
-          "captionBottom": 892.5625,
-          "footerTop": 916.5625,
-          "flowCenters": [
-            437.890625,
-            437.890625,
-            437.890625
-          ],
-          "arrows": [
-            {
-              "y": 437.890625,
-              "left": 437.890625,
-              "right": 437.890625
-            },
-            {
-              "y": 437.890625,
-              "left": 437.890625,
-              "right": 437.890625
-            }
-          ],
-          "comparison": [],
-          "viewportOverflow": false
-        },
-        "font": {
-          "text_nodes": 85,
-          "actual_family": [
-            "Pretendard Variable"
-          ],
-          "glyphs": 552,
-          "korean_latin_loads": [
-            1,
-            1,
-            1
-          ],
-          "letter_spacing": "-1pt"
-        }
-      },
-      {
-        "mode": "scroll",
-        "section": "takeaway",
-        "viewport": [
-          1600,
-          950
-        ],
-        "geometry": {
-          "problems": [],
-          "headerBottom": 219.34375,
-          "contentTop": 243.34375,
-          "firstFigureTop": 243.34375,
-          "lastDetailBottom": 809.578125,
-          "captionTop": 833.578125,
-          "captionBottom": 885.125,
-          "footerTop": 909.125,
-          "flowCenters": [],
-          "arrows": [],
-          "comparison": [
-            {
-              "top": 243.34375,
-              "height": 381.671875,
-              "heading": 303.9375,
-              "matrix": 379.328125,
-              "result": 545.328125
-            },
-            {
-              "top": 243.34375,
-              "height": 381.671875,
-              "heading": 303.9375,
-              "matrix": 379.328125,
-              "result": 545.328125
-            },
-            {
-              "top": 243.34375,
-              "height": 381.671875,
-              "heading": 303.9375,
-              "matrix": 379.328125,
-              "result": 545.328125
-            }
-          ],
-          "viewportOverflow": false
-        },
-        "font": {
-          "text_nodes": 52,
-          "actual_family": [
-            "Pretendard Variable"
-          ],
-          "glyphs": 540,
-          "korean_latin_loads": [
-            1,
-            1,
-            1
-          ],
-          "letter_spacing": "-1pt"
-        }
+        "technical_passed": true
       },
       {
         "mode": "slides",
-        "section": "motivation",
+        "reference": "experiment",
         "viewport": [
-          1440,
-          810
+          1600,
+          950
         ],
-        "geometry": {
-          "problems": [],
-          "headerBottom": 200.5625,
-          "contentTop": 220.15625,
-          "firstFigureTop": 236.375,
-          "lastDetailBottom": 612.921875,
-          "captionTop": 642.21875,
-          "captionBottom": 684.328125,
-          "footerTop": 697.390625,
-          "flowCenters": [],
-          "arrows": [],
-          "comparison": [],
-          "viewportOverflow": false
+        "source": "/templates/html/experiment.html",
+        "source_design": {
+          "elements": 99,
+          "style_match": true,
+          "max_box_error_px": 0
+        },
+        "bounds": {
+          "x": 80,
+          "y": 70,
+          "right": 1520,
+          "bottom": 880,
+          "width": 1440,
+          "height": 810,
+          "frame": {
+            "x": 80,
+            "y": 70,
+            "right": 1520,
+            "bottom": 880
+          },
+          "overflow": false,
+          "viewport": [
+            1600,
+            950
+          ]
         },
         "font": {
-          "text_nodes": 47,
+          "text_nodes": 53,
           "actual_family": [
             "Pretendard Variable"
           ],
-          "glyphs": 342,
-          "korean_latin_loads": [
-            1,
-            1,
-            1
-          ],
-          "letter_spacing": "-1pt"
-        }
-      },
-      {
-        "mode": "slides",
-        "section": "locality",
-        "viewport": [
-          1440,
-          810
-        ],
-        "geometry": {
-          "problems": [],
-          "headerBottom": 200.5625,
-          "contentTop": 220.15625,
-          "firstFigureTop": 235.109375,
-          "lastDetailBottom": 614.1875,
-          "captionTop": 642.21875,
-          "captionBottom": 684.328125,
-          "footerTop": 697.390625,
-          "flowCenters": [
-            414.8828125,
-            414.8828125,
-            414.8828125
-          ],
-          "arrows": [
-            {
-              "y": 414.8828125,
-              "left": 414.8828125,
-              "right": 414.8828125
-            },
-            {
-              "y": 414.8828125,
-              "left": 414.8828125,
-              "right": 414.8828125
-            }
-          ],
-          "comparison": [],
-          "viewportOverflow": false
-        },
-        "font": {
-          "text_nodes": 77,
-          "actual_family": [
-            "Pretendard Variable"
-          ],
-          "glyphs": 417,
+          "glyphs": 514,
           "korean_latin_loads": [
             1,
             1,
@@ -852,308 +517,375 @@
           ],
           "letter_spacing": "-1pt"
         },
-        "math": {
-          "input": [
-            [
-              1,
-              2,
-              3,
-              1,
-              0
-            ],
-            [
-              4,
-              5,
-              6,
-              2,
-              1
-            ],
-            [
-              7,
-              8,
-              9,
-              3,
-              1
-            ],
-            [
-              2,
-              1,
-              0,
-              4,
-              2
-            ],
-            [
-              1,
-              3,
-              2,
-              1,
-              0
-            ]
-          ],
-          "products": [
-            1,
-            0,
-            -3,
-            4,
-            0,
-            -6,
-            7,
-            0,
-            -9
-          ],
-          "output": [
-            [
-              -6,
-              9,
-              16
-            ],
-            [
-              -2,
-              5,
-              11
-            ],
-            [
-              -1,
-              4,
-              8
-            ]
-          ],
-          "bias": 0,
-          "padding": 0,
-          "stride": 1,
-          "kernel_flipped": false
-        }
+        "technical_passed": true
       },
       {
         "mode": "slides",
-        "section": "pipeline",
+        "reference": "executive-summary",
         "viewport": [
-          1440,
-          810
+          1600,
+          950
         ],
-        "geometry": {
-          "problems": [],
-          "headerBottom": 200.5625,
-          "contentTop": 220.15625,
-          "firstFigureTop": 217.15625,
-          "lastDetailBottom": 632.15625,
-          "captionTop": 642.21875,
-          "captionBottom": 684.328125,
-          "footerTop": 697.390625,
-          "flowCenters": [],
-          "arrows": [
-            {
-              "y": 388.90643310546875,
-              "left": 388.90625,
-              "right": 388.90625
-            },
-            {
-              "y": 388.90643310546875,
-              "left": 388.90625,
-              "right": 388.90625
-            }
-          ],
-          "comparison": [],
-          "viewportOverflow": false
+        "source": "/templates/html/executive-summary.html",
+        "source_design": {
+          "elements": 89,
+          "style_match": true,
+          "max_box_error_px": 0
+        },
+        "bounds": {
+          "x": 80,
+          "y": 70,
+          "right": 1520,
+          "bottom": 880,
+          "width": 1440,
+          "height": 810,
+          "frame": {
+            "x": 80,
+            "y": 70,
+            "right": 1520,
+            "bottom": 880
+          },
+          "overflow": false,
+          "viewport": [
+            1600,
+            950
+          ]
         },
         "font": {
-          "text_nodes": 63,
+          "text_nodes": 45,
           "actual_family": [
             "Pretendard Variable"
           ],
-          "glyphs": 398,
+          "glyphs": 389,
           "korean_latin_loads": [
             1,
             1,
             1
           ],
           "letter_spacing": "-1pt"
-        }
+        },
+        "technical_passed": true
       },
       {
-        "mode": "slides",
-        "section": "experiment",
+        "mode": "scroll",
+        "reference": "concept",
         "viewport": [
-          1440,
-          810
+          1600,
+          950
         ],
-        "geometry": {
-          "problems": [],
-          "headerBottom": 200.5625,
-          "contentTop": 220.15625,
-          "firstFigureTop": 229.328125,
-          "lastDetailBottom": 619.96875,
-          "captionTop": 642.21875,
-          "captionBottom": 684.328125,
-          "footerTop": 697.390625,
-          "flowCenters": [
-            392.7421875,
-            392.7421875,
-            392.7421875
+        "source": "/templates/html/concept.html",
+        "source_design": {
+          "elements": 78,
+          "style_match": true,
+          "max_box_error_px": 0
+        },
+        "bounds": {
+          "x": 248,
+          "y": 68,
+          "right": 1576,
+          "bottom": 815,
+          "width": 1328,
+          "height": 747,
+          "frame": {
+            "x": 248,
+            "y": 68,
+            "right": 1576,
+            "bottom": 815
+          },
+          "overflow": false,
+          "viewport": [
+            1600,
+            950
+          ]
+        },
+        "font": {
+          "text_nodes": 25,
+          "actual_family": [
+            "Pretendard Variable"
           ],
-          "arrows": [
-            {
-              "y": 392.7421875,
-              "left": 392.7421875,
-              "right": 392.7421875
-            },
-            {
-              "y": 392.7421875,
-              "left": 392.7421875,
-              "right": 392.7421875
-            }
+          "glyphs": 316,
+          "korean_latin_loads": [
+            1,
+            1,
+            1
           ],
-          "comparison": [],
-          "viewportOverflow": false
+          "letter_spacing": "-1pt"
+        },
+        "technical_passed": true
+      },
+      {
+        "mode": "scroll",
+        "reference": "process",
+        "viewport": [
+          1600,
+          950
+        ],
+        "source": "/templates/html/process.html",
+        "source_design": {
+          "elements": 100,
+          "style_match": true,
+          "max_box_error_px": 6.103515625e-05
+        },
+        "bounds": {
+          "x": 248,
+          "y": 203,
+          "right": 1576,
+          "bottom": 950,
+          "width": 1328,
+          "height": 747,
+          "frame": {
+            "x": 248,
+            "y": 203,
+            "right": 1576,
+            "bottom": 950
+          },
+          "overflow": false,
+          "viewport": [
+            1600,
+            950
+          ]
+        },
+        "font": {
+          "text_nodes": 31,
+          "actual_family": [
+            "Pretendard Variable"
+          ],
+          "glyphs": 268,
+          "korean_latin_loads": [
+            1,
+            1,
+            1
+          ],
+          "letter_spacing": "-1pt"
+        },
+        "technical_passed": true
+      },
+      {
+        "mode": "scroll",
+        "reference": "comparison",
+        "viewport": [
+          1600,
+          950
+        ],
+        "source": "/templates/html/comparison.html",
+        "source_design": {
+          "elements": 161,
+          "style_match": true,
+          "max_box_error_px": 6.103515625e-05
+        },
+        "bounds": {
+          "x": 248,
+          "y": 135,
+          "right": 1576,
+          "bottom": 882,
+          "width": 1328,
+          "height": 747,
+          "frame": {
+            "x": 248,
+            "y": 135,
+            "right": 1576,
+            "bottom": 882
+          },
+          "overflow": false,
+          "viewport": [
+            1600,
+            950
+          ]
+        },
+        "font": {
+          "text_nodes": 60,
+          "actual_family": [
+            "Pretendard Variable"
+          ],
+          "glyphs": 565,
+          "korean_latin_loads": [
+            1,
+            1,
+            1
+          ],
+          "letter_spacing": "-1pt"
+        },
+        "technical_passed": true
+      },
+      {
+        "mode": "scroll",
+        "reference": "step-by-step",
+        "viewport": [
+          1600,
+          950
+        ],
+        "source": "/templates/html/step-by-step.html",
+        "source_design": {
+          "elements": 175,
+          "style_match": true,
+          "max_box_error_px": 0.0001220703125
+        },
+        "bounds": {
+          "x": 248,
+          "y": 203,
+          "right": 1576,
+          "bottom": 950,
+          "width": 1328,
+          "height": 747,
+          "frame": {
+            "x": 248,
+            "y": 203,
+            "right": 1576,
+            "bottom": 950
+          },
+          "overflow": false,
+          "viewport": [
+            1600,
+            950
+          ]
+        },
+        "font": {
+          "text_nodes": 111,
+          "actual_family": [
+            "Pretendard Variable"
+          ],
+          "glyphs": 820,
+          "korean_latin_loads": [
+            1,
+            1,
+            1
+          ],
+          "letter_spacing": "-1pt"
+        },
+        "technical_passed": true
+      },
+      {
+        "mode": "scroll",
+        "reference": "interactive",
+        "viewport": [
+          1600,
+          950
+        ],
+        "source": "/templates/html/interactive.html",
+        "source_design": {
+          "elements": 163,
+          "style_match": true,
+          "max_box_error_px": 0
+        },
+        "bounds": {
+          "x": 248,
+          "y": 135,
+          "right": 1576,
+          "bottom": 882,
+          "width": 1328,
+          "height": 747,
+          "frame": {
+            "x": 248,
+            "y": 135,
+            "right": 1576,
+            "bottom": 882
+          },
+          "overflow": false,
+          "viewport": [
+            1600,
+            950
+          ]
         },
         "font": {
           "text_nodes": 83,
           "actual_family": [
             "Pretendard Variable"
           ],
-          "glyphs": 445,
+          "glyphs": 544,
           "korean_latin_loads": [
             1,
             1,
             1
           ],
           "letter_spacing": "-1pt"
-        }
-      },
-      {
-        "mode": "slides",
-        "section": "takeaway",
-        "viewport": [
-          1440,
-          810
-        ],
-        "geometry": {
-          "problems": [],
-          "headerBottom": 200.5625,
-          "contentTop": 220.15625,
-          "firstFigureTop": 244.15625,
-          "lastDetailBottom": 605.15625,
-          "captionTop": 642.21875,
-          "captionBottom": 684.328125,
-          "footerTop": 697.390625,
-          "flowCenters": [],
-          "arrows": [],
-          "comparison": [
-            {
-              "top": 244.15625,
-              "height": 312.4375,
-              "heading": 293.828125,
-              "matrix": 355.453125,
-              "result": 491.109375
-            },
-            {
-              "top": 244.15625,
-              "height": 312.4375,
-              "heading": 293.828125,
-              "matrix": 355.453125,
-              "result": 491.109375
-            },
-            {
-              "top": 244.15625,
-              "height": 312.4375,
-              "heading": 293.828125,
-              "matrix": 355.453125,
-              "result": 491.109375
-            }
-          ],
-          "viewportOverflow": false
         },
-        "font": {
-          "text_nodes": 50,
-          "actual_family": [
-            "Pretendard Variable"
-          ],
-          "glyphs": 385,
-          "korean_latin_loads": [
-            1,
-            1,
-            1
-          ],
-          "letter_spacing": "-1pt"
-        }
+        "technical_passed": true
       },
       {
         "mode": "scroll",
-        "section": "motivation",
+        "reference": "architecture",
         "viewport": [
-          1440,
-          810
+          1600,
+          950
         ],
-        "geometry": {
-          "problems": [],
-          "headerBottom": 203.5625,
-          "contentTop": 227.5625,
-          "firstFigureTop": 227.5625,
-          "lastDetailBottom": 789.921875,
-          "captionTop": 813.921875,
-          "captionBottom": 865.46875,
-          "footerTop": 889.46875,
-          "flowCenters": [],
-          "arrows": [],
-          "comparison": [],
-          "viewportOverflow": false
+        "source": "/templates/html/architecture.html",
+        "source_design": {
+          "elements": 360,
+          "style_match": true,
+          "max_box_error_px": 6.103515625e-05
+        },
+        "bounds": {
+          "x": 248,
+          "y": 203,
+          "right": 1576,
+          "bottom": 950,
+          "width": 1328,
+          "height": 747,
+          "frame": {
+            "x": 248,
+            "y": 203,
+            "right": 1576,
+            "bottom": 950
+          },
+          "overflow": false,
+          "viewport": [
+            1600,
+            950
+          ]
         },
         "font": {
-          "text_nodes": 49,
+          "text_nodes": 58,
           "actual_family": [
             "Pretendard Variable"
           ],
-          "glyphs": 458,
+          "glyphs": 596,
           "korean_latin_loads": [
             1,
             1,
             1
           ],
           "letter_spacing": "-1pt"
-        }
+        },
+        "technical_passed": true
       },
       {
         "mode": "scroll",
-        "section": "locality",
+        "reference": "experiment",
         "viewport": [
-          1440,
-          810
+          1600,
+          950
         ],
-        "geometry": {
-          "problems": [],
-          "headerBottom": 139.25,
-          "contentTop": 163.25,
-          "firstFigureTop": 163.25,
-          "lastDetailBottom": 750.625,
-          "captionTop": 774.625,
-          "captionBottom": 826.171875,
-          "footerTop": 850.171875,
-          "flowCenters": [
-            382.453125,
-            382.453125,
-            382.453125
-          ],
-          "arrows": [
-            {
-              "y": 382.453125,
-              "left": 382.453125,
-              "right": 382.453125
-            },
-            {
-              "y": 382.453125,
-              "left": 382.453125,
-              "right": 382.453125
-            }
-          ],
-          "comparison": [],
-          "viewportOverflow": false
+        "source": "/templates/html/experiment.html",
+        "source_design": {
+          "elements": 99,
+          "style_match": true,
+          "max_box_error_px": 0
+        },
+        "bounds": {
+          "x": 248,
+          "y": 135,
+          "right": 1576,
+          "bottom": 882,
+          "width": 1328,
+          "height": 747,
+          "frame": {
+            "x": 248,
+            "y": 135,
+            "right": 1576,
+            "bottom": 882
+          },
+          "overflow": false,
+          "viewport": [
+            1600,
+            950
+          ]
         },
         "font": {
-          "text_nodes": 79,
+          "text_nodes": 53,
           "actual_family": [
             "Pretendard Variable"
           ],
-          "glyphs": 549,
+          "glyphs": 514,
           "korean_latin_loads": [
             1,
             1,
@@ -1161,308 +893,187 @@
           ],
           "letter_spacing": "-1pt"
         },
-        "math": {
-          "input": [
-            [
-              1,
-              2,
-              3,
-              1,
-              0
-            ],
-            [
-              4,
-              5,
-              6,
-              2,
-              1
-            ],
-            [
-              7,
-              8,
-              9,
-              3,
-              1
-            ],
-            [
-              2,
-              1,
-              0,
-              4,
-              2
-            ],
-            [
-              1,
-              3,
-              2,
-              1,
-              0
-            ]
-          ],
-          "products": [
-            1,
-            0,
-            -3,
-            4,
-            0,
-            -6,
-            7,
-            0,
-            -9
-          ],
-          "output": [
-            [
-              -6,
-              9,
-              16
-            ],
-            [
-              -2,
-              5,
-              11
-            ],
-            [
-              -1,
-              4,
-              8
-            ]
-          ],
-          "bias": 0,
-          "padding": 0,
-          "stride": 1,
-          "kernel_flipped": false
-        }
+        "technical_passed": true
       },
       {
         "mode": "scroll",
-        "section": "pipeline",
+        "reference": "executive-summary",
+        "viewport": [
+          1600,
+          950
+        ],
+        "source": "/templates/html/executive-summary.html",
+        "source_design": {
+          "elements": 89,
+          "style_match": true,
+          "max_box_error_px": 0
+        },
+        "bounds": {
+          "x": 248,
+          "y": 203,
+          "right": 1576,
+          "bottom": 950,
+          "width": 1328,
+          "height": 747,
+          "frame": {
+            "x": 248,
+            "y": 203,
+            "right": 1576,
+            "bottom": 950
+          },
+          "overflow": false,
+          "viewport": [
+            1600,
+            950
+          ]
+        },
+        "font": {
+          "text_nodes": 45,
+          "actual_family": [
+            "Pretendard Variable"
+          ],
+          "glyphs": 389,
+          "korean_latin_loads": [
+            1,
+            1,
+            1
+          ],
+          "letter_spacing": "-1pt"
+        },
+        "technical_passed": true
+      },
+      {
+        "mode": "slides",
+        "reference": "concept",
         "viewport": [
           1440,
           810
         ],
-        "geometry": {
-          "problems": [],
-          "headerBottom": 116.953125,
-          "contentTop": 140.953125,
-          "firstFigureTop": 140.953125,
-          "lastDetailBottom": 772.9375,
-          "captionTop": 796.9375,
-          "captionBottom": 848.484375,
-          "footerTop": 872.484375,
-          "flowCenters": [],
-          "arrows": [
-            {
-              "y": 350.734375,
-              "left": 350.734375,
-              "right": 350.734375
-            },
-            {
-              "y": 350.734375,
-              "left": 350.734375,
-              "right": 350.734375
-            }
-          ],
-          "comparison": [],
-          "viewportOverflow": false
+        "source": "/templates/html/concept.html",
+        "source_design": {
+          "elements": 78,
+          "style_match": true,
+          "max_box_error_px": 0
+        },
+        "bounds": {
+          "x": 99.5625,
+          "y": 56,
+          "right": 1340.4375,
+          "bottom": 753.984375,
+          "width": 1240.875,
+          "height": 697.984375,
+          "frame": {
+            "x": 99.5625,
+            "y": 56,
+            "right": 1340.5625,
+            "bottom": 754.0625
+          },
+          "overflow": false,
+          "viewport": [
+            1440,
+            810
+          ]
         },
         "font": {
-          "text_nodes": 65,
+          "text_nodes": 25,
           "actual_family": [
             "Pretendard Variable"
           ],
-          "glyphs": 555,
+          "glyphs": 316,
           "korean_latin_loads": [
             1,
             1,
             1
           ],
           "letter_spacing": "-1pt"
-        }
+        },
+        "technical_passed": true
       },
       {
-        "mode": "scroll",
-        "section": "experiment",
+        "mode": "slides",
+        "reference": "process",
         "viewport": [
           1440,
           810
         ],
-        "geometry": {
-          "problems": [],
-          "headerBottom": 142.265625,
-          "contentTop": 166.265625,
-          "firstFigureTop": 166.265625,
-          "lastDetailBottom": 747.390625,
-          "captionTop": 771.390625,
-          "captionBottom": 822.9375,
-          "footerTop": 846.9375,
-          "flowCenters": [
-            368.265625,
-            368.265625,
-            368.265625
-          ],
-          "arrows": [
-            {
-              "y": 368.265625,
-              "left": 368.265625,
-              "right": 368.265625
-            },
-            {
-              "y": 368.265625,
-              "left": 368.265625,
-              "right": 368.265625
-            }
-          ],
-          "comparison": [],
-          "viewportOverflow": false
+        "source": "/templates/html/process.html",
+        "source_design": {
+          "elements": 100,
+          "style_match": true,
+          "max_box_error_px": 6.103515625e-05
+        },
+        "bounds": {
+          "x": 99.5625,
+          "y": 56,
+          "right": 1340.4375,
+          "bottom": 753.984375,
+          "width": 1240.875,
+          "height": 697.984375,
+          "frame": {
+            "x": 99.5625,
+            "y": 56,
+            "right": 1340.5625,
+            "bottom": 754.0625
+          },
+          "overflow": false,
+          "viewport": [
+            1440,
+            810
+          ]
         },
         "font": {
-          "text_nodes": 85,
+          "text_nodes": 31,
           "actual_family": [
             "Pretendard Variable"
           ],
-          "glyphs": 552,
+          "glyphs": 268,
           "korean_latin_loads": [
             1,
             1,
             1
           ],
           "letter_spacing": "-1pt"
-        }
+        },
+        "technical_passed": true
       },
       {
-        "mode": "scroll",
-        "section": "takeaway",
+        "mode": "slides",
+        "reference": "comparison",
         "viewport": [
           1440,
           810
         ],
-        "geometry": {
-          "problems": [],
-          "headerBottom": 149.71875,
-          "contentTop": 173.71875,
-          "firstFigureTop": 173.71875,
-          "lastDetailBottom": 739.953125,
-          "captionTop": 763.953125,
-          "captionBottom": 815.5,
-          "footerTop": 839.5,
-          "flowCenters": [],
-          "arrows": [],
-          "comparison": [
-            {
-              "top": 173.71875,
-              "height": 381.671875,
-              "heading": 234.3125,
-              "matrix": 309.703125,
-              "result": 475.703125
-            },
-            {
-              "top": 173.71875,
-              "height": 381.671875,
-              "heading": 234.3125,
-              "matrix": 309.703125,
-              "result": 475.703125
-            },
-            {
-              "top": 173.71875,
-              "height": 381.671875,
-              "heading": 234.3125,
-              "matrix": 309.703125,
-              "result": 475.703125
-            }
-          ],
-          "viewportOverflow": false
+        "source": "/templates/html/comparison.html",
+        "source_design": {
+          "elements": 161,
+          "style_match": true,
+          "max_box_error_px": 6.103515625e-05
+        },
+        "bounds": {
+          "x": 99.5625,
+          "y": 56,
+          "right": 1340.4375,
+          "bottom": 753.984375,
+          "width": 1240.875,
+          "height": 697.984375,
+          "frame": {
+            "x": 99.5625,
+            "y": 56,
+            "right": 1340.5625,
+            "bottom": 754.0625
+          },
+          "overflow": false,
+          "viewport": [
+            1440,
+            810
+          ]
         },
         "font": {
-          "text_nodes": 52,
+          "text_nodes": 60,
           "actual_family": [
             "Pretendard Variable"
           ],
-          "glyphs": 541,
-          "korean_latin_loads": [
-            1,
-            1,
-            1
-          ],
-          "letter_spacing": "-1pt"
-        }
-      },
-      {
-        "mode": "slides",
-        "section": "motivation",
-        "viewport": [
-          1366,
-          768
-        ],
-        "geometry": {
-          "problems": [],
-          "headerBottom": 192.421875,
-          "contentTop": 210.765625,
-          "firstFigureTop": 225.875,
-          "lastDetailBottom": 578.71875,
-          "captionTop": 606.0625,
-          "captionBottom": 645.484375,
-          "footerTop": 657.71875,
-          "flowCenters": [],
-          "arrows": [],
-          "comparison": [],
-          "viewportOverflow": false
-        },
-        "font": {
-          "text_nodes": 47,
-          "actual_family": [
-            "Pretendard Variable"
-          ],
-          "glyphs": 342,
-          "korean_latin_loads": [
-            1,
-            1,
-            1
-          ],
-          "letter_spacing": "-1pt"
-        }
-      },
-      {
-        "mode": "slides",
-        "section": "locality",
-        "viewport": [
-          1366,
-          768
-        ],
-        "geometry": {
-          "problems": [],
-          "headerBottom": 192.421875,
-          "contentTop": 210.765625,
-          "firstFigureTop": 224.5,
-          "lastDetailBottom": 580.078125,
-          "captionTop": 606.0625,
-          "captionBottom": 645.484375,
-          "footerTop": 657.71875,
-          "flowCenters": [
-            393.1015625,
-            393.1015625,
-            393.1015625
-          ],
-          "arrows": [
-            {
-              "y": 393.1015625,
-              "left": 393.1015625,
-              "right": 393.1015625
-            },
-            {
-              "y": 393.1015625,
-              "left": 393.1015625,
-              "right": 393.1015625
-            }
-          ],
-          "comparison": [],
-          "viewportOverflow": false
-        },
-        "font": {
-          "text_nodes": 77,
-          "actual_family": [
-            "Pretendard Variable"
-          ],
-          "glyphs": 417,
+          "glyphs": 565,
           "korean_latin_loads": [
             1,
             1,
@@ -1470,308 +1081,140 @@
           ],
           "letter_spacing": "-1pt"
         },
-        "math": {
-          "input": [
-            [
-              1,
-              2,
-              3,
-              1,
-              0
-            ],
-            [
-              4,
-              5,
-              6,
-              2,
-              1
-            ],
-            [
-              7,
-              8,
-              9,
-              3,
-              1
-            ],
-            [
-              2,
-              1,
-              0,
-              4,
-              2
-            ],
-            [
-              1,
-              3,
-              2,
-              1,
-              0
-            ]
-          ],
-          "products": [
-            1,
-            0,
-            -3,
-            4,
-            0,
-            -6,
-            7,
-            0,
-            -9
-          ],
-          "output": [
-            [
-              -6,
-              9,
-              16
-            ],
-            [
-              -2,
-              5,
-              11
-            ],
-            [
-              -1,
-              4,
-              8
-            ]
-          ],
-          "bias": 0,
-          "padding": 0,
-          "stride": 1,
-          "kernel_flipped": false
-        }
+        "technical_passed": true
       },
       {
         "mode": "slides",
-        "section": "pipeline",
+        "reference": "step-by-step",
         "viewport": [
-          1366,
-          768
+          1440,
+          810
         ],
-        "geometry": {
-          "problems": [],
-          "headerBottom": 192.421875,
-          "contentTop": 210.765625,
-          "firstFigureTop": 207.78125,
-          "lastDetailBottom": 596.8125,
-          "captionTop": 606.0625,
-          "captionBottom": 645.484375,
-          "footerTop": 657.71875,
-          "flowCenters": [],
-          "arrows": [
-            {
-              "y": 368.72662353515625,
-              "left": 368.7265625,
-              "right": 368.7265625
-            },
-            {
-              "y": 368.72662353515625,
-              "left": 368.7265625,
-              "right": 368.7265625
-            }
-          ],
-          "comparison": [],
-          "viewportOverflow": false
+        "source": "/templates/html/step-by-step.html",
+        "source_design": {
+          "elements": 175,
+          "style_match": true,
+          "max_box_error_px": 0.0001220703125
+        },
+        "bounds": {
+          "x": 99.5625,
+          "y": 56,
+          "right": 1340.4375,
+          "bottom": 753.984375,
+          "width": 1240.875,
+          "height": 697.984375,
+          "frame": {
+            "x": 99.5625,
+            "y": 56,
+            "right": 1340.5625,
+            "bottom": 754.0625
+          },
+          "overflow": false,
+          "viewport": [
+            1440,
+            810
+          ]
         },
         "font": {
-          "text_nodes": 63,
+          "text_nodes": 111,
           "actual_family": [
             "Pretendard Variable"
           ],
-          "glyphs": 398,
+          "glyphs": 820,
           "korean_latin_loads": [
             1,
             1,
             1
           ],
           "letter_spacing": "-1pt"
-        }
+        },
+        "technical_passed": true
       },
       {
         "mode": "slides",
-        "section": "experiment",
+        "reference": "interactive",
         "viewport": [
-          1366,
-          768
+          1440,
+          810
         ],
-        "geometry": {
-          "problems": [],
-          "headerBottom": 192.421875,
-          "contentTop": 210.765625,
-          "firstFigureTop": 218.65625,
-          "lastDetailBottom": 585.921875,
-          "captionTop": 606.0625,
-          "captionBottom": 645.484375,
-          "footerTop": 657.71875,
-          "flowCenters": [
-            372.8203125,
-            372.8203125,
-            372.8203125
-          ],
-          "arrows": [
-            {
-              "y": 372.8203125,
-              "left": 372.8203125,
-              "right": 372.8203125
-            },
-            {
-              "y": 372.8203125,
-              "left": 372.8203125,
-              "right": 372.8203125
-            }
-          ],
-          "comparison": [],
-          "viewportOverflow": false
+        "source": "/templates/html/interactive.html",
+        "source_design": {
+          "elements": 163,
+          "style_match": true,
+          "max_box_error_px": 0
+        },
+        "bounds": {
+          "x": 99.5625,
+          "y": 56,
+          "right": 1340.4375,
+          "bottom": 753.984375,
+          "width": 1240.875,
+          "height": 697.984375,
+          "frame": {
+            "x": 99.5625,
+            "y": 56,
+            "right": 1340.5625,
+            "bottom": 754.0625
+          },
+          "overflow": false,
+          "viewport": [
+            1440,
+            810
+          ]
         },
         "font": {
           "text_nodes": 83,
           "actual_family": [
             "Pretendard Variable"
           ],
-          "glyphs": 445,
+          "glyphs": 544,
           "korean_latin_loads": [
             1,
             1,
             1
           ],
           "letter_spacing": "-1pt"
-        }
+        },
+        "technical_passed": true
       },
       {
         "mode": "slides",
-        "section": "takeaway",
+        "reference": "architecture",
         "viewport": [
-          1366,
-          768
+          1440,
+          810
         ],
-        "geometry": {
-          "problems": [],
-          "headerBottom": 192.421875,
-          "contentTop": 210.765625,
-          "firstFigureTop": 233.125,
-          "lastDetailBottom": 571.453125,
-          "captionTop": 606.0625,
-          "captionBottom": 645.484375,
-          "footerTop": 657.71875,
-          "flowCenters": [],
-          "arrows": [],
-          "comparison": [
-            {
-              "top": 233.125,
-              "height": 292.734375,
-              "heading": 279.71875,
-              "matrix": 337.40625,
-              "result": 464.40625
-            },
-            {
-              "top": 233.125,
-              "height": 292.734375,
-              "heading": 279.71875,
-              "matrix": 337.40625,
-              "result": 464.40625
-            },
-            {
-              "top": 233.125,
-              "height": 292.734375,
-              "heading": 279.71875,
-              "matrix": 337.40625,
-              "result": 464.40625
-            }
-          ],
-          "viewportOverflow": false
+        "source": "/templates/html/architecture.html",
+        "source_design": {
+          "elements": 360,
+          "style_match": true,
+          "max_box_error_px": 6.103515625e-05
+        },
+        "bounds": {
+          "x": 99.5625,
+          "y": 56,
+          "right": 1340.4375,
+          "bottom": 753.984375,
+          "width": 1240.875,
+          "height": 697.984375,
+          "frame": {
+            "x": 99.5625,
+            "y": 56,
+            "right": 1340.5625,
+            "bottom": 754.0625
+          },
+          "overflow": false,
+          "viewport": [
+            1440,
+            810
+          ]
         },
         "font": {
-          "text_nodes": 50,
+          "text_nodes": 58,
           "actual_family": [
             "Pretendard Variable"
           ],
-          "glyphs": 385,
-          "korean_latin_loads": [
-            1,
-            1,
-            1
-          ],
-          "letter_spacing": "-1pt"
-        }
-      },
-      {
-        "mode": "scroll",
-        "section": "motivation",
-        "viewport": [
-          1366,
-          768
-        ],
-        "geometry": {
-          "problems": [],
-          "headerBottom": 203.5625,
-          "contentTop": 227.5625,
-          "firstFigureTop": 227.5625,
-          "lastDetailBottom": 789.921875,
-          "captionTop": 813.921875,
-          "captionBottom": 865.46875,
-          "footerTop": 889.46875,
-          "flowCenters": [],
-          "arrows": [],
-          "comparison": [],
-          "viewportOverflow": false
-        },
-        "font": {
-          "text_nodes": 49,
-          "actual_family": [
-            "Pretendard Variable"
-          ],
-          "glyphs": 458,
-          "korean_latin_loads": [
-            1,
-            1,
-            1
-          ],
-          "letter_spacing": "-1pt"
-        }
-      },
-      {
-        "mode": "scroll",
-        "section": "locality",
-        "viewport": [
-          1366,
-          768
-        ],
-        "geometry": {
-          "problems": [],
-          "headerBottom": 23.25,
-          "contentTop": 47.25,
-          "firstFigureTop": 47.25,
-          "lastDetailBottom": 824.9375,
-          "captionTop": 848.9375,
-          "captionBottom": 900.484375,
-          "footerTop": 924.484375,
-          "flowCenters": [
-            241.84375,
-            241.84375,
-            241.84375
-          ],
-          "arrows": [
-            {
-              "y": 241.84375,
-              "left": 241.84375,
-              "right": 241.84375
-            },
-            {
-              "y": 241.84375,
-              "left": 241.84375,
-              "right": 241.84375
-            }
-          ],
-          "comparison": [],
-          "viewportOverflow": false
-        },
-        "font": {
-          "text_nodes": 79,
-          "actual_family": [
-            "Pretendard Variable"
-          ],
-          "glyphs": 549,
+          "glyphs": 596,
           "korean_latin_loads": [
             1,
             1,
@@ -1779,308 +1222,46 @@
           ],
           "letter_spacing": "-1pt"
         },
-        "math": {
-          "input": [
-            [
-              1,
-              2,
-              3,
-              1,
-              0
-            ],
-            [
-              4,
-              5,
-              6,
-              2,
-              1
-            ],
-            [
-              7,
-              8,
-              9,
-              3,
-              1
-            ],
-            [
-              2,
-              1,
-              0,
-              4,
-              2
-            ],
-            [
-              1,
-              3,
-              2,
-              1,
-              0
-            ]
-          ],
-          "products": [
-            1,
-            0,
-            -3,
-            4,
-            0,
-            -6,
-            7,
-            0,
-            -9
-          ],
-          "output": [
-            [
-              -6,
-              9,
-              16
-            ],
-            [
-              -2,
-              5,
-              11
-            ],
-            [
-              -1,
-              4,
-              8
-            ]
-          ],
-          "bias": 0,
-          "padding": 0,
-          "stride": 1,
-          "kernel_flipped": false
-        }
-      },
-      {
-        "mode": "scroll",
-        "section": "pipeline",
-        "viewport": [
-          1366,
-          768
-        ],
-        "geometry": {
-          "problems": [],
-          "headerBottom": 98.265625,
-          "contentTop": 122.265625,
-          "firstFigureTop": 122.265625,
-          "lastDetailBottom": 749.90625,
-          "captionTop": 773.90625,
-          "captionBottom": 825.453125,
-          "footerTop": 849.453125,
-          "flowCenters": [],
-          "arrows": [
-            {
-              "y": 332.046875,
-              "left": 332.046875,
-              "right": 332.046875
-            },
-            {
-              "y": 332.046875,
-              "left": 332.046875,
-              "right": 332.046875
-            }
-          ],
-          "comparison": [],
-          "viewportOverflow": false
-        },
-        "font": {
-          "text_nodes": 65,
-          "actual_family": [
-            "Pretendard Variable"
-          ],
-          "glyphs": 556,
-          "korean_latin_loads": [
-            1,
-            1,
-            1
-          ],
-          "letter_spacing": "-1pt"
-        }
-      },
-      {
-        "mode": "scroll",
-        "section": "experiment",
-        "viewport": [
-          1366,
-          768
-        ],
-        "geometry": {
-          "problems": [],
-          "headerBottom": 25.234375,
-          "contentTop": 49.234375,
-          "firstFigureTop": 49.234375,
-          "lastDetailBottom": 823.140625,
-          "captionTop": 847.140625,
-          "captionBottom": 898.6875,
-          "footerTop": 922.6875,
-          "flowCenters": [
-            251.234375,
-            251.234375,
-            251.234375
-          ],
-          "arrows": [
-            {
-              "y": 251.234375,
-              "left": 251.234375,
-              "right": 251.234375
-            },
-            {
-              "y": 251.234375,
-              "left": 251.234375,
-              "right": 251.234375
-            }
-          ],
-          "comparison": [],
-          "viewportOverflow": false
-        },
-        "font": {
-          "text_nodes": 85,
-          "actual_family": [
-            "Pretendard Variable"
-          ],
-          "glyphs": 552,
-          "korean_latin_loads": [
-            1,
-            1,
-            1
-          ],
-          "letter_spacing": "-1pt"
-        }
-      },
-      {
-        "mode": "scroll",
-        "section": "takeaway",
-        "viewport": [
-          1366,
-          768
-        ],
-        "geometry": {
-          "problems": [],
-          "headerBottom": 134.46875,
-          "contentTop": 158.46875,
-          "firstFigureTop": 158.46875,
-          "lastDetailBottom": 712.703125,
-          "captionTop": 736.703125,
-          "captionBottom": 788.25,
-          "footerTop": 812.25,
-          "flowCenters": [],
-          "arrows": [],
-          "comparison": [
-            {
-              "top": 158.46875,
-              "height": 369.671875,
-              "heading": 213.0625,
-              "matrix": 288.453125,
-              "result": 454.453125
-            },
-            {
-              "top": 158.46875,
-              "height": 369.671875,
-              "heading": 213.0625,
-              "matrix": 288.453125,
-              "result": 454.453125
-            },
-            {
-              "top": 158.46875,
-              "height": 369.671875,
-              "heading": 213.0625,
-              "matrix": 288.453125,
-              "result": 454.453125
-            }
-          ],
-          "viewportOverflow": false
-        },
-        "font": {
-          "text_nodes": 52,
-          "actual_family": [
-            "Pretendard Variable"
-          ],
-          "glyphs": 541,
-          "korean_latin_loads": [
-            1,
-            1,
-            1
-          ],
-          "letter_spacing": "-1pt"
-        }
+        "technical_passed": true
       },
       {
         "mode": "slides",
-        "section": "motivation",
+        "reference": "experiment",
         "viewport": [
-          1280,
-          720
+          1440,
+          810
         ],
-        "geometry": {
-          "problems": [],
-          "headerBottom": 183.09375,
-          "contentTop": 200.03125,
-          "firstFigureTop": 213.78125,
-          "lastDetailBottom": 539.640625,
-          "captionTop": 564.703125,
-          "captionBottom": 601.09375,
-          "footerTop": 612.390625,
-          "flowCenters": [],
-          "arrows": [],
-          "comparison": [],
-          "viewportOverflow": false
+        "source": "/templates/html/experiment.html",
+        "source_design": {
+          "elements": 99,
+          "style_match": true,
+          "max_box_error_px": 0
+        },
+        "bounds": {
+          "x": 99.5625,
+          "y": 56,
+          "right": 1340.4375,
+          "bottom": 753.984375,
+          "width": 1240.875,
+          "height": 697.984375,
+          "frame": {
+            "x": 99.5625,
+            "y": 56,
+            "right": 1340.5625,
+            "bottom": 754.0625
+          },
+          "overflow": false,
+          "viewport": [
+            1440,
+            810
+          ]
         },
         "font": {
-          "text_nodes": 47,
+          "text_nodes": 53,
           "actual_family": [
             "Pretendard Variable"
           ],
-          "glyphs": 342,
-          "korean_latin_loads": [
-            1,
-            1,
-            1
-          ],
-          "letter_spacing": "-1pt"
-        }
-      },
-      {
-        "mode": "slides",
-        "section": "locality",
-        "viewport": [
-          1280,
-          720
-        ],
-        "geometry": {
-          "problems": [],
-          "headerBottom": 183.09375,
-          "contentTop": 200.03125,
-          "firstFigureTop": 212.25,
-          "lastDetailBottom": 541.1875,
-          "captionTop": 564.703125,
-          "captionBottom": 601.09375,
-          "footerTop": 612.390625,
-          "flowCenters": [
-            368.1640625,
-            368.1640625,
-            368.1640625
-          ],
-          "arrows": [
-            {
-              "y": 368.1640625,
-              "left": 368.1640625,
-              "right": 368.1640625
-            },
-            {
-              "y": 368.1640625,
-              "left": 368.1640625,
-              "right": 368.1640625
-            }
-          ],
-          "comparison": [],
-          "viewportOverflow": false
-        },
-        "font": {
-          "text_nodes": 77,
-          "actual_family": [
-            "Pretendard Variable"
-          ],
-          "glyphs": 417,
+          "glyphs": 514,
           "korean_latin_loads": [
             1,
             1,
@@ -2088,308 +1269,892 @@
           ],
           "letter_spacing": "-1pt"
         },
-        "math": {
-          "input": [
-            [
-              1,
-              2,
-              3,
-              1,
-              0
-            ],
-            [
-              4,
-              5,
-              6,
-              2,
-              1
-            ],
-            [
-              7,
-              8,
-              9,
-              3,
-              1
-            ],
-            [
-              2,
-              1,
-              0,
-              4,
-              2
-            ],
-            [
-              1,
-              3,
-              2,
-              1,
-              0
-            ]
-          ],
-          "products": [
-            1,
-            0,
-            -3,
-            4,
-            0,
-            -6,
-            7,
-            0,
-            -9
-          ],
-          "output": [
-            [
-              -6,
-              9,
-              16
-            ],
-            [
-              -2,
-              5,
-              11
-            ],
-            [
-              -1,
-              4,
-              8
-            ]
-          ],
-          "bias": 0,
-          "padding": 0,
-          "stride": 1,
-          "kernel_flipped": false
-        }
+        "technical_passed": true
       },
       {
         "mode": "slides",
-        "section": "pipeline",
+        "reference": "executive-summary",
         "viewport": [
-          1280,
-          720
+          1440,
+          810
         ],
-        "geometry": {
-          "problems": [],
-          "headerBottom": 183.09375,
-          "contentTop": 200.03125,
-          "firstFigureTop": 196.96875,
-          "lastDetailBottom": 556.46875,
-          "captionTop": 564.703125,
-          "captionBottom": 601.09375,
-          "footerTop": 612.390625,
-          "flowCenters": [],
-          "arrows": [
-            {
-              "y": 345.6408386230469,
-              "left": 345.640625,
-              "right": 345.640625
-            },
-            {
-              "y": 345.6408386230469,
-              "left": 345.640625,
-              "right": 345.640625
-            }
-          ],
-          "comparison": [],
-          "viewportOverflow": false
+        "source": "/templates/html/executive-summary.html",
+        "source_design": {
+          "elements": 89,
+          "style_match": true,
+          "max_box_error_px": 0
+        },
+        "bounds": {
+          "x": 99.5625,
+          "y": 56,
+          "right": 1340.4375,
+          "bottom": 753.984375,
+          "width": 1240.875,
+          "height": 697.984375,
+          "frame": {
+            "x": 99.5625,
+            "y": 56,
+            "right": 1340.5625,
+            "bottom": 754.0625
+          },
+          "overflow": false,
+          "viewport": [
+            1440,
+            810
+          ]
         },
         "font": {
-          "text_nodes": 63,
+          "text_nodes": 45,
           "actual_family": [
             "Pretendard Variable"
           ],
-          "glyphs": 398,
+          "glyphs": 389,
           "korean_latin_loads": [
             1,
             1,
             1
           ],
           "letter_spacing": "-1pt"
-        }
+        },
+        "technical_passed": true
       },
       {
-        "mode": "slides",
-        "section": "experiment",
+        "mode": "scroll",
+        "reference": "concept",
         "viewport": [
-          1280,
-          720
+          1440,
+          810
         ],
-        "geometry": {
-          "problems": [],
-          "headerBottom": 183.09375,
-          "contentTop": 200.03125,
-          "firstFigureTop": 206.828125,
-          "lastDetailBottom": 546.609375,
-          "captionTop": 564.703125,
-          "captionBottom": 601.09375,
-          "footerTop": 612.390625,
-          "flowCenters": [
-            349.4765625,
-            349.4765625,
-            349.4765625
+        "source": "/templates/html/concept.html",
+        "source_design": {
+          "elements": 78,
+          "style_match": true,
+          "max_box_error_px": 0
+        },
+        "bounds": {
+          "x": 248,
+          "y": 68,
+          "right": 1416,
+          "bottom": 725,
+          "width": 1168,
+          "height": 657,
+          "frame": {
+            "x": 248,
+            "y": 68,
+            "right": 1416,
+            "bottom": 725
+          },
+          "overflow": false,
+          "viewport": [
+            1440,
+            810
+          ]
+        },
+        "font": {
+          "text_nodes": 25,
+          "actual_family": [
+            "Pretendard Variable"
           ],
-          "arrows": [
-            {
-              "y": 349.4765625,
-              "left": 349.4765625,
-              "right": 349.4765625
-            },
-            {
-              "y": 349.4765625,
-              "left": 349.4765625,
-              "right": 349.4765625
-            }
+          "glyphs": 316,
+          "korean_latin_loads": [
+            1,
+            1,
+            1
           ],
-          "comparison": [],
-          "viewportOverflow": false
+          "letter_spacing": "-1pt"
+        },
+        "technical_passed": true
+      },
+      {
+        "mode": "scroll",
+        "reference": "process",
+        "viewport": [
+          1440,
+          810
+        ],
+        "source": "/templates/html/process.html",
+        "source_design": {
+          "elements": 100,
+          "style_match": true,
+          "max_box_error_px": 6.103515625e-05
+        },
+        "bounds": {
+          "x": 248,
+          "y": 153,
+          "right": 1416,
+          "bottom": 810,
+          "width": 1168,
+          "height": 657,
+          "frame": {
+            "x": 248,
+            "y": 153,
+            "right": 1416,
+            "bottom": 810
+          },
+          "overflow": false,
+          "viewport": [
+            1440,
+            810
+          ]
+        },
+        "font": {
+          "text_nodes": 31,
+          "actual_family": [
+            "Pretendard Variable"
+          ],
+          "glyphs": 268,
+          "korean_latin_loads": [
+            1,
+            1,
+            1
+          ],
+          "letter_spacing": "-1pt"
+        },
+        "technical_passed": true
+      },
+      {
+        "mode": "scroll",
+        "reference": "comparison",
+        "viewport": [
+          1440,
+          810
+        ],
+        "source": "/templates/html/comparison.html",
+        "source_design": {
+          "elements": 161,
+          "style_match": true,
+          "max_box_error_px": 6.103515625e-05
+        },
+        "bounds": {
+          "x": 248,
+          "y": 110,
+          "right": 1416,
+          "bottom": 767,
+          "width": 1168,
+          "height": 657,
+          "frame": {
+            "x": 248,
+            "y": 110,
+            "right": 1416,
+            "bottom": 767
+          },
+          "overflow": false,
+          "viewport": [
+            1440,
+            810
+          ]
+        },
+        "font": {
+          "text_nodes": 60,
+          "actual_family": [
+            "Pretendard Variable"
+          ],
+          "glyphs": 565,
+          "korean_latin_loads": [
+            1,
+            1,
+            1
+          ],
+          "letter_spacing": "-1pt"
+        },
+        "technical_passed": true
+      },
+      {
+        "mode": "scroll",
+        "reference": "step-by-step",
+        "viewport": [
+          1440,
+          810
+        ],
+        "source": "/templates/html/step-by-step.html",
+        "source_design": {
+          "elements": 175,
+          "style_match": true,
+          "max_box_error_px": 0.0001220703125
+        },
+        "bounds": {
+          "x": 248,
+          "y": 153,
+          "right": 1416,
+          "bottom": 810,
+          "width": 1168,
+          "height": 657,
+          "frame": {
+            "x": 248,
+            "y": 153,
+            "right": 1416,
+            "bottom": 810
+          },
+          "overflow": false,
+          "viewport": [
+            1440,
+            810
+          ]
+        },
+        "font": {
+          "text_nodes": 111,
+          "actual_family": [
+            "Pretendard Variable"
+          ],
+          "glyphs": 820,
+          "korean_latin_loads": [
+            1,
+            1,
+            1
+          ],
+          "letter_spacing": "-1pt"
+        },
+        "technical_passed": true
+      },
+      {
+        "mode": "scroll",
+        "reference": "interactive",
+        "viewport": [
+          1440,
+          810
+        ],
+        "source": "/templates/html/interactive.html",
+        "source_design": {
+          "elements": 163,
+          "style_match": true,
+          "max_box_error_px": 0
+        },
+        "bounds": {
+          "x": 248,
+          "y": 110,
+          "right": 1416,
+          "bottom": 767,
+          "width": 1168,
+          "height": 657,
+          "frame": {
+            "x": 248,
+            "y": 110,
+            "right": 1416,
+            "bottom": 767
+          },
+          "overflow": false,
+          "viewport": [
+            1440,
+            810
+          ]
         },
         "font": {
           "text_nodes": 83,
           "actual_family": [
             "Pretendard Variable"
           ],
-          "glyphs": 445,
+          "glyphs": 544,
           "korean_latin_loads": [
             1,
             1,
             1
           ],
           "letter_spacing": "-1pt"
-        }
+        },
+        "technical_passed": true
+      },
+      {
+        "mode": "scroll",
+        "reference": "architecture",
+        "viewport": [
+          1440,
+          810
+        ],
+        "source": "/templates/html/architecture.html",
+        "source_design": {
+          "elements": 360,
+          "style_match": true,
+          "max_box_error_px": 6.103515625e-05
+        },
+        "bounds": {
+          "x": 248,
+          "y": 153,
+          "right": 1416,
+          "bottom": 810,
+          "width": 1168,
+          "height": 657,
+          "frame": {
+            "x": 248,
+            "y": 153,
+            "right": 1416,
+            "bottom": 810
+          },
+          "overflow": false,
+          "viewport": [
+            1440,
+            810
+          ]
+        },
+        "font": {
+          "text_nodes": 58,
+          "actual_family": [
+            "Pretendard Variable"
+          ],
+          "glyphs": 596,
+          "korean_latin_loads": [
+            1,
+            1,
+            1
+          ],
+          "letter_spacing": "-1pt"
+        },
+        "technical_passed": true
+      },
+      {
+        "mode": "scroll",
+        "reference": "experiment",
+        "viewport": [
+          1440,
+          810
+        ],
+        "source": "/templates/html/experiment.html",
+        "source_design": {
+          "elements": 99,
+          "style_match": true,
+          "max_box_error_px": 0
+        },
+        "bounds": {
+          "x": 248,
+          "y": 110,
+          "right": 1416,
+          "bottom": 767,
+          "width": 1168,
+          "height": 657,
+          "frame": {
+            "x": 248,
+            "y": 110,
+            "right": 1416,
+            "bottom": 767
+          },
+          "overflow": false,
+          "viewport": [
+            1440,
+            810
+          ]
+        },
+        "font": {
+          "text_nodes": 53,
+          "actual_family": [
+            "Pretendard Variable"
+          ],
+          "glyphs": 514,
+          "korean_latin_loads": [
+            1,
+            1,
+            1
+          ],
+          "letter_spacing": "-1pt"
+        },
+        "technical_passed": true
+      },
+      {
+        "mode": "scroll",
+        "reference": "executive-summary",
+        "viewport": [
+          1440,
+          810
+        ],
+        "source": "/templates/html/executive-summary.html",
+        "source_design": {
+          "elements": 89,
+          "style_match": true,
+          "max_box_error_px": 0
+        },
+        "bounds": {
+          "x": 248,
+          "y": 153,
+          "right": 1416,
+          "bottom": 810,
+          "width": 1168,
+          "height": 657,
+          "frame": {
+            "x": 248,
+            "y": 153,
+            "right": 1416,
+            "bottom": 810
+          },
+          "overflow": false,
+          "viewport": [
+            1440,
+            810
+          ]
+        },
+        "font": {
+          "text_nodes": 45,
+          "actual_family": [
+            "Pretendard Variable"
+          ],
+          "glyphs": 389,
+          "korean_latin_loads": [
+            1,
+            1,
+            1
+          ],
+          "letter_spacing": "-1pt"
+        },
+        "technical_passed": true
       },
       {
         "mode": "slides",
-        "section": "takeaway",
+        "reference": "concept",
         "viewport": [
-          1280,
-          720
+          1366,
+          768
         ],
-        "geometry": {
-          "problems": [],
-          "headerBottom": 183.09375,
-          "contentTop": 200.03125,
-          "firstFigureTop": 220.46875,
-          "lastDetailBottom": 532.96875,
-          "captionTop": 564.703125,
-          "captionBottom": 601.09375,
-          "footerTop": 612.390625,
-          "flowCenters": [],
-          "arrows": [],
-          "comparison": [
-            {
-              "top": 220.46875,
-              "height": 270.265625,
-              "heading": 263.546875,
-              "matrix": 316.75,
-              "result": 433.890625
-            },
-            {
-              "top": 220.46875,
-              "height": 270.265625,
-              "heading": 263.546875,
-              "matrix": 316.75,
-              "result": 433.890625
-            },
-            {
-              "top": 220.46875,
-              "height": 270.265625,
-              "heading": 263.546875,
-              "matrix": 316.75,
-              "result": 433.890625
-            }
-          ],
-          "viewportOverflow": false
+        "source": "/templates/html/concept.html",
+        "source_design": {
+          "elements": 78,
+          "style_match": true,
+          "max_box_error_px": 0
+        },
+        "bounds": {
+          "x": 99.890625,
+          "y": 56,
+          "right": 1266.109375,
+          "bottom": 711.984375,
+          "width": 1166.21875,
+          "height": 655.984375,
+          "frame": {
+            "x": 99.890625,
+            "y": 56,
+            "right": 1265.890625,
+            "bottom": 711.875
+          },
+          "overflow": false,
+          "viewport": [
+            1366,
+            768
+          ]
         },
         "font": {
-          "text_nodes": 50,
+          "text_nodes": 25,
           "actual_family": [
             "Pretendard Variable"
           ],
-          "glyphs": 385,
+          "glyphs": 316,
           "korean_latin_loads": [
             1,
             1,
             1
           ],
           "letter_spacing": "-1pt"
-        }
+        },
+        "technical_passed": true
+      },
+      {
+        "mode": "slides",
+        "reference": "process",
+        "viewport": [
+          1366,
+          768
+        ],
+        "source": "/templates/html/process.html",
+        "source_design": {
+          "elements": 100,
+          "style_match": true,
+          "max_box_error_px": 6.103515625e-05
+        },
+        "bounds": {
+          "x": 99.890625,
+          "y": 56,
+          "right": 1266.109375,
+          "bottom": 711.984375,
+          "width": 1166.21875,
+          "height": 655.984375,
+          "frame": {
+            "x": 99.890625,
+            "y": 56,
+            "right": 1265.890625,
+            "bottom": 711.875
+          },
+          "overflow": false,
+          "viewport": [
+            1366,
+            768
+          ]
+        },
+        "font": {
+          "text_nodes": 31,
+          "actual_family": [
+            "Pretendard Variable"
+          ],
+          "glyphs": 268,
+          "korean_latin_loads": [
+            1,
+            1,
+            1
+          ],
+          "letter_spacing": "-1pt"
+        },
+        "technical_passed": true
+      },
+      {
+        "mode": "slides",
+        "reference": "comparison",
+        "viewport": [
+          1366,
+          768
+        ],
+        "source": "/templates/html/comparison.html",
+        "source_design": {
+          "elements": 161,
+          "style_match": true,
+          "max_box_error_px": 6.103515625e-05
+        },
+        "bounds": {
+          "x": 99.890625,
+          "y": 56,
+          "right": 1266.109375,
+          "bottom": 711.984375,
+          "width": 1166.21875,
+          "height": 655.984375,
+          "frame": {
+            "x": 99.890625,
+            "y": 56,
+            "right": 1265.890625,
+            "bottom": 711.875
+          },
+          "overflow": false,
+          "viewport": [
+            1366,
+            768
+          ]
+        },
+        "font": {
+          "text_nodes": 60,
+          "actual_family": [
+            "Pretendard Variable"
+          ],
+          "glyphs": 565,
+          "korean_latin_loads": [
+            1,
+            1,
+            1
+          ],
+          "letter_spacing": "-1pt"
+        },
+        "technical_passed": true
+      },
+      {
+        "mode": "slides",
+        "reference": "step-by-step",
+        "viewport": [
+          1366,
+          768
+        ],
+        "source": "/templates/html/step-by-step.html",
+        "source_design": {
+          "elements": 175,
+          "style_match": true,
+          "max_box_error_px": 0.0001220703125
+        },
+        "bounds": {
+          "x": 99.890625,
+          "y": 56,
+          "right": 1266.109375,
+          "bottom": 711.984375,
+          "width": 1166.21875,
+          "height": 655.984375,
+          "frame": {
+            "x": 99.890625,
+            "y": 56,
+            "right": 1265.890625,
+            "bottom": 711.875
+          },
+          "overflow": false,
+          "viewport": [
+            1366,
+            768
+          ]
+        },
+        "font": {
+          "text_nodes": 111,
+          "actual_family": [
+            "Pretendard Variable"
+          ],
+          "glyphs": 820,
+          "korean_latin_loads": [
+            1,
+            1,
+            1
+          ],
+          "letter_spacing": "-1pt"
+        },
+        "technical_passed": true
+      },
+      {
+        "mode": "slides",
+        "reference": "interactive",
+        "viewport": [
+          1366,
+          768
+        ],
+        "source": "/templates/html/interactive.html",
+        "source_design": {
+          "elements": 163,
+          "style_match": true,
+          "max_box_error_px": 0
+        },
+        "bounds": {
+          "x": 99.890625,
+          "y": 56,
+          "right": 1266.109375,
+          "bottom": 711.984375,
+          "width": 1166.21875,
+          "height": 655.984375,
+          "frame": {
+            "x": 99.890625,
+            "y": 56,
+            "right": 1265.890625,
+            "bottom": 711.875
+          },
+          "overflow": false,
+          "viewport": [
+            1366,
+            768
+          ]
+        },
+        "font": {
+          "text_nodes": 83,
+          "actual_family": [
+            "Pretendard Variable"
+          ],
+          "glyphs": 544,
+          "korean_latin_loads": [
+            1,
+            1,
+            1
+          ],
+          "letter_spacing": "-1pt"
+        },
+        "technical_passed": true
+      },
+      {
+        "mode": "slides",
+        "reference": "architecture",
+        "viewport": [
+          1366,
+          768
+        ],
+        "source": "/templates/html/architecture.html",
+        "source_design": {
+          "elements": 360,
+          "style_match": true,
+          "max_box_error_px": 6.103515625e-05
+        },
+        "bounds": {
+          "x": 99.890625,
+          "y": 56,
+          "right": 1266.109375,
+          "bottom": 711.984375,
+          "width": 1166.21875,
+          "height": 655.984375,
+          "frame": {
+            "x": 99.890625,
+            "y": 56,
+            "right": 1265.890625,
+            "bottom": 711.875
+          },
+          "overflow": false,
+          "viewport": [
+            1366,
+            768
+          ]
+        },
+        "font": {
+          "text_nodes": 58,
+          "actual_family": [
+            "Pretendard Variable"
+          ],
+          "glyphs": 596,
+          "korean_latin_loads": [
+            1,
+            1,
+            1
+          ],
+          "letter_spacing": "-1pt"
+        },
+        "technical_passed": true
+      },
+      {
+        "mode": "slides",
+        "reference": "experiment",
+        "viewport": [
+          1366,
+          768
+        ],
+        "source": "/templates/html/experiment.html",
+        "source_design": {
+          "elements": 99,
+          "style_match": true,
+          "max_box_error_px": 0
+        },
+        "bounds": {
+          "x": 99.890625,
+          "y": 56,
+          "right": 1266.109375,
+          "bottom": 711.984375,
+          "width": 1166.21875,
+          "height": 655.984375,
+          "frame": {
+            "x": 99.890625,
+            "y": 56,
+            "right": 1265.890625,
+            "bottom": 711.875
+          },
+          "overflow": false,
+          "viewport": [
+            1366,
+            768
+          ]
+        },
+        "font": {
+          "text_nodes": 53,
+          "actual_family": [
+            "Pretendard Variable"
+          ],
+          "glyphs": 514,
+          "korean_latin_loads": [
+            1,
+            1,
+            1
+          ],
+          "letter_spacing": "-1pt"
+        },
+        "technical_passed": true
+      },
+      {
+        "mode": "slides",
+        "reference": "executive-summary",
+        "viewport": [
+          1366,
+          768
+        ],
+        "source": "/templates/html/executive-summary.html",
+        "source_design": {
+          "elements": 89,
+          "style_match": true,
+          "max_box_error_px": 0
+        },
+        "bounds": {
+          "x": 99.890625,
+          "y": 56,
+          "right": 1266.109375,
+          "bottom": 711.984375,
+          "width": 1166.21875,
+          "height": 655.984375,
+          "frame": {
+            "x": 99.890625,
+            "y": 56,
+            "right": 1265.890625,
+            "bottom": 711.875
+          },
+          "overflow": false,
+          "viewport": [
+            1366,
+            768
+          ]
+        },
+        "font": {
+          "text_nodes": 45,
+          "actual_family": [
+            "Pretendard Variable"
+          ],
+          "glyphs": 389,
+          "korean_latin_loads": [
+            1,
+            1,
+            1
+          ],
+          "letter_spacing": "-1pt"
+        },
+        "technical_passed": true
       },
       {
         "mode": "scroll",
-        "section": "motivation",
+        "reference": "concept",
         "viewport": [
-          1280,
-          720
+          1366,
+          768
         ],
-        "geometry": {
-          "problems": [],
-          "headerBottom": 203.5625,
-          "contentTop": 227.5625,
-          "firstFigureTop": 227.5625,
-          "lastDetailBottom": 813.109375,
-          "captionTop": 837.109375,
-          "captionBottom": 888.65625,
-          "footerTop": 912.65625,
-          "flowCenters": [],
-          "arrows": [],
-          "comparison": [],
-          "viewportOverflow": false
+        "source": "/templates/html/concept.html",
+        "source_design": {
+          "elements": 78,
+          "style_match": true,
+          "max_box_error_px": 0
+        },
+        "bounds": {
+          "x": 248,
+          "y": 68,
+          "right": 1342,
+          "bottom": 683.375,
+          "width": 1094,
+          "height": 615.375,
+          "frame": {
+            "x": 248,
+            "y": 68,
+            "right": 1342,
+            "bottom": 683.375
+          },
+          "overflow": false,
+          "viewport": [
+            1366,
+            768
+          ]
         },
         "font": {
-          "text_nodes": 49,
+          "text_nodes": 25,
           "actual_family": [
             "Pretendard Variable"
           ],
-          "glyphs": 458,
+          "glyphs": 316,
           "korean_latin_loads": [
             1,
             1,
             1
           ],
           "letter_spacing": "-1pt"
-        }
+        },
+        "technical_passed": true
       },
       {
         "mode": "scroll",
-        "section": "locality",
+        "reference": "process",
         "viewport": [
-          1280,
-          720
+          1366,
+          768
         ],
-        "geometry": {
-          "problems": [],
-          "headerBottom": -0.5625,
-          "contentTop": 23.4375,
-          "firstFigureTop": 23.4375,
-          "lastDetailBottom": 801.125,
-          "captionTop": 825.125,
-          "captionBottom": 876.671875,
-          "footerTop": 900.671875,
-          "flowCenters": [
-            218.03125,
-            218.03125,
-            218.03125
-          ],
-          "arrows": [
-            {
-              "y": 218.03125,
-              "left": 218.03125,
-              "right": 218.03125
-            },
-            {
-              "y": 218.03125,
-              "left": 218.03125,
-              "right": 218.03125
-            }
-          ],
-          "comparison": [],
-          "viewportOverflow": false
+        "source": "/templates/html/process.html",
+        "source_design": {
+          "elements": 100,
+          "style_match": true,
+          "max_box_error_px": 6.103515625e-05
+        },
+        "bounds": {
+          "x": 248,
+          "y": 152.375,
+          "right": 1342,
+          "bottom": 767.75,
+          "width": 1094,
+          "height": 615.375,
+          "frame": {
+            "x": 248,
+            "y": 152.375,
+            "right": 1342,
+            "bottom": 767.75
+          },
+          "overflow": false,
+          "viewport": [
+            1366,
+            768
+          ]
         },
         "font": {
-          "text_nodes": 79,
+          "text_nodes": 31,
           "actual_family": [
             "Pretendard Variable"
           ],
-          "glyphs": 549,
+          "glyphs": 268,
           "korean_latin_loads": [
             1,
             1,
@@ -2397,539 +2162,2852 @@
           ],
           "letter_spacing": "-1pt"
         },
-        "math": {
-          "input": [
-            [
-              1,
-              2,
-              3,
-              1,
-              0
-            ],
-            [
-              4,
-              5,
-              6,
-              2,
-              1
-            ],
-            [
-              7,
-              8,
-              9,
-              3,
-              1
-            ],
-            [
-              2,
-              1,
-              0,
-              4,
-              2
-            ],
-            [
-              1,
-              3,
-              2,
-              1,
-              0
-            ]
-          ],
-          "products": [
-            1,
-            0,
-            -3,
-            4,
-            0,
-            -6,
-            7,
-            0,
-            -9
-          ],
-          "output": [
-            [
-              -6,
-              9,
-              16
-            ],
-            [
-              -2,
-              5,
-              11
-            ],
-            [
-              -1,
-              4,
-              8
-            ]
-          ],
-          "bias": 0,
-          "padding": 0,
-          "stride": 1,
-          "kernel_flipped": false
-        }
+        "technical_passed": true
       },
       {
         "mode": "scroll",
-        "section": "pipeline",
+        "reference": "comparison",
         "viewport": [
-          1280,
-          720
+          1366,
+          768
         ],
-        "geometry": {
-          "problems": [],
-          "headerBottom": 74.453125,
-          "contentTop": 98.453125,
-          "firstFigureTop": 98.453125,
-          "lastDetailBottom": 726.09375,
-          "captionTop": 750.09375,
-          "captionBottom": 801.640625,
-          "footerTop": 825.640625,
-          "flowCenters": [],
-          "arrows": [
-            {
-              "y": 308.234375,
-              "left": 308.234375,
-              "right": 308.234375
-            },
-            {
-              "y": 308.234375,
-              "left": 308.234375,
-              "right": 308.234375
-            }
-          ],
-          "comparison": [],
-          "viewportOverflow": false
+        "source": "/templates/html/comparison.html",
+        "source_design": {
+          "elements": 161,
+          "style_match": true,
+          "max_box_error_px": 6.103515625e-05
+        },
+        "bounds": {
+          "x": 248,
+          "y": 110.75,
+          "right": 1342,
+          "bottom": 726.125,
+          "width": 1094,
+          "height": 615.375,
+          "frame": {
+            "x": 248,
+            "y": 110.75,
+            "right": 1342,
+            "bottom": 726.125
+          },
+          "overflow": false,
+          "viewport": [
+            1366,
+            768
+          ]
         },
         "font": {
-          "text_nodes": 65,
+          "text_nodes": 60,
           "actual_family": [
             "Pretendard Variable"
           ],
-          "glyphs": 556,
+          "glyphs": 565,
           "korean_latin_loads": [
             1,
             1,
             1
           ],
           "letter_spacing": "-1pt"
-        }
+        },
+        "technical_passed": true
       },
       {
         "mode": "scroll",
-        "section": "experiment",
+        "reference": "step-by-step",
         "viewport": [
-          1280,
-          720
+          1366,
+          768
         ],
-        "geometry": {
-          "problems": [],
-          "headerBottom": 0.421875,
-          "contentTop": 24.421875,
-          "firstFigureTop": 24.421875,
-          "lastDetailBottom": 798.328125,
-          "captionTop": 822.328125,
-          "captionBottom": 873.875,
-          "footerTop": 897.875,
-          "flowCenters": [
-            226.421875,
-            226.421875,
-            226.421875
-          ],
-          "arrows": [
-            {
-              "y": 226.421875,
-              "left": 226.421875,
-              "right": 226.421875
-            },
-            {
-              "y": 226.421875,
-              "left": 226.421875,
-              "right": 226.421875
-            }
-          ],
-          "comparison": [],
-          "viewportOverflow": false
+        "source": "/templates/html/step-by-step.html",
+        "source_design": {
+          "elements": 175,
+          "style_match": true,
+          "max_box_error_px": 0.0001220703125
+        },
+        "bounds": {
+          "x": 248,
+          "y": 152.125,
+          "right": 1342,
+          "bottom": 767.5,
+          "width": 1094,
+          "height": 615.375,
+          "frame": {
+            "x": 248,
+            "y": 152.125,
+            "right": 1342,
+            "bottom": 767.5
+          },
+          "overflow": false,
+          "viewport": [
+            1366,
+            768
+          ]
         },
         "font": {
-          "text_nodes": 85,
+          "text_nodes": 111,
           "actual_family": [
             "Pretendard Variable"
           ],
-          "glyphs": 552,
+          "glyphs": 820,
           "korean_latin_loads": [
             1,
             1,
             1
           ],
           "letter_spacing": "-1pt"
-        }
+        },
+        "technical_passed": true
       },
       {
         "mode": "scroll",
-        "section": "takeaway",
+        "reference": "interactive",
         "viewport": [
-          1280,
-          720
+          1366,
+          768
         ],
-        "geometry": {
-          "problems": [],
-          "headerBottom": 110.65625,
-          "contentTop": 134.65625,
-          "firstFigureTop": 134.65625,
-          "lastDetailBottom": 688.890625,
-          "captionTop": 712.890625,
-          "captionBottom": 764.4375,
-          "footerTop": 788.4375,
-          "flowCenters": [],
-          "arrows": [],
-          "comparison": [
-            {
-              "top": 134.65625,
-              "height": 369.671875,
-              "heading": 189.25,
-              "matrix": 264.640625,
-              "result": 430.640625
-            },
-            {
-              "top": 134.65625,
-              "height": 369.671875,
-              "heading": 189.25,
-              "matrix": 264.640625,
-              "result": 430.640625
-            },
-            {
-              "top": 134.65625,
-              "height": 369.671875,
-              "heading": 189.25,
-              "matrix": 264.640625,
-              "result": 430.640625
-            }
-          ],
-          "viewportOverflow": false
+        "source": "/templates/html/interactive.html",
+        "source_design": {
+          "elements": 163,
+          "style_match": true,
+          "max_box_error_px": 0
+        },
+        "bounds": {
+          "x": 248,
+          "y": 110.5,
+          "right": 1342,
+          "bottom": 725.875,
+          "width": 1094,
+          "height": 615.375,
+          "frame": {
+            "x": 248,
+            "y": 110.5,
+            "right": 1342,
+            "bottom": 725.875
+          },
+          "overflow": false,
+          "viewport": [
+            1366,
+            768
+          ]
         },
         "font": {
-          "text_nodes": 52,
+          "text_nodes": 83,
           "actual_family": [
             "Pretendard Variable"
           ],
-          "glyphs": 541,
+          "glyphs": 544,
           "korean_latin_loads": [
             1,
             1,
             1
           ],
           "letter_spacing": "-1pt"
-        }
+        },
+        "technical_passed": true
+      },
+      {
+        "mode": "scroll",
+        "reference": "architecture",
+        "viewport": [
+          1366,
+          768
+        ],
+        "source": "/templates/html/architecture.html",
+        "source_design": {
+          "elements": 360,
+          "style_match": true,
+          "max_box_error_px": 6.103515625e-05
+        },
+        "bounds": {
+          "x": 248,
+          "y": 152.875,
+          "right": 1342,
+          "bottom": 768.25,
+          "width": 1094,
+          "height": 615.375,
+          "frame": {
+            "x": 248,
+            "y": 152.875,
+            "right": 1342,
+            "bottom": 768.25
+          },
+          "overflow": false,
+          "viewport": [
+            1366,
+            768
+          ]
+        },
+        "font": {
+          "text_nodes": 58,
+          "actual_family": [
+            "Pretendard Variable"
+          ],
+          "glyphs": 596,
+          "korean_latin_loads": [
+            1,
+            1,
+            1
+          ],
+          "letter_spacing": "-1pt"
+        },
+        "technical_passed": true
+      },
+      {
+        "mode": "scroll",
+        "reference": "experiment",
+        "viewport": [
+          1366,
+          768
+        ],
+        "source": "/templates/html/experiment.html",
+        "source_design": {
+          "elements": 99,
+          "style_match": true,
+          "max_box_error_px": 0
+        },
+        "bounds": {
+          "x": 248,
+          "y": 110.25,
+          "right": 1342,
+          "bottom": 725.625,
+          "width": 1094,
+          "height": 615.375,
+          "frame": {
+            "x": 248,
+            "y": 110.25,
+            "right": 1342,
+            "bottom": 725.625
+          },
+          "overflow": false,
+          "viewport": [
+            1366,
+            768
+          ]
+        },
+        "font": {
+          "text_nodes": 53,
+          "actual_family": [
+            "Pretendard Variable"
+          ],
+          "glyphs": 514,
+          "korean_latin_loads": [
+            1,
+            1,
+            1
+          ],
+          "letter_spacing": "-1pt"
+        },
+        "technical_passed": true
+      },
+      {
+        "mode": "scroll",
+        "reference": "executive-summary",
+        "viewport": [
+          1366,
+          768
+        ],
+        "source": "/templates/html/executive-summary.html",
+        "source_design": {
+          "elements": 89,
+          "style_match": true,
+          "max_box_error_px": 0
+        },
+        "bounds": {
+          "x": 248,
+          "y": 152.625,
+          "right": 1342,
+          "bottom": 768,
+          "width": 1094,
+          "height": 615.375,
+          "frame": {
+            "x": 248,
+            "y": 152.625,
+            "right": 1342,
+            "bottom": 768
+          },
+          "overflow": false,
+          "viewport": [
+            1366,
+            768
+          ]
+        },
+        "font": {
+          "text_nodes": 45,
+          "actual_family": [
+            "Pretendard Variable"
+          ],
+          "glyphs": 389,
+          "korean_latin_loads": [
+            1,
+            1,
+            1
+          ],
+          "letter_spacing": "-1pt"
+        },
+        "technical_passed": true
+      },
+      {
+        "mode": "slides",
+        "reference": "concept",
+        "viewport": [
+          1280,
+          720
+        ],
+        "source": "/templates/html/concept.html",
+        "source_design": {
+          "elements": 78,
+          "style_match": true,
+          "max_box_error_px": 0
+        },
+        "bounds": {
+          "x": 99.5625,
+          "y": 56,
+          "right": 1180.4375,
+          "bottom": 663.984375,
+          "width": 1080.875,
+          "height": 607.984375,
+          "frame": {
+            "x": 99.5625,
+            "y": 56,
+            "right": 1180.5625,
+            "bottom": 664.0625
+          },
+          "overflow": false,
+          "viewport": [
+            1280,
+            720
+          ]
+        },
+        "font": {
+          "text_nodes": 25,
+          "actual_family": [
+            "Pretendard Variable"
+          ],
+          "glyphs": 316,
+          "korean_latin_loads": [
+            1,
+            1,
+            1
+          ],
+          "letter_spacing": "-1pt"
+        },
+        "technical_passed": true
+      },
+      {
+        "mode": "slides",
+        "reference": "process",
+        "viewport": [
+          1280,
+          720
+        ],
+        "source": "/templates/html/process.html",
+        "source_design": {
+          "elements": 100,
+          "style_match": true,
+          "max_box_error_px": 6.103515625e-05
+        },
+        "bounds": {
+          "x": 99.5625,
+          "y": 56,
+          "right": 1180.4375,
+          "bottom": 663.984375,
+          "width": 1080.875,
+          "height": 607.984375,
+          "frame": {
+            "x": 99.5625,
+            "y": 56,
+            "right": 1180.5625,
+            "bottom": 664.0625
+          },
+          "overflow": false,
+          "viewport": [
+            1280,
+            720
+          ]
+        },
+        "font": {
+          "text_nodes": 31,
+          "actual_family": [
+            "Pretendard Variable"
+          ],
+          "glyphs": 268,
+          "korean_latin_loads": [
+            1,
+            1,
+            1
+          ],
+          "letter_spacing": "-1pt"
+        },
+        "technical_passed": true
+      },
+      {
+        "mode": "slides",
+        "reference": "comparison",
+        "viewport": [
+          1280,
+          720
+        ],
+        "source": "/templates/html/comparison.html",
+        "source_design": {
+          "elements": 161,
+          "style_match": true,
+          "max_box_error_px": 6.103515625e-05
+        },
+        "bounds": {
+          "x": 99.5625,
+          "y": 56,
+          "right": 1180.4375,
+          "bottom": 663.984375,
+          "width": 1080.875,
+          "height": 607.984375,
+          "frame": {
+            "x": 99.5625,
+            "y": 56,
+            "right": 1180.5625,
+            "bottom": 664.0625
+          },
+          "overflow": false,
+          "viewport": [
+            1280,
+            720
+          ]
+        },
+        "font": {
+          "text_nodes": 60,
+          "actual_family": [
+            "Pretendard Variable"
+          ],
+          "glyphs": 565,
+          "korean_latin_loads": [
+            1,
+            1,
+            1
+          ],
+          "letter_spacing": "-1pt"
+        },
+        "technical_passed": true
+      },
+      {
+        "mode": "slides",
+        "reference": "step-by-step",
+        "viewport": [
+          1280,
+          720
+        ],
+        "source": "/templates/html/step-by-step.html",
+        "source_design": {
+          "elements": 175,
+          "style_match": true,
+          "max_box_error_px": 0.0001220703125
+        },
+        "bounds": {
+          "x": 99.5625,
+          "y": 56,
+          "right": 1180.4375,
+          "bottom": 663.984375,
+          "width": 1080.875,
+          "height": 607.984375,
+          "frame": {
+            "x": 99.5625,
+            "y": 56,
+            "right": 1180.5625,
+            "bottom": 664.0625
+          },
+          "overflow": false,
+          "viewport": [
+            1280,
+            720
+          ]
+        },
+        "font": {
+          "text_nodes": 111,
+          "actual_family": [
+            "Pretendard Variable"
+          ],
+          "glyphs": 820,
+          "korean_latin_loads": [
+            1,
+            1,
+            1
+          ],
+          "letter_spacing": "-1pt"
+        },
+        "technical_passed": true
+      },
+      {
+        "mode": "slides",
+        "reference": "interactive",
+        "viewport": [
+          1280,
+          720
+        ],
+        "source": "/templates/html/interactive.html",
+        "source_design": {
+          "elements": 163,
+          "style_match": true,
+          "max_box_error_px": 0
+        },
+        "bounds": {
+          "x": 99.5625,
+          "y": 56,
+          "right": 1180.4375,
+          "bottom": 663.984375,
+          "width": 1080.875,
+          "height": 607.984375,
+          "frame": {
+            "x": 99.5625,
+            "y": 56,
+            "right": 1180.5625,
+            "bottom": 664.0625
+          },
+          "overflow": false,
+          "viewport": [
+            1280,
+            720
+          ]
+        },
+        "font": {
+          "text_nodes": 83,
+          "actual_family": [
+            "Pretendard Variable"
+          ],
+          "glyphs": 544,
+          "korean_latin_loads": [
+            1,
+            1,
+            1
+          ],
+          "letter_spacing": "-1pt"
+        },
+        "technical_passed": true
+      },
+      {
+        "mode": "slides",
+        "reference": "architecture",
+        "viewport": [
+          1280,
+          720
+        ],
+        "source": "/templates/html/architecture.html",
+        "source_design": {
+          "elements": 360,
+          "style_match": true,
+          "max_box_error_px": 6.103515625e-05
+        },
+        "bounds": {
+          "x": 99.5625,
+          "y": 56,
+          "right": 1180.4375,
+          "bottom": 663.984375,
+          "width": 1080.875,
+          "height": 607.984375,
+          "frame": {
+            "x": 99.5625,
+            "y": 56,
+            "right": 1180.5625,
+            "bottom": 664.0625
+          },
+          "overflow": false,
+          "viewport": [
+            1280,
+            720
+          ]
+        },
+        "font": {
+          "text_nodes": 58,
+          "actual_family": [
+            "Pretendard Variable"
+          ],
+          "glyphs": 596,
+          "korean_latin_loads": [
+            1,
+            1,
+            1
+          ],
+          "letter_spacing": "-1pt"
+        },
+        "technical_passed": true
+      },
+      {
+        "mode": "slides",
+        "reference": "experiment",
+        "viewport": [
+          1280,
+          720
+        ],
+        "source": "/templates/html/experiment.html",
+        "source_design": {
+          "elements": 99,
+          "style_match": true,
+          "max_box_error_px": 0
+        },
+        "bounds": {
+          "x": 99.5625,
+          "y": 56,
+          "right": 1180.4375,
+          "bottom": 663.984375,
+          "width": 1080.875,
+          "height": 607.984375,
+          "frame": {
+            "x": 99.5625,
+            "y": 56,
+            "right": 1180.5625,
+            "bottom": 664.0625
+          },
+          "overflow": false,
+          "viewport": [
+            1280,
+            720
+          ]
+        },
+        "font": {
+          "text_nodes": 53,
+          "actual_family": [
+            "Pretendard Variable"
+          ],
+          "glyphs": 514,
+          "korean_latin_loads": [
+            1,
+            1,
+            1
+          ],
+          "letter_spacing": "-1pt"
+        },
+        "technical_passed": true
+      },
+      {
+        "mode": "slides",
+        "reference": "executive-summary",
+        "viewport": [
+          1280,
+          720
+        ],
+        "source": "/templates/html/executive-summary.html",
+        "source_design": {
+          "elements": 89,
+          "style_match": true,
+          "max_box_error_px": 0
+        },
+        "bounds": {
+          "x": 99.5625,
+          "y": 56,
+          "right": 1180.4375,
+          "bottom": 663.984375,
+          "width": 1080.875,
+          "height": 607.984375,
+          "frame": {
+            "x": 99.5625,
+            "y": 56,
+            "right": 1180.5625,
+            "bottom": 664.0625
+          },
+          "overflow": false,
+          "viewport": [
+            1280,
+            720
+          ]
+        },
+        "font": {
+          "text_nodes": 45,
+          "actual_family": [
+            "Pretendard Variable"
+          ],
+          "glyphs": 389,
+          "korean_latin_loads": [
+            1,
+            1,
+            1
+          ],
+          "letter_spacing": "-1pt"
+        },
+        "technical_passed": true
+      },
+      {
+        "mode": "scroll",
+        "reference": "concept",
+        "viewport": [
+          1280,
+          720
+        ],
+        "source": "/templates/html/concept.html",
+        "source_design": {
+          "elements": 78,
+          "style_match": true,
+          "max_box_error_px": 0
+        },
+        "bounds": {
+          "x": 248,
+          "y": 68,
+          "right": 1256,
+          "bottom": 635,
+          "width": 1008,
+          "height": 567,
+          "frame": {
+            "x": 248,
+            "y": 68,
+            "right": 1256,
+            "bottom": 635
+          },
+          "overflow": false,
+          "viewport": [
+            1280,
+            720
+          ]
+        },
+        "font": {
+          "text_nodes": 25,
+          "actual_family": [
+            "Pretendard Variable"
+          ],
+          "glyphs": 316,
+          "korean_latin_loads": [
+            1,
+            1,
+            1
+          ],
+          "letter_spacing": "-1pt"
+        },
+        "technical_passed": true
+      },
+      {
+        "mode": "scroll",
+        "reference": "process",
+        "viewport": [
+          1280,
+          720
+        ],
+        "source": "/templates/html/process.html",
+        "source_design": {
+          "elements": 100,
+          "style_match": true,
+          "max_box_error_px": 6.103515625e-05
+        },
+        "bounds": {
+          "x": 248,
+          "y": 153,
+          "right": 1256,
+          "bottom": 720,
+          "width": 1008,
+          "height": 567,
+          "frame": {
+            "x": 248,
+            "y": 153,
+            "right": 1256,
+            "bottom": 720
+          },
+          "overflow": false,
+          "viewport": [
+            1280,
+            720
+          ]
+        },
+        "font": {
+          "text_nodes": 31,
+          "actual_family": [
+            "Pretendard Variable"
+          ],
+          "glyphs": 268,
+          "korean_latin_loads": [
+            1,
+            1,
+            1
+          ],
+          "letter_spacing": "-1pt"
+        },
+        "technical_passed": true
+      },
+      {
+        "mode": "scroll",
+        "reference": "comparison",
+        "viewport": [
+          1280,
+          720
+        ],
+        "source": "/templates/html/comparison.html",
+        "source_design": {
+          "elements": 161,
+          "style_match": true,
+          "max_box_error_px": 6.103515625e-05
+        },
+        "bounds": {
+          "x": 248,
+          "y": 110,
+          "right": 1256,
+          "bottom": 677,
+          "width": 1008,
+          "height": 567,
+          "frame": {
+            "x": 248,
+            "y": 110,
+            "right": 1256,
+            "bottom": 677
+          },
+          "overflow": false,
+          "viewport": [
+            1280,
+            720
+          ]
+        },
+        "font": {
+          "text_nodes": 60,
+          "actual_family": [
+            "Pretendard Variable"
+          ],
+          "glyphs": 565,
+          "korean_latin_loads": [
+            1,
+            1,
+            1
+          ],
+          "letter_spacing": "-1pt"
+        },
+        "technical_passed": true
+      },
+      {
+        "mode": "scroll",
+        "reference": "step-by-step",
+        "viewport": [
+          1280,
+          720
+        ],
+        "source": "/templates/html/step-by-step.html",
+        "source_design": {
+          "elements": 175,
+          "style_match": true,
+          "max_box_error_px": 0.0001220703125
+        },
+        "bounds": {
+          "x": 248,
+          "y": 153,
+          "right": 1256,
+          "bottom": 720,
+          "width": 1008,
+          "height": 567,
+          "frame": {
+            "x": 248,
+            "y": 153,
+            "right": 1256,
+            "bottom": 720
+          },
+          "overflow": false,
+          "viewport": [
+            1280,
+            720
+          ]
+        },
+        "font": {
+          "text_nodes": 111,
+          "actual_family": [
+            "Pretendard Variable"
+          ],
+          "glyphs": 820,
+          "korean_latin_loads": [
+            1,
+            1,
+            1
+          ],
+          "letter_spacing": "-1pt"
+        },
+        "technical_passed": true
+      },
+      {
+        "mode": "scroll",
+        "reference": "interactive",
+        "viewport": [
+          1280,
+          720
+        ],
+        "source": "/templates/html/interactive.html",
+        "source_design": {
+          "elements": 163,
+          "style_match": true,
+          "max_box_error_px": 0
+        },
+        "bounds": {
+          "x": 248,
+          "y": 110,
+          "right": 1256,
+          "bottom": 677,
+          "width": 1008,
+          "height": 567,
+          "frame": {
+            "x": 248,
+            "y": 110,
+            "right": 1256,
+            "bottom": 677
+          },
+          "overflow": false,
+          "viewport": [
+            1280,
+            720
+          ]
+        },
+        "font": {
+          "text_nodes": 83,
+          "actual_family": [
+            "Pretendard Variable"
+          ],
+          "glyphs": 544,
+          "korean_latin_loads": [
+            1,
+            1,
+            1
+          ],
+          "letter_spacing": "-1pt"
+        },
+        "technical_passed": true
+      },
+      {
+        "mode": "scroll",
+        "reference": "architecture",
+        "viewport": [
+          1280,
+          720
+        ],
+        "source": "/templates/html/architecture.html",
+        "source_design": {
+          "elements": 360,
+          "style_match": true,
+          "max_box_error_px": 6.103515625e-05
+        },
+        "bounds": {
+          "x": 248,
+          "y": 153,
+          "right": 1256,
+          "bottom": 720,
+          "width": 1008,
+          "height": 567,
+          "frame": {
+            "x": 248,
+            "y": 153,
+            "right": 1256,
+            "bottom": 720
+          },
+          "overflow": false,
+          "viewport": [
+            1280,
+            720
+          ]
+        },
+        "font": {
+          "text_nodes": 58,
+          "actual_family": [
+            "Pretendard Variable"
+          ],
+          "glyphs": 596,
+          "korean_latin_loads": [
+            1,
+            1,
+            1
+          ],
+          "letter_spacing": "-1pt"
+        },
+        "technical_passed": true
+      },
+      {
+        "mode": "scroll",
+        "reference": "experiment",
+        "viewport": [
+          1280,
+          720
+        ],
+        "source": "/templates/html/experiment.html",
+        "source_design": {
+          "elements": 99,
+          "style_match": true,
+          "max_box_error_px": 0
+        },
+        "bounds": {
+          "x": 248,
+          "y": 110,
+          "right": 1256,
+          "bottom": 677,
+          "width": 1008,
+          "height": 567,
+          "frame": {
+            "x": 248,
+            "y": 110,
+            "right": 1256,
+            "bottom": 677
+          },
+          "overflow": false,
+          "viewport": [
+            1280,
+            720
+          ]
+        },
+        "font": {
+          "text_nodes": 53,
+          "actual_family": [
+            "Pretendard Variable"
+          ],
+          "glyphs": 514,
+          "korean_latin_loads": [
+            1,
+            1,
+            1
+          ],
+          "letter_spacing": "-1pt"
+        },
+        "technical_passed": true
+      },
+      {
+        "mode": "scroll",
+        "reference": "executive-summary",
+        "viewport": [
+          1280,
+          720
+        ],
+        "source": "/templates/html/executive-summary.html",
+        "source_design": {
+          "elements": 89,
+          "style_match": true,
+          "max_box_error_px": 0
+        },
+        "bounds": {
+          "x": 248,
+          "y": 153,
+          "right": 1256,
+          "bottom": 720,
+          "width": 1008,
+          "height": 567,
+          "frame": {
+            "x": 248,
+            "y": 153,
+            "right": 1256,
+            "bottom": 720
+          },
+          "overflow": false,
+          "viewport": [
+            1280,
+            720
+          ]
+        },
+        "font": {
+          "text_nodes": 45,
+          "actual_family": [
+            "Pretendard Variable"
+          ],
+          "glyphs": 389,
+          "korean_latin_loads": [
+            1,
+            1,
+            1
+          ],
+          "letter_spacing": "-1pt"
+        },
+        "technical_passed": true
       }
     ],
-    "lab_states": {
-      "slides": [
-        {
-          "filter": "vertical",
-          "position": 0,
-          "output": -6.0
-        },
-        {
-          "filter": "vertical",
-          "position": 1,
-          "output": 9.0
-        },
-        {
-          "filter": "vertical",
-          "position": 2,
-          "output": 16.0
-        },
-        {
-          "filter": "vertical",
-          "position": 3,
-          "output": -2.0
-        },
-        {
-          "filter": "vertical",
-          "position": 4,
-          "output": 5.0
-        },
-        {
-          "filter": "vertical",
-          "position": 5,
-          "output": 11.0
-        },
-        {
-          "filter": "vertical",
-          "position": 6,
-          "output": -1.0
-        },
-        {
-          "filter": "vertical",
-          "position": 7,
-          "output": 4.0
-        },
-        {
-          "filter": "vertical",
-          "position": 8,
-          "output": 8.0
-        },
-        {
-          "filter": "average",
-          "position": 0,
-          "output": 5.0
-        },
-        {
-          "filter": "average",
-          "position": 1,
-          "output": 4.333333333333333
-        },
-        {
-          "filter": "average",
-          "position": 2,
-          "output": 2.888888888888889
-        },
-        {
-          "filter": "average",
-          "position": 3,
-          "output": 4.666666666666667
-        },
-        {
-          "filter": "average",
-          "position": 4,
-          "output": 4.222222222222222
-        },
-        {
-          "filter": "average",
-          "position": 5,
-          "output": 3.111111111111111
-        },
-        {
-          "filter": "average",
-          "position": 6,
-          "output": 3.6666666666666665
-        },
-        {
-          "filter": "average",
-          "position": 7,
-          "output": 3.4444444444444446
-        },
-        {
-          "filter": "average",
-          "position": 8,
-          "output": 2.4444444444444446
-        },
-        {
-          "filter": "identity",
-          "position": 0,
-          "output": 5.0
-        },
-        {
-          "filter": "identity",
-          "position": 1,
-          "output": 6.0
-        },
-        {
-          "filter": "identity",
-          "position": 2,
-          "output": 2.0
-        },
-        {
-          "filter": "identity",
-          "position": 3,
-          "output": 8.0
-        },
-        {
-          "filter": "identity",
-          "position": 4,
-          "output": 9.0
-        },
-        {
-          "filter": "identity",
-          "position": 5,
-          "output": 3.0
-        },
-        {
-          "filter": "identity",
-          "position": 6,
-          "output": 1.0
-        },
-        {
-          "filter": "identity",
-          "position": 7,
-          "output": 0.0
-        },
-        {
-          "filter": "identity",
-          "position": 8,
-          "output": 4.0
-        }
-      ],
-      "scroll": [
-        {
-          "filter": "vertical",
-          "position": 0,
-          "output": -6.0
-        },
-        {
-          "filter": "vertical",
-          "position": 1,
-          "output": 9.0
-        },
-        {
-          "filter": "vertical",
-          "position": 2,
-          "output": 16.0
-        },
-        {
-          "filter": "vertical",
-          "position": 3,
-          "output": -2.0
-        },
-        {
-          "filter": "vertical",
-          "position": 4,
-          "output": 5.0
-        },
-        {
-          "filter": "vertical",
-          "position": 5,
-          "output": 11.0
-        },
-        {
-          "filter": "vertical",
-          "position": 6,
-          "output": -1.0
-        },
-        {
-          "filter": "vertical",
-          "position": 7,
-          "output": 4.0
-        },
-        {
-          "filter": "vertical",
-          "position": 8,
-          "output": 8.0
-        },
-        {
-          "filter": "average",
-          "position": 0,
-          "output": 5.0
-        },
-        {
-          "filter": "average",
-          "position": 1,
-          "output": 4.333333333333333
-        },
-        {
-          "filter": "average",
-          "position": 2,
-          "output": 2.888888888888889
-        },
-        {
-          "filter": "average",
-          "position": 3,
-          "output": 4.666666666666667
-        },
-        {
-          "filter": "average",
-          "position": 4,
-          "output": 4.222222222222222
-        },
-        {
-          "filter": "average",
-          "position": 5,
-          "output": 3.111111111111111
-        },
-        {
-          "filter": "average",
-          "position": 6,
-          "output": 3.6666666666666665
-        },
-        {
-          "filter": "average",
-          "position": 7,
-          "output": 3.4444444444444446
-        },
-        {
-          "filter": "average",
-          "position": 8,
-          "output": 2.4444444444444446
-        },
-        {
-          "filter": "identity",
-          "position": 0,
-          "output": 5.0
-        },
-        {
-          "filter": "identity",
-          "position": 1,
-          "output": 6.0
-        },
-        {
-          "filter": "identity",
-          "position": 2,
-          "output": 2.0
-        },
-        {
-          "filter": "identity",
-          "position": 3,
-          "output": 8.0
-        },
-        {
-          "filter": "identity",
-          "position": 4,
-          "output": 9.0
-        },
-        {
-          "filter": "identity",
-          "position": 5,
-          "output": 3.0
-        },
-        {
-          "filter": "identity",
-          "position": 6,
-          "output": 1.0
-        },
-        {
-          "filter": "identity",
-          "position": 7,
-          "output": 0.0
-        },
-        {
-          "filter": "identity",
-          "position": 8,
-          "output": 4.0
-        }
-      ]
-    },
     "mode_roundtrip": {
-      "filter": "average",
-      "position": 4,
-      "section": "experiment",
+      "reference": "interactive",
+      "threshold": 80,
       "reload": true
     },
     "keyboard": {
-      "arrows_home_end": true,
-      "select_not_intercepted": true
+      "iframe_navigation": true,
+      "input_not_intercepted": true
     },
     "source_sha256": {
-      "templates/dual-mode-learning/index.html": "71cfa90949d49a363d6ed54a7ef7255356a23774ddeac51963ab41f269b32737",
-      "templates/dual-mode-learning/scroll.html": "760da0dc79561a02e556b856bd0efd3fc80b98ba37d1202a2fd40202eb3de194",
-      "templates/dual-mode-learning/slides.html": "0f1f4f33615bf6ad18f2227475bbd62f1e0dd7e15982196b3436a4d94ad11a81",
-      "templates/dual-mode-learning/assets/js/scroll.js": "e3b30c05786c00e39c084ae559c788f4ad328191c1d60bfb779e36abf4ac7024",
-      "templates/dual-mode-learning/assets/js/render.js": "e03fc08cc557265e05b0c2af11b8e4ab84110a2c460f4119c3fdf257c90c40b3",
-      "templates/dual-mode-learning/assets/js/state.js": "4b0d2f6f8b92b314df7d25a6317a1e5f8e25e8382ea7930fabefcf20a21da2b5",
-      "templates/dual-mode-learning/assets/js/lab.js": "e5e4cb36bbd182a944d883b7f18b4434ad3d0ff4b8f05f28eb5a13c71100a62a",
-      "templates/dual-mode-learning/assets/js/lesson.js": "03a95c35fc86f01b42d024394427c52de498d146112eaefe401e566fa9d8330b",
-      "templates/dual-mode-learning/assets/js/slides.js": "b5dc9f4fc9d8bbf3f8873e033d2ca589c168e3d324aafdaab5b62d9f542a85d0",
-      "templates/dual-mode-learning/assets/css/tokens.css": "4d7896fe2215568c56384a8cee4b105fb4bb008c0220ead3aeb6411f64f70aac",
-      "templates/dual-mode-learning/assets/css/slides.css": "134d1cd9b33920364ab715db6aae608e8cbf5f5f4a5f370a9f7c886710657108",
-      "templates/dual-mode-learning/assets/css/scroll.css": "10b6a5116a46d32d3d9056e47099f45f773c2ce19b4ce2367823fc641d0c0d7c",
-      "templates/dual-mode-learning/assets/css/components.css": "95c9d6a5b881ec2bc80c82812de4f047d34c498abe8b598f5d5c464057a23eff",
-      "templates/html/styles.css": "3c05e00284aae4ea538e697efae7682a2c9b35b318cab372fa8493613de4df22"
+      "templates/dual-mode-learning/scroll.html": "96d5b5e82639769644b1d313bf887b4c74bb9bd898f00977e706c6ac5faa573a",
+      "templates/dual-mode-learning/slides.html": "2bcb425d00da9e8d7d344b67135e4ed95a4f344a8dbf54bdfc0457e16ec08e67",
+      "templates/dual-mode-learning/assets/js/scroll.js": "b33b36569ce8cd12fac6aa76e65daad022b42efedd54ae78729e8cd425527288",
+      "templates/dual-mode-learning/assets/js/render.js": "ea7769505895adcba0a11971b799546c0fddfe8d4390a9f545a6b2aa6a59bb50",
+      "templates/dual-mode-learning/assets/js/state.js": "40ed83ef33ba9eac71791032a84fad8cb77de91458c183a0f62e2cc427680485",
+      "templates/dual-mode-learning/assets/js/lesson.js": "30ea45a0901fba3be7a4e41a98fb1143d6f76f39e6e9c69b8e21170d6a77ca4c",
+      "templates/dual-mode-learning/assets/js/slides.js": "5e489efaed68c01fc5cdbebef2710b3ac2bfb372f954b9a9dc95a7d6a8f445d5",
+      "templates/dual-mode-learning/assets/css/tokens.css": "43c885ad305d0ceb8895b3eb9088842ef99a3907fd1257ba14e1e0df8a16cb8f",
+      "templates/dual-mode-learning/assets/css/slides.css": "d4da50076686b4b9b3cd85b1aedac60359911ef254259dbde2b0c0a78f40f4a0",
+      "templates/dual-mode-learning/assets/css/scroll.css": "2978990697d2fc15807763a9c92472b5b8bb6537132383f4190580024ad92d1d",
+      "templates/dual-mode-learning/assets/css/components.css": "6284751b2d744133ffa2fb923a746372e8189289d057fc9c5aca3a254c2c0d8a",
+      "templates/html/executive-summary.html": "9717607f3a1c742fe72dd63990d2edaccb5bb0c33b844a43943cdea9b56fe37c",
+      "templates/html/comparison.html": "e90611664ef0a3ab1d94f6a226de42e14f4272acbdb30f90e9b770392d892c74",
+      "templates/html/index.html": "322dedee1a0cc94a136fc205e098a3c00c33f4a0169d082af3a909c0c50d41be",
+      "templates/html/experiment.html": "711282187d6138e69e2b92ab6f2730387be8cb491d8401d0928d33c96caf62dd",
+      "templates/html/interactive-reference.js": "0756c5facbf831184f561e3941bf37ef0a30a83af3118e6374735d37119951f7",
+      "templates/html/comparison-reference.css": "2a4afa51bfd30efe7f59422c3fa5483f74ac6c3a2b2c64288bb476dfce14f422",
+      "templates/html/reference-layout.css": "c29f52fd9852d80b29e277b7d60218a7b02da599a059a8395051caada3525bcc",
+      "templates/html/process-reference.js": "45629ef1192b6caa04aa05dd6ead9fd317eace58ba95ce873b966c27fd02a89d",
+      "templates/html/styles.css": "3c05e00284aae4ea538e697efae7682a2c9b35b318cab372fa8493613de4df22",
+      "templates/html/comparison-reference.js": "d427e9c2fcb0415c9ecd059ae723d53dc601b6f5350d3eb1872d1306aacf5469",
+      "templates/html/step-by-step.html": "8e7eed2d4bbeaeea3fb644973a0ff99f9e0c075bababf93a8964636197143d3c",
+      "templates/html/interactive.html": "999cc515d9f3ad03dbee7c1437959b79463ad251e890142233471e4ff7722869",
+      "templates/html/concept.html": "9d50ae70c9d63dc257738e2260d3eccf415029baff5726b8f21f13a09da5b018",
+      "templates/html/reference-types.css": "976c72a1d4e736fc6d7f7c328445f4e7feead457f4ef7165ca3926b5615e18b7",
+      "templates/html/architecture.html": "0b40aa7f35960458292b8fd691a0ffcac83e8646993dda516b85e809efac28e1",
+      "templates/html/process.html": "90039af9845ae77f566aad7f0e2ddb48d3bf4f4560d59f65ba6f1ddab3c0f874",
+      "templates/html/font-comparison.html": "03591c1effa0a60af07955046d486ebb813464f8c26c7cd7a45ef70e272022d7",
+      "templates/html/assets/concept-apple-photo.jpg": "6a7524a8f5fce2700d50970d21ad7a9912c07ace760d08fd603ba79728e15efc",
+      "templates/html/assets/cnn-feature-maps.js": "b8a71c04fced7a9df2a568c2cd3577af3ddde56b3903cfd2b7d1031fc19d2c05",
+      "templates/html/assets/fonts/pretendard/PretendardVariable.woff2": "9599f12fd42fc0bce1cd50b47a0c022e108d7aa64dd0d1bb0ed44f3282d900b4"
     },
-    "page_errors": []
+    "page_errors": [],
+    "failed_requests": [],
+    "technical_checks": {
+      "concept": {
+        "resample": [
+          80,
+          80
+        ],
+        "roi": [
+          52,
+          38,
+          4,
+          4
+        ],
+        "selected_index": 6,
+        "rgb": [
+          223,
+          54,
+          56
+        ],
+        "hex": "#DF3638",
+        "all_16_swatches_match": true
+      },
+      "process": {
+        "independent_gradient_samples": 112,
+        "painted_pixels": 28,
+        "channels": 16,
+        "boundary": "replicate",
+        "learned_inference": false,
+        "independent_softmax": [
+          0.6652409557748218,
+          0.24472847105479764,
+          0.09003057317038046
+        ],
+        "flow": "same DOM styles and normalized positions as directly validated original"
+      },
+      "comparison": {
+        "independent_gradient_samples": 112,
+        "painted_pixels": 28,
+        "channels": 16,
+        "boundary": "replicate",
+        "learned_inference": false,
+        "comparison": {
+          "cards": [
+            {
+              "method": "rule",
+              "box": {
+                "x": 66,
+                "y": 170.328125,
+                "right": 709,
+                "bottom": 735,
+                "width": 643,
+                "height": 564.671875,
+                "cx": 387.5,
+                "cy": 452.6640625
+              },
+              "background": "rgb(255, 255, 255)",
+              "heading": {
+                "x": 93,
+                "y": 189.328125,
+                "right": 682,
+                "bottom": 283.328125,
+                "width": 589,
+                "height": 94,
+                "cx": 387.5,
+                "cy": 236.328125
+              },
+              "label": {
+                "x": 93,
+                "y": 189.328125,
+                "right": 187.09375,
+                "bottom": 211.328125,
+                "width": 94.09375,
+                "height": 22,
+                "cx": 140.046875,
+                "cy": 200.328125
+              },
+              "scale": 1,
+              "title": {
+                "x": 93,
+                "y": 219.328125,
+                "right": 682,
+                "bottom": 253.328125,
+                "width": 589,
+                "height": 34,
+                "cx": 387.5,
+                "cy": 236.328125
+              },
+              "intro": {
+                "x": 93,
+                "y": 261.328125,
+                "right": 682,
+                "bottom": 283.328125,
+                "width": 589,
+                "height": 22,
+                "cx": 387.5,
+                "cy": 272.328125
+              },
+              "prep": {
+                "x": 93,
+                "y": 299.328125,
+                "right": 682,
+                "bottom": 393.328125,
+                "width": 589,
+                "height": 94,
+                "cx": 387.5,
+                "cy": 346.328125
+              },
+              "predict": {
+                "x": 93,
+                "y": 403.328125,
+                "right": 682,
+                "bottom": 549.328125,
+                "width": 589,
+                "height": 146,
+                "cx": 387.5,
+                "cy": 476.328125
+              },
+              "prepLabel": {
+                "x": 93,
+                "y": 299.328125,
+                "right": 133.0625,
+                "bottom": 317.328125,
+                "width": 40.0625,
+                "height": 18,
+                "cx": 113.03125,
+                "cy": 308.328125
+              },
+              "predictLabel": {
+                "x": 93,
+                "y": 412.328125,
+                "right": 135.15625,
+                "bottom": 430.328125,
+                "width": 42.15625,
+                "height": 18,
+                "cx": 114.078125,
+                "cy": 421.328125
+              },
+              "photo": {
+                "x": 164.3046875,
+                "y": 449.328125,
+                "right": 244.3046875,
+                "bottom": 529.328125,
+                "width": 80,
+                "height": 80,
+                "cx": 204.3046875,
+                "cy": 489.328125
+              },
+              "photoSource": "assets/concept-apple-photo.jpg",
+              "photoLoaded": true,
+              "prepared": {
+                "x": 441.5,
+                "y": 325.328125,
+                "right": 591.5,
+                "bottom": 383.328125,
+                "width": 150,
+                "height": 58,
+                "cx": 516.5,
+                "cy": 354.328125
+              },
+              "system": {
+                "x": 310.3046875,
+                "y": 460.328125,
+                "right": 452.3046875,
+                "bottom": 518.328125,
+                "width": 142,
+                "height": 58,
+                "cx": 381.3046875,
+                "cy": 489.328125
+              },
+              "result": {
+                "x": 539.9140625,
+                "y": 464.828125,
+                "right": 610.6953125,
+                "bottom": 513.828125,
+                "width": 70.78125,
+                "height": 49,
+                "cx": 575.3046875,
+                "cy": 489.328125
+              },
+              "resultText": "사과 판정\n예시",
+              "rows": [
+                {
+                  "box": {
+                    "x": 93,
+                    "y": 299.328125,
+                    "right": 682,
+                    "bottom": 393.328125,
+                    "width": 589,
+                    "height": 94,
+                    "cx": 387.5,
+                    "cy": 346.328125
+                  },
+                  "art": {
+                    "left": 183.5,
+                    "right": 591.5,
+                    "cx": 387.5
+                  }
+                },
+                {
+                  "box": {
+                    "x": 93,
+                    "y": 403.328125,
+                    "right": 682,
+                    "bottom": 549.328125,
+                    "width": 589,
+                    "height": 146,
+                    "cx": 387.5,
+                    "cy": 476.328125
+                  },
+                  "art": {
+                    "left": 164.3046875,
+                    "right": 610.6953125,
+                    "cx": 387.5
+                  }
+                }
+              ],
+              "arrows": [
+                {
+                  "a": {
+                    "x": 259.3046875,
+                    "y": 489.328125
+                  },
+                  "b": {
+                    "x": 288.3046875,
+                    "y": 489.328125
+                  },
+                  "stroke": "rgb(49, 104, 200)",
+                  "d": "M1 8 H30 M24 2 L30 8 L24 14"
+                },
+                {
+                  "a": {
+                    "x": 473.3046875,
+                    "y": 489.328125
+                  },
+                  "b": {
+                    "x": 502.3046875,
+                    "y": 489.328125
+                  },
+                  "stroke": "rgb(49, 104, 200)",
+                  "d": "M1 8 H30 M24 2 L30 8 L24 14"
+                }
+              ],
+              "transfer": {
+                "d": "M423.5 87 V99 H288.3046875 V157 M284.3046875 152 L288.3046875 157 L292.3046875 152",
+                "stroke": "rgb(38, 166, 161)",
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  1,
+                  93,
+                  299.328125
+                ]
+              },
+              "phaseLabels": [
+                {
+                  "x": 93,
+                  "y": 299.328125,
+                  "right": 133.0625,
+                  "bottom": 317.328125,
+                  "width": 40.0625,
+                  "height": 18,
+                  "cx": 113.03125,
+                  "cy": 308.328125
+                },
+                {
+                  "x": 608.625,
+                  "y": 299.328125,
+                  "right": 682,
+                  "bottom": 317.328125,
+                  "width": 73.375,
+                  "height": 18,
+                  "cx": 645.3125,
+                  "cy": 308.328125
+                },
+                {
+                  "x": 93,
+                  "y": 412.328125,
+                  "right": 135.15625,
+                  "bottom": 430.328125,
+                  "width": 42.15625,
+                  "height": 18,
+                  "cx": 114.078125,
+                  "cy": 421.328125
+                },
+                {
+                  "x": 602.265625,
+                  "y": 412.328125,
+                  "right": 682,
+                  "bottom": 430.328125,
+                  "width": 79.734375,
+                  "height": 18,
+                  "cx": 642.1328125,
+                  "cy": 421.328125
+                }
+              ],
+              "criteria": [
+                {
+                  "box": {
+                    "x": 93,
+                    "y": 557.328125,
+                    "right": 682,
+                    "bottom": 591.328125,
+                    "width": 589,
+                    "height": 34,
+                    "cx": 387.5,
+                    "cy": 574.328125
+                  },
+                  "label": "판단 기준",
+                  "text": "개발자가 조건 직접 정의",
+                  "body": {
+                    "x": 197,
+                    "y": 563.328125,
+                    "right": 682,
+                    "bottom": 587.328125,
+                    "width": 485,
+                    "height": 24,
+                    "cx": 439.5,
+                    "cy": 575.328125
+                  }
+                },
+                {
+                  "box": {
+                    "x": 93,
+                    "y": 591.328125,
+                    "right": 682,
+                    "bottom": 625.328125,
+                    "width": 589,
+                    "height": 34,
+                    "cx": 387.5,
+                    "cy": 608.328125
+                  },
+                  "label": "기준 변경",
+                  "text": "규칙·임계값 수정",
+                  "body": {
+                    "x": 197,
+                    "y": 597.328125,
+                    "right": 682,
+                    "bottom": 621.328125,
+                    "width": 485,
+                    "height": 24,
+                    "cx": 439.5,
+                    "cy": 609.328125
+                  }
+                },
+                {
+                  "box": {
+                    "x": 93,
+                    "y": 625.328125,
+                    "right": 682,
+                    "bottom": 659.328125,
+                    "width": 589,
+                    "height": 34,
+                    "cx": 387.5,
+                    "cy": 642.328125
+                  },
+                  "label": "적용 조건",
+                  "text": "조건을 명확히 정의할 수 있는 환경",
+                  "body": {
+                    "x": 197,
+                    "y": 631.328125,
+                    "right": 682,
+                    "bottom": 655.328125,
+                    "width": 485,
+                    "height": 24,
+                    "cx": 439.5,
+                    "cy": 643.328125
+                  }
+                }
+              ],
+              "foot": [
+                {
+                  "box": {
+                    "x": 93,
+                    "y": 668,
+                    "right": 682,
+                    "bottom": 692,
+                    "width": 589,
+                    "height": 24,
+                    "cx": 387.5,
+                    "cy": 680
+                  },
+                  "label": "장점",
+                  "body": {
+                    "x": 133,
+                    "y": 668,
+                    "right": 682,
+                    "bottom": 692,
+                    "width": 549,
+                    "height": 24,
+                    "cx": 407.5,
+                    "cy": 680
+                  }
+                },
+                {
+                  "box": {
+                    "x": 93,
+                    "y": 692,
+                    "right": 682,
+                    "bottom": 716,
+                    "width": 589,
+                    "height": 24,
+                    "cx": 387.5,
+                    "cy": 704
+                  },
+                  "label": "한계",
+                  "body": {
+                    "x": 133,
+                    "y": 692,
+                    "right": 682,
+                    "bottom": 716,
+                    "width": 549,
+                    "height": 24,
+                    "cx": 407.5,
+                    "cy": 704
+                  }
+                }
+              ]
+            },
+            {
+              "method": "ml",
+              "box": {
+                "x": 731,
+                "y": 170.328125,
+                "right": 1374,
+                "bottom": 735,
+                "width": 643,
+                "height": 564.671875,
+                "cx": 1052.5,
+                "cy": 452.6640625
+              },
+              "background": "rgb(255, 255, 255)",
+              "heading": {
+                "x": 758,
+                "y": 189.328125,
+                "right": 1347,
+                "bottom": 283.328125,
+                "width": 589,
+                "height": 94,
+                "cx": 1052.5,
+                "cy": 236.328125
+              },
+              "label": {
+                "x": 758,
+                "y": 189.328125,
+                "right": 894.0625,
+                "bottom": 211.328125,
+                "width": 136.0625,
+                "height": 22,
+                "cx": 826.03125,
+                "cy": 200.328125
+              },
+              "scale": 1,
+              "title": {
+                "x": 758,
+                "y": 219.328125,
+                "right": 1347,
+                "bottom": 253.328125,
+                "width": 589,
+                "height": 34,
+                "cx": 1052.5,
+                "cy": 236.328125
+              },
+              "intro": {
+                "x": 758,
+                "y": 261.328125,
+                "right": 1347,
+                "bottom": 283.328125,
+                "width": 589,
+                "height": 22,
+                "cx": 1052.5,
+                "cy": 272.328125
+              },
+              "prep": {
+                "x": 758,
+                "y": 299.328125,
+                "right": 1347,
+                "bottom": 393.328125,
+                "width": 589,
+                "height": 94,
+                "cx": 1052.5,
+                "cy": 346.328125
+              },
+              "predict": {
+                "x": 758,
+                "y": 403.328125,
+                "right": 1347,
+                "bottom": 549.328125,
+                "width": 589,
+                "height": 146,
+                "cx": 1052.5,
+                "cy": 476.328125
+              },
+              "prepLabel": {
+                "x": 758,
+                "y": 299.328125,
+                "right": 798.0625,
+                "bottom": 317.328125,
+                "width": 40.0625,
+                "height": 18,
+                "cx": 778.03125,
+                "cy": 308.328125
+              },
+              "predictLabel": {
+                "x": 758,
+                "y": 412.328125,
+                "right": 800.15625,
+                "bottom": 430.328125,
+                "width": 42.15625,
+                "height": 18,
+                "cx": 779.078125,
+                "cy": 421.328125
+              },
+              "photo": {
+                "x": 829.3046875,
+                "y": 449.328125,
+                "right": 909.3046875,
+                "bottom": 529.328125,
+                "width": 80,
+                "height": 80,
+                "cx": 869.3046875,
+                "cy": 489.328125
+              },
+              "photoSource": "assets/concept-apple-photo.jpg",
+              "photoLoaded": true,
+              "prepared": {
+                "x": 1100.202880859375,
+                "y": 325.328125,
+                "right": 1250.202880859375,
+                "bottom": 383.328125,
+                "width": 150,
+                "height": 58,
+                "cx": 1175.202880859375,
+                "cy": 354.328125
+              },
+              "system": {
+                "x": 1000.9417724609375,
+                "y": 447.2313537597656,
+                "right": 1091.6676025390625,
+                "bottom": 531.4249267578125,
+                "width": 90.725830078125,
+                "height": 84.19357299804688,
+                "cx": 1046.3046875,
+                "cy": 489.32814025878906
+              },
+              "result": {
+                "x": 1204.9140625,
+                "y": 464.828125,
+                "right": 1275.6953125,
+                "bottom": 513.828125,
+                "width": 70.78125,
+                "height": 49,
+                "cx": 1240.3046875,
+                "cy": 489.328125
+              },
+              "resultText": "사과 예측\n예시",
+              "rows": [
+                {
+                  "box": {
+                    "x": 758,
+                    "y": 299.328125,
+                    "right": 1347,
+                    "bottom": 393.328125,
+                    "width": 589,
+                    "height": 94,
+                    "cx": 1052.5,
+                    "cy": 346.328125
+                  },
+                  "art": {
+                    "left": 854.797119140625,
+                    "right": 1250.202880859375,
+                    "cx": 1052.5
+                  }
+                },
+                {
+                  "box": {
+                    "x": 758,
+                    "y": 403.328125,
+                    "right": 1347,
+                    "bottom": 549.328125,
+                    "width": 589,
+                    "height": 146,
+                    "cx": 1052.5,
+                    "cy": 476.328125
+                  },
+                  "art": {
+                    "left": 829.3046875,
+                    "right": 1275.6953125,
+                    "cx": 1052.5
+                  }
+                }
+              ],
+              "arrows": [
+                {
+                  "a": {
+                    "x": 924.3046875,
+                    "y": 489.328125
+                  },
+                  "b": {
+                    "x": 953.3046875,
+                    "y": 489.328125
+                  },
+                  "stroke": "rgb(49, 104, 200)",
+                  "d": "M1 8 H30 M24 2 L30 8 L24 14"
+                },
+                {
+                  "a": {
+                    "x": 1138.3046875,
+                    "y": 489.328125
+                  },
+                  "b": {
+                    "x": 1167.3046875,
+                    "y": 489.328125
+                  },
+                  "stroke": "rgb(49, 104, 200)",
+                  "d": "M1 8 H30 M24 2 L30 8 L24 14"
+                }
+              ],
+              "transfer": {
+                "d": "M417.202880859375 87 V99 H288.3046875 V143.90322875976562 M284.3046875 138.90322875976562 L288.3046875 143.90322875976562 L292.3046875 138.90322875976562",
+                "stroke": "rgb(38, 166, 161)",
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  1,
+                  758,
+                  299.328125
+                ]
+              },
+              "phaseLabels": [
+                {
+                  "x": 758,
+                  "y": 299.328125,
+                  "right": 798.0625,
+                  "bottom": 317.328125,
+                  "width": 40.0625,
+                  "height": 18,
+                  "cx": 778.03125,
+                  "cy": 308.328125
+                },
+                {
+                  "x": 1230.5625,
+                  "y": 299.328125,
+                  "right": 1347,
+                  "bottom": 317.328125,
+                  "width": 116.4375,
+                  "height": 18,
+                  "cx": 1288.78125,
+                  "cy": 308.328125
+                },
+                {
+                  "x": 758,
+                  "y": 412.328125,
+                  "right": 800.15625,
+                  "bottom": 430.328125,
+                  "width": 42.15625,
+                  "height": 18,
+                  "cx": 779.078125,
+                  "cy": 421.328125
+                },
+                {
+                  "x": 1252.09375,
+                  "y": 412.328125,
+                  "right": 1347,
+                  "bottom": 430.328125,
+                  "width": 94.90625,
+                  "height": 18,
+                  "cx": 1299.546875,
+                  "cy": 421.328125
+                }
+              ],
+              "criteria": [
+                {
+                  "box": {
+                    "x": 758,
+                    "y": 557.328125,
+                    "right": 1347,
+                    "bottom": 591.328125,
+                    "width": 589,
+                    "height": 34,
+                    "cx": 1052.5,
+                    "cy": 574.328125
+                  },
+                  "label": "판단 기준",
+                  "text": "학습 데이터로 모델 파라미터 추정",
+                  "body": {
+                    "x": 862,
+                    "y": 563.328125,
+                    "right": 1347,
+                    "bottom": 587.328125,
+                    "width": 485,
+                    "height": 24,
+                    "cx": 1104.5,
+                    "cy": 575.328125
+                  }
+                },
+                {
+                  "box": {
+                    "x": 758,
+                    "y": 591.328125,
+                    "right": 1347,
+                    "bottom": 625.328125,
+                    "width": 589,
+                    "height": 34,
+                    "cx": 1052.5,
+                    "cy": 608.328125
+                  },
+                  "label": "기준 변경",
+                  "text": "데이터·학습 설정 보완 후 재학습",
+                  "body": {
+                    "x": 862,
+                    "y": 597.328125,
+                    "right": 1347,
+                    "bottom": 621.328125,
+                    "width": 485,
+                    "height": 24,
+                    "cx": 1104.5,
+                    "cy": 609.328125
+                  }
+                },
+                {
+                  "box": {
+                    "x": 758,
+                    "y": 625.328125,
+                    "right": 1347,
+                    "bottom": 659.328125,
+                    "width": 589,
+                    "height": 34,
+                    "cx": 1052.5,
+                    "cy": 642.328125
+                  },
+                  "label": "적용 조건",
+                  "text": "대표성 있는 데이터와 성능 검증 필요",
+                  "body": {
+                    "x": 862,
+                    "y": 631.328125,
+                    "right": 1347,
+                    "bottom": 655.328125,
+                    "width": 485,
+                    "height": 24,
+                    "cx": 1104.5,
+                    "cy": 643.328125
+                  }
+                }
+              ],
+              "foot": [
+                {
+                  "box": {
+                    "x": 758,
+                    "y": 668,
+                    "right": 1347,
+                    "bottom": 692,
+                    "width": 589,
+                    "height": 24,
+                    "cx": 1052.5,
+                    "cy": 680
+                  },
+                  "label": "장점",
+                  "body": {
+                    "x": 798,
+                    "y": 668,
+                    "right": 1347,
+                    "bottom": 692,
+                    "width": 549,
+                    "height": 24,
+                    "cx": 1072.5,
+                    "cy": 680
+                  }
+                },
+                {
+                  "box": {
+                    "x": 758,
+                    "y": 692,
+                    "right": 1347,
+                    "bottom": 716,
+                    "width": 589,
+                    "height": 24,
+                    "cx": 1052.5,
+                    "cy": 704
+                  },
+                  "label": "한계",
+                  "body": {
+                    "x": 798,
+                    "y": 692,
+                    "right": 1347,
+                    "bottom": 716,
+                    "width": 549,
+                    "height": 24,
+                    "cx": 1072.5,
+                    "cy": 704
+                  }
+                }
+              ]
+            }
+          ],
+          "maps": [
+            {
+              "channel": 9,
+              "x": 43,
+              "y": 6
+            },
+            {
+              "channel": 6,
+              "x": 32,
+              "y": 14
+            },
+            {
+              "channel": 3,
+              "x": 21,
+              "y": 22
+            },
+            {
+              "channel": 0,
+              "x": 10,
+              "y": 30
+            }
+          ],
+          "state": {
+            "status": "ready",
+            "supervisedExample": true,
+            "illustrationSamples": 3,
+            "ruleEngineExecuted": false,
+            "modelInferenceExecuted": false,
+            "mapSource": "fixed_directional_filters",
+            "channels": [
+              0,
+              3,
+              6,
+              9
+            ]
+          },
+          "sampleLabels": [
+            "사과",
+            "사과",
+            "토마토"
+          ],
+          "sampleClasses": [
+            "사과",
+            "사과",
+            "토마토"
+          ],
+          "photoCount": 2,
+          "trainingPhotos": 0
+        }
+      },
+      "step-by-step": {
+        "input": [
+          [
+            1,
+            2,
+            3,
+            1,
+            0
+          ],
+          [
+            4,
+            5,
+            6,
+            2,
+            1
+          ],
+          [
+            7,
+            8,
+            9,
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            0,
+            4,
+            2
+          ],
+          [
+            1,
+            3,
+            2,
+            1,
+            0
+          ]
+        ],
+        "kernel": [
+          [
+            1,
+            0,
+            -1
+          ],
+          [
+            1,
+            0,
+            -1
+          ],
+          [
+            1,
+            0,
+            -1
+          ]
+        ],
+        "products": [
+          1,
+          0,
+          -3,
+          4,
+          0,
+          -6,
+          7,
+          0,
+          -9
+        ],
+        "output": [
+          [
+            -6,
+            9,
+            16
+          ],
+          [
+            -2,
+            5,
+            11
+          ],
+          [
+            -1,
+            4,
+            8
+          ]
+        ],
+        "stride": 1,
+        "padding": 0,
+        "bias": 0,
+        "kernel_flipped": false
+      },
+      "interactive": {
+        "states": [
+          {
+            "threshold": 0.0,
+            "tp": 3,
+            "fp": 3,
+            "fn": 0,
+            "tn": 0
+          },
+          {
+            "threshold": 0.05,
+            "tp": 3,
+            "fp": 3,
+            "fn": 0,
+            "tn": 0
+          },
+          {
+            "threshold": 0.1,
+            "tp": 3,
+            "fp": 3,
+            "fn": 0,
+            "tn": 0
+          },
+          {
+            "threshold": 0.15,
+            "tp": 3,
+            "fp": 3,
+            "fn": 0,
+            "tn": 0
+          },
+          {
+            "threshold": 0.2,
+            "tp": 3,
+            "fp": 2,
+            "fn": 0,
+            "tn": 1
+          },
+          {
+            "threshold": 0.25,
+            "tp": 3,
+            "fp": 2,
+            "fn": 0,
+            "tn": 1
+          },
+          {
+            "threshold": 0.3,
+            "tp": 3,
+            "fp": 2,
+            "fn": 0,
+            "tn": 1
+          },
+          {
+            "threshold": 0.35,
+            "tp": 2,
+            "fp": 2,
+            "fn": 1,
+            "tn": 1
+          },
+          {
+            "threshold": 0.4,
+            "tp": 2,
+            "fp": 2,
+            "fn": 1,
+            "tn": 1
+          },
+          {
+            "threshold": 0.45,
+            "tp": 2,
+            "fp": 2,
+            "fn": 1,
+            "tn": 1
+          },
+          {
+            "threshold": 0.5,
+            "tp": 2,
+            "fp": 1,
+            "fn": 1,
+            "tn": 2
+          },
+          {
+            "threshold": 0.55,
+            "tp": 2,
+            "fp": 1,
+            "fn": 1,
+            "tn": 2
+          },
+          {
+            "threshold": 0.6,
+            "tp": 2,
+            "fp": 1,
+            "fn": 1,
+            "tn": 2
+          },
+          {
+            "threshold": 0.65,
+            "tp": 2,
+            "fp": 1,
+            "fn": 1,
+            "tn": 2
+          },
+          {
+            "threshold": 0.7,
+            "tp": 1,
+            "fp": 1,
+            "fn": 2,
+            "tn": 2
+          },
+          {
+            "threshold": 0.75,
+            "tp": 1,
+            "fp": 1,
+            "fn": 2,
+            "tn": 2
+          },
+          {
+            "threshold": 0.8,
+            "tp": 1,
+            "fp": 1,
+            "fn": 2,
+            "tn": 2
+          },
+          {
+            "threshold": 0.85,
+            "tp": 0,
+            "fp": 1,
+            "fn": 3,
+            "tn": 2
+          },
+          {
+            "threshold": 0.9,
+            "tp": 0,
+            "fp": 1,
+            "fn": 3,
+            "tn": 2
+          },
+          {
+            "threshold": 0.95,
+            "tp": 0,
+            "fp": 0,
+            "fn": 3,
+            "tn": 3
+          },
+          {
+            "threshold": 1.0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 3,
+            "tn": 3
+          }
+        ],
+        "matrix_order": [
+          "TP",
+          "FP",
+          "FN",
+          "TN"
+        ]
+      },
+      "architecture": {
+        "titles": [
+          "INPUT",
+          "CONV BLOCK 1",
+          "CONV BLOCK 2",
+          "FLATTEN",
+          "FC LAYER",
+          "SOFTMAX"
+        ],
+        "shapes": [
+          "64×64×3",
+          "32×32×16",
+          "16×16×32",
+          "8,192",
+          "3 logits",
+          "3 probabilities"
+        ],
+        "photos": 1,
+        "inputRects": 0,
+        "inner": [
+          "M121.5 81.0 H134.5 M129.5 77.2 L134.5 81.0 L129.5 84.8",
+          "M118.5 81.0 H134.5 M129.5 77.2 L134.5 81.0 L129.5 84.8",
+          "M102.5 81.9 H117.5 M112.5 78.1 L117.5 81.9 L112.5 85.7"
+        ],
+        "outer": [
+          "M1 7 H24 M17 1 L24 7 L17 13",
+          "M1 7 H24 M17 1 L24 7 L17 13",
+          "M1 7 H24 M17 1 L24 7 L17 13",
+          "M1 7 H24 M17 1 L24 7 L17 13",
+          "M1 7 H24 M17 1 L24 7 L17 13"
+        ],
+        "centers": [
+          {
+            "title": 172.734375,
+            "shape": 172.734375,
+            "figure": 172.734375,
+            "graphic": 172.734375
+          },
+          {
+            "title": 386.6171875,
+            "shape": 386.6171875,
+            "figure": 386.6171875,
+            "graphic": 386.6171875
+          },
+          {
+            "title": 635.921875,
+            "shape": 635.921875,
+            "figure": 635.9221496582031,
+            "graphic": 635.921875
+          },
+          {
+            "title": 856.453125,
+            "shape": 856.4453125,
+            "figure": 856.453125,
+            "graphic": 856.453125
+          },
+          {
+            "title": 1042.3046875,
+            "shape": 1042.296875,
+            "figure": 1042.3045959472656,
+            "graphic": 1042.3046875
+          },
+          {
+            "title": 1244.3828125,
+            "shape": 1244.375,
+            "figure": 1244.3826904296875,
+            "graphic": 1244.3828125
+          }
+        ],
+        "probabilities": [
+          "P(class0)",
+          "66.5%",
+          "P(class1)",
+          "24.5%",
+          "P(class2)",
+          "9.0%"
+        ],
+        "blockShapes": [
+          "Conv",
+          "MaxPool",
+          "64×64×16",
+          "32×32×16",
+          "Conv",
+          "MaxPool",
+          "32×32×32",
+          "16×16×32"
+        ],
+        "computed_block_outputs": [
+          [
+            32,
+            32,
+            16
+          ],
+          [
+            16,
+            16,
+            32
+          ]
+        ],
+        "flatten": 8192,
+        "example_logits": [
+          2,
+          1,
+          0
+        ],
+        "softmax_percent": [
+          66.5,
+          24.5,
+          9.0
+        ],
+        "feature_maps": "schematic; not trained inference"
+      },
+      "experiment": {
+        "slide": {
+          "x": 0,
+          "y": 0,
+          "right": 1440,
+          "bottom": 810,
+          "width": 1440,
+          "height": 810
+        },
+        "content": {
+          "x": 66,
+          "y": 202.21875,
+          "right": 1374,
+          "bottom": 735,
+          "width": 1308,
+          "height": 532.78125
+        },
+        "footer": {
+          "x": 66,
+          "y": 750,
+          "right": 1374,
+          "bottom": 780,
+          "width": 1308,
+          "height": 30
+        },
+        "cards": [
+          {
+            "x": 66,
+            "y": 202.21875,
+            "right": 642.53125,
+            "bottom": 735,
+            "width": 576.53125,
+            "height": 532.78125
+          },
+          {
+            "x": 662.53125,
+            "y": 202.21875,
+            "right": 1374,
+            "bottom": 735,
+            "width": 711.46875,
+            "height": 532.78125
+          }
+        ],
+        "table": {
+          "x": 91,
+          "y": 327.71875,
+          "right": 617.53125,
+          "bottom": 632.671875,
+          "width": 526.53125,
+          "height": 304.953125
+        },
+        "labels": {
+          "columns": [
+            "실제 이상",
+            "실제 정상"
+          ],
+          "rows": [
+            "예측 이상",
+            "예측 정상"
+          ]
+        },
+        "axisErrors": {
+          "gt": 0,
+          "prediction": 0,
+          "columns": [
+            0,
+            0
+          ],
+          "rows": [
+            0,
+            0
+          ]
+        },
+        "centering": [
+          {
+            "code": "FP",
+            "xErrors": [
+              0.0078125,
+              0.0078125
+            ],
+            "yError": 0,
+            "box": {
+              "x": 432.765625,
+              "y": 419.703125,
+              "right": 609.53125,
+              "bottom": 520.1875,
+              "width": 176.765625,
+              "height": 100.484375
+            }
+          },
+          {
+            "code": "TP",
+            "xErrors": [
+              0.0078125,
+              0.0078125
+            ],
+            "yError": 0,
+            "box": {
+              "x": 248,
+              "y": 419.703125,
+              "right": 424.765625,
+              "bottom": 520.1875,
+              "width": 176.765625,
+              "height": 100.484375
+            }
+          },
+          {
+            "code": "TN",
+            "xErrors": [
+              0,
+              0.0078125
+            ],
+            "yError": 0,
+            "box": {
+              "x": 432.765625,
+              "y": 526.1875,
+              "right": 609.53125,
+              "bottom": 626.671875,
+              "width": 176.765625,
+              "height": 100.484375
+            }
+          },
+          {
+            "code": "FN",
+            "xErrors": [
+              0.0078125,
+              0
+            ],
+            "yError": 0,
+            "box": {
+              "x": 248,
+              "y": 526.1875,
+              "right": 424.765625,
+              "bottom": 626.671875,
+              "width": 176.765625,
+              "height": 100.484375
+            }
+          }
+        ],
+        "metrics": [
+          {
+            "name": "accuracy",
+            "box": {
+              "x": 687.53125,
+              "y": 304.71875,
+              "right": 1012.265625,
+              "bottom": 479.5,
+              "width": 324.734375,
+              "height": 174.78125
+            },
+            "value": "75.0%",
+            "formula": "(TP + TN) / (TP + TN + FP + FN)",
+            "fraction": [
+              "TP + TN",
+              "TP + TN + FP + FN"
+            ],
+            "calculation": "= 9/12 = 75.0%"
+          },
+          {
+            "name": "precision",
+            "box": {
+              "x": 1024.265625,
+              "y": 304.71875,
+              "right": 1349,
+              "bottom": 479.5,
+              "width": 324.734375,
+              "height": 174.78125
+            },
+            "value": "80.0%",
+            "formula": "TP / (TP + FP)",
+            "fraction": [
+              "TP",
+              "TP + FP"
+            ],
+            "calculation": "= 4/5 = 80.0%"
+          },
+          {
+            "name": "recall",
+            "box": {
+              "x": 687.53125,
+              "y": 491.5,
+              "right": 1012.265625,
+              "bottom": 710,
+              "width": 324.734375,
+              "height": 218.5
+            },
+            "value": "66.7%",
+            "formula": "TP / (TP + FN)",
+            "fraction": [
+              "TP",
+              "TP + FN"
+            ],
+            "calculation": "= 4/6 = 66.7%"
+          },
+          {
+            "name": "f1",
+            "box": {
+              "x": 1024.265625,
+              "y": 491.5,
+              "right": 1349,
+              "bottom": 710,
+              "width": 324.734375,
+              "height": 218.5
+            },
+            "value": "72.7%",
+            "formula": "2TP / (2TP + FP + FN)",
+            "fraction": [
+              "2TP",
+              "2TP + FP + FN"
+            ],
+            "calculation": "= 8/11 = 72.7%"
+          }
+        ],
+        "overflow": [],
+        "badTypography": [],
+        "pageWidth": 1440,
+        "dividerGaps": {
+          "left": 14.25,
+          "right": 14.28125
+        },
+        "counts": [
+          {
+            "code": "TP",
+            "count": 4,
+            "headers": "pred-anomaly gt-anomaly",
+            "background": "rgb(227, 246, 243)"
+          },
+          {
+            "code": "FP",
+            "count": 1,
+            "headers": "pred-anomaly gt-normal",
+            "background": "rgb(255, 240, 224)"
+          },
+          {
+            "code": "FN",
+            "count": 2,
+            "headers": "pred-normal gt-anomaly",
+            "background": "rgb(255, 240, 224)"
+          },
+          {
+            "code": "TN",
+            "count": 5,
+            "headers": "pred-normal gt-normal",
+            "background": "rgb(227, 246, 243)"
+          }
+        ],
+        "dividers": {
+          "gt": "1px",
+          "prediction": "1px"
+        },
+        "fontsLoaded": 1
+      },
+      "executive-summary": {
+        "obsolete": 0,
+        "title": "점검 효율 개선안 요약",
+        "subtitle": "수동 점검 부담 감소를 위한 파일럿 검토 · 효율성과 미검출 위험의 동시 평가",
+        "noteCount": 0,
+        "footer": [
+          "Design Template Library · Executive-Summary",
+          "08 / 08"
+        ],
+        "actions": [
+          {
+            "number": "1",
+            "title": "우선순위 설정",
+            "detail": "점검 대상의 위험도와 처리 시점을 구분"
+          },
+          {
+            "number": "2",
+            "title": "파일럿 기준 통일",
+            "detail": "동일 기준으로 도입 전·후 수치를 집계"
+          },
+          {
+            "number": "3",
+            "title": "확대 판단",
+            "detail": "효율성과 미검출 위험을 함께 확인"
+          }
+        ],
+        "impact": {
+          "x": 66,
+          "y": 196.328125,
+          "width": 782.890625,
+          "height": 538.671875,
+          "right": 848.890625,
+          "bottom": 735
+        },
+        "action": {
+          "x": 868.890625,
+          "y": 196.328125,
+          "width": 505.109375,
+          "height": 538.671875,
+          "right": 1374,
+          "bottom": 735
+        },
+        "impactBackground": "rgb(255, 255, 255)",
+        "impactBorder": "solid",
+        "ticks": [
+          {
+            "label": "100%",
+            "ratio": 1,
+            "box": {
+              "x": 101.4375,
+              "y": 314.1875,
+              "width": 29.5625,
+              "height": 18,
+              "right": 131,
+              "bottom": 332.1875
+            }
+          },
+          {
+            "label": "50%",
+            "ratio": 0.5,
+            "box": {
+              "x": 106.21875,
+              "y": 444.1875,
+              "width": 24.78125,
+              "height": 18,
+              "right": 131,
+              "bottom": 462.1875
+            }
+          },
+          {
+            "label": "0",
+            "ratio": 0,
+            "box": {
+              "x": 123.984375,
+              "y": 574.1875,
+              "width": 7.015625,
+              "height": 18,
+              "right": 131,
+              "bottom": 592.1875
+            }
+          }
+        ],
+        "groups": [
+          {
+            "box": {
+              "x": 139,
+              "y": 283.1875,
+              "width": 218.953125,
+              "height": 403.75,
+              "right": 357.953125,
+              "bottom": 686.9375
+            },
+            "title": "월간 수동 점검",
+            "titleBox": {
+              "x": 194.640625,
+              "y": 625.1875,
+              "width": 107.671875,
+              "height": 26.25,
+              "right": 302.3125,
+              "bottom": 651.4375
+            },
+            "valueBoxes": [
+              {
+                "x": 176.90625,
+                "y": 287.1875,
+                "width": 54.125,
+                "height": 30,
+                "right": 231.03125,
+                "bottom": 317.1875
+              },
+              {
+                "x": 270.46875,
+                "y": 373.859375,
+                "width": 44.984375,
+                "height": 30,
+                "right": 315.453125,
+                "bottom": 403.859375
+              }
+            ],
+            "before": 120,
+            "after": 80,
+            "unit": "건",
+            "delta": "−33.3%",
+            "deltaColor": "rgb(38, 166, 161)",
+            "values": [
+              "120건",
+              "80건"
+            ],
+            "labels": [
+              "기존",
+              "개선안"
+            ],
+            "bars": [
+              {
+                "x": 177.96875,
+                "y": 323.1875,
+                "width": 52,
+                "height": 260,
+                "right": 229.96875,
+                "bottom": 583.1875,
+                "color": "rgb(49, 104, 200)",
+                "ratio": 1
+              },
+              {
+                "x": 266.96875,
+                "y": 409.859375,
+                "width": 52,
+                "height": 173.328125,
+                "right": 318.96875,
+                "bottom": 583.1875,
+                "color": "rgb(38, 166, 161)",
+                "ratio": 0.6667
+              }
+            ],
+            "border": "none",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "box": {
+              "x": 371.953125,
+              "y": 283.1875,
+              "width": 218.96875,
+              "height": 403.75,
+              "right": 590.921875,
+              "bottom": 686.9375
+            },
+            "title": "평균 처리 시간",
+            "titleBox": {
+              "x": 427.59375,
+              "y": 625.1875,
+              "width": 107.671875,
+              "height": 26.25,
+              "right": 535.265625,
+              "bottom": 651.4375
+            },
+            "valueBoxes": [
+              {
+                "x": 405.609375,
+                "y": 287.1875,
+                "width": 62.65625,
+                "height": 30,
+                "right": 468.265625,
+                "bottom": 317.1875
+              },
+              {
+                "x": 494.421875,
+                "y": 373.859375,
+                "width": 63.03125,
+                "height": 30,
+                "right": 557.453125,
+                "bottom": 403.859375
+              }
+            ],
+            "before": 45,
+            "after": 30,
+            "unit": "분/건",
+            "delta": "−33.3%",
+            "deltaColor": "rgb(38, 166, 161)",
+            "values": [
+              "45분/건",
+              "30분/건"
+            ],
+            "labels": [
+              "기존",
+              "개선안"
+            ],
+            "bars": [
+              {
+                "x": 410.9375,
+                "y": 323.1875,
+                "width": 52,
+                "height": 260,
+                "right": 462.9375,
+                "bottom": 583.1875,
+                "color": "rgb(49, 104, 200)",
+                "ratio": 1
+              },
+              {
+                "x": 499.9375,
+                "y": 409.859375,
+                "width": 52,
+                "height": 173.328125,
+                "right": 551.9375,
+                "bottom": 583.1875,
+                "color": "rgb(38, 166, 161)",
+                "ratio": 0.6667
+              }
+            ],
+            "border": "none",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "box": {
+              "x": 604.921875,
+              "y": 283.1875,
+              "width": 218.96875,
+              "height": 403.75,
+              "right": 823.890625,
+              "bottom": 686.9375
+            },
+            "title": "월말 미처리",
+            "titleBox": {
+              "x": 670.671875,
+              "y": 625.1875,
+              "width": 87.46875,
+              "height": 26.25,
+              "right": 758.140625,
+              "bottom": 651.4375
+            },
+            "valueBoxes": [
+              {
+                "x": 647.796875,
+                "y": 287.1875,
+                "width": 44.203125,
+                "height": 30,
+                "right": 692,
+                "bottom": 317.1875
+              },
+              {
+                "x": 743.671875,
+                "y": 443.1875,
+                "width": 30.46875,
+                "height": 30,
+                "right": 774.140625,
+                "bottom": 473.1875
+              }
+            ],
+            "before": 20,
+            "after": 8,
+            "unit": "건",
+            "delta": "−60.0%",
+            "deltaColor": "rgb(38, 166, 161)",
+            "values": [
+              "20건",
+              "8건"
+            ],
+            "labels": [
+              "기존",
+              "개선안"
+            ],
+            "bars": [
+              {
+                "x": 643.90625,
+                "y": 323.1875,
+                "width": 52,
+                "height": 260,
+                "right": 695.90625,
+                "bottom": 583.1875,
+                "color": "rgb(49, 104, 200)",
+                "ratio": 1
+              },
+              {
+                "x": 732.90625,
+                "y": 479.1875,
+                "width": 52,
+                "height": 104,
+                "right": 784.90625,
+                "bottom": 583.1875,
+                "color": "rgb(38, 166, 161)",
+                "ratio": 0.4
+              }
+            ],
+            "border": "none",
+            "background": "rgba(0, 0, 0, 0)"
+          }
+        ]
+      }
+    }
   },
   "preview_sha256": {
-    "dual-mode-scroll.jpg": "78b91223bd87e69083edf7be2de1bd8e40e90670968ffc8aa89812a2a2acea98",
-    "dual-mode-slide.jpg": "82e8fcffa11c0aa2224662e2048a4992fdcfcf39712e656c5554461c955ffd76",
-    "dual-mode-lab-slide.jpg": "ee288419adc8ff95d548412d0695a54e7d6d3417babad8254f60343e01c42969"
+    "dual-mode-scroll.jpg": "b5b82d65df55d2bb512f2619cec96b4ee68a751849e7f29b8c6abc6dcd5aedb3",
+    "dual-mode-slide.jpg": "46c23d52dbfa46bd59ec73f4dd69996968605eb4e5960065463fcfeccdf9ad6b"
   }
 }

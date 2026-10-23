@@ -1,94 +1,66 @@
-# 8개 디자인 레퍼런스를 Scroll / Slide로 재사용하기
+# 기존 8개 원본을 Scroll / Slide 두 보기로 연결
 
-## 역할과 교체 판단
+## 역할과 최종 출력
 
-8개 `templates/html/` 레퍼런스는 **도식·정보 배치의 원본 패턴**입니다. `templates/dual-mode-learning/`은 **같은 학습 블록을 문서/발표로 구성하는 공통 콘텐츠·렌더러·탐색 예제**입니다. 패턴의 시각 규격은 재사용할 수 있지만 정적 HTML 8개나 JPG만으로 두 모드의 동일 콘텐츠·실습·상태 전달을 대체할 수는 없습니다.
+디자인은 기존 `templates/html/`의 8개 레퍼런스가 담당하고, `templates/dual-mode-learning/`은 보기와 탐색만 담당합니다. 출력은 **Scroll과 Slide 두 개**입니다. 실습은 #5의 내용이며 세 번째 형식이 아닙니다.
 
-기존 `previews/dual-mode-process-slide.jpg`는 이름과 달리 첫 Concept 장의 화면이었습니다. 런타임 계산·전환 기능에는 쓰이지 않고 갤러리 썸네일과 생성 스크립트 두 곳에서만 참조했으므로 삭제하고 `dual-mode-slide.jpg`로 교체합니다. `templates/html/process.html`과 `previews/html-process.png`는 #2의 정상 원본/프리뷰이므로 유지합니다. #2 PNG를 연속 강의의 실제 캡처인 것처럼 붙이지 않습니다.
+별도의 5장 CNN 도식·스타일·고정 필터 계산 엔진을 제거했습니다. `dual-mode-process-slide.jpg`와 `dual-mode-lab-slide.jpg`는 필요하지 않습니다. 대표 프리뷰는 [Scroll](../previews/dual-mode-scroll.jpg), [Slide](../previews/dual-mode-slide.jpg) 두 개만 생성합니다. 모드 선택용 index 페이지도 제거했고 갤러리에서 두 보기로 직접 연결합니다.
 
-| 독립 레퍼런스 | 이번 데모에서 재사용한 기준 | 적용 여부와 이유 |
+## 하나의 디자인 원본
+
+[lesson.js](../templates/dual-mode-learning/assets/js/lesson.js)는 아래 원본의 경로와 ID만 관리합니다. [공통 렌더러](../templates/dual-mode-learning/assets/js/render.js)는 같은 origin의 실제 HTML을 iframe으로 표시합니다. 화면에 JPG를 붙이거나 제목·카드·그림을 다른 CSS로 재구현하지 않습니다. 원본의 JS/Canvas/SVG도 그대로 실행합니다.
+
+| 번호·ID | 같은 원본 | 그대로 유지하는 핵심 구성·계산 |
 | --- | --- | --- |
-| #1 Concept | 한 개념을 입력/관계로 설명하는 원칙 | 별도 작업 중인 원본은 그대로 보존. 데모의 단일 채널 수치 예제만 갱신 |
-| #2 Process | 입력→처리→출력, White 노드와 Blue 처리 강조, 연결된 SVG 화살표 | 3장 처리 흐름. 사진 기반 고정 필터 맵이나 예시 분류 head를 복제하지 않음 |
-| #3 Comparison | 같은 높이·같은 기준선·동등한 White 카드 | 5장의 고정 필터 3개 결과 비교. 규칙 기반/머신러닝 문구는 재사용하지 않음 |
-| #4 Step-by-Step | 5×5 입력·3×3 커널·출력, 9개 곱과 전체 합, 선택 위치의 대응 | 2장과 실습의 실제 데이터까지 일치시킴 |
-| #5 Interactive | 조작→선택 강조→수치/수식/결과 동시 갱신·초기화 | 4장. 임계값·분류 지표 데이터는 합성곱 문제와 다르므로 넣지 않음 |
-| #6 Architecture | 모양과 실제 차원 구분, 중앙축과 연결선 | 공통 정렬 원칙만 적용. Flatten/FC/Softmax 전체 구조는 국소 연산 주제 밖 |
-| #7 Experiment | Figure의 선택·개수와 오른쪽 계산식의 명확한 대응 | 선택된 영역의 9개 곱·합·출력 위치로 적용. 혼동행렬은 넣지 않음 |
-| #8 Executive Summary | 근거와 한 문장 해석의 위계 | 마지막 Teal 캡션 규칙만 적용. 운영 KPI·성과 수치를 넣지 않음 |
+| 01 `ref-concept` | [concept.html](../templates/html/concept.html) | 사과·4×4 픽셀·선택 RGB/HEX·H×W×3. 실제 이미지에서 계산 |
+| 02 `ref-process` | [process.html](../templates/html/process.html) | INPUT→FEATURE→TASK→OUTPUT. 실제 고정 필터 맵과 별도 예시 확률 66.5/24.5/9.0% |
+| 03 `ref-comparison` | [comparison.html](../templates/html/comparison.html) | 규칙 기반/머신러닝의 준비·예측 대칭, 동일 입력, 세 비교 행과 장점/한계 |
+| 04 `ref-step-by-step` | [step-by-step.html](../templates/html/step-by-step.html) | 5×5·3×3·3×3, 원소별 곱 9개, 합 −6, 출력 위치 대응 |
+| 05 `ref-interactive` | [interactive.html](../templates/html/interactive.html) | 실제값별 점수, 임계값, 판정·혼동행렬·Precision/Recall 동시 갱신 |
+| 06 `ref-architecture` | [architecture.html](../templates/html/architecture.html) | Input 64×64×3→2개Conv Block→Flatten 8,192→FC 3 logits→Softmax |
+| 07 `ref-experiment` | [experiment.html](../templates/html/experiment.html) | TP4 FP1 / FN2 TN5, 75.0/80.0/66.7/72.7%와 공식 |
+| 08 `ref-executive-summary` | [executive-summary.html](../templates/html/executive-summary.html) | 세 지표의 원래 단위·정규화·감소율, 세 후속 조치 |
 
-## 공통 학습 목표와 데이터
+전체 수치·조건·의미는 [REFERENCE_PAGE_SPECS.md](REFERENCE_PAGE_SPECS.md), [TEMPLATE_CATALOG.md](../TEMPLATE_CATALOG.md)를 정본으로 봅니다. 이 문서에서 다른 버전의 데이터를 만들지 않습니다. #1은 원본을 표시할 뿐 별도 진행 중인 작업을 수정하거나 가져오지 않습니다.
 
-초급자가 하나의 커널을 모든 위치에 재사용하여 출력 한 칸씩을 계산한다는 관계를 이해하는 예제입니다. 실제 사진·학습 모델의 측정값이 아니라 **고정된 수치 배열에 대한 실제 계산**입니다. 두 모드의 데이터 정본은 [lab.js](../templates/dual-mode-learning/assets/js/lab.js)입니다.
+## 원본 서식을 바꾸지 않는 배치
 
-입력은 #4 Step-by-Step과 같습니다.
+원본을 직접 1600×950에서 열면 캔버스는 1440×810입니다. 보기는 이 캔버스를 정확히 유지하고 부모가 가용 공간에 맞춰 균일 배율을 적용합니다.
 
-```text
-1 2 3 1 0
-4 5 6 2 1
-7 8 9 3 1
-2 1 0 4 2
-1 3 2 1 0
+iframe 안에서는 아래 바깥 배치만 보정합니다.
+
+```css
+html, body { min-height:0; width:1440px; height:810px; overflow:hidden; background:transparent; }
+.reference-deck { padding:0; min-height:0; }
+.reference-slide { zoom:1; }
 ```
 
-기본 커널의 세 행은 모두 `[1,0,−1]`입니다. 단일 채널, stride=1, padding=0, bias=0, 커널 반전 없는 cross-correlation입니다.
+이는 카드·제목·수식·행렬·화살표·푸터의 서식을 덮어쓰는 규칙이 아닙니다. 원본 49px 제목·21px 부제·54/66/30px 기본 패딩 및 페이지별 예외도 그대로 유지합니다. 앞서 추가했던 44px 제목·40/58/28px 패딩·별도 Footer 규격은 제거했습니다. 원본의 로컬 Pretendard와 전역−1pt를 그대로 사용합니다.
 
-- 첫 입력 영역은 `[[1,2,3],[4,5,6],[7,8,9]]`.
-- 첫 곱은 `[1,0,−3,4,0,−6,7,0,−9]`, 전체 합 `−6`.
-- 전체 출력은 `[[-6,9,16],[-2,5,11],[-1,4,8]]`.
-- 오른쪽 한 칸 이동 시 다음 출력은 `9`.
-- 일반 출력 크기는 `floor((N+2P−K)/S)+1`, 이번 예제는 `(5+0−3)/1+1=3`.
-- 평균 커널은 모든 항 1, 곱의 합을 9로 나눕니다. 출력은 `[[5,39/9,26/9],[42/9,38/9,28/9],[33/9,31/9,22/9]]`.
-- 중앙 픽셀 커널은 중심만 1이고 나머지는 0입니다. 출력은 `[[5,6,2],[8,9,3],[1,0,4]]`. median 필터와 다릅니다.
-- 출력은 반올림 전 값으로 계산하고 비정수만 소수 둘째 자리까지 표시합니다. 음수는 수학용 minus로 표시합니다. 중간 곱 0을 생략하지 않습니다.
+바깥 UI의 공통 토큰은 [styles.css](../templates/html/styles.css)를 상속합니다. 보기 전환 바 44px, Slide 하단 컨트롤 44px, 프레임 16:9/radius10px/공통 shadow를 사용합니다. Scroll은 목차 200px·gap24px·외곽 24px·원본 사이 32px입니다. Slide 프레임 폭은 `min(1440px,100vw−40px,(100vh−112px)×16/9)`입니다. `ResizeObserver`는 프레임 폭/1440의 배율을 적용하며 개별 텍스트를 줄이지 않습니다.
 
-## 5개 블록의 Figure 구성
+## 조작·현재 위치·원본 갱신
 
-| ID / 목적 | 구성·최소 설명 | 삭제하면 안 되는 관계 |
-| --- | --- | --- |
-| `motivation` / 주변 관계 | 좌측 5×5에서 3×3 선택, 우측 입력/계산/응답 3행 | 한 채널 수치 예제이며 실제 사진 측정이 아니라는 조건 |
-| `locality` / 한 셀 계산 | 입력→커널→출력의 한 흐름, 우측 곱 9개와 합 −6 | 같은 입력 영역/출력 셀 강조, 전체 합과 다음 위치 값 9 |
-| `pipeline` / 전체 이동 | INPUT / FILTER APPLICATION / FEATURE MAP 세 노드와 출력 크기 식 | 같은 커널·S1/P0·3×3 출력·행 우선 이동 |
-| `experiment` / 직접 조작 | 3종 필터, 이전/다음 위치, 초기화, 선택 입력/출력, 곱 9개와 합 | 선택 상태와 수치가 동시에 바뀌며 두 모드의 결과가 같음 |
-| `takeaway` / 결과 비교 | 세로 경계/평균/중앙 픽셀의 동등한 3개 White 카드, 각 3×3 수치 | 같은 입력·같은 조건. 고정 필터의 반응이며 학습된 CNN 추론이 아님 |
+모드와 원본을 같은 정적 서버에서 실행합니다. 상대 경로의 원본을 사용하므로 이미지·폰트·공통 JS의 URL을 복사하거나 재작성하지 않습니다. `python -m http.server 8000` 후 [Scroll](../templates/dual-mode-learning/scroll.html) 또는 [Slide](../templates/dual-mode-learning/slides.html)를 엽니다.
 
-각 블록은 header → Figure → White 조건 설명 → Scroll 심화 해설 → 마지막 핵심 캡션 → Footer 순서입니다. Slide에서는 심화 해설만 숨기고 필수 caveat는 유지합니다. 세부 데이터/상태는 [README](../templates/dual-mode-learning/README.md)와 [모드 계약](../templates/dual-mode-learning/MODES.md)을 봅니다.
+`?threshold=80#ref-interactive`는 현재 #5와 임계값 80을 나타냅니다. 원본 input 이벤트로 계산하며, 보기 쪽 코드는 정수 0–100의 선택값을 전달합니다. 모드 왕복/새로고침 시 같은 판정·행렬을 복원합니다. 별도 실습 엔진을 만들지 않습니다. 임계값의 기본 60·양성 조건score≥threshold·분모 0의 정의 불가 처리도 원본을 따릅니다.
 
-## 수치로 재현할 시각 규격
+본문/그림에 포커스가 있는 상태에서도 Slide 단축키가 동작하며, 입력/버튼/링크를 조작하는 키는 가로채지 않습니다. Scroll의 현재 섹션과 mode 링크, Slide의 현재 장과 진행 표시를 함께 갱신합니다. ID와 과거 anchor 매핑은 [MODES.md](../templates/dual-mode-learning/MODES.md)에 기록합니다.
 
-[styles.css](../templates/html/styles.css)의 Pretendard Variable·−1pt·색·line-height·space 토큰을 상속합니다. 숫자/라벨의 monospace 예외를 제거하고 실제 한글·영문·숫자·수식 글리프를 확인합니다. Pretendard에 없는 floor 기호는 다른 글꼴로 대체하지 않고 수치식/내림 설명으로 표현합니다.
+## 실제 Chromium 검증
 
-| 항목 | 현재 구현값 | 의미 |
-| --- | --- | --- |
-| Slide 논리 크기 | 1440×810 | 창 크기와 무관한 기준 구성 |
-| 패딩 | 위40 / 좌우58 / 아래28px | 제목·캡션·페이지 번호 슬롯 |
-| 제목 / 부제 | 44px/1.2 / 21px/1.38 | 각각 공통 title/subtitle line-height |
-| header 내부 / 다음 구역 | 8 / 24px | 줄 높이와 별도의 요소 간격 |
-| content→caption→footer | 각각 16px | 캡션 아래 추가 본문 배치 금지 |
-| 일반 카드 / 실습 | 24 / 20px padding | 17px radius, 1px border, White |
-| 주요 흐름 / 계산 영역 | 가변 폭 + 290px / gap24px | 계산 왼쪽 세로 경계 및 padding24px |
-| 입력/커널/출력 행렬 | cell36px, gap4px | 그림 중앙축은 실제 행렬 bounding box로 검증 |
-| 행렬 슬롯 | 제목24px / 그림196px / 보조24px, gap12px | 행렬 크기가 달라도 같은 y 중심 |
-| 시작 그림 / 비교 결과 | cell44px / 46px | 개념 관찰·결과 읽기를 위한 확대 |
-| 원소별 곱 | 3열, 일반 gap6px, 실습 gap4px | 9개 곱·0 항까지 전부 보임 |
-| 마지막 캡션 | 19px/1.45, Teal 왼쪽4px, padding12/17px | 핵심 해석을 마지막에 배치 |
-| Scroll 기본 | 목차220px / gap32px / 바깥32px | 본문 최대1370px, Figure는 가용 폭 |
-| 901–1399px PC 창 | 목차180px / gap24px / 바깥24px | 계산표는 흐름 아래 가로 3열로 이동 |
+[verify_pretendard.py](../scripts/verify_pretendard.py)가 [verify_dual_mode.py](../scripts/verify_dual_mode.py)를 실행합니다.
 
-Blue는 흐름·선택·양수, Amber는 음수, Muted는 0/조건입니다. 선택 출력은 Navy/White입니다. 비교 카드의 배경 차이로 우열을 암시하지 않습니다. 외부 SVG 화살표는 몸통/촉을 한 path로 연결하고 행렬 중심축에 맞춥니다. `alignFlowArrows()`는 양옆 행렬의 실제 bounding box 중심 평균을 구하고, 현재 SVG 중심과의 차이를 캔버스 배율로 나눈 만큼 이동합니다. 최초 폰트 로딩·슬라이드 전환·리사이즈·실습 갱신 후 재계산합니다.
+1. 원본 8개를 직접 렌더링하고 모든 표시 요소의 글꼴·크기·굵기·행간·자간·색·배경·radius·padding 및 캔버스 기준 bounding box를 기준값으로 수집합니다.
+2. PC 1600×950/1440×810/1366×768/1280×720 × 두 모드 ×8개 = **64개 화면**을 원본과 대조합니다. 동일 CSS라는 선언만으로 통과하지 않으며 실제 style과 상대 위치를 비교합니다.
+3. 원본 내부의 잘림·Footer 겹침·화살표, 부모 프레임의 16:9·경계·가로 넘침을 검사합니다.
+4. iframe 안의 실제 글리프를 CDP로 확인하고 `document.fonts`의 한글/영문 로딩, 모든 텍스트의−1pt를 확인합니다.
+5. 기존 페이지별 기술 검산을 사용해 픽셀·맵·Softmax·−6 계산·슬라이더 21상태·CNN Shape·지표·KPI를 확인합니다. #2의 원본 전용 최소 크기 검사는 직접 렌더링에 적용하고, iframe에서는 실제 서식/위치 동일성과 독립 맵/확률 계산을 확인합니다.
+6. #5의 비기본값 80을 유지한 두 모드 왕복·새로고침, 입력 포커스 보호, iframe 키보드 탐색, 목차에서 모드 전환, 잘못된 threshold 기본값을 검사합니다.
+7. 갤러리·부모 UI도 네 PC 크기의 실제 폰트·가로 경계와 이미지 로딩을 검사합니다.
 
-## 상태·검증·프리뷰
+[검증 JSON](../previews/review/dual-mode-validation.json)에 결과와 실제 원본/보기 소스 해시를 기록합니다. 전체 검토 PNG는 `/tmp/dual-mode-review/`에 생성하여 CI artifact에 보관합니다. 저장소의 canonical JPG는 두 모드의 1600×950 캡처 두 개뿐입니다. 중간 #5 캡처는 QA evidence일 뿐 세 번째 출력이나 대표 preview가 아닙니다.
 
-`scripts/verify_pretendard.py`가 기존 갤러리/폰트 검사와 함께 [verify_dual_mode.py](../scripts/verify_dual_mode.py)를 실행합니다.
+## 다른 개념으로 재사용
 
-1. PC `1600×950`, `1440×810`, `1366×768`, `1280×720` × 두 모드 × 5개 블록 = **40개 레이아웃**.
-2. DOM/Range 경계로 텍스트 잘림·가로 넘침·제목/Figure 침범·내용/caption/footer 겹침 검사.
-3. 실제 행렬 중앙 y좌표, 비교 카드/제목/행렬/결과 구분선의 대칭 검사.
-4. `document.fonts` 로딩 및 CDP의 실제 글리프 Pretendard 사용, 모든 표시 텍스트 −1pt 검사.
-5. 브라우저 JS에서 가져오지 않은 Python 기준 입력/커널로 곱·합·출력과 필터 3종×위치9개를 독립 검산. 두 모드 **각 27상태** 검사.
-6. 방향키/Home/End 탐색과 입력 포커스 보호, 비기본 필터·가운데 위치를 유지한 왕복 전환·새로고침·잘못된 URL 초기값 검사.
-7. 기존 1500×950/390×844의 폰트·가로 경계 호환 검사는 유지하되, 모바일은 새 디자인의 필수 제작 환경이 아닙니다.
-
-[검증 JSON](../previews/review/dual-mode-validation.json)은 PC 검사·소스 해시·선택 상태를 기록합니다. 검토용 전체 Slide PNG는 `/tmp/dual-mode-review/`에 생성합니다. 캐노니컬 프리뷰는 [Scroll](../previews/dual-mode-scroll.jpg), [Slide](../previews/dual-mode-slide.jpg), [실습](../previews/dual-mode-lab-slide.jpg)입니다. 현재 세 JPG는 기존 캡처 규격 1500×950을 유지하며 실제 렌더링 후 저장합니다. 갤러리는 새 Slide 프리뷰를 사용합니다.
-
-새 강의에서는 이 구조를 유지하면서 필요한 패턴만 선택합니다. #7 지표나 #8 보고가 필요한 주제에서는 해당 패턴을 새 공통 학습 블록으로 추가하고 수식·상태·시각 검증도 함께 추가합니다. 새 개념에 CNN 데이터나 강제 8장 구조를 복사하지 않습니다.
+이 보기는 기존 8개 레퍼런스의 서식을 직접 비교하기 위한 예제입니다. 실제 새 강의는 [재사용 워크플로](REFERENCE_REUSE_WORKFLOW.md)에 따라 필요한 유형만 선택합니다. 모든 강의에 8장을 강제하거나 iframe을 유일한 구현법으로 강제하지 않습니다. 어떤 구성 방식을 쓰든 원본에서 승인된 Typography·간격·카드·도식 규칙을 사용하고, 콘텐츠·수식·계산의 단일 소스와 Scroll/Slide 두 출력을 유지합니다.

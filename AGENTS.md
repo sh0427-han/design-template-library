@@ -53,12 +53,13 @@
 - For dual-mode requests inspect `templates/dual-mode-learning/DESIGN.md` and `MODES.md` first.
 - Share lesson content, math and interactive behavior between modes; separate only layout, navigation and explanatory density.
 - Inherit the canonical `templates/html/styles.css` tokens and its global **-1pt** character spacing; do not re-declare conflicting colors.
-- Preserve the existing Concept / Process / Comparison HTML patterns and the CNN Scroll/Slide implementation except where the task requires changes.
+- The dual-mode viewer displays the existing eight editable HTML references directly; do not create a second slide design or duplicate their calculations.
+- Keep only Scroll and Slide entrypoints and canonical previews. Interactive content belongs inside these modes, not a third output. Preserve the original reference files unless the task explicitly requests changes.
 
 
 ## Ongoing example refinement
 
-- The eight HTML reference patterns and CNN Scroll/Slide lesson are editable, evolving reference samples.
+- The eight HTML reference patterns and their Scroll/Slide views are editable, evolving reference samples.
 - Do not add generic creator-facing meta notes or force subtitles onto multiple lines when avoidable.
 - Prefer factual, computed visual explanation; distribute content visually across each slide.
 - Validate representative desktop viewports: 1600x950, 1366x768, 1280x720.
