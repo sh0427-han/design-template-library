@@ -6,8 +6,7 @@ from functools import partial
 from http.server import SimpleHTTPRequestHandler,ThreadingHTTPServer
 from pathlib import Path
 import base64,hashlib,json,os,re,threading,traceback
-import render_previews
-from reference_validation import actual_fonts, browser_options
+from reference_validation import GEOMETRY, actual_fonts, browser_options
 from playwright.sync_api import sync_playwright
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -133,7 +132,7 @@ def main():
      assert r['cards'][0]['right']<r['cards'][1]['x']
     else: assert r['cards'][0]['bottom']<r['cards'][1]['y']
     # Keep the repository's existing generic geometry and interaction checks usable.
-    shared=page.evaluate(render_previews.GEOMETRY)
+    shared=page.evaluate(GEOMETRY)
     for key in ['outside','overflow','footerOverlap','spacing','clippedText','arrowErrors']:assert not shared[key],(width,key,shared[key])
     page.locator('.slide').screenshot(path=str(out/f'interactive-{width}.png'),animations='disabled')
     if width==1600:

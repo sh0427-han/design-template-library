@@ -1,6 +1,8 @@
 # HTML 레퍼런스 최종 통합 기록 · 2026-10-22
 
-## 상태
+**이 문서는 PR #12의 초기 통합 이력입니다.** 이후 #1 PR #15, #2 PR #13/#18, #3 PR #14, 두 모드 PR #17이 병합되었습니다. 현재 소스·검증·정리 상태는 [8종 검토 완료 상태](REFERENCE_RELEASE_STATUS.md)를 따릅니다. 아래 표의 선택과 수치는 2026-10-22 당시 기록이며 현행 명세를 대체하지 않습니다.
+
+## 당시 상태
 
 최종 설계·출처·검증을 [통합 PR #12](https://github.com/sh0427-han/design-template-library/pull/12)로 묶었습니다. #5·#7의 원본 브랜치와 통합 브랜치는 원격 Push를 완료했습니다. 처음 발생한 쓰기 권한 문제는 collaborator 등록 후 `push=true`로 해결됐습니다.
 
@@ -10,11 +12,9 @@ main 반영 여부·Merge SHA·CI 결과는 위 PR의 실제 상태와 [main 커
 - 기준 main: `9ad6c458665ffd7ed83318ad20f04d68a22218f0`
 - 통합 브랜치: `integration/finalize-html-references-20261022`
 - 기계 판독 가능한 출처: [integration-sources.json](integration-sources.json)
-- 전체 원격 브랜치·PR별 33개 커밋·변경 파일·충돌 목록: [integration-inventory.json](integration-inventory.json)
-- 통합 PR 게시문: [INTEGRATION_PR.md](INTEGRATION_PR.md)
-- 게시·검증·Merge·기존 PR 정리 명령: `python scripts/publish_integration.py --merge`
+- 당시 전체 조사 JSON·게시문 초안·일회성 게시 스크립트는 검토 완료 후 정리했습니다. 필요한 원본은 PR #12와 Git 이력에서 확인하며, 선택한 소스의 manifest는 유지합니다.
 
-## 8개 페이지의 최종 선택과 main 통합 단위
+## PR #12 당시 8개 페이지의 선택과 통합 단위
 
 | 페이지 | 선택한 출처 | 실제 통합 내용 | 검증 | main 통합 PR |
 | --- | --- | --- | --- | --- |
@@ -27,7 +27,7 @@ main 반영 여부·Merge SHA·CI 결과는 위 PR의 실제 상태와 [main 커
 | 07 Experiment | `3ad7079`, 원본 Push 완료 | 승인된 TP FP / FN TN와 4개 지표·구분선 | 독립 분수·두 F1 식·정렬·6화면 | #12 |
 | 08 Executive Summary | 기존 main | 기존 정상 레이아웃·KPI/단위/정규화 유지 | 변화율·막대 비율·축·기준선·6화면 | #12 |
 
-대표 파일은 [카탈로그](../TEMPLATE_CATALOG.md)에 8개 소스·프리뷰별로 연결되어 있습니다. 이 표의 검증 근거는 [공통 JSON](../previews/review/reference-validation.json)과 [Interactive JSON](../previews/review/interactive-validation.json)입니다. 페이지별 승인 상태와 기술 검사 통과, 원격 반영 상태를 구분합니다.
+대표 파일은 [카탈로그](../TEMPLATE_CATALOG.md)에 8개 소스·프리뷰별로 연결되어 있습니다. 당시 검증 근거는 PR #12의 Git 이력에서 확인합니다. 현재 [공통 JSON](../previews/review/reference-validation.json)과 [Interactive JSON](../previews/review/interactive-validation.json)은 최신 원본을 대상으로 갱신되므로 과거 버전의 증거로 사용하지 않습니다. 페이지별 승인 상태와 기술 검사 통과, 원격 반영 상태를 구분합니다.
 
 ## 충돌 처리
 
@@ -48,7 +48,7 @@ PR을 main에 순서대로 Merge하지 않았습니다. 기준 main의 별도 wo
 
 #5는 모바일 마지막 강조 문구의 줄바꿈을 허용해 폭이 넓은 시스템 대체 글꼴에도 대응합니다. GitHub 실행 환경의 폰트 누락 예외 검사를 위해 실패 지점·실제 경계를 Checks API의 진단에 남기며, 이 예외 경로를 정상 Pretendard 검증과 구분합니다.
 
-검증은 `validate_references.py` / `reference_validation.py`로 공통화했고 기존 페이지별 명령은 호환 진입점으로 남겼습니다. PR별로 preview를 자동 Commit/Push하던 워크플로는 읽기 전용 공통 CI로 정리해 브랜치 경쟁과 오래된 도식 검사를 막았습니다.
+검증은 `validate_references.py` / `reference_validation.py`로 공통화했고 당시에는 페이지별 명령을 호환 진입점으로 남겼으며, 8종 검토 완료 후 중복 명령과 파생 JSON은 정리했습니다. PR별로 preview를 자동 Commit/Push하던 워크플로는 읽기 전용 공통 CI로 정리해 브랜치 경쟁과 오래된 도식 검사를 막았습니다.
 
 ## Markdown 정리
 
@@ -88,20 +88,12 @@ python scripts/check_documentation.py
 
 초기 CLI 사용자 조회는 `sh0427-han-private`, repository permissions는 `pull=true / push=false / admin=false`였고 #5 Push가 403으로 거절됐습니다. collaborator 등록 후 같은 계정으로 `push=true`를 확인하고 #5·#7·통합 브랜치를 정상 Push했습니다. 이 초기 차단은 해결됐으며 현재 미해결 문제로 취급하지 않습니다.
 
-통합 PR은 [#12](https://github.com/sh0427-han/design-template-library/pull/12)입니다. 공통 GitHub Actions의 `validate` 성공과 최종 head 일치를 확인한 뒤 Merge합니다. 게시 명령은 다음과 같습니다.
+통합 PR [#12](https://github.com/sh0427-han/design-template-library/pull/12)는 병합됐고 PR #9/#10/#11은 이 통합으로 정리됐습니다. 당시 일회성 게시·Merge 스크립트는 역할을 마쳐 제거했습니다. 현재 작업에서 이 과거 통합을 다시 실행하지 않습니다.
 
-```bash
-python scripts/publish_integration.py --merge
-```
-
-이 명령은 현재 계정/권한·검증 상태·소스 해시·#5 커밋 존재를 확인한 후 #5/#7 원본 브랜치와 통합 브랜치를 정상 Push하고, 통합 PR 생성/조회·CI 확인·head 고정 Merge·main 확인을 수행합니다. Force Push는 하지 않습니다. Merge 후 PR #9/#10/#11의 head가 manifest와 같은 경우에만 통합 PR 링크를 남기고 닫습니다. 새 커밋이 있는 PR은 자동 정리하지 않습니다.
-
-실제 PR URL·Merge commit·최종 main SHA·기존 PR 처리 결과는 게시 명령의 `/tmp/design-template-integration-publish.json`과 최종 작업 보고에 기록합니다. 저장소의 확정 Merge 기록은 다음 명령으로 다시 조회할 수 있습니다.
+과거 확정 Merge 기록은 GitHub에서 다시 조회할 수 있습니다.
 
 ```bash
 gh pr view 12 --repo sh0427-han/design-template-library --json url,state,mergedAt,mergeCommit,statusCheckRollup
-git fetch origin main
-git rev-parse origin/main
 ```
 
-문서에 미래의 Merge SHA를 임의로 적지 않습니다. main 반영은 PR의 `MERGED` 상태와 통합 head의 main 포함 여부, 최종 파일 비교로 확인합니다. PR #9·#10·#11 정리도 실제 Merge 이후에만 실행합니다.
+이후 변경과 현행 검증 경로는 [현재 상태](REFERENCE_RELEASE_STATUS.md), 재사용할 때 수행할 단계는 [재사용 워크플로](REFERENCE_REUSE_WORKFLOW.md)를 따릅니다.

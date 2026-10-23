@@ -199,9 +199,9 @@
         ],
         "source": "/templates/html/concept.html",
         "source_design": {
-          "elements": 78,
+          "elements": 160,
           "style_match": true,
-          "max_box_error_px": 0,
+          "max_box_error_px": 6.103515625e-05,
           "box_tolerance_px": {
             "html": 0.3,
             "svg": 1
@@ -227,11 +227,11 @@
           ]
         },
         "font": {
-          "text_nodes": 25,
+          "text_nodes": 48,
           "actual_family": [
             "Pretendard Variable"
           ],
-          "glyphs": 316,
+          "glyphs": 408,
           "korean_latin_loads": [
             1,
             1,
@@ -607,9 +607,9 @@
         ],
         "source": "/templates/html/concept.html",
         "source_design": {
-          "elements": 78,
+          "elements": 160,
           "style_match": true,
-          "max_box_error_px": 0,
+          "max_box_error_px": 6.103515625e-05,
           "box_tolerance_px": {
             "html": 0.3,
             "svg": 1
@@ -635,11 +635,11 @@
           ]
         },
         "font": {
-          "text_nodes": 25,
+          "text_nodes": 48,
           "actual_family": [
             "Pretendard Variable"
           ],
-          "glyphs": 316,
+          "glyphs": 408,
           "korean_latin_loads": [
             1,
             1,
@@ -1015,9 +1015,9 @@
         ],
         "source": "/templates/html/concept.html",
         "source_design": {
-          "elements": 78,
+          "elements": 160,
           "style_match": true,
-          "max_box_error_px": 0,
+          "max_box_error_px": 6.103515625e-05,
           "box_tolerance_px": {
             "html": 0.3,
             "svg": 1
@@ -1043,11 +1043,11 @@
           ]
         },
         "font": {
-          "text_nodes": 25,
+          "text_nodes": 48,
           "actual_family": [
             "Pretendard Variable"
           ],
-          "glyphs": 316,
+          "glyphs": 408,
           "korean_latin_loads": [
             1,
             1,
@@ -1423,9 +1423,9 @@
         ],
         "source": "/templates/html/concept.html",
         "source_design": {
-          "elements": 78,
+          "elements": 160,
           "style_match": true,
-          "max_box_error_px": 0,
+          "max_box_error_px": 6.103515625e-05,
           "box_tolerance_px": {
             "html": 0.3,
             "svg": 1
@@ -1451,11 +1451,11 @@
           ]
         },
         "font": {
-          "text_nodes": 25,
+          "text_nodes": 48,
           "actual_family": [
             "Pretendard Variable"
           ],
-          "glyphs": 316,
+          "glyphs": 408,
           "korean_latin_loads": [
             1,
             1,
@@ -1831,9 +1831,9 @@
         ],
         "source": "/templates/html/concept.html",
         "source_design": {
-          "elements": 78,
+          "elements": 160,
           "style_match": true,
-          "max_box_error_px": 0,
+          "max_box_error_px": 6.103515625e-05,
           "box_tolerance_px": {
             "html": 0.3,
             "svg": 1
@@ -1859,11 +1859,11 @@
           ]
         },
         "font": {
-          "text_nodes": 25,
+          "text_nodes": 48,
           "actual_family": [
             "Pretendard Variable"
           ],
-          "glyphs": 316,
+          "glyphs": 408,
           "korean_latin_loads": [
             1,
             1,
@@ -2239,9 +2239,9 @@
         ],
         "source": "/templates/html/concept.html",
         "source_design": {
-          "elements": 78,
+          "elements": 160,
           "style_match": true,
-          "max_box_error_px": 0,
+          "max_box_error_px": 6.103515625e-05,
           "box_tolerance_px": {
             "html": 0.3,
             "svg": 1
@@ -2267,11 +2267,11 @@
           ]
         },
         "font": {
-          "text_nodes": 25,
+          "text_nodes": 48,
           "actual_family": [
             "Pretendard Variable"
           ],
-          "glyphs": 316,
+          "glyphs": 408,
           "korean_latin_loads": [
             1,
             1,
@@ -2647,9 +2647,9 @@
         ],
         "source": "/templates/html/concept.html",
         "source_design": {
-          "elements": 78,
+          "elements": 160,
           "style_match": true,
-          "max_box_error_px": 0,
+          "max_box_error_px": 6.103515625e-05,
           "box_tolerance_px": {
             "html": 0.3,
             "svg": 1
@@ -2675,11 +2675,11 @@
           ]
         },
         "font": {
-          "text_nodes": 25,
+          "text_nodes": 48,
           "actual_family": [
             "Pretendard Variable"
           ],
-          "glyphs": 316,
+          "glyphs": 408,
           "korean_latin_loads": [
             1,
             1,
@@ -3055,9 +3055,9 @@
         ],
         "source": "/templates/html/concept.html",
         "source_design": {
-          "elements": 78,
+          "elements": 160,
           "style_match": true,
-          "max_box_error_px": 0,
+          "max_box_error_px": 6.103515625e-05,
           "box_tolerance_px": {
             "html": 0.3,
             "svg": 1
@@ -3083,11 +3083,11 @@
           ]
         },
         "font": {
-          "text_nodes": 25,
+          "text_nodes": 48,
           "actual_family": [
             "Pretendard Variable"
           ],
-          "glyphs": 316,
+          "glyphs": 408,
           "korean_latin_loads": [
             1,
             1,
@@ -3467,14 +3467,81 @@
           4,
           4
         ],
+        "roi_on_matrix": true,
         "selected_index": 6,
+        "selected_xy": [
+          54,
+          39
+        ],
         "rgb": [
           223,
           54,
           56
         ],
         "hex": "#DF3638",
-        "all_16_swatches_match": true
+        "rgb_planes_order": [
+          "B",
+          "G",
+          "R"
+        ],
+        "plane_pixel_checks": 76800,
+        "rgb_planes_are_real_samples": true,
+        "all_16_colors_match": true,
+        "single_panel_four_stages": true,
+        "crop_channel_depth": 3,
+        "crop_stack_order": [
+          "B",
+          "G",
+          "RGB"
+        ],
+        "crop_rgb_16_match": true,
+        "crop_g_16_match": true,
+        "crop_b_16_match": true,
+        "merge_uses_same_rgb": true,
+        "shape": "H×W×3",
+        "patch_values": 48,
+        "matrix_roi_normalized": {
+          "left": 0.6499183006535948,
+          "top": 0.47497957516339867,
+          "width": 0.04993872549019608,
+          "height": 0.04993872549019608
+        },
+        "text_axis_alignment_px": {
+          "w_center_on_front_rgb": 0.0,
+          "h_center_on_rgb": 0.0,
+          "w_gap_below_stack": 10.0,
+          "h_gap_left_rgb": 7.602
+        },
+        "crop_c_label_removed": true,
+        "crop_guides_removed": true,
+        "crop_grid_width_px": 118,
+        "one_pixel_swatch_width_px": 42,
+        "one_pixel_detail_width_px": 236,
+        "h_label_rotated_vertically": true,
+        "crop_frame_colors": {
+          "R": "#b63c47",
+          "G": "#279467",
+          "B": "#427ec5"
+        },
+        "crop_frame_uniform": true,
+        "crop_display_tints": {
+          "G": "#279467",
+          "B": "#427ec5"
+        },
+        "crop_display_formula": "rgb(255+(base-255)*(0.22+0.78*v/255))",
+        "crop_plane_badges": [
+          "B",
+          "G",
+          "R"
+        ],
+        "figure_center_errors_px": {
+          "photo": 0,
+          "matrix": 0,
+          "crop": 2.69140625,
+          "detail": -0.0078125
+        },
+        "selected_halo_px": 2,
+        "selected_navy_outline_px": 5
       },
       "process": {
         "independent_gradient_samples": 112,
@@ -5250,11 +5317,10 @@
       "templates/html/comparison-reference.js": "d427e9c2fcb0415c9ecd059ae723d53dc601b6f5350d3eb1872d1306aacf5469",
       "templates/html/step-by-step.html": "8e7eed2d4bbeaeea3fb644973a0ff99f9e0c075bababf93a8964636197143d3c",
       "templates/html/interactive.html": "999cc515d9f3ad03dbee7c1437959b79463ad251e890142233471e4ff7722869",
-      "templates/html/concept.html": "9d50ae70c9d63dc257738e2260d3eccf415029baff5726b8f21f13a09da5b018",
+      "templates/html/concept.html": "81a4d341ca86eb5550e0d58411fdda6f040d1e3cdcf9a98ee9b84ff6b8ad0364",
       "templates/html/reference-types.css": "976c72a1d4e736fc6d7f7c328445f4e7feead457f4ef7165ca3926b5615e18b7",
       "templates/html/architecture.html": "0b40aa7f35960458292b8fd691a0ffcac83e8646993dda516b85e809efac28e1",
-      "templates/html/process.html": "90039af9845ae77f566aad7f0e2ddb48d3bf4f4560d59f65ba6f1ddab3c0f874",
-      "templates/html/font-comparison.html": "03591c1effa0a60af07955046d486ebb813464f8c26c7cd7a45ef70e272022d7",
+      "templates/html/process.html": "39989a9073bd7a8a296dc4a7ece870f0e0da60010b8b8922393049678c733a1d",
       "templates/html/assets/concept-apple-photo.jpg": "6a7524a8f5fce2700d50970d21ad7a9912c07ace760d08fd603ba79728e15efc",
       "templates/html/assets/cnn-feature-maps.js": "b8a71c04fced7a9df2a568c2cd3577af3ddde56b3903cfd2b7d1031fc19d2c05",
       "templates/html/assets/fonts/pretendard/PretendardVariable.woff2": "9599f12fd42fc0bce1cd50b47a0c022e108d7aa64dd0d1bb0ed44f3282d900b4"
@@ -5263,7 +5329,7 @@
     "failed_requests": []
   },
   "preview_sha256": {
-    "dual-mode-scroll.jpg": "b5b82d65df55d2bb512f2619cec96b4ee68a751849e7f29b8c6abc6dcd5aedb3",
-    "dual-mode-slide.jpg": "46c23d52dbfa46bd59ec73f4dd69996968605eb4e5960065463fcfeccdf9ad6b"
+    "dual-mode-scroll.jpg": "45d5558facda837129065c875c3d837ce1ac17192c45bf0b4b056f62b90b573c",
+    "dual-mode-slide.jpg": "c48e00dac326606d427591672d5452fe6128c730d05856db573c92676eac29c8"
   }
 }

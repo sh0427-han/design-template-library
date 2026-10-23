@@ -21,7 +21,7 @@
 | 07 `ref-experiment` | [experiment.html](../templates/html/experiment.html) | TP4 FP1 / FN2 TN5, 75.0/80.0/66.7/72.7%와 공식 |
 | 08 `ref-executive-summary` | [executive-summary.html](../templates/html/executive-summary.html) | 세 지표의 원래 단위·정규화·감소율, 세 후속 조치 |
 
-전체 수치·조건·의미는 [REFERENCE_PAGE_SPECS.md](REFERENCE_PAGE_SPECS.md), [TEMPLATE_CATALOG.md](../TEMPLATE_CATALOG.md)를 정본으로 봅니다. 이 문서에서 다른 버전의 데이터를 만들지 않습니다. #1은 원본을 표시할 뿐 별도 진행 중인 작업을 수정하거나 가져오지 않습니다.
+전체 수치·조건·의미는 [REFERENCE_PAGE_SPECS.md](REFERENCE_PAGE_SPECS.md), [TEMPLATE_CATALOG.md](../TEMPLATE_CATALOG.md)를 정본으로 봅니다. 이 문서에서 다른 버전의 데이터를 만들지 않습니다. #1 PR #15를 포함해 사용자 검토를 마친 8개 원본을 동일하게 재사용합니다. 원본의 배치·수치·그림을 보기 전용으로 다시 설계하지 않습니다. 최신 출처는 [검토 완료 상태](REFERENCE_RELEASE_STATUS.md)를 확인합니다.
 
 ## 원본 서식을 바꾸지 않는 배치
 
