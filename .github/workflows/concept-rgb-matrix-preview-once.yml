@@ -1,5 +1,5 @@
 name: Concept RGB matrix preview once
-# Rerender with matrix-grid overlay and corrected axis lettering.
+# Rerender with fitted 200px mobile matrix stack and all six viewports.
 on:
   push:
     branches: [feat/concept-pixel-rgb-final-refinement]
