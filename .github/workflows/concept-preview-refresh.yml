@@ -1,4 +1,5 @@
 name: Concept preview refresh (temporary)
+# Capture the final scaled-grid verification.
 on:
   push:
     branches:
