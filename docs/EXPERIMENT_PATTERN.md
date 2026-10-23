@@ -7,7 +7,7 @@
 
 - [편집 가능한 HTML](../templates/html/experiment.html)
 - [실제 Chromium 프리뷰](../previews/html-experiment.jpg)
-- [재현용 검사](../scripts/check_experiment.py) / [수치·정렬 검증 기록](../previews/review/experiment-validation.json)
+- [재현용 검사](../scripts/validate_references.py) / [수치·정렬 검증 기록](../previews/review/reference-validation.json)
 - 공통 규칙: [AGENTS](../AGENTS.md), [디자인 시스템](../DESIGN_SYSTEM.md), [카탈로그](../TEMPLATE_CATALOG.md)
 - [Figure 제작 표준](FIGURE_PRODUCTION_STANDARD.md)은 PR #10의 기준을 통합한 공통 가이드다. #7에 CNN 전용 그림을 복제하지 않는다.
 
@@ -151,7 +151,7 @@ B = 두 행 라벨 텍스트 left 중 작은 값
 ## 8. 실제 검증과 프리뷰 갱신
 
 ```sh
-python scripts/check_experiment.py
+python scripts/validate_references.py --templates experiment --report /tmp/experiment-validation.json
 ```
 
 필요 환경은 Python, Playwright, Chromium이다. 공식 폰트는 저장소에 포함되어 외부 다운로드가 필요하지 않다. 기본 시스템 Chromium을 사용하고 필요하면 `CHROMIUM_EXECUTABLE`로 지정한다.
@@ -177,7 +177,7 @@ python scripts/check_experiment.py
 - [ ] 실제 Pretendard 로딩 및 전체 -1pt 확인
 - [ ] 실제 스크린샷을 직접 보고 밀도·균형·가독성 재검토
 
-호환 스크립트는 공통 검사를 실행해 대표 JPEG와 experiment-validation JSON을 갱신하고, 6개 PNG를 기본 `/tmp/reference-integration-review/`에 저장한다. 실패 시 이전 통과 결과를 재사용하지 않도록 JSON 상태를 running/failed/passed로 구분한다.
+부분 명령은 공통 검사를 실행해 대표 JPEG와 지정한 임시 JSON을 갱신하고, 6개 PNG를 기본 `/tmp/reference-integration-review/`에 저장한다. 실패 시 이전 통과 결과를 재사용하지 않도록 JSON 상태를 running/failed/passed로 구분한다.
 
 통합 후 공통 CSS가 동봉된 Pretendard Variable WOFF2를 직접 로드한다. `document.fonts`와 CDP의 실제 렌더링 글꼴을 함께 검사하며 한글·영문·숫자·수식이 Pretendard로 표시되는지 확인한다. 이전의 CDN 응답 주입은 사용하지 않고 인증서 신뢰 설정도 변경하지 않는다. 상세 기록은 공통 검증의 각 experiment case에 수치·정렬·폰트 정보를 함께 보존한다.
 

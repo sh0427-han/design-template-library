@@ -1,6 +1,6 @@
 # 8개 레퍼런스 상세 명세
 
-**현재 HTML 원본의 재구현 명세**입니다. 어떤 페이지를 선택할지는 [카탈로그](../TEMPLATE_CATALOG.md), 시각 토큰은 [디자인 시스템](../DESIGN_SYSTEM.md), 그림 제작 절차는 [Figure 표준](FIGURE_PRODUCTION_STANDARD.md)을 봅니다. #2–#8의 실제 패널·Typography·도식·반응형 수치와 다른 개념에 적용할 기록표는 [컴포넌트 설계 규격](DESIGN_COMPONENT_RECIPES.md)에 있습니다. 공통 규칙을 여기에 반복 정의하지 않습니다.
+**현재 HTML 원본의 재구현 명세**입니다. 어떤 페이지를 선택할지는 [카탈로그](../TEMPLATE_CATALOG.md), 시각 토큰은 [디자인 시스템](../DESIGN_SYSTEM.md), 그림 제작 절차는 [Figure 표준](FIGURE_PRODUCTION_STANDARD.md)을 봅니다. #1–#8의 실제 패널·Typography·도식·반응형 수치와 다른 개념에 적용할 기록표는 [컴포넌트 설계 규격](DESIGN_COMPONENT_RECIPES.md)에 있습니다. 공통 규칙을 여기에 반복 정의하지 않습니다.
 
 ## 공통 구현 계약
 
@@ -13,45 +13,63 @@
 
 ## 01 Concept
 
-**목적:** 사람이 보는 하나의 사진이 높이(H)×너비(W) 크기의 숫자 행렬 세 장(R, G, B)이라는 사실을 먼저 보여준 다음, 해당 행렬의 4×4 영역을 확대하여 하나의 픽셀이 RGB 세 정수 값으로 이루어짐을 연결합니다. 세 장을 겹친 Figure는 H/W 공간축과 채널축 C=3을 시각화하며, 3D 공간에 이미지가 물리적으로 쌓인다는 뜻은 아닙니다. CNN/Kernel/Feature Map/Classification을 다루지 않습니다.
+**목적·독자:** 디지털 이미지의 숫자 표현을 처음 배우는 독자. **핵심 메시지:** 한 RGB 사진은 같은 높이(H)·너비(W)의 채널 세 장이며, 같은 위치의 세 정수가 한 픽셀의 색을 이룹니다. CNN·커널·특징 추출·분류는 이 페이지의 범위가 아닙니다.
 
-### 최종 시각 흐름
+**최종 출처:** [PR #15](https://github.com/sh0427-han/design-template-library/pull/15)의 사용자 검토 완료본. **제목·부제:** `이미지의 숫자 구조` / `입력 사진 → RGB 숫자 행렬 → 일부 확대 → 픽셀 하나의 RGB 값`.
 
-| 순서 | 화면의 Figure | 전달할 사실 |
+### 전체 구조와 읽는 순서
+
+White 패널 하나 안에서 4단계를 Blue 화살표 세 개로 연결합니다. 아래에는 한 픽셀의 성분 조합 행, 패널 밖 Content 마지막에는 전체 배열의 Teal 핵심 캡션을 둡니다. 별도의 오른쪽 설명 카드는 없습니다.
+
+| 순서 | 구성 요소 | 의미·배치 |
 | --- | --- | --- |
-| 1 | 입력 이미지: ROI 표시 없는 실제 사과 사진 1장 | 사람에게 한 장의 사진으로 보이는 RGB 데이터. ROI 테두리는 행렬 단계에만 존재 |
-| 2 | 동일 크기 R/G/B 채널 판 3장과 **앞쪽 R 판의 ROI** | 각 판은 실제 H×W 채널 데이터. R 판의 ROI는 R/G/B 공통 좌표 (52,38,4,4)를 대표하며 C=3은 행렬 위쪽 외곽에 배치 |
-| 3 | 부분 확대: **RGB 행렬에서 표시된 ROI**의 RGB/G/B 4×4 Stack | 같은 ROI의 RGB 16개 값에서 전면 RGB 합성 (R,G,B)을 원본값으로 표시하고, 중간 G와 후면 B는 CSS 윤곽색 #279467/#427ec5를 직접 읽어 밝은 표시색으로 변환하며 원본 채널값은 별도 유지. 전면 RGB 왼쪽에 H=4를 90도 세로 회전, 전면 R(RGB 합성) 격자의 가로 중심 아래에 W=4를 가로 텍스트로 표시. 확대 영역 C=3과 가로/세로선은 제거하고 우상단 R/G/B 배지 및 `4×4×3 = 48개 값` 설명으로 채널 개수를 전달 |
-| 4 | 같은 White 패널 안에서 4×4 선택 index 6 → 화살표 → 선택 Swatch·RGB/HEX·R/G/B 막대 | 별도 오른쪽 카드 없이 Figure 한 줄에서 한 픽셀의 RGB 세 정수와 실제 색상을 연결 |
-| 5 | 확대 Figure 아래 `4×4×3 = 48개 값`과 카드 하단 R/G/B 조합 관계 | 확대 영역의 48개 채널 값은 해당 Figure에 붙이고, 구분선 아래에서 실제 한 픽셀의 R·G·B 성분을 조합해 같은 색상 Swatch로 표시. 전체 H×W×3 정의는 최하단 핵심 개념에 남김 |
+| 1 입력 이미지 | 실제 사과 사진 한 장 | 사진에는 ROI 테두리를 중복 표시하지 않음 |
+| 2 채널 분리 | 실제 R/G/B Canvas 세 평면, H/W/C=3 축, 앞 R 평면의 ROI | 세 채널의 같은 위치를 대표하는 영역. 8×8 안내선은 데이터 해상도가 아님 |
+| 3 일부 확대 | 같은 ROI의 4×4 격자 세 장, H=4/W=4, R/G/B 배지 | 전면은 원본 RGB 합성색, 뒤 G/B는 채널 강도에 따른 표시색. 16픽셀×3성분=48개 값 |
+| 4 선택 픽셀 | 선택 Halo, Swatch·RGB·HEX, R/G/B 숫자와 막대 | 선택 index 6의 실제 세 값을 한 묶음으로 표시 |
+| 패널 하단 | 같은 위치의 R/G/B 숫자 → 합성 Swatch | `+`는 세 성분의 조합이며 산술 합산을 뜻하지 않음 |
+| 마지막 캡션 | H×W×3 배열 | 전체 이미지의 일반적인 HWC 표현. CHW도 가능하며 저장 바이트 수를 뜻하지 않음 |
 
-각 채널 판 위의 8×8 가는 격자선은 **행렬이라는 개념을 설명하는 시각적 가이드**입니다. 실제 픽셀 샘플은 각 채널마다 80×80이며 격자를 8×8로 다운샘플링한 것이 아닙니다.
+### 데이터와 실제 계산
 
-### Canvas 계산 및 재현 계약
+1. 입력 파일은 [concept-apple-photo.jpg](../templates/html/assets/concept-apple-photo.jpg) 하나입니다. `image.decode()` 후 `imageSmoothingEnabled=true`, `imageSmoothingQuality=high`로 전체를 80×80 Canvas에 그립니다. 원본 파일 크기·분석 해상도·화면 표시 크기를 구별합니다.
+2. 각 채널 Canvas는 동일한 80×80 RGBA 버퍼를 사용합니다. R/G/B 중 해당 성분에만 원래 8-bit 값을 넣고 다른 두 성분은 0, alpha는 255입니다. 각 평면은 6,400개의 실제 채널 값입니다. 8×8 가는 안내선은 행렬의 모양을 설명할 뿐 8×8 다운샘플을 뜻하지 않습니다.
+3. `getImageData(52,38,4,4)`의 0-based ROI는 16픽셀입니다. R 평면 위 테두리의 비율은 `left=52/80=65%`, `top=38/80=47.5%`, `width=height=4/80=5%`입니다. 세 채널이 같은 공간 좌표를 공유합니다.
+4. 선택 index 6은 row-major 기준 로컬 `(x=2,y=1)`, 전체 분석 좌표 `(54,39)`입니다. 기준 Chromium의 RGB는 **(223,54,56)**, HEX는 **#DF3638**입니다. 독립 리샘플 결과와 비교하며, 이미지/좌표/분석 조건을 바꾸면 이 값도 다시 계산합니다.
+5. 채널 값은 각각 0–255 정수, 막대 길이는 `100×value/255%`입니다. 세 막대의 합이 100%일 필요가 없으며 클래스 확률이 아닙니다. RGB 문자열·대문자 HEX·Swatch·세 수치·막대·하단 조합은 같은 선택값에서 갱신합니다.
 
-1. 원본 이미지는 templates/html/assets/concept-apple-photo.jpg 하나입니다. image.decode() 완료 후 80×80 Canvas, imageSmoothingEnabled=true 및 imageSmoothingQuality=high로 drawImage(image,0,0,80,80)를 수행합니다. 원본 전체 사진의 실제 파일 크기와 리샘플 분석 공간 80×80은 구별합니다.
-2. 해당 80×80 전체 RGBA 버퍼의 각 (y,x)에서 R/G/B 값을 추출해 동일한 80×80 R/G/B Canvas에 각각 그립니다. 채널 C가 0/1/2일 때 채널 평면의 해당 RGB 성분만 실제 원본의 8-bit 값을 넣고 다른 두 성분은 0, alpha=255입니다. 실제 채널 intensity가 틴트된 형태로 표현되며 다른 랜덤 픽셀·학습된 Feature Map·3개의 사진 복제품이 아닙니다.
-3. 겹친 세 Canvas 판은 크기가 같고 R/G/B 문자 식별과 H, W, C=3 축을 갖습니다. 이중 H/W는 위치를 가리키고 C는 채널 개수를 가리킵니다. 화면의 앞뒤 순서는 데이터 계산 순서가 아니므로 0-based RGB 인덱스를 바꾸지 않습니다.
-4. ROI는 getImageData(52,38,4,4)로 0-based 시작 (52,38), 4×4=16픽셀입니다. 원본 사진에는 ROI를 표시하지 않고 R 채널 Canvas 앞의 `.matrix-roi`만 사용합니다. R 판이 세 채널의 **동일한 공간 좌표**를 대표하며 ROI의 CSS left=65%, top=47.5%, width=height=5%는 실제 리샘플 좌표로부터 구합니다. 4×4 각각의 RGB는 RGBA 배열의 i번째 위치 (4i,4i+1,4i+2)에서 읽습니다.
-5. 선택 index 6은 ROI 로컬 (x=2,y=1), 전체 리샘플 (x=54,y=39)입니다. 기준 Chromium 검산 RGB (223,54,56), HEX #DF3638이며 환경 변화 시 Canvas 계산 결과를 우선합니다. 채널 세 값은 각각 0~255; 막대 width(%)=100×value/255, 클래스 확률이 아닙니다.
-6. 실제 선택 픽셀의 세 숫자에서 RGB 문자열, 대문자 16진수 HEX, Swatch, 세 막대를 한 번에 갱신합니다. 이미지 디코딩/계산 전에는 중립 placeholder이며 실패 시 오류 메시지·중립 Swatch·0% 막대·data-sampled=error 상태로 표시합니다.
-7. 확대 4×4 RGB 픽셀의 원소 개수는 4×4×3=48이며 **RGB 합성색으로 그린 4×4 격자도 C=3을 유지**합니다. H=4는 전면 RGB 왼쪽에 세로로, W=4는 전면 RGB 가로 중심의 격자 아래에 가이드선 없이 표시하며 확대 영역의 C=3은 삭제하고 `4×4×3 = 48개 값`은 확대 Figure 설명 바로 아래에 둡니다. 전체 일반 이미지의 배열 Shape는 H×W×3(HWC)입니다. HWC는 하나의 표현이며 CHW 레이아웃도 존재합니다. 48은 픽셀 개수 16과 구별하며 바이트 단위 저장 크기와도 구분합니다.
+### 확대의 원본 값과 표시색
 
-8. **일부 영역 확대 Stack 개선:** 같은 `getImageData(52,38,4,4)`에서 계산한 16개 RGB 배열을 세 격자가 공유합니다. 전면 RGB 합성격자는 원본 `(R,G,B)` 색상으로 표현하며 순수 R 채널이 아닙니다. 중간 G와 후면 B는 기존 윤곽 색상 `#279467`/`#427ec5`를 **동일한 CSS 변수로 공유**하고 JS에서 해당 격자의 실제 `outlineColor`를 읽어 밝기를 표시합니다. 표시 전용 정규화 `t=0.22+(v/255)×0.78`, `displayRGB=JS.Math.round(255+(baseRGB−255)×t)`를 사용하며 선택 RGB/HEX/막대에는 적용하지 않습니다. 원본 채널은 각 셀의 `data-raw-value`에도 기록하고, 선택 RGB/HEX·막대·하단 결합 Figure는 반드시 미보정 원본을 사용합니다. DOM/z-index는 B→G→RGB이고 전면 기준 데스크톱 G(+16px,−16px)/B(+32px,−32px), 520px 이하에서는 G(+12px,−12px)/B(+24px,−24px)입니다. 레이어 노출 폭은 데스크톱 16px·모바일 12px이며 15px/11px 우상단 R/G/B 배지가 뒤 레이어에 가려지지 않도록 확보합니다. 전면 R 배지가 있는 격자는 원본 RGB 합성색을 그대로 유지합니다. R/G/B 외곽 프레임은 모두 동일한 2px `outline`, 2px 모서리 둥글기 및 동일한 그림자를 사용합니다. 선과 각 배지의 채널 색상은 R `#b63c47`, G `#279467`, B `#427ec5`로 일치시키고, R 격자에 외곽선을 추가하되 픽셀 크기나 선택 셀 강조는 바꾸지 않습니다. 격자는 데스크톱 118px(28×4+2×3), 모바일 110px(26×4+2×3)로 추가 축소합니다. 가로·세로 가이드선은 추가하지 않습니다. H=4는 90도 회전한 세로 텍스트로 전면 RGB 왼쪽 세로 중앙, W=4는 전면 RGB 격자의 가로 중심에 맞춰 전체 확대 격자 아래에 배치합니다. 두 글자는 선 없이 표시하며 채널 레이어와 서로 겹치지 않습니다. 확대 Stack은 H 라벨과 후면 G/B까지 포함한 시각 중심을 기준으로 가운데 정렬합니다. 다음 단계의 1픽셀 Swatch는 48→42px(모바일 40px), 상세 영역은 데스크톱 258→236px·모바일 228→214px로 축소하고, 4개 Figure의 하단 라벨/캡션 위치는 유지합니다. 전면 격자 좌하단의 `RGB` 중복 표기와 확대 Figure의 `C=3`은 제거합니다. 왼쪽 전체 R/G/B 행렬의 `C=3`는 유지하고 확대 Figure 아래 `4×4×3=48개 값`으로 채널 개수를 설명합니다. 선택 index 6은 RGB 전면에만 2px 흰색 Halo+5px Navy 외곽선으로 표시하며 16개 셀은 숫자 없이 RGB 합성색 블록으로 유지합니다. 48은 16픽셀×3성분을 뜻합니다. `python scripts/validate_references.py --templates concept`에서 R/G/B 3장 모두 동일한 외곽선 두께·radius·shadow와 배지 색상 일치·CSS 윤곽색 기반 G/B 표시색·원본 채널값 분리·배지 R/G/B의 실제 노출·16셀·전면 RGB 기준 W 텍스트 수평 중앙과 H 세로 회전·중앙 정렬 및 가이드선과 확대 C=3의 부재·4개 Figure 시각 중심·오프셋·선택 테두리/값과 전체 6개 뷰포트를 확인합니다.
+전면 4×4는 16개의 원본 RGB 합성색입니다. 전면에 R 배지를 사용하지만 **순수 R 채널의 색상 평면은 아닙니다**. 중간 G·후면 B는 원본 채널 강도를 읽기 쉽게 표시합니다. 각 셀의 `data-raw-value`에 원본 성분을 유지하고, CSS `outlineColor`에서 읽은 기준색 G `#279467`, B `#427ec5`에 다음 표시 전용 보간을 적용합니다.
 
-### 구성과 반응형
+```text
+t = 0.22 + 0.78 × (rawValue / 255)
+displayComponent = Math.round(255 + (baseComponent − 255) × t)
+```
 
-- 제목은 이미지의 숫자 구조, 부제는 입력 사진 → RGB 숫자 행렬 → 일부 확대 → 픽셀 하나의 RGB 값입니다. **White 패널 하나** 안에 입력 사진(ROI 없음) → 실제 R/G/B 행렬(R 판에 ROI) → 4×4 실제 확대 → 선택 픽셀 Swatch/RGB/HEX/3채널 수치를 **세 Blue 화살표로 연속 연결**합니다. 왼쪽 전체 행렬의 C=3은 행렬 평면 밖에 그대로 유지합니다. 확대 Figure에는 C=3과 가이드선 없이 H=4(왼쪽)·W=4(아래)만 표시합니다. 별도의 오른쪽 카드, 요약 카드 또는 장식 상자는 추가하지 않습니다. 패널의 가로 구분선 아래에서는 전체 배열 Shape를 다시 설명하지 않고 **한 위치의 R/G/B 값을 조합해 RGB 색상을 만든다**는 관계를 단일 행으로 시각화합니다. 실제 index 6의 세 숫자와 합성색은 같은 Canvas 선택값에서 갱신하며, `+` 표시는 산술 덧셈이 아니라 채널 성분의 결합입니다. 전체 H×W×3 설명은 마지막 핵심 개념에만 남깁니다.
-- 로컬 Pretendard Variable WOFF2, 전체 자간 −1pt, Navy/Blue/Teal 팔레트·공통 1440×810 16:9 Slide를 유지합니다. 별도 장식 프레임·복잡한 3D 큐브 및 의미 없는 설명 카드를 추가하지 않습니다.
-- 데스크톱에서는 한 패널에서 4단계를 가로로 정렬하며, 520px 이하에서는 사진·R/G/B Stack·4×4 확대·한 픽셀 RGB를 세로 한 축에 배치하고 화살표를 아래로 회전합니다. 900px에서는 기존 Slide 축소·반응형 동작을 확인합니다. Footer·패딩·가로 오버플로·가독성을 실측합니다.
+이 표시색을 RGB/HEX·막대·하단 Swatch 계산에 사용하지 않습니다. 채널별 원본 수치와 가독성을 위한 색 표현을 혼동하지 않습니다. 확대의 DOM/z-index 순서는 B → G → RGB이며, 전면의 선택 index 6에만 White 2px Halo와 Navy 5px 외곽 강조 및 선택점을 둡니다. 각 격자는 숫자를 반복하지 않고 색 셀 16개를 유지합니다.
 
-### 검증·재사용
+### PC Figure·Typography·정렬
 
-python scripts/validate_references.py --templates concept 명령으로 1600×950, 1440×810, 1366×768, 1280×720, 900×900, 390×844 화면을 Chromium에서 검사합니다. 검증은 실제 원본 독립 리샘플, R/G/B 세 평면 × 6400개 픽셀의 채널 성분, ROI/16셀/선택 index/Swatch/RGB/HEX/강도 막대, 확대 격자 C=3 및 48개 값의 배치, 하단 R/G/B 조합 숫자와 Swatch의 실제 선택값 동일성, 3개 판의 동일 크기와 깊이 배치, R 판 ROI의 위치·크기, 원본 사진 ROI 없음, C=3의 판 바깥 배치, H=4 가이드와 선 간격, 단일 패널 4단계 정렬, 폰트 실제 글리프와 −1pt·Footer 및 JS 오류를 포함합니다.
+- 패널 padding `22px 25px`, border 1px, radius 18px, White, 그림자 없음. 제목 23px/800. 4단계는 `.95fr / 25px / 1.15fr / 25px / .85fr / 25px / 1.25fr`, gap 9px입니다.
+- 각 Figure 슬롯 높이는 254px이며 단계 안 Figure/라벨/짧은 설명 간 gap은 9px입니다. 라벨 17px/1.28, 설명 13px/1.35를 사용합니다. 라벨과 설명은 4단계에서 같은 Y좌표를 유지합니다.
+- 사진 최대 207px 정사각형. 전체 채널 Stack은 244×245px, 평면은 157px 정사각형이며 R/G/B의 좌상단은 `(15,68)/(42,43)/(69,18)`입니다. C=3은 평면 밖 위쪽, H/W는 공간축에 둡니다.
+- 확대는 셀 28px×4 + gap 2px×3 = 118px입니다. G/B는 전면 대비 `(+16,−16)/(+32,−32)px`이며 우상단 배지는 15px입니다. 윤곽은 각 채널색의 동일한 2px outline, radius 2px, 동일한 작은 그림자입니다. outline은 셀 치수를 바꾸지 않습니다.
+- H=4는 전면 왼쪽의 세로 중심에 회전한 글자, W=4는 전면 격자의 가로 중심 아래입니다. 확대에는 축 가이드선과 C=3을 추가하지 않습니다. `4×4×3=48개 값`은 확대 Figure 아래 짧은 설명에 둡니다.
+- 선택 Swatch는 42px, 상세 영역 최대 236px, RGB 17px/1.25, 채널 수치 21px/1.35입니다. 하단 조합 행은 1px 구분선·위 padding 12px·16px/1.35, 합성 Swatch 29px입니다.
+- 전역 Pretendard Variable/−1pt, Navy/Blue/Teal을 상속합니다. R/G/B 고유색은 데이터의 성분 구분용이며 과정마다 다른 장식색을 붙이지 않습니다. 큰 패널 아래 마지막 캡션과 Footer가 겹치지 않아야 합니다.
 
-사진/ROI/Canvas 크기를 바꾸면 세 채널 Canvas·ROI 테두리·4×4 색 격자·선택값·HEX·막대·프리뷰·본 문서의 수치를 동시에 갱신해야 합니다. 원본과 다른 데이터를 혼합해 같은 RGB Figure라고 표현하지 않습니다.
+기존 호환 CSS는 900px 이하에서 4단계를 세로로 배치하며 520px 이하에서는 확대 셀 26px/gap 2px(110px), G/B 노출 폭 12px, 배지 11px, Swatch 40px, 상세 영역 최대 214px를 사용합니다. 이 정보는 현재 구현 설명이며 새 자료의 필수 제작 대상은 PC 4개 크기입니다.
 
-**소스:** [concept.html](../templates/html/concept.html) · [사과 사진](../templates/html/assets/concept-apple-photo.jpg) · [프리뷰](../previews/html-concept.png) · [검증](../scripts/validate_references.py).
+### 상태·삭제 금지 정보·검증
+
+계산 전에는 중립 placeholder를 사용합니다. 이미지 디코딩/Canvas 실패는 `data-sampled=error`, 오류 안내·중립 Swatch·0% 막대로 표현하며 이전 성공 RGB를 계산 완료값처럼 남기지 않습니다.
+
+**삭제 금지:** 같은 사진/ROI/선택 좌표의 대응, 실제 채널 값과 표시색의 구분, 16픽셀·48개 값의 차이, RGB/HEX/막대·합성색의 동일성, 전체 H×W×3의 의미. 사진·ROI·Canvas 크기·채널 순서를 바꾸면 모든 파생값과 문서·프리뷰를 함께 갱신합니다.
+
+`python scripts/validate_references.py --templates concept --report /tmp/concept-validation.json`으로 검증합니다. 전체 원본 독립 리샘플·세 채널 각각 6,400개 값·ROI/16셀·선택 RGB/HEX/강도 막대·G/B 표시 보간·원본 채널 분리·동일 테두리/배지 노출·축 텍스트 경계·Figure/라벨 기준선·하단 조합·실제 Pretendard/−1pt·패딩/푸터/JS 오류를 검사합니다. 전체 실행의 concept 사례는 [공통 JSON](../previews/review/reference-validation.json)에 있습니다.
+
+**구현:** [concept.html](../templates/html/concept.html)의 HTML/CSS/Canvas/inline JS와 공통 스타일. **프리뷰:** [현재 PNG](../previews/html-concept.png). **재사용 수치:** [컴포넌트 규격](DESIGN_COMPONENT_RECIPES.md#동일-데이터의-표현과-확대-1).
 
 ## 02 Process
 
@@ -132,7 +150,7 @@ TASK 제목 `Task Head`, 설명 `특징을 목적에 맞게 처리`, White 배�
 - Flow 열은 `1fr 44px 1fr 44px 1fr 44px 1fr`. 네 카드 모두 높이 376px, padding 24px 18px, border 2px, radius 20px입니다. 서로 다른 배경을 사용해도 카드 외곽 크기는 같습니다.
 - 행은 `20px 176px 36px 56px`, 간격 12px. Label·Title·Description의 y좌표와 Figure 슬롯 높이를 맞춥니다. 라벨을 맞추기 위해 그림을 위로 밀지 않습니다. 설명의 시작 높이도 동일합니다.
 - 사진·Stack·분류 블록·확률 그래프를 각각 Figure 중앙에 둡니다. SVG는 실제 artwork `getBBox()`의 양축 중심을 viewBox 중앙으로 옮기며 `document.fonts.ready` 뒤 다시 측정합니다.
-- Figure 중심은 카드 위에서 146px입니다. 외부 Blue 화살표 3개는 같은 축을 통과합니다. 모두 `M1 8 H27 M21 2 L27 8 L21 14`, stroke 2.3px의 단일 path이며 카드 경계 사이에만 놓입니다.
+- Figure 중심은 카드 위에서 146px, 외부 Blue 화살표의 중심은 카드 높이 376px의 절반인 188px입니다. 각 Figure는 슬롯 안에 정렬하고 카드 사이 연결은 카드 전체의 중심축을 통과합니다. 모두 `M1 8 H27 M21 2 L27 8 L21 14`, stroke 2.3px의 단일 path이며 카드 경계 사이에만 놓입니다.
 - 그림 중심·카드 높이·라벨/제목/설명 정렬 오차는 1 CSS px 미만으로 확인합니다. Output의 `예시 확률`은 Figure 슬롯 하단에 별도로 둡니다. 다른 세 카드에는 조건 각주를 두지 않습니다.
 - 900px 이하: 1열·아래 방향 화살표, 카드 높이 346px, 행 `20/160/36/56px`, 간격 10px, padding 20px 18px. Figure는 독립적으로 중앙을 유지합니다. 모바일에서는 가로 흐름의 y좌표 대신 각 카드에 대한 상대 좌표와 세로 연결을 검사합니다.
 
@@ -146,9 +164,9 @@ TASK 제목 `Task Head`, 설명 `특징을 목적에 맞게 처리`, White 배�
 
 **구현:** [process.html](../templates/html/process.html)의 #2 범위 CSS·정적 SVG, [process-reference.js](../templates/html/process-reference.js)의 표시·예시 계산·오류 처리, 변경하지 않은 [cnn-feature-maps.js](../templates/html/assets/cnn-feature-maps.js), 공통 styles/reference-layout CSS.
 
-**프리뷰:** [최신 PNG](../previews/html-process.png), [main 기준 이전 PNG](../previews/review/process-before.png).
+**프리뷰:** [현재 PNG](../previews/html-process.png). 수정 전 결과는 PR #13/#18과 Git 이력에서 확인합니다.
 
-**검증:** `python scripts/check_process.py`는 6개 요청 화면 크기에서 로컬 WOFF2의 `document.fonts.load/ready`와 CDP 실제 한글·영문 글리프/Pretendard/−1pt, 16채널×7위치의 독립 필터 계산·4맵×7픽셀 색상, 벡터/분류 Head/점수의 일치, 카드 배경·경계, 실제 중심축·화살표·높이·설명 시작선·패딩·푸터·텍스트 잘림·모바일 폭을 검사합니다. JS 없음·공통 엔진 없음·표시 JS 없음·사진 없음·Canvas 없음·다른 점수 `[1,2,0]`를 desktop/mobile에서 검증하는 12개 추가 사례가 있습니다. 최신 실행 결과는 [전용 JSON](../previews/review/process-validation.json)에 기록합니다. #3 포함 공통 회귀는 [공통 JSON](../previews/review/reference-validation.json)을 확인합니다. 실제 수치 검증 뒤 desktop/mobile 캡처를 직접 검토하며 폴백 글꼴을 최종 프리뷰로 제출하지 않습니다.
+**검증:** `python scripts/validate_references.py --templates process --report /tmp/process-validation.json`는 6개 요청 화면 크기에서 로컬 WOFF2의 `document.fonts.load/ready`와 CDP 실제 한글·영문 글리프/Pretendard/−1pt, 16채널×7위치의 독립 필터 계산·4맵×7픽셀 색상, 벡터/분류 Head/점수의 일치, 카드 배경·경계, 실제 중심축·화살표·높이·설명 시작선·패딩·푸터·텍스트 잘림·모바일 폭을 검사합니다. JS 없음·공통 엔진 없음·표시 JS 없음·사진 없음·Canvas 없음·다른 점수 `[1,2,0]`를 desktop/mobile에서 검증하는 12개 추가 사례가 있습니다. 부분 실행은 지정한 임시 JSON에 기록합니다. #3 포함 전체 실행의 process 사례와 `process_robustness`는 [공통 JSON](../previews/review/reference-validation.json)을 확인합니다. 실제 수치 검증 뒤 desktop/mobile 캡처를 직접 검토하며 폴백 글꼴을 최종 프리뷰로 제출하지 않습니다.
 
 **현재 구현의 검증 결과:** 6개 화면과 실패/재사용 12개 사례를 통과했습니다. #3을 포함한 전체 48개 화면 회귀도 통과했습니다. 정상 #2의 각 화면에서 실제 텍스트 요소 31개가 모두 Pretendard Variable 사용자 폰트로 그려졌고, 폴백·미출력·자간 오류는 없었습니다. 실제 Figure 중심의 최대 오차는 0.015625 CSS px(약 0.016px)였습니다. 데스크톱·모바일 캡처를 직접 검토했으며 FEATURE 단독 강조·White Output·기존 Task 그림·모바일 세로 흐름을 확인했습니다. 이 결과는 위 링크의 소스/프리뷰 해시가 가리키는 구현에만 적용하며 새 데이터나 새 배치는 다시 검사합니다.
 
@@ -235,9 +253,9 @@ Blue는 준비/예측의 가로 처리 흐름, Teal은 준비된 체계의 적�
 
 **구현:** [comparison.html](../templates/html/comparison.html), [comparison-reference.css](../templates/html/comparison-reference.css), [comparison-reference.js](../templates/html/comparison-reference.js). 공통 CSS에는 행간·간격 토큰을 정의하고 기존과 같은 행간 값의 선언을 연결합니다. #3의 간격과 바깥 여백 조정은 전용 CSS에 둡니다. 고정 필터 엔진·#2/#6 HTML은 변경하지 않습니다.
 
-**프리뷰:** [이전 PNG](../previews/review/comparison-before.png), [최신 PNG](../previews/html-comparison.png).
+**프리뷰:** [현재 PNG](../previews/html-comparison.png). 수정 전 결과는 PR #14와 Git 이력에서 확인합니다.
 
-**검증:** `python scripts/check_comparison.py`는 여섯 크기의 실제 Chromium 렌더링·독립 필터 계산 112개/표시 픽셀 28개·실제 글리프 폰트·−1pt·방법 Label·제목·소개 사이 8px 및 소개→준비 16px의 실제 간격과 제목 구역 경계·카드/단계/사진/결과/표/장점한계의 상대 좌표·도형 중심·연결 경계·Label 교차·푸터·잘림·모바일 폭을 검사합니다. 동일 문서를 새로 고치지 않고 390/600/900/1280/1600으로 바꿔 화살표와 도형의 재배치를 확인합니다. 결과는 [comparison-validation.json](../previews/review/comparison-validation.json), #2/#6 포함 전체 회귀는 [reference-validation.json](../previews/review/reference-validation.json)에 기록합니다. 수치 검사 후 Desktop/Mobile 캡처를 직접 검토합니다.
+**검증:** `python scripts/validate_references.py --templates comparison --report /tmp/comparison-validation.json`는 여섯 크기의 실제 Chromium 렌더링·독립 필터 계산 112개/표시 픽셀 28개·실제 글리프 폰트·−1pt·방법 Label·제목·소개 사이 8px 및 소개→준비 16px의 실제 간격과 제목 구역 경계·카드/단계/사진/결과/표/장점한계의 상대 좌표·도형 중심·연결 경계·Label 교차·푸터·잘림·모바일 폭을 검사합니다. 동일 문서를 새로 고치지 않고 390/600/900/1280/1600으로 바꿔 화살표와 도형의 재배치를 확인합니다. 부분 실행은 지정한 임시 JSON에 기록합니다. #2/#6 포함 전체 실행의 comparison 사례와 `comparison_live_resize`는 [공통 JSON](../previews/review/reference-validation.json)에 기록합니다. 수치 검사 후 Desktop/Mobile 캡처를 직접 검토합니다.
 
 **현재 구현 검증 결과:** Chromium 154의 6개 요청 화면과 동일 문서의 5개 resize 상태를 통과했습니다. 화면마다 실제 텍스트 요소 60개가 모두 로컬 Pretendard Variable로 그려졌고 폴백·미출력·−1pt 자간 오류가 없었습니다. 실제 Figure 경계의 X 중심 최대 오차는 0.0054931640625 CSS px(약 0.006px)였습니다. #2/#6을 포함한 전체 48개 화면 회귀를 통과했으며 6개 크기의 캡처를 직접 검토했습니다. 결과는 위 JSON의 소스/프리뷰 해시에 대응하며 새 자료에 그대로 적용되는 보장은 아닙니다.
 

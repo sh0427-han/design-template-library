@@ -15,16 +15,15 @@
 
 모든 레퍼런스는 HTML Scroll/Slide에 재사용하는 패턴입니다. PPTX가 아니며 8개를 한 자료에 모두 넣어야 하는 것도 아닙니다.
 
-## 01 Concept · 사진에서 RGB 3차원 배열까지
+## 01 Concept · 사진에서 RGB 배열까지
 
-- **학습 목적:** RGB 사진 → 동일한 높이와 너비의 R/G/B 숫자 행렬 3장 → 선택 4×4 영역 → 선택 픽셀의 세 숫자 → H×W×3 배열을 하나의 Figure로 이해. CNN/Kernel/Feature Map/Classification 제외.
-- **Figure:** 원본 사과 사진, 실제 채널별 값으로 그린 R/G/B 평면 3개(H/W/C=3 축), 같은 이미지에서 얻은 4×4 확대, 선택 index 6의 RGB/HEX 및 3채널 막대. 평면은 색칠한 가짜 행렬이 아니라 같은 원본의 80×80 리샘플에서 각 채널 강도를 별도 Canvas에 그린 것으로, 깊이 방향 3개 판은 채널 축의 도식입니다.
-- **격자 표시:** 각 채널 판 위에 8×8 얇은 안내선을 겹쳐 수치 행렬임을 나타냅니다. 이는 설명용 격자이며 실제 픽셀 데이터는 채널당 80×80로 동일합니다.
-- **확대 영역의 채널 깊이:** 동일 ROI `(52,38,4,4)`에서 얻은 `[R,G,B]` 16개를 공유합니다. 전면은 실제 RGB 합성 4×4(순수 R 평면이 아님), 중간 G와 후면 B는 기존 채널 윤곽에 사용하던 초록 `#279467`/파랑 `#427ec5`를 **단일 기준색**으로 사용합니다. CSS `outlineColor`를 JS가 직접 읽어 표시색 `t=0.22+0.78v/255`, `display=Math.round(255+(base−255)×t)`로 보간합니다. 밝은 표시색만 보정하며 실제 0~255 채널값·선택 RGB/HEX·막대는 그대로 둡니다. DOM·시각적 깊이는 B→G→RGB이며 데스크톱 오프셋은 G(+16px,−16px)/B(+32px,−32px), 520px 이하 모바일은 G(+12px,−12px)/B(+24px,−24px)입니다. R/G/B 각 레이어의 우상단 15px 배지(모바일 11px)는 앞 레이어에 가려지지 않도록 전면/중간/후면 높이차를 확보합니다. 전면은 교육용 실제 RGB 합성색이지만 `R` 배지를 대표 표기로 사용합니다. RGB 전면 격자 너비는 데스크톱 118px(28px×4+2px×3), 모바일 110px(26px×4+2px×3)로 추가 축소합니다. 일부 영역 확대의 가로·세로선과 C=3 표기를 삭제합니다. **H=4는 전면 RGB 격자 왼쪽 중앙에 90도 회전한 세로 글자**, **W=4는 전면 R(RGB 합성) 격자 중앙에 맞춘 확대 격자 아래의 가로 글자**로 표시합니다. 전면 R 격자에도 G/B와 동일한 **2px 외곽선·2px 모서리·연한 그림자**를 적용합니다. RGB 합성색 전면은 R 배지 색 `#b63c47`, 중간 G는 `#279467`, 후면 B는 `#427ec5`를 외곽선과 배지에 똑같이 사용합니다. 외곽선은 격자 크기에 영향을 주지 않는 `outline` 방식이고 선택 셀의 Navy/White 강조는 유지합니다. R/G/B 우상단 배지와 아래 `4×4×3 = 48개 값` 캡션은 유지합니다. 4단계 Figure는 이미지별 시각 중심으로 가운데 배치하되 하단 라벨·설명 위치는 유지합니다. 선택한 1픽셀 Swatch는 48→42px(모바일 40px), 상세 영역은 데스크톱 258→236px/모바일 228→214px로 함께 축소합니다. 확대 격자 좌하단의 `RGB` 표기와 확대 Figure의 `C=3`은 표시하지 않습니다. 왼쪽 전체 R/G/B 행렬의 `C=3`는 유지하며, 채널 수 3은 각 픽셀의 RGB 세 성분을 뜻합니다. 선택 index 6 선택은 전면에만 흰색 2px Halo와 Navy 5px 외곽선을 사용합니다. 16개 셀은 숫자 대신 실제 합성색 블록을 유지합니다. `4×4×3=48개 값`은 16픽셀×3성분입니다.
-- **수치 계약:** 리샘플 80×80, ROI x=52/y=38/width=4/height=4, 표시 ROI left 65%/top 47.5%/width 5%/height 5%. 선택 index 6 = 로컬 (2,1), 전체 (54,39). Chromium 검산 RGB 223/54/56, HEX #DF3638. 원본 사진과 추출 조건은 변경하지 않았습니다. 4×4 ROI의 원소 수는 4×4×3=48, 전체 이미지가 48값이라는 뜻은 아닙니다. 채널 막대 = value/255×100%.
-- **배치·디자인:** 한 개의 White 패널 안에서 입력 사진 → 3개 채널 행렬 → 해당 행렬에서 4×4 ROI 확대 → 선택한 1픽셀의 RGB/HEX/채널 막대까지 화살표 3개로 연결합니다. ROI는 원본 사진에 표시하지 않고 **앞쪽 R 채널 행렬 위에만** 표시합니다(세 채널의 같은 위치를 대표). 왼쪽 행렬 위의 C=3만 유지하고 확대 Figure에는 가이드선 없이 세로 H=4·하단 W=4만 표시합니다. Navy/Blue/Teal, 로컬 Pretendard Variable, −1pt 유지. 모바일에서는 4단계를 세로로 배치하며 실제 계산은 동일합니다.
-- **하단의 역할:** 가로 구분선 아래에는 H×W×3 정의를 재반복하지 않고 `같은 위치의 R/G/B를 조합 → 한 픽셀의 RGB 색상`을 보여줍니다. R/G/B 숫자, 합성 Swatch는 선택 index 6의 실제 Canvas 결과를 공유합니다. 산술 합산이 아니라 채널별 성분의 조합입니다. 최종 하단 핵심 개념에만 전체 H×W×3 배열을 남깁니다.
-- **소스·검증:** [HTML](templates/html/concept.html) · [사진](templates/html/assets/concept-apple-photo.jpg) · [PNG 프리뷰](previews/html-concept.png) · [상세 명세](docs/REFERENCE_PAGE_SPECS.md#01-concept). [검증 스크립트](scripts/validate_references.py)로 실제 이미지에서 채널별 6400개 픽셀, 확대 RGB/G/B의 각각 16개 셀·채널 성분·위치·index 6·RGB/HEX, B 기준 W·전면 기준 H 텍스트 중심/충분한 여백 및 가이드선 부재·G/B 채널 프레임 색상과 통일한 밝은 표시색 및 원본 수치 분리·선택 Halo/Navy·반응형 6화면·로컬 Pretendard를 검증합니다.
+- **사용 목적·청중:** 디지털 이미지의 수치 구조를 처음 배우는 독자. 전체 → 채널 → 같은 위치의 확대 → 한 원소를 연결하는 개념 설명에 적합합니다. 사용자 검토를 마친 PR #15 구현입니다.
+- **실제 레이아웃:** White 패널 하나의 사진 / R·G·B 채널 Stack / 4×4 확대 / 선택 픽셀 수치를 Blue 화살표 3개로 연결합니다. 패널 하단은 R/G/B 성분 조합, 마지막 Teal 캡션은 전체 H×W×3의 뜻입니다.
+- **그림·계산:** 같은 사과 사진을 80×80로 리샘플한 실제 채널 세 장. ROI `(52,38,4,4)`의 16픽셀 중 index 6을 선택합니다. 기준 RGB `(223,54,56)`, HEX `#DF3638`, 막대 `value/255×100%`입니다. 사진에는 ROI를 중복 표시하지 않고 앞 R 채널에만 표시합니다.
+- **표시와 원본의 구분:** 전체 채널 판의 8×8 안내선은 80×80 데이터 크기가 아닙니다. 확대 전면은 R 배지가 있는 원본 RGB 합성색이며 순수 R 평면이 아닙니다. 뒤 G/B는 채널색 기반의 표시 전용 보간입니다. RGB/HEX·막대·합성 Swatch는 미보정 원본을 공유합니다.
+- **디자인 주의:** 같은 Figure 슬롯·라벨 기준선, H/W 축·C=3과 겹친 평면 배지의 노출을 유지합니다. 확대는 H=4/W=4 텍스트와 `4×4×3=48개 값`으로 설명하며 48픽셀·48바이트로 표현하지 않습니다. HWC 외 CHW도 가능합니다. CNN·학습 모델의 특징 맵을 이 예제에 혼합하지 않습니다.
+- **반응형:** PC 4개 크기가 제작 기준입니다. 현재 작은 화면 호환 CSS는 단계를 세로로 배치하며 데이터와 계산은 그대로 유지합니다.
+- **원본·프리뷰·가이드:** [HTML](templates/html/concept.html) · [현재 PNG](previews/html-concept.png) · [상세 계산·배치 명세](docs/REFERENCE_PAGE_SPECS.md#01-concept) · [재사용 컴포넌트 규격](docs/DESIGN_COMPONENT_RECIPES.md#동일-데이터의-표현과-확대-1) · [공통 검증](previews/review/reference-validation.json).
 
 ## 02 Process · 입력 이미지에서 클래스별 예측 확률로
 
@@ -37,9 +36,9 @@
 - **TASK:** 짧은 특징 벡터 → 분류 Head → 예시 점수 3개의 기존 그림을 사용합니다. 7개 셀은 차원을 뜻하지 않는 요약 기호이며, 점수 `[2,1,0]`은 Output 예시 확률과 같은 데이터입니다. 내부 화살표는 Teal입니다. 제목 `Task Head`, 설명 `특징을 목적에 맞게 처리`와 White 카드 배경은 유지합니다. Flatten 계산·복잡한 FC 연결·Softmax 수식은 #6과 문서에서 설명합니다. 이번 예시는 분류이며 Task Head의 일반적 역할을 분류에 한정하지 않습니다.
 - **OUTPUT:** 사과 66.5% / 토마토 24.5% / 기타 9.0%의 수평 막대. 별도 예시 logits `[2,1,0]`의 Softmax이며 합은 100.0%입니다. 길이는 반올림 전 확률에 비례하고 최대 클래스는 Teal, 나머지는 낮은 채도입니다. White 카드 안에 작은 `예시 확률`을 표시합니다.
 - **주의:** 사진→고정 필터 맵은 실제 계산이지만 예시 확률은 그 맵에서 직접 계산된 학습 모델의 추론 결과가 아닙니다. #2에는 전체 역할 흐름만, #6에는 내부 연산·차원만 설명합니다. 모델 정확도나 성능이라고 표현하지 않습니다.
-- **정렬·반응형:** 1440×810 원본에서 카드 높이 376px, Figure 슬롯 176px. 실제 Figure 경계의 중심과 Blue 화살표를 맞춥니다. Label/Title/Description은 독립 행입니다. 900px 이하에서는 카드 1열·아래 방향 화살표·같은 단계 순서를 사용합니다.
-- **구현·검증:** 공통 `assets/cnn-feature-maps.js`는 그대로 유지하며 #2 표시만 `process-reference.js`에서 처리합니다. `python scripts/check_process.py`는 6개 화면의 독립 계산·색상·정렬·실제 Pretendard/−1pt와 12개 실패/재사용 사례를 검사합니다. 결과는 [전용 JSON](previews/review/process-validation.json), #3 포함 전체 회귀는 [공통 JSON](previews/review/reference-validation.json)에 기록합니다.
-- **가이드·프리뷰:** [HTML](templates/html/process.html), [상세 명세](docs/REFERENCE_PAGE_SPECS.md#02-process), [재사용 워크플로](docs/REFERENCE_REUSE_WORKFLOW.md), [main 기준 이전 PNG](previews/review/process-before.png), [최신 PNG](previews/html-process.png).
+- **정렬·반응형:** 1440×810 원본에서 카드 높이 376px, Figure 슬롯 176px. 각 그림은 Figure 슬롯 중앙, Blue 외부 화살표는 카드 전체 높이의 중앙에 맞춥니다. Label/Title/Description은 독립 행입니다. 900px 이하에서는 카드 1열·아래 방향 화살표·같은 단계 순서를 사용합니다.
+- **구현·검증:** 공통 `assets/cnn-feature-maps.js`는 그대로 유지하며 #2 표시만 `process-reference.js`에서 처리합니다. `python scripts/validate_references.py --templates process --report /tmp/process-validation.json`는 6개 화면의 독립 계산·색상·정렬·실제 Pretendard/−1pt와 12개 실패/재사용 사례를 검사합니다. 부분 결과는 지정한 임시 JSON, 전체 결과는 [공통 JSON](previews/review/reference-validation.json)의 process 사례와 `process_robustness`에 기록합니다.
+- **가이드·프리뷰:** [HTML](templates/html/process.html), [상세 명세](docs/REFERENCE_PAGE_SPECS.md#02-process), [재사용 워크플로](docs/REFERENCE_REUSE_WORKFLOW.md), [최신 PNG](previews/html-process.png).
 
 ## 03 Comparison · 판단 기준의 준비와 새 이미지 예측
 
@@ -49,8 +48,8 @@
 - **MACHINE LEARNING:** 서로 다른 붉은 사과/초록 사과/토마토 **일러스트 3개와 정답 라벨** → 학습 → 파라미터가 최적화된 모델의 모식도입니다. 이후 같은 사과 사진 → 학습된 CNN의 상징 → `사과 예측 / 예시`를 보여줍니다. 이번 예제는 지도학습이며 모든 머신러닝에 라벨이 필수라고 일반화하지 않습니다.
 - **CNN 표현의 제한:** 대표 맵 0/3/6/9는 #2와 같은 사진·고정 방향성 필터·ReLU의 실제 계산입니다. #2/#6과 같은 오른쪽 위 Stack 방향·Blue 경계로 표시하지만 학습된 CNN의 실측 활성화가 아닙니다. 화면에 `맵: 고정 필터 설명용`, 접근성 설명과 명세에 전체 조건을 기록합니다. 모델 학습·추론·성능 비교를 실행했다고 주장하지 않습니다.
 - **대칭·색상:** 입력 사진 파일·크기·기준선, 준비/예측 라벨과 구분선, 표의 세 행, 장점/한계 위치를 맞춥니다. 카드 상단의 방법 Label·제목·소개 사이는 각각 공통 8px, 소개→준비는 구역 간격 16px입니다. 데스크톱에서는 캔버스 위 패딩과 카드 위 여백을 재배분해 Figure 크기와 푸터 위치를 유지합니다. [공통 행간·간격 기준](DESIGN_SYSTEM.md#행간과-요소-사이-간격)을 따릅니다. Amber는 사람의 조건, Blue는 흐름·학습·CNN, Teal은 준비된 체계의 적용 연결과 예시 결과입니다. 두 카드 전체는 모두 White입니다.
-- **반응형·검증:** 900px 이하 카드 1열, 650px 이하 Figure·표를 읽기 배치로 조정합니다. `python scripts/check_comparison.py`가 6개 화면의 실제 Pretendard/−1pt·독립 맵 계산·대칭·화살표·실시간 리사이즈를 검사합니다. [전용 검증 JSON](previews/review/comparison-validation.json), [공통 회귀 JSON](previews/review/reference-validation.json)을 확인합니다.
-- **구현·가이드·프리뷰:** [HTML](templates/html/comparison.html), [전용 CSS](templates/html/comparison-reference.css), [전용 JS](templates/html/comparison-reference.js), [상세 명세](docs/REFERENCE_PAGE_SPECS.md#03-comparison), [Figure 표준](docs/FIGURE_PRODUCTION_STANDARD.md), [수정 전 PNG](previews/review/comparison-before.png), [최신 PNG](previews/html-comparison.png).
+- **반응형·검증:** 900px 이하 카드 1열, 650px 이하 Figure·표를 읽기 배치로 조정합니다. `python scripts/validate_references.py --templates comparison --report /tmp/comparison-validation.json`가 6개 화면의 실제 Pretendard/−1pt·독립 맵 계산·대칭·화살표·실시간 리사이즈를 검사합니다. 전체 결과는 [공통 JSON](previews/review/reference-validation.json)의 comparison 사례와 `comparison_live_resize`를 확인합니다.
+- **구현·가이드·프리뷰:** [HTML](templates/html/comparison.html), [전용 CSS](templates/html/comparison-reference.css), [전용 JS](templates/html/comparison-reference.js), [상세 명세](docs/REFERENCE_PAGE_SPECS.md#03-comparison), [Figure 표준](docs/FIGURE_PRODUCTION_STANDARD.md), [최신 PNG](previews/html-comparison.png).
 
 ## 04 Step-by-Step · 원소별 곱과 전체 합
 
@@ -96,7 +95,7 @@
 
 ## 08 Executive Summary · 근거와 실행 항목
 
-- **선택한 구현:** 기존 main의 정상 레이아웃을 유지합니다. 사전 검토의 새 디자인 제안은 승인된 수정으로 간주하지 않습니다.
+- **선택한 구현:** 8종 사용자 검토 완료본의 기존 레이아웃을 유지합니다. KPI의 실제 집계 조건은 재사용할 과제에서 별도로 확보합니다.
 - **사용 목적·청중:** 운영 지표의 변화와 후속 확인 사항을 한 장으로 읽는 기술·경영 보고.
 - **현재 구조:** 왼쪽 세 KPI 각각의 기존/개선안 세로 막대·원래 수치와 단위·감소율, 오른쪽 우선순위/동일 조건 집계/확대 판단.
 - **계산:** 월간 수동 점검 120→80건 −33.3%, 평균 처리 시간 45→30분/건 −33.3%, 월말 미처리 20→8건 −60.0%.
@@ -120,4 +119,4 @@
 
 모든 페이지는 실제 Pretendard, 전체 −1pt, 편집 가능한 소스, 실제 계산과 도식의 일치를 요구합니다. 프리뷰는 [공통 검증](previews/review/reference-validation.json)과 같은 원본이어야 합니다. 다른 데이터로 재사용한 경우 숫자만 바꾸지 말고 공식·Shape·색상 의미·설명 조건·반응형을 함께 확인합니다.
 
-[컴포넌트 설계 규격](docs/DESIGN_COMPONENT_RECIPES.md)은 #2–#8의 카드·간격·행간·도식 높이·수식·상태·반응형 수치를 대조하고 새 개념의 설계 기록표를 제공합니다. 공통값과 예제별 예외를 구분해 적용합니다.
+[컴포넌트 설계 규격](docs/DESIGN_COMPONENT_RECIPES.md)은 #1–#8의 카드·간격·행간·도식 높이·수식·상태·반응형 수치를 대조하고 새 개념의 설계 기록표를 제공합니다. 공통값과 예제별 예외를 구분해 적용합니다.

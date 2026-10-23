@@ -53,4 +53,4 @@ python scripts/check_documentation.py
 
 변경한 페이지와 파일, 기술 검증·폰트·레이아웃 결과, 실제 대표 프리뷰, 재사용 검증 범위, 남은 제한을 기록합니다. #6의 Shape 계약이나 #7의 축 방향 같은 핵심 기준은 [페이지 명세](REFERENCE_PAGE_SPECS.md)를 따릅니다.
 
-자동 검사·사용자 승인·Push·PR·main 반영은 각각 별도 상태입니다. 역사적 검토 문서를 현재 설계 명세로 사용하지 않습니다. [통합 보고서](INTEGRATION_REPORT_2026-10-22.md)와 [프리뷰 증거](../previews/review/README.md)를 확인합니다.
+자동 검사·사용자 승인·Push·PR·main 반영은 각각 별도 상태입니다. 역사적 검토 문서를 현재 설계 명세로 사용하지 않습니다. [8종 검토 완료 상태](REFERENCE_RELEASE_STATUS.md)와 [프리뷰 증거](../previews/review/README.md)를 확인합니다.

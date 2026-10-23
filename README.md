@@ -21,7 +21,7 @@ AI·ML 교육자료, 논문·기술 발표, 엔지니어링 보고를 위한 **�
 
 | 번호 | 패턴 | 핵심 표현 | 원본 |
 | --- | --- | --- | --- |
-| 01 | Concept | 사진 → 픽셀 → RGB → HWC | [HTML](templates/html/concept.html) |
+| 01 | Concept | 사진 → 실제 채널 → 같은 ROI 확대 → RGB/HEX | [HTML](templates/html/concept.html) |
 | 02 | Process | 이미지 → 특징 추출 → Task Head → 결과 | [HTML](templates/html/process.html) |
 | 03 | Comparison | 같은 입력에서 규칙 지정 / 데이터 학습 비교 | [HTML](templates/html/comparison.html) |
 | 04 | Step-by-Step | 5×5 입력·3×3 커널·9개 곱·합 −6 | [HTML](templates/html/step-by-step.html) |
@@ -93,7 +93,7 @@ python scripts/check_documentation.py
 python scripts/validate_references.py --templates architecture step-by-step --evidence-dir /tmp/selected-review
 ```
 
-기존 `render_previews.py`, `render_step_pretendard.py`, `check_professional_figures.py`, `check_experiment.py`는 공통 검사로 연결하는 호환 진입점입니다. 부분 검증을 전체 통과라고 보고하지 않습니다.
+검증 명령은 `validate_references.py`로 통일했습니다. 부분 검증은 `--report /tmp/selected-validation.json`처럼 임시 경로를 지정하며 전체 통과 기록을 대체하지 않습니다. 기존 대표 프리뷰를 갱신하지 않고 검사하려면 값 없이 `--update-previews`를 붙입니다. 현재 원본 검증 결과와 프리뷰 해시는 JSON에 함께 기록됩니다.
 
 ## 새 슬라이드 제작
 
@@ -109,14 +109,15 @@ python scripts/validate_references.py --templates architecture step-by-step --ev
 ## 문서 지도와 통합 상태
 
 - [사용 방법](docs/USAGE.md): 실행·복사·편집 요령
-- [컴포넌트 설계 규격](docs/DESIGN_COMPONENT_RECIPES.md): #2–#8에서 대조한 실제 수치·변형·예외와 새 개념의 설계 기록표
+- [컴포넌트 설계 규격](docs/DESIGN_COMPONENT_RECIPES.md): #1–#8 전체에서 대조한 실제 수치·변형·예외와 새 개념의 설계 기록표
 - [Figure 제작 표준](docs/FIGURE_PRODUCTION_STANDARD.md): 개념에서 실제 도식까지의 실무 절차
 - [페이지 상세 명세](docs/REFERENCE_PAGE_SPECS.md): 8개 페이지를 재구현할 수 있는 데이터·수식·구성
 - [Interactive 상세 패턴](docs/INTERACTIVE_PATTERN.md) · [Experiment 상세 패턴](docs/EXPERIMENT_PATTERN.md)
 - [검토 체크리스트](docs/REFERENCE_REVIEW_GUIDE.md) · [프리뷰와 증거](previews/review/README.md)
-- [통합 출처·검증·GitHub 상태](docs/INTEGRATION_REPORT_2026-10-22.md)
+- [8종 검토 완료 상태·최신 출처·유지보수](docs/REFERENCE_RELEASE_STATUS.md)
+- [2026-10-22 초기 통합 이력](docs/INTEGRATION_REPORT_2026-10-22.md)
 
-8종 최종 통합의 출처·CI·Merge 기록은 [PR #12](https://github.com/sh0427-han/design-template-library/pull/12)와 [통합 보고서](docs/INTEGRATION_REPORT_2026-10-22.md)에서 확인합니다. 로컬 검증·사용자 디자인 승인·원격 게시·main 반영은 실제 증거로 구분합니다.
+8종 모두 사용자 디자인 검토를 마쳤습니다. #1 PR #15, #2 PR #13/#18, #3 PR #14와 두 모드 PR #17까지 반영한 출처는 [현재 상태](docs/REFERENCE_RELEASE_STATUS.md)에서 확인합니다. PR #12는 초기 통합의 역사적 기록입니다. 로컬 검증·사용자 디자인 승인·원격 게시·main 반영은 실제 증거로 구분합니다.
 
 ## Scroll / Slide 전환 예제의 재사용
 

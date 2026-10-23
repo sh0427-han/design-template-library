@@ -478,29 +478,13 @@ def check_experiment(page):
     assert max([r['axisErrors']['gt'],r['axisErrors']['prediction'],*r['axisErrors']['columns'],*r['axisErrors']['rows']])<2
     return r
 
-def write_compatibility_reports(report):
-    """Keep legacy report URLs on the same execution as the full 48-case proof."""
-    groups={
-        'process-validation.json':['process'],
-        'comparison-validation.json':['comparison'],
-        'concept-architecture-validation.json':['concept','architecture'],
-        'professional-figures-validation.json':['process','comparison','architecture'],
-        'step-pretendard-validation.json':['step-by-step'],
-        'experiment-validation.json':['experiment'],
-        'executive-summary-validation.json':['executive-summary'],
-    }
-    for filename,names in groups.items():
-        subset={**report,'derived_from':'reference-validation.json (same final-source execution)',
-                'templates':names,'cases':[c for c in report['cases'] if c['template'] in names]}
-        (ROOT/'previews/review'/filename).write_text(json.dumps(subset,ensure_ascii=False,indent=2)+'\n')
-
 def main(argv=None):
     parser=ArgumentParser(description=__doc__);parser.add_argument('--templates',nargs='+',choices=NAMES,default=list(NAMES));parser.add_argument('--evidence-dir',type=Path,default=Path('/tmp/reference-integration-review'));parser.add_argument('--report',type=Path)
     parser.add_argument('--update-previews',nargs='*',choices=NAMES,help='Only regenerate these canonical previews; default is every selected template')
     args=parser.parse_args(argv);args.evidence_dir.mkdir(parents=True,exist_ok=True)
     updated_previews=args.templates if args.update_previews is None else args.update_previews
     assert set(updated_previews)<=set(args.templates),'Preview targets must be selected templates'
-    report_path=args.report or ROOT/'previews/review'/('reference-validation.json' if len(args.templates)==8 else 'selected-reference-validation.json');report_path.parent.mkdir(parents=True,exist_ok=True)
+    report_path=args.report or (ROOT/'previews/review/reference-validation.json' if len(args.templates)==8 else args.evidence_dir/'selected-reference-validation.json');report_path.parent.mkdir(parents=True,exist_ok=True)
     report={'status':'running','started_utc':datetime.now(timezone.utc).isoformat(),'viewports':[list(v) for v in SIZES],'templates':list(args.templates),'cases':[],'font_delivery':'original local Pretendard v1.3.9, no CDN interception','source_sha256':{str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in (ROOT/'templates/html').rglob('*') if p.is_file() and p.suffix in ('.html','.css','.js','.woff2','.png','.jpg')}}
     server=ThreadingHTTPServer(('127.0.0.1',0),partial(Quiet,directory=str(ROOT)));threading.Thread(target=server.serve_forever,daemon=True).start()
     try:
@@ -552,7 +536,6 @@ def main(argv=None):
         report['finished_utc']=datetime.now(timezone.utc).isoformat()
         report['canonical_preview_updates']=list(updated_previews)
         report_path.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
-        if len(args.templates)==8 and report_path.name=='reference-validation.json':write_compatibility_reports(report)
     print(f'PASS {len(report["cases"])} final-source viewports; report: {report_path}')
 
 if __name__=='__main__':main()

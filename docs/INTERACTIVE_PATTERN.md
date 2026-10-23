@@ -169,7 +169,7 @@ python scripts/check_interactive.py
 
 폰트 원본을 최초 확보할 때 curl의 정상 TLS 검증을 사용했고 저장한 원본의 SHA-256을 검증합니다. 현재 렌더링 검증은 CDN 폰트를 대신 주입하는 이전 우회에 의존하지 않습니다. 인증서 검증 해제나 신뢰 저장소 변경은 하지 않습니다. 통합에서는 이 방식을 공통 CSS로 옮겨 8개 페이지에 적용했습니다. 실행 환경의 일반 인증서 신뢰 설정을 변경한 것은 아닙니다.
 
-공용 검사는 `reference_validation.py` / `validate_references.py`에 있고 `render_previews.py`는 호환 진입점입니다. 비가시적 `.sr-only`를 시각적 경계 검사에서 제외하고 샘플 ID로 결과를 대응시킵니다. 이번 전체 통합의 다른 페이지·공통 파일 변경은 통합 보고서에서 별도로 기록합니다.
+공용 검사는 `reference_validation.py` / `validate_references.py`에 있으며 `check_interactive.py`도 같은 기하 검사를 직접 사용합니다. 비가시적 `.sr-only`를 시각적 경계 검사에서 제외하고 샘플 ID로 결과를 대응시킵니다. 이번 전체 통합의 다른 페이지·공통 파일 변경은 통합 보고서에서 별도로 기록합니다.
 
 ## 데이터 변경 재사용 검증
 

@@ -1,6 +1,6 @@
 {
   "status": "passed",
-  "started_utc": "2026-10-23T06:24:10.801034+00:00",
+  "started_utc": "2026-10-23T08:21:24.287474+00:00",
   "viewports": [
     [
       1600,
@@ -55,19 +55,86 @@
           4,
           4
         ],
+        "roi_on_matrix": true,
         "selected_index": 6,
+        "selected_xy": [
+          54,
+          39
+        ],
         "rgb": [
           223,
           54,
           56
         ],
         "hex": "#DF3638",
-        "all_16_swatches_match": true
+        "rgb_planes_order": [
+          "B",
+          "G",
+          "R"
+        ],
+        "plane_pixel_checks": 76800,
+        "rgb_planes_are_real_samples": true,
+        "all_16_colors_match": true,
+        "single_panel_four_stages": true,
+        "crop_channel_depth": 3,
+        "crop_stack_order": [
+          "B",
+          "G",
+          "RGB"
+        ],
+        "crop_rgb_16_match": true,
+        "crop_g_16_match": true,
+        "crop_b_16_match": true,
+        "merge_uses_same_rgb": true,
+        "shape": "H×W×3",
+        "patch_values": 48,
+        "matrix_roi_normalized": {
+          "left": 0.6499183006535948,
+          "top": 0.47497957516339867,
+          "width": 0.04993872549019608,
+          "height": 0.04993872549019608
+        },
+        "text_axis_alignment_px": {
+          "w_center_on_front_rgb": 0.0,
+          "h_center_on_rgb": 0.0,
+          "w_gap_below_stack": 10.0,
+          "h_gap_left_rgb": 7.602
+        },
+        "crop_c_label_removed": true,
+        "crop_guides_removed": true,
+        "crop_grid_width_px": 118,
+        "one_pixel_swatch_width_px": 42,
+        "one_pixel_detail_width_px": 236,
+        "h_label_rotated_vertically": true,
+        "crop_frame_colors": {
+          "R": "#b63c47",
+          "G": "#279467",
+          "B": "#427ec5"
+        },
+        "crop_frame_uniform": true,
+        "crop_display_tints": {
+          "G": "#279467",
+          "B": "#427ec5"
+        },
+        "crop_display_formula": "rgb(255+(base-255)*(0.22+0.78*v/255))",
+        "crop_plane_badges": [
+          "B",
+          "G",
+          "R"
+        ],
+        "figure_center_errors_px": {
+          "photo": 0,
+          "matrix": 0,
+          "crop": 2.69140625,
+          "detail": -0.0078125
+        },
+        "selected_halo_px": 2,
+        "selected_navy_outline_px": 5
       },
       "fonts": {
-        "elements": 25,
+        "elements": 48,
         "families": {
-          "Pretendard Variable": 316
+          "Pretendard Variable": 408
         },
         "fallback": [],
         "unpainted": [],
@@ -109,10 +176,6 @@
         "card_padding": [
           {
             "card": "concept-panel visual-panel",
-            "escaped": []
-          },
-          {
-            "card": "concept-panel value-panel",
             "escaped": []
           }
         ]
@@ -413,11 +476,11 @@
             {
               "start": {
                 "x": 449,
-                "y": 460.890625
+                "y": 502.890625
               },
               "end": {
                 "x": 475,
-                "y": 460.890625
+                "y": 502.890625
               },
               "d": "M1 8 H27 M21 2 L27 8 L21 14",
               "stroke": "rgb(49, 104, 200)"
@@ -425,11 +488,11 @@
             {
               "start": {
                 "x": 787,
-                "y": 460.890625
+                "y": 502.890625
               },
               "end": {
                 "x": 813,
-                "y": 460.890625
+                "y": 502.890625
               },
               "d": "M1 8 H27 M21 2 L27 8 L21 14",
               "stroke": "rgb(49, 104, 200)"
@@ -437,15 +500,19 @@
             {
               "start": {
                 "x": 1125,
-                "y": 460.890625
+                "y": 502.890625
               },
               "end": {
                 "x": 1151,
-                "y": 460.890625
+                "y": 502.890625
               },
               "d": "M1 8 H27 M21 2 L27 8 L21 14",
               "stroke": "rgb(49, 104, 200)"
             }
+          ],
+          "internalArrows": [
+            "M42 72 H67 M62 68 L67 72 L62 76",
+            "M151 72 H170 M165 68 L170 72 L165 76"
           ],
           "outputs": [
             {
@@ -2672,19 +2739,86 @@
           4,
           4
         ],
+        "roi_on_matrix": true,
         "selected_index": 6,
+        "selected_xy": [
+          54,
+          39
+        ],
         "rgb": [
           223,
           54,
           56
         ],
         "hex": "#DF3638",
-        "all_16_swatches_match": true
+        "rgb_planes_order": [
+          "B",
+          "G",
+          "R"
+        ],
+        "plane_pixel_checks": 76800,
+        "rgb_planes_are_real_samples": true,
+        "all_16_colors_match": true,
+        "single_panel_four_stages": true,
+        "crop_channel_depth": 3,
+        "crop_stack_order": [
+          "B",
+          "G",
+          "RGB"
+        ],
+        "crop_rgb_16_match": true,
+        "crop_g_16_match": true,
+        "crop_b_16_match": true,
+        "merge_uses_same_rgb": true,
+        "shape": "H×W×3",
+        "patch_values": 48,
+        "matrix_roi_normalized": {
+          "left": 0.6498991828504722,
+          "top": 0.47490183593335455,
+          "width": 0.04998408150270615,
+          "height": 0.04998408150270615
+        },
+        "text_axis_alignment_px": {
+          "w_center_on_front_rgb": 0.031,
+          "h_center_on_rgb": -0.008,
+          "w_gap_below_stack": 9.578,
+          "h_gap_left_rgb": 7.234
+        },
+        "crop_c_label_removed": true,
+        "crop_guides_removed": true,
+        "crop_grid_width_px": 112.109375,
+        "one_pixel_swatch_width_px": 39.921875,
+        "one_pixel_detail_width_px": 224.34375,
+        "h_label_rotated_vertically": true,
+        "crop_frame_colors": {
+          "R": "#b63c47",
+          "G": "#279467",
+          "B": "#427ec5"
+        },
+        "crop_frame_uniform": true,
+        "crop_display_tints": {
+          "G": "#279467",
+          "B": "#427ec5"
+        },
+        "crop_display_formula": "rgb(255+(base-255)*(0.22+0.78*v/255))",
+        "crop_plane_badges": [
+          "B",
+          "G",
+          "R"
+        ],
+        "figure_center_errors_px": {
+          "photo": 0,
+          "matrix": -0.0078125,
+          "crop": 2.52490234375,
+          "detail": 0
+        },
+        "selected_halo_px": 2,
+        "selected_navy_outline_px": 5
       },
       "fonts": {
-        "elements": 25,
+        "elements": 48,
         "families": {
-          "Pretendard Variable": 316
+          "Pretendard Variable": 408
         },
         "fallback": [],
         "unpainted": [],
@@ -2726,10 +2860,6 @@
         "card_padding": [
           {
             "card": "concept-panel visual-panel",
-            "escaped": []
-          },
-          {
-            "card": "concept-panel value-panel",
             "escaped": []
           }
         ]
@@ -3030,11 +3160,11 @@
             {
               "start": {
                 "x": 386.32714897914025,
-                "y": 391.6015624057054
+                "y": 431.5312499057054
               },
               "end": {
                 "x": 411.0322267976828,
-                "y": 391.6015624057054
+                "y": 431.5312499057054
               },
               "d": "M1 8 H27 M21 2 L27 8 L21 14",
               "stroke": "rgb(49, 104, 200)"
@@ -3042,11 +3172,11 @@
             {
               "start": {
                 "x": 707.6396489791402,
-                "y": 391.6015624057054
+                "y": 431.5312499057054
               },
               "end": {
                 "x": 732.3447267976828,
-                "y": 391.6015624057054
+                "y": 431.5312499057054
               },
               "d": "M1 8 H27 M21 2 L27 8 L21 14",
               "stroke": "rgb(49, 104, 200)"
@@ -3054,15 +3184,19 @@
             {
               "start": {
                 "x": 1028.9365239791402,
-                "y": 391.6015624057054
+                "y": 431.5312499057054
               },
               "end": {
                 "x": 1053.6416017976828,
-                "y": 391.6015624057054
+                "y": 431.5312499057054
               },
               "d": "M1 8 H27 M21 2 L27 8 L21 14",
               "stroke": "rgb(49, 104, 200)"
             }
+          ],
+          "internalArrows": [
+            "M42 72 H67 M62 68 L67 72 L62 76",
+            "M151 72 H170 M165 68 L170 72 L165 76"
           ],
           "outputs": [
             {
@@ -5289,19 +5423,86 @@
           4,
           4
         ],
+        "roi_on_matrix": true,
         "selected_index": 6,
+        "selected_xy": [
+          54,
+          39
+        ],
         "rgb": [
           223,
           54,
           56
         ],
         "hex": "#DF3638",
-        "all_16_swatches_match": true
+        "rgb_planes_order": [
+          "B",
+          "G",
+          "R"
+        ],
+        "plane_pixel_checks": 76800,
+        "rgb_planes_are_real_samples": true,
+        "all_16_colors_match": true,
+        "single_panel_four_stages": true,
+        "crop_channel_depth": 3,
+        "crop_stack_order": [
+          "B",
+          "G",
+          "RGB"
+        ],
+        "crop_rgb_16_match": true,
+        "crop_g_16_match": true,
+        "crop_b_16_match": true,
+        "merge_uses_same_rgb": true,
+        "shape": "H×W×3",
+        "patch_values": 48,
+        "matrix_roi_normalized": {
+          "left": 0.6499662997079309,
+          "top": 0.4749494495618962,
+          "width": 0.04998876656931027,
+          "height": 0.04998876656931027
+        },
+        "text_axis_alignment_px": {
+          "w_center_on_front_rgb": 0.016,
+          "h_center_on_rgb": -0.008,
+          "w_gap_below_stack": 9.031,
+          "h_gap_left_rgb": 6.844
+        },
+        "crop_c_label_removed": true,
+        "crop_guides_removed": true,
+        "crop_grid_width_px": 106.01556396484375,
+        "one_pixel_swatch_width_px": 37.734375,
+        "one_pixel_detail_width_px": 212.09375,
+        "h_label_rotated_vertically": true,
+        "crop_frame_colors": {
+          "R": "#b63c47",
+          "G": "#279467",
+          "B": "#427ec5"
+        },
+        "crop_frame_uniform": true,
+        "crop_display_tints": {
+          "G": "#279467",
+          "B": "#427ec5"
+        },
+        "crop_display_formula": "rgb(255+(base-255)*(0.22+0.78*v/255))",
+        "crop_plane_badges": [
+          "B",
+          "G",
+          "R"
+        ],
+        "figure_center_errors_px": {
+          "photo": -0.0078125,
+          "matrix": -0.0078125,
+          "crop": 2.387725830078125,
+          "detail": 0
+        },
+        "selected_halo_px": 2,
+        "selected_navy_outline_px": 5
       },
       "fonts": {
-        "elements": 25,
+        "elements": 48,
         "families": {
-          "Pretendard Variable": 316
+          "Pretendard Variable": 408
         },
         "fallback": [],
         "unpainted": [],
@@ -5343,10 +5544,6 @@
         "card_padding": [
           {
             "card": "concept-panel visual-panel",
-            "escaped": []
-          },
-          {
-            "card": "concept-panel value-panel",
             "escaped": []
           }
         ]
@@ -5647,11 +5844,11 @@
             {
               "start": {
                 "x": 367.53906247026663,
-                "y": 371.89062488458023
+                "y": 409.64062488458023
               },
               "end": {
                 "x": 390.89843669719943,
-                "y": 371.89062488458023
+                "y": 409.64062488458023
               },
               "d": "M1 8 H27 M21 2 L27 8 L21 14",
               "stroke": "rgb(49, 104, 200)"
@@ -5659,11 +5856,11 @@
             {
               "start": {
                 "x": 671.3203124702667,
-                "y": 371.89062488458023
+                "y": 409.64062488458023
               },
               "end": {
                 "x": 694.6796866971994,
-                "y": 371.89062488458023
+                "y": 409.64062488458023
               },
               "d": "M1 8 H27 M21 2 L27 8 L21 14",
               "stroke": "rgb(49, 104, 200)"
@@ -5671,15 +5868,19 @@
             {
               "start": {
                 "x": 975.1015624702667,
-                "y": 371.89062488458023
+                "y": 409.64062488458023
               },
               "end": {
                 "x": 998.4609366971994,
-                "y": 371.89062488458023
+                "y": 409.64062488458023
               },
               "d": "M1 8 H27 M21 2 L27 8 L21 14",
               "stroke": "rgb(49, 104, 200)"
             }
+          ],
+          "internalArrows": [
+            "M42 72 H67 M62 68 L67 72 L62 76",
+            "M151 72 H170 M165 68 L170 72 L165 76"
           ],
           "outputs": [
             {
@@ -7906,19 +8107,86 @@
           4,
           4
         ],
+        "roi_on_matrix": true,
         "selected_index": 6,
+        "selected_xy": [
+          54,
+          39
+        ],
         "rgb": [
           223,
           54,
           56
         ],
         "hex": "#DF3638",
-        "all_16_swatches_match": true
+        "rgb_planes_order": [
+          "B",
+          "G",
+          "R"
+        ],
+        "plane_pixel_checks": 76800,
+        "rgb_planes_are_real_samples": true,
+        "all_16_colors_match": true,
+        "single_panel_four_stages": true,
+        "crop_channel_depth": 3,
+        "crop_stack_order": [
+          "B",
+          "G",
+          "RGB"
+        ],
+        "crop_rgb_16_match": true,
+        "crop_g_16_match": true,
+        "crop_b_16_match": true,
+        "merge_uses_same_rgb": true,
+        "shape": "H×W×3",
+        "patch_values": 48,
+        "matrix_roi_normalized": {
+          "left": 0.6499337907788612,
+          "top": 0.4749006861682918,
+          "width": 0.04995786685927531,
+          "height": 0.04995786685927531
+        },
+        "text_axis_alignment_px": {
+          "w_center_on_front_rgb": 0.016,
+          "h_center_on_rgb": 0.0,
+          "w_gap_below_stack": 8.438,
+          "h_gap_left_rgb": 6.391
+        },
+        "crop_c_label_removed": true,
+        "crop_guides_removed": true,
+        "crop_grid_width_px": 99.015625,
+        "one_pixel_swatch_width_px": 35.25,
+        "one_pixel_detail_width_px": 198.109375,
+        "h_label_rotated_vertically": true,
+        "crop_frame_colors": {
+          "R": "#b63c47",
+          "G": "#279467",
+          "B": "#427ec5"
+        },
+        "crop_frame_uniform": true,
+        "crop_display_tints": {
+          "G": "#279467",
+          "B": "#427ec5"
+        },
+        "crop_display_formula": "rgb(255+(base-255)*(0.22+0.78*v/255))",
+        "crop_plane_badges": [
+          "B",
+          "G",
+          "R"
+        ],
+        "figure_center_errors_px": {
+          "photo": -0.0078125,
+          "matrix": 0,
+          "crop": 2.24102783203125,
+          "detail": 0
+        },
+        "selected_halo_px": 2,
+        "selected_navy_outline_px": 5
       },
       "fonts": {
-        "elements": 25,
+        "elements": 48,
         "families": {
-          "Pretendard Variable": 316
+          "Pretendard Variable": 408
         },
         "fallback": [],
         "unpainted": [],
@@ -7960,10 +8228,6 @@
         "card_padding": [
           {
             "card": "concept-panel visual-panel",
-            "escaped": []
-          },
-          {
-            "card": "concept-panel value-panel",
             "escaped": []
           }
         ]
@@ -8264,11 +8528,11 @@
             {
               "start": {
                 "x": 345.32910101193045,
-                "y": 348.242187664976
+                "y": 383.500000164976
               },
               "end": {
                 "x": 367.13964842310236,
-                "y": 348.242187664976
+                "y": 383.500000164976
               },
               "d": "M1 8 H27 M21 2 L27 8 L21 14",
               "stroke": "rgb(49, 104, 200)"
@@ -8276,11 +8540,11 @@
             {
               "start": {
                 "x": 629.0791010119304,
-                "y": 348.242187664976
+                "y": 383.500000164976
               },
               "end": {
                 "x": 650.8896484231024,
-                "y": 348.242187664976
+                "y": 383.500000164976
               },
               "d": "M1 8 H27 M21 2 L27 8 L21 14",
               "stroke": "rgb(49, 104, 200)"
@@ -8288,15 +8552,19 @@
             {
               "start": {
                 "x": 912.8291010119304,
-                "y": 348.242187664976
+                "y": 383.500000164976
               },
               "end": {
                 "x": 934.6396484231024,
-                "y": 348.242187664976
+                "y": 383.500000164976
               },
               "d": "M1 8 H27 M21 2 L27 8 L21 14",
               "stroke": "rgb(49, 104, 200)"
             }
+          ],
+          "internalArrows": [
+            "M42 72 H67 M62 68 L67 72 L62 76",
+            "M151 72 H170 M165 68 L170 72 L165 76"
           ],
           "outputs": [
             {
@@ -10523,19 +10791,86 @@
           4,
           4
         ],
+        "roi_on_matrix": true,
         "selected_index": 6,
+        "selected_xy": [
+          54,
+          39
+        ],
         "rgb": [
           223,
           54,
           56
         ],
         "hex": "#DF3638",
-        "all_16_swatches_match": true
+        "rgb_planes_order": [
+          "B",
+          "G",
+          "R"
+        ],
+        "plane_pixel_checks": 76800,
+        "rgb_planes_are_real_samples": true,
+        "all_16_colors_match": true,
+        "single_panel_four_stages": true,
+        "crop_channel_depth": 3,
+        "crop_stack_order": [
+          "B",
+          "G",
+          "RGB"
+        ],
+        "crop_rgb_16_match": true,
+        "crop_g_16_match": true,
+        "crop_b_16_match": true,
+        "merge_uses_same_rgb": true,
+        "shape": "H×W×3",
+        "patch_values": 48,
+        "matrix_roi_normalized": {
+          "left": 0.6499183006535948,
+          "top": 0.47497957516339867,
+          "width": 0.04993872549019608,
+          "height": 0.04993872549019608
+        },
+        "text_axis_alignment_px": {
+          "w_center_on_front_rgb": 0,
+          "h_center_on_rgb": 0.0,
+          "w_gap_below_stack": 10.0,
+          "h_gap_left_rgb": 7.602
+        },
+        "crop_c_label_removed": true,
+        "crop_guides_removed": true,
+        "crop_grid_width_px": 118,
+        "one_pixel_swatch_width_px": 42,
+        "one_pixel_detail_width_px": 236,
+        "h_label_rotated_vertically": true,
+        "crop_frame_colors": {
+          "R": "#b63c47",
+          "G": "#279467",
+          "B": "#427ec5"
+        },
+        "crop_frame_uniform": true,
+        "crop_display_tints": {
+          "G": "#279467",
+          "B": "#427ec5"
+        },
+        "crop_display_formula": "rgb(255+(base-255)*(0.22+0.78*v/255))",
+        "crop_plane_badges": [
+          "B",
+          "G",
+          "R"
+        ],
+        "figure_center_errors_px": {
+          "photo": 0,
+          "matrix": 0,
+          "crop": 2.69921875,
+          "detail": 0
+        },
+        "selected_halo_px": 2,
+        "selected_navy_outline_px": 5
       },
       "fonts": {
-        "elements": 25,
+        "elements": 48,
         "families": {
-          "Pretendard Variable": 316
+          "Pretendard Variable": 408
         },
         "fallback": [],
         "unpainted": [],
@@ -10561,9 +10896,9 @@
           "x": 16,
           "y": 16,
           "width": 868,
-          "height": 1082.390625,
+          "height": 1826.875,
           "right": 884,
-          "bottom": 1098.390625
+          "bottom": 1842.875
         },
         "outside": [],
         "overflow": [],
@@ -10577,10 +10912,6 @@
         "card_padding": [
           {
             "card": "concept-panel visual-panel",
-            "escaped": []
-          },
-          {
-            "card": "concept-panel value-panel",
             "escaped": []
           }
         ]
@@ -10914,6 +11245,10 @@
               "d": "M1 8 H27 M21 2 L27 8 L21 14",
               "stroke": "rgb(49, 104, 200)"
             }
+          ],
+          "internalArrows": [
+            "M42 72 H67 M62 68 L67 72 L62 76",
+            "M151 72 H170 M165 68 L170 72 L165 76"
           ],
           "outputs": [
             {
@@ -13140,19 +13475,86 @@
           4,
           4
         ],
+        "roi_on_matrix": true,
         "selected_index": 6,
+        "selected_xy": [
+          54,
+          39
+        ],
         "rgb": [
           223,
           54,
           56
         ],
         "hex": "#DF3638",
-        "all_16_swatches_match": true
+        "rgb_planes_order": [
+          "B",
+          "G",
+          "R"
+        ],
+        "plane_pixel_checks": 76800,
+        "rgb_planes_are_real_samples": true,
+        "all_16_colors_match": true,
+        "single_panel_four_stages": true,
+        "crop_channel_depth": 3,
+        "crop_stack_order": [
+          "B",
+          "G",
+          "RGB"
+        ],
+        "crop_rgb_16_match": true,
+        "crop_g_16_match": true,
+        "crop_b_16_match": true,
+        "merge_uses_same_rgb": true,
+        "shape": "H×W×3",
+        "patch_values": 48,
+        "matrix_roi_normalized": {
+          "left": 0.6499255952380952,
+          "top": 0.4749503968253968,
+          "width": 0.049975198412698416,
+          "height": 0.049975198412698416
+        },
+        "text_axis_alignment_px": {
+          "w_center_on_front_rgb": 0,
+          "h_center_on_rgb": 0.0,
+          "w_gap_below_stack": 11.0,
+          "h_gap_left_rgb": 8.344
+        },
+        "crop_c_label_removed": true,
+        "crop_guides_removed": true,
+        "crop_grid_width_px": 110,
+        "one_pixel_swatch_width_px": 40,
+        "one_pixel_detail_width_px": 202,
+        "h_label_rotated_vertically": true,
+        "crop_frame_colors": {
+          "R": "#b63c47",
+          "G": "#279467",
+          "B": "#427ec5"
+        },
+        "crop_frame_uniform": true,
+        "crop_display_tints": {
+          "G": "#279467",
+          "B": "#427ec5"
+        },
+        "crop_display_formula": "rgb(255+(base-255)*(0.22+0.78*v/255))",
+        "crop_plane_badges": [
+          "B",
+          "G",
+          "R"
+        ],
+        "figure_center_errors_px": {
+          "photo": 0,
+          "matrix": 0,
+          "crop": 2.828125,
+          "detail": 0
+        },
+        "selected_halo_px": 2,
+        "selected_navy_outline_px": 5
       },
       "fonts": {
-        "elements": 25,
+        "elements": 48,
         "families": {
-          "Pretendard Variable": 314
+          "Pretendard Variable": 401
         },
         "fallback": [],
         "unpainted": [],
@@ -13178,9 +13580,9 @@
           "x": 10,
           "y": 10,
           "width": 370,
-          "height": 1162.3125,
+          "height": 1933.234375,
           "right": 380,
-          "bottom": 1172.3125
+          "bottom": 1943.234375
         },
         "outside": [],
         "overflow": [],
@@ -13188,16 +13590,12 @@
         "spacing": [],
         "clippedText": [],
         "arrowErrors": [],
-        "titleLines": 1,
-        "subtitleLines": 2,
+        "titleLines": 2,
+        "subtitleLines": 3,
         "pageWidth": 390,
         "card_padding": [
           {
             "card": "concept-panel visual-panel",
-            "escaped": []
-          },
-          {
-            "card": "concept-panel value-panel",
             "escaped": []
           }
         ]
@@ -13531,6 +13929,10 @@
               "d": "M1 8 H27 M21 2 L27 8 L21 14",
               "stroke": "rgb(49, 104, 200)"
             }
+          ],
+          "internalArrows": [
+            "M42 72 H67 M62 68 L67 72 L62 76",
+            "M151 72 H170 M165 68 L170 72 L165 76"
           ],
           "outputs": [
             {
@@ -15755,11 +16157,10 @@
     "templates/html/comparison-reference.js": "d427e9c2fcb0415c9ecd059ae723d53dc601b6f5350d3eb1872d1306aacf5469",
     "templates/html/step-by-step.html": "8e7eed2d4bbeaeea3fb644973a0ff99f9e0c075bababf93a8964636197143d3c",
     "templates/html/interactive.html": "999cc515d9f3ad03dbee7c1437959b79463ad251e890142233471e4ff7722869",
-    "templates/html/concept.html": "9d50ae70c9d63dc257738e2260d3eccf415029baff5726b8f21f13a09da5b018",
+    "templates/html/concept.html": "81a4d341ca86eb5550e0d58411fdda6f040d1e3cdcf9a98ee9b84ff6b8ad0364",
     "templates/html/reference-types.css": "976c72a1d4e736fc6d7f7c328445f4e7feead457f4ef7165ca3926b5615e18b7",
     "templates/html/architecture.html": "0b40aa7f35960458292b8fd691a0ffcac83e8646993dda516b85e809efac28e1",
-    "templates/html/process.html": "90039af9845ae77f566aad7f0e2ddb48d3bf4f4560d59f65ba6f1ddab3c0f874",
-    "templates/html/font-comparison.html": "03591c1effa0a60af07955046d486ebb813464f8c26c7cd7a45ef70e272022d7",
+    "templates/html/process.html": "39989a9073bd7a8a296dc4a7ece870f0e0da60010b8b8922393049678c733a1d",
     "templates/html/assets/concept-apple-photo.jpg": "6a7524a8f5fce2700d50970d21ad7a9912c07ace760d08fd603ba79728e15efc",
     "templates/html/assets/cnn-feature-maps.js": "b8a71c04fced7a9df2a568c2cd3577af3ddde56b3903cfd2b7d1031fc19d2c05",
     "templates/html/assets/fonts/pretendard/PretendardVariable.woff2": "9599f12fd42fc0bce1cd50b47a0c022e108d7aa64dd0d1bb0ed44f3282d900b4"
@@ -16131,11 +16532,11 @@
           {
             "start": {
               "x": 449,
-              "y": 460.890625
+              "y": 502.890625
             },
             "end": {
               "x": 475,
-              "y": 460.890625
+              "y": 502.890625
             },
             "d": "M1 8 H27 M21 2 L27 8 L21 14",
             "stroke": "rgb(49, 104, 200)"
@@ -16143,11 +16544,11 @@
           {
             "start": {
               "x": 787,
-              "y": 460.890625
+              "y": 502.890625
             },
             "end": {
               "x": 813,
-              "y": 460.890625
+              "y": 502.890625
             },
             "d": "M1 8 H27 M21 2 L27 8 L21 14",
             "stroke": "rgb(49, 104, 200)"
@@ -16155,15 +16556,19 @@
           {
             "start": {
               "x": 1125,
-              "y": 460.890625
+              "y": 502.890625
             },
             "end": {
               "x": 1151,
-              "y": 460.890625
+              "y": 502.890625
             },
             "d": "M1 8 H27 M21 2 L27 8 L21 14",
             "stroke": "rgb(49, 104, 200)"
           }
+        ],
+        "internalArrows": [
+          "M42 72 H67 M62 68 L67 72 L62 76",
+          "M151 72 H170 M165 68 L170 72 L165 76"
         ],
         "outputs": [
           {
@@ -16647,6 +17052,10 @@
             "stroke": "rgb(49, 104, 200)"
           }
         ],
+        "internalArrows": [
+          "M42 72 H67 M62 68 L67 72 L62 76",
+          "M151 72 H170 M165 68 L170 72 L165 76"
+        ],
         "outputs": [
           {
             "name": "사과",
@@ -16772,8 +17181,8 @@
   "failed_requests": [],
   "http_errors": [],
   "canonical_preview_sha256": {
-    "previews/html-concept.png": "18f66f5c8b8cc366d00fdd53234a7c51e0cfd5804c46c896fb73e58c99fa2554",
-    "previews/html-process.png": "5f174699f9b86324141be1e375f62d5d7ab52ba9e66ce645fab4f7b360adbfa6",
+    "previews/html-concept.png": "a8a171b1d5f057c189f1e7c533bda3ec9c618740e563c6a486b91a9762fd867b",
+    "previews/html-process.png": "a8e5504c6f66f485a10a65ce4afbecf86f57813b8d0dfa3d6cbdaf09a4ca9566",
     "previews/html-comparison.png": "4e3a6e204b80628be1872a877f2b5da0b050dabe294f987929192967a713f8ee",
     "previews/html-step-by-step.jpg": "2390409158a2cb310ddaa9b183fd83c7809b93b5e00f232cbf62612e54fe907f",
     "previews/html-interactive.jpg": "77dc52445344c0722eb29cb283a7034af3a61b5e19653cf6c452d62d45ce9be1",
@@ -16781,6 +17190,6 @@
     "previews/html-experiment.jpg": "cbce9de643d76ecd0201be3e671128e3d309d81b49a4b51e2c9bdec0f137fe50",
     "previews/html-executive-summary.jpg": "0446024bf52616cdc0f2ab604c44e5e4f6482722e7d7648c16d238756500372c"
   },
-  "finished_utc": "2026-10-23T06:25:04.069453+00:00",
+  "finished_utc": "2026-10-23T08:22:23.260699+00:00",
   "canonical_preview_updates": []
 }
