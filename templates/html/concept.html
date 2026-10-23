@@ -105,6 +105,37 @@
       line-height:1.25;
       white-space:nowrap;
     }
+    /* The dimension guides annotate the sampled grid, not the whole photo. */
+    .pixel-matrix { position:relative; width:max-content; }
+    .dimension-width {
+      position:absolute;
+      left:0;
+      right:0;
+      top:-29px;
+      padding-bottom:5px;
+      border-bottom:1px solid #91a6c1;
+      color:var(--deep);
+      font-size:14px;
+      font-weight:750;
+      text-align:center;
+      line-height:1.2;
+      white-space:nowrap;
+    }
+    .dimension-height {
+      position:absolute;
+      top:0;
+      bottom:0;
+      left:-28px;
+      display:grid;
+      place-items:center;
+      width:22px;
+      border-right:1px solid #91a6c1;
+      color:var(--deep);
+      font-size:14px;
+      font-weight:750;
+      white-space:nowrap;
+    }
+    .dimension-height span { transform:rotate(-90deg); }
     .pixel-block {
       display:grid;
       grid-template-columns:repeat(4,50px);
@@ -208,13 +239,31 @@
     .channel-value .bar { width:0; height:100%; border-radius:7px; }
     .tensor-shape {
       display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:14px;
-      padding:16px 17px;
+      flex-direction:column;
+      align-items:stretch;
+      gap:10px;
+      padding:13px 17px;
       background:var(--pale-blue);
       border:1px solid #cadef8;
       border-radius:13px;
+    }
+    .tensor-example {
+      display:flex;
+      flex-wrap:wrap;
+      align-items:baseline;
+      justify-content:space-between;
+      gap:3px 10px;
+      padding-bottom:8px;
+      border-bottom:1px solid #cadef8;
+      color:var(--navy);
+    }
+    .tensor-example strong { font-size:19px; font-weight:800; }
+    .tensor-example span { color:var(--deep); font-size:14px; }
+    .tensor-main {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
     }
     .tensor-shape .formula {
       color:var(--navy);
@@ -275,6 +324,8 @@
         gap:2px;
       }
       .reference-slide.concept-slide .pixel-block span { width:28px; height:28px; }
+      .dimension-width { top:-25px; font-size:12px; }
+      .dimension-height { left:-25px; width:20px; font-size:12px; }
       .zoom-arrow svg { width:21px; height:20px; transform:rotate(90deg); }
       .reference-slide.concept-slide .figure-label { font-size:14px; white-space:normal; }
       .selected-color { gap:12px; padding:12px; }
@@ -284,7 +335,9 @@
       .channel-values { gap:7px; }
       .channel-value { padding:10px 9px; }
       .channel-value .number { font-size:25px; }
-      .tensor-shape { flex-wrap:wrap; }
+      .tensor-example strong { font-size:17px; }
+      .tensor-example span { font-size:12px; }
+      .tensor-main { flex-wrap:wrap; }
       .tensor-shape .formula { font-size:27px; }
       .tensor-shape .label { text-align:left; }
     }
@@ -296,7 +349,7 @@
     <header>
       <div class="ref-overline"><div class="kicker">CONCEPT / 01</div></div>
       <h1>이미지의 숫자 구조</h1>
-      <p class="subtitle">픽셀 색상은 8-bit RGB 세 값으로, 이미지 전체는 높이 × 너비 × 채널로 표현</p>
+      <p class="subtitle">사진 → 픽셀 → RGB 값 → H×W×3 배열</p>
     </header>
     <div class="concept-stage">
       <article class="concept-panel visual-panel" aria-label="사과 이미지의 픽셀 표현">
@@ -314,7 +367,11 @@
           <span class="zoom-arrow" aria-hidden="true"><svg viewBox="0 0 42 24" fill="none"><path d="M2 12 H37 M29 4 L37 12 L29 20" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           <div class="figure-unit pixel-unit">
             <div class="pixel-frame">
-              <div class="pixel-block" role="img" aria-label="사과의 빨간 영역을 확대해 표현한 4 곱하기 4 픽셀 배열"><span></span><span></span><span></span><span></span><span></span><span></span><span class="selected" data-selected-index="6"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+              <div class="pixel-matrix">
+                <span class="dimension-width" aria-label="가로 너비 4칸">W = 4</span>
+                <span class="dimension-height" aria-label="세로 높이 4칸"><span>H = 4</span></span>
+              <div class="pixel-block" role="img" aria-label="사과 사진에서 추출한 높이 4칸, 너비 4칸, 총 16개 RGB 픽셀 배열"><span></span><span></span><span></span><span></span><span></span><span></span><span class="selected" data-selected-index="6"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+              </div>
             </div>
             <span class="figure-label">픽셀 확대 (4×4)</span>
           </div>
@@ -328,7 +385,10 @@
           <div class="channel-value"><div class="head">G <span class="dot" style="background:#5db88b"></span></div><div class="number">—</div><div class="track"><div class="bar" style="background:#5db88b"></div></div></div>
           <div class="channel-value"><div class="head">B <span class="dot" style="background:#558ecb"></span></div><div class="number">—</div><div class="track"><div class="bar" style="background:#558ecb"></div></div></div>
         </div>
-        <div class="tensor-shape"><span class="formula">H × W × <span class="channel-count">3</span></span><span class="label">높이 × 너비 × RGB 채널<br><strong>이미지 텐서</strong></span></div>
+        <div class="tensor-shape">
+          <div class="tensor-example"><strong>4 × 4 × 3 = 48개 값</strong><span>확대한 4×4 영역</span></div>
+          <div class="tensor-main"><span class="formula">H × W × <span class="channel-count">3</span></span><span class="label">높이 × 너비 × RGB 채널<br><strong>이미지 텐서</strong></span></div>
+        </div>
       </article>
     </div>
     <div class="concept-takeaway ref-takeaway"><strong>핵심 개념</strong><span>픽셀 하나 → RGB 3개 값 &nbsp;·&nbsp; 이미지 전체 → 3차원 배열(HWC)</span></div>
