@@ -1,6 +1,6 @@
 {
   "status": "passed",
-  "started_utc": "2026-10-24T10:23:54.847154+00:00",
+  "started_utc": "2026-10-24T11:06:21.825839+00:00",
   "cases": [
     {
       "mode": "slides",
@@ -105,7 +105,31 @@
             "color": "rgb(49, 104, 200)"
           },
           {
-            "text": "가중치 w1",
+            "text": "x",
+            "size": "28px",
+            "weight": "400",
+            "lineHeight": "35px",
+            "spacing": "-1.33333px",
+            "color": "rgb(49, 104, 200)"
+          },
+          {
+            "text": "2",
+            "size": "19.6px",
+            "weight": "400",
+            "lineHeight": "24.5px",
+            "spacing": "-1.33333px",
+            "color": "rgb(49, 104, 200)"
+          },
+          {
+            "text": "입력 특성",
+            "size": "20px",
+            "weight": "800",
+            "lineHeight": "26px",
+            "spacing": "-1.33333px",
+            "color": "rgb(18, 35, 63)"
+          },
+          {
+            "text": "가중치",
             "size": "18px",
             "weight": "400",
             "lineHeight": "25.2px",
@@ -129,26 +153,10 @@
             "color": "rgb(100, 116, 139)"
           },
           {
-            "text": "x",
-            "size": "28px",
-            "weight": "400",
-            "lineHeight": "35px",
-            "spacing": "-1.33333px",
-            "color": "rgb(49, 104, 200)"
-          },
-          {
-            "text": "2",
-            "size": "19.6px",
-            "weight": "400",
-            "lineHeight": "24.5px",
-            "spacing": "-1.33333px",
-            "color": "rgb(49, 104, 200)"
-          },
-          {
-            "text": "가중치 w2",
+            "text": ",",
             "size": "18px",
             "weight": "400",
-            "lineHeight": "25.2px",
+            "lineHeight": "22.5px",
             "spacing": "-1.33333px",
             "color": "rgb(100, 116, 139)"
           },
@@ -169,12 +177,20 @@
             "color": "rgb(100, 116, 139)"
           },
           {
-            "text": "입력 특성",
-            "size": "20px",
-            "weight": "800",
-            "lineHeight": "26px",
+            "text": "· 절편",
+            "size": "18px",
+            "weight": "400",
+            "lineHeight": "25.2px",
             "spacing": "-1.33333px",
-            "color": "rgb(18, 35, 63)"
+            "color": "rgb(100, 116, 139)"
+          },
+          {
+            "text": "b",
+            "size": "18px",
+            "weight": "400",
+            "lineHeight": "22.5px",
+            "spacing": "-1.33333px",
+            "color": "rgb(100, 116, 139)"
           },
           {
             "text": "z",
@@ -279,6 +295,22 @@
             "lineHeight": "32.5px",
             "spacing": "-1.33333px",
             "color": "rgb(27, 53, 88)"
+          },
+          {
+            "text": "z",
+            "size": "18px",
+            "weight": "400",
+            "lineHeight": "22.5px",
+            "spacing": "-1.33333px",
+            "color": "rgb(100, 116, 139)"
+          },
+          {
+            "text": "확률 변환 전 점수",
+            "size": "18px",
+            "weight": "400",
+            "lineHeight": "25.2px",
+            "spacing": "-1.33333px",
+            "color": "rgb(100, 116, 139)"
           },
           {
             "text": "가중합 + 절편",
@@ -529,7 +561,7 @@
             "color": "rgb(27, 53, 88)"
           },
           {
-            "text": "가중치 w: 특성에 곱하는 계수",
+            "text": "대상의 속성을 수치로 표현",
             "size": "15px",
             "weight": "400",
             "lineHeight": "21px",
@@ -537,15 +569,7 @@
             "color": "rgb(100, 116, 139)"
           },
           {
-            "text": "w",
-            "size": "15px",
-            "weight": "400",
-            "lineHeight": "18.75px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "z 확률 변환 전 점수",
+            "text": "w 특성에 곱하는 가중치",
             "size": "16px",
             "weight": "400",
             "lineHeight": "22.4px",
@@ -553,7 +577,7 @@
             "color": "rgb(100, 116, 139)"
           },
           {
-            "text": "z",
+            "text": "w",
             "size": "20px",
             "weight": "400",
             "lineHeight": "25px",
@@ -730,10 +754,10 @@
         ]
       },
       "fonts": {
-        "elements": 85,
+        "elements": 88,
         "families": {
-          "Pretendard Variable": 412,
-          "STIX Two Math": 56
+          "Pretendard Variable": 422,
+          "STIX Two Math": 58
         },
         "fallback": [],
         "unpainted": [],
@@ -869,7 +893,31 @@
             "color": "rgb(49, 104, 200)"
           },
           {
-            "text": "가중치 w1",
+            "text": "x",
+            "size": "28px",
+            "weight": "400",
+            "lineHeight": "35px",
+            "spacing": "-1.33333px",
+            "color": "rgb(49, 104, 200)"
+          },
+          {
+            "text": "2",
+            "size": "19.6px",
+            "weight": "400",
+            "lineHeight": "24.5px",
+            "spacing": "-1.33333px",
+            "color": "rgb(49, 104, 200)"
+          },
+          {
+            "text": "입력 특성",
+            "size": "20px",
+            "weight": "800",
+            "lineHeight": "26px",
+            "spacing": "-1.33333px",
+            "color": "rgb(18, 35, 63)"
+          },
+          {
+            "text": "가중치",
             "size": "18px",
             "weight": "400",
             "lineHeight": "25.2px",
@@ -893,26 +941,10 @@
             "color": "rgb(100, 116, 139)"
           },
           {
-            "text": "x",
-            "size": "28px",
-            "weight": "400",
-            "lineHeight": "35px",
-            "spacing": "-1.33333px",
-            "color": "rgb(49, 104, 200)"
-          },
-          {
-            "text": "2",
-            "size": "19.6px",
-            "weight": "400",
-            "lineHeight": "24.5px",
-            "spacing": "-1.33333px",
-            "color": "rgb(49, 104, 200)"
-          },
-          {
-            "text": "가중치 w2",
+            "text": ",",
             "size": "18px",
             "weight": "400",
-            "lineHeight": "25.2px",
+            "lineHeight": "22.5px",
             "spacing": "-1.33333px",
             "color": "rgb(100, 116, 139)"
           },
@@ -933,12 +965,20 @@
             "color": "rgb(100, 116, 139)"
           },
           {
-            "text": "입력 특성",
-            "size": "20px",
-            "weight": "800",
-            "lineHeight": "26px",
+            "text": "· 절편",
+            "size": "18px",
+            "weight": "400",
+            "lineHeight": "25.2px",
             "spacing": "-1.33333px",
-            "color": "rgb(18, 35, 63)"
+            "color": "rgb(100, 116, 139)"
+          },
+          {
+            "text": "b",
+            "size": "18px",
+            "weight": "400",
+            "lineHeight": "22.5px",
+            "spacing": "-1.33333px",
+            "color": "rgb(100, 116, 139)"
           },
           {
             "text": "z",
@@ -1043,6 +1083,22 @@
             "lineHeight": "32.5px",
             "spacing": "-1.33333px",
             "color": "rgb(27, 53, 88)"
+          },
+          {
+            "text": "z",
+            "size": "18px",
+            "weight": "400",
+            "lineHeight": "22.5px",
+            "spacing": "-1.33333px",
+            "color": "rgb(100, 116, 139)"
+          },
+          {
+            "text": "확률 변환 전 점수",
+            "size": "18px",
+            "weight": "400",
+            "lineHeight": "25.2px",
+            "spacing": "-1.33333px",
+            "color": "rgb(100, 116, 139)"
           },
           {
             "text": "가중합 + 절편",
@@ -1293,7 +1349,7 @@
             "color": "rgb(27, 53, 88)"
           },
           {
-            "text": "가중치 w: 특성에 곱하는 계수",
+            "text": "대상의 속성을 수치로 표현",
             "size": "15px",
             "weight": "400",
             "lineHeight": "21px",
@@ -1301,15 +1357,7 @@
             "color": "rgb(100, 116, 139)"
           },
           {
-            "text": "w",
-            "size": "15px",
-            "weight": "400",
-            "lineHeight": "18.75px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "z 확률 변환 전 점수",
+            "text": "w 특성에 곱하는 가중치",
             "size": "16px",
             "weight": "400",
             "lineHeight": "22.4px",
@@ -1317,7 +1365,7 @@
             "color": "rgb(100, 116, 139)"
           },
           {
-            "text": "z",
+            "text": "w",
             "size": "20px",
             "weight": "400",
             "lineHeight": "25px",
@@ -1494,10 +1542,10 @@
         ]
       },
       "fonts": {
-        "elements": 84,
+        "elements": 87,
         "families": {
-          "Pretendard Variable": 408,
-          "STIX Two Math": 56
+          "Pretendard Variable": 418,
+          "STIX Two Math": 58
         },
         "fallback": [],
         "unpainted": [],
@@ -1633,7 +1681,31 @@
             "color": "rgb(49, 104, 200)"
           },
           {
-            "text": "가중치 w1",
+            "text": "x",
+            "size": "28px",
+            "weight": "400",
+            "lineHeight": "35px",
+            "spacing": "-1.33333px",
+            "color": "rgb(49, 104, 200)"
+          },
+          {
+            "text": "2",
+            "size": "19.6px",
+            "weight": "400",
+            "lineHeight": "24.5px",
+            "spacing": "-1.33333px",
+            "color": "rgb(49, 104, 200)"
+          },
+          {
+            "text": "입력 특성",
+            "size": "20px",
+            "weight": "800",
+            "lineHeight": "26px",
+            "spacing": "-1.33333px",
+            "color": "rgb(18, 35, 63)"
+          },
+          {
+            "text": "가중치",
             "size": "18px",
             "weight": "400",
             "lineHeight": "25.2px",
@@ -1657,26 +1729,10 @@
             "color": "rgb(100, 116, 139)"
           },
           {
-            "text": "x",
-            "size": "28px",
-            "weight": "400",
-            "lineHeight": "35px",
-            "spacing": "-1.33333px",
-            "color": "rgb(49, 104, 200)"
-          },
-          {
-            "text": "2",
-            "size": "19.6px",
-            "weight": "400",
-            "lineHeight": "24.5px",
-            "spacing": "-1.33333px",
-            "color": "rgb(49, 104, 200)"
-          },
-          {
-            "text": "가중치 w2",
+            "text": ",",
             "size": "18px",
             "weight": "400",
-            "lineHeight": "25.2px",
+            "lineHeight": "22.5px",
             "spacing": "-1.33333px",
             "color": "rgb(100, 116, 139)"
           },
@@ -1697,12 +1753,20 @@
             "color": "rgb(100, 116, 139)"
           },
           {
-            "text": "입력 특성",
-            "size": "20px",
-            "weight": "800",
-            "lineHeight": "26px",
+            "text": "· 절편",
+            "size": "18px",
+            "weight": "400",
+            "lineHeight": "25.2px",
             "spacing": "-1.33333px",
-            "color": "rgb(18, 35, 63)"
+            "color": "rgb(100, 116, 139)"
+          },
+          {
+            "text": "b",
+            "size": "18px",
+            "weight": "400",
+            "lineHeight": "22.5px",
+            "spacing": "-1.33333px",
+            "color": "rgb(100, 116, 139)"
           },
           {
             "text": "z",
@@ -1807,6 +1871,22 @@
             "lineHeight": "32.5px",
             "spacing": "-1.33333px",
             "color": "rgb(27, 53, 88)"
+          },
+          {
+            "text": "z",
+            "size": "18px",
+            "weight": "400",
+            "lineHeight": "22.5px",
+            "spacing": "-1.33333px",
+            "color": "rgb(100, 116, 139)"
+          },
+          {
+            "text": "확률 변환 전 점수",
+            "size": "18px",
+            "weight": "400",
+            "lineHeight": "25.2px",
+            "spacing": "-1.33333px",
+            "color": "rgb(100, 116, 139)"
           },
           {
             "text": "가중합 + 절편",
@@ -2057,7 +2137,7 @@
             "color": "rgb(27, 53, 88)"
           },
           {
-            "text": "가중치 w: 특성에 곱하는 계수",
+            "text": "대상의 속성을 수치로 표현",
             "size": "15px",
             "weight": "400",
             "lineHeight": "21px",
@@ -2065,15 +2145,7 @@
             "color": "rgb(100, 116, 139)"
           },
           {
-            "text": "w",
-            "size": "15px",
-            "weight": "400",
-            "lineHeight": "18.75px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "z 확률 변환 전 점수",
+            "text": "w 특성에 곱하는 가중치",
             "size": "16px",
             "weight": "400",
             "lineHeight": "22.4px",
@@ -2081,7 +2153,7 @@
             "color": "rgb(100, 116, 139)"
           },
           {
-            "text": "z",
+            "text": "w",
             "size": "20px",
             "weight": "400",
             "lineHeight": "25px",
@@ -2258,10 +2330,10 @@
         ]
       },
       "fonts": {
-        "elements": 85,
+        "elements": 88,
         "families": {
-          "Pretendard Variable": 412,
-          "STIX Two Math": 56
+          "Pretendard Variable": 422,
+          "STIX Two Math": 58
         },
         "fallback": [],
         "unpainted": [],
@@ -2397,7 +2469,31 @@
             "color": "rgb(49, 104, 200)"
           },
           {
-            "text": "가중치 w1",
+            "text": "x",
+            "size": "28px",
+            "weight": "400",
+            "lineHeight": "35px",
+            "spacing": "-1.33333px",
+            "color": "rgb(49, 104, 200)"
+          },
+          {
+            "text": "2",
+            "size": "19.6px",
+            "weight": "400",
+            "lineHeight": "24.5px",
+            "spacing": "-1.33333px",
+            "color": "rgb(49, 104, 200)"
+          },
+          {
+            "text": "입력 특성",
+            "size": "20px",
+            "weight": "800",
+            "lineHeight": "26px",
+            "spacing": "-1.33333px",
+            "color": "rgb(18, 35, 63)"
+          },
+          {
+            "text": "가중치",
             "size": "18px",
             "weight": "400",
             "lineHeight": "25.2px",
@@ -2421,26 +2517,10 @@
             "color": "rgb(100, 116, 139)"
           },
           {
-            "text": "x",
-            "size": "28px",
-            "weight": "400",
-            "lineHeight": "35px",
-            "spacing": "-1.33333px",
-            "color": "rgb(49, 104, 200)"
-          },
-          {
-            "text": "2",
-            "size": "19.6px",
-            "weight": "400",
-            "lineHeight": "24.5px",
-            "spacing": "-1.33333px",
-            "color": "rgb(49, 104, 200)"
-          },
-          {
-            "text": "가중치 w2",
+            "text": ",",
             "size": "18px",
             "weight": "400",
-            "lineHeight": "25.2px",
+            "lineHeight": "22.5px",
             "spacing": "-1.33333px",
             "color": "rgb(100, 116, 139)"
           },
@@ -2461,12 +2541,20 @@
             "color": "rgb(100, 116, 139)"
           },
           {
-            "text": "입력 특성",
-            "size": "20px",
-            "weight": "800",
-            "lineHeight": "26px",
+            "text": "· 절편",
+            "size": "18px",
+            "weight": "400",
+            "lineHeight": "25.2px",
             "spacing": "-1.33333px",
-            "color": "rgb(18, 35, 63)"
+            "color": "rgb(100, 116, 139)"
+          },
+          {
+            "text": "b",
+            "size": "18px",
+            "weight": "400",
+            "lineHeight": "22.5px",
+            "spacing": "-1.33333px",
+            "color": "rgb(100, 116, 139)"
           },
           {
             "text": "z",
@@ -2571,6 +2659,22 @@
             "lineHeight": "32.5px",
             "spacing": "-1.33333px",
             "color": "rgb(27, 53, 88)"
+          },
+          {
+            "text": "z",
+            "size": "18px",
+            "weight": "400",
+            "lineHeight": "22.5px",
+            "spacing": "-1.33333px",
+            "color": "rgb(100, 116, 139)"
+          },
+          {
+            "text": "확률 변환 전 점수",
+            "size": "18px",
+            "weight": "400",
+            "lineHeight": "25.2px",
+            "spacing": "-1.33333px",
+            "color": "rgb(100, 116, 139)"
           },
           {
             "text": "가중합 + 절편",
@@ -2821,7 +2925,7 @@
             "color": "rgb(27, 53, 88)"
           },
           {
-            "text": "가중치 w: 특성에 곱하는 계수",
+            "text": "대상의 속성을 수치로 표현",
             "size": "15px",
             "weight": "400",
             "lineHeight": "21px",
@@ -2829,15 +2933,7 @@
             "color": "rgb(100, 116, 139)"
           },
           {
-            "text": "w",
-            "size": "15px",
-            "weight": "400",
-            "lineHeight": "18.75px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "z 확률 변환 전 점수",
+            "text": "w 특성에 곱하는 가중치",
             "size": "16px",
             "weight": "400",
             "lineHeight": "22.4px",
@@ -2845,7 +2941,7 @@
             "color": "rgb(100, 116, 139)"
           },
           {
-            "text": "z",
+            "text": "w",
             "size": "20px",
             "weight": "400",
             "lineHeight": "25px",
@@ -3022,10 +3118,10 @@
         ]
       },
       "fonts": {
-        "elements": 84,
+        "elements": 87,
         "families": {
-          "Pretendard Variable": 408,
-          "STIX Two Math": 56
+          "Pretendard Variable": 418,
+          "STIX Two Math": 58
         },
         "fallback": [],
         "unpainted": [],
@@ -3161,7 +3257,31 @@
             "color": "rgb(49, 104, 200)"
           },
           {
-            "text": "가중치 w1",
+            "text": "x",
+            "size": "28px",
+            "weight": "400",
+            "lineHeight": "35px",
+            "spacing": "-1.33333px",
+            "color": "rgb(49, 104, 200)"
+          },
+          {
+            "text": "2",
+            "size": "19.6px",
+            "weight": "400",
+            "lineHeight": "24.5px",
+            "spacing": "-1.33333px",
+            "color": "rgb(49, 104, 200)"
+          },
+          {
+            "text": "입력 특성",
+            "size": "20px",
+            "weight": "800",
+            "lineHeight": "26px",
+            "spacing": "-1.33333px",
+            "color": "rgb(18, 35, 63)"
+          },
+          {
+            "text": "가중치",
             "size": "18px",
             "weight": "400",
             "lineHeight": "25.2px",
@@ -3185,26 +3305,10 @@
             "color": "rgb(100, 116, 139)"
           },
           {
-            "text": "x",
-            "size": "28px",
-            "weight": "400",
-            "lineHeight": "35px",
-            "spacing": "-1.33333px",
-            "color": "rgb(49, 104, 200)"
-          },
-          {
-            "text": "2",
-            "size": "19.6px",
-            "weight": "400",
-            "lineHeight": "24.5px",
-            "spacing": "-1.33333px",
-            "color": "rgb(49, 104, 200)"
-          },
-          {
-            "text": "가중치 w2",
+            "text": ",",
             "size": "18px",
             "weight": "400",
-            "lineHeight": "25.2px",
+            "lineHeight": "22.5px",
             "spacing": "-1.33333px",
             "color": "rgb(100, 116, 139)"
           },
@@ -3225,12 +3329,20 @@
             "color": "rgb(100, 116, 139)"
           },
           {
-            "text": "입력 특성",
-            "size": "20px",
-            "weight": "800",
-            "lineHeight": "26px",
+            "text": "· 절편",
+            "size": "18px",
+            "weight": "400",
+            "lineHeight": "25.2px",
             "spacing": "-1.33333px",
-            "color": "rgb(18, 35, 63)"
+            "color": "rgb(100, 116, 139)"
+          },
+          {
+            "text": "b",
+            "size": "18px",
+            "weight": "400",
+            "lineHeight": "22.5px",
+            "spacing": "-1.33333px",
+            "color": "rgb(100, 116, 139)"
           },
           {
             "text": "z",
@@ -3335,6 +3447,22 @@
             "lineHeight": "32.5px",
             "spacing": "-1.33333px",
             "color": "rgb(27, 53, 88)"
+          },
+          {
+            "text": "z",
+            "size": "18px",
+            "weight": "400",
+            "lineHeight": "22.5px",
+            "spacing": "-1.33333px",
+            "color": "rgb(100, 116, 139)"
+          },
+          {
+            "text": "확률 변환 전 점수",
+            "size": "18px",
+            "weight": "400",
+            "lineHeight": "25.2px",
+            "spacing": "-1.33333px",
+            "color": "rgb(100, 116, 139)"
           },
           {
             "text": "가중합 + 절편",
@@ -3585,7 +3713,7 @@
             "color": "rgb(27, 53, 88)"
           },
           {
-            "text": "가중치 w: 특성에 곱하는 계수",
+            "text": "대상의 속성을 수치로 표현",
             "size": "15px",
             "weight": "400",
             "lineHeight": "21px",
@@ -3593,15 +3721,7 @@
             "color": "rgb(100, 116, 139)"
           },
           {
-            "text": "w",
-            "size": "15px",
-            "weight": "400",
-            "lineHeight": "18.75px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "z 확률 변환 전 점수",
+            "text": "w 특성에 곱하는 가중치",
             "size": "16px",
             "weight": "400",
             "lineHeight": "22.4px",
@@ -3609,7 +3729,7 @@
             "color": "rgb(100, 116, 139)"
           },
           {
-            "text": "z",
+            "text": "w",
             "size": "20px",
             "weight": "400",
             "lineHeight": "25px",
@@ -3786,10 +3906,10 @@
         ]
       },
       "fonts": {
-        "elements": 85,
+        "elements": 88,
         "families": {
-          "Pretendard Variable": 412,
-          "STIX Two Math": 56
+          "Pretendard Variable": 422,
+          "STIX Two Math": 58
         },
         "fallback": [],
         "unpainted": [],
@@ -3925,7 +4045,31 @@
             "color": "rgb(49, 104, 200)"
           },
           {
-            "text": "가중치 w1",
+            "text": "x",
+            "size": "28px",
+            "weight": "400",
+            "lineHeight": "35px",
+            "spacing": "-1.33333px",
+            "color": "rgb(49, 104, 200)"
+          },
+          {
+            "text": "2",
+            "size": "19.6px",
+            "weight": "400",
+            "lineHeight": "24.5px",
+            "spacing": "-1.33333px",
+            "color": "rgb(49, 104, 200)"
+          },
+          {
+            "text": "입력 특성",
+            "size": "20px",
+            "weight": "800",
+            "lineHeight": "26px",
+            "spacing": "-1.33333px",
+            "color": "rgb(18, 35, 63)"
+          },
+          {
+            "text": "가중치",
             "size": "18px",
             "weight": "400",
             "lineHeight": "25.2px",
@@ -3949,26 +4093,10 @@
             "color": "rgb(100, 116, 139)"
           },
           {
-            "text": "x",
-            "size": "28px",
-            "weight": "400",
-            "lineHeight": "35px",
-            "spacing": "-1.33333px",
-            "color": "rgb(49, 104, 200)"
-          },
-          {
-            "text": "2",
-            "size": "19.6px",
-            "weight": "400",
-            "lineHeight": "24.5px",
-            "spacing": "-1.33333px",
-            "color": "rgb(49, 104, 200)"
-          },
-          {
-            "text": "가중치 w2",
+            "text": ",",
             "size": "18px",
             "weight": "400",
-            "lineHeight": "25.2px",
+            "lineHeight": "22.5px",
             "spacing": "-1.33333px",
             "color": "rgb(100, 116, 139)"
           },
@@ -3989,12 +4117,20 @@
             "color": "rgb(100, 116, 139)"
           },
           {
-            "text": "입력 특성",
-            "size": "20px",
-            "weight": "800",
-            "lineHeight": "26px",
+            "text": "· 절편",
+            "size": "18px",
+            "weight": "400",
+            "lineHeight": "25.2px",
             "spacing": "-1.33333px",
-            "color": "rgb(18, 35, 63)"
+            "color": "rgb(100, 116, 139)"
+          },
+          {
+            "text": "b",
+            "size": "18px",
+            "weight": "400",
+            "lineHeight": "22.5px",
+            "spacing": "-1.33333px",
+            "color": "rgb(100, 116, 139)"
           },
           {
             "text": "z",
@@ -4099,6 +4235,22 @@
             "lineHeight": "32.5px",
             "spacing": "-1.33333px",
             "color": "rgb(27, 53, 88)"
+          },
+          {
+            "text": "z",
+            "size": "18px",
+            "weight": "400",
+            "lineHeight": "22.5px",
+            "spacing": "-1.33333px",
+            "color": "rgb(100, 116, 139)"
+          },
+          {
+            "text": "확률 변환 전 점수",
+            "size": "18px",
+            "weight": "400",
+            "lineHeight": "25.2px",
+            "spacing": "-1.33333px",
+            "color": "rgb(100, 116, 139)"
           },
           {
             "text": "가중합 + 절편",
@@ -4349,7 +4501,7 @@
             "color": "rgb(27, 53, 88)"
           },
           {
-            "text": "가중치 w: 특성에 곱하는 계수",
+            "text": "대상의 속성을 수치로 표현",
             "size": "15px",
             "weight": "400",
             "lineHeight": "21px",
@@ -4357,15 +4509,7 @@
             "color": "rgb(100, 116, 139)"
           },
           {
-            "text": "w",
-            "size": "15px",
-            "weight": "400",
-            "lineHeight": "18.75px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "z 확률 변환 전 점수",
+            "text": "w 특성에 곱하는 가중치",
             "size": "16px",
             "weight": "400",
             "lineHeight": "22.4px",
@@ -4373,7 +4517,7 @@
             "color": "rgb(100, 116, 139)"
           },
           {
-            "text": "z",
+            "text": "w",
             "size": "20px",
             "weight": "400",
             "lineHeight": "25px",
@@ -4550,10 +4694,10 @@
         ]
       },
       "fonts": {
-        "elements": 84,
+        "elements": 87,
         "families": {
-          "Pretendard Variable": 408,
-          "STIX Two Math": 56
+          "Pretendard Variable": 418,
+          "STIX Two Math": 58
         },
         "fallback": [],
         "unpainted": [],
@@ -4689,7 +4833,31 @@
             "color": "rgb(49, 104, 200)"
           },
           {
-            "text": "가중치 w1",
+            "text": "x",
+            "size": "28px",
+            "weight": "400",
+            "lineHeight": "35px",
+            "spacing": "-1.33333px",
+            "color": "rgb(49, 104, 200)"
+          },
+          {
+            "text": "2",
+            "size": "19.6px",
+            "weight": "400",
+            "lineHeight": "24.5px",
+            "spacing": "-1.33333px",
+            "color": "rgb(49, 104, 200)"
+          },
+          {
+            "text": "입력 특성",
+            "size": "20px",
+            "weight": "800",
+            "lineHeight": "26px",
+            "spacing": "-1.33333px",
+            "color": "rgb(18, 35, 63)"
+          },
+          {
+            "text": "가중치",
             "size": "18px",
             "weight": "400",
             "lineHeight": "25.2px",
@@ -4713,26 +4881,10 @@
             "color": "rgb(100, 116, 139)"
           },
           {
-            "text": "x",
-            "size": "28px",
-            "weight": "400",
-            "lineHeight": "35px",
-            "spacing": "-1.33333px",
-            "color": "rgb(49, 104, 200)"
-          },
-          {
-            "text": "2",
-            "size": "19.6px",
-            "weight": "400",
-            "lineHeight": "24.5px",
-            "spacing": "-1.33333px",
-            "color": "rgb(49, 104, 200)"
-          },
-          {
-            "text": "가중치 w2",
+            "text": ",",
             "size": "18px",
             "weight": "400",
-            "lineHeight": "25.2px",
+            "lineHeight": "22.5px",
             "spacing": "-1.33333px",
             "color": "rgb(100, 116, 139)"
           },
@@ -4753,12 +4905,20 @@
             "color": "rgb(100, 116, 139)"
           },
           {
-            "text": "입력 특성",
-            "size": "20px",
-            "weight": "800",
-            "lineHeight": "26px",
+            "text": "· 절편",
+            "size": "18px",
+            "weight": "400",
+            "lineHeight": "25.2px",
             "spacing": "-1.33333px",
-            "color": "rgb(18, 35, 63)"
+            "color": "rgb(100, 116, 139)"
+          },
+          {
+            "text": "b",
+            "size": "18px",
+            "weight": "400",
+            "lineHeight": "22.5px",
+            "spacing": "-1.33333px",
+            "color": "rgb(100, 116, 139)"
           },
           {
             "text": "z",
@@ -4863,6 +5023,22 @@
             "lineHeight": "32.5px",
             "spacing": "-1.33333px",
             "color": "rgb(27, 53, 88)"
+          },
+          {
+            "text": "z",
+            "size": "18px",
+            "weight": "400",
+            "lineHeight": "22.5px",
+            "spacing": "-1.33333px",
+            "color": "rgb(100, 116, 139)"
+          },
+          {
+            "text": "확률 변환 전 점수",
+            "size": "18px",
+            "weight": "400",
+            "lineHeight": "25.2px",
+            "spacing": "-1.33333px",
+            "color": "rgb(100, 116, 139)"
           },
           {
             "text": "가중합 + 절편",
@@ -5113,7 +5289,7 @@
             "color": "rgb(27, 53, 88)"
           },
           {
-            "text": "가중치 w: 특성에 곱하는 계수",
+            "text": "대상의 속성을 수치로 표현",
             "size": "15px",
             "weight": "400",
             "lineHeight": "21px",
@@ -5121,15 +5297,7 @@
             "color": "rgb(100, 116, 139)"
           },
           {
-            "text": "w",
-            "size": "15px",
-            "weight": "400",
-            "lineHeight": "18.75px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "z 확률 변환 전 점수",
+            "text": "w 특성에 곱하는 가중치",
             "size": "16px",
             "weight": "400",
             "lineHeight": "22.4px",
@@ -5137,7 +5305,7 @@
             "color": "rgb(100, 116, 139)"
           },
           {
-            "text": "z",
+            "text": "w",
             "size": "20px",
             "weight": "400",
             "lineHeight": "25px",
@@ -5314,10 +5482,10 @@
         ]
       },
       "fonts": {
-        "elements": 85,
+        "elements": 88,
         "families": {
-          "Pretendard Variable": 412,
-          "STIX Two Math": 56
+          "Pretendard Variable": 422,
+          "STIX Two Math": 58
         },
         "fallback": [],
         "unpainted": [],
@@ -5453,7 +5621,31 @@
             "color": "rgb(49, 104, 200)"
           },
           {
-            "text": "가중치 w1",
+            "text": "x",
+            "size": "28px",
+            "weight": "400",
+            "lineHeight": "35px",
+            "spacing": "-1.33333px",
+            "color": "rgb(49, 104, 200)"
+          },
+          {
+            "text": "2",
+            "size": "19.6px",
+            "weight": "400",
+            "lineHeight": "24.5px",
+            "spacing": "-1.33333px",
+            "color": "rgb(49, 104, 200)"
+          },
+          {
+            "text": "입력 특성",
+            "size": "20px",
+            "weight": "800",
+            "lineHeight": "26px",
+            "spacing": "-1.33333px",
+            "color": "rgb(18, 35, 63)"
+          },
+          {
+            "text": "가중치",
             "size": "18px",
             "weight": "400",
             "lineHeight": "25.2px",
@@ -5477,26 +5669,10 @@
             "color": "rgb(100, 116, 139)"
           },
           {
-            "text": "x",
-            "size": "28px",
-            "weight": "400",
-            "lineHeight": "35px",
-            "spacing": "-1.33333px",
-            "color": "rgb(49, 104, 200)"
-          },
-          {
-            "text": "2",
-            "size": "19.6px",
-            "weight": "400",
-            "lineHeight": "24.5px",
-            "spacing": "-1.33333px",
-            "color": "rgb(49, 104, 200)"
-          },
-          {
-            "text": "가중치 w2",
+            "text": ",",
             "size": "18px",
             "weight": "400",
-            "lineHeight": "25.2px",
+            "lineHeight": "22.5px",
             "spacing": "-1.33333px",
             "color": "rgb(100, 116, 139)"
           },
@@ -5517,12 +5693,20 @@
             "color": "rgb(100, 116, 139)"
           },
           {
-            "text": "입력 특성",
-            "size": "20px",
-            "weight": "800",
-            "lineHeight": "26px",
+            "text": "· 절편",
+            "size": "18px",
+            "weight": "400",
+            "lineHeight": "25.2px",
             "spacing": "-1.33333px",
-            "color": "rgb(18, 35, 63)"
+            "color": "rgb(100, 116, 139)"
+          },
+          {
+            "text": "b",
+            "size": "18px",
+            "weight": "400",
+            "lineHeight": "22.5px",
+            "spacing": "-1.33333px",
+            "color": "rgb(100, 116, 139)"
           },
           {
             "text": "z",
@@ -5627,6 +5811,22 @@
             "lineHeight": "32.5px",
             "spacing": "-1.33333px",
             "color": "rgb(27, 53, 88)"
+          },
+          {
+            "text": "z",
+            "size": "18px",
+            "weight": "400",
+            "lineHeight": "22.5px",
+            "spacing": "-1.33333px",
+            "color": "rgb(100, 116, 139)"
+          },
+          {
+            "text": "확률 변환 전 점수",
+            "size": "18px",
+            "weight": "400",
+            "lineHeight": "25.2px",
+            "spacing": "-1.33333px",
+            "color": "rgb(100, 116, 139)"
           },
           {
             "text": "가중합 + 절편",
@@ -5877,7 +6077,7 @@
             "color": "rgb(27, 53, 88)"
           },
           {
-            "text": "가중치 w: 특성에 곱하는 계수",
+            "text": "대상의 속성을 수치로 표현",
             "size": "15px",
             "weight": "400",
             "lineHeight": "21px",
@@ -5885,15 +6085,7 @@
             "color": "rgb(100, 116, 139)"
           },
           {
-            "text": "w",
-            "size": "15px",
-            "weight": "400",
-            "lineHeight": "18.75px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "z 확률 변환 전 점수",
+            "text": "w 특성에 곱하는 가중치",
             "size": "16px",
             "weight": "400",
             "lineHeight": "22.4px",
@@ -5901,7 +6093,7 @@
             "color": "rgb(100, 116, 139)"
           },
           {
-            "text": "z",
+            "text": "w",
             "size": "20px",
             "weight": "400",
             "lineHeight": "25px",
@@ -6078,10 +6270,10 @@
         ]
       },
       "fonts": {
-        "elements": 84,
+        "elements": 87,
         "families": {
-          "Pretendard Variable": 408,
-          "STIX Two Math": 56
+          "Pretendard Variable": 418,
+          "STIX Two Math": 58
         },
         "fallback": [],
         "unpainted": [],
@@ -6127,8 +6319,8 @@
   "failed_requests": [],
   "http_errors": [],
   "source_sha256": {
-    "examples/logistic-regression/lesson.css": "aa48483037966ba56eefb760b7befb5a53246dbd011e94a69dde27751432b1e9",
-    "examples/logistic-regression/lesson.js": "1647a7a9630700d5845d4a2c5e8a428cb5ac9c1d9611229ecc613d07c79bce6f",
+    "examples/logistic-regression/lesson.css": "54bb39c93cda6bb03439942524303aadab61ef341b4dc7402aba1d2126db9474",
+    "examples/logistic-regression/lesson.js": "e3896908d43cce1fbd23098d36b0f75a5dc07370740078ae0f69957084d440b7",
     "examples/logistic-regression/scroll.html": "3fcb40bbf48b676f0ecff0b3708ece5f0c06a4294b67dda8f74d23756a6a3c8b",
     "examples/logistic-regression/slides.html": "dc5e0587a0f67e438c9e1c92168e1207ef69c291a30dfef4ce6cd5b55e04c1eb",
     "examples/logistic-regression/viewer.js": "46232006f82c8fec339ffe36e395f9a914bf2e2817deced8078cbda74bcfb69e",
@@ -6144,13 +6336,13 @@
     "templates/html/reference-layout.css": "c29f52fd9852d80b29e277b7d60218a7b02da599a059a8395051caada3525bcc",
     "templates/html/styles.css": "3c05e00284aae4ea538e697efae7682a2c9b35b318cab372fa8493613de4df22"
   },
-  "design_sha256": "29d3b8f3466d6f1ad0891b25de6e4efce374f04ea4aaee6f14e581312fe74529",
+  "design_sha256": "c28aa99adf5c36056edab743aa1508215e8260b57474058e6a470576a332e509",
   "preview_sha256": {
-    "scroll.jpg": "091290a884f3a9e12fd535a75e62ab52739d33e0102e5bda16d14e3ba16b4ceb",
-    "slide.jpg": "6f83d7907d07052c39c08cf43cd423ced0f23309b3afa79f4832b13d31a9ad2a"
+    "scroll.jpg": "a81bfaba2d1166188b2ca0cfdf1dd26bee7dd4821aa237c68698ab947787fc19",
+    "slide.jpg": "b89a2c66afb5d1862dd051eee6db6bcd324beafa15f53429c5fd5f5071f78036"
   },
   "review_preview_sha256": {
-    "concept.png": "6dfe349b06f4d31b8fc621558b1014d358d2497f9033e4627f970a4b5ca6b229"
+    "concept.png": "085a46a4501dd2404db1d4ba9c33692e1eda4b7cfe9e3ce1c0a3e108f10d102e"
   },
-  "finished_utc": "2026-10-24T10:24:05.269502+00:00"
+  "finished_utc": "2026-10-24T11:06:32.377615+00:00"
 }

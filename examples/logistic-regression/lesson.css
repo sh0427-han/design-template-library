@@ -23,8 +23,8 @@
 .lr-inputs {display:grid;gap:10px;width:214px;}
 .lr-inputs > div {display:grid;gap:8px;padding:16px 24px;background:var(--canvas);border-radius:10px;}
 .lr-feature-value {display:flex;align-items:center;justify-content:center;color:var(--blue);font-size:28px;line-height:var(--line-height-compact);}
-.lr-feature-weight {display:flex;align-items:center;justify-content:center;gap:6px;font-size:18px;line-height:var(--line-height-note);color:var(--muted);}
 .lr-score,.lr-probability {display:flex;flex-direction:column;gap:12px;align-items:center;}
+.lr-score-parameters,.lr-score-meaning {display:flex;align-items:baseline;justify-content:center;gap:6px;font-size:18px;line-height:var(--line-height-note);color:var(--muted);}
 .lr-score-general {font-size:26px;line-height:var(--line-height-body);color:var(--deep);}
 .lr-score > span,.lr-probability > span {font-size:19px;line-height:var(--line-height-note);color:var(--muted);}
 .lr-probability strong {font-size:34px;line-height:var(--line-height-title);color:var(--teal);}
