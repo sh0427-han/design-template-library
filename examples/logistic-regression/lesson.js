@@ -17,7 +17,7 @@ const takeaway = (label, text) => `<div class="ref-takeaway"><strong>${label}</s
 const footer = index => `<footer class="footer"><span>Design Template Library · 로지스틱 회귀</span><span>${index===2?'부록 A':`${String(index+1).padStart(2,'0')} / 02`}</span></footer>`;
 const number = x => (Math.abs(x) < 0.0000000001 ? 0 : x).toFixed(2).replace('-', '−');
 const percent = p => `${(p*100).toFixed(1)}%`;
-const numeric = new Set(['x1','x2','w1','w2','bias','product1','product2','z','decimal','percent','threshold','thresholdPercent']);
+const numeric = new Set(['x1','x2','w1','w2','bias','z','decimal','percent','threshold','thresholdPercent']);
 const value = key => `<span${numeric.has(key)?' class="math-number"':''} data-value="${key}"></span>`;
 const m = body => `<math class="math" displaystyle="true" xmlns="http://www.w3.org/1998/Math/MathML"><mrow>${body}</mrow></math>`;
 const mi = x => `<mi>${x}</mi>`;
@@ -25,8 +25,10 @@ const mo = x => `<mo>${x}</mo>`;
 const mn = x => `<mn>${x}</mn>`;
 const symbol = (x,n) => n===undefined?mi(x):`<msub>${mi(x)}${mn(n)}</msub>`;
 const mv = key => `<mn data-value="${key}"></mn>`;
-const sum = () => `${mv('product1')}<mo data-value="product2Sign"></mo>${mv('product2Magnitude')}<mo data-value="biasSign"></mo>${mv('biasMagnitude')}`;
-const weighted = () => `${mi('z')}${mo('=')}${symbol('w',1)}${symbol('x',1)}${mo('+')}${symbol('w',2)}${symbol('x',2)}${mo('+')}${mi('b')}`;
+const weightedTerms = () => `${symbol('w',1)}${symbol('x',1)}${mo('+')}${symbol('w',2)}${symbol('x',2)}${mo('+')}${mi('b')}`;
+const weighted = () => `${mi('z')}${mo('=')}${weightedTerms()}`;
+const leadingEquals = () => '<mo lspace="0">=</mo>';
+const factor = key => `<mrow class="lr-factor" data-factor="${key}"><mo stretchy="false">(</mo>${mv(key)}<mo stretchy="false">)</mo></mrow>`;
 const sigmoidExpression = exponent => `<mfrac>${mn(1)}<mrow>${mn(1)}${mo('+')}<msup><mi mathvariant="normal">e</mi>${exponent}</msup></mrow></mfrac>`;
 const sigmoidGeneral = () => m(mi('σ')+'<mo stretchy="false">(</mo>'+mi('z')+'<mo stretchy="false">)</mo>'+mo('=')+sigmoidExpression(`<mrow>${mo('−')}${mi('z')}</mrow>`));
 
@@ -49,17 +51,16 @@ function concept() {
 
 function calculation() {
   return `<div class="lr-body lr-two-columns lr-calculation">
-    <section class="lr-panel lr-calc-panel">
-      ${heading('01 · LINEAR SCORE', '곱하고 더해 점수 계산', `입력 ${m(symbol('x',1)+mo('=')+mv('x1'))} · ${m(symbol('x',2)+mo('=')+mv('x2'))}`)}
-      <div class="lr-calc-main"><div class="lr-weighted-formula">${m(weighted())}</div><div class="lr-products">${[1,2].map(i=>`<div class="lr-product-step">${m(symbol('w',i)+symbol('x',i)+mo('=')+mv('w'+i)+mo('×')+mv('x'+i)+mo('=')+`<mn class="lr-product-result" data-value="product${i}"></mn>`)}</div>`).join('')}</div>
-      <div class="lr-bias"><span>절편</span>${m(mi('b')+mo('=')+mv('bias'))}</div>
-      <div class="lr-sum"><span>${m(mi('z')+mo('=')+sum())}</span><strong class="lr-score-output">${m(mo('=')+mv('z'))}</strong></div></div>
+    <section class="lr-panel lr-calc-panel lr-linear-panel">
+      ${heading('01 · LINEAR SCORE', '곱하고 더해 점수 계산')}
+      <div class="lr-calc-main"><div class="lr-input-chip lr-given-values"><div><span>입력</span>${m(symbol('x',1)+mo('=')+mv('x1')+mo(',')+symbol('x',2)+mo('=')+mv('x2'))}</div><div><span>가중치·절편</span>${m(symbol('w',1)+mo('=')+mv('w1')+mo(',')+symbol('w',2)+mo('=')+mv('w2')+mo(',')+mi('b')+mo('=')+mv('bias'))}</div></div>
+      <div class="lr-equation-chain"><div class="lr-equation-row lr-equation-general">${m(mi('z'))}${m(leadingEquals()+weightedTerms())}</div><div class="lr-equation-row lr-equation-substitution"><span></span>${m(leadingEquals()+factor('w1')+mo('×')+factor('x1')+mo('+')+factor('w2')+mo('×')+factor('x2')+'<mo data-value="biasSign"></mo>'+mv('biasMagnitude'))}</div><div class="lr-equation-row lr-equation-result"><span></span><strong class="lr-score-output">${m(leadingEquals()+mv('z'))}</strong></div></div></div>
       <div class="lr-card-note">예시 입력·계수 · 모델 학습 과정 제외</div>
     </section>
     <div class="lr-card-transfer"><span class="lr-transfer-label">${m(mi('z'))} 전달</span></div>
     <section class="lr-panel lr-calc-panel">
       ${heading('02 · SIGMOID', '점수를 확률로 변환', '같은 점수와 확률을 식과 그래프로 연결')}
-      <div class="lr-sigmoid-comparison"><div class="lr-prob-calculation"><div class="lr-received-score"><span>입력 점수</span>${m(mi('z')+mo('=')+mv('z'))}</div><div class="lr-general lr-sigmoid-formula">${m(mi('p')+mo('=')+sigmoidExpression(`<mrow>${mo('−')}${mi('z')}</mrow>`))}</div>
+      <div class="lr-sigmoid-comparison"><div class="lr-prob-calculation"><div class="lr-input-chip lr-received-score"><span>입력 점수</span>${m(mi('z')+mo('=')+mv('z'))}</div><div class="lr-general lr-sigmoid-formula">${m(mi('p')+mo('=')+sigmoidExpression(`<mrow>${mo('−')}${mi('z')}</mrow>`))}</div>
       <div class="lr-substitute lr-sigmoid-formula">${m(mo('=')+sigmoidExpression(mv('negativeZ')))}</div>
       <div class="lr-decimal">${m(mo('≈')+mv('decimal'))}</div><div class="lr-final-prob">${value('percent')}</div></div>
       <figure class="lr-calculation-graph"><svg class="lr-curve lr-detail-curve" data-variant="detail" role="img" aria-label="계산한 점수와 확률을 축에 표시한 시그모이드 곡선" viewBox="0 0 360 260"></svg><figcaption>${m(mi('z')+mo('=')+mv('z'))} → ${m(mi('p')+mo('≈')+mv('decimal'))}</figcaption></figure></div>
@@ -127,13 +128,14 @@ function update(announce = false) {
   const rows=evaluateModel(state.model), row=rows[state.selected], t=state.threshold/100;
   const prediction=predict(row.p,t), positives=rows.filter(r=>predict(r.p,t)).length;
   const values={x1:number(row.input[0]),x2:number(row.input[1]),w1:number(state.model.weights[0]),w2:number(state.model.weights[1]),
-    bias:number(state.model.bias),product1:number(row.products[0]),product2:number(row.products[1]),z:number(row.z),
+    bias:number(state.model.bias),z:number(row.z),
     negativeZ:number(-row.z),
-    product2Sign:row.products[1]<0?'−':'+',product2Magnitude:number(Math.abs(row.products[1])),biasSign:state.model.bias<0?'−':'+',biasMagnitude:number(Math.abs(state.model.bias)),
+    biasSign:state.model.bias<0?'−':'+',biasMagnitude:number(Math.abs(state.model.bias)),
     percent:percent(row.p),decimal:row.p.toFixed(6),threshold:(t).toFixed(2),thresholdPercent:percent(t),
     positive:positives,negative:rows.length-positives,sample:state.selected+1,relation:prediction?'≥':'<',
     prediction:prediction?'양성(1)':'음성(0)',comparison:prediction?'확률이 기준 이상 → 양성':'확률이 기준 미만 → 음성'};
   root.querySelectorAll('[data-value]').forEach(el=>{el.textContent=values[el.dataset.value];});
+  for(const el of root.querySelectorAll('[data-factor]'))el.dataset.negative=String(values[el.dataset.factor].startsWith('−'));
   const slider=root.querySelector('#threshold');
   if(slider) {
   slider.value=String(state.threshold);slider.setAttribute('aria-valuetext',`${t.toFixed(2)}, ${positives}개 양성`);

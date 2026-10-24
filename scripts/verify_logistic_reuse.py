@@ -56,6 +56,8 @@ GEOMETRY = r'''id => {
   thresholdLines:[...slide.querySelectorAll('.lr-threshold-line')].map(e=>({relativeX:(e.getBoundingClientRect().x-e.parentElement.getBoundingClientRect().x)/scale,trackWidth:e.parentElement.getBoundingClientRect().width/scale})),
   curves:[...slide.querySelectorAll('.lr-curve')].map(svg=>({variant:svg.dataset.variant||'concept',limit:Number(svg.dataset.limit),x:svg.querySelector('.lr-curve-point')?Number(svg.querySelector('.lr-curve-point').getAttribute('cx')):null,y:svg.querySelector('.lr-curve-point')?Number(svg.querySelector('.lr-curve-point').getAttribute('cy')):null,path:svg.querySelector('.lr-sigmoid-path').getAttribute('d'),axis:Object.fromEntries([...svg.querySelectorAll('[data-axis]')].map(e=>[e.dataset.axis,e.textContent]))})),
   conceptValueCount:slide.querySelectorAll('[data-value]').length,
+  calculationInputs:[...slide.querySelectorAll('.lr-input-chip')].map(e=>{const c=getComputedStyle(e);return {box:rect(e),style:[c.backgroundColor,c.color,c.fontSize,c.borderRadius,c.padding],rows:[...e.querySelectorAll(':scope > div')].map(rect)}}),
+  equationRows:[...slide.querySelectorAll('.lr-equation-row')].map(e=>{const math=e.querySelectorAll('math'),body=math[math.length-1];return {box:rect(e),body:rect(body),sign:rect(body.querySelector('mo')),overflow:body.getBoundingClientRect().right>e.getBoundingClientRect().right+.5*scale}}),
   transfer:slide.querySelector('.lr-transfer-svg')?{container:rect(slide.querySelector('.lr-calculation')),source:rect(slide.querySelector('.lr-score-output')),target:rect(slide.querySelector('.lr-received-score')),label:rect(slide.querySelector('.lr-transfer-label')),path:slide.querySelector('.lr-transfer-path').getAttribute('d'),sourceValue:slide.querySelector('.lr-score-output [data-value="z"]').textContent,targetValue:slide.querySelector('.lr-received-score [data-value="z"]').textContent}:null,
   fractions:[...slide.querySelectorAll('.lr-sigmoid-formula mfrac')].map(e=>({numerator:rect(e.children[0]),denominator:rect(e.children[1])}))};
 }'''
@@ -99,13 +101,16 @@ def math_check(page, model):
     else:assert not data['displayed']
     selected = state['selected']; formatted = f'{100*rows[selected][1]:.1f}%'
     assert all(values and set(values)=={formatted} for values in data['values'].values()), data['values']
-    # Read the actual displayed factors/products as well as the model's output.
+    # Read the substituted factors and bias, not just the model's output.
     num=lambda x: f'{0 if abs(x)<1e-10 else x:.2f}'.replace('-', '−')
     x=model['samples'][selected]
-    displayed=page.evaluate('''()=>Object.fromEntries(['x1','x2','w1','w2','bias','product1','product2','product2Sign','product2Magnitude','biasSign','biasMagnitude','z','negativeZ','decimal'].map(key=>[key,[...document.querySelectorAll(`[data-value="${key}"]`)].map(e=>e.textContent)]))''')
-    product2=x[1]*model['weights'][1]
-    expect=dict(x1=num(x[0]),x2=num(x[1]),w1=num(model['weights'][0]),w2=num(model['weights'][1]),bias=num(model['bias']),product1=num(x[0]*model['weights'][0]),product2=num(product2),product2Sign='−' if product2<0 else '+',product2Magnitude=num(abs(product2)),biasSign='−' if model['bias']<0 else '+',biasMagnitude=num(abs(model['bias'])),z=num(rows[selected][0]),negativeZ=num(-rows[selected][0]),decimal=f'{rows[selected][1]:.6f}')
+    displayed=page.evaluate('''()=>Object.fromEntries(['x1','x2','w1','w2','bias','biasSign','biasMagnitude','z','negativeZ','decimal'].map(key=>[key,[...document.querySelectorAll(`[data-value="${key}"]`)].map(e=>e.textContent)]))''')
+    expect=dict(x1=num(x[0]),x2=num(x[1]),w1=num(model['weights'][0]),w2=num(model['weights'][1]),bias=num(model['bias']),biasSign='−' if model['bias']<0 else '+',biasMagnitude=num(abs(model['bias'])),z=num(rows[selected][0]),negativeZ=num(-rows[selected][0]),decimal=f'{rows[selected][1]:.6f}')
     assert all(values and set(values)=={expect[key]} for key,values in displayed.items()),(displayed,expect)
+    factors=page.evaluate('''()=>[...document.querySelectorAll('[data-factor]')].map(e=>({key:e.dataset.factor,negative:e.dataset.negative==='true',parentheses:[...e.children].filter(n=>n.tagName==='mo').map(n=>getComputedStyle(n).display!=='none')}))''')
+    for factor in factors:
+        negative=expect[factor['key']].startswith('−')
+        assert factor['negative']==negative and factor['parentheses']==[negative,negative],factor
     assert page.locator('[data-page="concept"] [data-value], [data-page="concept"] .lr-curve-point, [data-page="concept"] .lr-point-guides').count()==0
     curves=page.evaluate('''()=>[...document.querySelectorAll('.lr-curve')].map(e=>({detail:e.dataset.variant==='detail',limit:Number(e.dataset.limit),x:e.querySelector('.lr-curve-point')?Number(e.querySelector('.lr-curve-point').getAttribute('cx')):null,y:e.querySelector('.lr-curve-point')?Number(e.querySelector('.lr-curve-point').getAttribute('cy')):null,axis:[...e.querySelectorAll('[data-axis]')].map(t=>t.textContent)}))''')
     z,p=rows[selected]
@@ -130,6 +135,9 @@ def compare_design(a, b):
     maximum = 0
     for x, y in zip(a, b):
         assert (x['tag'],x['classes'],x['text'],x['style']) == (y['tag'],y['classes'],y['text'],y['style']), (x,y)
+        # Hidden positive-factor parentheses have no rendered box; their zero
+        # client origin is unrelated to the containing slide's scroll offset.
+        if not any(x['box'][k] or y['box'][k] for k in ('width','height')):continue
         error = max(abs(x['box'][k]-y['box'][k]) for k in x['box'])
         # The SVG text glyph bounds may differ slightly with a scaled text paint.
         assert error < (1 if x['tag'] in ('svg','g','path','circle','text') else .3), (error,x,y)
@@ -201,6 +209,12 @@ def main():
                             assert geometry['fractions'] and all(f['numerator']['bottom']<f['denominator']['y'] for f in geometry['fractions'])
                         if name=='calculation':
                             assert max(geometry['noteY'])-min(geometry['noteY'])<.02
+                            chips=geometry['calculationInputs'];assert len(chips)==2 and chips[0]['style']==chips[1]['style']
+                            assert len(chips[0]['rows'])==2 and chips[0]['rows'][1]['y']-chips[0]['rows'][0]['bottom']>=7.9
+                            equations=geometry['equationRows'];assert len(equations)==3 and not any(e['overflow'] for e in equations)
+                            assert max(e['body']['x'] for e in equations)-min(e['body']['x'] for e in equations)<.02
+                            assert max(e['sign']['x'] for e in equations)-min(e['sign']['x'] for e in equations)<.02
+                            assert all(b['box']['y']-a['box']['bottom']>=13.9 for a,b in zip(equations,equations[1:]))
                             check_transfer(geometry,expected(DEFAULT)[3][0])
                         if name=='threshold':
                             assert abs(geometry['sliderGap']-16)<.02
