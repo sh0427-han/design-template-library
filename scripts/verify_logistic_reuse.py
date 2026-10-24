@@ -15,6 +15,7 @@ SIZES = [(1600, 950), (1440, 810), (1366, 768), (1280, 720)]
 PAGES = ['concept', 'calculation', 'threshold']
 DEFAULT = dict(weights=[1.2, -.8], bias=.1, samples=[[-1, 1], [-.5, .5], [.25, .5], [1, .5], [1.5, .25], [2, .5]])
 ALTERNATE = dict(weights=[.8, -.4], bias=-.2, samples=[[-1, 0], [0, 0], [1, .5], [2, 1]])
+CONCEPT_BASELINE = None
 
 GEOMETRY = r'''id => {
  const slide=document.querySelector(`[data-page="${id}"]`),s=slide.getBoundingClientRect(),scale=s.width/1440;
@@ -53,7 +54,9 @@ GEOMETRY = r'''id => {
   rows:[...slide.querySelectorAll('.lr-sample-row')].map(rect),
   sliderGap:slide.querySelector('.lr-slider-row')?rect(slide.querySelector('.lr-slider-row')).y-rect(slide.querySelector('.lr-heading')).bottom:null,
   thresholdLines:[...slide.querySelectorAll('.lr-threshold-line')].map(e=>({relativeX:(e.getBoundingClientRect().x-e.parentElement.getBoundingClientRect().x)/scale,trackWidth:e.parentElement.getBoundingClientRect().width/scale})),
-  curves:[...slide.querySelectorAll('.lr-curve')].map(svg=>({variant:svg.dataset.variant||'concept',limit:Number(svg.dataset.limit),x:Number(svg.querySelector('.lr-curve-point').getAttribute('cx')),y:Number(svg.querySelector('.lr-curve-point').getAttribute('cy')),path:svg.querySelector('.lr-sigmoid-path').getAttribute('d'),axis:Object.fromEntries([...svg.querySelectorAll('[data-axis]')].map(e=>[e.dataset.axis,e.textContent]))})),
+  curves:[...slide.querySelectorAll('.lr-curve')].map(svg=>({variant:svg.dataset.variant||'concept',limit:Number(svg.dataset.limit),x:svg.querySelector('.lr-curve-point')?Number(svg.querySelector('.lr-curve-point').getAttribute('cx')):null,y:svg.querySelector('.lr-curve-point')?Number(svg.querySelector('.lr-curve-point').getAttribute('cy')):null,path:svg.querySelector('.lr-sigmoid-path').getAttribute('d'),axis:Object.fromEntries([...svg.querySelectorAll('[data-axis]')].map(e=>[e.dataset.axis,e.textContent]))})),
+  conceptValueCount:slide.querySelectorAll('[data-value]').length,
+  transfer:slide.querySelector('.lr-transfer-svg')?{container:rect(slide.querySelector('.lr-calculation')),source:rect(slide.querySelector('.lr-score-output')),target:rect(slide.querySelector('.lr-received-score')),label:rect(slide.querySelector('.lr-transfer-label')),path:slide.querySelector('.lr-transfer-path').getAttribute('d'),sourceValue:slide.querySelector('.lr-score-output [data-value="z"]').textContent,targetValue:slide.querySelector('.lr-received-score [data-value="z"]').textContent}:null,
   fractions:[...slide.querySelectorAll('.lr-sigmoid-formula mfrac')].map(e=>({numerator:rect(e.children[0]),denominator:rect(e.children[1])}))};
 }'''
 
@@ -73,10 +76,14 @@ def expected(model):
     return result
 
 def math_check(page, model):
+    global CONCEPT_BASELINE
     data = page.evaluate('''() => ({state:window.LogisticLesson.state,
-      values:Object.fromEntries([...document.querySelectorAll('[data-page]')].map(el=>[el.dataset.page,[...el.querySelectorAll('[data-value="percent"]')].map(e=>e.textContent)])),
+      concept:{text:document.querySelector('[data-page="concept"]').textContent.replace(/\\s+/g,' ').trim(),path:document.querySelector('[data-page="concept"] .lr-sigmoid-path').getAttribute('d')},
+      values:Object.fromEntries([...document.querySelectorAll('[data-page]')].filter(el=>el.dataset.page!=='concept').map(el=>[el.dataset.page,[...el.querySelectorAll('[data-value="percent"]')].map(e=>e.textContent)])),
       displayed:[...document.querySelectorAll('.lr-sample-row')].map(e=>({p:Number(e.dataset.probability),prediction:Number(e.dataset.prediction),label:e.querySelector('.lr-sample-percent').textContent,fill:parseFloat(e.querySelector('.lr-sample-fill').style.width)})),
       counts:document.querySelector('[data-value="positive"]')?[Number(document.querySelector('[data-value="positive"]').textContent),Number(document.querySelector('[data-value="negative"]').textContent)]:null})''')
+    if CONCEPT_BASELINE is None:CONCEPT_BASELINE=data['concept']
+    assert data['concept']==CONCEPT_BASELINE,'concept page changed with example data'
     rows = expected(model); state = data['state']; t = state['threshold']/100
     assert len(state['rows']) == len(rows)
     if data['counts'] is not None:assert len(data['displayed'])==len(rows)
@@ -99,11 +106,14 @@ def math_check(page, model):
     product2=x[1]*model['weights'][1]
     expect=dict(x1=num(x[0]),x2=num(x[1]),w1=num(model['weights'][0]),w2=num(model['weights'][1]),bias=num(model['bias']),product1=num(x[0]*model['weights'][0]),product2=num(product2),product2Sign='−' if product2<0 else '+',product2Magnitude=num(abs(product2)),biasSign='−' if model['bias']<0 else '+',biasMagnitude=num(abs(model['bias'])),z=num(rows[selected][0]),negativeZ=num(-rows[selected][0]),decimal=f'{rows[selected][1]:.6f}')
     assert all(values and set(values)=={expect[key]} for key,values in displayed.items()),(displayed,expect)
-    curves=page.evaluate('''()=>[...document.querySelectorAll('.lr-curve')].map(e=>({detail:e.dataset.variant==='detail',limit:Number(e.dataset.limit),x:Number(e.querySelector('.lr-curve-point').getAttribute('cx')),y:Number(e.querySelector('.lr-curve-point').getAttribute('cy')),axis:[...e.querySelectorAll('[data-axis]')].map(t=>t.textContent)}))''')
+    assert page.locator('[data-page="concept"] [data-value], [data-page="concept"] .lr-curve-point, [data-page="concept"] .lr-point-guides').count()==0
+    curves=page.evaluate('''()=>[...document.querySelectorAll('.lr-curve')].map(e=>({detail:e.dataset.variant==='detail',limit:Number(e.dataset.limit),x:e.querySelector('.lr-curve-point')?Number(e.querySelector('.lr-curve-point').getAttribute('cx')):null,y:e.querySelector('.lr-curve-point')?Number(e.querySelector('.lr-curve-point').getAttribute('cy')):null,axis:[...e.querySelectorAll('[data-axis]')].map(t=>t.textContent)}))''')
     z,p=rows[selected]
     assert len(curves)==2
     for c in curves:
-        left,width,bottom,height=(56,272,210,180) if c['detail'] else (40,240,172,150)
+        if not c['detail']:
+            assert c['limit']==4 and c['x'] is None and c['y'] is None and not c['axis'];continue
+        left,width,bottom,height=56,272,210,180
         assert abs(c['x']-(left+(z+c['limit'])/(2*c['limit'])*width))<1e-10
         assert abs(c['y']-(bottom-p*height))<1e-10
         if c['detail']:assert c['axis']==[num(z),f'{p:.3f}'],c
@@ -125,6 +135,17 @@ def compare_design(a, b):
         assert error < (1 if x['tag'] in ('svg','g','path','circle','text') else .3), (error,x,y)
         maximum=max(maximum,error)
     return maximum
+
+def check_transfer(geometry, expected_z):
+    bridge=geometry['transfer'];assert bridge and bridge['path'],bridge
+    points=list(map(float,re.findall(r'-?[\d.]+',bridge['path'])))
+    c,s,t=bridge['container'],bridge['source'],bridge['target']
+    expected_link=[s['right']-c['x']+6,s['y']+s['height']/2-c['y'],(geometry['panels'][0]['right']+geometry['panels'][1]['x'])/2-c['x'],t['y']+t['height']/2-c['y'],t['x']-c['x']-8]
+    assert len(points)==11 and max(abs(a-b) for a,b in zip(points[:5],expected_link))<.15,(points,expected_link)
+    assert abs(points[7]-points[4])<.001 and abs(points[8]-points[3])<.001
+    formatted=f'{0 if abs(expected_z)<1e-10 else expected_z:.2f}'.replace('-','−')
+    assert bridge['sourceValue']==bridge['targetValue']==formatted
+    assert geometry['panels'][0]['right']<bridge['label']['x'] and bridge['label']['right']<geometry['panels'][1]['x']
 
 def main():
     OUT.mkdir(parents=True,exist_ok=True); (LESSON/'previews').mkdir(exist_ok=True)
@@ -166,8 +187,11 @@ def main():
                         for curve in geometry['curves']:
                             left,plot_width,bottom,plot_height=(56,272,210,180) if curve['variant']=='detail' else (40,240,172,150)
                             z,prob=expected(DEFAULT)[3]
-                            assert abs(curve['x']-(left+(z+curve['limit'])/(2*curve['limit'])*plot_width))<1e-10
-                            assert abs(curve['y']-(bottom-prob*plot_height))<1e-10 and curve['path'].count('L')==160
+                            if curve['variant']=='detail':
+                                assert abs(curve['x']-(left+(z+curve['limit'])/(2*curve['limit'])*plot_width))<1e-10
+                                assert abs(curve['y']-(bottom-prob*plot_height))<1e-10
+                            else:assert curve['x'] is None and curve['y'] is None and geometry['conceptValueCount']==0
+                            assert curve['path'].count('L')==160
                             points=[tuple(map(float,pair)) for pair in re.findall(r'[ML]([\d.-]+),([\d.-]+)',curve['path'])]
                             for i in [0,40,80,120,160]:
                                 z=-curve['limit']+i*2*curve['limit']/160
@@ -175,7 +199,9 @@ def main():
                             if curve['variant']=='detail':assert curve['axis']=={'z':'0.90','p':'0.711'}
                         if name in ('concept','calculation'):
                             assert geometry['fractions'] and all(f['numerator']['bottom']<f['denominator']['y'] for f in geometry['fractions'])
-                        if name=='calculation':assert max(geometry['noteY'])-min(geometry['noteY'])<.02
+                        if name=='calculation':
+                            assert max(geometry['noteY'])-min(geometry['noteY'])<.02
+                            check_transfer(geometry,expected(DEFAULT)[3][0])
                         if name=='threshold':
                             assert abs(geometry['sliderGap']-16)<.02
                             for line in geometry['thresholdLines']:assert abs(line['relativeX']+1-.6*line['trackWidth'])<.03
@@ -212,6 +238,7 @@ def main():
             for a,b in zip(expected_positions,fixed['rows']):assert max(abs(a[k]-b[k]) for k in a)<.02
             for selected in range(6):
                 page.locator(f'[data-select="{selected}"]').click();math_check(page,DEFAULT)
+                go(page,'calculation');check_transfer(page.evaluate(GEOMETRY,'calculation'),expected(DEFAULT)[selected][0]);go(page,'threshold')
             page.locator('#threshold').focus();page.keyboard.press('Home');assert math_check(page,DEFAULT)['counts']==[6,0]
             page.keyboard.press('End');assert math_check(page,DEFAULT)['counts']==[0,6]
             assert page.evaluate('location.hash')=='#ref-threshold'
@@ -235,7 +262,8 @@ def main():
             geometry=page.evaluate(GEOMETRY,'threshold');assert not geometry['paddingErrors'] and not geometry['clippedText']
             selected=page.evaluate('window.LogisticLesson.state.selected');z,prob=expected(ALTERNATE)[selected]
             point=page.locator('.lr-curve-point').first
-            assert abs(float(point.get_attribute('cx'))-(40+(z+4)/8*240))<1e-10 and abs(float(point.get_attribute('cy'))-(172-prob*150))<1e-10
+            assert abs(float(point.get_attribute('cx'))-(56+(z+4)/8*272))<1e-10 and abs(float(point.get_attribute('cy'))-(210-prob*180))<1e-10
+            go(page,'calculation');check_transfer(page.evaluate(GEOMETRY,'calculation'),z);go(page,'threshold')
             assert page.evaluate('window.LogisticLesson.sigmoid(-1000)')==0 and page.evaluate('window.LogisticLesson.sigmoid(1000)')==1
             for mutation in ['m.weights=[1]', 'm.samples=[]', 'm.bias=Infinity', 'm.samples[0][0]=NaN', 'm.samples=Array(7).fill([0,0])']:
                 rejected=page.evaluate('''mutation=>{const before=JSON.stringify(window.LogisticLesson.state),m=structuredClone(window.LogisticLesson.state.model);try{new Function('m',mutation)(m);window.LogisticLesson.setModel(m);return false}catch{return before===JSON.stringify(window.LogisticLesson.state)}}''',mutation)
@@ -243,7 +271,7 @@ def main():
             page.goto(f'{base}/slides.html?threshold=no&sample=99#unknown',wait_until='networkidle');page.wait_for_function('document.documentElement.dataset.ready==="true"')
             assert window_state(page)==(60,3) and '#ref-concept' in page.url
             assert not errors and not failed and not http,(errors,failed,http)
-            report.update(status='passed',main_pages=2,appendix_pages=1,appendix_opt_in=True,math_checks=checks,alternate_data_checks=reuse,threshold_states=101,keyboard=True,tie_is_positive=True,mode_roundtrip=True,invalid_data_rejections=5,extreme_logits=[-1000,1000],page_errors=errors,failed_requests=failed,http_errors=http)
+            report.update(status='passed',main_pages=2,appendix_pages=1,appendix_opt_in=True,concept_is_symbolic=True,concept_is_invariant=True,result_transfer=True,math_checks=checks,alternate_data_checks=reuse,threshold_states=101,keyboard=True,tie_is_positive=True,mode_roundtrip=True,invalid_data_rejections=5,extreme_logits=[-1000,1000],page_errors=errors,failed_requests=failed,http_errors=http)
             (LESSON/'review').mkdir(exist_ok=True)
             for name in PAGES:
                 shutil.copyfile(OUT/f'slides-{name}-1600x950{"-appendix" if name=="threshold" else ""}.png',LESSON/f'review/{name}.png')
