@@ -18,13 +18,13 @@ function concept() {
     <div class="lr-flow">
       ${stage(`<div class="lr-inputs">${[1,2].map(i=>`<div><div class="lr-feature-value">${m(symbol('x',i))}</div></div>`).join('')}</div>`, '입력 특성')}
       ${arrow()}
-      ${stage(`<div class="lr-score"><div class="lr-score-parameters"><span>가중치</span>${m(symbol('w',1)+mo(',')+symbol('w',2))}<span>· 절편</span>${m(mi('b'))}</div><div class="lr-score-general">${m(weighted())}</div><div class="lr-score-meaning">${m(mi('z'))}<span>확률 변환 전 점수</span></div></div>`, '가중합 + 절편')}
+      ${stage(`<div class="lr-score"><div class="lr-score-general">${m(weighted())}</div></div>`, '가중합 + 절편')}
       ${arrow()}
       ${stage(`<div class="lr-sigmoid-stage"><div class="lr-sigmoid-formula">${sigmoidGeneral()}</div><svg class="lr-curve" role="img" aria-label="선형 점수를 양성 확률로 변환하는 시그모이드 곡선" viewBox="0 0 300 210"></svg></div>`, '시그모이드(Sigmoid)')}
       ${arrow()}
-      ${stage(`<div class="lr-probability"><strong>${m(mi('p')+mo('=')+mi('σ')+'<mo stretchy="false">(</mo>'+mi('z')+'<mo stretchy="false">)</mo>')}</strong><span>0과 1 사이의 확률</span></div>`, '확률 출력')}
+      ${stage(`<div class="lr-probability"><strong>${m(mi('p')+mo('=')+mi('σ')+'<mo stretchy="false">(</mo>'+mi('z')+'<mo stretchy="false">)</mo>')}</strong></div>`, '확률 출력')}
     </div>
-    <div class="lr-symbols"><div><span>${m(mi('x'))} 입력 특성</span><small>대상의 속성을 수치로 표현</small></div><div><span>${m(mi('w'))} 특성에 곱하는 가중치</span><small>절편 ${m(mi('b'))}: 입력과 무관하게 더하는 값</small></div><div><span>${m(mi('σ'))} 시그모이드 함수</span><small>자연상수 ${m('<mi mathvariant="normal">e</mi>')} · 실수 점수를 0~1로 변환</small></div><div><span>${m(mi('p'))} 양성 예측 확률</span><small>확률과 최종 클래스 판정은 구분</small></div></div>
+    <div class="lr-symbols"><div><span>${m(mi('x'))} 입력 특성</span><span>대상의 속성을 수치로 표현</span></div><div><span>${m(mi('w'))} 특성에 곱하는 가중치</span><span>${m(mi('b'))} 입력과 무관하게 더하는 절편</span><span>${m(mi('z'))} 확률 변환 전 점수</span></div><div><span>${m(mi('σ'))} 실수 점수를 확률로 변환</span><span>${m('<mi mathvariant="normal">e</mi>')} 지수함수의 밑인 자연상수</span></div><div><span>${m(mi('p'))} 양성 예측 확률</span><span>0과 1 사이의 확률</span><span>최종 클래스 판정과는 구분</span></div></div>
     </section></div>${takeaway('확률의 의미', '입력에서 계산한 선형 점수를 양성 클래스의 확률로 변환')}`;
 }
 

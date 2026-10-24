@@ -24,9 +24,7 @@
 .lr-inputs > div {display:grid;gap:8px;padding:16px 24px;background:var(--canvas);border-radius:10px;}
 .lr-feature-value {display:flex;align-items:center;justify-content:center;color:var(--blue);font-size:28px;line-height:var(--line-height-compact);}
 .lr-score,.lr-probability {display:flex;flex-direction:column;gap:12px;align-items:center;}
-.lr-score-parameters,.lr-score-meaning {display:flex;align-items:baseline;justify-content:center;gap:6px;font-size:18px;line-height:var(--line-height-note);color:var(--muted);}
 .lr-score-general {font-size:26px;line-height:var(--line-height-body);color:var(--deep);}
-.lr-score > span,.lr-probability > span {font-size:19px;line-height:var(--line-height-note);color:var(--muted);}
 .lr-probability strong {font-size:34px;line-height:var(--line-height-title);color:var(--teal);}
 .lr-curve {width:300px;height:210px;max-width:100%;overflow:visible;}
 .lr-sigmoid-stage {display:grid;grid-template-rows:44px 158px;gap:8px;justify-items:center;}
@@ -36,13 +34,12 @@
 .lr-midline {stroke-dasharray:4 4;}
 .lr-axis-text {font-size:15px;line-height:var(--line-height-compact);fill:var(--muted);}
 .lr-sigmoid-path {fill:none;stroke:var(--blue);stroke-width:3;}
-.lr-symbols {display:grid;grid-template-columns:var(--lr-flow-columns);align-items:center;gap:8px;border-top:1px solid var(--border);padding-top:12px;margin-top:8px;font-size:16px;line-height:var(--line-height-note);color:var(--muted);}
-.lr-symbols > div {display:grid;gap:8px;text-align:center;white-space:nowrap;}
+.lr-symbols {display:grid;grid-template-columns:var(--lr-flow-columns);align-items:start;gap:8px;border-top:1px solid var(--border);padding-top:12px;margin-top:8px;font-size:16px;line-height:var(--line-height-note);color:var(--muted);}
+.lr-symbols > div {display:grid;gap:6px;text-align:center;white-space:nowrap;}
 .lr-symbols > div:nth-child(1) {grid-column:1;}
 .lr-symbols > div:nth-child(2) {grid-column:3;}
 .lr-symbols > div:nth-child(3) {grid-column:5;}
 .lr-symbols > div:nth-child(4) {grid-column:7;}
 .lr-symbols > div > span {display:flex;align-items:baseline;justify-content:center;gap:6px;}
-.lr-symbols small {font-size:15px;line-height:var(--line-height-note);}
-.lr-symbols > div > span math {color:var(--deep);font-size:20px;}
+.lr-symbols math {color:var(--deep);font-size:inherit;}
 .lr-load-error,.logistic-lesson noscript {display:block;padding:24px;font-size:20px;color:var(--navy);}

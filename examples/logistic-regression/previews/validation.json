@@ -1,6 +1,6 @@
 {
   "status": "passed",
-  "started_utc": "2026-10-24T11:06:21.825839+00:00",
+  "started_utc": "2026-10-24T11:19:02.329135+00:00",
   "cases": [
     {
       "mode": "slides",
@@ -129,70 +129,6 @@
             "color": "rgb(18, 35, 63)"
           },
           {
-            "text": "가중치",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "25.2px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "w",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "22.5px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "1",
-            "size": "12.6px",
-            "weight": "400",
-            "lineHeight": "15.75px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": ",",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "22.5px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "w",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "22.5px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "2",
-            "size": "12.6px",
-            "weight": "400",
-            "lineHeight": "15.75px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "· 절편",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "25.2px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "b",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "22.5px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
             "text": "z",
             "size": "26px",
             "weight": "400",
@@ -295,22 +231,6 @@
             "lineHeight": "32.5px",
             "spacing": "-1.33333px",
             "color": "rgb(27, 53, 88)"
-          },
-          {
-            "text": "z",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "22.5px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "확률 변환 전 점수",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "25.2px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
           },
           {
             "text": "가중합 + 절편",
@@ -529,14 +449,6 @@
             "color": "rgb(38, 166, 161)"
           },
           {
-            "text": "0과 1 사이의 확률",
-            "size": "19px",
-            "weight": "400",
-            "lineHeight": "26.6px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
             "text": "확률 출력",
             "size": "20px",
             "weight": "800",
@@ -554,17 +466,17 @@
           },
           {
             "text": "x",
-            "size": "20px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "25px",
+            "lineHeight": "20px",
             "spacing": "-1.33333px",
             "color": "rgb(27, 53, 88)"
           },
           {
             "text": "대상의 속성을 수치로 표현",
-            "size": "15px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "21px",
+            "lineHeight": "22.4px",
             "spacing": "-1.33333px",
             "color": "rgb(100, 116, 139)"
           },
@@ -578,30 +490,46 @@
           },
           {
             "text": "w",
-            "size": "20px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "25px",
+            "lineHeight": "20px",
             "spacing": "-1.33333px",
             "color": "rgb(27, 53, 88)"
           },
           {
-            "text": "절편 b: 입력과 무관하게 더하는 값",
-            "size": "15px",
+            "text": "b 입력과 무관하게 더하는 절편",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "21px",
+            "lineHeight": "22.4px",
             "spacing": "-1.33333px",
             "color": "rgb(100, 116, 139)"
           },
           {
             "text": "b",
-            "size": "15px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "18.75px",
+            "lineHeight": "20px",
+            "spacing": "-1.33333px",
+            "color": "rgb(27, 53, 88)"
+          },
+          {
+            "text": "z 확률 변환 전 점수",
+            "size": "16px",
+            "weight": "400",
+            "lineHeight": "22.4px",
             "spacing": "-1.33333px",
             "color": "rgb(100, 116, 139)"
           },
           {
-            "text": "σ 시그모이드 함수",
+            "text": "z",
+            "size": "16px",
+            "weight": "400",
+            "lineHeight": "20px",
+            "spacing": "-1.33333px",
+            "color": "rgb(27, 53, 88)"
+          },
+          {
+            "text": "σ 실수 점수를 확률로 변환",
             "size": "16px",
             "weight": "400",
             "lineHeight": "22.4px",
@@ -610,27 +538,27 @@
           },
           {
             "text": "σ",
-            "size": "20px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "25px",
+            "lineHeight": "20px",
             "spacing": "-1.33333px",
             "color": "rgb(27, 53, 88)"
           },
           {
-            "text": "자연상수 e · 실수 점수를 0~1로 변환",
-            "size": "15px",
+            "text": "e 지수함수의 밑인 자연상수",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "21px",
+            "lineHeight": "22.4px",
             "spacing": "-1.33333px",
             "color": "rgb(100, 116, 139)"
           },
           {
             "text": "e",
-            "size": "15px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "18.75px",
+            "lineHeight": "20px",
             "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
+            "color": "rgb(27, 53, 88)"
           },
           {
             "text": "p 양성 예측 확률",
@@ -642,17 +570,25 @@
           },
           {
             "text": "p",
-            "size": "20px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "25px",
+            "lineHeight": "20px",
             "spacing": "-1.33333px",
             "color": "rgb(27, 53, 88)"
           },
           {
-            "text": "확률과 최종 클래스 판정은 구분",
-            "size": "15px",
+            "text": "0과 1 사이의 확률",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "21px",
+            "lineHeight": "22.4px",
+            "spacing": "-1.33333px",
+            "color": "rgb(100, 116, 139)"
+          },
+          {
+            "text": "최종 클래스 판정과는 구분",
+            "size": "16px",
+            "weight": "400",
+            "lineHeight": "22.4px",
             "spacing": "-1.33333px",
             "color": "rgb(100, 116, 139)"
           },
@@ -754,10 +690,10 @@
         ]
       },
       "fonts": {
-        "elements": 88,
+        "elements": 80,
         "families": {
-          "Pretendard Variable": 422,
-          "STIX Two Math": 58
+          "Pretendard Variable": 404,
+          "STIX Two Math": 52
         },
         "fallback": [],
         "unpainted": [],
@@ -917,70 +853,6 @@
             "color": "rgb(18, 35, 63)"
           },
           {
-            "text": "가중치",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "25.2px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "w",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "22.5px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "1",
-            "size": "12.6px",
-            "weight": "400",
-            "lineHeight": "15.75px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": ",",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "22.5px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "w",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "22.5px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "2",
-            "size": "12.6px",
-            "weight": "400",
-            "lineHeight": "15.75px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "· 절편",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "25.2px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "b",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "22.5px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
             "text": "z",
             "size": "26px",
             "weight": "400",
@@ -1083,22 +955,6 @@
             "lineHeight": "32.5px",
             "spacing": "-1.33333px",
             "color": "rgb(27, 53, 88)"
-          },
-          {
-            "text": "z",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "22.5px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "확률 변환 전 점수",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "25.2px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
           },
           {
             "text": "가중합 + 절편",
@@ -1317,14 +1173,6 @@
             "color": "rgb(38, 166, 161)"
           },
           {
-            "text": "0과 1 사이의 확률",
-            "size": "19px",
-            "weight": "400",
-            "lineHeight": "26.6px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
             "text": "확률 출력",
             "size": "20px",
             "weight": "800",
@@ -1342,17 +1190,17 @@
           },
           {
             "text": "x",
-            "size": "20px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "25px",
+            "lineHeight": "20px",
             "spacing": "-1.33333px",
             "color": "rgb(27, 53, 88)"
           },
           {
             "text": "대상의 속성을 수치로 표현",
-            "size": "15px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "21px",
+            "lineHeight": "22.4px",
             "spacing": "-1.33333px",
             "color": "rgb(100, 116, 139)"
           },
@@ -1366,30 +1214,46 @@
           },
           {
             "text": "w",
-            "size": "20px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "25px",
+            "lineHeight": "20px",
             "spacing": "-1.33333px",
             "color": "rgb(27, 53, 88)"
           },
           {
-            "text": "절편 b: 입력과 무관하게 더하는 값",
-            "size": "15px",
+            "text": "b 입력과 무관하게 더하는 절편",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "21px",
+            "lineHeight": "22.4px",
             "spacing": "-1.33333px",
             "color": "rgb(100, 116, 139)"
           },
           {
             "text": "b",
-            "size": "15px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "18.75px",
+            "lineHeight": "20px",
+            "spacing": "-1.33333px",
+            "color": "rgb(27, 53, 88)"
+          },
+          {
+            "text": "z 확률 변환 전 점수",
+            "size": "16px",
+            "weight": "400",
+            "lineHeight": "22.4px",
             "spacing": "-1.33333px",
             "color": "rgb(100, 116, 139)"
           },
           {
-            "text": "σ 시그모이드 함수",
+            "text": "z",
+            "size": "16px",
+            "weight": "400",
+            "lineHeight": "20px",
+            "spacing": "-1.33333px",
+            "color": "rgb(27, 53, 88)"
+          },
+          {
+            "text": "σ 실수 점수를 확률로 변환",
             "size": "16px",
             "weight": "400",
             "lineHeight": "22.4px",
@@ -1398,27 +1262,27 @@
           },
           {
             "text": "σ",
-            "size": "20px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "25px",
+            "lineHeight": "20px",
             "spacing": "-1.33333px",
             "color": "rgb(27, 53, 88)"
           },
           {
-            "text": "자연상수 e · 실수 점수를 0~1로 변환",
-            "size": "15px",
+            "text": "e 지수함수의 밑인 자연상수",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "21px",
+            "lineHeight": "22.4px",
             "spacing": "-1.33333px",
             "color": "rgb(100, 116, 139)"
           },
           {
             "text": "e",
-            "size": "15px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "18.75px",
+            "lineHeight": "20px",
             "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
+            "color": "rgb(27, 53, 88)"
           },
           {
             "text": "p 양성 예측 확률",
@@ -1430,17 +1294,25 @@
           },
           {
             "text": "p",
-            "size": "20px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "25px",
+            "lineHeight": "20px",
             "spacing": "-1.33333px",
             "color": "rgb(27, 53, 88)"
           },
           {
-            "text": "확률과 최종 클래스 판정은 구분",
-            "size": "15px",
+            "text": "0과 1 사이의 확률",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "21px",
+            "lineHeight": "22.4px",
+            "spacing": "-1.33333px",
+            "color": "rgb(100, 116, 139)"
+          },
+          {
+            "text": "최종 클래스 판정과는 구분",
+            "size": "16px",
+            "weight": "400",
+            "lineHeight": "22.4px",
             "spacing": "-1.33333px",
             "color": "rgb(100, 116, 139)"
           },
@@ -1542,10 +1414,10 @@
         ]
       },
       "fonts": {
-        "elements": 87,
+        "elements": 79,
         "families": {
-          "Pretendard Variable": 418,
-          "STIX Two Math": 58
+          "Pretendard Variable": 400,
+          "STIX Two Math": 52
         },
         "fallback": [],
         "unpainted": [],
@@ -1705,70 +1577,6 @@
             "color": "rgb(18, 35, 63)"
           },
           {
-            "text": "가중치",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "25.2px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "w",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "22.5px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "1",
-            "size": "12.6px",
-            "weight": "400",
-            "lineHeight": "15.75px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": ",",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "22.5px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "w",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "22.5px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "2",
-            "size": "12.6px",
-            "weight": "400",
-            "lineHeight": "15.75px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "· 절편",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "25.2px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "b",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "22.5px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
             "text": "z",
             "size": "26px",
             "weight": "400",
@@ -1871,22 +1679,6 @@
             "lineHeight": "32.5px",
             "spacing": "-1.33333px",
             "color": "rgb(27, 53, 88)"
-          },
-          {
-            "text": "z",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "22.5px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "확률 변환 전 점수",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "25.2px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
           },
           {
             "text": "가중합 + 절편",
@@ -2105,14 +1897,6 @@
             "color": "rgb(38, 166, 161)"
           },
           {
-            "text": "0과 1 사이의 확률",
-            "size": "19px",
-            "weight": "400",
-            "lineHeight": "26.6px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
             "text": "확률 출력",
             "size": "20px",
             "weight": "800",
@@ -2130,17 +1914,17 @@
           },
           {
             "text": "x",
-            "size": "20px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "25px",
+            "lineHeight": "20px",
             "spacing": "-1.33333px",
             "color": "rgb(27, 53, 88)"
           },
           {
             "text": "대상의 속성을 수치로 표현",
-            "size": "15px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "21px",
+            "lineHeight": "22.4px",
             "spacing": "-1.33333px",
             "color": "rgb(100, 116, 139)"
           },
@@ -2154,30 +1938,46 @@
           },
           {
             "text": "w",
-            "size": "20px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "25px",
+            "lineHeight": "20px",
             "spacing": "-1.33333px",
             "color": "rgb(27, 53, 88)"
           },
           {
-            "text": "절편 b: 입력과 무관하게 더하는 값",
-            "size": "15px",
+            "text": "b 입력과 무관하게 더하는 절편",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "21px",
+            "lineHeight": "22.4px",
             "spacing": "-1.33333px",
             "color": "rgb(100, 116, 139)"
           },
           {
             "text": "b",
-            "size": "15px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "18.75px",
+            "lineHeight": "20px",
+            "spacing": "-1.33333px",
+            "color": "rgb(27, 53, 88)"
+          },
+          {
+            "text": "z 확률 변환 전 점수",
+            "size": "16px",
+            "weight": "400",
+            "lineHeight": "22.4px",
             "spacing": "-1.33333px",
             "color": "rgb(100, 116, 139)"
           },
           {
-            "text": "σ 시그모이드 함수",
+            "text": "z",
+            "size": "16px",
+            "weight": "400",
+            "lineHeight": "20px",
+            "spacing": "-1.33333px",
+            "color": "rgb(27, 53, 88)"
+          },
+          {
+            "text": "σ 실수 점수를 확률로 변환",
             "size": "16px",
             "weight": "400",
             "lineHeight": "22.4px",
@@ -2186,27 +1986,27 @@
           },
           {
             "text": "σ",
-            "size": "20px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "25px",
+            "lineHeight": "20px",
             "spacing": "-1.33333px",
             "color": "rgb(27, 53, 88)"
           },
           {
-            "text": "자연상수 e · 실수 점수를 0~1로 변환",
-            "size": "15px",
+            "text": "e 지수함수의 밑인 자연상수",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "21px",
+            "lineHeight": "22.4px",
             "spacing": "-1.33333px",
             "color": "rgb(100, 116, 139)"
           },
           {
             "text": "e",
-            "size": "15px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "18.75px",
+            "lineHeight": "20px",
             "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
+            "color": "rgb(27, 53, 88)"
           },
           {
             "text": "p 양성 예측 확률",
@@ -2218,17 +2018,25 @@
           },
           {
             "text": "p",
-            "size": "20px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "25px",
+            "lineHeight": "20px",
             "spacing": "-1.33333px",
             "color": "rgb(27, 53, 88)"
           },
           {
-            "text": "확률과 최종 클래스 판정은 구분",
-            "size": "15px",
+            "text": "0과 1 사이의 확률",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "21px",
+            "lineHeight": "22.4px",
+            "spacing": "-1.33333px",
+            "color": "rgb(100, 116, 139)"
+          },
+          {
+            "text": "최종 클래스 판정과는 구분",
+            "size": "16px",
+            "weight": "400",
+            "lineHeight": "22.4px",
             "spacing": "-1.33333px",
             "color": "rgb(100, 116, 139)"
           },
@@ -2330,10 +2138,10 @@
         ]
       },
       "fonts": {
-        "elements": 88,
+        "elements": 80,
         "families": {
-          "Pretendard Variable": 422,
-          "STIX Two Math": 58
+          "Pretendard Variable": 404,
+          "STIX Two Math": 52
         },
         "fallback": [],
         "unpainted": [],
@@ -2493,70 +2301,6 @@
             "color": "rgb(18, 35, 63)"
           },
           {
-            "text": "가중치",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "25.2px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "w",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "22.5px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "1",
-            "size": "12.6px",
-            "weight": "400",
-            "lineHeight": "15.75px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": ",",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "22.5px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "w",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "22.5px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "2",
-            "size": "12.6px",
-            "weight": "400",
-            "lineHeight": "15.75px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "· 절편",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "25.2px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "b",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "22.5px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
             "text": "z",
             "size": "26px",
             "weight": "400",
@@ -2659,22 +2403,6 @@
             "lineHeight": "32.5px",
             "spacing": "-1.33333px",
             "color": "rgb(27, 53, 88)"
-          },
-          {
-            "text": "z",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "22.5px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "확률 변환 전 점수",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "25.2px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
           },
           {
             "text": "가중합 + 절편",
@@ -2893,14 +2621,6 @@
             "color": "rgb(38, 166, 161)"
           },
           {
-            "text": "0과 1 사이의 확률",
-            "size": "19px",
-            "weight": "400",
-            "lineHeight": "26.6px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
             "text": "확률 출력",
             "size": "20px",
             "weight": "800",
@@ -2918,17 +2638,17 @@
           },
           {
             "text": "x",
-            "size": "20px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "25px",
+            "lineHeight": "20px",
             "spacing": "-1.33333px",
             "color": "rgb(27, 53, 88)"
           },
           {
             "text": "대상의 속성을 수치로 표현",
-            "size": "15px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "21px",
+            "lineHeight": "22.4px",
             "spacing": "-1.33333px",
             "color": "rgb(100, 116, 139)"
           },
@@ -2942,30 +2662,46 @@
           },
           {
             "text": "w",
-            "size": "20px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "25px",
+            "lineHeight": "20px",
             "spacing": "-1.33333px",
             "color": "rgb(27, 53, 88)"
           },
           {
-            "text": "절편 b: 입력과 무관하게 더하는 값",
-            "size": "15px",
+            "text": "b 입력과 무관하게 더하는 절편",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "21px",
+            "lineHeight": "22.4px",
             "spacing": "-1.33333px",
             "color": "rgb(100, 116, 139)"
           },
           {
             "text": "b",
-            "size": "15px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "18.75px",
+            "lineHeight": "20px",
+            "spacing": "-1.33333px",
+            "color": "rgb(27, 53, 88)"
+          },
+          {
+            "text": "z 확률 변환 전 점수",
+            "size": "16px",
+            "weight": "400",
+            "lineHeight": "22.4px",
             "spacing": "-1.33333px",
             "color": "rgb(100, 116, 139)"
           },
           {
-            "text": "σ 시그모이드 함수",
+            "text": "z",
+            "size": "16px",
+            "weight": "400",
+            "lineHeight": "20px",
+            "spacing": "-1.33333px",
+            "color": "rgb(27, 53, 88)"
+          },
+          {
+            "text": "σ 실수 점수를 확률로 변환",
             "size": "16px",
             "weight": "400",
             "lineHeight": "22.4px",
@@ -2974,27 +2710,27 @@
           },
           {
             "text": "σ",
-            "size": "20px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "25px",
+            "lineHeight": "20px",
             "spacing": "-1.33333px",
             "color": "rgb(27, 53, 88)"
           },
           {
-            "text": "자연상수 e · 실수 점수를 0~1로 변환",
-            "size": "15px",
+            "text": "e 지수함수의 밑인 자연상수",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "21px",
+            "lineHeight": "22.4px",
             "spacing": "-1.33333px",
             "color": "rgb(100, 116, 139)"
           },
           {
             "text": "e",
-            "size": "15px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "18.75px",
+            "lineHeight": "20px",
             "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
+            "color": "rgb(27, 53, 88)"
           },
           {
             "text": "p 양성 예측 확률",
@@ -3006,17 +2742,25 @@
           },
           {
             "text": "p",
-            "size": "20px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "25px",
+            "lineHeight": "20px",
             "spacing": "-1.33333px",
             "color": "rgb(27, 53, 88)"
           },
           {
-            "text": "확률과 최종 클래스 판정은 구분",
-            "size": "15px",
+            "text": "0과 1 사이의 확률",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "21px",
+            "lineHeight": "22.4px",
+            "spacing": "-1.33333px",
+            "color": "rgb(100, 116, 139)"
+          },
+          {
+            "text": "최종 클래스 판정과는 구분",
+            "size": "16px",
+            "weight": "400",
+            "lineHeight": "22.4px",
             "spacing": "-1.33333px",
             "color": "rgb(100, 116, 139)"
           },
@@ -3118,10 +2862,10 @@
         ]
       },
       "fonts": {
-        "elements": 87,
+        "elements": 79,
         "families": {
-          "Pretendard Variable": 418,
-          "STIX Two Math": 58
+          "Pretendard Variable": 400,
+          "STIX Two Math": 52
         },
         "fallback": [],
         "unpainted": [],
@@ -3281,70 +3025,6 @@
             "color": "rgb(18, 35, 63)"
           },
           {
-            "text": "가중치",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "25.2px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "w",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "22.5px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "1",
-            "size": "12.6px",
-            "weight": "400",
-            "lineHeight": "15.75px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": ",",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "22.5px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "w",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "22.5px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "2",
-            "size": "12.6px",
-            "weight": "400",
-            "lineHeight": "15.75px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "· 절편",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "25.2px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "b",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "22.5px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
             "text": "z",
             "size": "26px",
             "weight": "400",
@@ -3447,22 +3127,6 @@
             "lineHeight": "32.5px",
             "spacing": "-1.33333px",
             "color": "rgb(27, 53, 88)"
-          },
-          {
-            "text": "z",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "22.5px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "확률 변환 전 점수",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "25.2px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
           },
           {
             "text": "가중합 + 절편",
@@ -3681,14 +3345,6 @@
             "color": "rgb(38, 166, 161)"
           },
           {
-            "text": "0과 1 사이의 확률",
-            "size": "19px",
-            "weight": "400",
-            "lineHeight": "26.6px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
             "text": "확률 출력",
             "size": "20px",
             "weight": "800",
@@ -3706,17 +3362,17 @@
           },
           {
             "text": "x",
-            "size": "20px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "25px",
+            "lineHeight": "20px",
             "spacing": "-1.33333px",
             "color": "rgb(27, 53, 88)"
           },
           {
             "text": "대상의 속성을 수치로 표현",
-            "size": "15px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "21px",
+            "lineHeight": "22.4px",
             "spacing": "-1.33333px",
             "color": "rgb(100, 116, 139)"
           },
@@ -3730,30 +3386,46 @@
           },
           {
             "text": "w",
-            "size": "20px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "25px",
+            "lineHeight": "20px",
             "spacing": "-1.33333px",
             "color": "rgb(27, 53, 88)"
           },
           {
-            "text": "절편 b: 입력과 무관하게 더하는 값",
-            "size": "15px",
+            "text": "b 입력과 무관하게 더하는 절편",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "21px",
+            "lineHeight": "22.4px",
             "spacing": "-1.33333px",
             "color": "rgb(100, 116, 139)"
           },
           {
             "text": "b",
-            "size": "15px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "18.75px",
+            "lineHeight": "20px",
+            "spacing": "-1.33333px",
+            "color": "rgb(27, 53, 88)"
+          },
+          {
+            "text": "z 확률 변환 전 점수",
+            "size": "16px",
+            "weight": "400",
+            "lineHeight": "22.4px",
             "spacing": "-1.33333px",
             "color": "rgb(100, 116, 139)"
           },
           {
-            "text": "σ 시그모이드 함수",
+            "text": "z",
+            "size": "16px",
+            "weight": "400",
+            "lineHeight": "20px",
+            "spacing": "-1.33333px",
+            "color": "rgb(27, 53, 88)"
+          },
+          {
+            "text": "σ 실수 점수를 확률로 변환",
             "size": "16px",
             "weight": "400",
             "lineHeight": "22.4px",
@@ -3762,27 +3434,27 @@
           },
           {
             "text": "σ",
-            "size": "20px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "25px",
+            "lineHeight": "20px",
             "spacing": "-1.33333px",
             "color": "rgb(27, 53, 88)"
           },
           {
-            "text": "자연상수 e · 실수 점수를 0~1로 변환",
-            "size": "15px",
+            "text": "e 지수함수의 밑인 자연상수",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "21px",
+            "lineHeight": "22.4px",
             "spacing": "-1.33333px",
             "color": "rgb(100, 116, 139)"
           },
           {
             "text": "e",
-            "size": "15px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "18.75px",
+            "lineHeight": "20px",
             "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
+            "color": "rgb(27, 53, 88)"
           },
           {
             "text": "p 양성 예측 확률",
@@ -3794,17 +3466,25 @@
           },
           {
             "text": "p",
-            "size": "20px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "25px",
+            "lineHeight": "20px",
             "spacing": "-1.33333px",
             "color": "rgb(27, 53, 88)"
           },
           {
-            "text": "확률과 최종 클래스 판정은 구분",
-            "size": "15px",
+            "text": "0과 1 사이의 확률",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "21px",
+            "lineHeight": "22.4px",
+            "spacing": "-1.33333px",
+            "color": "rgb(100, 116, 139)"
+          },
+          {
+            "text": "최종 클래스 판정과는 구분",
+            "size": "16px",
+            "weight": "400",
+            "lineHeight": "22.4px",
             "spacing": "-1.33333px",
             "color": "rgb(100, 116, 139)"
           },
@@ -3906,10 +3586,10 @@
         ]
       },
       "fonts": {
-        "elements": 88,
+        "elements": 80,
         "families": {
-          "Pretendard Variable": 422,
-          "STIX Two Math": 58
+          "Pretendard Variable": 404,
+          "STIX Two Math": 52
         },
         "fallback": [],
         "unpainted": [],
@@ -4069,70 +3749,6 @@
             "color": "rgb(18, 35, 63)"
           },
           {
-            "text": "가중치",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "25.2px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "w",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "22.5px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "1",
-            "size": "12.6px",
-            "weight": "400",
-            "lineHeight": "15.75px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": ",",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "22.5px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "w",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "22.5px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "2",
-            "size": "12.6px",
-            "weight": "400",
-            "lineHeight": "15.75px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "· 절편",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "25.2px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "b",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "22.5px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
             "text": "z",
             "size": "26px",
             "weight": "400",
@@ -4235,22 +3851,6 @@
             "lineHeight": "32.5px",
             "spacing": "-1.33333px",
             "color": "rgb(27, 53, 88)"
-          },
-          {
-            "text": "z",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "22.5px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "확률 변환 전 점수",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "25.2px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
           },
           {
             "text": "가중합 + 절편",
@@ -4469,14 +4069,6 @@
             "color": "rgb(38, 166, 161)"
           },
           {
-            "text": "0과 1 사이의 확률",
-            "size": "19px",
-            "weight": "400",
-            "lineHeight": "26.6px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
             "text": "확률 출력",
             "size": "20px",
             "weight": "800",
@@ -4494,17 +4086,17 @@
           },
           {
             "text": "x",
-            "size": "20px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "25px",
+            "lineHeight": "20px",
             "spacing": "-1.33333px",
             "color": "rgb(27, 53, 88)"
           },
           {
             "text": "대상의 속성을 수치로 표현",
-            "size": "15px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "21px",
+            "lineHeight": "22.4px",
             "spacing": "-1.33333px",
             "color": "rgb(100, 116, 139)"
           },
@@ -4518,30 +4110,46 @@
           },
           {
             "text": "w",
-            "size": "20px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "25px",
+            "lineHeight": "20px",
             "spacing": "-1.33333px",
             "color": "rgb(27, 53, 88)"
           },
           {
-            "text": "절편 b: 입력과 무관하게 더하는 값",
-            "size": "15px",
+            "text": "b 입력과 무관하게 더하는 절편",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "21px",
+            "lineHeight": "22.4px",
             "spacing": "-1.33333px",
             "color": "rgb(100, 116, 139)"
           },
           {
             "text": "b",
-            "size": "15px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "18.75px",
+            "lineHeight": "20px",
+            "spacing": "-1.33333px",
+            "color": "rgb(27, 53, 88)"
+          },
+          {
+            "text": "z 확률 변환 전 점수",
+            "size": "16px",
+            "weight": "400",
+            "lineHeight": "22.4px",
             "spacing": "-1.33333px",
             "color": "rgb(100, 116, 139)"
           },
           {
-            "text": "σ 시그모이드 함수",
+            "text": "z",
+            "size": "16px",
+            "weight": "400",
+            "lineHeight": "20px",
+            "spacing": "-1.33333px",
+            "color": "rgb(27, 53, 88)"
+          },
+          {
+            "text": "σ 실수 점수를 확률로 변환",
             "size": "16px",
             "weight": "400",
             "lineHeight": "22.4px",
@@ -4550,27 +4158,27 @@
           },
           {
             "text": "σ",
-            "size": "20px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "25px",
+            "lineHeight": "20px",
             "spacing": "-1.33333px",
             "color": "rgb(27, 53, 88)"
           },
           {
-            "text": "자연상수 e · 실수 점수를 0~1로 변환",
-            "size": "15px",
+            "text": "e 지수함수의 밑인 자연상수",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "21px",
+            "lineHeight": "22.4px",
             "spacing": "-1.33333px",
             "color": "rgb(100, 116, 139)"
           },
           {
             "text": "e",
-            "size": "15px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "18.75px",
+            "lineHeight": "20px",
             "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
+            "color": "rgb(27, 53, 88)"
           },
           {
             "text": "p 양성 예측 확률",
@@ -4582,17 +4190,25 @@
           },
           {
             "text": "p",
-            "size": "20px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "25px",
+            "lineHeight": "20px",
             "spacing": "-1.33333px",
             "color": "rgb(27, 53, 88)"
           },
           {
-            "text": "확률과 최종 클래스 판정은 구분",
-            "size": "15px",
+            "text": "0과 1 사이의 확률",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "21px",
+            "lineHeight": "22.4px",
+            "spacing": "-1.33333px",
+            "color": "rgb(100, 116, 139)"
+          },
+          {
+            "text": "최종 클래스 판정과는 구분",
+            "size": "16px",
+            "weight": "400",
+            "lineHeight": "22.4px",
             "spacing": "-1.33333px",
             "color": "rgb(100, 116, 139)"
           },
@@ -4694,10 +4310,10 @@
         ]
       },
       "fonts": {
-        "elements": 87,
+        "elements": 79,
         "families": {
-          "Pretendard Variable": 418,
-          "STIX Two Math": 58
+          "Pretendard Variable": 400,
+          "STIX Two Math": 52
         },
         "fallback": [],
         "unpainted": [],
@@ -4857,70 +4473,6 @@
             "color": "rgb(18, 35, 63)"
           },
           {
-            "text": "가중치",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "25.2px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "w",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "22.5px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "1",
-            "size": "12.6px",
-            "weight": "400",
-            "lineHeight": "15.75px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": ",",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "22.5px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "w",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "22.5px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "2",
-            "size": "12.6px",
-            "weight": "400",
-            "lineHeight": "15.75px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "· 절편",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "25.2px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "b",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "22.5px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
             "text": "z",
             "size": "26px",
             "weight": "400",
@@ -5023,22 +4575,6 @@
             "lineHeight": "32.5px",
             "spacing": "-1.33333px",
             "color": "rgb(27, 53, 88)"
-          },
-          {
-            "text": "z",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "22.5px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "확률 변환 전 점수",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "25.2px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
           },
           {
             "text": "가중합 + 절편",
@@ -5257,14 +4793,6 @@
             "color": "rgb(38, 166, 161)"
           },
           {
-            "text": "0과 1 사이의 확률",
-            "size": "19px",
-            "weight": "400",
-            "lineHeight": "26.6px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
             "text": "확률 출력",
             "size": "20px",
             "weight": "800",
@@ -5282,17 +4810,17 @@
           },
           {
             "text": "x",
-            "size": "20px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "25px",
+            "lineHeight": "20px",
             "spacing": "-1.33333px",
             "color": "rgb(27, 53, 88)"
           },
           {
             "text": "대상의 속성을 수치로 표현",
-            "size": "15px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "21px",
+            "lineHeight": "22.4px",
             "spacing": "-1.33333px",
             "color": "rgb(100, 116, 139)"
           },
@@ -5306,30 +4834,46 @@
           },
           {
             "text": "w",
-            "size": "20px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "25px",
+            "lineHeight": "20px",
             "spacing": "-1.33333px",
             "color": "rgb(27, 53, 88)"
           },
           {
-            "text": "절편 b: 입력과 무관하게 더하는 값",
-            "size": "15px",
+            "text": "b 입력과 무관하게 더하는 절편",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "21px",
+            "lineHeight": "22.4px",
             "spacing": "-1.33333px",
             "color": "rgb(100, 116, 139)"
           },
           {
             "text": "b",
-            "size": "15px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "18.75px",
+            "lineHeight": "20px",
+            "spacing": "-1.33333px",
+            "color": "rgb(27, 53, 88)"
+          },
+          {
+            "text": "z 확률 변환 전 점수",
+            "size": "16px",
+            "weight": "400",
+            "lineHeight": "22.4px",
             "spacing": "-1.33333px",
             "color": "rgb(100, 116, 139)"
           },
           {
-            "text": "σ 시그모이드 함수",
+            "text": "z",
+            "size": "16px",
+            "weight": "400",
+            "lineHeight": "20px",
+            "spacing": "-1.33333px",
+            "color": "rgb(27, 53, 88)"
+          },
+          {
+            "text": "σ 실수 점수를 확률로 변환",
             "size": "16px",
             "weight": "400",
             "lineHeight": "22.4px",
@@ -5338,27 +4882,27 @@
           },
           {
             "text": "σ",
-            "size": "20px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "25px",
+            "lineHeight": "20px",
             "spacing": "-1.33333px",
             "color": "rgb(27, 53, 88)"
           },
           {
-            "text": "자연상수 e · 실수 점수를 0~1로 변환",
-            "size": "15px",
+            "text": "e 지수함수의 밑인 자연상수",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "21px",
+            "lineHeight": "22.4px",
             "spacing": "-1.33333px",
             "color": "rgb(100, 116, 139)"
           },
           {
             "text": "e",
-            "size": "15px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "18.75px",
+            "lineHeight": "20px",
             "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
+            "color": "rgb(27, 53, 88)"
           },
           {
             "text": "p 양성 예측 확률",
@@ -5370,17 +4914,25 @@
           },
           {
             "text": "p",
-            "size": "20px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "25px",
+            "lineHeight": "20px",
             "spacing": "-1.33333px",
             "color": "rgb(27, 53, 88)"
           },
           {
-            "text": "확률과 최종 클래스 판정은 구분",
-            "size": "15px",
+            "text": "0과 1 사이의 확률",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "21px",
+            "lineHeight": "22.4px",
+            "spacing": "-1.33333px",
+            "color": "rgb(100, 116, 139)"
+          },
+          {
+            "text": "최종 클래스 판정과는 구분",
+            "size": "16px",
+            "weight": "400",
+            "lineHeight": "22.4px",
             "spacing": "-1.33333px",
             "color": "rgb(100, 116, 139)"
           },
@@ -5482,10 +5034,10 @@
         ]
       },
       "fonts": {
-        "elements": 88,
+        "elements": 80,
         "families": {
-          "Pretendard Variable": 422,
-          "STIX Two Math": 58
+          "Pretendard Variable": 404,
+          "STIX Two Math": 52
         },
         "fallback": [],
         "unpainted": [],
@@ -5645,70 +5197,6 @@
             "color": "rgb(18, 35, 63)"
           },
           {
-            "text": "가중치",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "25.2px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "w",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "22.5px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "1",
-            "size": "12.6px",
-            "weight": "400",
-            "lineHeight": "15.75px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": ",",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "22.5px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "w",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "22.5px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "2",
-            "size": "12.6px",
-            "weight": "400",
-            "lineHeight": "15.75px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "· 절편",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "25.2px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "b",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "22.5px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
             "text": "z",
             "size": "26px",
             "weight": "400",
@@ -5811,22 +5299,6 @@
             "lineHeight": "32.5px",
             "spacing": "-1.33333px",
             "color": "rgb(27, 53, 88)"
-          },
-          {
-            "text": "z",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "22.5px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
-            "text": "확률 변환 전 점수",
-            "size": "18px",
-            "weight": "400",
-            "lineHeight": "25.2px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
           },
           {
             "text": "가중합 + 절편",
@@ -6045,14 +5517,6 @@
             "color": "rgb(38, 166, 161)"
           },
           {
-            "text": "0과 1 사이의 확률",
-            "size": "19px",
-            "weight": "400",
-            "lineHeight": "26.6px",
-            "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
-          },
-          {
             "text": "확률 출력",
             "size": "20px",
             "weight": "800",
@@ -6070,17 +5534,17 @@
           },
           {
             "text": "x",
-            "size": "20px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "25px",
+            "lineHeight": "20px",
             "spacing": "-1.33333px",
             "color": "rgb(27, 53, 88)"
           },
           {
             "text": "대상의 속성을 수치로 표현",
-            "size": "15px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "21px",
+            "lineHeight": "22.4px",
             "spacing": "-1.33333px",
             "color": "rgb(100, 116, 139)"
           },
@@ -6094,30 +5558,46 @@
           },
           {
             "text": "w",
-            "size": "20px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "25px",
+            "lineHeight": "20px",
             "spacing": "-1.33333px",
             "color": "rgb(27, 53, 88)"
           },
           {
-            "text": "절편 b: 입력과 무관하게 더하는 값",
-            "size": "15px",
+            "text": "b 입력과 무관하게 더하는 절편",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "21px",
+            "lineHeight": "22.4px",
             "spacing": "-1.33333px",
             "color": "rgb(100, 116, 139)"
           },
           {
             "text": "b",
-            "size": "15px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "18.75px",
+            "lineHeight": "20px",
+            "spacing": "-1.33333px",
+            "color": "rgb(27, 53, 88)"
+          },
+          {
+            "text": "z 확률 변환 전 점수",
+            "size": "16px",
+            "weight": "400",
+            "lineHeight": "22.4px",
             "spacing": "-1.33333px",
             "color": "rgb(100, 116, 139)"
           },
           {
-            "text": "σ 시그모이드 함수",
+            "text": "z",
+            "size": "16px",
+            "weight": "400",
+            "lineHeight": "20px",
+            "spacing": "-1.33333px",
+            "color": "rgb(27, 53, 88)"
+          },
+          {
+            "text": "σ 실수 점수를 확률로 변환",
             "size": "16px",
             "weight": "400",
             "lineHeight": "22.4px",
@@ -6126,27 +5606,27 @@
           },
           {
             "text": "σ",
-            "size": "20px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "25px",
+            "lineHeight": "20px",
             "spacing": "-1.33333px",
             "color": "rgb(27, 53, 88)"
           },
           {
-            "text": "자연상수 e · 실수 점수를 0~1로 변환",
-            "size": "15px",
+            "text": "e 지수함수의 밑인 자연상수",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "21px",
+            "lineHeight": "22.4px",
             "spacing": "-1.33333px",
             "color": "rgb(100, 116, 139)"
           },
           {
             "text": "e",
-            "size": "15px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "18.75px",
+            "lineHeight": "20px",
             "spacing": "-1.33333px",
-            "color": "rgb(100, 116, 139)"
+            "color": "rgb(27, 53, 88)"
           },
           {
             "text": "p 양성 예측 확률",
@@ -6158,17 +5638,25 @@
           },
           {
             "text": "p",
-            "size": "20px",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "25px",
+            "lineHeight": "20px",
             "spacing": "-1.33333px",
             "color": "rgb(27, 53, 88)"
           },
           {
-            "text": "확률과 최종 클래스 판정은 구분",
-            "size": "15px",
+            "text": "0과 1 사이의 확률",
+            "size": "16px",
             "weight": "400",
-            "lineHeight": "21px",
+            "lineHeight": "22.4px",
+            "spacing": "-1.33333px",
+            "color": "rgb(100, 116, 139)"
+          },
+          {
+            "text": "최종 클래스 판정과는 구분",
+            "size": "16px",
+            "weight": "400",
+            "lineHeight": "22.4px",
             "spacing": "-1.33333px",
             "color": "rgb(100, 116, 139)"
           },
@@ -6270,10 +5758,10 @@
         ]
       },
       "fonts": {
-        "elements": 87,
+        "elements": 79,
         "families": {
-          "Pretendard Variable": 418,
-          "STIX Two Math": 58
+          "Pretendard Variable": 400,
+          "STIX Two Math": 52
         },
         "fallback": [],
         "unpainted": [],
@@ -6319,8 +5807,8 @@
   "failed_requests": [],
   "http_errors": [],
   "source_sha256": {
-    "examples/logistic-regression/lesson.css": "54bb39c93cda6bb03439942524303aadab61ef341b4dc7402aba1d2126db9474",
-    "examples/logistic-regression/lesson.js": "e3896908d43cce1fbd23098d36b0f75a5dc07370740078ae0f69957084d440b7",
+    "examples/logistic-regression/lesson.css": "c1922e34cb4301531ef043e309aaa904c05aba01950248eb8e84376da8e45389",
+    "examples/logistic-regression/lesson.js": "75abecabab3f52262905c7c5558af82fc300156301f1e5e514dd8b045ac64394",
     "examples/logistic-regression/scroll.html": "3fcb40bbf48b676f0ecff0b3708ece5f0c06a4294b67dda8f74d23756a6a3c8b",
     "examples/logistic-regression/slides.html": "dc5e0587a0f67e438c9e1c92168e1207ef69c291a30dfef4ce6cd5b55e04c1eb",
     "examples/logistic-regression/viewer.js": "46232006f82c8fec339ffe36e395f9a914bf2e2817deced8078cbda74bcfb69e",
@@ -6336,13 +5824,13 @@
     "templates/html/reference-layout.css": "c29f52fd9852d80b29e277b7d60218a7b02da599a059a8395051caada3525bcc",
     "templates/html/styles.css": "3c05e00284aae4ea538e697efae7682a2c9b35b318cab372fa8493613de4df22"
   },
-  "design_sha256": "c28aa99adf5c36056edab743aa1508215e8260b57474058e6a470576a332e509",
+  "design_sha256": "5d1b3ff623e6ad7010fdd71e60c242f4ab7bb299c2abb600ed4cd4cb67f4e754",
   "preview_sha256": {
-    "scroll.jpg": "a81bfaba2d1166188b2ca0cfdf1dd26bee7dd4821aa237c68698ab947787fc19",
-    "slide.jpg": "b89a2c66afb5d1862dd051eee6db6bcd324beafa15f53429c5fd5f5071f78036"
+    "scroll.jpg": "9f33689ddb1ae771ef5b38fa35b90e4e0a182cd2dec4d36fd5cf9b9625ad3876",
+    "slide.jpg": "151c9bb352c8ebc99ec63af12441d2b7563a27a9ac996ba88eb668776d1f29fd"
   },
   "review_preview_sha256": {
-    "concept.png": "085a46a4501dd2404db1d4ba9c33692e1eda4b7cfe9e3ce1c0a3e108f10d102e"
+    "concept.png": "0efadf19f8233a139ac096e156511ae2c3639c9342be80892325abfa60d0d392"
   },
-  "finished_utc": "2026-10-24T11:06:32.377615+00:00"
+  "finished_utc": "2026-10-24T11:19:12.458194+00:00"
 }
