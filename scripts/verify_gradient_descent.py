@@ -47,7 +47,7 @@ def fonts(page, frame, selector):
       getComputedStyle(e).display!=='none' && e.getBoundingClientRect().width && e.getBoundingClientRect().height &&
       [...e.childNodes].some(n=>n.nodeType===3&&n.textContent.trim()) && !e.closest('.gd-failure,.frame-status')
     ).map((e,i)=>{e.dataset.gdFont=String(i);return {id:i,text:[...e.childNodes].filter(n=>n.nodeType===3).map(n=>n.textContent).join(''),
-      spacing:getComputedStyle(e).letterSpacing,expected:e.closest('math.math,.math-number')?'STIX Two Math':'Pretendard Variable'}})''', selector)
+      spacing:getComputedStyle(e).letterSpacing,weight:getComputedStyle(e).fontWeight,expected:e.closest('math.math,.math-number')?'STIX Two Math':'Pretendard Variable'}})''', selector)
     cdp = page.context.new_cdp_session(page)
     cdp.send('DOM.enable'); cdp.send('CSS.enable')
     try:
@@ -56,6 +56,7 @@ def fonts(page, frame, selector):
         counts = {}
         for e in entries:
             assert abs(float(e['spacing'].removesuffix('px')) + 4/3) < .02, e
+            if e['expected']=='STIX Two Math':assert e['weight']=='400',('math must use regular 400',e)
             node = cdp.send('DOM.querySelector', {'nodeId': doc['nodeId'], 'selector': f'[data-gd-font="{e["id"]}"]'})['nodeId']
             actual = cdp.send('CSS.getPlatformFontsForNode', {'nodeId': node})['fonts']
             assert actual, ('unpainted', e)

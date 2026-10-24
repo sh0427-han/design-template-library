@@ -2466,9 +2466,9 @@
     "examples/gradient-descent/viewer.css": "8a435498fed6a04df20ec0b38089828622a320822c1b162660ef85e3240385d1",
     "examples/gradient-descent/scroll.html": "9713427e58072186778fd6f370cf55935d1a4cf7ffda09b7a020a158a091de24",
     "examples/gradient-descent/slides.html": "209f3193df4284200353aaa4c40e227d65cb04f6354a5b7254acbff1cfcde593",
-    "examples/gradient-descent/gradient-descent.css": "de280aca615734188e00a0ec9e0f2afd4610af5531dfaa06c2dc6fa512732eaa",
+    "examples/gradient-descent/gradient-descent.css": "7b9c2e90c912b2ffacd855292e1bda2193cc53ad0f8d265984a30700a9f153b2",
     "examples/gradient-descent/viewer.js": "3ac80b1ecaad631929c6bab5967203980df85c81bd1f1ebc3bddd1cc01795c1f",
-    "scripts/verify_gradient_descent.py": "5daafeb0bb211dc9b95cc62312d4ec7571e9ff4d5022c5a5af53f9a3f999bd36",
+    "scripts/verify_gradient_descent.py": "b266ac4fe37954e82d0925c48367c532e4d171995d2f0775660267eb04e3c7a8",
     "templates/html/styles.css": "3c05e00284aae4ea538e697efae7682a2c9b35b318cab372fa8493613de4df22",
     "templates/html/reference-layout.css": "c29f52fd9852d80b29e277b7d60218a7b02da599a059a8395051caada3525bcc",
     "templates/html/math-typography.css": "c390ffe17b8c0f02d10a34b99bca892bb63f99af98766e7b47c0a88da38e2f3a",
@@ -2484,5 +2484,5 @@
     "scroll.png": "3afb5f3a5ab181995290701992ab00bd66dcd8101d0afb3768d611763bad7187"
   },
   "status": "passed",
-  "created_utc": "2026-10-24T12:20:49.179458+00:00"
+  "created_utc": "2026-10-24T12:26:41.217241+00:00"
 }

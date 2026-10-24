@@ -11,6 +11,7 @@
 #loss-plot .plot-blue {fill:var(--blue);font-weight:750;}
 #loss-plot .plot-teal {fill:#157b77;font-weight:750;}
 #loss-plot .plot-amber {fill:#a36422;font-weight:750;}
+#loss-plot .math-number {font-weight:400;}
 .gd-failure {position:absolute;inset:130px 40px auto;margin:0;text-align:center;font-size:18px;line-height:var(--line-height-body);color:var(--muted);}
 .gd-slide[data-ready="true"] .gd-failure {display:none;}
 .gd-steps {min-height:0;border-left:1px solid var(--border);padding-left:24px;min-width:0;}
