@@ -1,4 +1,4 @@
-import {getPages, renderLesson, refreshFigureLinks} from './lesson.js';
+import {getPages, renderLesson} from './lesson.js';
 
 try {
   const mode=document.body.dataset.mode;
@@ -9,7 +9,7 @@ try {
   const sections=renderLesson(document.querySelector('[data-lesson-root]'),{threshold,sample,includeAppendix});
   const indexFromHash=()=>Math.max(0,pages.findIndex(p=>location.hash===`#ref-${p.id}`));
   let current=indexFromHash();
-  const observer=new ResizeObserver(entries=>{for(const {target} of entries)target.style.setProperty('--reference-scale',target.clientWidth/1440);refreshFigureLinks();});
+  const observer=new ResizeObserver(entries=>{for(const {target} of entries)target.style.setProperty('--reference-scale',target.clientWidth/1440);});
   sections.forEach(s=>observer.observe(s.querySelector('.reference-viewport')));
 
   function save() {
@@ -35,7 +35,6 @@ try {
       if(scroll)sections[current].scrollIntoView();
     }
     save();
-    refreshFigureLinks();
   }
   if(mode==='slides') {
     document.getElementById('prev').addEventListener('click',()=>navigate(current-1));

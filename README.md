@@ -111,7 +111,7 @@ python scripts/validate_references.py --templates architecture step-by-step --ev
 
 ### 새 개념으로 재사용 검증
 
-[로지스틱 회귀 본편2장·선택 부록](examples/logistic-regression/README.md)은 문서 우선 설계로 Concept·Step-by-Step을 적용하고 임계값 Interactive는 선택 부록으로 분리한 자료입니다. [Scroll](examples/logistic-regression/scroll.html) / [Slide](examples/logistic-regression/slides.html)는 같은 입력·계산·콘텐츠를 사용합니다. 8종 원본을 늘리지 않고 별도 `examples/`에서 검토합니다. 첫 장은 기호·일반 관계를 유지하고 둘째 장은 실제 입력→계산된 점수의 카드 간 전달→확률과 그래프 교점을 보여줍니다. 본편16개·부록 포함24개 PC 화면, 개념 장의 불변성·값 전달선·실제 축 교점·101개 임계값·변경 데이터·모드/부록 전환을 검증합니다.
+[로지스틱 회귀 본편2장·선택 부록](examples/logistic-regression/README.md)은 문서 우선 설계로 Concept·Step-by-Step을 적용하고 임계값 Interactive는 선택 부록으로 분리한 자료입니다. [Scroll](examples/logistic-regression/scroll.html) / [Slide](examples/logistic-regression/slides.html)는 같은 입력·계산·콘텐츠를 사용합니다. 8종 원본을 늘리지 않고 별도 `examples/`에서 검토합니다. 첫 장은 기호·일반 관계를 유지하고 둘째 장은 첫 장과 같은 네 단계에 실제 입력·계수·점수·확률과 그래프 교점을 배치합니다. 본편16개·부록 포함24개 PC 화면, 개념 장의 불변성·네 단계의 순서/값·짧은 연결선·실제 축 교점·101개 임계값·변경 데이터·모드/부록 전환을 검증합니다.
 
 ## 문서 지도와 통합 상태
 

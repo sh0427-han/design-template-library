@@ -55,10 +55,11 @@ GEOMETRY = r'''id => {
   sliderGap:slide.querySelector('.lr-slider-row')?rect(slide.querySelector('.lr-slider-row')).y-rect(slide.querySelector('.lr-heading')).bottom:null,
   thresholdLines:[...slide.querySelectorAll('.lr-threshold-line')].map(e=>({relativeX:(e.getBoundingClientRect().x-e.parentElement.getBoundingClientRect().x)/scale,trackWidth:e.parentElement.getBoundingClientRect().width/scale})),
   curves:[...slide.querySelectorAll('.lr-curve')].map(svg=>({variant:svg.dataset.variant||'concept',limit:Number(svg.dataset.limit),x:svg.querySelector('.lr-curve-point')?Number(svg.querySelector('.lr-curve-point').getAttribute('cx')):null,y:svg.querySelector('.lr-curve-point')?Number(svg.querySelector('.lr-curve-point').getAttribute('cy')):null,path:svg.querySelector('.lr-sigmoid-path').getAttribute('d'),axis:Object.fromEntries([...svg.querySelectorAll('[data-axis]')].map(e=>[e.dataset.axis,e.textContent]))})),
+  axisLabelOverlaps:[...slide.querySelectorAll('.lr-detail-curve')].flatMap(svg=>{const labels=[...svg.querySelectorAll('text')].filter(e=>Number.isFinite(Number(e.textContent.replace('−','-')))).map(e=>({text:e.textContent,axis:e.getAttribute('y')==='233'?'x':'y',r:e.getBoundingClientRect()}));return labels.flatMap((a,i)=>labels.slice(i+1).filter(b=>a.axis===b.axis&&a.r.left<b.r.right&&a.r.right>b.r.left&&a.r.top<b.r.bottom&&a.r.bottom>b.r.top).map(b=>[a.text,b.text]))}),
   conceptValueCount:slide.querySelectorAll('[data-value]').length,
-  calculationInputs:[...slide.querySelectorAll('.lr-input-chip')].map(e=>{const c=getComputedStyle(e);return {box:rect(e),style:[c.backgroundColor,c.color,c.fontSize,c.borderRadius,c.padding],rows:[...e.querySelectorAll(':scope > div')].map(rect)}}),
+  calculationInputs:[...slide.querySelectorAll('.lr-input-chip')].map(e=>{const c=getComputedStyle(e);return {box:rect(e),style:[c.backgroundColor,c.color,c.fontSize,c.borderRadius,c.padding],rows:[...e.querySelectorAll('.lr-value-line')].map(rect)}}),
   equationRows:[...slide.querySelectorAll('.lr-equation-row')].map(e=>{const math=e.querySelectorAll('math'),body=math[math.length-1];return {box:rect(e),body:rect(body),sign:rect(body.querySelector('mo')),overflow:body.getBoundingClientRect().right>e.getBoundingClientRect().right+.5*scale}}),
-  transfer:slide.querySelector('.lr-transfer-svg')?{container:rect(slide.querySelector('.lr-calculation')),source:rect(slide.querySelector('.lr-score-output')),target:rect(slide.querySelector('.lr-received-score')),label:rect(slide.querySelector('.lr-transfer-label')),path:slide.querySelector('.lr-transfer-path').getAttribute('d'),sourceValue:slide.querySelector('.lr-score-output [data-value="z"]').textContent,targetValue:slide.querySelector('.lr-received-score [data-value="z"]').textContent}:null,
+  detailFlow:slide.querySelector('.lr-detail-flow')?{stages:[...slide.querySelectorAll('.lr-detail-step')].map(e=>({box:rect(e),values:rect(e.querySelector('.lr-stage-values')),label:e.querySelector('.lr-step-label').textContent})),conditions:[...slide.querySelectorAll('.lr-given-values .lr-value-line')].map(e=>({label:e.querySelector('span').textContent,box:rect(e)})),sourceValue:slide.querySelector('.lr-score-output [data-value="z"]').textContent,targetValue:slide.querySelectorAll('.lr-detail-step')[2].querySelector('[data-value="z"]').textContent,connectors:[...slide.querySelectorAll('.lr-connector')].map(rect),longPaths:slide.querySelectorAll('.lr-transfer-svg').length}:null,
   fractions:[...slide.querySelectorAll('.lr-sigmoid-formula mfrac')].map(e=>({numerator:rect(e.children[0]),denominator:rect(e.children[1])}))};
 }'''
 
@@ -144,16 +145,22 @@ def compare_design(a, b):
         maximum=max(maximum,error)
     return maximum
 
-def check_transfer(geometry, expected_z):
-    bridge=geometry['transfer'];assert bridge and bridge['path'],bridge
-    points=list(map(float,re.findall(r'-?[\d.]+',bridge['path'])))
-    c,s,t=bridge['container'],bridge['source'],bridge['target']
-    expected_link=[s['right']-c['x']+6,s['y']+s['height']/2-c['y'],(geometry['panels'][0]['right']+geometry['panels'][1]['x'])/2-c['x'],t['y']+t['height']/2-c['y'],t['x']-c['x']-8]
-    assert len(points)==11 and max(abs(a-b) for a,b in zip(points[:5],expected_link))<.15,(points,expected_link)
-    assert abs(points[7]-points[4])<.001 and abs(points[8]-points[3])<.001
+def check_detail_flow(geometry, expected_z):
+    flow=geometry['detailFlow'];assert flow and not flow['longPaths']
+    assert not geometry['axisLabelOverlaps'],geometry['axisLabelOverlaps']
+    labels=['입력 특성','가중합 + 절편','시그모이드(Sigmoid)','확률 출력']
+    assert [s['label'] for s in flow['stages']]==labels
+    assert [c['label'] for c in flow['conditions']]==['입력','가중치','절편']
+    assert all(b['box']['y']>a['box']['bottom'] for a,b in zip(flow['conditions'],flow['conditions'][1:]))
+    assert len(flow['connectors'])==3 and all(abs(c['width']-32)<.02 for c in flow['connectors'])
+    assert max(geometry['arrowAxisErrors'])<.02 and max(geometry['labelY'])-min(geometry['labelY'])<.02
+    assert max(s['values']['y'] for s in flow['stages'])-min(s['values']['y'] for s in flow['stages'])<.02
+    chips=geometry['calculationInputs'];assert len(chips)==4 and all(c['style']==chips[0]['style'] for c in chips)
+    assert len(chips[0]['rows'])==3
+    equations=geometry['equationRows'];assert len(equations)==3 and not any(e['overflow'] for e in equations),equations
+    assert max(e['sign']['x'] for e in equations)-min(e['sign']['x'] for e in equations)<.02
     formatted=f'{0 if abs(expected_z)<1e-10 else expected_z:.2f}'.replace('-','−')
-    assert bridge['sourceValue']==bridge['targetValue']==formatted
-    assert geometry['panels'][0]['right']<bridge['label']['x'] and bridge['label']['right']<geometry['panels'][1]['x']
+    assert flow['sourceValue']==flow['targetValue']==formatted
 
 def main():
     OUT.mkdir(parents=True,exist_ok=True); (LESSON/'previews').mkdir(exist_ok=True)
@@ -208,14 +215,7 @@ def main():
                         if name in ('concept','calculation'):
                             assert geometry['fractions'] and all(f['numerator']['bottom']<f['denominator']['y'] for f in geometry['fractions'])
                         if name=='calculation':
-                            assert max(geometry['noteY'])-min(geometry['noteY'])<.02
-                            chips=geometry['calculationInputs'];assert len(chips)==2 and chips[0]['style']==chips[1]['style']
-                            assert len(chips[0]['rows'])==2 and chips[0]['rows'][1]['y']-chips[0]['rows'][0]['bottom']>=7.9
-                            equations=geometry['equationRows'];assert len(equations)==3 and not any(e['overflow'] for e in equations)
-                            assert max(e['body']['x'] for e in equations)-min(e['body']['x'] for e in equations)<.02
-                            assert max(e['sign']['x'] for e in equations)-min(e['sign']['x'] for e in equations)<.02
-                            assert all(b['box']['y']-a['box']['bottom']>=13.9 for a,b in zip(equations,equations[1:]))
-                            check_transfer(geometry,expected(DEFAULT)[3][0])
+                            check_detail_flow(geometry,expected(DEFAULT)[3][0])
                         if name=='threshold':
                             assert abs(geometry['sliderGap']-16)<.02
                             for line in geometry['thresholdLines']:assert abs(line['relativeX']+1-.6*line['trackWidth'])<.03
@@ -252,7 +252,7 @@ def main():
             for a,b in zip(expected_positions,fixed['rows']):assert max(abs(a[k]-b[k]) for k in a)<.02
             for selected in range(6):
                 page.locator(f'[data-select="{selected}"]').click();math_check(page,DEFAULT)
-                go(page,'calculation');check_transfer(page.evaluate(GEOMETRY,'calculation'),expected(DEFAULT)[selected][0]);go(page,'threshold')
+                go(page,'calculation');check_detail_flow(page.evaluate(GEOMETRY,'calculation'),expected(DEFAULT)[selected][0]);go(page,'threshold')
             page.locator('#threshold').focus();page.keyboard.press('Home');assert math_check(page,DEFAULT)['counts']==[6,0]
             page.keyboard.press('End');assert math_check(page,DEFAULT)['counts']==[0,6]
             assert page.evaluate('location.hash')=='#ref-threshold'
@@ -277,7 +277,7 @@ def main():
             selected=page.evaluate('window.LogisticLesson.state.selected');z,prob=expected(ALTERNATE)[selected]
             point=page.locator('.lr-curve-point').first
             assert abs(float(point.get_attribute('cx'))-(56+(z+4)/8*272))<1e-10 and abs(float(point.get_attribute('cy'))-(210-prob*180))<1e-10
-            go(page,'calculation');check_transfer(page.evaluate(GEOMETRY,'calculation'),z);go(page,'threshold')
+            go(page,'calculation');check_detail_flow(page.evaluate(GEOMETRY,'calculation'),z);go(page,'threshold')
             assert page.evaluate('window.LogisticLesson.sigmoid(-1000)')==0 and page.evaluate('window.LogisticLesson.sigmoid(1000)')==1
             for mutation in ['m.weights=[1]', 'm.samples=[]', 'm.bias=Infinity', 'm.samples[0][0]=NaN', 'm.samples=Array(7).fill([0,0])']:
                 rejected=page.evaluate('''mutation=>{const before=JSON.stringify(window.LogisticLesson.state),m=structuredClone(window.LogisticLesson.state.model);try{new Function('m',mutation)(m);window.LogisticLesson.setModel(m);return false}catch{return before===JSON.stringify(window.LogisticLesson.state)}}''',mutation)
@@ -285,7 +285,7 @@ def main():
             page.goto(f'{base}/slides.html?threshold=no&sample=99#unknown',wait_until='networkidle');page.wait_for_function('document.documentElement.dataset.ready==="true"')
             assert window_state(page)==(60,3) and '#ref-concept' in page.url
             assert not errors and not failed and not http,(errors,failed,http)
-            report.update(status='passed',main_pages=2,appendix_pages=1,appendix_opt_in=True,concept_is_symbolic=True,concept_is_invariant=True,result_transfer=True,math_checks=checks,alternate_data_checks=reuse,threshold_states=101,keyboard=True,tie_is_positive=True,mode_roundtrip=True,invalid_data_rejections=5,extreme_logits=[-1000,1000],page_errors=errors,failed_requests=failed,http_errors=http)
+            report.update(status='passed',main_pages=2,appendix_pages=1,appendix_opt_in=True,concept_is_symbolic=True,concept_is_invariant=True,four_stage_flow=True,short_connectors=True,math_checks=checks,alternate_data_checks=reuse,threshold_states=101,keyboard=True,tie_is_positive=True,mode_roundtrip=True,invalid_data_rejections=5,extreme_logits=[-1000,1000],page_errors=errors,failed_requests=failed,http_errors=http)
             (LESSON/'review').mkdir(exist_ok=True)
             for name in PAGES:
                 shutil.copyfile(OUT/f'slides-{name}-1600x950{"-appendix" if name=="threshold" else ""}.png',LESSON/f'review/{name}.png')

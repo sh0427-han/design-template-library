@@ -50,23 +50,20 @@ function concept() {
 }
 
 function calculation() {
-  return `<div class="lr-body lr-two-columns lr-calculation">
-    <section class="lr-panel lr-calc-panel lr-linear-panel">
-      ${heading('01 · LINEAR SCORE', '곱하고 더해 점수 계산')}
-      <div class="lr-calc-main"><div class="lr-input-chip lr-given-values"><div><span>입력</span>${m(symbol('x',1)+mo('=')+mv('x1')+mo(',')+symbol('x',2)+mo('=')+mv('x2'))}</div><div><span>가중치·절편</span>${m(symbol('w',1)+mo('=')+mv('w1')+mo(',')+symbol('w',2)+mo('=')+mv('w2')+mo(',')+mi('b')+mo('=')+mv('bias'))}</div></div>
-      <div class="lr-equation-chain"><div class="lr-equation-row lr-equation-general">${m(mi('z'))}${m(leadingEquals()+weightedTerms())}</div><div class="lr-equation-row lr-equation-substitution"><span></span>${m(leadingEquals()+factor('w1')+mo('×')+factor('x1')+mo('+')+factor('w2')+mo('×')+factor('x2')+'<mo data-value="biasSign"></mo>'+mv('biasMagnitude'))}</div><div class="lr-equation-row lr-equation-result"><span></span><strong class="lr-score-output">${m(leadingEquals()+mv('z'))}</strong></div></div></div>
-      <div class="lr-card-note">예시 입력·계수 · 모델 학습 과정 제외</div>
-    </section>
-    <div class="lr-card-transfer"><span class="lr-transfer-label">${m(mi('z'))} 전달</span></div>
-    <section class="lr-panel lr-calc-panel">
-      ${heading('02 · SIGMOID', '점수를 확률로 변환', '같은 점수와 확률을 식과 그래프로 연결')}
-      <div class="lr-sigmoid-comparison"><div class="lr-prob-calculation"><div class="lr-input-chip lr-received-score"><span>입력 점수</span>${m(mi('z')+mo('=')+mv('z'))}</div><div class="lr-general lr-sigmoid-formula">${m(mi('p')+mo('=')+sigmoidExpression(`<mrow>${mo('−')}${mi('z')}</mrow>`))}</div>
-      <div class="lr-substitute lr-sigmoid-formula">${m(mo('=')+sigmoidExpression(mv('negativeZ')))}</div>
-      <div class="lr-decimal">${m(mo('≈')+mv('decimal'))}</div><div class="lr-final-prob">${value('percent')}</div></div>
-      <figure class="lr-calculation-graph"><svg class="lr-curve lr-detail-curve" data-variant="detail" role="img" aria-label="계산한 점수와 확률을 축에 표시한 시그모이드 곡선" viewBox="0 0 360 260"></svg><figcaption>${m(mi('z')+mo('=')+mv('z'))} → ${m(mi('p')+mo('≈')+mv('decimal'))}</figcaption></figure></div>
-      <div class="lr-card-note">${m('<mi mathvariant="normal">e</mi>'+mo('≈')+mn('2.718'))} · 표시는 반올림, 판정은 원래 확률 사용</div>
-    </section>
-    <svg class="lr-transfer-svg" aria-hidden="true"><path class="lr-transfer-path"/></svg></div>${takeaway('계산의 연결', `왼쪽에서 계산한 ${m(mi('z'))}를 오른쪽 확률식에 그대로 대입`)}`;
+  const inputLine = (label, expression) => `<div class="lr-value-line"><span>${label}</span>${m(expression)}</div>`;
+  const stage = (values, figure, label) => `<div class="lr-step lr-detail-step"><div class="lr-stage-values"><div class="lr-input-chip">${values}</div></div><div class="lr-figure">${figure}</div><div class="lr-step-label">${label}</div></div>`;
+  return `<div class="lr-body"><section class="lr-panel lr-calculation-panel">
+    <div class="lr-flow lr-detail-flow">
+    ${stage(`<div class="lr-given-values">${inputLine('입력',symbol('x',1)+mo('=')+mv('x1')+mo(',')+symbol('x',2)+mo('=')+mv('x2'))}${inputLine('가중치',symbol('w',1)+mo('=')+mv('w1')+mo(',')+symbol('w',2)+mo('=')+mv('w2'))}${inputLine('절편',mi('b')+mo('=')+mv('bias'))}</div>`, `<div class="lr-inputs">${[1,2].map(i=>`<div><div class="lr-feature-value">${m(symbol('x',i))}</div></div>`).join('')}</div>`, '입력 특성')}
+    ${arrow()}
+    ${stage(`<div class="lr-parameter-values">${inputLine('가중치',symbol('w',1)+mo('=')+mv('w1')+mo(',')+symbol('w',2)+mo('=')+mv('w2'))}${inputLine('절편',mi('b')+mo('=')+mv('bias'))}</div>`, `<div class="lr-equation-chain"><div class="lr-equation-row lr-equation-general">${m(mi('z'))}${m(leadingEquals()+weightedTerms())}</div><div class="lr-equation-row lr-equation-substitution"><span></span>${m(leadingEquals()+factor('w1')+mo('×')+factor('x1')+mo('+')+factor('w2')+mo('×')+factor('x2')+'<mo data-value="biasSign"></mo>'+mv('biasMagnitude'))}</div><div class="lr-equation-row lr-equation-result"><span></span><strong class="lr-score-output">${m(leadingEquals()+mv('z'))}</strong></div></div>`, '가중합 + 절편')}
+    ${arrow()}
+    ${stage(inputLine('입력 점수',mi('z')+mo('=')+mv('z')), `<div class="lr-detail-sigmoid"><div class="lr-sigmoid-formula">${m(mi('σ')+'<mo stretchy="false">(</mo>'+mv('z')+'<mo stretchy="false">)</mo>'+mo('=')+sigmoidExpression(mv('negativeZ')))}</div><svg class="lr-curve lr-detail-curve" data-variant="detail" role="img" aria-label="계산한 점수와 확률을 축에 표시한 시그모이드 곡선" viewBox="0 0 360 260"></svg></div>`, '시그모이드(Sigmoid)')}
+    ${arrow()}
+    ${stage(inputLine('확률',mi('p')+mo('≈')+mv('decimal')), `<div class="lr-probability lr-detail-probability"><div>${m(mi('p')+mo('=')+mi('σ')+'<mo stretchy="false">(</mo>'+mi('z')+'<mo stretchy="false">)</mo>')}</div><strong>${value('percent')}</strong><span>양성 예측 확률</span></div>`, '확률 출력')}
+    </div>
+    <div class="lr-calculation-note">예시 입력·계수 · 모델 학습 과정 제외<span>${m('<mi mathvariant="normal">e</mi>'+mo('≈')+mn('2.718'))} · 표시는 반올림</span></div>
+    </section></div>${takeaway('계산의 연결', `입력과 계수로 구한 ${m(mi('z'))}를 시그모이드에 대입해 양성 확률 계산`)}`;
 }
 
 function threshold() {
@@ -98,8 +95,8 @@ function drawCurve(row) {
   const x = z => left+(z+limit)/(2*limit)*width, y = p => bottom-p*height;
   const d = Array.from({length: 161}, (_, i) => {const z=-limit+i*2*limit/160;return `${i?'L':'M'}${x(z).toFixed(3)},${y(sigmoid(z)).toFixed(3)}`;}).join(' ');
   svg.dataset.limit=String(limit);
-  const yTicks=[0,.5,1].filter(p=>!detail||Math.abs(y(p)-y(row.p))>18).map(p=>`<text x="${left-10}" y="${y(p)+5}" text-anchor="end">${p}</text>`).join('');
-  const xTicks=[-limit,0,limit].filter(z=>!detail||Math.abs(x(z)-x(row.z))>28).map(z=>`<text x="${x(z)}" y="${bottom+23}" text-anchor="middle">${String(z).replace('-','−')}</text>`).join('');
+  const yTicks=[0,.5,1].filter(p=>!detail||Math.abs(y(p)-y(row.p))>30).map(p=>`<text x="${left-10}" y="${y(p)+5}" text-anchor="end">${p}</text>`).join('');
+  const xTicks=[-limit,0,limit].filter(z=>!detail||Math.abs(x(z)-x(row.z))>40).map(z=>`<text x="${x(z)}" y="${bottom+23}" text-anchor="middle">${String(z).replace('-','−')}</text>`).join('');
   svg.innerHTML = `<g class="lr-plot-grid"><path d="M${left} ${top} V${bottom} H${left+width}"/><path class="lr-midline" d="M${left} ${y(.5)} H${left+width} M${x(0)} ${top} V${bottom}"/></g>
     <g class="lr-axis-text math-number">${yTicks}${xTicks}<text x="${left+2}" y="${top-12}">𝑝</text><text x="${left+width+11}" y="${bottom+4}">𝑧</text></g>
     <path class="lr-sigmoid-path" d="${d}"/>
@@ -108,21 +105,6 @@ function drawCurve(row) {
     ${detail?`<circle class="lr-curve-point" cx="${x(row.z)}" cy="${y(row.p)}" r="6"/>`:''}`;
   }
 }
-
-function drawTransfer() {
-  const container=root.querySelector('.lr-calculation'),bounds=container.getBoundingClientRect();
-  if(!bounds.width||!bounds.height)return;
-  const scale=bounds.width/parseFloat(getComputedStyle(container).width);
-  const source=container.querySelector('.lr-score-output').getBoundingClientRect(),target=container.querySelector('.lr-received-score').getBoundingClientRect();
-  const panels=container.querySelectorAll('.lr-panel'),a=panels[0].getBoundingClientRect(),b=panels[1].getBoundingClientRect();
-  const sx=(source.right-bounds.left)/scale+6,sy=(source.y+source.height/2-bounds.y)/scale;
-  const tx=(target.left-bounds.left)/scale-8,ty=(target.y+target.height/2-bounds.y)/scale;
-  const mid=((a.right+b.left)/2-bounds.left)/scale,svg=container.querySelector('.lr-transfer-svg');
-  svg.setAttribute('viewBox',`0 0 ${bounds.width/scale} ${bounds.height/scale}`);
-  svg.querySelector('path').setAttribute('d',`M${sx} ${sy} H${mid} V${ty} H${tx} M${tx-6} ${ty-5} L${tx} ${ty} L${tx-6} ${ty+5}`);
-  const label=container.querySelector('.lr-transfer-label');label.style.top=`${(sy+ty)/2}px`;
-}
-export const refreshFigureLinks = () => drawTransfer();
 
 function update(announce = false) {
   const rows=evaluateModel(state.model), row=rows[state.selected], t=state.threshold/100;
@@ -155,7 +137,6 @@ function update(announce = false) {
   root.querySelector('[data-decision]').dataset.prediction=String(prediction);
   }
   drawCurve(row);
-  drawTransfer();
   if(announce&&slider)root.querySelector('#prediction-status').textContent=`임계값 ${t.toFixed(2)}. 양성 ${positives}개, 음성 ${rows.length-positives}개. 샘플 ${state.selected+1}은 ${values.prediction}.`;
   root.dispatchEvent(new CustomEvent('lessonstatechange',{bubbles:true}));
 }
@@ -175,7 +156,6 @@ export function renderLesson(container, initial={}) {
   const activePages=getPages(initial.includeAppendix);
   const figures=[concept,calculation,threshold];
   root.innerHTML=activePages.map((page,i)=>`<section class="reference-section" id="ref-${page.id}" aria-label="${page.name}"><div class="reference-viewport"><article class="slide reference-slide logistic-slide" data-page="${page.id}"><header><div class="kicker">${page.type} / ${i===2?'A':String(i+1).padStart(2,'0')}</div><h1>${page.title}</h1><p class="subtitle">${page.subtitle}</p></header>${figures[i]()}${footer(i)}</article></div></section>`).join('');
-  document.fonts.ready.then(()=>drawTransfer());
   root.addEventListener('input',event=>{if(event.target.id==='threshold')setThreshold(Number(event.target.value));});
   root.addEventListener('click',event=>{const button=event.target.closest('[data-select]');if(button)setSelection(Number(button.dataset.select));});
   update();

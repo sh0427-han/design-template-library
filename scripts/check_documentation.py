@@ -34,7 +34,7 @@ def main():
     pilot=json.loads((pilot_root/'previews/validation.json').read_text())
     assert pilot['status']=='passed' and len(pilot['cases'])==40 and pilot['math_checks']==606 and pilot['alternate_data_checks']==404
     assert pilot['main_pages']==2 and pilot['appendix_pages']==1 and pilot['appendix_opt_in']
-    assert pilot['concept_is_symbolic'] and pilot['concept_is_invariant'] and pilot['result_transfer']
+    assert pilot['concept_is_symbolic'] and pilot['concept_is_invariant'] and pilot['four_stage_flow'] and pilot['short_connectors']
     assert {(c['scope'],c['mode'],c['template'],tuple(c['viewport'])) for c in pilot['cases']}=={(scope,m,n,s) for scope,names in [('main',('concept','calculation')),('with_appendix',('concept','calculation','threshold'))] for m in ('slides','scroll') for n in names for s in ((1600,950),(1440,810),(1366,768),(1280,720))}
     for path,expected in pilot['source_sha256'].items():
         assert hashlib.sha256((ROOT/path).read_bytes()).hexdigest()==expected,('pilot rendered source changed',path)
