@@ -103,7 +103,7 @@ python scripts/validate_references.py --templates architecture step-by-step --ev
 1. [AGENTS.md](AGENTS.md)와 [디자인 시스템](DESIGN_SYSTEM.md)을 읽습니다.
 2. 청중·한 줄 학습 목표·입력·출력·수식·단순화 조건을 정합니다.
 3. [카탈로그](TEMPLATE_CATALOG.md)에서 패턴을 고르고 [상세 명세](docs/REFERENCE_PAGE_SPECS.md)를 확인합니다.
-4. [개념→상세 기본 순서](DESIGN_SYSTEM.md#개념-설명의-기본-순서)에 따라 첫 장은 그림·키워드·일반 관계, 다음 장은 실제 입력·계산·사례를 배치합니다. 중간 출력과 다음 입력을 연결하고 필요하면 같은 계산값을 그래프의 축·교점에 표시합니다. [컴포넌트 설계 규격](docs/DESIGN_COMPONENT_RECIPES.md)의 기록표에 카드·행간/간격·도식·수식·상태·PC 창 대응·높이 예산을 정하고, [Figure 제작 표준](docs/FIGURE_PRODUCTION_STANDARD.md)에 따라 편집 가능한 도형과 데이터 흐름을 설계합니다.
+4. [개념→상세 기본 순서](DESIGN_SYSTEM.md#개념-설명의-기본-순서)에 따라 개념 장은 그림·키워드·일반 관계로 완결하고, 상세 장은 요청된 경우에만 실제 입력·계산·사례를 배치합니다. 중간 출력과 다음 입력을 연결하고 필요하면 같은 계산값을 그래프의 축·교점에 표시합니다. [컴포넌트 설계 규격](docs/DESIGN_COMPONENT_RECIPES.md)의 기록표에 카드·행간/간격·도식·수식·상태·PC 창 대응·높이 예산을 정하고, [Figure 제작 표준](docs/FIGURE_PRODUCTION_STANDARD.md)에 따라 편집 가능한 도형과 데이터 흐름을 설계합니다.
 5. [재사용 워크플로](docs/REFERENCE_REUSE_WORKFLOW.md)에 따라 실제 과제 데이터로 바꾸고 다른 데이터 구성으로도 확인합니다.
 6. 수학·실제 폰트·PC 4개 화면·실제 캡처를 검증하고 관련 문서·카탈로그·프리뷰를 동기화합니다.
 
@@ -111,7 +111,7 @@ python scripts/validate_references.py --templates architecture step-by-step --ev
 
 ### 새 개념으로 재사용 검증
 
-[로지스틱 회귀 본편2장·선택 부록](examples/logistic-regression/README.md)은 문서 우선 설계로 Concept·Step-by-Step을 적용하고 임계값 Interactive는 선택 부록으로 분리한 자료입니다. [Scroll](examples/logistic-regression/scroll.html) / [Slide](examples/logistic-regression/slides.html)는 같은 입력·계산·콘텐츠를 사용합니다. 8종 원본을 늘리지 않고 별도 `examples/`에서 검토합니다. 첫 장은 기호·일반 관계를 유지하고 둘째 장은 첫 장과 같은 네 단계에 실제 입력·계수·점수·확률과 그래프 교점을 배치합니다. 본편16개·부록 포함24개 PC 화면, 개념 장의 불변성·네 단계의 순서/값·짧은 연결선·실제 축 교점·101개 임계값·변경 데이터·모드/부록 전환을 검증합니다.
+[로지스틱 회귀 개념 한 장](examples/logistic-regression/README.md)은 그림·기호·일반 관계로 확률 예측을 설명하는 문서 우선 제작 사례입니다. 계산 장과 부록은 제거했으며 [Scroll](examples/logistic-regression/scroll.html) / [Slide](examples/logistic-regression/slides.html)는 같은 한 장을 표시합니다. 원본8종은 보존합니다. PC4개 크기×2모드의8개 화면과 일반 곡선161개 점·실제 글리프·한 장 탐색을 검증합니다. **새 개념 제작 요청은 [복사 가능한 프롬프트](docs/CONCEPT_REUSE_PROMPT.md)를 사용합니다.**
 
 ## 문서 지도와 통합 상태
 

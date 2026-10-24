@@ -14,7 +14,7 @@ def main():
             links+=1
             if not (doc.parent/target).exists():broken.append((str(doc.relative_to(ROOT)),target))
     assert not broken,broken
-    required=['README.md','TEMPLATE_CATALOG.md','DESIGN_SYSTEM.md','docs/FIGURE_PRODUCTION_STANDARD.md','docs/REFERENCE_PAGE_SPECS.md','docs/REFERENCE_REUSE_WORKFLOW.md']
+    required=['README.md','TEMPLATE_CATALOG.md','DESIGN_SYSTEM.md','docs/FIGURE_PRODUCTION_STANDARD.md','docs/REFERENCE_PAGE_SPECS.md','docs/REFERENCE_REUSE_WORKFLOW.md','docs/CONCEPT_REUSE_PROMPT.md']
     assert all((ROOT/p).is_file() for p in required)
     specs=(ROOT/'docs/REFERENCE_PAGE_SPECS.md').read_text()
     for number,name in enumerate(['Concept','Process','Comparison','Step-by-Step','Interactive','Architecture','Experiment','Executive Summary'],1):assert f'## {number:02d} {name}' in specs
@@ -32,17 +32,16 @@ def main():
     assert interactive['portable_html']['content_within_tolerance'] and interactive['offline_portable']['default']['fallback_elements']==0
     pilot_root=ROOT/'examples/logistic-regression'
     pilot=json.loads((pilot_root/'previews/validation.json').read_text())
-    assert pilot['status']=='passed' and len(pilot['cases'])==40 and pilot['math_checks']==606 and pilot['alternate_data_checks']==404
-    assert pilot['main_pages']==2 and pilot['appendix_pages']==1 and pilot['appendix_opt_in']
-    assert pilot['concept_is_symbolic'] and pilot['concept_is_invariant'] and pilot['four_stage_flow'] and pilot['short_connectors']
-    assert {(c['scope'],c['mode'],c['template'],tuple(c['viewport'])) for c in pilot['cases']}=={(scope,m,n,s) for scope,names in [('main',('concept','calculation')),('with_appendix',('concept','calculation','threshold'))] for m in ('slides','scroll') for n in names for s in ((1600,950),(1440,810),(1366,768),(1280,720))}
+    assert pilot['status']=='passed' and len(pilot['cases'])==8 and pilot['curve_points']==161
+    assert pilot['main_pages']==1 and pilot['appendix_pages']==0 and pilot['concept_is_symbolic'] and pilot['legacy_urls_normalized']
+    assert {(c['mode'],c['template'],tuple(c['viewport'])) for c in pilot['cases']}=={(m,'concept',s) for m in ('slides','scroll') for s in ((1600,950),(1440,810),(1366,768),(1280,720))}
     for path,expected in pilot['source_sha256'].items():
         assert hashlib.sha256((ROOT/path).read_bytes()).hexdigest()==expected,('pilot rendered source changed',path)
     assert hashlib.sha256((pilot_root/'DESIGN.md').read_bytes()).hexdigest()==pilot['design_sha256'],'pilot design changed after validation'
     assert sorted(p.name for p in (pilot_root/'previews').glob('*.jpg'))==['scroll.jpg','slide.jpg']
     for name,expected in pilot['preview_sha256'].items():
         assert hashlib.sha256((pilot_root/'previews'/name).read_bytes()).hexdigest()==expected,('pilot preview changed',name)
-    assert set(pilot['review_preview_sha256'])=={'concept.png','calculation.png','threshold.png'}
+    assert set(pilot['review_preview_sha256'])=={'concept.png'}
     for name,expected in pilot['review_preview_sha256'].items():
         assert hashlib.sha256((pilot_root/'review'/name).read_bytes()).hexdigest()==expected,('pilot review image changed',name)
     print(f'PASS {len(docs)} Markdown files / {links} local links; eight final specs, source/preview hashes and Interactive reuse evidence')
