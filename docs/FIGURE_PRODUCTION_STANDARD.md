@@ -196,3 +196,6 @@ python scripts/check_documentation.py
 설계 시트 → [카탈로그](../TEMPLATE_CATALOG.md)에서 패턴 선택 → [페이지 명세](REFERENCE_PAGE_SPECS.md)와 원본 확인 → 실제 데이터에 맞게 편집 → 도형 배치 → bounding box 기반 화살표 → 짧은 설명 → PC 창 크기 대응 → 독립 계산·폰트·브라우저 검증 → 변경 데이터 재사용 → 문서와 프리뷰 → 별도 PR 순서로 진행합니다.
 
 Transformer라면 attention의 연결·차원, Optimizer라면 손실과 업데이트, Sensor Comparison이면 같은 조건의 단위와 시각화가 중심입니다. CNN의 사진·Stack 자체를 복제하는 대신 **정확한 의미 대응과 검증 가능한 기하**를 복제합니다. 승인과 실제 main 반영 상태를 구분해 보고합니다.
+
+
+템플릿 자체의 재사용성을 검증하는 과제에서는 [검증 기준](TEMPLATE_REUSE_VALIDATION.md)에 따라 디자인 결정의 문서/레퍼런스 출처와 보완 전 누락을 따로 남깁니다. 새 Figure가 완성됐다는 사실만으로 입력 문서의 충분성을 판정하지 않습니다. 개념 고유 설계는 전용 명세에, 공통 누락은 공통 Markdown에 기록합니다.

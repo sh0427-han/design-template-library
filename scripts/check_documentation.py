@@ -14,7 +14,7 @@ def main():
             links+=1
             if not (doc.parent/target).exists():broken.append((str(doc.relative_to(ROOT)),target))
     assert not broken,broken
-    required=['README.md','TEMPLATE_CATALOG.md','DESIGN_SYSTEM.md','docs/FIGURE_PRODUCTION_STANDARD.md','docs/REFERENCE_PAGE_SPECS.md','docs/REFERENCE_REUSE_WORKFLOW.md','docs/CONCEPT_REUSE_PROMPT.md']
+    required=['README.md','TEMPLATE_CATALOG.md','DESIGN_SYSTEM.md','docs/FIGURE_PRODUCTION_STANDARD.md','docs/REFERENCE_PAGE_SPECS.md','docs/REFERENCE_REUSE_WORKFLOW.md','docs/CONCEPT_REUSE_PROMPT.md','docs/TEMPLATE_REUSE_VALIDATION.md']
     assert all((ROOT/p).is_file() for p in required)
     specs=(ROOT/'docs/REFERENCE_PAGE_SPECS.md').read_text()
     for number,name in enumerate(['Concept','Process','Comparison','Step-by-Step','Interactive','Architecture','Experiment','Executive Summary'],1):assert f'## {number:02d} {name}' in specs

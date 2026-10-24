@@ -111,7 +111,11 @@ python scripts/validate_references.py --templates architecture step-by-step --ev
 
 ### 새 개념으로 재사용 검증
 
-[로지스틱 회귀 개념 한 장](examples/logistic-regression/README.md)은 그림·기호·일반 관계로 확률 예측을 설명하는 문서 우선 제작 사례입니다. 계산 장과 부록은 제거했으며 [Scroll](examples/logistic-regression/scroll.html) / [Slide](examples/logistic-regression/slides.html)는 같은 한 장을 표시합니다. 원본8종은 보존합니다. PC4개 크기×2모드의8개 화면과 일반 곡선161개 점·실제 글리프·한 장 탐색을 검증합니다. **새 개념 제작 요청은 [복사 가능한 프롬프트](docs/CONCEPT_REUSE_PROMPT.md)를 사용합니다.**
+**기존8종 + 공통 Markdown → 새 개념 제작 → 누락/문제 검토 → 공통 Markdown 보완 → 다른 새 개념으로 재검증**의 순환입니다. 새 슬라이드는 템플릿과 문서의 재현 가능성을 검증하는 산출물입니다.
+
+[로지스틱 회귀 개념 한 장](examples/logistic-regression/README.md)은 첫 검토 사례입니다. 수학 서체·기호 정의·입력 패딩/중앙축·설명과 Figure 정렬·분량·연결선·전달 방식 등의 교훈을 [검증 기록과 기준](docs/TEMPLATE_REUSE_VALIDATION.md)에 정리해 공통 문서로 연결했습니다. 로지스틱 회귀를 새 정본으로 복제하지 않습니다. 현재 한 장의8개 PC 화면/161곡선점 통과와8종 전체의 재사용 성공을 구분합니다.
+
+다음 라운드는 **기존8종과 갱신한 공통 Markdown**만을 기준으로 새 주제를 제작하고, `DESIGN.md`의 규칙 출처와 `VALIDATION.md`의 문서 누락·고유 설계·구현 오류·검증/미검증 범위를 남깁니다. [복사 가능한 검증 프롬프트](docs/CONCEPT_REUSE_PROMPT.md)를 사용합니다.
 
 ## 문서 지도와 통합 상태
 

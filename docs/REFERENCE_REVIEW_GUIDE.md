@@ -58,3 +58,7 @@ python scripts/check_documentation.py
 변경한 페이지와 파일, 기술 검증·폰트·레이아웃 결과, 실제 대표 프리뷰, 재사용 검증 범위, 남은 제한을 기록합니다. #6의 Shape 계약이나 #7의 축 방향 같은 핵심 기준은 [페이지 명세](REFERENCE_PAGE_SPECS.md)를 따릅니다.
 
 자동 검사·사용자 승인·Push·PR·main 반영은 각각 별도 상태입니다. 역사적 검토 문서를 현재 설계 명세로 사용하지 않습니다. [8종 검토 완료 상태](REFERENCE_RELEASE_STATUS.md)와 [프리뷰 증거](../previews/review/README.md)를 확인합니다.
+
+## 템플릿 재사용 검증의 추가 판정
+
+새 자료로 라이브러리를 검증할 때는 [검증 기준](TEMPLATE_REUSE_VALIDATION.md)을 적용합니다. 완성 화면뿐 아니라 주요 결정의 문서/원본 출처, 보완 전 누락·모순, 개념 고유 설계, 구현 오류와 사용/미사용 패턴을 `VALIDATION.md`에서 확인합니다. 문서 보완 전D0와 보완 후D1을 분리하며 새 과제가 사용하지 않은 패턴을 통과 처리하지 않습니다.

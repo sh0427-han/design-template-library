@@ -1,9 +1,11 @@
-# 로지스틱 회귀 · 한 장의 개념 레퍼런스
+# 로지스틱 회귀 · 첫 재사용 검증 산출물
+
+이 자료는 **기존8종과 공통 Markdown의 충분성을 확인하기 위해 제작한 첫 검증 산출물**입니다. 다음 제작의 정본이나 아홉 번째 템플릿이 아닙니다. [검토 교훈과 다음 라운드 판정](../../docs/TEMPLATE_REUSE_VALIDATION.md)에 공통 기준으로 반영한 내용과 한계를 기록합니다.
 
 현재 자료는 **#1 개념 슬라이드 한 장**입니다. 입력 기호 → 가중합+절편 일반식 → 시그모이드 식·일반 곡선 → 양성 확률의 관계를 그림과 키워드로 설명합니다. 계산 슬라이드와 임계값 부록은 제거했습니다.
 
 - [설계 명세](DESIGN.md): 목적·용어·일반식·그림·서체·배치·검증을 재현할 구체적인 기준
-- [다른 개념 제작 프롬프트](../../docs/CONCEPT_REUSE_PROMPT.md): 새 개념을 입력해 Markdown부터 제작하는 요청문
+- [다음 라운드의 템플릿 검증 프롬프트](../../docs/CONCEPT_REUSE_PROMPT.md): 새 개념을 입력해 Markdown부터 제작하는 요청문
 - [Scroll](scroll.html) / [Slide](slides.html): 같은 한 장의 두 보기
 - [Scroll JPG](previews/scroll.jpg) / [Slide JPG](previews/slide.jpg) / [개념 PNG](review/concept.png)
 - [현재 검증 JSON](previews/validation.json)
@@ -12,7 +14,7 @@
 
 저장소 루트에서 `python -m http.server 8000`을 실행하고 `http://localhost:8000/examples/logistic-regression/scroll.html` 또는 `slides.html`을 엽니다. 페이지는1/1, 목차는 항목 하나이며 이전/다음은 비활성입니다. 과거 계산/부록 URL도 개념 장으로 정규화합니다.
 
-새 개념은 프롬프트와 공통 Markdown을 먼저 읽고 `examples/<새-개념>/DESIGN.md`에 목표·정보 위계·일반 관계·Figure 구조를 작성합니다. 원본8종과 현재 자료는 보존하고 새 경로에서 제작합니다. 현재 네 단계와 시그모이드를 다른 개념에 그대로 복제하지 않습니다.
+다음 검증은 기존8종과 공통 Markdown을 기준으로 새 개념을 정하고 `examples/<새-개념>/DESIGN.md`에 목표·정보 위계·일반 관계·Figure 구조를 작성합니다. 원본8종과 현재 검증 산출물은 보존하고 새 경로에서 제작하며 문서 충분성을 VALIDATION.md에 남깁니다. 현재 네 단계와 시그모이드를 다른 개념에 그대로 복제하지 않습니다.
 
 `lesson.js`는 한 장의 편집 가능한 HTML/MathML/SVG, `lesson.css`는 전용 Figure, `viewer.js`는 보기 프레임·탐색을 담당합니다. 화면에 실제 입력·계수·결과·선택 점은 없으며 샘플/판정 모델 모듈도 없습니다. 수학은 STIX Two Math/MathML, 본문·일반 영문은 Pretendard Variable이며 둘 다 전역−1pt를 유지합니다.
 

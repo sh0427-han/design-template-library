@@ -1,6 +1,6 @@
 {
   "status": "passed",
-  "started_utc": "2026-10-24T05:52:07.564952+00:00",
+  "started_utc": "2026-10-24T10:23:54.847154+00:00",
   "cases": [
     {
       "mode": "slides",
@@ -6144,7 +6144,7 @@
     "templates/html/reference-layout.css": "c29f52fd9852d80b29e277b7d60218a7b02da599a059a8395051caada3525bcc",
     "templates/html/styles.css": "3c05e00284aae4ea538e697efae7682a2c9b35b318cab372fa8493613de4df22"
   },
-  "design_sha256": "0f656c21a9f9ce43b7be950aa39501060b35aa2e83b85df8c3cc8c3ee00456d2",
+  "design_sha256": "29d3b8f3466d6f1ad0891b25de6e4efce374f04ea4aaee6f14e581312fe74529",
   "preview_sha256": {
     "scroll.jpg": "091290a884f3a9e12fd535a75e62ab52739d33e0102e5bda16d14e3ba16b4ceb",
     "slide.jpg": "6f83d7907d07052c39c08cf43cd423ced0f23309b3afa79f4832b13d31a9ad2a"
@@ -6152,5 +6152,5 @@
   "review_preview_sha256": {
     "concept.png": "6dfe349b06f4d31b8fc621558b1014d358d2497f9033e4627f970a4b5ca6b229"
   },
-  "finished_utc": "2026-10-24T05:52:17.895145+00:00"
+  "finished_utc": "2026-10-24T10:24:05.269502+00:00"
 }
