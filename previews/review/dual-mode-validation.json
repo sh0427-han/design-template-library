@@ -5287,7 +5287,8 @@
     "mode_roundtrip": {
       "reference": "interactive",
       "threshold": 80,
-      "reload": true
+      "reload": true,
+      "last_reference": "executive-summary"
     },
     "keyboard": {
       "iframe_navigation": true,
@@ -5296,7 +5297,7 @@
     "source_sha256": {
       "templates/dual-mode-learning/scroll.html": "96d5b5e82639769644b1d313bf887b4c74bb9bd898f00977e706c6ac5faa573a",
       "templates/dual-mode-learning/slides.html": "2bcb425d00da9e8d7d344b67135e4ed95a4f344a8dbf54bdfc0457e16ec08e67",
-      "templates/dual-mode-learning/assets/js/scroll.js": "b33b36569ce8cd12fac6aa76e65daad022b42efedd54ae78729e8cd425527288",
+      "templates/dual-mode-learning/assets/js/scroll.js": "fa1a152d89bb68fcbede0a48d40d2e01b6509955b24c050c455a619ee682f32b",
       "templates/dual-mode-learning/assets/js/render.js": "ea7769505895adcba0a11971b799546c0fddfe8d4390a9f545a6b2aa6a59bb50",
       "templates/dual-mode-learning/assets/js/state.js": "40ed83ef33ba9eac71791032a84fad8cb77de91458c183a0f62e2cc427680485",
       "templates/dual-mode-learning/assets/js/lesson.js": "30ea45a0901fba3be7a4e41a98fb1143d6f76f39e6e9c69b8e21170d6a77ca4c",
@@ -5316,6 +5317,7 @@
       "templates/html/styles.css": "3c05e00284aae4ea538e697efae7682a2c9b35b318cab372fa8493613de4df22",
       "templates/html/comparison-reference.js": "d427e9c2fcb0415c9ecd059ae723d53dc601b6f5350d3eb1872d1306aacf5469",
       "templates/html/step-by-step.html": "8e7eed2d4bbeaeea3fb644973a0ff99f9e0c075bababf93a8964636197143d3c",
+      "templates/html/math-typography.css": "c390ffe17b8c0f02d10a34b99bca892bb63f99af98766e7b47c0a88da38e2f3a",
       "templates/html/interactive.html": "999cc515d9f3ad03dbee7c1437959b79463ad251e890142233471e4ff7722869",
       "templates/html/concept.html": "81a4d341ca86eb5550e0d58411fdda6f040d1e3cdcf9a98ee9b84ff6b8ad0364",
       "templates/html/reference-types.css": "976c72a1d4e736fc6d7f7c328445f4e7feead457f4ef7165ca3926b5615e18b7",
@@ -5323,7 +5325,8 @@
       "templates/html/process.html": "39989a9073bd7a8a296dc4a7ece870f0e0da60010b8b8922393049678c733a1d",
       "templates/html/assets/concept-apple-photo.jpg": "6a7524a8f5fce2700d50970d21ad7a9912c07ace760d08fd603ba79728e15efc",
       "templates/html/assets/cnn-feature-maps.js": "b8a71c04fced7a9df2a568c2cd3577af3ddde56b3903cfd2b7d1031fc19d2c05",
-      "templates/html/assets/fonts/pretendard/PretendardVariable.woff2": "9599f12fd42fc0bce1cd50b47a0c022e108d7aa64dd0d1bb0ed44f3282d900b4"
+      "templates/html/assets/fonts/pretendard/PretendardVariable.woff2": "9599f12fd42fc0bce1cd50b47a0c022e108d7aa64dd0d1bb0ed44f3282d900b4",
+      "templates/html/assets/fonts/stix-two-math/STIXTwoMath-Regular.woff2": "d18b6ab10cd6670ec5d4067f3ad2678a156b6b6642d9a0985243a1da729e6a95"
     },
     "page_errors": [],
     "failed_requests": []

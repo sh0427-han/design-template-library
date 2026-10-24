@@ -21,6 +21,8 @@
 ## Core rules
 
 - One main concept per slide; use diagrams and data flows where helpful.
+- For template reuse validation, use the eight canonical references and common Markdown as the baseline. Logistic regression is the first validation artifact, not a ninth template or the source to copy for the next topic. Follow `docs/TEMPLATE_REUSE_VALIDATION.md`; record rule provenance, documentation gaps versus topic-specific decisions versus implementation errors, and tested/untested patterns in the new example's `VALIDATION.md`.
+- For each new concept teaching unit, use [concept first, detail second](DESIGN_SYSTEM.md#개념-설명의-기본-순서): the concept page uses diagrams, keywords and general relations; add a detail page with actual inputs/calculations only when it is part of the requested scope. A single concept page is a complete valid output; do not automatically add calculation pages or appendices. Keep example-specific numbers and computed points off the concept page. Connect intermediate outputs to the next input, and pair numeric calculations with their actual graph point/axes when useful. This is a lesson composition rule; preserve the eight standalone pattern references.
 - Follow [the first-use terminology rules](DESIGN_SYSTEM.md#용어와-약어의-첫-등장): introduce an unfamiliar term by its full name and a short meaning before abbreviating it. Define terms per independent reference or the connected lesson's first use, and preserve the essential definition across Scroll/Slide.
 - Ensure technical accuracy, especially equations, tensor layouts, CNN flows and metrics.
 - Use the shared HTML/CSS/JavaScript design system for Scroll and Slide; keep content and calculations consistent across modes.

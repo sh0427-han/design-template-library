@@ -46,6 +46,8 @@ python -m http.server 8000
 
 기본 폰트는 **Pretendard Variable v1.3.9**, 자간은 모든 텍스트 **−1pt**입니다. 공식 WOFF2와 라이선스를 저장소에 포함해 CDN 연결 없이 로드합니다. [폰트 출처·해시·라이선스](templates/html/assets/fonts/pretendard/README.md)
 
+새 자료의 수식·변수·계수는 **STIX Two Math + Native MathML**로 분리합니다. 일반 영문은 Pretendard를 유지합니다. [적용 규격](DESIGN_SYSTEM.md#본문과-수식의-서체-분리) · [수학 폰트·라이선스](templates/html/assets/fonts/stix-two-math/README.md). 기존 8종의 폰트를 자동 변경하는 규칙은 아닙니다.
+
 ## 디렉터리 구조
 
 ```text
@@ -75,6 +77,7 @@ python scripts/verify_character_spacing.py
 python scripts/validate_references.py
 python scripts/check_interactive.py
 python scripts/verify_pretendard.py
+python scripts/verify_logistic_reuse.py
 python templates/dual-mode-learning/tools/check.py
 python scripts/check_documentation.py
 ```
@@ -100,11 +103,19 @@ python scripts/validate_references.py --templates architecture step-by-step --ev
 1. [AGENTS.md](AGENTS.md)와 [디자인 시스템](DESIGN_SYSTEM.md)을 읽습니다.
 2. 청중·한 줄 학습 목표·입력·출력·수식·단순화 조건을 정합니다.
 3. [카탈로그](TEMPLATE_CATALOG.md)에서 패턴을 고르고 [상세 명세](docs/REFERENCE_PAGE_SPECS.md)를 확인합니다.
-4. [컴포넌트 설계 규격](docs/DESIGN_COMPONENT_RECIPES.md)의 기록표에 카드·행간/간격·도식·수식·상태·PC 창 대응·높이 예산을 정하고, [Figure 제작 표준](docs/FIGURE_PRODUCTION_STANDARD.md)에 따라 편집 가능한 도형과 데이터 흐름을 설계합니다.
+4. [개념→상세 기본 순서](DESIGN_SYSTEM.md#개념-설명의-기본-순서)에 따라 개념 장은 그림·키워드·일반 관계로 완결하고, 상세 장은 요청된 경우에만 실제 입력·계산·사례를 배치합니다. 중간 출력과 다음 입력을 연결하고 필요하면 같은 계산값을 그래프의 축·교점에 표시합니다. [컴포넌트 설계 규격](docs/DESIGN_COMPONENT_RECIPES.md)의 기록표에 카드·행간/간격·도식·수식·상태·PC 창 대응·높이 예산을 정하고, [Figure 제작 표준](docs/FIGURE_PRODUCTION_STANDARD.md)에 따라 편집 가능한 도형과 데이터 흐름을 설계합니다.
 5. [재사용 워크플로](docs/REFERENCE_REUSE_WORKFLOW.md)에 따라 실제 과제 데이터로 바꾸고 다른 데이터 구성으로도 확인합니다.
 6. 수학·실제 폰트·PC 4개 화면·실제 캡처를 검증하고 관련 문서·카탈로그·프리뷰를 동기화합니다.
 
 외부 Figure를 쓸 때는 가까이에 원문 URL을 표시합니다. 고정 필터, 모식도, 설명용 logits, 예시 KPI를 실제 학습 모델의 성능으로 주장하지 않습니다.
+
+### 새 개념으로 재사용 검증
+
+**기존8종 + 공통 Markdown → 새 개념 제작 → 누락/문제 검토 → 공통 Markdown 보완 → 다른 새 개념으로 재검증**의 순환입니다. 새 슬라이드는 템플릿과 문서의 재현 가능성을 검증하는 산출물입니다.
+
+[로지스틱 회귀 개념 한 장](examples/logistic-regression/README.md)은 첫 검토 사례입니다. 수학 서체·기호 정의·입력 패딩/중앙축·설명과 Figure 정렬·분량·연결선·전달 방식 등의 교훈을 [검증 기록과 기준](docs/TEMPLATE_REUSE_VALIDATION.md)에 정리해 공통 문서로 연결했습니다. 로지스틱 회귀를 새 정본으로 복제하지 않습니다. 현재 한 장의8개 PC 화면/161곡선점 통과와8종 전체의 재사용 성공을 구분합니다.
+
+다음 라운드는 **기존8종과 갱신한 공통 Markdown**만을 기준으로 새 주제를 제작하고, `DESIGN.md`의 규칙 출처와 `VALIDATION.md`의 문서 누락·고유 설계·구현 오류·검증/미검증 범위를 남깁니다. [복사 가능한 검증 프롬프트](docs/CONCEPT_REUSE_PROMPT.md)를 사용합니다.
 
 ## 문서 지도와 통합 상태
 
