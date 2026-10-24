@@ -48,7 +48,7 @@
 
 1440×810, 기본 padding 54px 66px 30px. 내부 너비 1308px. Header 약117px + Content top25px + Content 약531px + Footer 약34px + 하단30px =810px. 최종 실제 bounds는 JSON에 기록합니다. 패널 padding22/25px, border1px, radius18px. 좌측 690px, gap24px, 우측 나머지. 패널 heading23px/1.2, 단계 제목23px/1.2, 설명18px/1.45, 보조16px/1.4, 큰 갱신식27px/1.25. 작은 수식22px/1.25. 공통 title49/1.13, subtitle21/1.38, footer15/1.4, caption19/1.45.
 
-단계 간 구분은 16px 간격과 가는 선. 제목→설명 8px, 그룹 사이24px. 그래프 라벨17px/1.25. 곡선Navy, 현재Blue, 기울기Amber, 다음/반복Teal. 모든 상태는 문자와 선 형태로도 구분합니다. SVG 주 경로 stroke3px, 접선2px dashed. 화살표 몸통/촉은 같은 path에 명시하고 끝점을 공유합니다. Curve/state labels의 경계 간격8px 이상을 목표로 하고 겹침 여부는 실제 폰트 이후 측정합니다.
+단계 간 구분은 위·아래16px padding과 가는 선. 첫 단계의 위 padding은0. 각 행은 내용 높이이며 최댓값으로 동일하게 늘리지 않습니다. 중복되는 작은 수식·반복 문구는 제거하고 갱신식 하나만 크게 둡니다. 제목→설명 8px, 그룹 사이24px. 그래프 라벨17px/1.25. 곡선Navy, 현재Blue, 기울기Amber, 다음/반복Teal. 모든 상태는 문자와 선 형태로도 구분합니다. SVG viewBox 690×360을 690×338px 슬롯에 종횡비를 유지하며 표시합니다. 갱신 화살표는 viewBox y=260, 설명 baseline y=287로 다음 위치 라벨과 분리합니다. SVG 주 경로 stroke3px, 접선2px dashed. 화살표 몸통/촉은 같은 path에 명시하고 끝점을 공유합니다. Curve/state labels의 경계 간격8px 이상을 목표로 하고 겹침 여부는 실제 폰트 이후 측정합니다.
 
 ## 모드와 파일
 
@@ -59,3 +59,7 @@
 1600×950 / 1440×810 / 1366×768 / 1280×720 × Scroll/Slide =8화면. 실제 Chromium으로 곡선·접선·기호식/폰트·정렬·클리핑·Footer·동일 모드 서식/위치를 검사합니다. 본문과 바깥 UI 모두 document.fonts와 CDP 실제 글리프, −1pt를 검사합니다. MathML은 STIX, Korean/English는 Pretendard. 모드 왕복/직접 URL/새로고침/단일 페이지 경계, 콘솔·요청 실패, 실패 안내를 확인합니다. 모든8화면 PNG는 /tmp 증거, 저장소 대표 preview는 Scroll/Slide PNG 두 개만 남깁니다. 검증기와 실제 source/preview/design SHA256를 JSON에 저장합니다.
 
 접근성은 기본 semantic HTML/aria와 키보드 모드 링크까지만 확인합니다. screen reader 전체·Safari/Firefox·모바일·다중 매개변수 최적화·실제 모델 학습·독립 저자 재제작은 검증하지 않습니다.
+
+## D1 최종 배치 확인
+
+우측 기울기 정의는 첫 단계 본문 안의 L′로 설명하고, η는 갱신 단계에서 양의 학습률로 정의합니다. θ/L/t는 패널 하단에 모읍니다. 첫 렌더링에서 겹친 영역은 폰트 축소 대신 중복 정보 제거·내용 높이 행·SVG 슬롯 조정으로 해결했습니다. 최종 실제 좌표와 서식 동일성은 `previews/validation.json`을 정본으로 확인합니다. 공통 규칙의 수치나 다른8종은 수정하지 않았습니다.

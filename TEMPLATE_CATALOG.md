@@ -122,3 +122,7 @@
 새 제작 대상은 PC 웹페이지이며 PC 네 크기의 검토를 기준으로 합니다. 예제별 작은 화면 동작·여섯 크기 검증은 기존 구현 기록입니다. 새 주제의 제작 성공, 원본의 회귀 통과, 문서의 충분성을 따로 보고합니다.
 
 모든 페이지는 실제 지정 서체·전역−1pt·편집 가능한 소스·계산과 도식의 일치를 요구합니다. 프리뷰는 검증한 소스와 같은 버전이어야 합니다. 새 개념의 수식·Shape·색 의미·단위·실측/예시 조건은 별도로 확인합니다.
+
+## 타주제 재사용 검증 사례 · 경사하강법
+
+[경사하강법 개념 한 장](examples/gradient-descent/README.md)은 위8종과 공통 Markdown의 충분성을 검토한 별도 산출물이며 canonical 번호를 추가하지 않습니다. #1의 White 단일 패널, #2의 역할별 설명 트랙, #8의 축/데이터 대응 원칙 일부를 선택했습니다. 편집 가능한 손실 곡선·접선·갱신 방향과 스칼라 일반식을 사용하고 실제 숫자 대입 장은 없습니다. 같은 [원본](examples/gradient-descent/content.html)을 [Scroll](examples/gradient-descent/scroll.html)/[Slide](examples/gradient-descent/slides.html)에서 표시합니다. [설계 출처·주제 전용 수치](examples/gradient-descent/DESIGN.md), [D0/D1 판단](examples/gradient-descent/VALIDATION.md), [Slide 프리뷰](examples/gradient-descent/previews/slide.png), [Scroll 프리뷰](examples/gradient-descent/previews/scroll.png), [검증 JSON](examples/gradient-descent/previews/validation.json)을 함께 봅니다.8종 전체의 타주제 재사용을 통과했다는 의미는 아닙니다.
