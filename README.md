@@ -117,6 +117,8 @@ python scripts/validate_references.py --templates architecture step-by-step --ev
 
 다음 라운드는 **기존8종과 갱신한 공통 Markdown**만을 기준으로 새 주제를 제작하고, `DESIGN.md`의 규칙 출처와 `VALIDATION.md`의 문서 누락·고유 설계·구현 오류·검증/미검증 범위를 남깁니다. [복사 가능한 검증 프롬프트](docs/CONCEPT_REUSE_PROMPT.md)를 사용합니다.
 
+추가 검증 사례: [경사하강법 개념 한 장](examples/gradient-descent/README.md). 기존8종과 공통 지침만을 설계 입력으로 사용했으며, [D0/D1 평가](examples/gradient-descent/VALIDATION.md)에서 재사용 범위·문서 부족·개념 고유 설계·구현 오류를 구분합니다. 검증은 `python scripts/verify_gradient_descent.py`로 재현합니다.
+
 ## 문서 지도와 통합 상태
 
 - [사용 방법](docs/USAGE.md): 실행·복사·편집 요령

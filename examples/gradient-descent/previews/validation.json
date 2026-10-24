@@ -1,0 +1,2488 @@
+{
+  "baseline_main": "878b9f0fe75723bb74f0a2180fdf6dfb7effd437",
+  "scope": "one concept page, PC4 x Scroll/Slide; not all-pattern independent reuse",
+  "cases": [
+    {
+      "mode": "scroll",
+      "viewport": [
+        1600,
+        950
+      ],
+      "fonts": {
+        "text_nodes": 58,
+        "glyphs": {
+          "Pretendard Variable": 392,
+          "STIX Two Math": 36
+        },
+        "loaded": {
+          "body": [
+            1,
+            1,
+            1
+          ],
+          "math": 1,
+          "faces": [
+            "Pretendard Variable",
+            "STIX Two Math"
+          ]
+        },
+        "tracking": "-1pt",
+        "fallback": 0
+      },
+      "ui_fonts": {
+        "text_nodes": 4,
+        "glyphs": {
+          "Pretendard Variable": 28
+        },
+        "loaded": {
+          "body": [
+            1,
+            1,
+            1
+          ],
+          "math": 0,
+          "faces": [
+            "Pretendard Variable"
+          ]
+        },
+        "tracking": "-1pt",
+        "fallback": 0
+      },
+      "geometry": {
+        "outside": [],
+        "overflow": [],
+        "clipped": [],
+        "overlaps": [],
+        "collisions": [],
+        "ink": [
+          {
+            "id": "loss-axis",
+            "x": 68,
+            "y": 4.023669719696045,
+            "right": 95.19785690307617,
+            "bottom": 24.260356426239014
+          },
+          {
+            "id": "loss-axis-math",
+            "x": 110.9349136352539,
+            "y": 6.1538472175598145,
+            "right": 137.79312896728516,
+            "bottom": 24.260355472564697
+          },
+          {
+            "id": "parameter-axis",
+            "x": 590.5791625976562,
+            "y": 333.023681640625,
+            "right": 645.5455169677734,
+            "bottom": 353.26036834716797
+          },
+          {
+            "id": "parameter-symbol",
+            "x": 654.5942993164062,
+            "y": 335.15386962890625,
+            "right": 663.1150093078613,
+            "bottom": 353.26037788391113
+          },
+          {
+            "id": "plot-context",
+            "x": 482.4227294921875,
+            "y": 4.023669719696045,
+            "right": 644.4914093017578,
+            "bottom": 24.260356426239014
+          },
+          {
+            "id": "tangent-label",
+            "x": 501.8791198730469,
+            "y": 91.46058654785156,
+            "right": 571.6649932861328,
+            "bottom": 111.69727325439453
+          },
+          {
+            "id": "update-label",
+            "x": 504.0296630859375,
+            "y": 271.023681640625,
+            "right": 617.468635559082,
+            "bottom": 291.26036834716797
+          },
+          {
+            "id": "current-label",
+            "x": 609.1764526367188,
+            "y": 140.46058654785156,
+            "right": 636.3743095397949,
+            "bottom": 160.69727325439453
+          },
+          {
+            "id": "next-label",
+            "x": 541.7670288085938,
+            "y": 211.49017333984375,
+            "right": 570.0299758911133,
+            "bottom": 231.72686004638672
+          },
+          {
+            "id": "repeat-label",
+            "x": 363.0280456542969,
+            "y": 238.22215270996094,
+            "right": 391.2909927368164,
+            "bottom": 258.4588394165039
+          },
+          {
+            "id": "current-symbol",
+            "x": 588.1090087890625,
+            "y": 308.15386962890625,
+            "right": 599.7750854492188,
+            "bottom": 330.1952819824219
+          },
+          {
+            "id": "next-symbol",
+            "x": 515.7583618164062,
+            "y": 308.15386962890625,
+            "right": 538.5001220703125,
+            "bottom": 330.1952819824219
+          }
+        ],
+        "math": [
+          {
+            "text": "L′",
+            "display": "\"STIX Two Math\", math",
+            "box": {
+              "x": 918.859375,
+              "y": 300.640625,
+              "right": 930.90625,
+              "bottom": 317.515625,
+              "w": 12.046875,
+              "h": 16.875
+            }
+          },
+          {
+            "text": "η",
+            "display": "\"STIX Two Math\", math",
+            "box": {
+              "x": 950.5,
+              "y": 403.203125,
+              "right": 958.34375,
+              "bottom": 417.203125,
+              "w": 7.84375,
+              "h": 14
+            }
+          },
+          {
+            "text": "θt+1=θt−ηL′(θt)",
+            "display": "\"STIX Two Math\", math",
+            "box": {
+              "x": 873,
+              "y": 427.296875,
+              "right": 1086.984375,
+              "bottom": 466.296875,
+              "w": 213.984375,
+              "h": 39
+            }
+          },
+          {
+            "text": "θ",
+            "display": "\"STIX Two Math\", math",
+            "box": {
+              "x": 92,
+              "y": 625.0625,
+              "right": 98.90625,
+              "bottom": 637.0625,
+              "w": 6.90625,
+              "h": 12
+            }
+          },
+          {
+            "text": "L",
+            "display": "\"STIX Two Math\", math",
+            "box": {
+              "x": 169.6875,
+              "y": 626.0625,
+              "right": 177.46875,
+              "bottom": 637.0625,
+              "w": 7.78125,
+              "h": 11
+            }
+          },
+          {
+            "text": "t",
+            "display": "\"STIX Two Math\", math",
+            "box": {
+              "x": 346.484375,
+              "y": 627.0625,
+              "right": 350.5625,
+              "bottom": 637.0625,
+              "w": 4.078125,
+              "h": 10
+            }
+          }
+        ],
+        "slide": {
+          "x": 0,
+          "y": 0,
+          "right": 1440,
+          "bottom": 810,
+          "w": 1440,
+          "h": 810
+        },
+        "panel": {
+          "x": 66,
+          "y": 196.328125,
+          "right": 1374,
+          "bottom": 666.453125,
+          "w": 1308,
+          "h": 470.125
+        },
+        "main": {
+          "x": 92,
+          "y": 219.328125,
+          "right": 1348,
+          "bottom": 596.0625,
+          "w": 1256,
+          "h": 376.734375
+        },
+        "steps": {
+          "x": 806,
+          "y": 219.328125,
+          "right": 1348,
+          "bottom": 596.0625,
+          "w": 542,
+          "h": 376.734375
+        },
+        "definitions": {
+          "x": 92,
+          "y": 608.0625,
+          "right": 1348,
+          "bottom": 643.453125,
+          "w": 1256,
+          "h": 35.390625
+        },
+        "takeaway": {
+          "x": 66,
+          "y": 680.453125,
+          "right": 1374,
+          "bottom": 732,
+          "w": 1308,
+          "h": 51.546875
+        },
+        "footer": {
+          "x": 66,
+          "y": 747,
+          "right": 1374,
+          "bottom": 780,
+          "w": 1308,
+          "h": 33
+        }
+      },
+      "mode_identity": {
+        "elements": 102,
+        "styles_equal": true,
+        "max_box_error_px": 6.103515625e-05
+      },
+      "outer": {
+        "w": 1440,
+        "h": 810,
+        "x": 80,
+        "right": 1520,
+        "frame": [
+          80,
+          68,
+          1440,
+          810
+        ],
+        "overflow": false,
+        "ready": "true",
+        "pages": 1,
+        "buttons": 0,
+        "links": [
+          "scroll.html",
+          "slides.html"
+        ]
+      },
+      "math": {
+        "curve_points": 161,
+        "states": 6,
+        "finite_difference": true,
+        "painted_geometry": true,
+        "symbolic_formula": true,
+        "counterexamples": 15
+      },
+      "console_errors": [],
+      "request_failures": [],
+      "evidence": "/tmp/gradient-descent-review/scroll-1600x950.png"
+    },
+    {
+      "mode": "slides",
+      "viewport": [
+        1600,
+        950
+      ],
+      "fonts": {
+        "text_nodes": 58,
+        "glyphs": {
+          "Pretendard Variable": 392,
+          "STIX Two Math": 36
+        },
+        "loaded": {
+          "body": [
+            1,
+            1,
+            1
+          ],
+          "math": 1,
+          "faces": [
+            "Pretendard Variable",
+            "STIX Two Math"
+          ]
+        },
+        "tracking": "-1pt",
+        "fallback": 0
+      },
+      "ui_fonts": {
+        "text_nodes": 4,
+        "glyphs": {
+          "Pretendard Variable": 28
+        },
+        "loaded": {
+          "body": [
+            1,
+            1,
+            1
+          ],
+          "math": 0,
+          "faces": [
+            "Pretendard Variable"
+          ]
+        },
+        "tracking": "-1pt",
+        "fallback": 0
+      },
+      "geometry": {
+        "outside": [],
+        "overflow": [],
+        "clipped": [],
+        "overlaps": [],
+        "collisions": [],
+        "ink": [
+          {
+            "id": "loss-axis",
+            "x": 68,
+            "y": 4.023669719696045,
+            "right": 95.19785690307617,
+            "bottom": 24.260356426239014
+          },
+          {
+            "id": "loss-axis-math",
+            "x": 110.9349136352539,
+            "y": 6.1538472175598145,
+            "right": 137.79312896728516,
+            "bottom": 24.260355472564697
+          },
+          {
+            "id": "parameter-axis",
+            "x": 590.5791625976562,
+            "y": 333.023681640625,
+            "right": 645.5455169677734,
+            "bottom": 353.26036834716797
+          },
+          {
+            "id": "parameter-symbol",
+            "x": 654.5942993164062,
+            "y": 335.15386962890625,
+            "right": 663.1150093078613,
+            "bottom": 353.26037788391113
+          },
+          {
+            "id": "plot-context",
+            "x": 482.4227294921875,
+            "y": 4.023669719696045,
+            "right": 644.4914093017578,
+            "bottom": 24.260356426239014
+          },
+          {
+            "id": "tangent-label",
+            "x": 501.8791198730469,
+            "y": 91.46058654785156,
+            "right": 571.6649932861328,
+            "bottom": 111.69727325439453
+          },
+          {
+            "id": "update-label",
+            "x": 504.0296630859375,
+            "y": 271.023681640625,
+            "right": 617.468635559082,
+            "bottom": 291.26036834716797
+          },
+          {
+            "id": "current-label",
+            "x": 609.1764526367188,
+            "y": 140.46058654785156,
+            "right": 636.3743095397949,
+            "bottom": 160.69727325439453
+          },
+          {
+            "id": "next-label",
+            "x": 541.7670288085938,
+            "y": 211.49017333984375,
+            "right": 570.0299758911133,
+            "bottom": 231.72686004638672
+          },
+          {
+            "id": "repeat-label",
+            "x": 363.0280456542969,
+            "y": 238.22215270996094,
+            "right": 391.2909927368164,
+            "bottom": 258.4588394165039
+          },
+          {
+            "id": "current-symbol",
+            "x": 588.1090087890625,
+            "y": 308.15386962890625,
+            "right": 599.7750854492188,
+            "bottom": 330.1952819824219
+          },
+          {
+            "id": "next-symbol",
+            "x": 515.7583618164062,
+            "y": 308.15386962890625,
+            "right": 538.5001220703125,
+            "bottom": 330.1952819824219
+          }
+        ],
+        "math": [
+          {
+            "text": "L′",
+            "display": "\"STIX Two Math\", math",
+            "box": {
+              "x": 918.859375,
+              "y": 300.640625,
+              "right": 930.90625,
+              "bottom": 317.515625,
+              "w": 12.046875,
+              "h": 16.875
+            }
+          },
+          {
+            "text": "η",
+            "display": "\"STIX Two Math\", math",
+            "box": {
+              "x": 950.5,
+              "y": 403.203125,
+              "right": 958.34375,
+              "bottom": 417.203125,
+              "w": 7.84375,
+              "h": 14
+            }
+          },
+          {
+            "text": "θt+1=θt−ηL′(θt)",
+            "display": "\"STIX Two Math\", math",
+            "box": {
+              "x": 873,
+              "y": 427.296875,
+              "right": 1086.984375,
+              "bottom": 466.296875,
+              "w": 213.984375,
+              "h": 39
+            }
+          },
+          {
+            "text": "θ",
+            "display": "\"STIX Two Math\", math",
+            "box": {
+              "x": 92,
+              "y": 625.0625,
+              "right": 98.90625,
+              "bottom": 637.0625,
+              "w": 6.90625,
+              "h": 12
+            }
+          },
+          {
+            "text": "L",
+            "display": "\"STIX Two Math\", math",
+            "box": {
+              "x": 169.6875,
+              "y": 626.0625,
+              "right": 177.46875,
+              "bottom": 637.0625,
+              "w": 7.78125,
+              "h": 11
+            }
+          },
+          {
+            "text": "t",
+            "display": "\"STIX Two Math\", math",
+            "box": {
+              "x": 346.484375,
+              "y": 627.0625,
+              "right": 350.5625,
+              "bottom": 637.0625,
+              "w": 4.078125,
+              "h": 10
+            }
+          }
+        ],
+        "slide": {
+          "x": 0,
+          "y": 0,
+          "right": 1440,
+          "bottom": 810,
+          "w": 1440,
+          "h": 810
+        },
+        "panel": {
+          "x": 66,
+          "y": 196.328125,
+          "right": 1374,
+          "bottom": 666.453125,
+          "w": 1308,
+          "h": 470.125
+        },
+        "main": {
+          "x": 92,
+          "y": 219.328125,
+          "right": 1348,
+          "bottom": 596.0625,
+          "w": 1256,
+          "h": 376.734375
+        },
+        "steps": {
+          "x": 806,
+          "y": 219.328125,
+          "right": 1348,
+          "bottom": 596.0625,
+          "w": 542,
+          "h": 376.734375
+        },
+        "definitions": {
+          "x": 92,
+          "y": 608.0625,
+          "right": 1348,
+          "bottom": 643.453125,
+          "w": 1256,
+          "h": 35.390625
+        },
+        "takeaway": {
+          "x": 66,
+          "y": 680.453125,
+          "right": 1374,
+          "bottom": 732,
+          "w": 1308,
+          "h": 51.546875
+        },
+        "footer": {
+          "x": 66,
+          "y": 747,
+          "right": 1374,
+          "bottom": 780,
+          "w": 1308,
+          "h": 33
+        }
+      },
+      "mode_identity": {
+        "elements": 102,
+        "styles_equal": true,
+        "max_box_error_px": 6.103515625e-05
+      },
+      "outer": {
+        "w": 1440,
+        "h": 810,
+        "x": 80,
+        "right": 1520,
+        "frame": [
+          80,
+          70,
+          1440,
+          810
+        ],
+        "overflow": false,
+        "ready": "true",
+        "pages": 1,
+        "buttons": 0,
+        "links": [
+          "scroll.html",
+          "slides.html"
+        ]
+      },
+      "math": {
+        "curve_points": 161,
+        "states": 6,
+        "finite_difference": true,
+        "painted_geometry": true,
+        "symbolic_formula": true,
+        "counterexamples": 15
+      },
+      "console_errors": [],
+      "request_failures": [],
+      "evidence": "/tmp/gradient-descent-review/slides-1600x950.png"
+    },
+    {
+      "mode": "scroll",
+      "viewport": [
+        1440,
+        810
+      ],
+      "fonts": {
+        "text_nodes": 58,
+        "glyphs": {
+          "Pretendard Variable": 392,
+          "STIX Two Math": 36
+        },
+        "loaded": {
+          "body": [
+            1,
+            1,
+            1
+          ],
+          "math": 1,
+          "faces": [
+            "Pretendard Variable",
+            "STIX Two Math"
+          ]
+        },
+        "tracking": "-1pt",
+        "fallback": 0
+      },
+      "ui_fonts": {
+        "text_nodes": 4,
+        "glyphs": {
+          "Pretendard Variable": 28
+        },
+        "loaded": {
+          "body": [
+            1,
+            1,
+            1
+          ],
+          "math": 0,
+          "faces": [
+            "Pretendard Variable"
+          ]
+        },
+        "tracking": "-1pt",
+        "fallback": 0
+      },
+      "geometry": {
+        "outside": [],
+        "overflow": [],
+        "clipped": [],
+        "overlaps": [],
+        "collisions": [],
+        "ink": [
+          {
+            "id": "loss-axis",
+            "x": 68,
+            "y": 4.023669719696045,
+            "right": 95.19785690307617,
+            "bottom": 24.260356426239014
+          },
+          {
+            "id": "loss-axis-math",
+            "x": 110.9349136352539,
+            "y": 6.1538472175598145,
+            "right": 137.79312896728516,
+            "bottom": 24.260355472564697
+          },
+          {
+            "id": "parameter-axis",
+            "x": 590.5791625976562,
+            "y": 333.023681640625,
+            "right": 645.5455169677734,
+            "bottom": 353.26036834716797
+          },
+          {
+            "id": "parameter-symbol",
+            "x": 654.5942993164062,
+            "y": 335.15386962890625,
+            "right": 663.1150093078613,
+            "bottom": 353.26037788391113
+          },
+          {
+            "id": "plot-context",
+            "x": 482.4227294921875,
+            "y": 4.023669719696045,
+            "right": 644.4914093017578,
+            "bottom": 24.260356426239014
+          },
+          {
+            "id": "tangent-label",
+            "x": 501.8791198730469,
+            "y": 91.46058654785156,
+            "right": 571.6649932861328,
+            "bottom": 111.69727325439453
+          },
+          {
+            "id": "update-label",
+            "x": 504.0296630859375,
+            "y": 271.023681640625,
+            "right": 617.468635559082,
+            "bottom": 291.26036834716797
+          },
+          {
+            "id": "current-label",
+            "x": 609.1764526367188,
+            "y": 140.46058654785156,
+            "right": 636.3743095397949,
+            "bottom": 160.69727325439453
+          },
+          {
+            "id": "next-label",
+            "x": 541.7670288085938,
+            "y": 211.49017333984375,
+            "right": 570.0299758911133,
+            "bottom": 231.72686004638672
+          },
+          {
+            "id": "repeat-label",
+            "x": 363.0280456542969,
+            "y": 238.22215270996094,
+            "right": 391.2909927368164,
+            "bottom": 258.4588394165039
+          },
+          {
+            "id": "current-symbol",
+            "x": 588.1090087890625,
+            "y": 308.15386962890625,
+            "right": 599.7750854492188,
+            "bottom": 330.1952819824219
+          },
+          {
+            "id": "next-symbol",
+            "x": 515.7583618164062,
+            "y": 308.15386962890625,
+            "right": 538.5001220703125,
+            "bottom": 330.1952819824219
+          }
+        ],
+        "math": [
+          {
+            "text": "L′",
+            "display": "\"STIX Two Math\", math",
+            "box": {
+              "x": 918.859375,
+              "y": 300.640625,
+              "right": 930.90625,
+              "bottom": 317.515625,
+              "w": 12.046875,
+              "h": 16.875
+            }
+          },
+          {
+            "text": "η",
+            "display": "\"STIX Two Math\", math",
+            "box": {
+              "x": 950.5,
+              "y": 403.203125,
+              "right": 958.34375,
+              "bottom": 417.203125,
+              "w": 7.84375,
+              "h": 14
+            }
+          },
+          {
+            "text": "θt+1=θt−ηL′(θt)",
+            "display": "\"STIX Two Math\", math",
+            "box": {
+              "x": 873,
+              "y": 427.296875,
+              "right": 1086.984375,
+              "bottom": 466.296875,
+              "w": 213.984375,
+              "h": 39
+            }
+          },
+          {
+            "text": "θ",
+            "display": "\"STIX Two Math\", math",
+            "box": {
+              "x": 92,
+              "y": 625.0625,
+              "right": 98.90625,
+              "bottom": 637.0625,
+              "w": 6.90625,
+              "h": 12
+            }
+          },
+          {
+            "text": "L",
+            "display": "\"STIX Two Math\", math",
+            "box": {
+              "x": 169.6875,
+              "y": 626.0625,
+              "right": 177.46875,
+              "bottom": 637.0625,
+              "w": 7.78125,
+              "h": 11
+            }
+          },
+          {
+            "text": "t",
+            "display": "\"STIX Two Math\", math",
+            "box": {
+              "x": 346.484375,
+              "y": 627.0625,
+              "right": 350.5625,
+              "bottom": 637.0625,
+              "w": 4.078125,
+              "h": 10
+            }
+          }
+        ],
+        "slide": {
+          "x": 0,
+          "y": 0,
+          "right": 1440,
+          "bottom": 810,
+          "w": 1440,
+          "h": 810
+        },
+        "panel": {
+          "x": 66,
+          "y": 196.328125,
+          "right": 1374,
+          "bottom": 666.453125,
+          "w": 1308,
+          "h": 470.125
+        },
+        "main": {
+          "x": 92,
+          "y": 219.328125,
+          "right": 1348,
+          "bottom": 596.0625,
+          "w": 1256,
+          "h": 376.734375
+        },
+        "steps": {
+          "x": 806,
+          "y": 219.328125,
+          "right": 1348,
+          "bottom": 596.0625,
+          "w": 542,
+          "h": 376.734375
+        },
+        "definitions": {
+          "x": 92,
+          "y": 608.0625,
+          "right": 1348,
+          "bottom": 643.453125,
+          "w": 1256,
+          "h": 35.390625
+        },
+        "takeaway": {
+          "x": 66,
+          "y": 680.453125,
+          "right": 1374,
+          "bottom": 732,
+          "w": 1308,
+          "h": 51.546875
+        },
+        "footer": {
+          "x": 66,
+          "y": 747,
+          "right": 1374,
+          "bottom": 780,
+          "w": 1308,
+          "h": 33
+        }
+      },
+      "mode_identity": {
+        "elements": 102,
+        "styles_equal": true,
+        "max_box_error_px": 6.103515625e-05
+      },
+      "outer": {
+        "w": 1392,
+        "h": 783,
+        "x": 24,
+        "right": 1416,
+        "frame": [
+          24,
+          68,
+          1392,
+          783
+        ],
+        "overflow": false,
+        "ready": "true",
+        "pages": 1,
+        "buttons": 0,
+        "links": [
+          "scroll.html",
+          "slides.html"
+        ]
+      },
+      "math": {
+        "curve_points": 161,
+        "states": 6,
+        "finite_difference": true,
+        "painted_geometry": true,
+        "symbolic_formula": true,
+        "counterexamples": 15
+      },
+      "console_errors": [],
+      "request_failures": [],
+      "evidence": "/tmp/gradient-descent-review/scroll-1440x810.png"
+    },
+    {
+      "mode": "slides",
+      "viewport": [
+        1440,
+        810
+      ],
+      "fonts": {
+        "text_nodes": 58,
+        "glyphs": {
+          "Pretendard Variable": 392,
+          "STIX Two Math": 36
+        },
+        "loaded": {
+          "body": [
+            1,
+            1,
+            1
+          ],
+          "math": 1,
+          "faces": [
+            "Pretendard Variable",
+            "STIX Two Math"
+          ]
+        },
+        "tracking": "-1pt",
+        "fallback": 0
+      },
+      "ui_fonts": {
+        "text_nodes": 4,
+        "glyphs": {
+          "Pretendard Variable": 28
+        },
+        "loaded": {
+          "body": [
+            1,
+            1,
+            1
+          ],
+          "math": 0,
+          "faces": [
+            "Pretendard Variable"
+          ]
+        },
+        "tracking": "-1pt",
+        "fallback": 0
+      },
+      "geometry": {
+        "outside": [],
+        "overflow": [],
+        "clipped": [],
+        "overlaps": [],
+        "collisions": [],
+        "ink": [
+          {
+            "id": "loss-axis",
+            "x": 68,
+            "y": 4.023669719696045,
+            "right": 95.19785690307617,
+            "bottom": 24.260356426239014
+          },
+          {
+            "id": "loss-axis-math",
+            "x": 110.9349136352539,
+            "y": 6.1538472175598145,
+            "right": 137.79312896728516,
+            "bottom": 24.260355472564697
+          },
+          {
+            "id": "parameter-axis",
+            "x": 590.5791625976562,
+            "y": 333.023681640625,
+            "right": 645.5455169677734,
+            "bottom": 353.26036834716797
+          },
+          {
+            "id": "parameter-symbol",
+            "x": 654.5942993164062,
+            "y": 335.15386962890625,
+            "right": 663.1150093078613,
+            "bottom": 353.26037788391113
+          },
+          {
+            "id": "plot-context",
+            "x": 482.4227294921875,
+            "y": 4.023669719696045,
+            "right": 644.4914093017578,
+            "bottom": 24.260356426239014
+          },
+          {
+            "id": "tangent-label",
+            "x": 501.8791198730469,
+            "y": 91.46058654785156,
+            "right": 571.6649932861328,
+            "bottom": 111.69727325439453
+          },
+          {
+            "id": "update-label",
+            "x": 504.0296630859375,
+            "y": 271.023681640625,
+            "right": 617.468635559082,
+            "bottom": 291.26036834716797
+          },
+          {
+            "id": "current-label",
+            "x": 609.1764526367188,
+            "y": 140.46058654785156,
+            "right": 636.3743095397949,
+            "bottom": 160.69727325439453
+          },
+          {
+            "id": "next-label",
+            "x": 541.7670288085938,
+            "y": 211.49017333984375,
+            "right": 570.0299758911133,
+            "bottom": 231.72686004638672
+          },
+          {
+            "id": "repeat-label",
+            "x": 363.0280456542969,
+            "y": 238.22215270996094,
+            "right": 391.2909927368164,
+            "bottom": 258.4588394165039
+          },
+          {
+            "id": "current-symbol",
+            "x": 588.1090087890625,
+            "y": 308.15386962890625,
+            "right": 599.7750854492188,
+            "bottom": 330.1952819824219
+          },
+          {
+            "id": "next-symbol",
+            "x": 515.7583618164062,
+            "y": 308.15386962890625,
+            "right": 538.5001220703125,
+            "bottom": 330.1952819824219
+          }
+        ],
+        "math": [
+          {
+            "text": "L′",
+            "display": "\"STIX Two Math\", math",
+            "box": {
+              "x": 918.859375,
+              "y": 300.640625,
+              "right": 930.90625,
+              "bottom": 317.515625,
+              "w": 12.046875,
+              "h": 16.875
+            }
+          },
+          {
+            "text": "η",
+            "display": "\"STIX Two Math\", math",
+            "box": {
+              "x": 950.5,
+              "y": 403.203125,
+              "right": 958.34375,
+              "bottom": 417.203125,
+              "w": 7.84375,
+              "h": 14
+            }
+          },
+          {
+            "text": "θt+1=θt−ηL′(θt)",
+            "display": "\"STIX Two Math\", math",
+            "box": {
+              "x": 873,
+              "y": 427.296875,
+              "right": 1086.984375,
+              "bottom": 466.296875,
+              "w": 213.984375,
+              "h": 39
+            }
+          },
+          {
+            "text": "θ",
+            "display": "\"STIX Two Math\", math",
+            "box": {
+              "x": 92,
+              "y": 625.0625,
+              "right": 98.90625,
+              "bottom": 637.0625,
+              "w": 6.90625,
+              "h": 12
+            }
+          },
+          {
+            "text": "L",
+            "display": "\"STIX Two Math\", math",
+            "box": {
+              "x": 169.6875,
+              "y": 626.0625,
+              "right": 177.46875,
+              "bottom": 637.0625,
+              "w": 7.78125,
+              "h": 11
+            }
+          },
+          {
+            "text": "t",
+            "display": "\"STIX Two Math\", math",
+            "box": {
+              "x": 346.484375,
+              "y": 627.0625,
+              "right": 350.5625,
+              "bottom": 637.0625,
+              "w": 4.078125,
+              "h": 10
+            }
+          }
+        ],
+        "slide": {
+          "x": 0,
+          "y": 0,
+          "right": 1440,
+          "bottom": 810,
+          "w": 1440,
+          "h": 810
+        },
+        "panel": {
+          "x": 66,
+          "y": 196.328125,
+          "right": 1374,
+          "bottom": 666.453125,
+          "w": 1308,
+          "h": 470.125
+        },
+        "main": {
+          "x": 92,
+          "y": 219.328125,
+          "right": 1348,
+          "bottom": 596.0625,
+          "w": 1256,
+          "h": 376.734375
+        },
+        "steps": {
+          "x": 806,
+          "y": 219.328125,
+          "right": 1348,
+          "bottom": 596.0625,
+          "w": 542,
+          "h": 376.734375
+        },
+        "definitions": {
+          "x": 92,
+          "y": 608.0625,
+          "right": 1348,
+          "bottom": 643.453125,
+          "w": 1256,
+          "h": 35.390625
+        },
+        "takeaway": {
+          "x": 66,
+          "y": 680.453125,
+          "right": 1374,
+          "bottom": 732,
+          "w": 1308,
+          "h": 51.546875
+        },
+        "footer": {
+          "x": 66,
+          "y": 747,
+          "right": 1374,
+          "bottom": 780,
+          "w": 1308,
+          "h": 33
+        }
+      },
+      "mode_identity": {
+        "elements": 102,
+        "styles_equal": true,
+        "max_box_error_px": 6.103515625e-05
+      },
+      "outer": {
+        "w": 1240.875,
+        "h": 697.984375,
+        "x": 99.5625,
+        "right": 1340.4375,
+        "frame": [
+          99.5625,
+          56,
+          1241,
+          698.0625
+        ],
+        "overflow": false,
+        "ready": "true",
+        "pages": 1,
+        "buttons": 0,
+        "links": [
+          "scroll.html",
+          "slides.html"
+        ]
+      },
+      "math": {
+        "curve_points": 161,
+        "states": 6,
+        "finite_difference": true,
+        "painted_geometry": true,
+        "symbolic_formula": true,
+        "counterexamples": 15
+      },
+      "console_errors": [],
+      "request_failures": [],
+      "evidence": "/tmp/gradient-descent-review/slides-1440x810.png"
+    },
+    {
+      "mode": "scroll",
+      "viewport": [
+        1366,
+        768
+      ],
+      "fonts": {
+        "text_nodes": 58,
+        "glyphs": {
+          "Pretendard Variable": 392,
+          "STIX Two Math": 36
+        },
+        "loaded": {
+          "body": [
+            1,
+            1,
+            1
+          ],
+          "math": 1,
+          "faces": [
+            "Pretendard Variable",
+            "STIX Two Math"
+          ]
+        },
+        "tracking": "-1pt",
+        "fallback": 0
+      },
+      "ui_fonts": {
+        "text_nodes": 4,
+        "glyphs": {
+          "Pretendard Variable": 28
+        },
+        "loaded": {
+          "body": [
+            1,
+            1,
+            1
+          ],
+          "math": 0,
+          "faces": [
+            "Pretendard Variable"
+          ]
+        },
+        "tracking": "-1pt",
+        "fallback": 0
+      },
+      "geometry": {
+        "outside": [],
+        "overflow": [],
+        "clipped": [],
+        "overlaps": [],
+        "collisions": [],
+        "ink": [
+          {
+            "id": "loss-axis",
+            "x": 68,
+            "y": 4.023669719696045,
+            "right": 95.19785690307617,
+            "bottom": 24.260356426239014
+          },
+          {
+            "id": "loss-axis-math",
+            "x": 110.9349136352539,
+            "y": 6.1538472175598145,
+            "right": 137.79312896728516,
+            "bottom": 24.260355472564697
+          },
+          {
+            "id": "parameter-axis",
+            "x": 590.5791625976562,
+            "y": 333.023681640625,
+            "right": 645.5455169677734,
+            "bottom": 353.26036834716797
+          },
+          {
+            "id": "parameter-symbol",
+            "x": 654.5942993164062,
+            "y": 335.15386962890625,
+            "right": 663.1150093078613,
+            "bottom": 353.26037788391113
+          },
+          {
+            "id": "plot-context",
+            "x": 482.4227294921875,
+            "y": 4.023669719696045,
+            "right": 644.4914093017578,
+            "bottom": 24.260356426239014
+          },
+          {
+            "id": "tangent-label",
+            "x": 501.8791198730469,
+            "y": 91.46058654785156,
+            "right": 571.6649932861328,
+            "bottom": 111.69727325439453
+          },
+          {
+            "id": "update-label",
+            "x": 504.0296630859375,
+            "y": 271.023681640625,
+            "right": 617.468635559082,
+            "bottom": 291.26036834716797
+          },
+          {
+            "id": "current-label",
+            "x": 609.1764526367188,
+            "y": 140.46058654785156,
+            "right": 636.3743095397949,
+            "bottom": 160.69727325439453
+          },
+          {
+            "id": "next-label",
+            "x": 541.7670288085938,
+            "y": 211.49017333984375,
+            "right": 570.0299758911133,
+            "bottom": 231.72686004638672
+          },
+          {
+            "id": "repeat-label",
+            "x": 363.0280456542969,
+            "y": 238.22215270996094,
+            "right": 391.2909927368164,
+            "bottom": 258.4588394165039
+          },
+          {
+            "id": "current-symbol",
+            "x": 588.1090087890625,
+            "y": 308.15386962890625,
+            "right": 599.7750854492188,
+            "bottom": 330.1952819824219
+          },
+          {
+            "id": "next-symbol",
+            "x": 515.7583618164062,
+            "y": 308.15386962890625,
+            "right": 538.5001220703125,
+            "bottom": 330.1952819824219
+          }
+        ],
+        "math": [
+          {
+            "text": "L′",
+            "display": "\"STIX Two Math\", math",
+            "box": {
+              "x": 918.859375,
+              "y": 300.640625,
+              "right": 930.90625,
+              "bottom": 317.515625,
+              "w": 12.046875,
+              "h": 16.875
+            }
+          },
+          {
+            "text": "η",
+            "display": "\"STIX Two Math\", math",
+            "box": {
+              "x": 950.5,
+              "y": 403.203125,
+              "right": 958.34375,
+              "bottom": 417.203125,
+              "w": 7.84375,
+              "h": 14
+            }
+          },
+          {
+            "text": "θt+1=θt−ηL′(θt)",
+            "display": "\"STIX Two Math\", math",
+            "box": {
+              "x": 873,
+              "y": 427.296875,
+              "right": 1086.984375,
+              "bottom": 466.296875,
+              "w": 213.984375,
+              "h": 39
+            }
+          },
+          {
+            "text": "θ",
+            "display": "\"STIX Two Math\", math",
+            "box": {
+              "x": 92,
+              "y": 625.0625,
+              "right": 98.90625,
+              "bottom": 637.0625,
+              "w": 6.90625,
+              "h": 12
+            }
+          },
+          {
+            "text": "L",
+            "display": "\"STIX Two Math\", math",
+            "box": {
+              "x": 169.6875,
+              "y": 626.0625,
+              "right": 177.46875,
+              "bottom": 637.0625,
+              "w": 7.78125,
+              "h": 11
+            }
+          },
+          {
+            "text": "t",
+            "display": "\"STIX Two Math\", math",
+            "box": {
+              "x": 346.484375,
+              "y": 627.0625,
+              "right": 350.5625,
+              "bottom": 637.0625,
+              "w": 4.078125,
+              "h": 10
+            }
+          }
+        ],
+        "slide": {
+          "x": 0,
+          "y": 0,
+          "right": 1440,
+          "bottom": 810,
+          "w": 1440,
+          "h": 810
+        },
+        "panel": {
+          "x": 66,
+          "y": 196.328125,
+          "right": 1374,
+          "bottom": 666.453125,
+          "w": 1308,
+          "h": 470.125
+        },
+        "main": {
+          "x": 92,
+          "y": 219.328125,
+          "right": 1348,
+          "bottom": 596.0625,
+          "w": 1256,
+          "h": 376.734375
+        },
+        "steps": {
+          "x": 806,
+          "y": 219.328125,
+          "right": 1348,
+          "bottom": 596.0625,
+          "w": 542,
+          "h": 376.734375
+        },
+        "definitions": {
+          "x": 92,
+          "y": 608.0625,
+          "right": 1348,
+          "bottom": 643.453125,
+          "w": 1256,
+          "h": 35.390625
+        },
+        "takeaway": {
+          "x": 66,
+          "y": 680.453125,
+          "right": 1374,
+          "bottom": 732,
+          "w": 1308,
+          "h": 51.546875
+        },
+        "footer": {
+          "x": 66,
+          "y": 747,
+          "right": 1374,
+          "bottom": 780,
+          "w": 1308,
+          "h": 33
+        }
+      },
+      "mode_identity": {
+        "elements": 102,
+        "styles_equal": true,
+        "max_box_error_px": 6.103515625e-05
+      },
+      "outer": {
+        "w": 1318,
+        "h": 741.375,
+        "x": 24,
+        "right": 1342,
+        "frame": [
+          24,
+          68,
+          1318,
+          741.375
+        ],
+        "overflow": false,
+        "ready": "true",
+        "pages": 1,
+        "buttons": 0,
+        "links": [
+          "scroll.html",
+          "slides.html"
+        ]
+      },
+      "math": {
+        "curve_points": 161,
+        "states": 6,
+        "finite_difference": true,
+        "painted_geometry": true,
+        "symbolic_formula": true,
+        "counterexamples": 15
+      },
+      "console_errors": [],
+      "request_failures": [],
+      "evidence": "/tmp/gradient-descent-review/scroll-1366x768.png"
+    },
+    {
+      "mode": "slides",
+      "viewport": [
+        1366,
+        768
+      ],
+      "fonts": {
+        "text_nodes": 58,
+        "glyphs": {
+          "Pretendard Variable": 392,
+          "STIX Two Math": 36
+        },
+        "loaded": {
+          "body": [
+            1,
+            1,
+            1
+          ],
+          "math": 1,
+          "faces": [
+            "Pretendard Variable",
+            "STIX Two Math"
+          ]
+        },
+        "tracking": "-1pt",
+        "fallback": 0
+      },
+      "ui_fonts": {
+        "text_nodes": 4,
+        "glyphs": {
+          "Pretendard Variable": 28
+        },
+        "loaded": {
+          "body": [
+            1,
+            1,
+            1
+          ],
+          "math": 0,
+          "faces": [
+            "Pretendard Variable"
+          ]
+        },
+        "tracking": "-1pt",
+        "fallback": 0
+      },
+      "geometry": {
+        "outside": [],
+        "overflow": [],
+        "clipped": [],
+        "overlaps": [],
+        "collisions": [],
+        "ink": [
+          {
+            "id": "loss-axis",
+            "x": 68,
+            "y": 4.023669719696045,
+            "right": 95.19785690307617,
+            "bottom": 24.260356426239014
+          },
+          {
+            "id": "loss-axis-math",
+            "x": 110.9349136352539,
+            "y": 6.1538472175598145,
+            "right": 137.79312896728516,
+            "bottom": 24.260355472564697
+          },
+          {
+            "id": "parameter-axis",
+            "x": 590.5791625976562,
+            "y": 333.023681640625,
+            "right": 645.5455169677734,
+            "bottom": 353.26036834716797
+          },
+          {
+            "id": "parameter-symbol",
+            "x": 654.5942993164062,
+            "y": 335.15386962890625,
+            "right": 663.1150093078613,
+            "bottom": 353.26037788391113
+          },
+          {
+            "id": "plot-context",
+            "x": 482.4227294921875,
+            "y": 4.023669719696045,
+            "right": 644.4914093017578,
+            "bottom": 24.260356426239014
+          },
+          {
+            "id": "tangent-label",
+            "x": 501.8791198730469,
+            "y": 91.46058654785156,
+            "right": 571.6649932861328,
+            "bottom": 111.69727325439453
+          },
+          {
+            "id": "update-label",
+            "x": 504.0296630859375,
+            "y": 271.023681640625,
+            "right": 617.468635559082,
+            "bottom": 291.26036834716797
+          },
+          {
+            "id": "current-label",
+            "x": 609.1764526367188,
+            "y": 140.46058654785156,
+            "right": 636.3743095397949,
+            "bottom": 160.69727325439453
+          },
+          {
+            "id": "next-label",
+            "x": 541.7670288085938,
+            "y": 211.49017333984375,
+            "right": 570.0299758911133,
+            "bottom": 231.72686004638672
+          },
+          {
+            "id": "repeat-label",
+            "x": 363.0280456542969,
+            "y": 238.22215270996094,
+            "right": 391.2909927368164,
+            "bottom": 258.4588394165039
+          },
+          {
+            "id": "current-symbol",
+            "x": 588.1090087890625,
+            "y": 308.15386962890625,
+            "right": 599.7750854492188,
+            "bottom": 330.1952819824219
+          },
+          {
+            "id": "next-symbol",
+            "x": 515.7583618164062,
+            "y": 308.15386962890625,
+            "right": 538.5001220703125,
+            "bottom": 330.1952819824219
+          }
+        ],
+        "math": [
+          {
+            "text": "L′",
+            "display": "\"STIX Two Math\", math",
+            "box": {
+              "x": 918.859375,
+              "y": 300.640625,
+              "right": 930.90625,
+              "bottom": 317.515625,
+              "w": 12.046875,
+              "h": 16.875
+            }
+          },
+          {
+            "text": "η",
+            "display": "\"STIX Two Math\", math",
+            "box": {
+              "x": 950.5,
+              "y": 403.203125,
+              "right": 958.34375,
+              "bottom": 417.203125,
+              "w": 7.84375,
+              "h": 14
+            }
+          },
+          {
+            "text": "θt+1=θt−ηL′(θt)",
+            "display": "\"STIX Two Math\", math",
+            "box": {
+              "x": 873,
+              "y": 427.296875,
+              "right": 1086.984375,
+              "bottom": 466.296875,
+              "w": 213.984375,
+              "h": 39
+            }
+          },
+          {
+            "text": "θ",
+            "display": "\"STIX Two Math\", math",
+            "box": {
+              "x": 92,
+              "y": 625.0625,
+              "right": 98.90625,
+              "bottom": 637.0625,
+              "w": 6.90625,
+              "h": 12
+            }
+          },
+          {
+            "text": "L",
+            "display": "\"STIX Two Math\", math",
+            "box": {
+              "x": 169.6875,
+              "y": 626.0625,
+              "right": 177.46875,
+              "bottom": 637.0625,
+              "w": 7.78125,
+              "h": 11
+            }
+          },
+          {
+            "text": "t",
+            "display": "\"STIX Two Math\", math",
+            "box": {
+              "x": 346.484375,
+              "y": 627.0625,
+              "right": 350.5625,
+              "bottom": 637.0625,
+              "w": 4.078125,
+              "h": 10
+            }
+          }
+        ],
+        "slide": {
+          "x": 0,
+          "y": 0,
+          "right": 1440,
+          "bottom": 810,
+          "w": 1440,
+          "h": 810
+        },
+        "panel": {
+          "x": 66,
+          "y": 196.328125,
+          "right": 1374,
+          "bottom": 666.453125,
+          "w": 1308,
+          "h": 470.125
+        },
+        "main": {
+          "x": 92,
+          "y": 219.328125,
+          "right": 1348,
+          "bottom": 596.0625,
+          "w": 1256,
+          "h": 376.734375
+        },
+        "steps": {
+          "x": 806,
+          "y": 219.328125,
+          "right": 1348,
+          "bottom": 596.0625,
+          "w": 542,
+          "h": 376.734375
+        },
+        "definitions": {
+          "x": 92,
+          "y": 608.0625,
+          "right": 1348,
+          "bottom": 643.453125,
+          "w": 1256,
+          "h": 35.390625
+        },
+        "takeaway": {
+          "x": 66,
+          "y": 680.453125,
+          "right": 1374,
+          "bottom": 732,
+          "w": 1308,
+          "h": 51.546875
+        },
+        "footer": {
+          "x": 66,
+          "y": 747,
+          "right": 1374,
+          "bottom": 780,
+          "w": 1308,
+          "h": 33
+        }
+      },
+      "mode_identity": {
+        "elements": 102,
+        "styles_equal": true,
+        "max_box_error_px": 6.103515625e-05
+      },
+      "outer": {
+        "w": 1166.21875,
+        "h": 655.984375,
+        "x": 99.890625,
+        "right": 1266.109375,
+        "frame": [
+          99.890625,
+          56,
+          1166,
+          655.875
+        ],
+        "overflow": false,
+        "ready": "true",
+        "pages": 1,
+        "buttons": 0,
+        "links": [
+          "scroll.html",
+          "slides.html"
+        ]
+      },
+      "math": {
+        "curve_points": 161,
+        "states": 6,
+        "finite_difference": true,
+        "painted_geometry": true,
+        "symbolic_formula": true,
+        "counterexamples": 15
+      },
+      "console_errors": [],
+      "request_failures": [],
+      "evidence": "/tmp/gradient-descent-review/slides-1366x768.png"
+    },
+    {
+      "mode": "scroll",
+      "viewport": [
+        1280,
+        720
+      ],
+      "fonts": {
+        "text_nodes": 58,
+        "glyphs": {
+          "Pretendard Variable": 392,
+          "STIX Two Math": 36
+        },
+        "loaded": {
+          "body": [
+            1,
+            1,
+            1
+          ],
+          "math": 1,
+          "faces": [
+            "Pretendard Variable",
+            "STIX Two Math"
+          ]
+        },
+        "tracking": "-1pt",
+        "fallback": 0
+      },
+      "ui_fonts": {
+        "text_nodes": 4,
+        "glyphs": {
+          "Pretendard Variable": 28
+        },
+        "loaded": {
+          "body": [
+            1,
+            1,
+            1
+          ],
+          "math": 0,
+          "faces": [
+            "Pretendard Variable"
+          ]
+        },
+        "tracking": "-1pt",
+        "fallback": 0
+      },
+      "geometry": {
+        "outside": [],
+        "overflow": [],
+        "clipped": [],
+        "overlaps": [],
+        "collisions": [],
+        "ink": [
+          {
+            "id": "loss-axis",
+            "x": 68,
+            "y": 4.023669719696045,
+            "right": 95.19785690307617,
+            "bottom": 24.260356426239014
+          },
+          {
+            "id": "loss-axis-math",
+            "x": 110.9349136352539,
+            "y": 6.1538472175598145,
+            "right": 137.79312896728516,
+            "bottom": 24.260355472564697
+          },
+          {
+            "id": "parameter-axis",
+            "x": 590.5791625976562,
+            "y": 333.023681640625,
+            "right": 645.5455169677734,
+            "bottom": 353.26036834716797
+          },
+          {
+            "id": "parameter-symbol",
+            "x": 654.5942993164062,
+            "y": 335.15386962890625,
+            "right": 663.1150093078613,
+            "bottom": 353.26037788391113
+          },
+          {
+            "id": "plot-context",
+            "x": 482.4227294921875,
+            "y": 4.023669719696045,
+            "right": 644.4914093017578,
+            "bottom": 24.260356426239014
+          },
+          {
+            "id": "tangent-label",
+            "x": 501.8791198730469,
+            "y": 91.46058654785156,
+            "right": 571.6649932861328,
+            "bottom": 111.69727325439453
+          },
+          {
+            "id": "update-label",
+            "x": 504.0296630859375,
+            "y": 271.023681640625,
+            "right": 617.468635559082,
+            "bottom": 291.26036834716797
+          },
+          {
+            "id": "current-label",
+            "x": 609.1764526367188,
+            "y": 140.46058654785156,
+            "right": 636.3743095397949,
+            "bottom": 160.69727325439453
+          },
+          {
+            "id": "next-label",
+            "x": 541.7670288085938,
+            "y": 211.49017333984375,
+            "right": 570.0299758911133,
+            "bottom": 231.72686004638672
+          },
+          {
+            "id": "repeat-label",
+            "x": 363.0280456542969,
+            "y": 238.22215270996094,
+            "right": 391.2909927368164,
+            "bottom": 258.4588394165039
+          },
+          {
+            "id": "current-symbol",
+            "x": 588.1090087890625,
+            "y": 308.15386962890625,
+            "right": 599.7750854492188,
+            "bottom": 330.1952819824219
+          },
+          {
+            "id": "next-symbol",
+            "x": 515.7583618164062,
+            "y": 308.15386962890625,
+            "right": 538.5001220703125,
+            "bottom": 330.1952819824219
+          }
+        ],
+        "math": [
+          {
+            "text": "L′",
+            "display": "\"STIX Two Math\", math",
+            "box": {
+              "x": 918.859375,
+              "y": 300.640625,
+              "right": 930.90625,
+              "bottom": 317.515625,
+              "w": 12.046875,
+              "h": 16.875
+            }
+          },
+          {
+            "text": "η",
+            "display": "\"STIX Two Math\", math",
+            "box": {
+              "x": 950.5,
+              "y": 403.203125,
+              "right": 958.34375,
+              "bottom": 417.203125,
+              "w": 7.84375,
+              "h": 14
+            }
+          },
+          {
+            "text": "θt+1=θt−ηL′(θt)",
+            "display": "\"STIX Two Math\", math",
+            "box": {
+              "x": 873,
+              "y": 427.296875,
+              "right": 1086.984375,
+              "bottom": 466.296875,
+              "w": 213.984375,
+              "h": 39
+            }
+          },
+          {
+            "text": "θ",
+            "display": "\"STIX Two Math\", math",
+            "box": {
+              "x": 92,
+              "y": 625.0625,
+              "right": 98.90625,
+              "bottom": 637.0625,
+              "w": 6.90625,
+              "h": 12
+            }
+          },
+          {
+            "text": "L",
+            "display": "\"STIX Two Math\", math",
+            "box": {
+              "x": 169.6875,
+              "y": 626.0625,
+              "right": 177.46875,
+              "bottom": 637.0625,
+              "w": 7.78125,
+              "h": 11
+            }
+          },
+          {
+            "text": "t",
+            "display": "\"STIX Two Math\", math",
+            "box": {
+              "x": 346.484375,
+              "y": 627.0625,
+              "right": 350.5625,
+              "bottom": 637.0625,
+              "w": 4.078125,
+              "h": 10
+            }
+          }
+        ],
+        "slide": {
+          "x": 0,
+          "y": 0,
+          "right": 1440,
+          "bottom": 810,
+          "w": 1440,
+          "h": 810
+        },
+        "panel": {
+          "x": 66,
+          "y": 196.328125,
+          "right": 1374,
+          "bottom": 666.453125,
+          "w": 1308,
+          "h": 470.125
+        },
+        "main": {
+          "x": 92,
+          "y": 219.328125,
+          "right": 1348,
+          "bottom": 596.0625,
+          "w": 1256,
+          "h": 376.734375
+        },
+        "steps": {
+          "x": 806,
+          "y": 219.328125,
+          "right": 1348,
+          "bottom": 596.0625,
+          "w": 542,
+          "h": 376.734375
+        },
+        "definitions": {
+          "x": 92,
+          "y": 608.0625,
+          "right": 1348,
+          "bottom": 643.453125,
+          "w": 1256,
+          "h": 35.390625
+        },
+        "takeaway": {
+          "x": 66,
+          "y": 680.453125,
+          "right": 1374,
+          "bottom": 732,
+          "w": 1308,
+          "h": 51.546875
+        },
+        "footer": {
+          "x": 66,
+          "y": 747,
+          "right": 1374,
+          "bottom": 780,
+          "w": 1308,
+          "h": 33
+        }
+      },
+      "mode_identity": {
+        "elements": 102,
+        "styles_equal": true,
+        "max_box_error_px": 6.103515625e-05
+      },
+      "outer": {
+        "w": 1232,
+        "h": 693,
+        "x": 24,
+        "right": 1256,
+        "frame": [
+          24,
+          68,
+          1232,
+          693
+        ],
+        "overflow": false,
+        "ready": "true",
+        "pages": 1,
+        "buttons": 0,
+        "links": [
+          "scroll.html",
+          "slides.html"
+        ]
+      },
+      "math": {
+        "curve_points": 161,
+        "states": 6,
+        "finite_difference": true,
+        "painted_geometry": true,
+        "symbolic_formula": true,
+        "counterexamples": 15
+      },
+      "console_errors": [],
+      "request_failures": [],
+      "evidence": "/tmp/gradient-descent-review/scroll-1280x720.png"
+    },
+    {
+      "mode": "slides",
+      "viewport": [
+        1280,
+        720
+      ],
+      "fonts": {
+        "text_nodes": 58,
+        "glyphs": {
+          "Pretendard Variable": 392,
+          "STIX Two Math": 36
+        },
+        "loaded": {
+          "body": [
+            1,
+            1,
+            1
+          ],
+          "math": 1,
+          "faces": [
+            "Pretendard Variable",
+            "STIX Two Math"
+          ]
+        },
+        "tracking": "-1pt",
+        "fallback": 0
+      },
+      "ui_fonts": {
+        "text_nodes": 4,
+        "glyphs": {
+          "Pretendard Variable": 28
+        },
+        "loaded": {
+          "body": [
+            1,
+            1,
+            1
+          ],
+          "math": 0,
+          "faces": [
+            "Pretendard Variable"
+          ]
+        },
+        "tracking": "-1pt",
+        "fallback": 0
+      },
+      "geometry": {
+        "outside": [],
+        "overflow": [],
+        "clipped": [],
+        "overlaps": [],
+        "collisions": [],
+        "ink": [
+          {
+            "id": "loss-axis",
+            "x": 68,
+            "y": 4.023669719696045,
+            "right": 95.19785690307617,
+            "bottom": 24.260356426239014
+          },
+          {
+            "id": "loss-axis-math",
+            "x": 110.9349136352539,
+            "y": 6.1538472175598145,
+            "right": 137.79312896728516,
+            "bottom": 24.260355472564697
+          },
+          {
+            "id": "parameter-axis",
+            "x": 590.5791625976562,
+            "y": 333.023681640625,
+            "right": 645.5455169677734,
+            "bottom": 353.26036834716797
+          },
+          {
+            "id": "parameter-symbol",
+            "x": 654.5942993164062,
+            "y": 335.15386962890625,
+            "right": 663.1150093078613,
+            "bottom": 353.26037788391113
+          },
+          {
+            "id": "plot-context",
+            "x": 482.4227294921875,
+            "y": 4.023669719696045,
+            "right": 644.4914093017578,
+            "bottom": 24.260356426239014
+          },
+          {
+            "id": "tangent-label",
+            "x": 501.8791198730469,
+            "y": 91.46058654785156,
+            "right": 571.6649932861328,
+            "bottom": 111.69727325439453
+          },
+          {
+            "id": "update-label",
+            "x": 504.0296630859375,
+            "y": 271.023681640625,
+            "right": 617.468635559082,
+            "bottom": 291.26036834716797
+          },
+          {
+            "id": "current-label",
+            "x": 609.1764526367188,
+            "y": 140.46058654785156,
+            "right": 636.3743095397949,
+            "bottom": 160.69727325439453
+          },
+          {
+            "id": "next-label",
+            "x": 541.7670288085938,
+            "y": 211.49017333984375,
+            "right": 570.0299758911133,
+            "bottom": 231.72686004638672
+          },
+          {
+            "id": "repeat-label",
+            "x": 363.0280456542969,
+            "y": 238.22215270996094,
+            "right": 391.2909927368164,
+            "bottom": 258.4588394165039
+          },
+          {
+            "id": "current-symbol",
+            "x": 588.1090087890625,
+            "y": 308.15386962890625,
+            "right": 599.7750854492188,
+            "bottom": 330.1952819824219
+          },
+          {
+            "id": "next-symbol",
+            "x": 515.7583618164062,
+            "y": 308.15386962890625,
+            "right": 538.5001220703125,
+            "bottom": 330.1952819824219
+          }
+        ],
+        "math": [
+          {
+            "text": "L′",
+            "display": "\"STIX Two Math\", math",
+            "box": {
+              "x": 918.859375,
+              "y": 300.640625,
+              "right": 930.90625,
+              "bottom": 317.515625,
+              "w": 12.046875,
+              "h": 16.875
+            }
+          },
+          {
+            "text": "η",
+            "display": "\"STIX Two Math\", math",
+            "box": {
+              "x": 950.5,
+              "y": 403.203125,
+              "right": 958.34375,
+              "bottom": 417.203125,
+              "w": 7.84375,
+              "h": 14
+            }
+          },
+          {
+            "text": "θt+1=θt−ηL′(θt)",
+            "display": "\"STIX Two Math\", math",
+            "box": {
+              "x": 873,
+              "y": 427.296875,
+              "right": 1086.984375,
+              "bottom": 466.296875,
+              "w": 213.984375,
+              "h": 39
+            }
+          },
+          {
+            "text": "θ",
+            "display": "\"STIX Two Math\", math",
+            "box": {
+              "x": 92,
+              "y": 625.0625,
+              "right": 98.90625,
+              "bottom": 637.0625,
+              "w": 6.90625,
+              "h": 12
+            }
+          },
+          {
+            "text": "L",
+            "display": "\"STIX Two Math\", math",
+            "box": {
+              "x": 169.6875,
+              "y": 626.0625,
+              "right": 177.46875,
+              "bottom": 637.0625,
+              "w": 7.78125,
+              "h": 11
+            }
+          },
+          {
+            "text": "t",
+            "display": "\"STIX Two Math\", math",
+            "box": {
+              "x": 346.484375,
+              "y": 627.0625,
+              "right": 350.5625,
+              "bottom": 637.0625,
+              "w": 4.078125,
+              "h": 10
+            }
+          }
+        ],
+        "slide": {
+          "x": 0,
+          "y": 0,
+          "right": 1440,
+          "bottom": 810,
+          "w": 1440,
+          "h": 810
+        },
+        "panel": {
+          "x": 66,
+          "y": 196.328125,
+          "right": 1374,
+          "bottom": 666.453125,
+          "w": 1308,
+          "h": 470.125
+        },
+        "main": {
+          "x": 92,
+          "y": 219.328125,
+          "right": 1348,
+          "bottom": 596.0625,
+          "w": 1256,
+          "h": 376.734375
+        },
+        "steps": {
+          "x": 806,
+          "y": 219.328125,
+          "right": 1348,
+          "bottom": 596.0625,
+          "w": 542,
+          "h": 376.734375
+        },
+        "definitions": {
+          "x": 92,
+          "y": 608.0625,
+          "right": 1348,
+          "bottom": 643.453125,
+          "w": 1256,
+          "h": 35.390625
+        },
+        "takeaway": {
+          "x": 66,
+          "y": 680.453125,
+          "right": 1374,
+          "bottom": 732,
+          "w": 1308,
+          "h": 51.546875
+        },
+        "footer": {
+          "x": 66,
+          "y": 747,
+          "right": 1374,
+          "bottom": 780,
+          "w": 1308,
+          "h": 33
+        }
+      },
+      "mode_identity": {
+        "elements": 102,
+        "styles_equal": true,
+        "max_box_error_px": 6.103515625e-05
+      },
+      "outer": {
+        "w": 1080.875,
+        "h": 607.984375,
+        "x": 99.5625,
+        "right": 1180.4375,
+        "frame": [
+          99.5625,
+          56,
+          1081,
+          608.0625
+        ],
+        "overflow": false,
+        "ready": "true",
+        "pages": 1,
+        "buttons": 0,
+        "links": [
+          "scroll.html",
+          "slides.html"
+        ]
+      },
+      "math": {
+        "curve_points": 161,
+        "states": 6,
+        "finite_difference": true,
+        "painted_geometry": true,
+        "symbolic_formula": true,
+        "counterexamples": 15
+      },
+      "console_errors": [],
+      "request_failures": [],
+      "evidence": "/tmp/gradient-descent-review/slides-1280x720.png"
+    }
+  ],
+  "chromium": "154.0.8037.57",
+  "behavior": {
+    "mode_round_trip": true,
+    "keyboard_links": true,
+    "reload": true,
+    "single_page_boundary": true,
+    "script_failure_message": true
+  },
+  "canonical_and_common_rules_unchanged": true,
+  "source_sha256": {
+    "examples/gradient-descent/content.html": "26bf048f0dd9657e95031a143912d27d7b1ad89d16da618a07144a093d2a2620",
+    "examples/gradient-descent/gradient-descent.js": "cb7ed6901d728756c9f27817d65aa352ccdbdd01f8aa9e97bef00a2a21900746",
+    "examples/gradient-descent/viewer.css": "8a435498fed6a04df20ec0b38089828622a320822c1b162660ef85e3240385d1",
+    "examples/gradient-descent/scroll.html": "9713427e58072186778fd6f370cf55935d1a4cf7ffda09b7a020a158a091de24",
+    "examples/gradient-descent/slides.html": "209f3193df4284200353aaa4c40e227d65cb04f6354a5b7254acbff1cfcde593",
+    "examples/gradient-descent/gradient-descent.css": "7b9c2e90c912b2ffacd855292e1bda2193cc53ad0f8d265984a30700a9f153b2",
+    "examples/gradient-descent/viewer.js": "3ac80b1ecaad631929c6bab5967203980df85c81bd1f1ebc3bddd1cc01795c1f",
+    "scripts/verify_gradient_descent.py": "b266ac4fe37954e82d0925c48367c532e4d171995d2f0775660267eb04e3c7a8",
+    "templates/html/styles.css": "3c05e00284aae4ea538e697efae7682a2c9b35b318cab372fa8493613de4df22",
+    "templates/html/reference-layout.css": "c29f52fd9852d80b29e277b7d60218a7b02da599a059a8395051caada3525bcc",
+    "templates/html/math-typography.css": "c390ffe17b8c0f02d10a34b99bca892bb63f99af98766e7b47c0a88da38e2f3a",
+    "scripts/reference_validation.py": "8360e648f0a6aaa7a1b3bf56a9824de18cb48cefbd8e79a87f494633af25780e"
+  },
+  "font_sha256": {
+    "templates/html/assets/fonts/pretendard/PretendardVariable.woff2": "9599f12fd42fc0bce1cd50b47a0c022e108d7aa64dd0d1bb0ed44f3282d900b4",
+    "templates/html/assets/fonts/stix-two-math/STIXTwoMath-Regular.woff2": "d18b6ab10cd6670ec5d4067f3ad2678a156b6b6642d9a0985243a1da729e6a95"
+  },
+  "design_sha256": "291306f76489b83046d6e2e103008b7cf83bca2c867a0e2bc74006c3db30a883",
+  "preview_sha256": {
+    "slide.png": "27584d17ef21d29a6397302a14149d872a85ccb6c720ff8a1c12d06b76522c16",
+    "scroll.png": "3afb5f3a5ab181995290701992ab00bd66dcd8101d0afb3768d611763bad7187"
+  },
+  "status": "passed",
+  "created_utc": "2026-10-24T12:26:41.217241+00:00"
+}
