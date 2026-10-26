@@ -67,6 +67,7 @@ jobs:
           from pathlib import Path
           import base64
           files=list(Path('previews').glob('html-*.png'))+list(Path('previews').glob('html-*.jpg'))
+          files += [Path('previews')/n for n in ['dual-mode-scroll.jpg','dual-mode-slide.jpg']]
           files += [Path('previews/review')/n for n in ['reference-validation.json','interactive-validation.json','dual-mode-validation.json']]
           files += [Path('previews/heading-review')/n for n in ['index.html','overfitting.png','contact.jpg','validation.json']]
           for f in files:

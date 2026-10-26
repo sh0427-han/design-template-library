@@ -8898,7 +8898,7 @@
       "evidence": "examples/overfitting-generalization/review/screens/middle-minimum.png"
     }
   ],
-  "created_utc": "2026-10-26T05:48:19.803299+00:00",
+  "created_utc": "2026-10-26T06:32:30.018993+00:00",
   "chromium": "155.0.8059.0",
   "behavior": {
     "changed_datasets": [
@@ -8921,7 +8921,7 @@
     "examples/overfitting-generalization/content.html": "44c7f22b1683213b219bdc4349c015095136ab5618bc8b172236f02d3f51971b",
     "examples/overfitting-generalization/scroll.html": "c3d618f2f5accc5471da5506955a9dd2c38d62427f224e2bf5c6938636db4936",
     "examples/overfitting-generalization/slides.html": "20ceb16b62eacd01b0c22601a04c3b87756b216c3dce5ae89c7b0cecf97c7171",
-    "examples/overfitting-generalization/lesson.css": "b01915959c7ea615125f9db09cfc9ea13109ce711702c59c6a781bf3fa0325ab",
+    "examples/overfitting-generalization/lesson.css": "d1668f5964bd1ee7fe14495e040a209eb81202826a4576f257a97e8c31ad1a12",
     "examples/overfitting-generalization/viewer.css": "b03e8785c652fd9711e4eca188e29c555024a998c53013ce8b389e61825860a7",
     "examples/overfitting-generalization/viewer.js": "a15e739f880682df368572875033d204eab63789b812cebad965f6eb566229a3",
     "examples/overfitting-generalization/curves.js": "509e63b6f9660e713d99fd83b66b5fe22004d278f2ce0a1b6842fd339b11e884",
@@ -8931,7 +8931,7 @@
     "templates/html/graph-annotations.js": "deeee6a81fae900035c9b5398c1c17aa7ac4694bf986313b1a810ec20bfec92b"
   },
   "preview_sha256": {
-    "scroll.png": "bfa3f565dac1679bda43b2b65579bf61d7f3bd618a55ff3847fbbbdbb1312f19",
-    "slide.png": "f4a8807f6e8cfaa720cc155a5d64cc18d09480d9e7e67d29cb759d6088363479"
+    "scroll.png": "51ce8292465b66dc1a1a1cae3df2cbb7dc8915aa74ce6d35be36950fb5b80a30",
+    "slide.png": "fa34da59651060fc7a04b9d84ad2a1ece5c28461e439828b43eab859d2bb1838"
   }
 }

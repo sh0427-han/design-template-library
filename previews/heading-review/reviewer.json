@@ -1,0 +1,203 @@
+{
+  "reviewer": "/root/independent_reviewer",
+  "review_type": "independent_static_and_actual_visual_review",
+  "reviewed_commit": "a89036f3cce2e8c846b441318e4835e4f96fee7c",
+  "created_utc": "2026-10-26T06:45:52.952240+00:00",
+  "status": "preview_review_passed_with_supplemental_evidence_note",
+  "scope": "User-requested heading-role color preview across the eight canonical references and the overfitting example; PC4 x Scroll/Slide.",
+  "visual_review_performed": true,
+  "source_code_modified_by_reviewer": false,
+  "markdown_files_created_or_modified_by_reviewer": [],
+  "markdown_diff_from_manifest_baseline": [],
+  "markdown_finalized": false,
+  "user_review_pending": true,
+  "user_approval_for_markdown": false,
+  "merge_authorized": false,
+  "severity_counts": {
+    "high": 0,
+    "medium": 0,
+    "low": 1
+  },
+  "preview_design_severity_counts": {
+    "high": 0,
+    "medium": 0,
+    "low": 0
+  },
+  "findings": [
+    {
+      "id": "H-R2",
+      "severity": "low",
+      "status": "open_supplemental_evidence_only",
+      "title": "Two general dual-mode representative JPEGs do not match the new report preview hashes",
+      "files": [
+        "previews/dual-mode-scroll.jpg",
+        "previews/dual-mode-slide.jpg"
+      ],
+      "report": "previews/review/dual-mode-validation.json",
+      "impact": "The latest dual-mode report source hashes and 64 PC cases are valid, but its two representative preview files are stale relative to its preview_sha256. The nine-source heading gallery and all heading preview hashes match and are unaffected.",
+      "recommendation": "Replace these two JPEGs with the unmodified latest CI artifacts, then independently compare their SHA256. Do not rewrite the report hashes to fit stale files.",
+      "blocks_heading_preview_visual_pass": false
+    }
+  ],
+  "resolved_findings": [
+    {
+      "id": "H-R1",
+      "severity_before": "medium",
+      "status": "resolved",
+      "evidence": "Comparison .phase-heading h3 now uses Blue; all four prepare/predict stage labels are included in the role selector and have rgb(49,104,200) across all eight cases."
+    },
+    {
+      "id": "H-O1",
+      "status": "clarified_and_applied",
+      "evidence": "Architecture FEATURE EXTRACTOR/CLASSIFIER are explicitly category labels and both render Blue. Operation and step-role selectors are also audited; semantic Teal/Deep diagram lines retain their meaning."
+    },
+    {
+      "id": "H-O3",
+      "status": "verified",
+      "evidence": "The added Executive Summary Navy heading fits above the existing chart. Direct full-size screenshot review and all eight actual geometry cases show no new overlap, clipping or footer collision."
+    }
+  ],
+  "visual_checks": {
+    "images_directly_opened": [
+      "previews/heading-review/contact.jpg",
+      "previews/html-comparison.png",
+      "previews/html-interactive.jpg",
+      "previews/html-architecture.jpg",
+      "previews/html-experiment.jpg",
+      "previews/html-executive-summary.jpg",
+      "previews/heading-review/overfitting.png"
+    ],
+    "contact_contains_nine_sources": true,
+    "observations": [
+      "Core card/item titles read as Navy; category and stage labels read as Blue across the nine-source contact.",
+      "Comparison pills are equal Blue/PaleBlue while the Amber rule illustration remains a meaningful diagram color.",
+      "Interactive and Experiment metric names are Navy; metric values, equations, class colors and matrix contents remain intact.",
+      "Architecture categories are Blue without losing technical group separators, shapes, arrows or original channel/probability meanings.",
+      "Executive Summary separates the Blue English category from a real Navy Korean title and uses Navy action headings. Its data and normalization remain readable.",
+      "The overfitting diagram title is Navy. Its graph, minimum marker, conditional overfitting region, fruit illustration and predictions remain legible."
+    ],
+    "confirmed_design_defects": []
+  },
+  "actual_browser_evidence": {
+    "status": "passed",
+    "chromium": "155.0.8059.0",
+    "cases": 72,
+    "unique_reference_mode_viewport_combinations": 72,
+    "references": 9,
+    "pc_sizes": [
+      [
+        1600,
+        950
+      ],
+      [
+        1440,
+        810
+      ],
+      [
+        1366,
+        768
+      ],
+      [
+        1280,
+        720
+      ]
+    ],
+    "modes": [
+      "slides",
+      "scroll"
+    ],
+    "title_observations": 400,
+    "label_observations": 304,
+    "title_color": "rgb(18, 35, 63)",
+    "label_color": "rgb(49, 104, 200)",
+    "actual_pretendard_and_minus_one_pt": true,
+    "geometry_failures": [],
+    "page_errors": [],
+    "failed_requests": [],
+    "source_sha256_all_match": true,
+    "heading_preview_sha256_all_match": true,
+    "manifest_before_after_sha256_all_match": true,
+    "role_styles_equal_across_modes_and_sizes": true
+  },
+  "preservation": {
+    "canonical_exception_count": 5,
+    "canonical_exception_paths": [
+      "templates/html/architecture.html",
+      "templates/html/comparison-reference.css",
+      "templates/html/executive-summary.html",
+      "templates/html/experiment.html",
+      "templates/html/interactive.html"
+    ],
+    "noncanonical_example_css_exception": "examples/overfitting-generalization/lesson.css",
+    "guard": "The pinned-source check permits only these five original paths, verifies each explicit before and after SHA256, and keeps all other original sources and pinned common rules strict.",
+    "other_canonical_sources_unchanged": true,
+    "data_calculations_common_css_axis_helper_changes_found": false,
+    "markdown_changed_count": 0,
+    "manifest_status": "preview_pending_user_review",
+    "manifest_markdown_finalized": false
+  },
+  "regression_evidence": {
+    "full_run": {
+      "id": 40280379104,
+      "job": 121432439023,
+      "status": "completed",
+      "conclusion": "success",
+      "independently_queried": true
+    },
+    "dedicated_run": {
+      "id": 40280379096,
+      "job": 121432138740,
+      "status": "completed",
+      "conclusion": "success",
+      "independently_queried": true
+    },
+    "reference_validation": {
+      "status": "passed",
+      "cases": 48,
+      "source_and_preview_hashes_match": true
+    },
+    "interactive_validation": {
+      "status": "passed",
+      "source_hashes_match": true
+    },
+    "dual_mode_validation": {
+      "status": "passed",
+      "pc_cases": 64,
+      "source_hashes_match": true,
+      "representative_preview_hashes_match": false
+    },
+    "overfitting_validation": {
+      "status": "passed",
+      "cases": 8,
+      "source_and_preview_hashes_match": true
+    },
+    "gradient_descent_validation": {
+      "status": "passed",
+      "cases": 8,
+      "source_and_preview_hashes_match": true
+    },
+    "local_documentation_check": "PASS 46 Markdown files / 480 local links; eight final specs, source/preview hashes and Interactive reuse evidence"
+  },
+  "limits": [
+    "This internal pass approves the displayed heading preview for user review; it does not finalize common Markdown or grant user approval.",
+    "The proposed role scope separates category/stage titles from semantic figure/data/axis/condition/result labels; the latter are not universally recolored Blue.",
+    "Direct image review covers the nine-source contact and the changed representative full-size images; all PC4 x both-mode cases are supported by actual CI measurements.",
+    "No claim of universal independent-author reproduction, new concept reuse for all eight patterns, or main merge approval is made.",
+    "The historical static review remains unchanged and records the original H-R1 omission. Its resolution is recorded here."
+  ],
+  "image_sha256": {
+    "previews/heading-review/contact.jpg": "f6a3a091c1e1eab3e8caefca3cd898fa0eaf709fc261b64f58108a4eb9f036c9",
+    "previews/html-comparison.png": "8d5d1f891ffb31fdd358b961b4daf8fa80fbf5a79bc5b78b18a0f6772e2212a8",
+    "previews/html-interactive.jpg": "6552cc759523c967de8aadd317b95e76a93446fb043810e47db5aa43c1b012c4",
+    "previews/html-architecture.jpg": "b36556f3baa04017fd118792a7d851f00af9defd7446597be5c4b291e728eda5",
+    "previews/html-experiment.jpg": "a46a7083f4bdbcc4e6f57f81ff0c0624f4cb751ebc412a179a6213545e3a505f",
+    "previews/html-executive-summary.jpg": "966d0f37c6eb520097c6872372c0c8199d95ef60486ee27bf38fb87c05953a24",
+    "previews/heading-review/overfitting.png": "51b34a5b33c3408962e55015d2bc8999523a1085cf518933d7186f10d16a6714"
+  },
+  "evidence_sha256": {
+    "previews/heading-review/validation.json": "9019d02bd494d87db14a6d80370e1dc6a554711347ae743137c8e12f263568f3",
+    "previews/heading-review/change-scope.json": "5305d285b95f87c87c3fb1e118205fd5a10ea7fa6aa28b8c5df9b5b7a45d391b",
+    "scripts/verify_heading_roles.py": "1422becf2ab1ad43c3f77a27a3d1764e6d464afea881b76f920131af01638fec",
+    "scripts/verify_gradient_descent.py": "2169382513ee269e91e92615442fe13b1d112e672584f95e5dde2983692f38a7"
+  }
+}
