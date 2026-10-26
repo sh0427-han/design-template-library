@@ -126,3 +126,8 @@
 ## 타주제 재사용 검증 사례 · 경사하강법
 
 [경사하강법 개념 한 장](examples/gradient-descent/README.md)은 위8종과 공통 Markdown의 충분성을 검토한 별도 산출물이며 canonical 번호를 추가하지 않습니다. #1의 White 단일 패널, #2의 역할별 설명 트랙, #8의 축/데이터 대응 원칙 일부를 선택했습니다. 편집 가능한 손실 곡선·접선·갱신 방향과 스칼라 일반식을 사용하고 실제 숫자 대입 장은 없습니다. 같은 [원본](examples/gradient-descent/content.html)을 [Scroll](examples/gradient-descent/scroll.html)/[Slide](examples/gradient-descent/slides.html)에서 표시합니다. [설계 출처·주제 전용 수치](examples/gradient-descent/DESIGN.md), [D0/D1 판단](examples/gradient-descent/VALIDATION.md), [Slide 프리뷰](examples/gradient-descent/previews/slide.png), [Scroll 프리뷰](examples/gradient-descent/previews/scroll.png), [검증 JSON](examples/gradient-descent/previews/validation.json)을 함께 봅니다.8종 전체의 타주제 재사용을 통과했다는 의미는 아닙니다.
+
+
+## 3차 타주제 재사용 검증 · 과적합과 일반화
+
+[과적합과 일반화 개념 한 장](examples/overfitting-generalization/README.md)은 #3 Comparison의 동등 White·대응 행과 #8의 동일 기준/축/범례 원칙 일부를 재구성한 별도 검증 산출물이다. 과적합(현상)과 일반화(새 데이터 성능 관점)를 구분하고 설명용 학습·검증 손실곡선을 하나의 공유 Figure로 읽는다. 같은 [편집 원본](examples/overfitting-generalization/content.html)을 [Scroll](examples/overfitting-generalization/scroll.html)/[Slide](examples/overfitting-generalization/slides.html)로 표시한다. [설계·출처](examples/overfitting-generalization/DESIGN.md), [D0/D1 및 독립검토](examples/overfitting-generalization/VALIDATION.md), [Slide PNG](examples/overfitting-generalization/previews/slide.png), [Scroll PNG](examples/overfitting-generalization/previews/scroll.png), [8화면 실제 검증](examples/overfitting-generalization/previews/validation.json)을 함께 확인한다. 새 canonical 번호를 추가하지 않으며 사용하지 않은 패턴의 타주제 재사용을 검증한 것은 아니다.
