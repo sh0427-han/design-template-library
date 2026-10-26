@@ -1,0 +1,30 @@
+name: Validate Overfitting Reuse
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'examples/overfitting-generalization/**'
+      - 'scripts/verify_overfitting.py'
+      - '.github/workflows/validate-overfitting.yml'
+permissions:
+  contents: read
+jobs:
+  overfitting:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install playwright
+      - run: python -m playwright install --with-deps chromium
+      - run: python scripts/verify_overfitting.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: overfitting-browser-evidence
+          path: |
+            examples/overfitting-generalization/previews
+            examples/overfitting-generalization/review/screens
