@@ -3,7 +3,7 @@
   "review_type": "independent_static_and_actual_visual_review",
   "reviewed_commit": "a89036f3cce2e8c846b441318e4835e4f96fee7c",
   "created_utc": "2026-10-26T06:45:52.952240+00:00",
-  "status": "preview_review_passed_with_supplemental_evidence_note",
+  "status": "final_preview_review_passed",
   "scope": "User-requested heading-role color preview across the eight canonical references and the overfitting example; PC4 x Scroll/Slide.",
   "visual_review_performed": true,
   "source_code_modified_by_reviewer": false,
@@ -16,29 +16,14 @@
   "severity_counts": {
     "high": 0,
     "medium": 0,
-    "low": 1
+    "low": 0
   },
   "preview_design_severity_counts": {
     "high": 0,
     "medium": 0,
     "low": 0
   },
-  "findings": [
-    {
-      "id": "H-R2",
-      "severity": "low",
-      "status": "open_supplemental_evidence_only",
-      "title": "Two general dual-mode representative JPEGs do not match the new report preview hashes",
-      "files": [
-        "previews/dual-mode-scroll.jpg",
-        "previews/dual-mode-slide.jpg"
-      ],
-      "report": "previews/review/dual-mode-validation.json",
-      "impact": "The latest dual-mode report source hashes and 64 PC cases are valid, but its two representative preview files are stale relative to its preview_sha256. The nine-source heading gallery and all heading preview hashes match and are unaffected.",
-      "recommendation": "Replace these two JPEGs with the unmodified latest CI artifacts, then independently compare their SHA256. Do not rewrite the report hashes to fit stale files.",
-      "blocks_heading_preview_visual_pass": false
-    }
-  ],
+  "findings": [],
   "resolved_findings": [
     {
       "id": "H-R1",
@@ -55,6 +40,22 @@
       "id": "H-O3",
       "status": "verified",
       "evidence": "The added Executive Summary Navy heading fits above the existing chart. Direct full-size screenshot review and all eight actual geometry cases show no new overlap, clipping or footer collision."
+    },
+    {
+      "id": "H-R2",
+      "severity": "low",
+      "status": "resolved",
+      "title": "Two general dual-mode representative JPEGs do not match the new report preview hashes",
+      "files": [
+        "previews/dual-mode-scroll.jpg",
+        "previews/dual-mode-slide.jpg"
+      ],
+      "report": "previews/review/dual-mode-validation.json",
+      "impact": "The latest dual-mode report source hashes and 64 PC cases are valid, but its two representative preview files are stale relative to its preview_sha256. The nine-source heading gallery and all heading preview hashes match and are unaffected.",
+      "recommendation": "Replace these two JPEGs with the unmodified latest CI artifacts, then independently compare their SHA256. Do not rewrite the report hashes to fit stale files.",
+      "blocks_heading_preview_visual_pass": false,
+      "resolution": "Both representative JPEGs and their validation JSON were restored from the same CI run 40282048043/job121437290693. Basename preview paths resolve under previews/. Each actual JPEG SHA256 now equals the report; all 33 pc_validation.source_sha256 values match current files and all 64 PC mode cases passed.",
+      "initial_observation_preserved": true
     }
   ],
   "visual_checks": {
@@ -164,7 +165,8 @@
       "status": "passed",
       "pc_cases": 64,
       "source_hashes_match": true,
-      "representative_preview_hashes_match": false
+      "representative_preview_hashes_match": true,
+      "renderer_source_hash_count": 33
     },
     "overfitting_validation": {
       "status": "passed",
@@ -176,7 +178,14 @@
       "cases": 8,
       "source_and_preview_hashes_match": true
     },
-    "local_documentation_check": "PASS 46 Markdown files / 480 local links; eight final specs, source/preview hashes and Interactive reuse evidence"
+    "local_documentation_check": "PASS 46 Markdown files / 480 local links; eight final specs, source/preview hashes and Interactive reuse evidence",
+    "synchronized_evidence_run": {
+      "id": 40282048043,
+      "job": 121437290693,
+      "status": "completed",
+      "conclusion": "success",
+      "independently_queried": true
+    }
   },
   "limits": [
     "This internal pass approves the displayed heading preview for user review; it does not finalize common Markdown or grant user approval.",
@@ -192,12 +201,37 @@
     "previews/html-architecture.jpg": "b36556f3baa04017fd118792a7d851f00af9defd7446597be5c4b291e728eda5",
     "previews/html-experiment.jpg": "a46a7083f4bdbcc4e6f57f81ff0c0624f4cb751ebc412a179a6213545e3a505f",
     "previews/html-executive-summary.jpg": "966d0f37c6eb520097c6872372c0c8199d95ef60486ee27bf38fb87c05953a24",
-    "previews/heading-review/overfitting.png": "51b34a5b33c3408962e55015d2bc8999523a1085cf518933d7186f10d16a6714"
+    "previews/heading-review/overfitting.png": "51b34a5b33c3408962e55015d2bc8999523a1085cf518933d7186f10d16a6714",
+    "previews/dual-mode-scroll.jpg": "dd3b7106f91e29cd4caa60cb5cd2fc271e415e03d30fb082855451ea3d991178",
+    "previews/dual-mode-slide.jpg": "9b36ab86a17e067eb110979402581a10c4d42460a471fc552db08ea98432e3fb"
   },
   "evidence_sha256": {
     "previews/heading-review/validation.json": "9019d02bd494d87db14a6d80370e1dc6a554711347ae743137c8e12f263568f3",
     "previews/heading-review/change-scope.json": "5305d285b95f87c87c3fb1e118205fd5a10ea7fa6aa28b8c5df9b5b7a45d391b",
     "scripts/verify_heading_roles.py": "1422becf2ab1ad43c3f77a27a3d1764e6d464afea881b76f920131af01638fec",
-    "scripts/verify_gradient_descent.py": "2169382513ee269e91e92615442fe13b1d112e672584f95e5dde2983692f38a7"
+    "scripts/verify_gradient_descent.py": "2169382513ee269e91e92615442fe13b1d112e672584f95e5dde2983692f38a7",
+    "previews/review/dual-mode-validation.json": "9220922fab65e5059285f230da58dda5411954455b3c2ec9f146d18e686376f1"
+  },
+  "updated_utc": "2026-10-26T07:05:57.105220+00:00",
+  "evidence_recheck_commit": "d73f64795ffaa5867c0a818b8bdfa3d8ddc1165b",
+  "evidence_recheck": {
+    "scope": "Evidence synchronization only. No product or validation logic changed since the reviewed a89036f heading preview; the workflow adds two existing JPEGs to the evidence transfer list.",
+    "images_directly_opened": [
+      "previews/dual-mode-scroll.jpg",
+      "previews/dual-mode-slide.jpg"
+    ],
+    "synchronized_files": [
+      "previews/dual-mode-scroll.jpg",
+      "previews/dual-mode-slide.jpg",
+      "previews/review/dual-mode-validation.json"
+    ],
+    "dual_mode_preview_hashes_match": true,
+    "dual_mode_current_renderer_hashes_match": true,
+    "dual_mode_pc_cases": 64,
+    "heading_source_and_preview_hashes_rechecked": true,
+    "heading_pc_cases": 72,
+    "markdown_diff_count": 0,
+    "unresolved_findings": 0,
+    "approval_scope": "Final internal preview review pass; user review is pending. Common Markdown is not finalized and merge is not authorized."
   }
 }

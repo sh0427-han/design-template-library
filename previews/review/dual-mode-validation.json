@@ -252,7 +252,7 @@
         "source_design": {
           "elements": 100,
           "style_match": true,
-          "max_box_error_px": 6.103515625e-05,
+          "max_box_error_px": 0.41644287109375,
           "box_tolerance_px": {
             "html": 0.3,
             "svg": 1
