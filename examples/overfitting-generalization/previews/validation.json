@@ -19,6 +19,10 @@
       "geometry": {
         "cardLayout": [
           {
+            "sectionGap": 24,
+            "titleToContentGap": 0,
+            "figureTitleFont": 19,
+            "figureTitleWeight": 750,
             "labelTitleGap": 8,
             "labelTitleXError": 0,
             "graphLeftError": 0,
@@ -27,6 +31,10 @@
             "sameCard": true
           },
           {
+            "sectionGap": 24,
+            "titleToContentGap": 8,
+            "figureTitleFont": 19,
+            "figureTitleWeight": 750,
             "labelTitleGap": 8,
             "labelTitleXError": 0,
             "graphLeftError": 0,
@@ -985,6 +993,10 @@
       "geometry": {
         "cardLayout": [
           {
+            "sectionGap": 24,
+            "titleToContentGap": 0,
+            "figureTitleFont": 19,
+            "figureTitleWeight": 750,
             "labelTitleGap": 8,
             "labelTitleXError": 0,
             "graphLeftError": 0,
@@ -993,6 +1005,10 @@
             "sameCard": true
           },
           {
+            "sectionGap": 24,
+            "titleToContentGap": 8,
+            "figureTitleFont": 19,
+            "figureTitleWeight": 750,
             "labelTitleGap": 8,
             "labelTitleXError": 0,
             "graphLeftError": 0,
@@ -1951,6 +1967,10 @@
       "geometry": {
         "cardLayout": [
           {
+            "sectionGap": 24,
+            "titleToContentGap": 0,
+            "figureTitleFont": 19,
+            "figureTitleWeight": 750,
             "labelTitleGap": 8,
             "labelTitleXError": 0,
             "graphLeftError": 0,
@@ -1959,6 +1979,10 @@
             "sameCard": true
           },
           {
+            "sectionGap": 24,
+            "titleToContentGap": 8,
+            "figureTitleFont": 19,
+            "figureTitleWeight": 750,
             "labelTitleGap": 8,
             "labelTitleXError": 0,
             "graphLeftError": 0,
@@ -2917,6 +2941,10 @@
       "geometry": {
         "cardLayout": [
           {
+            "sectionGap": 24,
+            "titleToContentGap": 0,
+            "figureTitleFont": 19,
+            "figureTitleWeight": 750,
             "labelTitleGap": 8,
             "labelTitleXError": 0,
             "graphLeftError": 0,
@@ -2925,6 +2953,10 @@
             "sameCard": true
           },
           {
+            "sectionGap": 24,
+            "titleToContentGap": 8,
+            "figureTitleFont": 19,
+            "figureTitleWeight": 750,
             "labelTitleGap": 8,
             "labelTitleXError": 0,
             "graphLeftError": 0,
@@ -3883,6 +3915,10 @@
       "geometry": {
         "cardLayout": [
           {
+            "sectionGap": 24,
+            "titleToContentGap": 0,
+            "figureTitleFont": 19,
+            "figureTitleWeight": 750,
             "labelTitleGap": 8,
             "labelTitleXError": 0,
             "graphLeftError": 0,
@@ -3891,6 +3927,10 @@
             "sameCard": true
           },
           {
+            "sectionGap": 24,
+            "titleToContentGap": 8,
+            "figureTitleFont": 19,
+            "figureTitleWeight": 750,
             "labelTitleGap": 8,
             "labelTitleXError": 0,
             "graphLeftError": 0,
@@ -4849,6 +4889,10 @@
       "geometry": {
         "cardLayout": [
           {
+            "sectionGap": 24,
+            "titleToContentGap": 0,
+            "figureTitleFont": 19,
+            "figureTitleWeight": 750,
             "labelTitleGap": 8,
             "labelTitleXError": 0,
             "graphLeftError": 0,
@@ -4857,6 +4901,10 @@
             "sameCard": true
           },
           {
+            "sectionGap": 24,
+            "titleToContentGap": 8,
+            "figureTitleFont": 19,
+            "figureTitleWeight": 750,
             "labelTitleGap": 8,
             "labelTitleXError": 0,
             "graphLeftError": 0,
@@ -5815,6 +5863,10 @@
       "geometry": {
         "cardLayout": [
           {
+            "sectionGap": 24,
+            "titleToContentGap": 0,
+            "figureTitleFont": 19,
+            "figureTitleWeight": 750,
             "labelTitleGap": 8,
             "labelTitleXError": 0,
             "graphLeftError": 0,
@@ -5823,6 +5875,10 @@
             "sameCard": true
           },
           {
+            "sectionGap": 24,
+            "titleToContentGap": 8,
+            "figureTitleFont": 19,
+            "figureTitleWeight": 750,
             "labelTitleGap": 8,
             "labelTitleXError": 0,
             "graphLeftError": 0,
@@ -6781,6 +6837,10 @@
       "geometry": {
         "cardLayout": [
           {
+            "sectionGap": 24,
+            "titleToContentGap": 0,
+            "figureTitleFont": 19,
+            "figureTitleWeight": 750,
             "labelTitleGap": 8,
             "labelTitleXError": 0,
             "graphLeftError": 0,
@@ -6789,6 +6849,10 @@
             "sameCard": true
           },
           {
+            "sectionGap": 24,
+            "titleToContentGap": 8,
+            "figureTitleFont": 19,
+            "figureTitleWeight": 750,
             "labelTitleGap": 8,
             "labelTitleXError": 0,
             "graphLeftError": 0,
@@ -7772,6 +7836,10 @@
       "geometry": {
         "cardLayout": [
           {
+            "sectionGap": 24,
+            "titleToContentGap": 0,
+            "figureTitleFont": 19,
+            "figureTitleWeight": 750,
             "labelTitleGap": 8,
             "labelTitleXError": 0,
             "graphLeftError": 0,
@@ -7780,6 +7848,10 @@
             "sameCard": true
           },
           {
+            "sectionGap": 24,
+            "titleToContentGap": 8,
+            "figureTitleFont": 19,
+            "figureTitleWeight": 750,
             "labelTitleGap": 8,
             "labelTitleXError": 0,
             "graphLeftError": 0,
@@ -8120,6 +8192,10 @@
       "geometry": {
         "cardLayout": [
           {
+            "sectionGap": 24,
+            "titleToContentGap": 0,
+            "figureTitleFont": 19,
+            "figureTitleWeight": 750,
             "labelTitleGap": 8,
             "labelTitleXError": 0,
             "graphLeftError": 0,
@@ -8128,6 +8204,10 @@
             "sameCard": true
           },
           {
+            "sectionGap": 24,
+            "titleToContentGap": 8,
+            "figureTitleFont": 19,
+            "figureTitleWeight": 750,
             "labelTitleGap": 8,
             "labelTitleXError": 0,
             "graphLeftError": 0,
@@ -8468,6 +8548,10 @@
       "geometry": {
         "cardLayout": [
           {
+            "sectionGap": 24,
+            "titleToContentGap": 0,
+            "figureTitleFont": 19,
+            "figureTitleWeight": 750,
             "labelTitleGap": 8,
             "labelTitleXError": 0,
             "graphLeftError": 0,
@@ -8476,6 +8560,10 @@
             "sameCard": true
           },
           {
+            "sectionGap": 24,
+            "titleToContentGap": 8,
+            "figureTitleFont": 19,
+            "figureTitleWeight": 750,
             "labelTitleGap": 8,
             "labelTitleXError": 0,
             "graphLeftError": 0,
@@ -8810,7 +8898,7 @@
       "evidence": "examples/overfitting-generalization/review/screens/middle-minimum.png"
     }
   ],
-  "created_utc": "2026-10-26T09:03:33.572232+00:00",
+  "created_utc": "2026-10-26T23:13:54.339865+00:00",
   "chromium": "155.0.8059.0",
   "behavior": {
     "changed_datasets": [
@@ -8833,17 +8921,17 @@
     "examples/overfitting-generalization/content.html": "3fcd5133015211088c8f4ea6d3a6421e91793cf601f29329ffcecb5d94c89687",
     "examples/overfitting-generalization/scroll.html": "c3d618f2f5accc5471da5506955a9dd2c38d62427f224e2bf5c6938636db4936",
     "examples/overfitting-generalization/slides.html": "20ceb16b62eacd01b0c22601a04c3b87756b216c3dce5ae89c7b0cecf97c7171",
-    "examples/overfitting-generalization/lesson.css": "4b7edb9f7d8b071f5f4820aa44baeb5c7d7046ba09a168e5d39fa5a85a9869ef",
+    "examples/overfitting-generalization/lesson.css": "df7745f811b84a1beed9afe753a55e1fbf765ae6c2890eb08f4ab8e835c59850",
     "examples/overfitting-generalization/viewer.css": "b03e8785c652fd9711e4eca188e29c555024a998c53013ce8b389e61825860a7",
     "examples/overfitting-generalization/viewer.js": "a15e739f880682df368572875033d204eab63789b812cebad965f6eb566229a3",
     "examples/overfitting-generalization/curves.js": "509e63b6f9660e713d99fd83b66b5fe22004d278f2ce0a1b6842fd339b11e884",
     "examples/overfitting-generalization/curves.json": "d9e995fa132145654184d2f3a5a7a0b076debc789f8311bd3a7d96d7bc6521a8",
     "examples/overfitting-generalization/DESIGN.md": "298eaf219aa36e791b6ac38449560f516e07942ce611f5b663f7f7e046061a61",
-    "scripts/verify_overfitting.py": "c08ae629a1de00a557c591b9c654075eb260ca89e70906d23d10aa9c7f18f0a0",
+    "scripts/verify_overfitting.py": "a3edec1051ea99557facaecf57daa2aafff17b549ebcd657afce68724f92f7dd",
     "templates/html/graph-annotations.js": "deeee6a81fae900035c9b5398c1c17aa7ac4694bf986313b1a810ec20bfec92b"
   },
   "preview_sha256": {
-    "scroll.png": "7636520ae6d53b274958e72778094423c2a27bb9ceea99a71aba00e443d7f184",
-    "slide.png": "3042728bd95527155ded52827f651c721884b3488b2b0099e6d81c5cc604eff5"
+    "scroll.png": "ca54abcb35faeb155103bc5ed5c0f1f0ea37c0cf44d7e32a4c3e79cc5bdcf537",
+    "slide.png": "41eb6c254f87e1e5f1678f684ef82f31db1a4d06a0a2811c2bdbb7f2a933363a"
   }
 }
