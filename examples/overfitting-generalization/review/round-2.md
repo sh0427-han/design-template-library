@@ -1,3 +1,5 @@
+> 이전판 기록: 이 문서는 사용자 개정 전 D0/D1 검토다. 현행 수정본은 revision-*.md와 갱신된 검증 결과를 따른다.
+
 # 독립 Reviewer · 2차 검토
 
 - Reviewer: `/root/independent_reviewer`, 1차와 동일한 별도 Agent.

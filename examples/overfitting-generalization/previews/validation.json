@@ -1,12 +1,14 @@
 {
   "status": "passed",
   "independent": {
-    "points": 41,
-    "series": 2,
+    "points_per_scenario": 41,
+    "scenarios": 2,
+    "series": 4,
     "max_independent_value_error": 1.1102230246251565e-16,
     "same_loss_basis": true,
     "early_joint_decrease": true,
     "late_divergence": true,
+    "new_data_low_loss": true,
     "real_experiment": false
   },
   "cases": [
@@ -17,6 +19,26 @@
         950
       ],
       "geometry": {
+        "charts": [
+          {
+            "x": 197.5,
+            "y": 344.328125,
+            "right": 577.5,
+            "bottom": 664.328125,
+            "width": 380,
+            "height": 320
+          },
+          {
+            "x": 862.5,
+            "y": 344.328125,
+            "right": 1242.5,
+            "bottom": 664.328125,
+            "width": 380,
+            "height": 320
+          }
+        ],
+        "removedSubjects": 0,
+        "removedGrid": 0,
         "slide": {
           "x": 0,
           "y": 0,
@@ -35,11 +57,11 @@
         },
         "content": {
           "x": 66,
-          "y": 170.328125,
+          "y": 156.328125,
           "right": 1374,
           "bottom": 756,
           "width": 1308,
-          "height": 585.671875
+          "height": 599.671875
         },
         "outside": [],
         "padding": [
@@ -47,9 +69,9 @@
             "name": "card definition",
             "inner": {
               "x": 93,
-              "y": 189.328125,
+              "y": 171.328125,
               "right": 682,
-              "bottom": 335.328125
+              "bottom": 270.328125
             },
             "escaped": []
           },
@@ -57,19 +79,29 @@
             "name": "card definition",
             "inner": {
               "x": 758,
-              "y": 189.328125,
+              "y": 171.328125,
               "right": 1347,
-              "bottom": 335.328125
+              "bottom": 270.328125
             },
             "escaped": []
           },
           {
-            "name": "loss-panel",
+            "name": "curve-panel",
             "inner": {
-              "x": 91,
-              "y": 389.328125,
-              "right": 1349,
-              "bottom": 653.328125
+              "x": 93,
+              "y": 314.328125,
+              "right": 682,
+              "bottom": 664.328125
+            },
+            "escaped": []
+          },
+          {
+            "name": "curve-panel",
+            "inner": {
+              "x": 758,
+              "y": 314.328125,
+              "right": 1347,
+              "bottom": 664.328125
             },
             "escaped": []
           }
@@ -77,38 +109,102 @@
         "clipped": [],
         "labels": [
           {
+            "svg": "overfit-chart",
+            "text": "검증 손실 상승은 과적합의 단서",
+            "bbox": {
+              "x": 85.9453125,
+              "y": 4,
+              "width": 208.109375,
+              "height": 23
+            }
+          },
+          {
+            "svg": "overfit-chart",
             "text": "평균 손실",
             "bbox": {
-              "x": 80,
-              "y": 4,
+              "x": 46,
+              "y": 34,
               "width": 56.375,
               "height": 20
             }
           },
           {
+            "svg": "overfit-chart",
             "text": "0",
             "bbox": {
-              "x": 41.90625,
-              "y": 113,
+              "x": 27.90625,
+              "y": 259,
               "width": 8,
               "height": 17
             }
           },
           {
+            "svg": "overfit-chart",
             "text": "학습 진행",
             "bbox": {
-              "x": 363.8125,
-              "y": 138,
+              "x": 173.8125,
+              "y": 291,
               "width": 57.01043701171875,
               "height": 20
             }
           },
           {
+            "svg": "overfit-chart",
             "text": "많아짐",
             "bbox": {
-              "x": 687.09375,
-              "y": 126,
-              "width": 35.2611083984375,
+              "x": 323.09375,
+              "y": 273,
+              "width": 35.261077880859375,
+              "height": 18
+            }
+          },
+          {
+            "svg": "generalization-chart",
+            "text": "새 데이터에서도 낮은 손실",
+            "bbox": {
+              "x": 102.53125,
+              "y": 4,
+              "width": 175.845458984375,
+              "height": 23
+            }
+          },
+          {
+            "svg": "generalization-chart",
+            "text": "평균 손실",
+            "bbox": {
+              "x": 46,
+              "y": 34,
+              "width": 56.375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-chart",
+            "text": "0",
+            "bbox": {
+              "x": 27.90625,
+              "y": 259,
+              "width": 8,
+              "height": 17
+            }
+          },
+          {
+            "svg": "generalization-chart",
+            "text": "학습 진행",
+            "bbox": {
+              "x": 173.8125,
+              "y": 291,
+              "width": 57.01043701171875,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-chart",
+            "text": "많아짐",
+            "bbox": {
+              "x": 323.09375,
+              "y": 273,
+              "width": 35.261077880859375,
               "height": 18
             }
           }
@@ -125,20 +221,15 @@
             "selector": ".meaning",
             "yError": 0,
             "heightError": 0
-          },
-          {
-            "selector": ".subject",
-            "yError": 0,
-            "heightError": 0
           }
         ],
-        "footerGap": 18.125,
+        "footerGap": 13.125,
         "figureCaptionGap": 14,
         "title": "과적합과 일반화"
       },
       "evidence": "examples/overfitting-generalization/review/screens/scroll-1600x950.png",
       "fonts": {
-        "text_nodes": 37,
+        "text_nodes": 29,
         "letter_spacing": "-1pt",
         "rendered": [
           {
@@ -170,7 +261,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 37
+                "glyphCount": 58
               }
             ]
           },
@@ -215,28 +306,6 @@
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 2
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 5
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 16
               }
             ]
           },
@@ -302,7 +371,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 19
+                "glyphCount": 5
               }
             ]
           },
@@ -314,61 +383,6 @@
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 17
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 17
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 13
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 2
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 19
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 2
               }
             ]
           },
@@ -423,7 +437,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 29
+                "glyphCount": 5
               }
             ]
           },
@@ -434,7 +448,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 8
+                "glyphCount": 5
               }
             ]
           },
@@ -445,7 +459,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 28
+                "glyphCount": 14
               }
             ]
           },
@@ -456,7 +470,18 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 12
+                "glyphCount": 5
+              }
+            ]
+          },
+          {
+            "expected": "STIX Two Math",
+            "actual": [
+              {
+                "familyName": "STIX Two Math",
+                "postScriptName": "STIXTwoMath-Regular",
+                "isCustomFont": true,
+                "glyphCount": 1
               }
             ]
           },
@@ -467,7 +492,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 47
+                "glyphCount": 5
               }
             ]
           },
@@ -478,29 +503,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 33
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 6
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 54
+                "glyphCount": 3
               }
             ]
           },
@@ -522,7 +525,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 40
+                "glyphCount": 35
               }
             ]
           },
@@ -601,11 +604,11 @@
         ]
       },
       "coordinates": {
-        "point_pairs": 82,
-        "max_svg_coordinate_error": 1.1368683772161603e-13
+        "point_pairs": 164,
+        "max_svg_coordinate_error": 2.842170943040401e-14
       },
       "mode_parity": {
-        "elements": 60,
+        "elements": 56,
         "style_match": true,
         "max_box_error_px": 0,
         "box_tolerance_px": {
@@ -633,6 +636,26 @@
         950
       ],
       "geometry": {
+        "charts": [
+          {
+            "x": 197.5,
+            "y": 344.328125,
+            "right": 577.5,
+            "bottom": 664.328125,
+            "width": 380,
+            "height": 320
+          },
+          {
+            "x": 862.5,
+            "y": 344.328125,
+            "right": 1242.5,
+            "bottom": 664.328125,
+            "width": 380,
+            "height": 320
+          }
+        ],
+        "removedSubjects": 0,
+        "removedGrid": 0,
         "slide": {
           "x": 0,
           "y": 0,
@@ -651,11 +674,11 @@
         },
         "content": {
           "x": 66,
-          "y": 170.328125,
+          "y": 156.328125,
           "right": 1374,
           "bottom": 756,
           "width": 1308,
-          "height": 585.671875
+          "height": 599.671875
         },
         "outside": [],
         "padding": [
@@ -663,9 +686,9 @@
             "name": "card definition",
             "inner": {
               "x": 93,
-              "y": 189.328125,
+              "y": 171.328125,
               "right": 682,
-              "bottom": 335.328125
+              "bottom": 270.328125
             },
             "escaped": []
           },
@@ -673,19 +696,29 @@
             "name": "card definition",
             "inner": {
               "x": 758,
-              "y": 189.328125,
+              "y": 171.328125,
               "right": 1347,
-              "bottom": 335.328125
+              "bottom": 270.328125
             },
             "escaped": []
           },
           {
-            "name": "loss-panel",
+            "name": "curve-panel",
             "inner": {
-              "x": 91,
-              "y": 389.328125,
-              "right": 1349,
-              "bottom": 653.328125
+              "x": 93,
+              "y": 314.328125,
+              "right": 682,
+              "bottom": 664.328125
+            },
+            "escaped": []
+          },
+          {
+            "name": "curve-panel",
+            "inner": {
+              "x": 758,
+              "y": 314.328125,
+              "right": 1347,
+              "bottom": 664.328125
             },
             "escaped": []
           }
@@ -693,38 +726,102 @@
         "clipped": [],
         "labels": [
           {
+            "svg": "overfit-chart",
+            "text": "검증 손실 상승은 과적합의 단서",
+            "bbox": {
+              "x": 85.9453125,
+              "y": 4,
+              "width": 208.109375,
+              "height": 23
+            }
+          },
+          {
+            "svg": "overfit-chart",
             "text": "평균 손실",
             "bbox": {
-              "x": 80,
-              "y": 4,
+              "x": 46,
+              "y": 34,
               "width": 56.375,
               "height": 20
             }
           },
           {
+            "svg": "overfit-chart",
             "text": "0",
             "bbox": {
-              "x": 41.90625,
-              "y": 113,
+              "x": 27.90625,
+              "y": 259,
               "width": 8,
               "height": 17
             }
           },
           {
+            "svg": "overfit-chart",
             "text": "학습 진행",
             "bbox": {
-              "x": 363.8125,
-              "y": 138,
+              "x": 173.8125,
+              "y": 291,
               "width": 57.01043701171875,
               "height": 20
             }
           },
           {
+            "svg": "overfit-chart",
             "text": "많아짐",
             "bbox": {
-              "x": 687.09375,
-              "y": 126,
-              "width": 35.2611083984375,
+              "x": 323.09375,
+              "y": 273,
+              "width": 35.261077880859375,
+              "height": 18
+            }
+          },
+          {
+            "svg": "generalization-chart",
+            "text": "새 데이터에서도 낮은 손실",
+            "bbox": {
+              "x": 102.53125,
+              "y": 4,
+              "width": 175.845458984375,
+              "height": 23
+            }
+          },
+          {
+            "svg": "generalization-chart",
+            "text": "평균 손실",
+            "bbox": {
+              "x": 46,
+              "y": 34,
+              "width": 56.375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-chart",
+            "text": "0",
+            "bbox": {
+              "x": 27.90625,
+              "y": 259,
+              "width": 8,
+              "height": 17
+            }
+          },
+          {
+            "svg": "generalization-chart",
+            "text": "학습 진행",
+            "bbox": {
+              "x": 173.8125,
+              "y": 291,
+              "width": 57.01043701171875,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-chart",
+            "text": "많아짐",
+            "bbox": {
+              "x": 323.09375,
+              "y": 273,
+              "width": 35.261077880859375,
               "height": 18
             }
           }
@@ -741,20 +838,15 @@
             "selector": ".meaning",
             "yError": 0,
             "heightError": 0
-          },
-          {
-            "selector": ".subject",
-            "yError": 0,
-            "heightError": 0
           }
         ],
-        "footerGap": 18.125,
+        "footerGap": 13.125,
         "figureCaptionGap": 14,
         "title": "과적합과 일반화"
       },
       "evidence": "examples/overfitting-generalization/review/screens/slides-1600x950.png",
       "fonts": {
-        "text_nodes": 37,
+        "text_nodes": 29,
         "letter_spacing": "-1pt",
         "rendered": [
           {
@@ -786,7 +878,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 37
+                "glyphCount": 58
               }
             ]
           },
@@ -831,28 +923,6 @@
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 2
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 5
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 16
               }
             ]
           },
@@ -918,7 +988,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 19
+                "glyphCount": 5
               }
             ]
           },
@@ -930,61 +1000,6 @@
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 17
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 17
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 13
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 2
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 19
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 2
               }
             ]
           },
@@ -1039,7 +1054,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 29
+                "glyphCount": 5
               }
             ]
           },
@@ -1050,7 +1065,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 8
+                "glyphCount": 5
               }
             ]
           },
@@ -1061,7 +1076,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 28
+                "glyphCount": 14
               }
             ]
           },
@@ -1072,7 +1087,18 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 12
+                "glyphCount": 5
+              }
+            ]
+          },
+          {
+            "expected": "STIX Two Math",
+            "actual": [
+              {
+                "familyName": "STIX Two Math",
+                "postScriptName": "STIXTwoMath-Regular",
+                "isCustomFont": true,
+                "glyphCount": 1
               }
             ]
           },
@@ -1083,7 +1109,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 47
+                "glyphCount": 5
               }
             ]
           },
@@ -1094,29 +1120,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 33
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 6
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 54
+                "glyphCount": 3
               }
             ]
           },
@@ -1138,7 +1142,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 40
+                "glyphCount": 35
               }
             ]
           },
@@ -1217,11 +1221,11 @@
         ]
       },
       "coordinates": {
-        "point_pairs": 82,
-        "max_svg_coordinate_error": 1.1368683772161603e-13
+        "point_pairs": 164,
+        "max_svg_coordinate_error": 2.842170943040401e-14
       },
       "mode_parity": {
-        "elements": 60,
+        "elements": 56,
         "style_match": true,
         "max_box_error_px": 0,
         "box_tolerance_px": {
@@ -1249,6 +1253,26 @@
         810
       ],
       "geometry": {
+        "charts": [
+          {
+            "x": 197.5,
+            "y": 344.328125,
+            "right": 577.5,
+            "bottom": 664.328125,
+            "width": 380,
+            "height": 320
+          },
+          {
+            "x": 862.5,
+            "y": 344.328125,
+            "right": 1242.5,
+            "bottom": 664.328125,
+            "width": 380,
+            "height": 320
+          }
+        ],
+        "removedSubjects": 0,
+        "removedGrid": 0,
         "slide": {
           "x": 0,
           "y": 0,
@@ -1267,11 +1291,11 @@
         },
         "content": {
           "x": 66,
-          "y": 170.328125,
+          "y": 156.328125,
           "right": 1374,
           "bottom": 756,
           "width": 1308,
-          "height": 585.671875
+          "height": 599.671875
         },
         "outside": [],
         "padding": [
@@ -1279,9 +1303,9 @@
             "name": "card definition",
             "inner": {
               "x": 93,
-              "y": 189.328125,
+              "y": 171.328125,
               "right": 682,
-              "bottom": 335.328125
+              "bottom": 270.328125
             },
             "escaped": []
           },
@@ -1289,19 +1313,29 @@
             "name": "card definition",
             "inner": {
               "x": 758,
-              "y": 189.328125,
+              "y": 171.328125,
               "right": 1347,
-              "bottom": 335.328125
+              "bottom": 270.328125
             },
             "escaped": []
           },
           {
-            "name": "loss-panel",
+            "name": "curve-panel",
             "inner": {
-              "x": 91,
-              "y": 389.328125,
-              "right": 1349,
-              "bottom": 653.328125
+              "x": 93,
+              "y": 314.328125,
+              "right": 682,
+              "bottom": 664.328125
+            },
+            "escaped": []
+          },
+          {
+            "name": "curve-panel",
+            "inner": {
+              "x": 758,
+              "y": 314.328125,
+              "right": 1347,
+              "bottom": 664.328125
             },
             "escaped": []
           }
@@ -1309,38 +1343,102 @@
         "clipped": [],
         "labels": [
           {
+            "svg": "overfit-chart",
+            "text": "검증 손실 상승은 과적합의 단서",
+            "bbox": {
+              "x": 85.9453125,
+              "y": 4,
+              "width": 208.109375,
+              "height": 23
+            }
+          },
+          {
+            "svg": "overfit-chart",
             "text": "평균 손실",
             "bbox": {
-              "x": 80,
-              "y": 4,
+              "x": 46,
+              "y": 34,
               "width": 56.375,
               "height": 20
             }
           },
           {
+            "svg": "overfit-chart",
             "text": "0",
             "bbox": {
-              "x": 41.90625,
-              "y": 113,
+              "x": 27.90625,
+              "y": 259,
               "width": 8,
               "height": 17
             }
           },
           {
+            "svg": "overfit-chart",
             "text": "학습 진행",
             "bbox": {
-              "x": 363.8125,
-              "y": 138,
+              "x": 173.8125,
+              "y": 291,
               "width": 57.01043701171875,
               "height": 20
             }
           },
           {
+            "svg": "overfit-chart",
             "text": "많아짐",
             "bbox": {
-              "x": 687.09375,
-              "y": 126,
-              "width": 35.2611083984375,
+              "x": 323.09375,
+              "y": 273,
+              "width": 35.261077880859375,
+              "height": 18
+            }
+          },
+          {
+            "svg": "generalization-chart",
+            "text": "새 데이터에서도 낮은 손실",
+            "bbox": {
+              "x": 102.53125,
+              "y": 4,
+              "width": 175.845458984375,
+              "height": 23
+            }
+          },
+          {
+            "svg": "generalization-chart",
+            "text": "평균 손실",
+            "bbox": {
+              "x": 46,
+              "y": 34,
+              "width": 56.375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-chart",
+            "text": "0",
+            "bbox": {
+              "x": 27.90625,
+              "y": 259,
+              "width": 8,
+              "height": 17
+            }
+          },
+          {
+            "svg": "generalization-chart",
+            "text": "학습 진행",
+            "bbox": {
+              "x": 173.8125,
+              "y": 291,
+              "width": 57.01043701171875,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-chart",
+            "text": "많아짐",
+            "bbox": {
+              "x": 323.09375,
+              "y": 273,
+              "width": 35.261077880859375,
               "height": 18
             }
           }
@@ -1357,20 +1455,15 @@
             "selector": ".meaning",
             "yError": 0,
             "heightError": 0
-          },
-          {
-            "selector": ".subject",
-            "yError": 0,
-            "heightError": 0
           }
         ],
-        "footerGap": 18.125,
+        "footerGap": 13.125,
         "figureCaptionGap": 14,
         "title": "과적합과 일반화"
       },
       "evidence": "examples/overfitting-generalization/review/screens/scroll-1440x810.png",
       "fonts": {
-        "text_nodes": 37,
+        "text_nodes": 29,
         "letter_spacing": "-1pt",
         "rendered": [
           {
@@ -1402,7 +1495,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 37
+                "glyphCount": 58
               }
             ]
           },
@@ -1447,28 +1540,6 @@
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 2
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 5
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 16
               }
             ]
           },
@@ -1534,7 +1605,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 19
+                "glyphCount": 5
               }
             ]
           },
@@ -1546,61 +1617,6 @@
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 17
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 17
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 13
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 2
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 19
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 2
               }
             ]
           },
@@ -1655,7 +1671,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 29
+                "glyphCount": 5
               }
             ]
           },
@@ -1666,7 +1682,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 8
+                "glyphCount": 5
               }
             ]
           },
@@ -1677,7 +1693,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 28
+                "glyphCount": 14
               }
             ]
           },
@@ -1688,7 +1704,18 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 12
+                "glyphCount": 5
+              }
+            ]
+          },
+          {
+            "expected": "STIX Two Math",
+            "actual": [
+              {
+                "familyName": "STIX Two Math",
+                "postScriptName": "STIXTwoMath-Regular",
+                "isCustomFont": true,
+                "glyphCount": 1
               }
             ]
           },
@@ -1699,7 +1726,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 47
+                "glyphCount": 5
               }
             ]
           },
@@ -1710,29 +1737,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 33
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 6
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 54
+                "glyphCount": 3
               }
             ]
           },
@@ -1754,7 +1759,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 40
+                "glyphCount": 35
               }
             ]
           },
@@ -1833,11 +1838,11 @@
         ]
       },
       "coordinates": {
-        "point_pairs": 82,
-        "max_svg_coordinate_error": 1.1368683772161603e-13
+        "point_pairs": 164,
+        "max_svg_coordinate_error": 2.842170943040401e-14
       },
       "mode_parity": {
-        "elements": 60,
+        "elements": 56,
         "style_match": true,
         "max_box_error_px": 0,
         "box_tolerance_px": {
@@ -1865,6 +1870,26 @@
         810
       ],
       "geometry": {
+        "charts": [
+          {
+            "x": 197.5,
+            "y": 344.328125,
+            "right": 577.5,
+            "bottom": 664.328125,
+            "width": 380,
+            "height": 320
+          },
+          {
+            "x": 862.5,
+            "y": 344.328125,
+            "right": 1242.5,
+            "bottom": 664.328125,
+            "width": 380,
+            "height": 320
+          }
+        ],
+        "removedSubjects": 0,
+        "removedGrid": 0,
         "slide": {
           "x": 0,
           "y": 0,
@@ -1883,11 +1908,11 @@
         },
         "content": {
           "x": 66,
-          "y": 170.328125,
+          "y": 156.328125,
           "right": 1374,
           "bottom": 756,
           "width": 1308,
-          "height": 585.671875
+          "height": 599.671875
         },
         "outside": [],
         "padding": [
@@ -1895,9 +1920,9 @@
             "name": "card definition",
             "inner": {
               "x": 93,
-              "y": 189.328125,
+              "y": 171.328125,
               "right": 682,
-              "bottom": 335.328125
+              "bottom": 270.328125
             },
             "escaped": []
           },
@@ -1905,19 +1930,29 @@
             "name": "card definition",
             "inner": {
               "x": 758,
-              "y": 189.328125,
+              "y": 171.328125,
               "right": 1347,
-              "bottom": 335.328125
+              "bottom": 270.328125
             },
             "escaped": []
           },
           {
-            "name": "loss-panel",
+            "name": "curve-panel",
             "inner": {
-              "x": 91,
-              "y": 389.328125,
-              "right": 1349,
-              "bottom": 653.328125
+              "x": 93,
+              "y": 314.328125,
+              "right": 682,
+              "bottom": 664.328125
+            },
+            "escaped": []
+          },
+          {
+            "name": "curve-panel",
+            "inner": {
+              "x": 758,
+              "y": 314.328125,
+              "right": 1347,
+              "bottom": 664.328125
             },
             "escaped": []
           }
@@ -1925,38 +1960,102 @@
         "clipped": [],
         "labels": [
           {
+            "svg": "overfit-chart",
+            "text": "검증 손실 상승은 과적합의 단서",
+            "bbox": {
+              "x": 85.9453125,
+              "y": 4,
+              "width": 208.109375,
+              "height": 23
+            }
+          },
+          {
+            "svg": "overfit-chart",
             "text": "평균 손실",
             "bbox": {
-              "x": 80,
-              "y": 4,
+              "x": 46,
+              "y": 34,
               "width": 56.375,
               "height": 20
             }
           },
           {
+            "svg": "overfit-chart",
             "text": "0",
             "bbox": {
-              "x": 41.90625,
-              "y": 113,
+              "x": 27.90625,
+              "y": 259,
               "width": 8,
               "height": 17
             }
           },
           {
+            "svg": "overfit-chart",
             "text": "학습 진행",
             "bbox": {
-              "x": 363.8125,
-              "y": 138,
+              "x": 173.8125,
+              "y": 291,
               "width": 57.01043701171875,
               "height": 20
             }
           },
           {
+            "svg": "overfit-chart",
             "text": "많아짐",
             "bbox": {
-              "x": 687.09375,
-              "y": 126,
-              "width": 35.2611083984375,
+              "x": 323.09375,
+              "y": 273,
+              "width": 35.261077880859375,
+              "height": 18
+            }
+          },
+          {
+            "svg": "generalization-chart",
+            "text": "새 데이터에서도 낮은 손실",
+            "bbox": {
+              "x": 102.53125,
+              "y": 4,
+              "width": 175.845458984375,
+              "height": 23
+            }
+          },
+          {
+            "svg": "generalization-chart",
+            "text": "평균 손실",
+            "bbox": {
+              "x": 46,
+              "y": 34,
+              "width": 56.375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-chart",
+            "text": "0",
+            "bbox": {
+              "x": 27.90625,
+              "y": 259,
+              "width": 8,
+              "height": 17
+            }
+          },
+          {
+            "svg": "generalization-chart",
+            "text": "학습 진행",
+            "bbox": {
+              "x": 173.8125,
+              "y": 291,
+              "width": 57.01043701171875,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-chart",
+            "text": "많아짐",
+            "bbox": {
+              "x": 323.09375,
+              "y": 273,
+              "width": 35.261077880859375,
               "height": 18
             }
           }
@@ -1973,20 +2072,15 @@
             "selector": ".meaning",
             "yError": 0,
             "heightError": 0
-          },
-          {
-            "selector": ".subject",
-            "yError": 0,
-            "heightError": 0
           }
         ],
-        "footerGap": 18.125,
+        "footerGap": 13.125,
         "figureCaptionGap": 14,
         "title": "과적합과 일반화"
       },
       "evidence": "examples/overfitting-generalization/review/screens/slides-1440x810.png",
       "fonts": {
-        "text_nodes": 37,
+        "text_nodes": 29,
         "letter_spacing": "-1pt",
         "rendered": [
           {
@@ -2018,7 +2112,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 37
+                "glyphCount": 58
               }
             ]
           },
@@ -2063,28 +2157,6 @@
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 2
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 5
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 16
               }
             ]
           },
@@ -2150,7 +2222,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 19
+                "glyphCount": 5
               }
             ]
           },
@@ -2162,61 +2234,6 @@
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 17
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 17
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 13
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 2
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 19
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 2
               }
             ]
           },
@@ -2271,7 +2288,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 29
+                "glyphCount": 5
               }
             ]
           },
@@ -2282,7 +2299,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 8
+                "glyphCount": 5
               }
             ]
           },
@@ -2293,7 +2310,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 28
+                "glyphCount": 14
               }
             ]
           },
@@ -2304,7 +2321,18 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 12
+                "glyphCount": 5
+              }
+            ]
+          },
+          {
+            "expected": "STIX Two Math",
+            "actual": [
+              {
+                "familyName": "STIX Two Math",
+                "postScriptName": "STIXTwoMath-Regular",
+                "isCustomFont": true,
+                "glyphCount": 1
               }
             ]
           },
@@ -2315,7 +2343,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 47
+                "glyphCount": 5
               }
             ]
           },
@@ -2326,29 +2354,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 33
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 6
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 54
+                "glyphCount": 3
               }
             ]
           },
@@ -2370,7 +2376,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 40
+                "glyphCount": 35
               }
             ]
           },
@@ -2449,11 +2455,11 @@
         ]
       },
       "coordinates": {
-        "point_pairs": 82,
-        "max_svg_coordinate_error": 1.1368683772161603e-13
+        "point_pairs": 164,
+        "max_svg_coordinate_error": 2.842170943040401e-14
       },
       "mode_parity": {
-        "elements": 60,
+        "elements": 56,
         "style_match": true,
         "max_box_error_px": 0,
         "box_tolerance_px": {
@@ -2481,6 +2487,26 @@
         768
       ],
       "geometry": {
+        "charts": [
+          {
+            "x": 197.5,
+            "y": 344.328125,
+            "right": 577.5,
+            "bottom": 664.328125,
+            "width": 380,
+            "height": 320
+          },
+          {
+            "x": 862.5,
+            "y": 344.328125,
+            "right": 1242.5,
+            "bottom": 664.328125,
+            "width": 380,
+            "height": 320
+          }
+        ],
+        "removedSubjects": 0,
+        "removedGrid": 0,
         "slide": {
           "x": 0,
           "y": 0,
@@ -2499,11 +2525,11 @@
         },
         "content": {
           "x": 66,
-          "y": 170.328125,
+          "y": 156.328125,
           "right": 1374,
           "bottom": 756,
           "width": 1308,
-          "height": 585.671875
+          "height": 599.671875
         },
         "outside": [],
         "padding": [
@@ -2511,9 +2537,9 @@
             "name": "card definition",
             "inner": {
               "x": 93,
-              "y": 189.328125,
+              "y": 171.328125,
               "right": 682,
-              "bottom": 335.328125
+              "bottom": 270.328125
             },
             "escaped": []
           },
@@ -2521,19 +2547,29 @@
             "name": "card definition",
             "inner": {
               "x": 758,
-              "y": 189.328125,
+              "y": 171.328125,
               "right": 1347,
-              "bottom": 335.328125
+              "bottom": 270.328125
             },
             "escaped": []
           },
           {
-            "name": "loss-panel",
+            "name": "curve-panel",
             "inner": {
-              "x": 91,
-              "y": 389.328125,
-              "right": 1349,
-              "bottom": 653.328125
+              "x": 93,
+              "y": 314.328125,
+              "right": 682,
+              "bottom": 664.328125
+            },
+            "escaped": []
+          },
+          {
+            "name": "curve-panel",
+            "inner": {
+              "x": 758,
+              "y": 314.328125,
+              "right": 1347,
+              "bottom": 664.328125
             },
             "escaped": []
           }
@@ -2541,38 +2577,102 @@
         "clipped": [],
         "labels": [
           {
+            "svg": "overfit-chart",
+            "text": "검증 손실 상승은 과적합의 단서",
+            "bbox": {
+              "x": 85.9453125,
+              "y": 4,
+              "width": 208.109375,
+              "height": 23
+            }
+          },
+          {
+            "svg": "overfit-chart",
             "text": "평균 손실",
             "bbox": {
-              "x": 80,
-              "y": 4,
+              "x": 46,
+              "y": 34,
               "width": 56.375,
               "height": 20
             }
           },
           {
+            "svg": "overfit-chart",
             "text": "0",
             "bbox": {
-              "x": 41.90625,
-              "y": 113,
+              "x": 27.90625,
+              "y": 259,
               "width": 8,
               "height": 17
             }
           },
           {
+            "svg": "overfit-chart",
             "text": "학습 진행",
             "bbox": {
-              "x": 363.8125,
-              "y": 138,
+              "x": 173.8125,
+              "y": 291,
               "width": 57.01043701171875,
               "height": 20
             }
           },
           {
+            "svg": "overfit-chart",
             "text": "많아짐",
             "bbox": {
-              "x": 687.09375,
-              "y": 126,
-              "width": 35.2611083984375,
+              "x": 323.09375,
+              "y": 273,
+              "width": 35.261077880859375,
+              "height": 18
+            }
+          },
+          {
+            "svg": "generalization-chart",
+            "text": "새 데이터에서도 낮은 손실",
+            "bbox": {
+              "x": 102.53125,
+              "y": 4,
+              "width": 175.845458984375,
+              "height": 23
+            }
+          },
+          {
+            "svg": "generalization-chart",
+            "text": "평균 손실",
+            "bbox": {
+              "x": 46,
+              "y": 34,
+              "width": 56.375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-chart",
+            "text": "0",
+            "bbox": {
+              "x": 27.90625,
+              "y": 259,
+              "width": 8,
+              "height": 17
+            }
+          },
+          {
+            "svg": "generalization-chart",
+            "text": "학습 진행",
+            "bbox": {
+              "x": 173.8125,
+              "y": 291,
+              "width": 57.01043701171875,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-chart",
+            "text": "많아짐",
+            "bbox": {
+              "x": 323.09375,
+              "y": 273,
+              "width": 35.261077880859375,
               "height": 18
             }
           }
@@ -2589,20 +2689,15 @@
             "selector": ".meaning",
             "yError": 0,
             "heightError": 0
-          },
-          {
-            "selector": ".subject",
-            "yError": 0,
-            "heightError": 0
           }
         ],
-        "footerGap": 18.125,
+        "footerGap": 13.125,
         "figureCaptionGap": 14,
         "title": "과적합과 일반화"
       },
       "evidence": "examples/overfitting-generalization/review/screens/scroll-1366x768.png",
       "fonts": {
-        "text_nodes": 37,
+        "text_nodes": 29,
         "letter_spacing": "-1pt",
         "rendered": [
           {
@@ -2634,7 +2729,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 37
+                "glyphCount": 58
               }
             ]
           },
@@ -2679,28 +2774,6 @@
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 2
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 5
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 16
               }
             ]
           },
@@ -2766,7 +2839,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 19
+                "glyphCount": 5
               }
             ]
           },
@@ -2778,61 +2851,6 @@
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 17
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 17
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 13
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 2
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 19
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 2
               }
             ]
           },
@@ -2887,7 +2905,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 29
+                "glyphCount": 5
               }
             ]
           },
@@ -2898,7 +2916,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 8
+                "glyphCount": 5
               }
             ]
           },
@@ -2909,7 +2927,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 28
+                "glyphCount": 14
               }
             ]
           },
@@ -2920,7 +2938,18 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 12
+                "glyphCount": 5
+              }
+            ]
+          },
+          {
+            "expected": "STIX Two Math",
+            "actual": [
+              {
+                "familyName": "STIX Two Math",
+                "postScriptName": "STIXTwoMath-Regular",
+                "isCustomFont": true,
+                "glyphCount": 1
               }
             ]
           },
@@ -2931,7 +2960,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 47
+                "glyphCount": 5
               }
             ]
           },
@@ -2942,29 +2971,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 33
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 6
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 54
+                "glyphCount": 3
               }
             ]
           },
@@ -2986,7 +2993,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 40
+                "glyphCount": 35
               }
             ]
           },
@@ -3065,11 +3072,11 @@
         ]
       },
       "coordinates": {
-        "point_pairs": 82,
-        "max_svg_coordinate_error": 1.1368683772161603e-13
+        "point_pairs": 164,
+        "max_svg_coordinate_error": 2.842170943040401e-14
       },
       "mode_parity": {
-        "elements": 60,
+        "elements": 56,
         "style_match": true,
         "max_box_error_px": 0,
         "box_tolerance_px": {
@@ -3097,6 +3104,26 @@
         768
       ],
       "geometry": {
+        "charts": [
+          {
+            "x": 197.5,
+            "y": 344.328125,
+            "right": 577.5,
+            "bottom": 664.328125,
+            "width": 380,
+            "height": 320
+          },
+          {
+            "x": 862.5,
+            "y": 344.328125,
+            "right": 1242.5,
+            "bottom": 664.328125,
+            "width": 380,
+            "height": 320
+          }
+        ],
+        "removedSubjects": 0,
+        "removedGrid": 0,
         "slide": {
           "x": 0,
           "y": 0,
@@ -3115,11 +3142,11 @@
         },
         "content": {
           "x": 66,
-          "y": 170.328125,
+          "y": 156.328125,
           "right": 1374,
           "bottom": 756,
           "width": 1308,
-          "height": 585.671875
+          "height": 599.671875
         },
         "outside": [],
         "padding": [
@@ -3127,9 +3154,9 @@
             "name": "card definition",
             "inner": {
               "x": 93,
-              "y": 189.328125,
+              "y": 171.328125,
               "right": 682,
-              "bottom": 335.328125
+              "bottom": 270.328125
             },
             "escaped": []
           },
@@ -3137,19 +3164,29 @@
             "name": "card definition",
             "inner": {
               "x": 758,
-              "y": 189.328125,
+              "y": 171.328125,
               "right": 1347,
-              "bottom": 335.328125
+              "bottom": 270.328125
             },
             "escaped": []
           },
           {
-            "name": "loss-panel",
+            "name": "curve-panel",
             "inner": {
-              "x": 91,
-              "y": 389.328125,
-              "right": 1349,
-              "bottom": 653.328125
+              "x": 93,
+              "y": 314.328125,
+              "right": 682,
+              "bottom": 664.328125
+            },
+            "escaped": []
+          },
+          {
+            "name": "curve-panel",
+            "inner": {
+              "x": 758,
+              "y": 314.328125,
+              "right": 1347,
+              "bottom": 664.328125
             },
             "escaped": []
           }
@@ -3157,38 +3194,102 @@
         "clipped": [],
         "labels": [
           {
+            "svg": "overfit-chart",
+            "text": "검증 손실 상승은 과적합의 단서",
+            "bbox": {
+              "x": 85.9453125,
+              "y": 4,
+              "width": 208.109375,
+              "height": 23
+            }
+          },
+          {
+            "svg": "overfit-chart",
             "text": "평균 손실",
             "bbox": {
-              "x": 80,
-              "y": 4,
+              "x": 46,
+              "y": 34,
               "width": 56.375,
               "height": 20
             }
           },
           {
+            "svg": "overfit-chart",
             "text": "0",
             "bbox": {
-              "x": 41.90625,
-              "y": 113,
+              "x": 27.90625,
+              "y": 259,
               "width": 8,
               "height": 17
             }
           },
           {
+            "svg": "overfit-chart",
             "text": "학습 진행",
             "bbox": {
-              "x": 363.8125,
-              "y": 138,
+              "x": 173.8125,
+              "y": 291,
               "width": 57.01043701171875,
               "height": 20
             }
           },
           {
+            "svg": "overfit-chart",
             "text": "많아짐",
             "bbox": {
-              "x": 687.09375,
-              "y": 126,
-              "width": 35.2611083984375,
+              "x": 323.09375,
+              "y": 273,
+              "width": 35.261077880859375,
+              "height": 18
+            }
+          },
+          {
+            "svg": "generalization-chart",
+            "text": "새 데이터에서도 낮은 손실",
+            "bbox": {
+              "x": 102.53125,
+              "y": 4,
+              "width": 175.845458984375,
+              "height": 23
+            }
+          },
+          {
+            "svg": "generalization-chart",
+            "text": "평균 손실",
+            "bbox": {
+              "x": 46,
+              "y": 34,
+              "width": 56.375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-chart",
+            "text": "0",
+            "bbox": {
+              "x": 27.90625,
+              "y": 259,
+              "width": 8,
+              "height": 17
+            }
+          },
+          {
+            "svg": "generalization-chart",
+            "text": "학습 진행",
+            "bbox": {
+              "x": 173.8125,
+              "y": 291,
+              "width": 57.01043701171875,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-chart",
+            "text": "많아짐",
+            "bbox": {
+              "x": 323.09375,
+              "y": 273,
+              "width": 35.261077880859375,
               "height": 18
             }
           }
@@ -3205,20 +3306,15 @@
             "selector": ".meaning",
             "yError": 0,
             "heightError": 0
-          },
-          {
-            "selector": ".subject",
-            "yError": 0,
-            "heightError": 0
           }
         ],
-        "footerGap": 18.125,
+        "footerGap": 13.125,
         "figureCaptionGap": 14,
         "title": "과적합과 일반화"
       },
       "evidence": "examples/overfitting-generalization/review/screens/slides-1366x768.png",
       "fonts": {
-        "text_nodes": 37,
+        "text_nodes": 29,
         "letter_spacing": "-1pt",
         "rendered": [
           {
@@ -3250,7 +3346,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 37
+                "glyphCount": 58
               }
             ]
           },
@@ -3295,28 +3391,6 @@
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 2
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 5
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 16
               }
             ]
           },
@@ -3382,7 +3456,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 19
+                "glyphCount": 5
               }
             ]
           },
@@ -3394,61 +3468,6 @@
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 17
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 17
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 13
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 2
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 19
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 2
               }
             ]
           },
@@ -3503,7 +3522,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 29
+                "glyphCount": 5
               }
             ]
           },
@@ -3514,7 +3533,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 8
+                "glyphCount": 5
               }
             ]
           },
@@ -3525,7 +3544,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 28
+                "glyphCount": 14
               }
             ]
           },
@@ -3536,7 +3555,18 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 12
+                "glyphCount": 5
+              }
+            ]
+          },
+          {
+            "expected": "STIX Two Math",
+            "actual": [
+              {
+                "familyName": "STIX Two Math",
+                "postScriptName": "STIXTwoMath-Regular",
+                "isCustomFont": true,
+                "glyphCount": 1
               }
             ]
           },
@@ -3547,7 +3577,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 47
+                "glyphCount": 5
               }
             ]
           },
@@ -3558,29 +3588,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 33
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 6
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 54
+                "glyphCount": 3
               }
             ]
           },
@@ -3602,7 +3610,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 40
+                "glyphCount": 35
               }
             ]
           },
@@ -3681,11 +3689,11 @@
         ]
       },
       "coordinates": {
-        "point_pairs": 82,
-        "max_svg_coordinate_error": 1.1368683772161603e-13
+        "point_pairs": 164,
+        "max_svg_coordinate_error": 2.842170943040401e-14
       },
       "mode_parity": {
-        "elements": 60,
+        "elements": 56,
         "style_match": true,
         "max_box_error_px": 0,
         "box_tolerance_px": {
@@ -3713,6 +3721,26 @@
         720
       ],
       "geometry": {
+        "charts": [
+          {
+            "x": 197.5,
+            "y": 344.328125,
+            "right": 577.5,
+            "bottom": 664.328125,
+            "width": 380,
+            "height": 320
+          },
+          {
+            "x": 862.5,
+            "y": 344.328125,
+            "right": 1242.5,
+            "bottom": 664.328125,
+            "width": 380,
+            "height": 320
+          }
+        ],
+        "removedSubjects": 0,
+        "removedGrid": 0,
         "slide": {
           "x": 0,
           "y": 0,
@@ -3731,11 +3759,11 @@
         },
         "content": {
           "x": 66,
-          "y": 170.328125,
+          "y": 156.328125,
           "right": 1374,
           "bottom": 756,
           "width": 1308,
-          "height": 585.671875
+          "height": 599.671875
         },
         "outside": [],
         "padding": [
@@ -3743,9 +3771,9 @@
             "name": "card definition",
             "inner": {
               "x": 93,
-              "y": 189.328125,
+              "y": 171.328125,
               "right": 682,
-              "bottom": 335.328125
+              "bottom": 270.328125
             },
             "escaped": []
           },
@@ -3753,19 +3781,29 @@
             "name": "card definition",
             "inner": {
               "x": 758,
-              "y": 189.328125,
+              "y": 171.328125,
               "right": 1347,
-              "bottom": 335.328125
+              "bottom": 270.328125
             },
             "escaped": []
           },
           {
-            "name": "loss-panel",
+            "name": "curve-panel",
             "inner": {
-              "x": 91,
-              "y": 389.328125,
-              "right": 1349,
-              "bottom": 653.328125
+              "x": 93,
+              "y": 314.328125,
+              "right": 682,
+              "bottom": 664.328125
+            },
+            "escaped": []
+          },
+          {
+            "name": "curve-panel",
+            "inner": {
+              "x": 758,
+              "y": 314.328125,
+              "right": 1347,
+              "bottom": 664.328125
             },
             "escaped": []
           }
@@ -3773,38 +3811,102 @@
         "clipped": [],
         "labels": [
           {
+            "svg": "overfit-chart",
+            "text": "검증 손실 상승은 과적합의 단서",
+            "bbox": {
+              "x": 85.9453125,
+              "y": 4,
+              "width": 208.109375,
+              "height": 23
+            }
+          },
+          {
+            "svg": "overfit-chart",
             "text": "평균 손실",
             "bbox": {
-              "x": 80,
-              "y": 4,
+              "x": 46,
+              "y": 34,
               "width": 56.375,
               "height": 20
             }
           },
           {
+            "svg": "overfit-chart",
             "text": "0",
             "bbox": {
-              "x": 41.90625,
-              "y": 113,
+              "x": 27.90625,
+              "y": 259,
               "width": 8,
               "height": 17
             }
           },
           {
+            "svg": "overfit-chart",
             "text": "학습 진행",
             "bbox": {
-              "x": 363.8125,
-              "y": 138,
+              "x": 173.8125,
+              "y": 291,
               "width": 57.01043701171875,
               "height": 20
             }
           },
           {
+            "svg": "overfit-chart",
             "text": "많아짐",
             "bbox": {
-              "x": 687.09375,
-              "y": 126,
-              "width": 35.2611083984375,
+              "x": 323.09375,
+              "y": 273,
+              "width": 35.261077880859375,
+              "height": 18
+            }
+          },
+          {
+            "svg": "generalization-chart",
+            "text": "새 데이터에서도 낮은 손실",
+            "bbox": {
+              "x": 102.53125,
+              "y": 4,
+              "width": 175.845458984375,
+              "height": 23
+            }
+          },
+          {
+            "svg": "generalization-chart",
+            "text": "평균 손실",
+            "bbox": {
+              "x": 46,
+              "y": 34,
+              "width": 56.375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-chart",
+            "text": "0",
+            "bbox": {
+              "x": 27.90625,
+              "y": 259,
+              "width": 8,
+              "height": 17
+            }
+          },
+          {
+            "svg": "generalization-chart",
+            "text": "학습 진행",
+            "bbox": {
+              "x": 173.8125,
+              "y": 291,
+              "width": 57.01043701171875,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-chart",
+            "text": "많아짐",
+            "bbox": {
+              "x": 323.09375,
+              "y": 273,
+              "width": 35.261077880859375,
               "height": 18
             }
           }
@@ -3821,20 +3923,15 @@
             "selector": ".meaning",
             "yError": 0,
             "heightError": 0
-          },
-          {
-            "selector": ".subject",
-            "yError": 0,
-            "heightError": 0
           }
         ],
-        "footerGap": 18.125,
+        "footerGap": 13.125,
         "figureCaptionGap": 14,
         "title": "과적합과 일반화"
       },
       "evidence": "examples/overfitting-generalization/review/screens/scroll-1280x720.png",
       "fonts": {
-        "text_nodes": 37,
+        "text_nodes": 29,
         "letter_spacing": "-1pt",
         "rendered": [
           {
@@ -3866,7 +3963,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 37
+                "glyphCount": 58
               }
             ]
           },
@@ -3911,28 +4008,6 @@
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 2
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 5
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 16
               }
             ]
           },
@@ -3998,7 +4073,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 19
+                "glyphCount": 5
               }
             ]
           },
@@ -4010,61 +4085,6 @@
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 17
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 17
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 13
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 2
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 19
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 2
               }
             ]
           },
@@ -4119,7 +4139,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 29
+                "glyphCount": 5
               }
             ]
           },
@@ -4130,7 +4150,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 8
+                "glyphCount": 5
               }
             ]
           },
@@ -4141,7 +4161,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 28
+                "glyphCount": 14
               }
             ]
           },
@@ -4152,7 +4172,18 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 12
+                "glyphCount": 5
+              }
+            ]
+          },
+          {
+            "expected": "STIX Two Math",
+            "actual": [
+              {
+                "familyName": "STIX Two Math",
+                "postScriptName": "STIXTwoMath-Regular",
+                "isCustomFont": true,
+                "glyphCount": 1
               }
             ]
           },
@@ -4163,7 +4194,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 47
+                "glyphCount": 5
               }
             ]
           },
@@ -4174,29 +4205,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 33
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 6
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 54
+                "glyphCount": 3
               }
             ]
           },
@@ -4218,7 +4227,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 40
+                "glyphCount": 35
               }
             ]
           },
@@ -4297,11 +4306,11 @@
         ]
       },
       "coordinates": {
-        "point_pairs": 82,
-        "max_svg_coordinate_error": 1.1368683772161603e-13
+        "point_pairs": 164,
+        "max_svg_coordinate_error": 2.842170943040401e-14
       },
       "mode_parity": {
-        "elements": 60,
+        "elements": 56,
         "style_match": true,
         "max_box_error_px": 0,
         "box_tolerance_px": {
@@ -4329,6 +4338,26 @@
         720
       ],
       "geometry": {
+        "charts": [
+          {
+            "x": 197.5,
+            "y": 344.328125,
+            "right": 577.5,
+            "bottom": 664.328125,
+            "width": 380,
+            "height": 320
+          },
+          {
+            "x": 862.5,
+            "y": 344.328125,
+            "right": 1242.5,
+            "bottom": 664.328125,
+            "width": 380,
+            "height": 320
+          }
+        ],
+        "removedSubjects": 0,
+        "removedGrid": 0,
         "slide": {
           "x": 0,
           "y": 0,
@@ -4347,11 +4376,11 @@
         },
         "content": {
           "x": 66,
-          "y": 170.328125,
+          "y": 156.328125,
           "right": 1374,
           "bottom": 756,
           "width": 1308,
-          "height": 585.671875
+          "height": 599.671875
         },
         "outside": [],
         "padding": [
@@ -4359,9 +4388,9 @@
             "name": "card definition",
             "inner": {
               "x": 93,
-              "y": 189.328125,
+              "y": 171.328125,
               "right": 682,
-              "bottom": 335.328125
+              "bottom": 270.328125
             },
             "escaped": []
           },
@@ -4369,19 +4398,29 @@
             "name": "card definition",
             "inner": {
               "x": 758,
-              "y": 189.328125,
+              "y": 171.328125,
               "right": 1347,
-              "bottom": 335.328125
+              "bottom": 270.328125
             },
             "escaped": []
           },
           {
-            "name": "loss-panel",
+            "name": "curve-panel",
             "inner": {
-              "x": 91,
-              "y": 389.328125,
-              "right": 1349,
-              "bottom": 653.328125
+              "x": 93,
+              "y": 314.328125,
+              "right": 682,
+              "bottom": 664.328125
+            },
+            "escaped": []
+          },
+          {
+            "name": "curve-panel",
+            "inner": {
+              "x": 758,
+              "y": 314.328125,
+              "right": 1347,
+              "bottom": 664.328125
             },
             "escaped": []
           }
@@ -4389,38 +4428,102 @@
         "clipped": [],
         "labels": [
           {
+            "svg": "overfit-chart",
+            "text": "검증 손실 상승은 과적합의 단서",
+            "bbox": {
+              "x": 85.9453125,
+              "y": 4,
+              "width": 208.109375,
+              "height": 23
+            }
+          },
+          {
+            "svg": "overfit-chart",
             "text": "평균 손실",
             "bbox": {
-              "x": 80,
-              "y": 4,
+              "x": 46,
+              "y": 34,
               "width": 56.375,
               "height": 20
             }
           },
           {
+            "svg": "overfit-chart",
             "text": "0",
             "bbox": {
-              "x": 41.90625,
-              "y": 113,
+              "x": 27.90625,
+              "y": 259,
               "width": 8,
               "height": 17
             }
           },
           {
+            "svg": "overfit-chart",
             "text": "학습 진행",
             "bbox": {
-              "x": 363.8125,
-              "y": 138,
+              "x": 173.8125,
+              "y": 291,
               "width": 57.01043701171875,
               "height": 20
             }
           },
           {
+            "svg": "overfit-chart",
             "text": "많아짐",
             "bbox": {
-              "x": 687.09375,
-              "y": 126,
-              "width": 35.2611083984375,
+              "x": 323.09375,
+              "y": 273,
+              "width": 35.261077880859375,
+              "height": 18
+            }
+          },
+          {
+            "svg": "generalization-chart",
+            "text": "새 데이터에서도 낮은 손실",
+            "bbox": {
+              "x": 102.53125,
+              "y": 4,
+              "width": 175.845458984375,
+              "height": 23
+            }
+          },
+          {
+            "svg": "generalization-chart",
+            "text": "평균 손실",
+            "bbox": {
+              "x": 46,
+              "y": 34,
+              "width": 56.375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-chart",
+            "text": "0",
+            "bbox": {
+              "x": 27.90625,
+              "y": 259,
+              "width": 8,
+              "height": 17
+            }
+          },
+          {
+            "svg": "generalization-chart",
+            "text": "학습 진행",
+            "bbox": {
+              "x": 173.8125,
+              "y": 291,
+              "width": 57.01043701171875,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-chart",
+            "text": "많아짐",
+            "bbox": {
+              "x": 323.09375,
+              "y": 273,
+              "width": 35.261077880859375,
               "height": 18
             }
           }
@@ -4437,20 +4540,15 @@
             "selector": ".meaning",
             "yError": 0,
             "heightError": 0
-          },
-          {
-            "selector": ".subject",
-            "yError": 0,
-            "heightError": 0
           }
         ],
-        "footerGap": 18.125,
+        "footerGap": 13.125,
         "figureCaptionGap": 14,
         "title": "과적합과 일반화"
       },
       "evidence": "examples/overfitting-generalization/review/screens/slides-1280x720.png",
       "fonts": {
-        "text_nodes": 37,
+        "text_nodes": 29,
         "letter_spacing": "-1pt",
         "rendered": [
           {
@@ -4482,7 +4580,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 37
+                "glyphCount": 58
               }
             ]
           },
@@ -4527,28 +4625,6 @@
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 2
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 5
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 16
               }
             ]
           },
@@ -4614,7 +4690,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 19
+                "glyphCount": 5
               }
             ]
           },
@@ -4626,61 +4702,6 @@
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 17
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 17
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 13
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 2
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 19
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 2
               }
             ]
           },
@@ -4735,7 +4756,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 29
+                "glyphCount": 5
               }
             ]
           },
@@ -4746,7 +4767,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 8
+                "glyphCount": 5
               }
             ]
           },
@@ -4757,7 +4778,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 28
+                "glyphCount": 14
               }
             ]
           },
@@ -4768,7 +4789,18 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 12
+                "glyphCount": 5
+              }
+            ]
+          },
+          {
+            "expected": "STIX Two Math",
+            "actual": [
+              {
+                "familyName": "STIX Two Math",
+                "postScriptName": "STIXTwoMath-Regular",
+                "isCustomFont": true,
+                "glyphCount": 1
               }
             ]
           },
@@ -4779,7 +4811,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 47
+                "glyphCount": 5
               }
             ]
           },
@@ -4790,29 +4822,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 33
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 6
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 54
+                "glyphCount": 3
               }
             ]
           },
@@ -4834,7 +4844,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 40
+                "glyphCount": 35
               }
             ]
           },
@@ -4913,11 +4923,11 @@
         ]
       },
       "coordinates": {
-        "point_pairs": 82,
-        "max_svg_coordinate_error": 1.1368683772161603e-13
+        "point_pairs": 164,
+        "max_svg_coordinate_error": 2.842170943040401e-14
       },
       "mode_parity": {
-        "elements": 60,
+        "elements": 56,
         "style_match": true,
         "max_box_error_px": 0,
         "box_tolerance_px": {
@@ -4939,7 +4949,7 @@
       "http_errors": []
     }
   ],
-  "created_utc": "2026-10-26T01:28:54.488098+00:00",
+  "created_utc": "2026-10-26T02:22:37.688935+00:00",
   "chromium": "155.0.8059.0",
   "behavior": {
     "changed_datasets": [
@@ -4950,7 +4960,8 @@
       "unit",
       "nonfinite",
       "unordered",
-      "negative"
+      "negative",
+      "invalid_generalization"
     ],
     "mode_roundtrip": true,
     "keyboard_links": true,
@@ -4958,19 +4969,19 @@
     "failed_data_message": true
   },
   "source_sha256": {
-    "examples/overfitting-generalization/content.html": "24c465cce3c1b0523f4b0ccd1dc304a8331119f4a255dc4fa7a1a299d4f18fbc",
+    "examples/overfitting-generalization/content.html": "c110a1c8681acca5720ae740d85b500f033ea987ed435fceff897abad894e2e0",
     "examples/overfitting-generalization/scroll.html": "c3d618f2f5accc5471da5506955a9dd2c38d62427f224e2bf5c6938636db4936",
     "examples/overfitting-generalization/slides.html": "20ceb16b62eacd01b0c22601a04c3b87756b216c3dce5ae89c7b0cecf97c7171",
-    "examples/overfitting-generalization/lesson.css": "3e02ee69df09a77ada5044070c28a9b105161ecda2ca9f61b2d881489781c068",
+    "examples/overfitting-generalization/lesson.css": "8c980e6b70e4e2f423b514b8e69bca143f98622c9eee9300a35e7f6adce740c5",
     "examples/overfitting-generalization/viewer.css": "b03e8785c652fd9711e4eca188e29c555024a998c53013ce8b389e61825860a7",
     "examples/overfitting-generalization/viewer.js": "a15e739f880682df368572875033d204eab63789b812cebad965f6eb566229a3",
-    "examples/overfitting-generalization/curves.js": "fe59c841dab24cc24eb6ef1f55a2df1c11209387f02ece14d89ae0ede02dfcec",
-    "examples/overfitting-generalization/curves.json": "d9e995fa132145654184d2f3a5a7a0b076debc789f8311bd3a7d96d7bc6521a8",
-    "examples/overfitting-generalization/DESIGN.md": "39c8bd2d665f6178f7c6ca13a4f852de9abe0537478a8cb2db0737a863c59ca5",
-    "scripts/verify_overfitting.py": "b8056fe4e45a5dfbcfa4d288d9b82bab33a7f31e5d6e8774386dfdd99daac53f"
+    "examples/overfitting-generalization/curves.js": "aa63d1091e70db263001b285522559c8e86c03c51482c450bef31691be44b5c2",
+    "examples/overfitting-generalization/curves.json": "674e43302c58725f3975794474a4088701ed71fbce82b638dc56fbd8a519bfaa",
+    "examples/overfitting-generalization/DESIGN.md": "d66a7b22015afec528b952e70f2ceec17f84cba41c486754b4ec4d02a45d9c61",
+    "scripts/verify_overfitting.py": "2645f126ad4fd4ca805f08d58a78e083df139ec3d8a3de3bd6032004d5d841d5"
   },
   "preview_sha256": {
-    "scroll.png": "e1696402a06861c375bea48ca309d3197cfd70089b5ec22f7a2cf25962607eac",
-    "slide.png": "04646eaea933ff7d0b8d5ef0548d57abc9866e6ac40135e708aefe66df0c1345"
+    "scroll.png": "4da1edfc66df2dc090bb5a5dc03b549b5960266b3b28200b8419fb6ab52fc2f1",
+    "slide.png": "b4b6b316c0437616bb3ad7c9909702fc46d45d556a4621843ccaea308dea9d10"
   }
 }

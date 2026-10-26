@@ -1,3 +1,5 @@
+> 이전판 기록: 이 문서는 사용자 개정 전 D0/D1 검토다. 현행 수정본은 revision-*.md와 갱신된 검증 결과를 따른다.
+
 # 독립 Reviewer · 3차 최종 검토
 
 - Reviewer: `/root/independent_reviewer`, Builder와 다른 Agent. 1·2차와 같은 기술·시각·재사용성 기준으로 재검토했다.

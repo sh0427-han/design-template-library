@@ -1,3 +1,5 @@
+> 이전판 기록: 이 문서는 사용자 개정 전 D0/D1 검토다. 현행 수정본은 revision-*.md와 갱신된 검증 결과를 따른다.
+
 # 독립 Reviewer · 1차 검토
 
 - Reviewer: `/root/independent_reviewer` 별도 Agent. Builder의 자기 재독과 구분한다.

@@ -25,3 +25,6 @@ Python Playwright와 Chromium을 설치한 뒤 `python scripts/verify_gradient_d
 [Scroll 실제 Chromium 프리뷰](previews/scroll.png)
 
 공통 규칙의 재사용은 확인했지만 독립 저자의 블라인드 재제작,8종 모든 패턴의 타주제 적용, 모바일·다중 브라우저·실제 학습 수렴은 검증하지 않았습니다.
+
+
+2026-10-26 사용자 개정: 그래프를345×482px로 좁고 높게 바꾸고 제작용 부가 문구를 제거했다. 실제 곡선의 세로 표시는 종전보다약1.86배이며,16:9 안에서 수식과 제목·Footer를 보존한 비율이다. 라벨과 곡선·상태점·투영선의 충돌 검사까지 통과했다. [8화면 모음](review/contact.jpg)과 [개정 검증 기록](../overfitting-generalization/VALIDATION.md)을 함께 확인할 수 있다.
