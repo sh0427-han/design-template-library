@@ -133,7 +133,7 @@ def main():
                     u=point['progress'];point['training']=.8-.5*u;point['validation']=(.95-.5*u if kind=='improving' else .4+.15*u)
                 frame.evaluate('(d)=>window.CurveExample.render(d)',changed);coordinates(frame,changed)
                 expected='새 데이터에서도 낮은 손실' if kind=='improving' else '손실 격차만으로 판단하지 않기'
-                assert expected in frame.locator('#overfit-heading').inner_text()
+                assert expected in frame.locator('#overfit-heading').text_content()
                 g=frame.evaluate(GEOMETRY)
                 assert not any(g[k] for k in ('outside','clipped','labelOutside','collisions')) and all(not x['escaped'] for x in g['padding']) and g['footerGap']>=12
                 page.screenshot(path=str(evidence/f'{kind}.png'));changes.append(kind)
