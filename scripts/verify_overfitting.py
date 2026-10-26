@@ -176,7 +176,7 @@ class Quiet(SimpleHTTPRequestHandler):
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--static',action='store_true');args=ap.parse_args()
     out=CASE/'previews';out.mkdir(exist_ok=True);evidence=CASE/'review/screens';evidence.mkdir(parents=True,exist_ok=True)
-    data=json.loads((CASE/'curves.json').read_text());report={'status':'running','independent':independent(data),'cases':[],'created_utc':datetime.now(timezone.utc).isoformat()}
+    data=json.loads((CASE/'curves.json').read_text());report={'status':'running','independent':independent(data),'cases':[],'changed_cases':[],'created_utc':datetime.now(timezone.utc).isoformat()}
     if args.static: print(json.dumps(report['independent']));return
     server=None
     try:
@@ -238,6 +238,7 @@ def main():
                 g=frame.evaluate(GEOMETRY)
                 assert not any(g[k] for k in ('outside','clipped','labelOutside','collisions')) and all(not x['escaped'] for x in g['padding']) and g['footerGap']>=12
                 page.screenshot(path=str(evidence/f'{kind}.png'));changes.append(kind)
+                report['changed_cases'].append({'kind':kind,'selection':selected,'geometry':g,'evidence':str((evidence/f'{kind}.png').relative_to(ROOT))})
             rejected=[]
             for kind in ('unit','nonfinite','unordered','negative'):
                 changed=json.loads(json.dumps(data))

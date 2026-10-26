@@ -45,6 +45,7 @@ jobs:
           for name in ['overfitting-generalization','gradient-descent']:
               root=Path('examples')/name
               files.extend([root/'previews/validation.json',root/'previews/slide.png',root/'previews/scroll.png'])
+              if name=='overfitting-generalization':files.append(root/'review/screens/middle-minimum.png')
               folder=root/'review/screens' if name=='overfitting-generalization' else Path('/tmp/gradient-descent-review')
               shots=sorted(folder.glob('*x*.png'))
               if shots:
