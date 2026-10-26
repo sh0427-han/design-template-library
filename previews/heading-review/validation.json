@@ -91,6 +91,26 @@
           "lineHeight": "normal",
           "spacing": "-1.33333px",
           "visible": true
+        },
+        {
+          "role": "label",
+          "text": "IMAGE REPRESENTATION",
+          "color": "rgb(49, 104, 200)",
+          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+          "size": "16px",
+          "weight": "800",
+          "lineHeight": "20px",
+          "spacing": "-1.33333px",
+          "visible": true
+        }
+      ],
+      "card_pairs": [
+        {
+          "card": ".concept-panel",
+          "label": "IMAGE REPRESENTATION",
+          "title": "이미지 → RGB 채널 → 픽셀 확대 → RGB 값",
+          "own_label": true,
+          "own_title": true
         }
       ],
       "geometry": {
@@ -232,6 +252,36 @@
           "visible": true
         }
       ],
+      "card_pairs": [
+        {
+          "card": ".node",
+          "label": "INPUT",
+          "title": "입력 이미지",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".node",
+          "label": "FEATURE",
+          "title": "CNN",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".node",
+          "label": "TASK",
+          "title": "Task Head",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".node",
+          "label": "OUTPUT",
+          "title": "예측 결과",
+          "own_label": true,
+          "own_title": true
+        }
+      ],
       "geometry": {
         "slide": {
           "x": 0,
@@ -371,6 +421,22 @@
           "visible": true
         }
       ],
+      "card_pairs": [
+        {
+          "card": ".compare-card",
+          "label": "RULE-BASED",
+          "title": "사람이 규칙을 정의",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".compare-card",
+          "label": "MACHINE LEARNING",
+          "title": "데이터에서 판단 기준을 학습",
+          "own_label": true,
+          "own_title": true
+        }
+      ],
       "geometry": {
         "slide": {
           "x": 0,
@@ -464,6 +530,22 @@
           "lineHeight": "normal",
           "spacing": "-1.33333px",
           "visible": true
+        }
+      ],
+      "card_pairs": [
+        {
+          "card": ".calc-panel",
+          "label": "01 · RECEPTIVE FIELD → OUTPUT POSITION",
+          "title": "입력의 어느 영역이 출력의 어느 위치로 가는가",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".calc-panel",
+          "label": "02 · MULTIPLY → SUM",
+          "title": "선택된 3×3 영역을 실제로 계산",
+          "own_label": true,
+          "own_title": true
         }
       ],
       "geometry": {
@@ -581,6 +663,22 @@
           "lineHeight": "20px",
           "spacing": "-1.33333px",
           "visible": true
+        }
+      ],
+      "card_pairs": [
+        {
+          "card": ".live-card",
+          "label": "LIVE CONTROL",
+          "title": "점수와 임계값으로 판정",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".live-card",
+          "label": "CONFUSION MATRIX",
+          "title": "판정 개수에서 지표로",
+          "own_label": true,
+          "own_title": true
         }
       ],
       "geometry": {
@@ -821,6 +919,50 @@
           "visible": true
         }
       ],
+      "card_pairs": [
+        {
+          "card": ".arch-stage",
+          "label": "RGB · 3채널",
+          "title": "INPUT",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".arch-stage",
+          "label": "Conv → ReLU → MaxPool",
+          "title": "CONV BLOCK 1",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".arch-stage",
+          "label": "Conv → ReLU → MaxPool",
+          "title": "CONV BLOCK 2",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".arch-stage",
+          "label": "16×16×32 → 1D",
+          "title": "FLATTEN",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".arch-stage",
+          "label": "8,192 → 3",
+          "title": "FC LAYER",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".arch-stage",
+          "label": "logits → Softmax",
+          "title": "SOFTMAX",
+          "own_label": true,
+          "own_title": true
+        }
+      ],
       "geometry": {
         "slide": {
           "x": 0,
@@ -958,6 +1100,22 @@
           "lineHeight": "normal",
           "spacing": "-1.33333px",
           "visible": true
+        }
+      ],
+      "card_pairs": [
+        {
+          "card": ".experiment-card",
+          "label": "CONFUSION MATRIX",
+          "title": "혼동행렬",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".experiment-card",
+          "label": "METRICS",
+          "title": "같은 데이터의 네 가지 평가 지표",
+          "own_label": true,
+          "own_title": true
         }
       ],
       "geometry": {
@@ -1121,6 +1279,22 @@
           "visible": true
         }
       ],
+      "card_pairs": [
+        {
+          "card": ".exec-impact,.exec-action-panel",
+          "label": "IMPACT / KPI COMPARISON",
+          "title": "주요 지표의 개선 효과",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".exec-impact,.exec-action-panel",
+          "label": "ACTION ITEMS",
+          "title": "파일럿 실행과 확대 판단",
+          "own_label": true,
+          "own_title": true
+        }
+      ],
       "geometry": {
         "slide": {
           "x": 0,
@@ -1162,7 +1336,7 @@
         },
         {
           "role": "title",
-          "text": "과적합 Overfitting",
+          "text": "과적합",
           "color": "rgb(18, 35, 63)",
           "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
           "size": "29px",
@@ -1173,7 +1347,7 @@
         },
         {
           "role": "title",
-          "text": "일반화 Generalization",
+          "text": "일반화",
           "color": "rgb(18, 35, 63)",
           "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
           "size": "29px",
@@ -1187,9 +1361,9 @@
           "text": "검증 손실 최소에서 모델 선택",
           "color": "rgb(18, 35, 63)",
           "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
-          "size": "19px",
+          "size": "17px",
           "weight": "750",
-          "lineHeight": "normal",
+          "lineHeight": "22px",
           "spacing": "-1.33333px",
           "visible": true
         },
@@ -1214,6 +1388,80 @@
           "lineHeight": "normal",
           "spacing": "-1.33333px",
           "visible": true
+        },
+        {
+          "role": "label",
+          "text": "OVERFITTING",
+          "color": "rgb(49, 104, 200)",
+          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+          "size": "16px",
+          "weight": "800",
+          "lineHeight": "20px",
+          "spacing": "-1.33333px",
+          "visible": true
+        },
+        {
+          "role": "label",
+          "text": "GENERALIZATION",
+          "color": "rgb(49, 104, 200)",
+          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+          "size": "16px",
+          "weight": "800",
+          "lineHeight": "20px",
+          "spacing": "-1.33333px",
+          "visible": true
+        },
+        {
+          "role": "label",
+          "text": "LOSS CURVE",
+          "color": "rgb(49, 104, 200)",
+          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+          "size": "16px",
+          "weight": "800",
+          "lineHeight": "20px",
+          "spacing": "-1.33333px",
+          "visible": true
+        },
+        {
+          "role": "label",
+          "text": "IMAGE PREDICTION",
+          "color": "rgb(49, 104, 200)",
+          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+          "size": "16px",
+          "weight": "800",
+          "lineHeight": "20px",
+          "spacing": "-1.33333px",
+          "visible": true
+        }
+      ],
+      "card_pairs": [
+        {
+          "card": ".definition",
+          "label": "OVERFITTING",
+          "title": "과적합",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".definition",
+          "label": "GENERALIZATION",
+          "title": "일반화",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".curve-panel",
+          "label": "LOSS CURVE",
+          "title": "검증 손실 최소에서 모델 선택",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".curve-panel",
+          "label": "IMAGE PREDICTION",
+          "title": "학습한 특징을 새 이미지에도 적용",
+          "own_label": true,
+          "own_title": true
         }
       ],
       "geometry": {
@@ -1320,6 +1568,26 @@
           "lineHeight": "normal",
           "spacing": "-1.33333px",
           "visible": true
+        },
+        {
+          "role": "label",
+          "text": "IMAGE REPRESENTATION",
+          "color": "rgb(49, 104, 200)",
+          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+          "size": "16px",
+          "weight": "800",
+          "lineHeight": "20px",
+          "spacing": "-1.33333px",
+          "visible": true
+        }
+      ],
+      "card_pairs": [
+        {
+          "card": ".concept-panel",
+          "label": "IMAGE REPRESENTATION",
+          "title": "이미지 → RGB 채널 → 픽셀 확대 → RGB 값",
+          "own_label": true,
+          "own_title": true
         }
       ],
       "geometry": {
@@ -1461,6 +1729,36 @@
           "visible": true
         }
       ],
+      "card_pairs": [
+        {
+          "card": ".node",
+          "label": "INPUT",
+          "title": "입력 이미지",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".node",
+          "label": "FEATURE",
+          "title": "CNN",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".node",
+          "label": "TASK",
+          "title": "Task Head",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".node",
+          "label": "OUTPUT",
+          "title": "예측 결과",
+          "own_label": true,
+          "own_title": true
+        }
+      ],
       "geometry": {
         "slide": {
           "x": 0,
@@ -1600,6 +1898,22 @@
           "visible": true
         }
       ],
+      "card_pairs": [
+        {
+          "card": ".compare-card",
+          "label": "RULE-BASED",
+          "title": "사람이 규칙을 정의",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".compare-card",
+          "label": "MACHINE LEARNING",
+          "title": "데이터에서 판단 기준을 학습",
+          "own_label": true,
+          "own_title": true
+        }
+      ],
       "geometry": {
         "slide": {
           "x": 0,
@@ -1693,6 +2007,22 @@
           "lineHeight": "normal",
           "spacing": "-1.33333px",
           "visible": true
+        }
+      ],
+      "card_pairs": [
+        {
+          "card": ".calc-panel",
+          "label": "01 · RECEPTIVE FIELD → OUTPUT POSITION",
+          "title": "입력의 어느 영역이 출력의 어느 위치로 가는가",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".calc-panel",
+          "label": "02 · MULTIPLY → SUM",
+          "title": "선택된 3×3 영역을 실제로 계산",
+          "own_label": true,
+          "own_title": true
         }
       ],
       "geometry": {
@@ -1810,6 +2140,22 @@
           "lineHeight": "20px",
           "spacing": "-1.33333px",
           "visible": true
+        }
+      ],
+      "card_pairs": [
+        {
+          "card": ".live-card",
+          "label": "LIVE CONTROL",
+          "title": "점수와 임계값으로 판정",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".live-card",
+          "label": "CONFUSION MATRIX",
+          "title": "판정 개수에서 지표로",
+          "own_label": true,
+          "own_title": true
         }
       ],
       "geometry": {
@@ -2050,6 +2396,50 @@
           "visible": true
         }
       ],
+      "card_pairs": [
+        {
+          "card": ".arch-stage",
+          "label": "RGB · 3채널",
+          "title": "INPUT",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".arch-stage",
+          "label": "Conv → ReLU → MaxPool",
+          "title": "CONV BLOCK 1",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".arch-stage",
+          "label": "Conv → ReLU → MaxPool",
+          "title": "CONV BLOCK 2",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".arch-stage",
+          "label": "16×16×32 → 1D",
+          "title": "FLATTEN",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".arch-stage",
+          "label": "8,192 → 3",
+          "title": "FC LAYER",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".arch-stage",
+          "label": "logits → Softmax",
+          "title": "SOFTMAX",
+          "own_label": true,
+          "own_title": true
+        }
+      ],
       "geometry": {
         "slide": {
           "x": 0,
@@ -2187,6 +2577,22 @@
           "lineHeight": "normal",
           "spacing": "-1.33333px",
           "visible": true
+        }
+      ],
+      "card_pairs": [
+        {
+          "card": ".experiment-card",
+          "label": "CONFUSION MATRIX",
+          "title": "혼동행렬",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".experiment-card",
+          "label": "METRICS",
+          "title": "같은 데이터의 네 가지 평가 지표",
+          "own_label": true,
+          "own_title": true
         }
       ],
       "geometry": {
@@ -2350,6 +2756,22 @@
           "visible": true
         }
       ],
+      "card_pairs": [
+        {
+          "card": ".exec-impact,.exec-action-panel",
+          "label": "IMPACT / KPI COMPARISON",
+          "title": "주요 지표의 개선 효과",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".exec-impact,.exec-action-panel",
+          "label": "ACTION ITEMS",
+          "title": "파일럿 실행과 확대 판단",
+          "own_label": true,
+          "own_title": true
+        }
+      ],
       "geometry": {
         "slide": {
           "x": 0,
@@ -2391,7 +2813,7 @@
         },
         {
           "role": "title",
-          "text": "과적합 Overfitting",
+          "text": "과적합",
           "color": "rgb(18, 35, 63)",
           "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
           "size": "29px",
@@ -2402,7 +2824,7 @@
         },
         {
           "role": "title",
-          "text": "일반화 Generalization",
+          "text": "일반화",
           "color": "rgb(18, 35, 63)",
           "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
           "size": "29px",
@@ -2416,9 +2838,9 @@
           "text": "검증 손실 최소에서 모델 선택",
           "color": "rgb(18, 35, 63)",
           "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
-          "size": "19px",
+          "size": "17px",
           "weight": "750",
-          "lineHeight": "normal",
+          "lineHeight": "22px",
           "spacing": "-1.33333px",
           "visible": true
         },
@@ -2443,6 +2865,80 @@
           "lineHeight": "normal",
           "spacing": "-1.33333px",
           "visible": true
+        },
+        {
+          "role": "label",
+          "text": "OVERFITTING",
+          "color": "rgb(49, 104, 200)",
+          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+          "size": "16px",
+          "weight": "800",
+          "lineHeight": "20px",
+          "spacing": "-1.33333px",
+          "visible": true
+        },
+        {
+          "role": "label",
+          "text": "GENERALIZATION",
+          "color": "rgb(49, 104, 200)",
+          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+          "size": "16px",
+          "weight": "800",
+          "lineHeight": "20px",
+          "spacing": "-1.33333px",
+          "visible": true
+        },
+        {
+          "role": "label",
+          "text": "LOSS CURVE",
+          "color": "rgb(49, 104, 200)",
+          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+          "size": "16px",
+          "weight": "800",
+          "lineHeight": "20px",
+          "spacing": "-1.33333px",
+          "visible": true
+        },
+        {
+          "role": "label",
+          "text": "IMAGE PREDICTION",
+          "color": "rgb(49, 104, 200)",
+          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+          "size": "16px",
+          "weight": "800",
+          "lineHeight": "20px",
+          "spacing": "-1.33333px",
+          "visible": true
+        }
+      ],
+      "card_pairs": [
+        {
+          "card": ".definition",
+          "label": "OVERFITTING",
+          "title": "과적합",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".definition",
+          "label": "GENERALIZATION",
+          "title": "일반화",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".curve-panel",
+          "label": "LOSS CURVE",
+          "title": "검증 손실 최소에서 모델 선택",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".curve-panel",
+          "label": "IMAGE PREDICTION",
+          "title": "학습한 특징을 새 이미지에도 적용",
+          "own_label": true,
+          "own_title": true
         }
       ],
       "geometry": {
@@ -2549,6 +3045,26 @@
           "lineHeight": "normal",
           "spacing": "-1.33333px",
           "visible": true
+        },
+        {
+          "role": "label",
+          "text": "IMAGE REPRESENTATION",
+          "color": "rgb(49, 104, 200)",
+          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+          "size": "16px",
+          "weight": "800",
+          "lineHeight": "20px",
+          "spacing": "-1.33333px",
+          "visible": true
+        }
+      ],
+      "card_pairs": [
+        {
+          "card": ".concept-panel",
+          "label": "IMAGE REPRESENTATION",
+          "title": "이미지 → RGB 채널 → 픽셀 확대 → RGB 값",
+          "own_label": true,
+          "own_title": true
         }
       ],
       "geometry": {
@@ -2690,6 +3206,36 @@
           "visible": true
         }
       ],
+      "card_pairs": [
+        {
+          "card": ".node",
+          "label": "INPUT",
+          "title": "입력 이미지",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".node",
+          "label": "FEATURE",
+          "title": "CNN",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".node",
+          "label": "TASK",
+          "title": "Task Head",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".node",
+          "label": "OUTPUT",
+          "title": "예측 결과",
+          "own_label": true,
+          "own_title": true
+        }
+      ],
       "geometry": {
         "slide": {
           "x": 0,
@@ -2829,6 +3375,22 @@
           "visible": true
         }
       ],
+      "card_pairs": [
+        {
+          "card": ".compare-card",
+          "label": "RULE-BASED",
+          "title": "사람이 규칙을 정의",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".compare-card",
+          "label": "MACHINE LEARNING",
+          "title": "데이터에서 판단 기준을 학습",
+          "own_label": true,
+          "own_title": true
+        }
+      ],
       "geometry": {
         "slide": {
           "x": 0,
@@ -2922,6 +3484,22 @@
           "lineHeight": "normal",
           "spacing": "-1.33333px",
           "visible": true
+        }
+      ],
+      "card_pairs": [
+        {
+          "card": ".calc-panel",
+          "label": "01 · RECEPTIVE FIELD → OUTPUT POSITION",
+          "title": "입력의 어느 영역이 출력의 어느 위치로 가는가",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".calc-panel",
+          "label": "02 · MULTIPLY → SUM",
+          "title": "선택된 3×3 영역을 실제로 계산",
+          "own_label": true,
+          "own_title": true
         }
       ],
       "geometry": {
@@ -3039,6 +3617,22 @@
           "lineHeight": "20px",
           "spacing": "-1.33333px",
           "visible": true
+        }
+      ],
+      "card_pairs": [
+        {
+          "card": ".live-card",
+          "label": "LIVE CONTROL",
+          "title": "점수와 임계값으로 판정",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".live-card",
+          "label": "CONFUSION MATRIX",
+          "title": "판정 개수에서 지표로",
+          "own_label": true,
+          "own_title": true
         }
       ],
       "geometry": {
@@ -3279,6 +3873,50 @@
           "visible": true
         }
       ],
+      "card_pairs": [
+        {
+          "card": ".arch-stage",
+          "label": "RGB · 3채널",
+          "title": "INPUT",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".arch-stage",
+          "label": "Conv → ReLU → MaxPool",
+          "title": "CONV BLOCK 1",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".arch-stage",
+          "label": "Conv → ReLU → MaxPool",
+          "title": "CONV BLOCK 2",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".arch-stage",
+          "label": "16×16×32 → 1D",
+          "title": "FLATTEN",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".arch-stage",
+          "label": "8,192 → 3",
+          "title": "FC LAYER",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".arch-stage",
+          "label": "logits → Softmax",
+          "title": "SOFTMAX",
+          "own_label": true,
+          "own_title": true
+        }
+      ],
       "geometry": {
         "slide": {
           "x": 0,
@@ -3416,6 +4054,22 @@
           "lineHeight": "normal",
           "spacing": "-1.33333px",
           "visible": true
+        }
+      ],
+      "card_pairs": [
+        {
+          "card": ".experiment-card",
+          "label": "CONFUSION MATRIX",
+          "title": "혼동행렬",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".experiment-card",
+          "label": "METRICS",
+          "title": "같은 데이터의 네 가지 평가 지표",
+          "own_label": true,
+          "own_title": true
         }
       ],
       "geometry": {
@@ -3579,6 +4233,22 @@
           "visible": true
         }
       ],
+      "card_pairs": [
+        {
+          "card": ".exec-impact,.exec-action-panel",
+          "label": "IMPACT / KPI COMPARISON",
+          "title": "주요 지표의 개선 효과",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".exec-impact,.exec-action-panel",
+          "label": "ACTION ITEMS",
+          "title": "파일럿 실행과 확대 판단",
+          "own_label": true,
+          "own_title": true
+        }
+      ],
       "geometry": {
         "slide": {
           "x": 0,
@@ -3620,7 +4290,7 @@
         },
         {
           "role": "title",
-          "text": "과적합 Overfitting",
+          "text": "과적합",
           "color": "rgb(18, 35, 63)",
           "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
           "size": "29px",
@@ -3631,7 +4301,7 @@
         },
         {
           "role": "title",
-          "text": "일반화 Generalization",
+          "text": "일반화",
           "color": "rgb(18, 35, 63)",
           "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
           "size": "29px",
@@ -3645,9 +4315,9 @@
           "text": "검증 손실 최소에서 모델 선택",
           "color": "rgb(18, 35, 63)",
           "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
-          "size": "19px",
+          "size": "17px",
           "weight": "750",
-          "lineHeight": "normal",
+          "lineHeight": "22px",
           "spacing": "-1.33333px",
           "visible": true
         },
@@ -3672,6 +4342,80 @@
           "lineHeight": "normal",
           "spacing": "-1.33333px",
           "visible": true
+        },
+        {
+          "role": "label",
+          "text": "OVERFITTING",
+          "color": "rgb(49, 104, 200)",
+          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+          "size": "16px",
+          "weight": "800",
+          "lineHeight": "20px",
+          "spacing": "-1.33333px",
+          "visible": true
+        },
+        {
+          "role": "label",
+          "text": "GENERALIZATION",
+          "color": "rgb(49, 104, 200)",
+          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+          "size": "16px",
+          "weight": "800",
+          "lineHeight": "20px",
+          "spacing": "-1.33333px",
+          "visible": true
+        },
+        {
+          "role": "label",
+          "text": "LOSS CURVE",
+          "color": "rgb(49, 104, 200)",
+          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+          "size": "16px",
+          "weight": "800",
+          "lineHeight": "20px",
+          "spacing": "-1.33333px",
+          "visible": true
+        },
+        {
+          "role": "label",
+          "text": "IMAGE PREDICTION",
+          "color": "rgb(49, 104, 200)",
+          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+          "size": "16px",
+          "weight": "800",
+          "lineHeight": "20px",
+          "spacing": "-1.33333px",
+          "visible": true
+        }
+      ],
+      "card_pairs": [
+        {
+          "card": ".definition",
+          "label": "OVERFITTING",
+          "title": "과적합",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".definition",
+          "label": "GENERALIZATION",
+          "title": "일반화",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".curve-panel",
+          "label": "LOSS CURVE",
+          "title": "검증 손실 최소에서 모델 선택",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".curve-panel",
+          "label": "IMAGE PREDICTION",
+          "title": "학습한 특징을 새 이미지에도 적용",
+          "own_label": true,
+          "own_title": true
         }
       ],
       "geometry": {
@@ -3778,6 +4522,26 @@
           "lineHeight": "normal",
           "spacing": "-1.33333px",
           "visible": true
+        },
+        {
+          "role": "label",
+          "text": "IMAGE REPRESENTATION",
+          "color": "rgb(49, 104, 200)",
+          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+          "size": "16px",
+          "weight": "800",
+          "lineHeight": "20px",
+          "spacing": "-1.33333px",
+          "visible": true
+        }
+      ],
+      "card_pairs": [
+        {
+          "card": ".concept-panel",
+          "label": "IMAGE REPRESENTATION",
+          "title": "이미지 → RGB 채널 → 픽셀 확대 → RGB 값",
+          "own_label": true,
+          "own_title": true
         }
       ],
       "geometry": {
@@ -3919,6 +4683,36 @@
           "visible": true
         }
       ],
+      "card_pairs": [
+        {
+          "card": ".node",
+          "label": "INPUT",
+          "title": "입력 이미지",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".node",
+          "label": "FEATURE",
+          "title": "CNN",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".node",
+          "label": "TASK",
+          "title": "Task Head",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".node",
+          "label": "OUTPUT",
+          "title": "예측 결과",
+          "own_label": true,
+          "own_title": true
+        }
+      ],
       "geometry": {
         "slide": {
           "x": 0,
@@ -4058,6 +4852,22 @@
           "visible": true
         }
       ],
+      "card_pairs": [
+        {
+          "card": ".compare-card",
+          "label": "RULE-BASED",
+          "title": "사람이 규칙을 정의",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".compare-card",
+          "label": "MACHINE LEARNING",
+          "title": "데이터에서 판단 기준을 학습",
+          "own_label": true,
+          "own_title": true
+        }
+      ],
       "geometry": {
         "slide": {
           "x": 0,
@@ -4151,6 +4961,22 @@
           "lineHeight": "normal",
           "spacing": "-1.33333px",
           "visible": true
+        }
+      ],
+      "card_pairs": [
+        {
+          "card": ".calc-panel",
+          "label": "01 · RECEPTIVE FIELD → OUTPUT POSITION",
+          "title": "입력의 어느 영역이 출력의 어느 위치로 가는가",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".calc-panel",
+          "label": "02 · MULTIPLY → SUM",
+          "title": "선택된 3×3 영역을 실제로 계산",
+          "own_label": true,
+          "own_title": true
         }
       ],
       "geometry": {
@@ -4268,6 +5094,22 @@
           "lineHeight": "20px",
           "spacing": "-1.33333px",
           "visible": true
+        }
+      ],
+      "card_pairs": [
+        {
+          "card": ".live-card",
+          "label": "LIVE CONTROL",
+          "title": "점수와 임계값으로 판정",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".live-card",
+          "label": "CONFUSION MATRIX",
+          "title": "판정 개수에서 지표로",
+          "own_label": true,
+          "own_title": true
         }
       ],
       "geometry": {
@@ -4508,6 +5350,50 @@
           "visible": true
         }
       ],
+      "card_pairs": [
+        {
+          "card": ".arch-stage",
+          "label": "RGB · 3채널",
+          "title": "INPUT",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".arch-stage",
+          "label": "Conv → ReLU → MaxPool",
+          "title": "CONV BLOCK 1",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".arch-stage",
+          "label": "Conv → ReLU → MaxPool",
+          "title": "CONV BLOCK 2",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".arch-stage",
+          "label": "16×16×32 → 1D",
+          "title": "FLATTEN",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".arch-stage",
+          "label": "8,192 → 3",
+          "title": "FC LAYER",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".arch-stage",
+          "label": "logits → Softmax",
+          "title": "SOFTMAX",
+          "own_label": true,
+          "own_title": true
+        }
+      ],
       "geometry": {
         "slide": {
           "x": 0,
@@ -4645,6 +5531,22 @@
           "lineHeight": "normal",
           "spacing": "-1.33333px",
           "visible": true
+        }
+      ],
+      "card_pairs": [
+        {
+          "card": ".experiment-card",
+          "label": "CONFUSION MATRIX",
+          "title": "혼동행렬",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".experiment-card",
+          "label": "METRICS",
+          "title": "같은 데이터의 네 가지 평가 지표",
+          "own_label": true,
+          "own_title": true
         }
       ],
       "geometry": {
@@ -4808,6 +5710,22 @@
           "visible": true
         }
       ],
+      "card_pairs": [
+        {
+          "card": ".exec-impact,.exec-action-panel",
+          "label": "IMPACT / KPI COMPARISON",
+          "title": "주요 지표의 개선 효과",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".exec-impact,.exec-action-panel",
+          "label": "ACTION ITEMS",
+          "title": "파일럿 실행과 확대 판단",
+          "own_label": true,
+          "own_title": true
+        }
+      ],
       "geometry": {
         "slide": {
           "x": 0,
@@ -4849,7 +5767,7 @@
         },
         {
           "role": "title",
-          "text": "과적합 Overfitting",
+          "text": "과적합",
           "color": "rgb(18, 35, 63)",
           "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
           "size": "29px",
@@ -4860,7 +5778,7 @@
         },
         {
           "role": "title",
-          "text": "일반화 Generalization",
+          "text": "일반화",
           "color": "rgb(18, 35, 63)",
           "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
           "size": "29px",
@@ -4874,9 +5792,9 @@
           "text": "검증 손실 최소에서 모델 선택",
           "color": "rgb(18, 35, 63)",
           "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
-          "size": "19px",
+          "size": "17px",
           "weight": "750",
-          "lineHeight": "normal",
+          "lineHeight": "22px",
           "spacing": "-1.33333px",
           "visible": true
         },
@@ -4901,6 +5819,80 @@
           "lineHeight": "normal",
           "spacing": "-1.33333px",
           "visible": true
+        },
+        {
+          "role": "label",
+          "text": "OVERFITTING",
+          "color": "rgb(49, 104, 200)",
+          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+          "size": "16px",
+          "weight": "800",
+          "lineHeight": "20px",
+          "spacing": "-1.33333px",
+          "visible": true
+        },
+        {
+          "role": "label",
+          "text": "GENERALIZATION",
+          "color": "rgb(49, 104, 200)",
+          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+          "size": "16px",
+          "weight": "800",
+          "lineHeight": "20px",
+          "spacing": "-1.33333px",
+          "visible": true
+        },
+        {
+          "role": "label",
+          "text": "LOSS CURVE",
+          "color": "rgb(49, 104, 200)",
+          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+          "size": "16px",
+          "weight": "800",
+          "lineHeight": "20px",
+          "spacing": "-1.33333px",
+          "visible": true
+        },
+        {
+          "role": "label",
+          "text": "IMAGE PREDICTION",
+          "color": "rgb(49, 104, 200)",
+          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+          "size": "16px",
+          "weight": "800",
+          "lineHeight": "20px",
+          "spacing": "-1.33333px",
+          "visible": true
+        }
+      ],
+      "card_pairs": [
+        {
+          "card": ".definition",
+          "label": "OVERFITTING",
+          "title": "과적합",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".definition",
+          "label": "GENERALIZATION",
+          "title": "일반화",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".curve-panel",
+          "label": "LOSS CURVE",
+          "title": "검증 손실 최소에서 모델 선택",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".curve-panel",
+          "label": "IMAGE PREDICTION",
+          "title": "학습한 특징을 새 이미지에도 적용",
+          "own_label": true,
+          "own_title": true
         }
       ],
       "geometry": {
@@ -5007,6 +5999,26 @@
           "lineHeight": "normal",
           "spacing": "-1.33333px",
           "visible": true
+        },
+        {
+          "role": "label",
+          "text": "IMAGE REPRESENTATION",
+          "color": "rgb(49, 104, 200)",
+          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+          "size": "16px",
+          "weight": "800",
+          "lineHeight": "20px",
+          "spacing": "-1.33333px",
+          "visible": true
+        }
+      ],
+      "card_pairs": [
+        {
+          "card": ".concept-panel",
+          "label": "IMAGE REPRESENTATION",
+          "title": "이미지 → RGB 채널 → 픽셀 확대 → RGB 값",
+          "own_label": true,
+          "own_title": true
         }
       ],
       "geometry": {
@@ -5148,6 +6160,36 @@
           "visible": true
         }
       ],
+      "card_pairs": [
+        {
+          "card": ".node",
+          "label": "INPUT",
+          "title": "입력 이미지",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".node",
+          "label": "FEATURE",
+          "title": "CNN",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".node",
+          "label": "TASK",
+          "title": "Task Head",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".node",
+          "label": "OUTPUT",
+          "title": "예측 결과",
+          "own_label": true,
+          "own_title": true
+        }
+      ],
       "geometry": {
         "slide": {
           "x": 0,
@@ -5287,6 +6329,22 @@
           "visible": true
         }
       ],
+      "card_pairs": [
+        {
+          "card": ".compare-card",
+          "label": "RULE-BASED",
+          "title": "사람이 규칙을 정의",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".compare-card",
+          "label": "MACHINE LEARNING",
+          "title": "데이터에서 판단 기준을 학습",
+          "own_label": true,
+          "own_title": true
+        }
+      ],
       "geometry": {
         "slide": {
           "x": 0,
@@ -5380,6 +6438,22 @@
           "lineHeight": "normal",
           "spacing": "-1.33333px",
           "visible": true
+        }
+      ],
+      "card_pairs": [
+        {
+          "card": ".calc-panel",
+          "label": "01 · RECEPTIVE FIELD → OUTPUT POSITION",
+          "title": "입력의 어느 영역이 출력의 어느 위치로 가는가",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".calc-panel",
+          "label": "02 · MULTIPLY → SUM",
+          "title": "선택된 3×3 영역을 실제로 계산",
+          "own_label": true,
+          "own_title": true
         }
       ],
       "geometry": {
@@ -5497,6 +6571,22 @@
           "lineHeight": "20px",
           "spacing": "-1.33333px",
           "visible": true
+        }
+      ],
+      "card_pairs": [
+        {
+          "card": ".live-card",
+          "label": "LIVE CONTROL",
+          "title": "점수와 임계값으로 판정",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".live-card",
+          "label": "CONFUSION MATRIX",
+          "title": "판정 개수에서 지표로",
+          "own_label": true,
+          "own_title": true
         }
       ],
       "geometry": {
@@ -5737,6 +6827,50 @@
           "visible": true
         }
       ],
+      "card_pairs": [
+        {
+          "card": ".arch-stage",
+          "label": "RGB · 3채널",
+          "title": "INPUT",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".arch-stage",
+          "label": "Conv → ReLU → MaxPool",
+          "title": "CONV BLOCK 1",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".arch-stage",
+          "label": "Conv → ReLU → MaxPool",
+          "title": "CONV BLOCK 2",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".arch-stage",
+          "label": "16×16×32 → 1D",
+          "title": "FLATTEN",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".arch-stage",
+          "label": "8,192 → 3",
+          "title": "FC LAYER",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".arch-stage",
+          "label": "logits → Softmax",
+          "title": "SOFTMAX",
+          "own_label": true,
+          "own_title": true
+        }
+      ],
       "geometry": {
         "slide": {
           "x": 0,
@@ -5874,6 +7008,22 @@
           "lineHeight": "normal",
           "spacing": "-1.33333px",
           "visible": true
+        }
+      ],
+      "card_pairs": [
+        {
+          "card": ".experiment-card",
+          "label": "CONFUSION MATRIX",
+          "title": "혼동행렬",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".experiment-card",
+          "label": "METRICS",
+          "title": "같은 데이터의 네 가지 평가 지표",
+          "own_label": true,
+          "own_title": true
         }
       ],
       "geometry": {
@@ -6037,6 +7187,22 @@
           "visible": true
         }
       ],
+      "card_pairs": [
+        {
+          "card": ".exec-impact,.exec-action-panel",
+          "label": "IMPACT / KPI COMPARISON",
+          "title": "주요 지표의 개선 효과",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".exec-impact,.exec-action-panel",
+          "label": "ACTION ITEMS",
+          "title": "파일럿 실행과 확대 판단",
+          "own_label": true,
+          "own_title": true
+        }
+      ],
       "geometry": {
         "slide": {
           "x": 0,
@@ -6078,7 +7244,7 @@
         },
         {
           "role": "title",
-          "text": "과적합 Overfitting",
+          "text": "과적합",
           "color": "rgb(18, 35, 63)",
           "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
           "size": "29px",
@@ -6089,7 +7255,7 @@
         },
         {
           "role": "title",
-          "text": "일반화 Generalization",
+          "text": "일반화",
           "color": "rgb(18, 35, 63)",
           "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
           "size": "29px",
@@ -6103,9 +7269,9 @@
           "text": "검증 손실 최소에서 모델 선택",
           "color": "rgb(18, 35, 63)",
           "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
-          "size": "19px",
+          "size": "17px",
           "weight": "750",
-          "lineHeight": "normal",
+          "lineHeight": "22px",
           "spacing": "-1.33333px",
           "visible": true
         },
@@ -6130,6 +7296,80 @@
           "lineHeight": "normal",
           "spacing": "-1.33333px",
           "visible": true
+        },
+        {
+          "role": "label",
+          "text": "OVERFITTING",
+          "color": "rgb(49, 104, 200)",
+          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+          "size": "16px",
+          "weight": "800",
+          "lineHeight": "20px",
+          "spacing": "-1.33333px",
+          "visible": true
+        },
+        {
+          "role": "label",
+          "text": "GENERALIZATION",
+          "color": "rgb(49, 104, 200)",
+          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+          "size": "16px",
+          "weight": "800",
+          "lineHeight": "20px",
+          "spacing": "-1.33333px",
+          "visible": true
+        },
+        {
+          "role": "label",
+          "text": "LOSS CURVE",
+          "color": "rgb(49, 104, 200)",
+          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+          "size": "16px",
+          "weight": "800",
+          "lineHeight": "20px",
+          "spacing": "-1.33333px",
+          "visible": true
+        },
+        {
+          "role": "label",
+          "text": "IMAGE PREDICTION",
+          "color": "rgb(49, 104, 200)",
+          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+          "size": "16px",
+          "weight": "800",
+          "lineHeight": "20px",
+          "spacing": "-1.33333px",
+          "visible": true
+        }
+      ],
+      "card_pairs": [
+        {
+          "card": ".definition",
+          "label": "OVERFITTING",
+          "title": "과적합",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".definition",
+          "label": "GENERALIZATION",
+          "title": "일반화",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".curve-panel",
+          "label": "LOSS CURVE",
+          "title": "검증 손실 최소에서 모델 선택",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".curve-panel",
+          "label": "IMAGE PREDICTION",
+          "title": "학습한 특징을 새 이미지에도 적용",
+          "own_label": true,
+          "own_title": true
         }
       ],
       "geometry": {
@@ -6236,6 +7476,26 @@
           "lineHeight": "normal",
           "spacing": "-1.33333px",
           "visible": true
+        },
+        {
+          "role": "label",
+          "text": "IMAGE REPRESENTATION",
+          "color": "rgb(49, 104, 200)",
+          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+          "size": "16px",
+          "weight": "800",
+          "lineHeight": "20px",
+          "spacing": "-1.33333px",
+          "visible": true
+        }
+      ],
+      "card_pairs": [
+        {
+          "card": ".concept-panel",
+          "label": "IMAGE REPRESENTATION",
+          "title": "이미지 → RGB 채널 → 픽셀 확대 → RGB 값",
+          "own_label": true,
+          "own_title": true
         }
       ],
       "geometry": {
@@ -6377,6 +7637,36 @@
           "visible": true
         }
       ],
+      "card_pairs": [
+        {
+          "card": ".node",
+          "label": "INPUT",
+          "title": "입력 이미지",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".node",
+          "label": "FEATURE",
+          "title": "CNN",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".node",
+          "label": "TASK",
+          "title": "Task Head",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".node",
+          "label": "OUTPUT",
+          "title": "예측 결과",
+          "own_label": true,
+          "own_title": true
+        }
+      ],
       "geometry": {
         "slide": {
           "x": 0,
@@ -6516,6 +7806,22 @@
           "visible": true
         }
       ],
+      "card_pairs": [
+        {
+          "card": ".compare-card",
+          "label": "RULE-BASED",
+          "title": "사람이 규칙을 정의",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".compare-card",
+          "label": "MACHINE LEARNING",
+          "title": "데이터에서 판단 기준을 학습",
+          "own_label": true,
+          "own_title": true
+        }
+      ],
       "geometry": {
         "slide": {
           "x": 0,
@@ -6609,6 +7915,22 @@
           "lineHeight": "normal",
           "spacing": "-1.33333px",
           "visible": true
+        }
+      ],
+      "card_pairs": [
+        {
+          "card": ".calc-panel",
+          "label": "01 · RECEPTIVE FIELD → OUTPUT POSITION",
+          "title": "입력의 어느 영역이 출력의 어느 위치로 가는가",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".calc-panel",
+          "label": "02 · MULTIPLY → SUM",
+          "title": "선택된 3×3 영역을 실제로 계산",
+          "own_label": true,
+          "own_title": true
         }
       ],
       "geometry": {
@@ -6726,6 +8048,22 @@
           "lineHeight": "20px",
           "spacing": "-1.33333px",
           "visible": true
+        }
+      ],
+      "card_pairs": [
+        {
+          "card": ".live-card",
+          "label": "LIVE CONTROL",
+          "title": "점수와 임계값으로 판정",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".live-card",
+          "label": "CONFUSION MATRIX",
+          "title": "판정 개수에서 지표로",
+          "own_label": true,
+          "own_title": true
         }
       ],
       "geometry": {
@@ -6966,6 +8304,50 @@
           "visible": true
         }
       ],
+      "card_pairs": [
+        {
+          "card": ".arch-stage",
+          "label": "RGB · 3채널",
+          "title": "INPUT",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".arch-stage",
+          "label": "Conv → ReLU → MaxPool",
+          "title": "CONV BLOCK 1",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".arch-stage",
+          "label": "Conv → ReLU → MaxPool",
+          "title": "CONV BLOCK 2",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".arch-stage",
+          "label": "16×16×32 → 1D",
+          "title": "FLATTEN",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".arch-stage",
+          "label": "8,192 → 3",
+          "title": "FC LAYER",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".arch-stage",
+          "label": "logits → Softmax",
+          "title": "SOFTMAX",
+          "own_label": true,
+          "own_title": true
+        }
+      ],
       "geometry": {
         "slide": {
           "x": 0,
@@ -7103,6 +8485,22 @@
           "lineHeight": "normal",
           "spacing": "-1.33333px",
           "visible": true
+        }
+      ],
+      "card_pairs": [
+        {
+          "card": ".experiment-card",
+          "label": "CONFUSION MATRIX",
+          "title": "혼동행렬",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".experiment-card",
+          "label": "METRICS",
+          "title": "같은 데이터의 네 가지 평가 지표",
+          "own_label": true,
+          "own_title": true
         }
       ],
       "geometry": {
@@ -7266,6 +8664,22 @@
           "visible": true
         }
       ],
+      "card_pairs": [
+        {
+          "card": ".exec-impact,.exec-action-panel",
+          "label": "IMPACT / KPI COMPARISON",
+          "title": "주요 지표의 개선 효과",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".exec-impact,.exec-action-panel",
+          "label": "ACTION ITEMS",
+          "title": "파일럿 실행과 확대 판단",
+          "own_label": true,
+          "own_title": true
+        }
+      ],
       "geometry": {
         "slide": {
           "x": 0,
@@ -7307,7 +8721,7 @@
         },
         {
           "role": "title",
-          "text": "과적합 Overfitting",
+          "text": "과적합",
           "color": "rgb(18, 35, 63)",
           "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
           "size": "29px",
@@ -7318,7 +8732,7 @@
         },
         {
           "role": "title",
-          "text": "일반화 Generalization",
+          "text": "일반화",
           "color": "rgb(18, 35, 63)",
           "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
           "size": "29px",
@@ -7332,9 +8746,9 @@
           "text": "검증 손실 최소에서 모델 선택",
           "color": "rgb(18, 35, 63)",
           "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
-          "size": "19px",
+          "size": "17px",
           "weight": "750",
-          "lineHeight": "normal",
+          "lineHeight": "22px",
           "spacing": "-1.33333px",
           "visible": true
         },
@@ -7359,6 +8773,80 @@
           "lineHeight": "normal",
           "spacing": "-1.33333px",
           "visible": true
+        },
+        {
+          "role": "label",
+          "text": "OVERFITTING",
+          "color": "rgb(49, 104, 200)",
+          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+          "size": "16px",
+          "weight": "800",
+          "lineHeight": "20px",
+          "spacing": "-1.33333px",
+          "visible": true
+        },
+        {
+          "role": "label",
+          "text": "GENERALIZATION",
+          "color": "rgb(49, 104, 200)",
+          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+          "size": "16px",
+          "weight": "800",
+          "lineHeight": "20px",
+          "spacing": "-1.33333px",
+          "visible": true
+        },
+        {
+          "role": "label",
+          "text": "LOSS CURVE",
+          "color": "rgb(49, 104, 200)",
+          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+          "size": "16px",
+          "weight": "800",
+          "lineHeight": "20px",
+          "spacing": "-1.33333px",
+          "visible": true
+        },
+        {
+          "role": "label",
+          "text": "IMAGE PREDICTION",
+          "color": "rgb(49, 104, 200)",
+          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+          "size": "16px",
+          "weight": "800",
+          "lineHeight": "20px",
+          "spacing": "-1.33333px",
+          "visible": true
+        }
+      ],
+      "card_pairs": [
+        {
+          "card": ".definition",
+          "label": "OVERFITTING",
+          "title": "과적합",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".definition",
+          "label": "GENERALIZATION",
+          "title": "일반화",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".curve-panel",
+          "label": "LOSS CURVE",
+          "title": "검증 손실 최소에서 모델 선택",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".curve-panel",
+          "label": "IMAGE PREDICTION",
+          "title": "학습한 특징을 새 이미지에도 적용",
+          "own_label": true,
+          "own_title": true
         }
       ],
       "geometry": {
@@ -7465,6 +8953,26 @@
           "lineHeight": "normal",
           "spacing": "-1.33333px",
           "visible": true
+        },
+        {
+          "role": "label",
+          "text": "IMAGE REPRESENTATION",
+          "color": "rgb(49, 104, 200)",
+          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+          "size": "16px",
+          "weight": "800",
+          "lineHeight": "20px",
+          "spacing": "-1.33333px",
+          "visible": true
+        }
+      ],
+      "card_pairs": [
+        {
+          "card": ".concept-panel",
+          "label": "IMAGE REPRESENTATION",
+          "title": "이미지 → RGB 채널 → 픽셀 확대 → RGB 값",
+          "own_label": true,
+          "own_title": true
         }
       ],
       "geometry": {
@@ -7606,6 +9114,36 @@
           "visible": true
         }
       ],
+      "card_pairs": [
+        {
+          "card": ".node",
+          "label": "INPUT",
+          "title": "입력 이미지",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".node",
+          "label": "FEATURE",
+          "title": "CNN",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".node",
+          "label": "TASK",
+          "title": "Task Head",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".node",
+          "label": "OUTPUT",
+          "title": "예측 결과",
+          "own_label": true,
+          "own_title": true
+        }
+      ],
       "geometry": {
         "slide": {
           "x": 0,
@@ -7745,6 +9283,22 @@
           "visible": true
         }
       ],
+      "card_pairs": [
+        {
+          "card": ".compare-card",
+          "label": "RULE-BASED",
+          "title": "사람이 규칙을 정의",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".compare-card",
+          "label": "MACHINE LEARNING",
+          "title": "데이터에서 판단 기준을 학습",
+          "own_label": true,
+          "own_title": true
+        }
+      ],
       "geometry": {
         "slide": {
           "x": 0,
@@ -7838,6 +9392,22 @@
           "lineHeight": "normal",
           "spacing": "-1.33333px",
           "visible": true
+        }
+      ],
+      "card_pairs": [
+        {
+          "card": ".calc-panel",
+          "label": "01 · RECEPTIVE FIELD → OUTPUT POSITION",
+          "title": "입력의 어느 영역이 출력의 어느 위치로 가는가",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".calc-panel",
+          "label": "02 · MULTIPLY → SUM",
+          "title": "선택된 3×3 영역을 실제로 계산",
+          "own_label": true,
+          "own_title": true
         }
       ],
       "geometry": {
@@ -7955,6 +9525,22 @@
           "lineHeight": "20px",
           "spacing": "-1.33333px",
           "visible": true
+        }
+      ],
+      "card_pairs": [
+        {
+          "card": ".live-card",
+          "label": "LIVE CONTROL",
+          "title": "점수와 임계값으로 판정",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".live-card",
+          "label": "CONFUSION MATRIX",
+          "title": "판정 개수에서 지표로",
+          "own_label": true,
+          "own_title": true
         }
       ],
       "geometry": {
@@ -8195,6 +9781,50 @@
           "visible": true
         }
       ],
+      "card_pairs": [
+        {
+          "card": ".arch-stage",
+          "label": "RGB · 3채널",
+          "title": "INPUT",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".arch-stage",
+          "label": "Conv → ReLU → MaxPool",
+          "title": "CONV BLOCK 1",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".arch-stage",
+          "label": "Conv → ReLU → MaxPool",
+          "title": "CONV BLOCK 2",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".arch-stage",
+          "label": "16×16×32 → 1D",
+          "title": "FLATTEN",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".arch-stage",
+          "label": "8,192 → 3",
+          "title": "FC LAYER",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".arch-stage",
+          "label": "logits → Softmax",
+          "title": "SOFTMAX",
+          "own_label": true,
+          "own_title": true
+        }
+      ],
       "geometry": {
         "slide": {
           "x": 0,
@@ -8332,6 +9962,22 @@
           "lineHeight": "normal",
           "spacing": "-1.33333px",
           "visible": true
+        }
+      ],
+      "card_pairs": [
+        {
+          "card": ".experiment-card",
+          "label": "CONFUSION MATRIX",
+          "title": "혼동행렬",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".experiment-card",
+          "label": "METRICS",
+          "title": "같은 데이터의 네 가지 평가 지표",
+          "own_label": true,
+          "own_title": true
         }
       ],
       "geometry": {
@@ -8495,6 +10141,22 @@
           "visible": true
         }
       ],
+      "card_pairs": [
+        {
+          "card": ".exec-impact,.exec-action-panel",
+          "label": "IMPACT / KPI COMPARISON",
+          "title": "주요 지표의 개선 효과",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".exec-impact,.exec-action-panel",
+          "label": "ACTION ITEMS",
+          "title": "파일럿 실행과 확대 판단",
+          "own_label": true,
+          "own_title": true
+        }
+      ],
       "geometry": {
         "slide": {
           "x": 0,
@@ -8536,7 +10198,7 @@
         },
         {
           "role": "title",
-          "text": "과적합 Overfitting",
+          "text": "과적합",
           "color": "rgb(18, 35, 63)",
           "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
           "size": "29px",
@@ -8547,7 +10209,7 @@
         },
         {
           "role": "title",
-          "text": "일반화 Generalization",
+          "text": "일반화",
           "color": "rgb(18, 35, 63)",
           "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
           "size": "29px",
@@ -8561,9 +10223,9 @@
           "text": "검증 손실 최소에서 모델 선택",
           "color": "rgb(18, 35, 63)",
           "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
-          "size": "19px",
+          "size": "17px",
           "weight": "750",
-          "lineHeight": "normal",
+          "lineHeight": "22px",
           "spacing": "-1.33333px",
           "visible": true
         },
@@ -8588,6 +10250,80 @@
           "lineHeight": "normal",
           "spacing": "-1.33333px",
           "visible": true
+        },
+        {
+          "role": "label",
+          "text": "OVERFITTING",
+          "color": "rgb(49, 104, 200)",
+          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+          "size": "16px",
+          "weight": "800",
+          "lineHeight": "20px",
+          "spacing": "-1.33333px",
+          "visible": true
+        },
+        {
+          "role": "label",
+          "text": "GENERALIZATION",
+          "color": "rgb(49, 104, 200)",
+          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+          "size": "16px",
+          "weight": "800",
+          "lineHeight": "20px",
+          "spacing": "-1.33333px",
+          "visible": true
+        },
+        {
+          "role": "label",
+          "text": "LOSS CURVE",
+          "color": "rgb(49, 104, 200)",
+          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+          "size": "16px",
+          "weight": "800",
+          "lineHeight": "20px",
+          "spacing": "-1.33333px",
+          "visible": true
+        },
+        {
+          "role": "label",
+          "text": "IMAGE PREDICTION",
+          "color": "rgb(49, 104, 200)",
+          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+          "size": "16px",
+          "weight": "800",
+          "lineHeight": "20px",
+          "spacing": "-1.33333px",
+          "visible": true
+        }
+      ],
+      "card_pairs": [
+        {
+          "card": ".definition",
+          "label": "OVERFITTING",
+          "title": "과적합",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".definition",
+          "label": "GENERALIZATION",
+          "title": "일반화",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".curve-panel",
+          "label": "LOSS CURVE",
+          "title": "검증 손실 최소에서 모델 선택",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".curve-panel",
+          "label": "IMAGE PREDICTION",
+          "title": "학습한 특징을 새 이미지에도 적용",
+          "own_label": true,
+          "own_title": true
         }
       ],
       "geometry": {
@@ -8694,6 +10430,26 @@
           "lineHeight": "normal",
           "spacing": "-1.33333px",
           "visible": true
+        },
+        {
+          "role": "label",
+          "text": "IMAGE REPRESENTATION",
+          "color": "rgb(49, 104, 200)",
+          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+          "size": "16px",
+          "weight": "800",
+          "lineHeight": "20px",
+          "spacing": "-1.33333px",
+          "visible": true
+        }
+      ],
+      "card_pairs": [
+        {
+          "card": ".concept-panel",
+          "label": "IMAGE REPRESENTATION",
+          "title": "이미지 → RGB 채널 → 픽셀 확대 → RGB 값",
+          "own_label": true,
+          "own_title": true
         }
       ],
       "geometry": {
@@ -8835,6 +10591,36 @@
           "visible": true
         }
       ],
+      "card_pairs": [
+        {
+          "card": ".node",
+          "label": "INPUT",
+          "title": "입력 이미지",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".node",
+          "label": "FEATURE",
+          "title": "CNN",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".node",
+          "label": "TASK",
+          "title": "Task Head",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".node",
+          "label": "OUTPUT",
+          "title": "예측 결과",
+          "own_label": true,
+          "own_title": true
+        }
+      ],
       "geometry": {
         "slide": {
           "x": 0,
@@ -8974,6 +10760,22 @@
           "visible": true
         }
       ],
+      "card_pairs": [
+        {
+          "card": ".compare-card",
+          "label": "RULE-BASED",
+          "title": "사람이 규칙을 정의",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".compare-card",
+          "label": "MACHINE LEARNING",
+          "title": "데이터에서 판단 기준을 학습",
+          "own_label": true,
+          "own_title": true
+        }
+      ],
       "geometry": {
         "slide": {
           "x": 0,
@@ -9067,6 +10869,22 @@
           "lineHeight": "normal",
           "spacing": "-1.33333px",
           "visible": true
+        }
+      ],
+      "card_pairs": [
+        {
+          "card": ".calc-panel",
+          "label": "01 · RECEPTIVE FIELD → OUTPUT POSITION",
+          "title": "입력의 어느 영역이 출력의 어느 위치로 가는가",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".calc-panel",
+          "label": "02 · MULTIPLY → SUM",
+          "title": "선택된 3×3 영역을 실제로 계산",
+          "own_label": true,
+          "own_title": true
         }
       ],
       "geometry": {
@@ -9184,6 +11002,22 @@
           "lineHeight": "20px",
           "spacing": "-1.33333px",
           "visible": true
+        }
+      ],
+      "card_pairs": [
+        {
+          "card": ".live-card",
+          "label": "LIVE CONTROL",
+          "title": "점수와 임계값으로 판정",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".live-card",
+          "label": "CONFUSION MATRIX",
+          "title": "판정 개수에서 지표로",
+          "own_label": true,
+          "own_title": true
         }
       ],
       "geometry": {
@@ -9424,6 +11258,50 @@
           "visible": true
         }
       ],
+      "card_pairs": [
+        {
+          "card": ".arch-stage",
+          "label": "RGB · 3채널",
+          "title": "INPUT",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".arch-stage",
+          "label": "Conv → ReLU → MaxPool",
+          "title": "CONV BLOCK 1",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".arch-stage",
+          "label": "Conv → ReLU → MaxPool",
+          "title": "CONV BLOCK 2",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".arch-stage",
+          "label": "16×16×32 → 1D",
+          "title": "FLATTEN",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".arch-stage",
+          "label": "8,192 → 3",
+          "title": "FC LAYER",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".arch-stage",
+          "label": "logits → Softmax",
+          "title": "SOFTMAX",
+          "own_label": true,
+          "own_title": true
+        }
+      ],
       "geometry": {
         "slide": {
           "x": 0,
@@ -9561,6 +11439,22 @@
           "lineHeight": "normal",
           "spacing": "-1.33333px",
           "visible": true
+        }
+      ],
+      "card_pairs": [
+        {
+          "card": ".experiment-card",
+          "label": "CONFUSION MATRIX",
+          "title": "혼동행렬",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".experiment-card",
+          "label": "METRICS",
+          "title": "같은 데이터의 네 가지 평가 지표",
+          "own_label": true,
+          "own_title": true
         }
       ],
       "geometry": {
@@ -9724,6 +11618,22 @@
           "visible": true
         }
       ],
+      "card_pairs": [
+        {
+          "card": ".exec-impact,.exec-action-panel",
+          "label": "IMPACT / KPI COMPARISON",
+          "title": "주요 지표의 개선 효과",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".exec-impact,.exec-action-panel",
+          "label": "ACTION ITEMS",
+          "title": "파일럿 실행과 확대 판단",
+          "own_label": true,
+          "own_title": true
+        }
+      ],
       "geometry": {
         "slide": {
           "x": 0,
@@ -9765,7 +11675,7 @@
         },
         {
           "role": "title",
-          "text": "과적합 Overfitting",
+          "text": "과적합",
           "color": "rgb(18, 35, 63)",
           "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
           "size": "29px",
@@ -9776,7 +11686,7 @@
         },
         {
           "role": "title",
-          "text": "일반화 Generalization",
+          "text": "일반화",
           "color": "rgb(18, 35, 63)",
           "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
           "size": "29px",
@@ -9790,9 +11700,9 @@
           "text": "검증 손실 최소에서 모델 선택",
           "color": "rgb(18, 35, 63)",
           "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
-          "size": "19px",
+          "size": "17px",
           "weight": "750",
-          "lineHeight": "normal",
+          "lineHeight": "22px",
           "spacing": "-1.33333px",
           "visible": true
         },
@@ -9817,6 +11727,80 @@
           "lineHeight": "normal",
           "spacing": "-1.33333px",
           "visible": true
+        },
+        {
+          "role": "label",
+          "text": "OVERFITTING",
+          "color": "rgb(49, 104, 200)",
+          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+          "size": "16px",
+          "weight": "800",
+          "lineHeight": "20px",
+          "spacing": "-1.33333px",
+          "visible": true
+        },
+        {
+          "role": "label",
+          "text": "GENERALIZATION",
+          "color": "rgb(49, 104, 200)",
+          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+          "size": "16px",
+          "weight": "800",
+          "lineHeight": "20px",
+          "spacing": "-1.33333px",
+          "visible": true
+        },
+        {
+          "role": "label",
+          "text": "LOSS CURVE",
+          "color": "rgb(49, 104, 200)",
+          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+          "size": "16px",
+          "weight": "800",
+          "lineHeight": "20px",
+          "spacing": "-1.33333px",
+          "visible": true
+        },
+        {
+          "role": "label",
+          "text": "IMAGE PREDICTION",
+          "color": "rgb(49, 104, 200)",
+          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+          "size": "16px",
+          "weight": "800",
+          "lineHeight": "20px",
+          "spacing": "-1.33333px",
+          "visible": true
+        }
+      ],
+      "card_pairs": [
+        {
+          "card": ".definition",
+          "label": "OVERFITTING",
+          "title": "과적합",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".definition",
+          "label": "GENERALIZATION",
+          "title": "일반화",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".curve-panel",
+          "label": "LOSS CURVE",
+          "title": "검증 손실 최소에서 모델 선택",
+          "own_label": true,
+          "own_title": true
+        },
+        {
+          "card": ".curve-panel",
+          "label": "IMAGE PREDICTION",
+          "title": "학습한 특징을 새 이미지에도 적용",
+          "own_label": true,
+          "own_title": true
         }
       ],
       "geometry": {
@@ -9844,7 +11828,7 @@
   "page_errors": [],
   "failed_requests": [],
   "source_sha256": {
-    "templates/html/concept.html": "81a4d341ca86eb5550e0d58411fdda6f040d1e3cdcf9a98ee9b84ff6b8ad0364",
+    "templates/html/concept.html": "ddef1b01d7919cb46784659e41933556e103640d73b32a98ccdfa474626d9f37",
     "templates/html/process.html": "39989a9073bd7a8a296dc4a7ece870f0e0da60010b8b8922393049678c733a1d",
     "templates/html/comparison.html": "e90611664ef0a3ab1d94f6a226de42e14f4272acbdb30f90e9b770392d892c74",
     "templates/html/step-by-step.html": "8e7eed2d4bbeaeea3fb644973a0ff99f9e0c075bababf93a8964636197143d3c",
@@ -9853,21 +11837,21 @@
     "templates/html/experiment.html": "c2424515f1ceebfbdf616dbc0a6b227b27d453fcde5383b899653df3d643c961",
     "templates/html/executive-summary.html": "fc0b46ace4bc81b108b199d12121cd12fbc940aebe1cdef30639a859ddab95b6",
     "templates/html/comparison-reference.css": "4010e007a80a100fe3b7ee4dd5ea1bf6a4b2691d3e90a6e125ad70ba1f7b97b2",
-    "examples/overfitting-generalization/lesson.css": "d1668f5964bd1ee7fe14495e040a209eb81202826a4576f257a97e8c31ad1a12",
-    "examples/overfitting-generalization/content.html": "44c7f22b1683213b219bdc4349c015095136ab5618bc8b172236f02d3f51971b",
-    "scripts/verify_heading_roles.py": "1422becf2ab1ad43c3f77a27a3d1764e6d464afea881b76f920131af01638fec",
-    "previews/heading-review/change-scope.json": "5305d285b95f87c87c3fb1e118205fd5a10ea7fa6aa28b8c5df9b5b7a45d391b"
+    "examples/overfitting-generalization/lesson.css": "3cec140ce68867f77fb1bb13b49ea6fecb8b829d486aa1d791c95b5cc4f55b58",
+    "examples/overfitting-generalization/content.html": "ffdf81851b117f9b1a1c49beec305ac578fc27b36caeb36dd80ac0073d0410b5",
+    "scripts/verify_heading_roles.py": "0ee1bfa6f6d2157767d3cba6eca59c4573df999a83f60a0ab77ca54bda4f05cb",
+    "previews/heading-review/change-scope.json": "229cc8915bfe634242e7a5ecccac53e299b37732c12d3b8bff50bee7c4725782"
   },
   "preview_sha256": {
     "previews/html-architecture.jpg": "b36556f3baa04017fd118792a7d851f00af9defd7446597be5c4b291e728eda5",
     "previews/html-process.png": "a8e5504c6f66f485a10a65ce4afbecf86f57813b8d0dfa3d6cbdaf09a4ca9566",
     "previews/html-experiment.jpg": "a46a7083f4bdbcc4e6f57f81ff0c0624f4cb751ebc412a179a6213545e3a505f",
     "previews/html-interactive.jpg": "6552cc759523c967de8aadd317b95e76a93446fb043810e47db5aa43c1b012c4",
-    "previews/html-concept.png": "a8a171b1d5f057c189f1e7c533bda3ec9c618740e563c6a486b91a9762fd867b",
+    "previews/html-concept.png": "a7e07908fe83a9d6dbc290a5a192c41181f0e9935d2f6b61715735bd845a4e51",
     "previews/html-executive-summary.jpg": "966d0f37c6eb520097c6872372c0c8199d95ef60486ee27bf38fb87c05953a24",
     "previews/html-comparison.png": "8d5d1f891ffb31fdd358b961b4daf8fa80fbf5a79bc5b78b18a0f6772e2212a8",
     "previews/html-step-by-step.jpg": "b48a137f8226ad5eba17ff335b0b5eba84aa8ebd3655859fd7bab839aaa001e7",
-    "previews/heading-review/overfitting.png": "51b34a5b33c3408962e55015d2bc8999523a1085cf518933d7186f10d16a6714",
-    "previews/heading-review/contact.jpg": "f6a3a091c1e1eab3e8caefca3cd898fa0eaf709fc261b64f58108a4eb9f036c9"
+    "previews/heading-review/overfitting.png": "f216411fd5ee0119d0e13a0c1882c395d50a3b70b1c273429fcd96a5005a4aad",
+    "previews/heading-review/contact.jpg": "23a6d3ef09d23bfca0886a8a24835dbac943c0f74a39c0dac763506125ff895f"
   }
 }

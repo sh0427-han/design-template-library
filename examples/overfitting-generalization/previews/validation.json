@@ -70,9 +70,9 @@
             "name": "card definition",
             "inner": {
               "x": 93,
-              "y": 175.328125,
+              "y": 174.328125,
               "right": 682,
-              "bottom": 266.328125
+              "bottom": 267.328125
             },
             "escaped": []
           },
@@ -80,9 +80,9 @@
             "name": "card definition",
             "inner": {
               "x": 758,
-              "y": 175.328125,
+              "y": 174.328125,
               "right": 1347,
-              "bottom": 266.328125
+              "bottom": 267.328125
             },
             "escaped": []
           },
@@ -111,12 +111,12 @@
         "labels": [
           {
             "svg": "overfit-chart",
-            "text": "검증 손실 최소에서 모델 선택",
+            "text": "손실(Loss) · 예측 오차의 크기",
             "bbox": {
-              "x": 93.4921875,
-              "y": 4,
-              "width": 193.92291259765625,
-              "height": 23
+              "x": 102.9375,
+              "y": 6,
+              "width": 174.125,
+              "height": 20
             }
           },
           {
@@ -422,7 +422,7 @@
         "flow_alignment": true
       },
       "fonts": {
-        "text_nodes": 44,
+        "text_nodes": 45,
         "letter_spacing": "-1pt",
         "rendered": [
           {
@@ -465,7 +465,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 15
+                "glyphCount": 11
               }
             ]
           },
@@ -476,7 +476,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 11
+                "glyphCount": 3
               }
             ]
           },
@@ -520,7 +520,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 18
+                "glyphCount": 14
               }
             ]
           },
@@ -531,7 +531,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 14
+                "glyphCount": 3
               }
             ]
           },
@@ -564,7 +564,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 20
+                "glyphCount": 10
               }
             ]
           },
@@ -575,7 +575,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 8
+                "glyphCount": 16
               }
             ]
           },
@@ -608,7 +608,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 16
+                "glyphCount": 20
               }
             ]
           },
@@ -686,6 +686,17 @@
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 11
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 16
               }
             ]
           },
@@ -966,7 +977,7 @@
         "max_svg_coordinate_error": 2.842170943040401e-14
       },
       "mode_parity": {
-        "elements": 110,
+        "elements": 113,
         "style_match": true,
         "max_box_error_px": 0,
         "box_tolerance_px": {
@@ -1047,9 +1058,9 @@
             "name": "card definition",
             "inner": {
               "x": 93,
-              "y": 175.328125,
+              "y": 174.328125,
               "right": 682,
-              "bottom": 266.328125
+              "bottom": 267.328125
             },
             "escaped": []
           },
@@ -1057,9 +1068,9 @@
             "name": "card definition",
             "inner": {
               "x": 758,
-              "y": 175.328125,
+              "y": 174.328125,
               "right": 1347,
-              "bottom": 266.328125
+              "bottom": 267.328125
             },
             "escaped": []
           },
@@ -1088,12 +1099,12 @@
         "labels": [
           {
             "svg": "overfit-chart",
-            "text": "검증 손실 최소에서 모델 선택",
+            "text": "손실(Loss) · 예측 오차의 크기",
             "bbox": {
-              "x": 93.4921875,
-              "y": 4,
-              "width": 193.92291259765625,
-              "height": 23
+              "x": 102.9375,
+              "y": 6,
+              "width": 174.125,
+              "height": 20
             }
           },
           {
@@ -1399,7 +1410,7 @@
         "flow_alignment": true
       },
       "fonts": {
-        "text_nodes": 44,
+        "text_nodes": 45,
         "letter_spacing": "-1pt",
         "rendered": [
           {
@@ -1442,7 +1453,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 15
+                "glyphCount": 11
               }
             ]
           },
@@ -1453,7 +1464,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 11
+                "glyphCount": 3
               }
             ]
           },
@@ -1497,7 +1508,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 18
+                "glyphCount": 14
               }
             ]
           },
@@ -1508,7 +1519,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 14
+                "glyphCount": 3
               }
             ]
           },
@@ -1541,7 +1552,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 20
+                "glyphCount": 10
               }
             ]
           },
@@ -1552,7 +1563,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 8
+                "glyphCount": 16
               }
             ]
           },
@@ -1585,7 +1596,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 16
+                "glyphCount": 20
               }
             ]
           },
@@ -1663,6 +1674,17 @@
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 11
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 16
               }
             ]
           },
@@ -1943,7 +1965,7 @@
         "max_svg_coordinate_error": 2.842170943040401e-14
       },
       "mode_parity": {
-        "elements": 110,
+        "elements": 113,
         "style_match": true,
         "max_box_error_px": 0,
         "box_tolerance_px": {
@@ -2024,9 +2046,9 @@
             "name": "card definition",
             "inner": {
               "x": 93,
-              "y": 175.328125,
+              "y": 174.328125,
               "right": 682,
-              "bottom": 266.328125
+              "bottom": 267.328125
             },
             "escaped": []
           },
@@ -2034,9 +2056,9 @@
             "name": "card definition",
             "inner": {
               "x": 758,
-              "y": 175.328125,
+              "y": 174.328125,
               "right": 1347,
-              "bottom": 266.328125
+              "bottom": 267.328125
             },
             "escaped": []
           },
@@ -2065,12 +2087,12 @@
         "labels": [
           {
             "svg": "overfit-chart",
-            "text": "검증 손실 최소에서 모델 선택",
+            "text": "손실(Loss) · 예측 오차의 크기",
             "bbox": {
-              "x": 93.4921875,
-              "y": 4,
-              "width": 193.92291259765625,
-              "height": 23
+              "x": 102.9375,
+              "y": 6,
+              "width": 174.125,
+              "height": 20
             }
           },
           {
@@ -2376,7 +2398,7 @@
         "flow_alignment": true
       },
       "fonts": {
-        "text_nodes": 44,
+        "text_nodes": 45,
         "letter_spacing": "-1pt",
         "rendered": [
           {
@@ -2419,7 +2441,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 15
+                "glyphCount": 11
               }
             ]
           },
@@ -2430,7 +2452,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 11
+                "glyphCount": 3
               }
             ]
           },
@@ -2474,7 +2496,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 18
+                "glyphCount": 14
               }
             ]
           },
@@ -2485,7 +2507,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 14
+                "glyphCount": 3
               }
             ]
           },
@@ -2518,7 +2540,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 20
+                "glyphCount": 10
               }
             ]
           },
@@ -2529,7 +2551,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 8
+                "glyphCount": 16
               }
             ]
           },
@@ -2562,7 +2584,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 16
+                "glyphCount": 20
               }
             ]
           },
@@ -2640,6 +2662,17 @@
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 11
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 16
               }
             ]
           },
@@ -2920,7 +2953,7 @@
         "max_svg_coordinate_error": 2.842170943040401e-14
       },
       "mode_parity": {
-        "elements": 110,
+        "elements": 113,
         "style_match": true,
         "max_box_error_px": 0,
         "box_tolerance_px": {
@@ -3001,9 +3034,9 @@
             "name": "card definition",
             "inner": {
               "x": 93,
-              "y": 175.328125,
+              "y": 174.328125,
               "right": 682,
-              "bottom": 266.328125
+              "bottom": 267.328125
             },
             "escaped": []
           },
@@ -3011,9 +3044,9 @@
             "name": "card definition",
             "inner": {
               "x": 758,
-              "y": 175.328125,
+              "y": 174.328125,
               "right": 1347,
-              "bottom": 266.328125
+              "bottom": 267.328125
             },
             "escaped": []
           },
@@ -3042,12 +3075,12 @@
         "labels": [
           {
             "svg": "overfit-chart",
-            "text": "검증 손실 최소에서 모델 선택",
+            "text": "손실(Loss) · 예측 오차의 크기",
             "bbox": {
-              "x": 93.4921875,
-              "y": 4,
-              "width": 193.92291259765625,
-              "height": 23
+              "x": 102.9375,
+              "y": 6,
+              "width": 174.125,
+              "height": 20
             }
           },
           {
@@ -3353,7 +3386,7 @@
         "flow_alignment": true
       },
       "fonts": {
-        "text_nodes": 44,
+        "text_nodes": 45,
         "letter_spacing": "-1pt",
         "rendered": [
           {
@@ -3396,7 +3429,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 15
+                "glyphCount": 11
               }
             ]
           },
@@ -3407,7 +3440,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 11
+                "glyphCount": 3
               }
             ]
           },
@@ -3451,7 +3484,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 18
+                "glyphCount": 14
               }
             ]
           },
@@ -3462,7 +3495,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 14
+                "glyphCount": 3
               }
             ]
           },
@@ -3495,7 +3528,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 20
+                "glyphCount": 10
               }
             ]
           },
@@ -3506,7 +3539,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 8
+                "glyphCount": 16
               }
             ]
           },
@@ -3539,7 +3572,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 16
+                "glyphCount": 20
               }
             ]
           },
@@ -3617,6 +3650,17 @@
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 11
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 16
               }
             ]
           },
@@ -3897,7 +3941,7 @@
         "max_svg_coordinate_error": 2.842170943040401e-14
       },
       "mode_parity": {
-        "elements": 110,
+        "elements": 113,
         "style_match": true,
         "max_box_error_px": 0,
         "box_tolerance_px": {
@@ -3978,9 +4022,9 @@
             "name": "card definition",
             "inner": {
               "x": 93,
-              "y": 175.328125,
+              "y": 174.328125,
               "right": 682,
-              "bottom": 266.328125
+              "bottom": 267.328125
             },
             "escaped": []
           },
@@ -3988,9 +4032,9 @@
             "name": "card definition",
             "inner": {
               "x": 758,
-              "y": 175.328125,
+              "y": 174.328125,
               "right": 1347,
-              "bottom": 266.328125
+              "bottom": 267.328125
             },
             "escaped": []
           },
@@ -4019,12 +4063,12 @@
         "labels": [
           {
             "svg": "overfit-chart",
-            "text": "검증 손실 최소에서 모델 선택",
+            "text": "손실(Loss) · 예측 오차의 크기",
             "bbox": {
-              "x": 93.4921875,
-              "y": 4,
-              "width": 193.92291259765625,
-              "height": 23
+              "x": 102.9375,
+              "y": 6,
+              "width": 174.125,
+              "height": 20
             }
           },
           {
@@ -4330,7 +4374,7 @@
         "flow_alignment": true
       },
       "fonts": {
-        "text_nodes": 44,
+        "text_nodes": 45,
         "letter_spacing": "-1pt",
         "rendered": [
           {
@@ -4373,7 +4417,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 15
+                "glyphCount": 11
               }
             ]
           },
@@ -4384,7 +4428,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 11
+                "glyphCount": 3
               }
             ]
           },
@@ -4428,7 +4472,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 18
+                "glyphCount": 14
               }
             ]
           },
@@ -4439,7 +4483,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 14
+                "glyphCount": 3
               }
             ]
           },
@@ -4472,7 +4516,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 20
+                "glyphCount": 10
               }
             ]
           },
@@ -4483,7 +4527,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 8
+                "glyphCount": 16
               }
             ]
           },
@@ -4516,7 +4560,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 16
+                "glyphCount": 20
               }
             ]
           },
@@ -4594,6 +4638,17 @@
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 11
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 16
               }
             ]
           },
@@ -4874,7 +4929,7 @@
         "max_svg_coordinate_error": 2.842170943040401e-14
       },
       "mode_parity": {
-        "elements": 110,
+        "elements": 113,
         "style_match": true,
         "max_box_error_px": 0,
         "box_tolerance_px": {
@@ -4955,9 +5010,9 @@
             "name": "card definition",
             "inner": {
               "x": 93,
-              "y": 175.328125,
+              "y": 174.328125,
               "right": 682,
-              "bottom": 266.328125
+              "bottom": 267.328125
             },
             "escaped": []
           },
@@ -4965,9 +5020,9 @@
             "name": "card definition",
             "inner": {
               "x": 758,
-              "y": 175.328125,
+              "y": 174.328125,
               "right": 1347,
-              "bottom": 266.328125
+              "bottom": 267.328125
             },
             "escaped": []
           },
@@ -4996,12 +5051,12 @@
         "labels": [
           {
             "svg": "overfit-chart",
-            "text": "검증 손실 최소에서 모델 선택",
+            "text": "손실(Loss) · 예측 오차의 크기",
             "bbox": {
-              "x": 93.4921875,
-              "y": 4,
-              "width": 193.92291259765625,
-              "height": 23
+              "x": 102.9375,
+              "y": 6,
+              "width": 174.125,
+              "height": 20
             }
           },
           {
@@ -5307,7 +5362,7 @@
         "flow_alignment": true
       },
       "fonts": {
-        "text_nodes": 44,
+        "text_nodes": 45,
         "letter_spacing": "-1pt",
         "rendered": [
           {
@@ -5350,7 +5405,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 15
+                "glyphCount": 11
               }
             ]
           },
@@ -5361,7 +5416,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 11
+                "glyphCount": 3
               }
             ]
           },
@@ -5405,7 +5460,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 18
+                "glyphCount": 14
               }
             ]
           },
@@ -5416,7 +5471,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 14
+                "glyphCount": 3
               }
             ]
           },
@@ -5449,7 +5504,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 20
+                "glyphCount": 10
               }
             ]
           },
@@ -5460,7 +5515,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 8
+                "glyphCount": 16
               }
             ]
           },
@@ -5493,7 +5548,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 16
+                "glyphCount": 20
               }
             ]
           },
@@ -5571,6 +5626,17 @@
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 11
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 16
               }
             ]
           },
@@ -5851,7 +5917,7 @@
         "max_svg_coordinate_error": 2.842170943040401e-14
       },
       "mode_parity": {
-        "elements": 110,
+        "elements": 113,
         "style_match": true,
         "max_box_error_px": 0,
         "box_tolerance_px": {
@@ -5932,9 +5998,9 @@
             "name": "card definition",
             "inner": {
               "x": 93,
-              "y": 175.328125,
+              "y": 174.328125,
               "right": 682,
-              "bottom": 266.328125
+              "bottom": 267.328125
             },
             "escaped": []
           },
@@ -5942,9 +6008,9 @@
             "name": "card definition",
             "inner": {
               "x": 758,
-              "y": 175.328125,
+              "y": 174.328125,
               "right": 1347,
-              "bottom": 266.328125
+              "bottom": 267.328125
             },
             "escaped": []
           },
@@ -5973,12 +6039,12 @@
         "labels": [
           {
             "svg": "overfit-chart",
-            "text": "검증 손실 최소에서 모델 선택",
+            "text": "손실(Loss) · 예측 오차의 크기",
             "bbox": {
-              "x": 93.4921875,
-              "y": 4,
-              "width": 193.92291259765625,
-              "height": 23
+              "x": 102.9375,
+              "y": 6,
+              "width": 174.125,
+              "height": 20
             }
           },
           {
@@ -6284,7 +6350,7 @@
         "flow_alignment": true
       },
       "fonts": {
-        "text_nodes": 44,
+        "text_nodes": 45,
         "letter_spacing": "-1pt",
         "rendered": [
           {
@@ -6327,7 +6393,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 15
+                "glyphCount": 11
               }
             ]
           },
@@ -6338,7 +6404,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 11
+                "glyphCount": 3
               }
             ]
           },
@@ -6382,7 +6448,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 18
+                "glyphCount": 14
               }
             ]
           },
@@ -6393,7 +6459,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 14
+                "glyphCount": 3
               }
             ]
           },
@@ -6426,7 +6492,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 20
+                "glyphCount": 10
               }
             ]
           },
@@ -6437,7 +6503,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 8
+                "glyphCount": 16
               }
             ]
           },
@@ -6470,7 +6536,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 16
+                "glyphCount": 20
               }
             ]
           },
@@ -6548,6 +6614,17 @@
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 11
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 16
               }
             ]
           },
@@ -6828,7 +6905,7 @@
         "max_svg_coordinate_error": 2.842170943040401e-14
       },
       "mode_parity": {
-        "elements": 110,
+        "elements": 113,
         "style_match": true,
         "max_box_error_px": 0,
         "box_tolerance_px": {
@@ -6909,9 +6986,9 @@
             "name": "card definition",
             "inner": {
               "x": 93,
-              "y": 175.328125,
+              "y": 174.328125,
               "right": 682,
-              "bottom": 266.328125
+              "bottom": 267.328125
             },
             "escaped": []
           },
@@ -6919,9 +6996,9 @@
             "name": "card definition",
             "inner": {
               "x": 758,
-              "y": 175.328125,
+              "y": 174.328125,
               "right": 1347,
-              "bottom": 266.328125
+              "bottom": 267.328125
             },
             "escaped": []
           },
@@ -6950,12 +7027,12 @@
         "labels": [
           {
             "svg": "overfit-chart",
-            "text": "검증 손실 최소에서 모델 선택",
+            "text": "손실(Loss) · 예측 오차의 크기",
             "bbox": {
-              "x": 93.4921875,
-              "y": 4,
-              "width": 193.92291259765625,
-              "height": 23
+              "x": 102.9375,
+              "y": 6,
+              "width": 174.125,
+              "height": 20
             }
           },
           {
@@ -7261,7 +7338,7 @@
         "flow_alignment": true
       },
       "fonts": {
-        "text_nodes": 44,
+        "text_nodes": 45,
         "letter_spacing": "-1pt",
         "rendered": [
           {
@@ -7304,7 +7381,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 15
+                "glyphCount": 11
               }
             ]
           },
@@ -7315,7 +7392,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 11
+                "glyphCount": 3
               }
             ]
           },
@@ -7359,7 +7436,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 18
+                "glyphCount": 14
               }
             ]
           },
@@ -7370,7 +7447,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 14
+                "glyphCount": 3
               }
             ]
           },
@@ -7403,7 +7480,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 20
+                "glyphCount": 10
               }
             ]
           },
@@ -7414,7 +7491,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 8
+                "glyphCount": 16
               }
             ]
           },
@@ -7447,7 +7524,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 16
+                "glyphCount": 20
               }
             ]
           },
@@ -7525,6 +7602,17 @@
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 11
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 16
               }
             ]
           },
@@ -7805,7 +7893,7 @@
         "max_svg_coordinate_error": 2.842170943040401e-14
       },
       "mode_parity": {
-        "elements": 110,
+        "elements": 113,
         "style_match": true,
         "max_box_error_px": 0,
         "box_tolerance_px": {
@@ -7911,9 +7999,9 @@
             "name": "card definition",
             "inner": {
               "x": 93,
-              "y": 175.328125,
+              "y": 174.328125,
               "right": 682,
-              "bottom": 266.328125
+              "bottom": 267.328125
             },
             "escaped": []
           },
@@ -7921,9 +8009,9 @@
             "name": "card definition",
             "inner": {
               "x": 758,
-              "y": 175.328125,
+              "y": 174.328125,
               "right": 1347,
-              "bottom": 266.328125
+              "bottom": 267.328125
             },
             "escaped": []
           },
@@ -7952,12 +8040,12 @@
         "labels": [
           {
             "svg": "overfit-chart",
-            "text": "학습·검증 손실이 함께 감소",
+            "text": "손실(Loss) · 예측 오차의 크기",
             "bbox": {
-              "x": 100.4765625,
-              "y": 4,
-              "width": 179.95791625976562,
-              "height": 23
+              "x": 102.9375,
+              "y": 6,
+              "width": 174.125,
+              "height": 20
             }
           },
           {
@@ -8259,9 +8347,9 @@
             "name": "card definition",
             "inner": {
               "x": 93,
-              "y": 175.328125,
+              "y": 174.328125,
               "right": 682,
-              "bottom": 266.328125
+              "bottom": 267.328125
             },
             "escaped": []
           },
@@ -8269,9 +8357,9 @@
             "name": "card definition",
             "inner": {
               "x": 758,
-              "y": 175.328125,
+              "y": 174.328125,
               "right": 1347,
-              "bottom": 266.328125
+              "bottom": 267.328125
             },
             "escaped": []
           },
@@ -8300,12 +8388,12 @@
         "labels": [
           {
             "svg": "overfit-chart",
-            "text": "손실 격차만으로 판단하지 않기",
+            "text": "손실(Loss) · 예측 오차의 크기",
             "bbox": {
-              "x": 87.4453125,
-              "y": 4,
-              "width": 205.109375,
-              "height": 23
+              "x": 102.9375,
+              "y": 6,
+              "width": 174.125,
+              "height": 20
             }
           },
           {
@@ -8607,9 +8695,9 @@
             "name": "card definition",
             "inner": {
               "x": 93,
-              "y": 175.328125,
+              "y": 174.328125,
               "right": 682,
-              "bottom": 266.328125
+              "bottom": 267.328125
             },
             "escaped": []
           },
@@ -8617,9 +8705,9 @@
             "name": "card definition",
             "inner": {
               "x": 758,
-              "y": 175.328125,
+              "y": 174.328125,
               "right": 1347,
-              "bottom": 266.328125
+              "bottom": 267.328125
             },
             "escaped": []
           },
@@ -8648,12 +8736,12 @@
         "labels": [
           {
             "svg": "overfit-chart",
-            "text": "검증 손실 최소에서 모델 선택",
+            "text": "손실(Loss) · 예측 오차의 크기",
             "bbox": {
-              "x": 93.4921875,
-              "y": 4,
-              "width": 193.92291259765625,
-              "height": 23
+              "x": 102.9375,
+              "y": 6,
+              "width": 174.125,
+              "height": 20
             }
           },
           {
@@ -8898,7 +8986,7 @@
       "evidence": "examples/overfitting-generalization/review/screens/middle-minimum.png"
     }
   ],
-  "created_utc": "2026-10-26T06:32:30.018993+00:00",
+  "created_utc": "2026-10-26T07:35:02.908726+00:00",
   "chromium": "155.0.8059.0",
   "behavior": {
     "changed_datasets": [
@@ -8918,10 +9006,10 @@
     "failed_data_message": true
   },
   "source_sha256": {
-    "examples/overfitting-generalization/content.html": "44c7f22b1683213b219bdc4349c015095136ab5618bc8b172236f02d3f51971b",
+    "examples/overfitting-generalization/content.html": "ffdf81851b117f9b1a1c49beec305ac578fc27b36caeb36dd80ac0073d0410b5",
     "examples/overfitting-generalization/scroll.html": "c3d618f2f5accc5471da5506955a9dd2c38d62427f224e2bf5c6938636db4936",
     "examples/overfitting-generalization/slides.html": "20ceb16b62eacd01b0c22601a04c3b87756b216c3dce5ae89c7b0cecf97c7171",
-    "examples/overfitting-generalization/lesson.css": "d1668f5964bd1ee7fe14495e040a209eb81202826a4576f257a97e8c31ad1a12",
+    "examples/overfitting-generalization/lesson.css": "3cec140ce68867f77fb1bb13b49ea6fecb8b829d486aa1d791c95b5cc4f55b58",
     "examples/overfitting-generalization/viewer.css": "b03e8785c652fd9711e4eca188e29c555024a998c53013ce8b389e61825860a7",
     "examples/overfitting-generalization/viewer.js": "a15e739f880682df368572875033d204eab63789b812cebad965f6eb566229a3",
     "examples/overfitting-generalization/curves.js": "509e63b6f9660e713d99fd83b66b5fe22004d278f2ce0a1b6842fd339b11e884",
@@ -8931,7 +9019,7 @@
     "templates/html/graph-annotations.js": "deeee6a81fae900035c9b5398c1c17aa7ac4694bf986313b1a810ec20bfec92b"
   },
   "preview_sha256": {
-    "scroll.png": "51ce8292465b66dc1a1a1cae3df2cbb7dc8915aa74ce6d35be36950fb5b80a30",
-    "slide.png": "fa34da59651060fc7a04b9d84ad2a1ece5c28461e439828b43eab859d2bb1838"
+    "scroll.png": "31fa194902ae63cea6a87c07d2cecd2bb290ec4d1a7809e08b84d78cc23c7f6e",
+    "slide.png": "6a72fa5b83f9f7dd801720c3a957661d67863f66dea6280de41368618cad1ad8"
   }
 }

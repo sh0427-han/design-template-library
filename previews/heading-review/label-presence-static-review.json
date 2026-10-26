@@ -1,0 +1,98 @@
+{
+  "reviewer": "/root/independent_reviewer",
+  "review_type": "independent_static_review",
+  "reviewed_commit": "a0ec1df252026e0f6df62ea86e539c9fbf200de4",
+  "created_utc": "2026-10-26T07:38:53.535360+00:00",
+  "status": "static_review_passed_pending_actual_browser_and_visual_review",
+  "scope": "Follow-up correction for missing card-owned Blue labels in Concept and overfitting; preview only, common Markdown pending user review.",
+  "visual_review_performed": false,
+  "current_browser_result_reviewed": false,
+  "severity_counts": {
+    "high": 0,
+    "medium": 0,
+    "low": 0
+  },
+  "confirmed_findings": [],
+  "source_code_modified_by_reviewer": false,
+  "markdown_files_created_or_modified_by_reviewer": [],
+  "markdown_finalized": false,
+  "user_review_pending": true,
+  "user_approval_for_markdown": false,
+  "merge_authorized": false,
+  "historical_issue": {
+    "classification": "implementation_and_audit_presence_gap",
+    "description": "The previous preview supplied Navy titles but no card-owned Blue labels in Concept and overfitting. Its role-color audit could pass from the page kicker because it tested colors of selected existing nodes and not a label/title pair within each card.",
+    "previous_review_limitation": "The previous review verified selected-role colors and accepted their scope; that did not establish per-card label presence. Its historical report remains unchanged.",
+    "documentation_gap_claimed": false,
+    "resolution_static": "Concept now has IMAGE REPRESENTATION above the existing Navy title. Both overfitting definitions have Blue English labels and Navy Korean titles. Both figure containers have their own Blue labels and Navy HTML headings. CARD_PAIRS tests labels and titles within each individual selected card."
+  },
+  "verified_static": {
+    "card_pair_count": 25,
+    "expected_case_observations": 200,
+    "reference_mode_viewport_cases_expected": 72,
+    "independent_dom_method": "lxml HTML parsing with an independently implemented descendant selector resolver; all CARD_PAIRS rules find their declared count and exactly one label/title inside every selected card.",
+    "pair_counts": {
+      "concept": 1,
+      "process": 4,
+      "comparison": 2,
+      "step-by-step": 2,
+      "interactive": 2,
+      "architecture": 6,
+      "experiment": 2,
+      "executive-summary": 2,
+      "overfitting-generalization": 4
+    },
+    "page_kicker_cannot_substitute_for_card_label": true,
+    "audit_card_scoped_exact_one_label_and_title": true,
+    "audit_actual_computed_blue_and_navy_and_visible_required": true,
+    "python_ast_syntax_pass": [
+      "scripts/verify_heading_roles.py",
+      "scripts/verify_gradient_descent.py"
+    ],
+    "manifest_before_and_after_sha256_match": true,
+    "canonical_exception_count": 6,
+    "canonical_exception_paths": [
+      "templates/html/architecture.html",
+      "templates/html/comparison-reference.css",
+      "templates/html/concept.html",
+      "templates/html/executive-summary.html",
+      "templates/html/experiment.html",
+      "templates/html/interactive.html"
+    ],
+    "guard_scope": "Only the six explicit original paths may differ from the pinned original set; the current values and preview-baseline values must equal the manifest after/before hashes. Other original paths remain strict.",
+    "noncanonical_example_paths": [
+      "examples/overfitting-generalization/content.html",
+      "examples/overfitting-generalization/lesson.css"
+    ],
+    "data_calculations_plot_geometry_fruit_paths_common_css_axis_helper_changes_found": false,
+    "markup_and_hierarchy": "Concept adds a card label. Overfitting replaces muted inline English glosses with Blue label rows while preserving the Korean title and definition text. SVG graph heading moves to a real HTML h3; loss meaning occupies its former top SVG text row. aria-labelledby still resolves to the visible heading and the explanatory SVG desc remains.",
+    "definition_budget": "129px outer height; 20/34/22px tracks plus two 8px gaps and 17px vertical padding fit the fixed height including borders. Actual body line count still requires Chromium.",
+    "markdown_diff_from_manifest_baseline": [],
+    "manifest_status": "preview_pending_user_review",
+    "manifest_markdown_finalized": false
+  },
+  "pending_actual_checks": [
+    "Regenerate all current source-matched previews and reports. Historical a89036f/d73f647 evidence must not be treated as rendering this a0ec1df revision.",
+    "Inspect all 200 actual card pairs across PC4 x both modes, in addition to the 72 page role cases; confirm no missing or duplicated Blue label.",
+    "Directly inspect Concept full size: the added label consumes 28px of the existing panel budget and must preserve flow, figure, caption and footer clearance.",
+    "Directly inspect both overfitting definition cards: English label, Korean heading and unchanged 19/22px body must remain within padding, with the requested one-line body and matched positions.",
+    "Inspect the left figure single-row header containing Blue label, Navy heading and both legend entries for wrapping or collision; inspect the symmetric right header.",
+    "Confirm moved Loss definition remains the first graph text and does not collide with the unchanged selection arrow or axes.",
+    "Run the dedicated overfitting and gradient-descent checks and original-reference regression, including actual font/-1pt, SVG bounds, label collision and mode parity checks.",
+    "User preview review remains required before common Markdown finalization; main merge remains unauthorized."
+  ],
+  "limits": [
+    "Static source inspection confirms presence and intended color rules, not actual browser readability or geometry.",
+    "The 25 required teaching cards are the declared audit scope; small metric tiles, individual fruit images and semantic graph labels are not all newly required to receive a category label.",
+    "The existing historical reviewer.json is not edited by this follow-up. This JSON alone records the new static review.",
+    "No common Markdown rules were added or finalized."
+  ],
+  "source_sha256": {
+    "templates/html/concept.html": "ddef1b01d7919cb46784659e41933556e103640d73b32a98ccdfa474626d9f37",
+    "examples/overfitting-generalization/content.html": "ffdf81851b117f9b1a1c49beec305ac578fc27b36caeb36dd80ac0073d0410b5",
+    "examples/overfitting-generalization/lesson.css": "3cec140ce68867f77fb1bb13b49ea6fecb8b829d486aa1d791c95b5cc4f55b58",
+    "scripts/verify_heading_roles.py": "0ee1bfa6f6d2157767d3cba6eca59c4573df999a83f60a0ab77ca54bda4f05cb",
+    "scripts/verify_gradient_descent.py": "6ead968952d07d40fab6cb88680c8db1bf4132908f82abc76f0963f6b3e6ccc9",
+    "previews/heading-review/change-scope.json": "229cc8915bfe634242e7a5ecccac53e299b37732c12d3b8bff50bee7c4725782"
+  }
+}

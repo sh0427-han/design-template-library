@@ -1,6 +1,6 @@
 {
   "status": "passed",
-  "started_utc": "2026-10-26T06:33:25.332629+00:00",
+  "started_utc": "2026-10-26T07:35:00.192525+00:00",
   "viewports": [
     [
       1600,
@@ -132,9 +132,9 @@
         "selected_navy_outline_px": 5
       },
       "fonts": {
-        "elements": 48,
+        "elements": 49,
         "families": {
-          "Pretendard Variable": 408
+          "Pretendard Variable": 428
         },
         "fallback": [],
         "unpainted": [],
@@ -2816,9 +2816,9 @@
         "selected_navy_outline_px": 5
       },
       "fonts": {
-        "elements": 48,
+        "elements": 49,
         "families": {
-          "Pretendard Variable": 408
+          "Pretendard Variable": 428
         },
         "fallback": [],
         "unpainted": [],
@@ -5500,9 +5500,9 @@
         "selected_navy_outline_px": 5
       },
       "fonts": {
-        "elements": 48,
+        "elements": 49,
         "families": {
-          "Pretendard Variable": 408
+          "Pretendard Variable": 428
         },
         "fallback": [],
         "unpainted": [],
@@ -8184,9 +8184,9 @@
         "selected_navy_outline_px": 5
       },
       "fonts": {
-        "elements": 48,
+        "elements": 49,
         "families": {
-          "Pretendard Variable": 408
+          "Pretendard Variable": 428
         },
         "fallback": [],
         "unpainted": [],
@@ -10868,9 +10868,9 @@
         "selected_navy_outline_px": 5
       },
       "fonts": {
-        "elements": 48,
+        "elements": 49,
         "families": {
-          "Pretendard Variable": 408
+          "Pretendard Variable": 428
         },
         "fallback": [],
         "unpainted": [],
@@ -10896,9 +10896,9 @@
           "x": 16,
           "y": 16,
           "width": 868,
-          "height": 1826.875,
+          "height": 1854.875,
           "right": 884,
-          "bottom": 1842.875
+          "bottom": 1870.875
         },
         "outside": [],
         "overflow": [],
@@ -13552,9 +13552,9 @@
         "selected_navy_outline_px": 5
       },
       "fonts": {
-        "elements": 48,
+        "elements": 49,
         "families": {
-          "Pretendard Variable": 401
+          "Pretendard Variable": 421
         },
         "fallback": [],
         "unpainted": [],
@@ -13580,9 +13580,9 @@
           "x": 10,
           "y": 10,
           "width": 370,
-          "height": 1933.234375,
+          "height": 1961.234375,
           "right": 380,
-          "bottom": 1943.234375
+          "bottom": 1971.234375
         },
         "outside": [],
         "overflow": [],
@@ -16151,7 +16151,7 @@
     "templates/html/interactive.html": "0ea53081b4b5e89f2eb2b6c8ded09b38977331d114616474fb83fcbcdb4aeaa3",
     "templates/html/math-typography.css": "c390ffe17b8c0f02d10a34b99bca892bb63f99af98766e7b47c0a88da38e2f3a",
     "templates/html/process.html": "39989a9073bd7a8a296dc4a7ece870f0e0da60010b8b8922393049678c733a1d",
-    "templates/html/concept.html": "81a4d341ca86eb5550e0d58411fdda6f040d1e3cdcf9a98ee9b84ff6b8ad0364",
+    "templates/html/concept.html": "ddef1b01d7919cb46784659e41933556e103640d73b32a98ccdfa474626d9f37",
     "templates/html/process-reference.js": "45629ef1192b6caa04aa05dd6ead9fd317eace58ba95ce873b966c27fd02a89d",
     "templates/html/reference-layout.css": "c29f52fd9852d80b29e277b7d60218a7b02da599a059a8395051caada3525bcc",
     "templates/html/comparison-reference.css": "4010e007a80a100fe3b7ee4dd5ea1bf6a4b2691d3e90a6e125ad70ba1f7b97b2",
@@ -17184,7 +17184,7 @@
   "failed_requests": [],
   "http_errors": [],
   "canonical_preview_sha256": {
-    "previews/html-concept.png": "a8a171b1d5f057c189f1e7c533bda3ec9c618740e563c6a486b91a9762fd867b",
+    "previews/html-concept.png": "a7e07908fe83a9d6dbc290a5a192c41181f0e9935d2f6b61715735bd845a4e51",
     "previews/html-process.png": "a8e5504c6f66f485a10a65ce4afbecf86f57813b8d0dfa3d6cbdaf09a4ca9566",
     "previews/html-comparison.png": "8d5d1f891ffb31fdd358b961b4daf8fa80fbf5a79bc5b78b18a0f6772e2212a8",
     "previews/html-step-by-step.jpg": "b48a137f8226ad5eba17ff335b0b5eba84aa8ebd3655859fd7bab839aaa001e7",
@@ -17193,7 +17193,7 @@
     "previews/html-experiment.jpg": "a46a7083f4bdbcc4e6f57f81ff0c0624f4cb751ebc412a179a6213545e3a505f",
     "previews/html-executive-summary.jpg": "966d0f37c6eb520097c6872372c0c8199d95ef60486ee27bf38fb87c05953a24"
   },
-  "finished_utc": "2026-10-26T06:34:31.997377+00:00",
+  "finished_utc": "2026-10-26T07:36:20.170386+00:00",
   "canonical_preview_updates": [
     "concept",
     "process",

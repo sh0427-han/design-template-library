@@ -2471,6 +2471,7 @@
   "authorized_heading_preview_changes": [
     "templates/html/architecture.html",
     "templates/html/comparison-reference.css",
+    "templates/html/concept.html",
     "templates/html/executive-summary.html",
     "templates/html/experiment.html",
     "templates/html/interactive.html"
@@ -2487,7 +2488,7 @@
     "examples/gradient-descent/slides.html": "209f3193df4284200353aaa4c40e227d65cb04f6354a5b7254acbff1cfcde593",
     "examples/gradient-descent/gradient-descent.js": "2afc4544aa42c7ece8a076fe9df21a8aee37f225fc3e386446becfe8fa68713f",
     "examples/gradient-descent/viewer.css": "8a435498fed6a04df20ec0b38089828622a320822c1b162660ef85e3240385d1",
-    "scripts/verify_gradient_descent.py": "2169382513ee269e91e92615442fe13b1d112e672584f95e5dde2983692f38a7",
+    "scripts/verify_gradient_descent.py": "6ead968952d07d40fab6cb88680c8db1bf4132908f82abc76f0963f6b3e6ccc9",
     "templates/html/styles.css": "3c05e00284aae4ea538e697efae7682a2c9b35b318cab372fa8493613de4df22",
     "templates/html/reference-layout.css": "c29f52fd9852d80b29e277b7d60218a7b02da599a059a8395051caada3525bcc",
     "templates/html/math-typography.css": "c390ffe17b8c0f02d10a34b99bca892bb63f99af98766e7b47c0a88da38e2f3a",
@@ -2504,5 +2505,5 @@
     "slide.png": "4b9b1dab74ee327e56a5b7730ba9a4dbc69037af13e38036941fcf92d9c54be6"
   },
   "status": "passed",
-  "created_utc": "2026-10-26T06:33:20.579026+00:00"
+  "created_utc": "2026-10-26T07:36:12.439764+00:00"
 }
