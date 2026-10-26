@@ -1,34 +1,30 @@
 # 과적합과 일반화 · 개념 한 장
 
-머신러닝 입문자를 위한 HTML Scroll / Slide. 과적합은 학습 데이터의 특성·잡음에 지나치게 맞춰 새 데이터 성능이 저하되는 현상, 일반화는 학습에 쓰지 않은 데이터에서도 잘 동작하는 능력으로 설명한다. 검증 손실은 일반화 성능을 살펴보는 단서이며 독립 테스트 결과와 구분한다.
+머신러닝 입문자를 위한 HTML Scroll / Slide. 과적합은 학습 데이터의 특성·잡음에 지나치게 맞춰 새 데이터 성능이 저하되는 현상, 일반화는 학습에 쓰지 않은 새 데이터에서도 잘 동작하는 능력으로 설명한다.
 
-- [Scroll 원본](scroll.html) · [Slide 원본](slides.html) · [두 모드 공통 콘텐츠](content.html)
-- [설계 명세와 규칙 출처](DESIGN.md) · [D0/D1 재사용성 판정](VALIDATION.md)
-- [독립 검토 1차](review/round-1.md) · [2차](review/round-2.md) · [3차 최종](review/round-3.md)
+- [Scroll](scroll.html) · [Slide](slides.html) · [두 모드의 공통 원본](content.html)
+- [설계와 규칙 출처](DESIGN.md) · [D0/D1 및 사용자 개정 기록](VALIDATION.md)
+- [현재 Chromium 보고서](previews/validation.json) · [Slide PNG](previews/slide.png) · [Scroll PNG](previews/scroll.png) · [PC 8화면](review/contact.jpg)
 
-좌우 두 경우마다 41점·2계열의 설명용 곡선을 사용하며 실제 실험 결과가 아니다. 네 곡선은 같은 손실 정의·단위·표본별 평균·평가 조건을 사용한다. 학습 손실 감소가 검증 손실 상승을 항상 뜻하지 않으며, 격차만으로 과적합을 확정하지 않는다. 모델 학습·알고리즘 구현·계산 장·실습은 포함하지 않는다.
+왼쪽에는 학습·검증 손실의 변화, 오른쪽에는 학습 이미지와 학습에 쓰지 않은 새 이미지의 예측 관계를 보여준다. 손실의 뜻은 그래프 첫 줄에서 설명하고, 부제는 제목을 보충한다. 일반화 정의는 강제 줄바꿈 없이 한 줄로 표시한다.
 
-## 실행과 검증
+그래프는 설명용 41점·2계열이며 실제 실험 결과가 아니다. 두 계열은 같은 손실 정의·단위·표본별 평균·평가 조건을 사용한다. 학습 손실 감소가 항상 검증 손실 상승을 뜻하지 않으며, 격차만으로 과적합을 확정하지 않는다. 이미지 그림도 학습·추론을 실행한 결과가 아닌 개념도다. 학습 이미지 3개와 서로 다른 새 이미지 A/B, 같은 모델, 예측 라벨을 편집 가능한 SVG로 연결한다.
 
-저장소 루트에서 `python -m http.server 8000` 실행 후 `/examples/overfitting-generalization/scroll.html` 또는 `slides.html`로 연다. `content.html`을 iframe 안의 1440×810 공통 원본으로 사용하고 뷰어는 전체 배율과 탐색만 담당한다. 폰트·공통 CSS는 `templates/html/`의 로컬 자산을 그대로 참조한다.
+## 실행 및 검증
+
+저장소 루트에서 `python -m http.server 8000` 실행 후 `/examples/overfitting-generalization/scroll.html` 또는 `slides.html`을 연다. 두 보기 모두 같은 1440×810 원본을 전체 배율만 바꾸어 표시한다. 공통 CSS와 로컬 Pretendard/STIX 폰트는 `templates/html/`를 참조한다.
 
 ```bash
 python scripts/verify_overfitting.py --static
 python scripts/verify_overfitting.py
 ```
 
-PC 1600×950/1440×810/1366×768/1280×720의 두 모드, 실제 Pretendard/STIX 글리프와−1pt, 카드 패딩/대응행, 두 SVG의 경계/164개 좌표, 콘솔·요청 오류, 모드 서식 동일성, 다른 설명용 데이터와 잘못된 데이터 거부를 검사한다. 로컬 sandbox의 소켓/Chromium 제한이 있으면 [전용 Actions](../../.github/workflows/validate-overfitting.yml)에서 실행한다. 실행 결과를 확인하기 전에는 통과로 보지 않는다.
+PC 1600×950/1440×810/1366×768/1280×720 × 두 모드를 검사한다. 실제 글리프·−1pt·패딩·SVG 경계·82개 곡선 좌표·그림의 입력/예측 대응·연결·축 이름의 공통 정렬·모드 동일성·콘솔/요청 오류·변경/오류 데이터를 확인한다. 로컬 소켓 제한이 있으면 [전용 Actions](../../.github/workflows/validate-overfitting.yml)에서 실행한다.
 
-#3 Comparison의 대칭 White/대응행을 주요 재사용하고 #8의 동일 기준/축/범례 원칙만 일부 적용했다. 나머지 패턴의 타주제 재사용은 검증하지 않았다. 공통 시각 지침과 원본 8종을 수정하지 않는다. 실제 결과·프리뷰 링크는 VALIDATION의 D1 기록에 연결한다.
+#3 Comparison의 대칭 및 준비/적용 관계, #8의 동일 기준·축 원칙 일부를 사용한다. 사용하지 않은 패턴의 타주제 재사용은 검증하지 않았다. 기존 8종 원본은 보존한다. 축 이름의 정렬은 사용자 요청에 따라 [Figure 표준 §6](../../docs/FIGURE_PRODUCTION_STANDARD.md#그래프-축-이름의-공통-정렬)과 공통 [graph-annotations.js](../../templates/html/graph-annotations.js)에 명시했다. 종전 D0/D1의 공통 보완 0건은 당시 범위의 기록이며, 이번 확장 기준에서는 공통 문서 1건을 보완했다.
 
+[현재 전용 Chromium 실행](https://github.com/sh0427-han/design-template-library/actions/runs/40263267197) · [전체 회귀](https://github.com/sh0427-han/design-template-library/actions/runs/40263267233)
 
-## 실제 프리뷰
+[브라우저 Scroll](https://raw.githack.com/sh0427-han/design-template-library/a219c92f6893d75900339346f244164b62a8b486/examples/overfitting-generalization/scroll.html) · [브라우저 Slide](https://raw.githack.com/sh0427-han/design-template-library/a219c92f6893d75900339346f244164b62a8b486/examples/overfitting-generalization/slides.html)
 
-- [Slide 이미지](previews/slide.png) · [Scroll 이미지](previews/scroll.png) · [PC8화면](review/contact.jpg)
-- [실제Chromium 검증보고서](previews/validation.json) · [실행/원해상도 artifact](https://github.com/sh0427-han/design-template-library/actions/runs/40258756285)
-- [브라우저 Slide](https://raw.githack.com/sh0427-han/design-template-library/233d80c89d01d22fb012f7febf852fce1851460a/examples/overfitting-generalization/slides.html) · [브라우저 Scroll](https://raw.githack.com/sh0427-han/design-template-library/233d80c89d01d22fb012f7febf852fce1851460a/examples/overfitting-generalization/scroll.html)
-
-브라우저 링크는 동일콘텐츠의 불변 구현커밋을 보여주는 외부CDN 보기다. CDN 접근이 제한되면 위의 실제PNG와 로컬서버 진입점을 사용한다. PNG는 실제 Chromium155 렌더링이며 HTML에 붙여넣은 대체그림이 아니다.
-
-
-2026-10-26 사용자 개정: 정의 카드에는 개념만 남기고 점검 관점 행을 삭제했다. 과적합과 일반화를 같은 축의 두 그림으로 나란히 읽으며 각 SVG는380×320px이다. 화면의 제작용 부가문구와 보조회색격자선은 제거했다. 경사하강법 그래프도 별도로 좁고 높게 수정했다. 이전 D0/D1 검증 이력과 사용자 개정의 결과는 VALIDATION에서 구분한다.
+브라우저 링크는 같은 원본을 제공하는 외부 CDN이다. 접속이 제한되면 실제 PNG 또는 위 로컬 서버 진입점을 사용할 수 있다. 원해상도 화면은 Actions artifact에 보관한다. 이전 버전의 검토 기록은 Git 이력과 VALIDATION에 구분하여 남긴다.

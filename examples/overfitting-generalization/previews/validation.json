@@ -1,14 +1,12 @@
 {
   "status": "passed",
   "independent": {
-    "points_per_scenario": 41,
-    "scenarios": 2,
-    "series": 4,
+    "points": 41,
+    "series": 2,
     "max_independent_value_error": 1.1102230246251565e-16,
     "same_loss_basis": true,
-    "early_joint_decrease": true,
     "late_divergence": true,
-    "new_data_low_loss": true,
+    "generalization_is_image_diagram": true,
     "real_experiment": false
   },
   "cases": [
@@ -19,19 +17,20 @@
         950
       ],
       "geometry": {
+        "axisAlignment": {
+          "yCenterError": 0,
+          "yGap": 8,
+          "xCenterError": 0,
+          "xGap": 8
+        },
+        "generalizationLines": 1,
+        "subtitle": "학습 데이터에 잘 맞는 것과 새로운 데이터에도 잘 동작하는 것의 차이",
+        "lossDefinitionInGraph": true,
         "charts": [
           {
             "x": 197.5,
             "y": 344.328125,
             "right": 577.5,
-            "bottom": 664.328125,
-            "width": 380,
-            "height": 320
-          },
-          {
-            "x": 862.5,
-            "y": 344.328125,
-            "right": 1242.5,
             "bottom": 664.328125,
             "width": 380,
             "height": 320
@@ -96,7 +95,7 @@
             "escaped": []
           },
           {
-            "name": "curve-panel",
+            "name": "curve-panel generalization-panel",
             "inner": {
               "x": 758,
               "y": 314.328125,
@@ -122,8 +121,8 @@
             "svg": "overfit-chart",
             "text": "평균 손실",
             "bbox": {
-              "x": 46,
-              "y": 34,
+              "x": 17.8125,
+              "y": 30,
               "width": 56.375,
               "height": 20
             }
@@ -142,8 +141,8 @@
             "svg": "overfit-chart",
             "text": "학습 진행",
             "bbox": {
-              "x": 173.8125,
-              "y": 291,
+              "x": 173.49478149414062,
+              "y": 274,
               "width": 57.01043701171875,
               "height": 20
             }
@@ -154,58 +153,158 @@
             "bbox": {
               "x": 323.09375,
               "y": 273,
-              "width": 35.261077880859375,
+              "width": 35.2611083984375,
               "height": 18
             }
           },
           {
-            "svg": "generalization-chart",
-            "text": "새 데이터에서도 낮은 손실",
+            "svg": "generalization-diagram",
+            "text": "학습에 쓴 이미지",
             "bbox": {
-              "x": 102.53125,
-              "y": 4,
-              "width": 175.845458984375,
-              "height": 23
-            }
-          },
-          {
-            "svg": "generalization-chart",
-            "text": "평균 손실",
-            "bbox": {
-              "x": 46,
-              "y": 34,
-              "width": 56.375,
+              "x": 18,
+              "y": 8,
+              "width": 99.2239990234375,
               "height": 20
             }
           },
           {
-            "svg": "generalization-chart",
-            "text": "0",
+            "svg": "generalization-diagram",
+            "text": "사과",
             "bbox": {
-              "x": 27.90625,
-              "y": 259,
-              "width": 8,
-              "height": 17
-            }
-          },
-          {
-            "svg": "generalization-chart",
-            "text": "학습 진행",
-            "bbox": {
-              "x": 173.8125,
-              "y": 291,
-              "width": 57.01043701171875,
+              "x": 40.640625,
+              "y": 103.875,
+              "width": 28.35906982421875,
               "height": 20
             }
           },
           {
-            "svg": "generalization-chart",
-            "text": "많아짐",
+            "svg": "generalization-diagram",
+            "text": "사과",
             "bbox": {
-              "x": 323.09375,
-              "y": 273,
-              "width": 35.261077880859375,
-              "height": 18
+              "x": 120.640625,
+              "y": 103.875,
+              "width": 28.35906982421875,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "토마토",
+            "bbox": {
+              "x": 193.9609375,
+              "y": 103.875,
+              "width": 41.7181396484375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "학습",
+            "bbox": {
+              "x": 289.640625,
+              "y": 47,
+              "width": 28.359130859375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "학습된 모델",
+            "bbox": {
+              "x": 400.987548828125,
+              "y": 72,
+              "width": 84.02490234375,
+              "height": 24
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "학습에 쓰지 않은 새 이미지",
+            "bbox": {
+              "x": 18,
+              "y": 172,
+              "width": 157.7298583984375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "A",
+            "bbox": {
+              "x": 49.1796875,
+              "y": 273.625,
+              "width": 11,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "B",
+            "bbox": {
+              "x": 149.3984375,
+              "y": 273.625,
+              "width": 10,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "같은 모델",
+            "bbox": {
+              "x": 304.9635009765625,
+              "y": 240,
+              "width": 68.072998046875,
+              "height": 24
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "예측",
+            "bbox": {
+              "x": 487.640625,
+              "y": 191,
+              "width": 28.359130859375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "A",
+            "bbox": {
+              "x": 464,
+              "y": 225,
+              "width": 11,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "사과",
+            "bbox": {
+              "x": 495,
+              "y": 221,
+              "width": 35.816162109375,
+              "height": 25
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "B",
+            "bbox": {
+              "x": 464,
+              "y": 262,
+              "width": 10,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "토마토",
+            "bbox": {
+              "x": 495,
+              "y": 258,
+              "width": 51.6322021484375,
+              "height": 25
             }
           }
         ],
@@ -228,8 +327,21 @@
         "title": "과적합과 일반화"
       },
       "evidence": "examples/overfitting-generalization/review/screens/scroll-1600x950.png",
+      "generalization": {
+        "training_images": 3,
+        "unseen_images": 2,
+        "same_model": true,
+        "semantic_predictions": {
+          "new-A": "사과",
+          "new-B": "토마토"
+        },
+        "inputs_are_distinct": true,
+        "editable_svg": true,
+        "inference_executed": false,
+        "flow_alignment": true
+      },
       "fonts": {
-        "text_nodes": 29,
+        "text_nodes": 40,
         "letter_spacing": "-1pt",
         "rendered": [
           {
@@ -261,7 +373,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 58
+                "glyphCount": 38
               }
             ]
           },
@@ -338,7 +450,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 29
+                "glyphCount": 28
               }
             ]
           },
@@ -360,7 +472,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 5
+                "glyphCount": 20
               }
             ]
           },
@@ -371,7 +483,29 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 5
+                "glyphCount": 8
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 2
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 10
               }
             ]
           },
@@ -437,7 +571,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 5
+                "glyphCount": 18
               }
             ]
           },
@@ -448,7 +582,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 5
+                "glyphCount": 9
               }
             ]
           },
@@ -459,7 +593,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 14
+                "glyphCount": 2
               }
             ]
           },
@@ -470,16 +604,71 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 5
+                "glyphCount": 2
               }
             ]
           },
           {
-            "expected": "STIX Two Math",
+            "expected": "Pretendard Variable",
             "actual": [
               {
-                "familyName": "STIX Two Math",
-                "postScriptName": "STIXTwoMath-Regular",
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 3
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 2
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 6
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 15
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 1
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 1
               }
@@ -493,6 +682,50 @@
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 5
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 2
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 1
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 2
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 1
               }
             ]
           },
@@ -604,11 +837,11 @@
         ]
       },
       "coordinates": {
-        "point_pairs": 164,
+        "point_pairs": 82,
         "max_svg_coordinate_error": 2.842170943040401e-14
       },
       "mode_parity": {
-        "elements": 56,
+        "elements": 97,
         "style_match": true,
         "max_box_error_px": 0,
         "box_tolerance_px": {
@@ -636,19 +869,20 @@
         950
       ],
       "geometry": {
+        "axisAlignment": {
+          "yCenterError": 0,
+          "yGap": 8,
+          "xCenterError": 0,
+          "xGap": 8
+        },
+        "generalizationLines": 1,
+        "subtitle": "학습 데이터에 잘 맞는 것과 새로운 데이터에도 잘 동작하는 것의 차이",
+        "lossDefinitionInGraph": true,
         "charts": [
           {
             "x": 197.5,
             "y": 344.328125,
             "right": 577.5,
-            "bottom": 664.328125,
-            "width": 380,
-            "height": 320
-          },
-          {
-            "x": 862.5,
-            "y": 344.328125,
-            "right": 1242.5,
             "bottom": 664.328125,
             "width": 380,
             "height": 320
@@ -713,7 +947,7 @@
             "escaped": []
           },
           {
-            "name": "curve-panel",
+            "name": "curve-panel generalization-panel",
             "inner": {
               "x": 758,
               "y": 314.328125,
@@ -739,8 +973,8 @@
             "svg": "overfit-chart",
             "text": "평균 손실",
             "bbox": {
-              "x": 46,
-              "y": 34,
+              "x": 17.8125,
+              "y": 30,
               "width": 56.375,
               "height": 20
             }
@@ -759,8 +993,8 @@
             "svg": "overfit-chart",
             "text": "학습 진행",
             "bbox": {
-              "x": 173.8125,
-              "y": 291,
+              "x": 173.49478149414062,
+              "y": 274,
               "width": 57.01043701171875,
               "height": 20
             }
@@ -771,58 +1005,158 @@
             "bbox": {
               "x": 323.09375,
               "y": 273,
-              "width": 35.261077880859375,
+              "width": 35.2611083984375,
               "height": 18
             }
           },
           {
-            "svg": "generalization-chart",
-            "text": "새 데이터에서도 낮은 손실",
+            "svg": "generalization-diagram",
+            "text": "학습에 쓴 이미지",
             "bbox": {
-              "x": 102.53125,
-              "y": 4,
-              "width": 175.845458984375,
-              "height": 23
-            }
-          },
-          {
-            "svg": "generalization-chart",
-            "text": "평균 손실",
-            "bbox": {
-              "x": 46,
-              "y": 34,
-              "width": 56.375,
+              "x": 18,
+              "y": 8,
+              "width": 99.2239990234375,
               "height": 20
             }
           },
           {
-            "svg": "generalization-chart",
-            "text": "0",
+            "svg": "generalization-diagram",
+            "text": "사과",
             "bbox": {
-              "x": 27.90625,
-              "y": 259,
-              "width": 8,
-              "height": 17
-            }
-          },
-          {
-            "svg": "generalization-chart",
-            "text": "학습 진행",
-            "bbox": {
-              "x": 173.8125,
-              "y": 291,
-              "width": 57.01043701171875,
+              "x": 40.640625,
+              "y": 103.875,
+              "width": 28.35906982421875,
               "height": 20
             }
           },
           {
-            "svg": "generalization-chart",
-            "text": "많아짐",
+            "svg": "generalization-diagram",
+            "text": "사과",
             "bbox": {
-              "x": 323.09375,
-              "y": 273,
-              "width": 35.261077880859375,
-              "height": 18
+              "x": 120.640625,
+              "y": 103.875,
+              "width": 28.35906982421875,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "토마토",
+            "bbox": {
+              "x": 193.9609375,
+              "y": 103.875,
+              "width": 41.7181396484375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "학습",
+            "bbox": {
+              "x": 289.640625,
+              "y": 47,
+              "width": 28.359130859375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "학습된 모델",
+            "bbox": {
+              "x": 400.987548828125,
+              "y": 72,
+              "width": 84.02490234375,
+              "height": 24
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "학습에 쓰지 않은 새 이미지",
+            "bbox": {
+              "x": 18,
+              "y": 172,
+              "width": 157.7298583984375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "A",
+            "bbox": {
+              "x": 49.1796875,
+              "y": 273.625,
+              "width": 11,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "B",
+            "bbox": {
+              "x": 149.3984375,
+              "y": 273.625,
+              "width": 10,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "같은 모델",
+            "bbox": {
+              "x": 304.9635009765625,
+              "y": 240,
+              "width": 68.072998046875,
+              "height": 24
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "예측",
+            "bbox": {
+              "x": 487.640625,
+              "y": 191,
+              "width": 28.359130859375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "A",
+            "bbox": {
+              "x": 464,
+              "y": 225,
+              "width": 11,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "사과",
+            "bbox": {
+              "x": 495,
+              "y": 221,
+              "width": 35.816162109375,
+              "height": 25
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "B",
+            "bbox": {
+              "x": 464,
+              "y": 262,
+              "width": 10,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "토마토",
+            "bbox": {
+              "x": 495,
+              "y": 258,
+              "width": 51.6322021484375,
+              "height": 25
             }
           }
         ],
@@ -845,8 +1179,21 @@
         "title": "과적합과 일반화"
       },
       "evidence": "examples/overfitting-generalization/review/screens/slides-1600x950.png",
+      "generalization": {
+        "training_images": 3,
+        "unseen_images": 2,
+        "same_model": true,
+        "semantic_predictions": {
+          "new-A": "사과",
+          "new-B": "토마토"
+        },
+        "inputs_are_distinct": true,
+        "editable_svg": true,
+        "inference_executed": false,
+        "flow_alignment": true
+      },
       "fonts": {
-        "text_nodes": 29,
+        "text_nodes": 40,
         "letter_spacing": "-1pt",
         "rendered": [
           {
@@ -878,7 +1225,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 58
+                "glyphCount": 38
               }
             ]
           },
@@ -955,7 +1302,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 29
+                "glyphCount": 28
               }
             ]
           },
@@ -977,7 +1324,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 5
+                "glyphCount": 20
               }
             ]
           },
@@ -988,7 +1335,29 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 5
+                "glyphCount": 8
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 2
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 10
               }
             ]
           },
@@ -1054,7 +1423,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 5
+                "glyphCount": 18
               }
             ]
           },
@@ -1065,7 +1434,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 5
+                "glyphCount": 9
               }
             ]
           },
@@ -1076,7 +1445,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 14
+                "glyphCount": 2
               }
             ]
           },
@@ -1087,16 +1456,71 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 5
+                "glyphCount": 2
               }
             ]
           },
           {
-            "expected": "STIX Two Math",
+            "expected": "Pretendard Variable",
             "actual": [
               {
-                "familyName": "STIX Two Math",
-                "postScriptName": "STIXTwoMath-Regular",
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 3
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 2
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 6
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 15
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 1
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 1
               }
@@ -1110,6 +1534,50 @@
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 5
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 2
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 1
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 2
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 1
               }
             ]
           },
@@ -1221,11 +1689,11 @@
         ]
       },
       "coordinates": {
-        "point_pairs": 164,
+        "point_pairs": 82,
         "max_svg_coordinate_error": 2.842170943040401e-14
       },
       "mode_parity": {
-        "elements": 56,
+        "elements": 97,
         "style_match": true,
         "max_box_error_px": 0,
         "box_tolerance_px": {
@@ -1253,19 +1721,20 @@
         810
       ],
       "geometry": {
+        "axisAlignment": {
+          "yCenterError": 0,
+          "yGap": 8,
+          "xCenterError": 0,
+          "xGap": 8
+        },
+        "generalizationLines": 1,
+        "subtitle": "학습 데이터에 잘 맞는 것과 새로운 데이터에도 잘 동작하는 것의 차이",
+        "lossDefinitionInGraph": true,
         "charts": [
           {
             "x": 197.5,
             "y": 344.328125,
             "right": 577.5,
-            "bottom": 664.328125,
-            "width": 380,
-            "height": 320
-          },
-          {
-            "x": 862.5,
-            "y": 344.328125,
-            "right": 1242.5,
             "bottom": 664.328125,
             "width": 380,
             "height": 320
@@ -1330,7 +1799,7 @@
             "escaped": []
           },
           {
-            "name": "curve-panel",
+            "name": "curve-panel generalization-panel",
             "inner": {
               "x": 758,
               "y": 314.328125,
@@ -1356,8 +1825,8 @@
             "svg": "overfit-chart",
             "text": "평균 손실",
             "bbox": {
-              "x": 46,
-              "y": 34,
+              "x": 17.8125,
+              "y": 30,
               "width": 56.375,
               "height": 20
             }
@@ -1376,8 +1845,8 @@
             "svg": "overfit-chart",
             "text": "학습 진행",
             "bbox": {
-              "x": 173.8125,
-              "y": 291,
+              "x": 173.49478149414062,
+              "y": 274,
               "width": 57.01043701171875,
               "height": 20
             }
@@ -1388,58 +1857,158 @@
             "bbox": {
               "x": 323.09375,
               "y": 273,
-              "width": 35.261077880859375,
+              "width": 35.2611083984375,
               "height": 18
             }
           },
           {
-            "svg": "generalization-chart",
-            "text": "새 데이터에서도 낮은 손실",
+            "svg": "generalization-diagram",
+            "text": "학습에 쓴 이미지",
             "bbox": {
-              "x": 102.53125,
-              "y": 4,
-              "width": 175.845458984375,
-              "height": 23
-            }
-          },
-          {
-            "svg": "generalization-chart",
-            "text": "평균 손실",
-            "bbox": {
-              "x": 46,
-              "y": 34,
-              "width": 56.375,
+              "x": 18,
+              "y": 8,
+              "width": 99.2239990234375,
               "height": 20
             }
           },
           {
-            "svg": "generalization-chart",
-            "text": "0",
+            "svg": "generalization-diagram",
+            "text": "사과",
             "bbox": {
-              "x": 27.90625,
-              "y": 259,
-              "width": 8,
-              "height": 17
-            }
-          },
-          {
-            "svg": "generalization-chart",
-            "text": "학습 진행",
-            "bbox": {
-              "x": 173.8125,
-              "y": 291,
-              "width": 57.01043701171875,
+              "x": 40.640625,
+              "y": 103.875,
+              "width": 28.35906982421875,
               "height": 20
             }
           },
           {
-            "svg": "generalization-chart",
-            "text": "많아짐",
+            "svg": "generalization-diagram",
+            "text": "사과",
             "bbox": {
-              "x": 323.09375,
-              "y": 273,
-              "width": 35.261077880859375,
-              "height": 18
+              "x": 120.640625,
+              "y": 103.875,
+              "width": 28.35906982421875,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "토마토",
+            "bbox": {
+              "x": 193.9609375,
+              "y": 103.875,
+              "width": 41.7181396484375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "학습",
+            "bbox": {
+              "x": 289.640625,
+              "y": 47,
+              "width": 28.359130859375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "학습된 모델",
+            "bbox": {
+              "x": 400.987548828125,
+              "y": 72,
+              "width": 84.02490234375,
+              "height": 24
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "학습에 쓰지 않은 새 이미지",
+            "bbox": {
+              "x": 18,
+              "y": 172,
+              "width": 157.7298583984375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "A",
+            "bbox": {
+              "x": 49.1796875,
+              "y": 273.625,
+              "width": 11,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "B",
+            "bbox": {
+              "x": 149.3984375,
+              "y": 273.625,
+              "width": 10,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "같은 모델",
+            "bbox": {
+              "x": 304.9635009765625,
+              "y": 240,
+              "width": 68.072998046875,
+              "height": 24
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "예측",
+            "bbox": {
+              "x": 487.640625,
+              "y": 191,
+              "width": 28.359130859375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "A",
+            "bbox": {
+              "x": 464,
+              "y": 225,
+              "width": 11,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "사과",
+            "bbox": {
+              "x": 495,
+              "y": 221,
+              "width": 35.816162109375,
+              "height": 25
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "B",
+            "bbox": {
+              "x": 464,
+              "y": 262,
+              "width": 10,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "토마토",
+            "bbox": {
+              "x": 495,
+              "y": 258,
+              "width": 51.6322021484375,
+              "height": 25
             }
           }
         ],
@@ -1462,8 +2031,21 @@
         "title": "과적합과 일반화"
       },
       "evidence": "examples/overfitting-generalization/review/screens/scroll-1440x810.png",
+      "generalization": {
+        "training_images": 3,
+        "unseen_images": 2,
+        "same_model": true,
+        "semantic_predictions": {
+          "new-A": "사과",
+          "new-B": "토마토"
+        },
+        "inputs_are_distinct": true,
+        "editable_svg": true,
+        "inference_executed": false,
+        "flow_alignment": true
+      },
       "fonts": {
-        "text_nodes": 29,
+        "text_nodes": 40,
         "letter_spacing": "-1pt",
         "rendered": [
           {
@@ -1495,7 +2077,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 58
+                "glyphCount": 38
               }
             ]
           },
@@ -1572,7 +2154,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 29
+                "glyphCount": 28
               }
             ]
           },
@@ -1594,7 +2176,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 5
+                "glyphCount": 20
               }
             ]
           },
@@ -1605,7 +2187,29 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 5
+                "glyphCount": 8
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 2
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 10
               }
             ]
           },
@@ -1671,7 +2275,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 5
+                "glyphCount": 18
               }
             ]
           },
@@ -1682,7 +2286,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 5
+                "glyphCount": 9
               }
             ]
           },
@@ -1693,7 +2297,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 14
+                "glyphCount": 2
               }
             ]
           },
@@ -1704,16 +2308,71 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 5
+                "glyphCount": 2
               }
             ]
           },
           {
-            "expected": "STIX Two Math",
+            "expected": "Pretendard Variable",
             "actual": [
               {
-                "familyName": "STIX Two Math",
-                "postScriptName": "STIXTwoMath-Regular",
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 3
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 2
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 6
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 15
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 1
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 1
               }
@@ -1727,6 +2386,50 @@
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 5
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 2
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 1
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 2
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 1
               }
             ]
           },
@@ -1838,11 +2541,11 @@
         ]
       },
       "coordinates": {
-        "point_pairs": 164,
+        "point_pairs": 82,
         "max_svg_coordinate_error": 2.842170943040401e-14
       },
       "mode_parity": {
-        "elements": 56,
+        "elements": 97,
         "style_match": true,
         "max_box_error_px": 0,
         "box_tolerance_px": {
@@ -1870,19 +2573,20 @@
         810
       ],
       "geometry": {
+        "axisAlignment": {
+          "yCenterError": 0,
+          "yGap": 8,
+          "xCenterError": 0,
+          "xGap": 8
+        },
+        "generalizationLines": 1,
+        "subtitle": "학습 데이터에 잘 맞는 것과 새로운 데이터에도 잘 동작하는 것의 차이",
+        "lossDefinitionInGraph": true,
         "charts": [
           {
             "x": 197.5,
             "y": 344.328125,
             "right": 577.5,
-            "bottom": 664.328125,
-            "width": 380,
-            "height": 320
-          },
-          {
-            "x": 862.5,
-            "y": 344.328125,
-            "right": 1242.5,
             "bottom": 664.328125,
             "width": 380,
             "height": 320
@@ -1947,7 +2651,7 @@
             "escaped": []
           },
           {
-            "name": "curve-panel",
+            "name": "curve-panel generalization-panel",
             "inner": {
               "x": 758,
               "y": 314.328125,
@@ -1973,8 +2677,8 @@
             "svg": "overfit-chart",
             "text": "평균 손실",
             "bbox": {
-              "x": 46,
-              "y": 34,
+              "x": 17.8125,
+              "y": 30,
               "width": 56.375,
               "height": 20
             }
@@ -1993,8 +2697,8 @@
             "svg": "overfit-chart",
             "text": "학습 진행",
             "bbox": {
-              "x": 173.8125,
-              "y": 291,
+              "x": 173.49478149414062,
+              "y": 274,
               "width": 57.01043701171875,
               "height": 20
             }
@@ -2005,58 +2709,158 @@
             "bbox": {
               "x": 323.09375,
               "y": 273,
-              "width": 35.261077880859375,
+              "width": 35.2611083984375,
               "height": 18
             }
           },
           {
-            "svg": "generalization-chart",
-            "text": "새 데이터에서도 낮은 손실",
+            "svg": "generalization-diagram",
+            "text": "학습에 쓴 이미지",
             "bbox": {
-              "x": 102.53125,
-              "y": 4,
-              "width": 175.845458984375,
-              "height": 23
-            }
-          },
-          {
-            "svg": "generalization-chart",
-            "text": "평균 손실",
-            "bbox": {
-              "x": 46,
-              "y": 34,
-              "width": 56.375,
+              "x": 18,
+              "y": 8,
+              "width": 99.2239990234375,
               "height": 20
             }
           },
           {
-            "svg": "generalization-chart",
-            "text": "0",
+            "svg": "generalization-diagram",
+            "text": "사과",
             "bbox": {
-              "x": 27.90625,
-              "y": 259,
-              "width": 8,
-              "height": 17
-            }
-          },
-          {
-            "svg": "generalization-chart",
-            "text": "학습 진행",
-            "bbox": {
-              "x": 173.8125,
-              "y": 291,
-              "width": 57.01043701171875,
+              "x": 40.640625,
+              "y": 103.875,
+              "width": 28.35906982421875,
               "height": 20
             }
           },
           {
-            "svg": "generalization-chart",
-            "text": "많아짐",
+            "svg": "generalization-diagram",
+            "text": "사과",
             "bbox": {
-              "x": 323.09375,
-              "y": 273,
-              "width": 35.261077880859375,
-              "height": 18
+              "x": 120.640625,
+              "y": 103.875,
+              "width": 28.35906982421875,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "토마토",
+            "bbox": {
+              "x": 193.9609375,
+              "y": 103.875,
+              "width": 41.7181396484375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "학습",
+            "bbox": {
+              "x": 289.640625,
+              "y": 47,
+              "width": 28.359130859375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "학습된 모델",
+            "bbox": {
+              "x": 400.987548828125,
+              "y": 72,
+              "width": 84.02490234375,
+              "height": 24
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "학습에 쓰지 않은 새 이미지",
+            "bbox": {
+              "x": 18,
+              "y": 172,
+              "width": 157.7298583984375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "A",
+            "bbox": {
+              "x": 49.1796875,
+              "y": 273.625,
+              "width": 11,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "B",
+            "bbox": {
+              "x": 149.3984375,
+              "y": 273.625,
+              "width": 10,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "같은 모델",
+            "bbox": {
+              "x": 304.9635009765625,
+              "y": 240,
+              "width": 68.072998046875,
+              "height": 24
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "예측",
+            "bbox": {
+              "x": 487.640625,
+              "y": 191,
+              "width": 28.359130859375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "A",
+            "bbox": {
+              "x": 464,
+              "y": 225,
+              "width": 11,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "사과",
+            "bbox": {
+              "x": 495,
+              "y": 221,
+              "width": 35.816162109375,
+              "height": 25
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "B",
+            "bbox": {
+              "x": 464,
+              "y": 262,
+              "width": 10,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "토마토",
+            "bbox": {
+              "x": 495,
+              "y": 258,
+              "width": 51.6322021484375,
+              "height": 25
             }
           }
         ],
@@ -2079,8 +2883,21 @@
         "title": "과적합과 일반화"
       },
       "evidence": "examples/overfitting-generalization/review/screens/slides-1440x810.png",
+      "generalization": {
+        "training_images": 3,
+        "unseen_images": 2,
+        "same_model": true,
+        "semantic_predictions": {
+          "new-A": "사과",
+          "new-B": "토마토"
+        },
+        "inputs_are_distinct": true,
+        "editable_svg": true,
+        "inference_executed": false,
+        "flow_alignment": true
+      },
       "fonts": {
-        "text_nodes": 29,
+        "text_nodes": 40,
         "letter_spacing": "-1pt",
         "rendered": [
           {
@@ -2112,7 +2929,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 58
+                "glyphCount": 38
               }
             ]
           },
@@ -2189,7 +3006,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 29
+                "glyphCount": 28
               }
             ]
           },
@@ -2211,7 +3028,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 5
+                "glyphCount": 20
               }
             ]
           },
@@ -2222,7 +3039,29 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 5
+                "glyphCount": 8
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 2
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 10
               }
             ]
           },
@@ -2288,7 +3127,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 5
+                "glyphCount": 18
               }
             ]
           },
@@ -2299,7 +3138,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 5
+                "glyphCount": 9
               }
             ]
           },
@@ -2310,7 +3149,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 14
+                "glyphCount": 2
               }
             ]
           },
@@ -2321,16 +3160,71 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 5
+                "glyphCount": 2
               }
             ]
           },
           {
-            "expected": "STIX Two Math",
+            "expected": "Pretendard Variable",
             "actual": [
               {
-                "familyName": "STIX Two Math",
-                "postScriptName": "STIXTwoMath-Regular",
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 3
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 2
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 6
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 15
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 1
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 1
               }
@@ -2344,6 +3238,50 @@
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 5
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 2
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 1
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 2
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 1
               }
             ]
           },
@@ -2455,11 +3393,11 @@
         ]
       },
       "coordinates": {
-        "point_pairs": 164,
+        "point_pairs": 82,
         "max_svg_coordinate_error": 2.842170943040401e-14
       },
       "mode_parity": {
-        "elements": 56,
+        "elements": 97,
         "style_match": true,
         "max_box_error_px": 0,
         "box_tolerance_px": {
@@ -2487,19 +3425,20 @@
         768
       ],
       "geometry": {
+        "axisAlignment": {
+          "yCenterError": 0,
+          "yGap": 8,
+          "xCenterError": 0,
+          "xGap": 8
+        },
+        "generalizationLines": 1,
+        "subtitle": "학습 데이터에 잘 맞는 것과 새로운 데이터에도 잘 동작하는 것의 차이",
+        "lossDefinitionInGraph": true,
         "charts": [
           {
             "x": 197.5,
             "y": 344.328125,
             "right": 577.5,
-            "bottom": 664.328125,
-            "width": 380,
-            "height": 320
-          },
-          {
-            "x": 862.5,
-            "y": 344.328125,
-            "right": 1242.5,
             "bottom": 664.328125,
             "width": 380,
             "height": 320
@@ -2564,7 +3503,7 @@
             "escaped": []
           },
           {
-            "name": "curve-panel",
+            "name": "curve-panel generalization-panel",
             "inner": {
               "x": 758,
               "y": 314.328125,
@@ -2590,8 +3529,8 @@
             "svg": "overfit-chart",
             "text": "평균 손실",
             "bbox": {
-              "x": 46,
-              "y": 34,
+              "x": 17.8125,
+              "y": 30,
               "width": 56.375,
               "height": 20
             }
@@ -2610,8 +3549,8 @@
             "svg": "overfit-chart",
             "text": "학습 진행",
             "bbox": {
-              "x": 173.8125,
-              "y": 291,
+              "x": 173.49478149414062,
+              "y": 274,
               "width": 57.01043701171875,
               "height": 20
             }
@@ -2622,58 +3561,158 @@
             "bbox": {
               "x": 323.09375,
               "y": 273,
-              "width": 35.261077880859375,
+              "width": 35.2611083984375,
               "height": 18
             }
           },
           {
-            "svg": "generalization-chart",
-            "text": "새 데이터에서도 낮은 손실",
+            "svg": "generalization-diagram",
+            "text": "학습에 쓴 이미지",
             "bbox": {
-              "x": 102.53125,
-              "y": 4,
-              "width": 175.845458984375,
-              "height": 23
-            }
-          },
-          {
-            "svg": "generalization-chart",
-            "text": "평균 손실",
-            "bbox": {
-              "x": 46,
-              "y": 34,
-              "width": 56.375,
+              "x": 18,
+              "y": 8,
+              "width": 99.2239990234375,
               "height": 20
             }
           },
           {
-            "svg": "generalization-chart",
-            "text": "0",
+            "svg": "generalization-diagram",
+            "text": "사과",
             "bbox": {
-              "x": 27.90625,
-              "y": 259,
-              "width": 8,
-              "height": 17
-            }
-          },
-          {
-            "svg": "generalization-chart",
-            "text": "학습 진행",
-            "bbox": {
-              "x": 173.8125,
-              "y": 291,
-              "width": 57.01043701171875,
+              "x": 40.640625,
+              "y": 103.875,
+              "width": 28.35906982421875,
               "height": 20
             }
           },
           {
-            "svg": "generalization-chart",
-            "text": "많아짐",
+            "svg": "generalization-diagram",
+            "text": "사과",
             "bbox": {
-              "x": 323.09375,
-              "y": 273,
-              "width": 35.261077880859375,
-              "height": 18
+              "x": 120.640625,
+              "y": 103.875,
+              "width": 28.35906982421875,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "토마토",
+            "bbox": {
+              "x": 193.9609375,
+              "y": 103.875,
+              "width": 41.7181396484375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "학습",
+            "bbox": {
+              "x": 289.640625,
+              "y": 47,
+              "width": 28.359130859375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "학습된 모델",
+            "bbox": {
+              "x": 400.987548828125,
+              "y": 72,
+              "width": 84.02490234375,
+              "height": 24
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "학습에 쓰지 않은 새 이미지",
+            "bbox": {
+              "x": 18,
+              "y": 172,
+              "width": 157.7298583984375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "A",
+            "bbox": {
+              "x": 49.1796875,
+              "y": 273.625,
+              "width": 11,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "B",
+            "bbox": {
+              "x": 149.3984375,
+              "y": 273.625,
+              "width": 10,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "같은 모델",
+            "bbox": {
+              "x": 304.9635009765625,
+              "y": 240,
+              "width": 68.072998046875,
+              "height": 24
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "예측",
+            "bbox": {
+              "x": 487.640625,
+              "y": 191,
+              "width": 28.359130859375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "A",
+            "bbox": {
+              "x": 464,
+              "y": 225,
+              "width": 11,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "사과",
+            "bbox": {
+              "x": 495,
+              "y": 221,
+              "width": 35.816162109375,
+              "height": 25
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "B",
+            "bbox": {
+              "x": 464,
+              "y": 262,
+              "width": 10,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "토마토",
+            "bbox": {
+              "x": 495,
+              "y": 258,
+              "width": 51.6322021484375,
+              "height": 25
             }
           }
         ],
@@ -2696,8 +3735,21 @@
         "title": "과적합과 일반화"
       },
       "evidence": "examples/overfitting-generalization/review/screens/scroll-1366x768.png",
+      "generalization": {
+        "training_images": 3,
+        "unseen_images": 2,
+        "same_model": true,
+        "semantic_predictions": {
+          "new-A": "사과",
+          "new-B": "토마토"
+        },
+        "inputs_are_distinct": true,
+        "editable_svg": true,
+        "inference_executed": false,
+        "flow_alignment": true
+      },
       "fonts": {
-        "text_nodes": 29,
+        "text_nodes": 40,
         "letter_spacing": "-1pt",
         "rendered": [
           {
@@ -2729,7 +3781,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 58
+                "glyphCount": 38
               }
             ]
           },
@@ -2806,7 +3858,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 29
+                "glyphCount": 28
               }
             ]
           },
@@ -2828,7 +3880,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 5
+                "glyphCount": 20
               }
             ]
           },
@@ -2839,7 +3891,29 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 5
+                "glyphCount": 8
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 2
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 10
               }
             ]
           },
@@ -2905,7 +3979,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 5
+                "glyphCount": 18
               }
             ]
           },
@@ -2916,7 +3990,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 5
+                "glyphCount": 9
               }
             ]
           },
@@ -2927,7 +4001,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 14
+                "glyphCount": 2
               }
             ]
           },
@@ -2938,16 +4012,71 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 5
+                "glyphCount": 2
               }
             ]
           },
           {
-            "expected": "STIX Two Math",
+            "expected": "Pretendard Variable",
             "actual": [
               {
-                "familyName": "STIX Two Math",
-                "postScriptName": "STIXTwoMath-Regular",
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 3
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 2
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 6
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 15
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 1
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 1
               }
@@ -2961,6 +4090,50 @@
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 5
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 2
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 1
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 2
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 1
               }
             ]
           },
@@ -3072,11 +4245,11 @@
         ]
       },
       "coordinates": {
-        "point_pairs": 164,
+        "point_pairs": 82,
         "max_svg_coordinate_error": 2.842170943040401e-14
       },
       "mode_parity": {
-        "elements": 56,
+        "elements": 97,
         "style_match": true,
         "max_box_error_px": 0,
         "box_tolerance_px": {
@@ -3104,19 +4277,20 @@
         768
       ],
       "geometry": {
+        "axisAlignment": {
+          "yCenterError": 0,
+          "yGap": 8,
+          "xCenterError": 0,
+          "xGap": 8
+        },
+        "generalizationLines": 1,
+        "subtitle": "학습 데이터에 잘 맞는 것과 새로운 데이터에도 잘 동작하는 것의 차이",
+        "lossDefinitionInGraph": true,
         "charts": [
           {
             "x": 197.5,
             "y": 344.328125,
             "right": 577.5,
-            "bottom": 664.328125,
-            "width": 380,
-            "height": 320
-          },
-          {
-            "x": 862.5,
-            "y": 344.328125,
-            "right": 1242.5,
             "bottom": 664.328125,
             "width": 380,
             "height": 320
@@ -3181,7 +4355,7 @@
             "escaped": []
           },
           {
-            "name": "curve-panel",
+            "name": "curve-panel generalization-panel",
             "inner": {
               "x": 758,
               "y": 314.328125,
@@ -3207,8 +4381,8 @@
             "svg": "overfit-chart",
             "text": "평균 손실",
             "bbox": {
-              "x": 46,
-              "y": 34,
+              "x": 17.8125,
+              "y": 30,
               "width": 56.375,
               "height": 20
             }
@@ -3227,8 +4401,8 @@
             "svg": "overfit-chart",
             "text": "학습 진행",
             "bbox": {
-              "x": 173.8125,
-              "y": 291,
+              "x": 173.49478149414062,
+              "y": 274,
               "width": 57.01043701171875,
               "height": 20
             }
@@ -3239,58 +4413,158 @@
             "bbox": {
               "x": 323.09375,
               "y": 273,
-              "width": 35.261077880859375,
+              "width": 35.2611083984375,
               "height": 18
             }
           },
           {
-            "svg": "generalization-chart",
-            "text": "새 데이터에서도 낮은 손실",
+            "svg": "generalization-diagram",
+            "text": "학습에 쓴 이미지",
             "bbox": {
-              "x": 102.53125,
-              "y": 4,
-              "width": 175.845458984375,
-              "height": 23
-            }
-          },
-          {
-            "svg": "generalization-chart",
-            "text": "평균 손실",
-            "bbox": {
-              "x": 46,
-              "y": 34,
-              "width": 56.375,
+              "x": 18,
+              "y": 8,
+              "width": 99.2239990234375,
               "height": 20
             }
           },
           {
-            "svg": "generalization-chart",
-            "text": "0",
+            "svg": "generalization-diagram",
+            "text": "사과",
             "bbox": {
-              "x": 27.90625,
-              "y": 259,
-              "width": 8,
-              "height": 17
-            }
-          },
-          {
-            "svg": "generalization-chart",
-            "text": "학습 진행",
-            "bbox": {
-              "x": 173.8125,
-              "y": 291,
-              "width": 57.01043701171875,
+              "x": 40.640625,
+              "y": 103.875,
+              "width": 28.35906982421875,
               "height": 20
             }
           },
           {
-            "svg": "generalization-chart",
-            "text": "많아짐",
+            "svg": "generalization-diagram",
+            "text": "사과",
             "bbox": {
-              "x": 323.09375,
-              "y": 273,
-              "width": 35.261077880859375,
-              "height": 18
+              "x": 120.640625,
+              "y": 103.875,
+              "width": 28.35906982421875,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "토마토",
+            "bbox": {
+              "x": 193.9609375,
+              "y": 103.875,
+              "width": 41.7181396484375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "학습",
+            "bbox": {
+              "x": 289.640625,
+              "y": 47,
+              "width": 28.359130859375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "학습된 모델",
+            "bbox": {
+              "x": 400.987548828125,
+              "y": 72,
+              "width": 84.02490234375,
+              "height": 24
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "학습에 쓰지 않은 새 이미지",
+            "bbox": {
+              "x": 18,
+              "y": 172,
+              "width": 157.7298583984375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "A",
+            "bbox": {
+              "x": 49.1796875,
+              "y": 273.625,
+              "width": 11,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "B",
+            "bbox": {
+              "x": 149.3984375,
+              "y": 273.625,
+              "width": 10,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "같은 모델",
+            "bbox": {
+              "x": 304.9635009765625,
+              "y": 240,
+              "width": 68.072998046875,
+              "height": 24
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "예측",
+            "bbox": {
+              "x": 487.640625,
+              "y": 191,
+              "width": 28.359130859375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "A",
+            "bbox": {
+              "x": 464,
+              "y": 225,
+              "width": 11,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "사과",
+            "bbox": {
+              "x": 495,
+              "y": 221,
+              "width": 35.816162109375,
+              "height": 25
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "B",
+            "bbox": {
+              "x": 464,
+              "y": 262,
+              "width": 10,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "토마토",
+            "bbox": {
+              "x": 495,
+              "y": 258,
+              "width": 51.6322021484375,
+              "height": 25
             }
           }
         ],
@@ -3313,8 +4587,21 @@
         "title": "과적합과 일반화"
       },
       "evidence": "examples/overfitting-generalization/review/screens/slides-1366x768.png",
+      "generalization": {
+        "training_images": 3,
+        "unseen_images": 2,
+        "same_model": true,
+        "semantic_predictions": {
+          "new-A": "사과",
+          "new-B": "토마토"
+        },
+        "inputs_are_distinct": true,
+        "editable_svg": true,
+        "inference_executed": false,
+        "flow_alignment": true
+      },
       "fonts": {
-        "text_nodes": 29,
+        "text_nodes": 40,
         "letter_spacing": "-1pt",
         "rendered": [
           {
@@ -3346,7 +4633,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 58
+                "glyphCount": 38
               }
             ]
           },
@@ -3423,7 +4710,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 29
+                "glyphCount": 28
               }
             ]
           },
@@ -3445,7 +4732,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 5
+                "glyphCount": 20
               }
             ]
           },
@@ -3456,7 +4743,29 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 5
+                "glyphCount": 8
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 2
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 10
               }
             ]
           },
@@ -3522,7 +4831,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 5
+                "glyphCount": 18
               }
             ]
           },
@@ -3533,7 +4842,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 5
+                "glyphCount": 9
               }
             ]
           },
@@ -3544,7 +4853,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 14
+                "glyphCount": 2
               }
             ]
           },
@@ -3555,16 +4864,71 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 5
+                "glyphCount": 2
               }
             ]
           },
           {
-            "expected": "STIX Two Math",
+            "expected": "Pretendard Variable",
             "actual": [
               {
-                "familyName": "STIX Two Math",
-                "postScriptName": "STIXTwoMath-Regular",
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 3
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 2
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 6
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 15
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 1
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 1
               }
@@ -3578,6 +4942,50 @@
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 5
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 2
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 1
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 2
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 1
               }
             ]
           },
@@ -3689,11 +5097,11 @@
         ]
       },
       "coordinates": {
-        "point_pairs": 164,
+        "point_pairs": 82,
         "max_svg_coordinate_error": 2.842170943040401e-14
       },
       "mode_parity": {
-        "elements": 56,
+        "elements": 97,
         "style_match": true,
         "max_box_error_px": 0,
         "box_tolerance_px": {
@@ -3721,19 +5129,20 @@
         720
       ],
       "geometry": {
+        "axisAlignment": {
+          "yCenterError": 0,
+          "yGap": 8,
+          "xCenterError": 0,
+          "xGap": 8
+        },
+        "generalizationLines": 1,
+        "subtitle": "학습 데이터에 잘 맞는 것과 새로운 데이터에도 잘 동작하는 것의 차이",
+        "lossDefinitionInGraph": true,
         "charts": [
           {
             "x": 197.5,
             "y": 344.328125,
             "right": 577.5,
-            "bottom": 664.328125,
-            "width": 380,
-            "height": 320
-          },
-          {
-            "x": 862.5,
-            "y": 344.328125,
-            "right": 1242.5,
             "bottom": 664.328125,
             "width": 380,
             "height": 320
@@ -3798,7 +5207,7 @@
             "escaped": []
           },
           {
-            "name": "curve-panel",
+            "name": "curve-panel generalization-panel",
             "inner": {
               "x": 758,
               "y": 314.328125,
@@ -3824,8 +5233,8 @@
             "svg": "overfit-chart",
             "text": "평균 손실",
             "bbox": {
-              "x": 46,
-              "y": 34,
+              "x": 17.8125,
+              "y": 30,
               "width": 56.375,
               "height": 20
             }
@@ -3844,8 +5253,8 @@
             "svg": "overfit-chart",
             "text": "학습 진행",
             "bbox": {
-              "x": 173.8125,
-              "y": 291,
+              "x": 173.49478149414062,
+              "y": 274,
               "width": 57.01043701171875,
               "height": 20
             }
@@ -3856,58 +5265,158 @@
             "bbox": {
               "x": 323.09375,
               "y": 273,
-              "width": 35.261077880859375,
+              "width": 35.2611083984375,
               "height": 18
             }
           },
           {
-            "svg": "generalization-chart",
-            "text": "새 데이터에서도 낮은 손실",
+            "svg": "generalization-diagram",
+            "text": "학습에 쓴 이미지",
             "bbox": {
-              "x": 102.53125,
-              "y": 4,
-              "width": 175.845458984375,
-              "height": 23
-            }
-          },
-          {
-            "svg": "generalization-chart",
-            "text": "평균 손실",
-            "bbox": {
-              "x": 46,
-              "y": 34,
-              "width": 56.375,
+              "x": 18,
+              "y": 8,
+              "width": 99.2239990234375,
               "height": 20
             }
           },
           {
-            "svg": "generalization-chart",
-            "text": "0",
+            "svg": "generalization-diagram",
+            "text": "사과",
             "bbox": {
-              "x": 27.90625,
-              "y": 259,
-              "width": 8,
-              "height": 17
-            }
-          },
-          {
-            "svg": "generalization-chart",
-            "text": "학습 진행",
-            "bbox": {
-              "x": 173.8125,
-              "y": 291,
-              "width": 57.01043701171875,
+              "x": 40.640625,
+              "y": 103.875,
+              "width": 28.35906982421875,
               "height": 20
             }
           },
           {
-            "svg": "generalization-chart",
-            "text": "많아짐",
+            "svg": "generalization-diagram",
+            "text": "사과",
             "bbox": {
-              "x": 323.09375,
-              "y": 273,
-              "width": 35.261077880859375,
-              "height": 18
+              "x": 120.640625,
+              "y": 103.875,
+              "width": 28.35906982421875,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "토마토",
+            "bbox": {
+              "x": 193.9609375,
+              "y": 103.875,
+              "width": 41.7181396484375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "학습",
+            "bbox": {
+              "x": 289.640625,
+              "y": 47,
+              "width": 28.359130859375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "학습된 모델",
+            "bbox": {
+              "x": 400.987548828125,
+              "y": 72,
+              "width": 84.02490234375,
+              "height": 24
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "학습에 쓰지 않은 새 이미지",
+            "bbox": {
+              "x": 18,
+              "y": 172,
+              "width": 157.7298583984375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "A",
+            "bbox": {
+              "x": 49.1796875,
+              "y": 273.625,
+              "width": 11,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "B",
+            "bbox": {
+              "x": 149.3984375,
+              "y": 273.625,
+              "width": 10,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "같은 모델",
+            "bbox": {
+              "x": 304.9635009765625,
+              "y": 240,
+              "width": 68.072998046875,
+              "height": 24
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "예측",
+            "bbox": {
+              "x": 487.640625,
+              "y": 191,
+              "width": 28.359130859375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "A",
+            "bbox": {
+              "x": 464,
+              "y": 225,
+              "width": 11,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "사과",
+            "bbox": {
+              "x": 495,
+              "y": 221,
+              "width": 35.816162109375,
+              "height": 25
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "B",
+            "bbox": {
+              "x": 464,
+              "y": 262,
+              "width": 10,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "토마토",
+            "bbox": {
+              "x": 495,
+              "y": 258,
+              "width": 51.6322021484375,
+              "height": 25
             }
           }
         ],
@@ -3930,8 +5439,21 @@
         "title": "과적합과 일반화"
       },
       "evidence": "examples/overfitting-generalization/review/screens/scroll-1280x720.png",
+      "generalization": {
+        "training_images": 3,
+        "unseen_images": 2,
+        "same_model": true,
+        "semantic_predictions": {
+          "new-A": "사과",
+          "new-B": "토마토"
+        },
+        "inputs_are_distinct": true,
+        "editable_svg": true,
+        "inference_executed": false,
+        "flow_alignment": true
+      },
       "fonts": {
-        "text_nodes": 29,
+        "text_nodes": 40,
         "letter_spacing": "-1pt",
         "rendered": [
           {
@@ -3963,7 +5485,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 58
+                "glyphCount": 38
               }
             ]
           },
@@ -4040,7 +5562,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 29
+                "glyphCount": 28
               }
             ]
           },
@@ -4062,7 +5584,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 5
+                "glyphCount": 20
               }
             ]
           },
@@ -4073,7 +5595,29 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 5
+                "glyphCount": 8
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 2
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 10
               }
             ]
           },
@@ -4139,7 +5683,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 5
+                "glyphCount": 18
               }
             ]
           },
@@ -4150,7 +5694,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 5
+                "glyphCount": 9
               }
             ]
           },
@@ -4161,7 +5705,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 14
+                "glyphCount": 2
               }
             ]
           },
@@ -4172,16 +5716,71 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 5
+                "glyphCount": 2
               }
             ]
           },
           {
-            "expected": "STIX Two Math",
+            "expected": "Pretendard Variable",
             "actual": [
               {
-                "familyName": "STIX Two Math",
-                "postScriptName": "STIXTwoMath-Regular",
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 3
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 2
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 6
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 15
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 1
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 1
               }
@@ -4195,6 +5794,50 @@
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 5
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 2
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 1
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 2
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 1
               }
             ]
           },
@@ -4306,11 +5949,11 @@
         ]
       },
       "coordinates": {
-        "point_pairs": 164,
+        "point_pairs": 82,
         "max_svg_coordinate_error": 2.842170943040401e-14
       },
       "mode_parity": {
-        "elements": 56,
+        "elements": 97,
         "style_match": true,
         "max_box_error_px": 0,
         "box_tolerance_px": {
@@ -4338,19 +5981,20 @@
         720
       ],
       "geometry": {
+        "axisAlignment": {
+          "yCenterError": 0,
+          "yGap": 8,
+          "xCenterError": 0,
+          "xGap": 8
+        },
+        "generalizationLines": 1,
+        "subtitle": "학습 데이터에 잘 맞는 것과 새로운 데이터에도 잘 동작하는 것의 차이",
+        "lossDefinitionInGraph": true,
         "charts": [
           {
             "x": 197.5,
             "y": 344.328125,
             "right": 577.5,
-            "bottom": 664.328125,
-            "width": 380,
-            "height": 320
-          },
-          {
-            "x": 862.5,
-            "y": 344.328125,
-            "right": 1242.5,
             "bottom": 664.328125,
             "width": 380,
             "height": 320
@@ -4415,7 +6059,7 @@
             "escaped": []
           },
           {
-            "name": "curve-panel",
+            "name": "curve-panel generalization-panel",
             "inner": {
               "x": 758,
               "y": 314.328125,
@@ -4441,8 +6085,8 @@
             "svg": "overfit-chart",
             "text": "평균 손실",
             "bbox": {
-              "x": 46,
-              "y": 34,
+              "x": 17.8125,
+              "y": 30,
               "width": 56.375,
               "height": 20
             }
@@ -4461,8 +6105,8 @@
             "svg": "overfit-chart",
             "text": "학습 진행",
             "bbox": {
-              "x": 173.8125,
-              "y": 291,
+              "x": 173.49478149414062,
+              "y": 274,
               "width": 57.01043701171875,
               "height": 20
             }
@@ -4473,58 +6117,158 @@
             "bbox": {
               "x": 323.09375,
               "y": 273,
-              "width": 35.261077880859375,
+              "width": 35.2611083984375,
               "height": 18
             }
           },
           {
-            "svg": "generalization-chart",
-            "text": "새 데이터에서도 낮은 손실",
+            "svg": "generalization-diagram",
+            "text": "학습에 쓴 이미지",
             "bbox": {
-              "x": 102.53125,
-              "y": 4,
-              "width": 175.845458984375,
-              "height": 23
-            }
-          },
-          {
-            "svg": "generalization-chart",
-            "text": "평균 손실",
-            "bbox": {
-              "x": 46,
-              "y": 34,
-              "width": 56.375,
+              "x": 18,
+              "y": 8,
+              "width": 99.2239990234375,
               "height": 20
             }
           },
           {
-            "svg": "generalization-chart",
-            "text": "0",
+            "svg": "generalization-diagram",
+            "text": "사과",
             "bbox": {
-              "x": 27.90625,
-              "y": 259,
-              "width": 8,
-              "height": 17
-            }
-          },
-          {
-            "svg": "generalization-chart",
-            "text": "학습 진행",
-            "bbox": {
-              "x": 173.8125,
-              "y": 291,
-              "width": 57.01043701171875,
+              "x": 40.640625,
+              "y": 103.875,
+              "width": 28.35906982421875,
               "height": 20
             }
           },
           {
-            "svg": "generalization-chart",
-            "text": "많아짐",
+            "svg": "generalization-diagram",
+            "text": "사과",
             "bbox": {
-              "x": 323.09375,
-              "y": 273,
-              "width": 35.261077880859375,
-              "height": 18
+              "x": 120.640625,
+              "y": 103.875,
+              "width": 28.35906982421875,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "토마토",
+            "bbox": {
+              "x": 193.9609375,
+              "y": 103.875,
+              "width": 41.7181396484375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "학습",
+            "bbox": {
+              "x": 289.640625,
+              "y": 47,
+              "width": 28.359130859375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "학습된 모델",
+            "bbox": {
+              "x": 400.987548828125,
+              "y": 72,
+              "width": 84.02490234375,
+              "height": 24
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "학습에 쓰지 않은 새 이미지",
+            "bbox": {
+              "x": 18,
+              "y": 172,
+              "width": 157.7298583984375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "A",
+            "bbox": {
+              "x": 49.1796875,
+              "y": 273.625,
+              "width": 11,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "B",
+            "bbox": {
+              "x": 149.3984375,
+              "y": 273.625,
+              "width": 10,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "같은 모델",
+            "bbox": {
+              "x": 304.9635009765625,
+              "y": 240,
+              "width": 68.072998046875,
+              "height": 24
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "예측",
+            "bbox": {
+              "x": 487.640625,
+              "y": 191,
+              "width": 28.359130859375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "A",
+            "bbox": {
+              "x": 464,
+              "y": 225,
+              "width": 11,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "사과",
+            "bbox": {
+              "x": 495,
+              "y": 221,
+              "width": 35.816162109375,
+              "height": 25
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "B",
+            "bbox": {
+              "x": 464,
+              "y": 262,
+              "width": 10,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "토마토",
+            "bbox": {
+              "x": 495,
+              "y": 258,
+              "width": 51.6322021484375,
+              "height": 25
             }
           }
         ],
@@ -4547,8 +6291,21 @@
         "title": "과적합과 일반화"
       },
       "evidence": "examples/overfitting-generalization/review/screens/slides-1280x720.png",
+      "generalization": {
+        "training_images": 3,
+        "unseen_images": 2,
+        "same_model": true,
+        "semantic_predictions": {
+          "new-A": "사과",
+          "new-B": "토마토"
+        },
+        "inputs_are_distinct": true,
+        "editable_svg": true,
+        "inference_executed": false,
+        "flow_alignment": true
+      },
       "fonts": {
-        "text_nodes": 29,
+        "text_nodes": 40,
         "letter_spacing": "-1pt",
         "rendered": [
           {
@@ -4580,7 +6337,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 58
+                "glyphCount": 38
               }
             ]
           },
@@ -4657,7 +6414,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 29
+                "glyphCount": 28
               }
             ]
           },
@@ -4679,7 +6436,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 5
+                "glyphCount": 20
               }
             ]
           },
@@ -4690,7 +6447,29 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 5
+                "glyphCount": 8
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 2
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 10
               }
             ]
           },
@@ -4756,7 +6535,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 5
+                "glyphCount": 18
               }
             ]
           },
@@ -4767,7 +6546,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 5
+                "glyphCount": 9
               }
             ]
           },
@@ -4778,7 +6557,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 14
+                "glyphCount": 2
               }
             ]
           },
@@ -4789,16 +6568,71 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 5
+                "glyphCount": 2
               }
             ]
           },
           {
-            "expected": "STIX Two Math",
+            "expected": "Pretendard Variable",
             "actual": [
               {
-                "familyName": "STIX Two Math",
-                "postScriptName": "STIXTwoMath-Regular",
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 3
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 2
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 6
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 15
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 1
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 1
               }
@@ -4812,6 +6646,50 @@
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 5
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 2
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 1
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 2
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 1
               }
             ]
           },
@@ -4923,11 +6801,11 @@
         ]
       },
       "coordinates": {
-        "point_pairs": 164,
+        "point_pairs": 82,
         "max_svg_coordinate_error": 2.842170943040401e-14
       },
       "mode_parity": {
-        "elements": 56,
+        "elements": 97,
         "style_match": true,
         "max_box_error_px": 0,
         "box_tolerance_px": {
@@ -4949,7 +6827,7 @@
       "http_errors": []
     }
   ],
-  "created_utc": "2026-10-26T02:22:37.688935+00:00",
+  "created_utc": "2026-10-26T03:17:05.095835+00:00",
   "chromium": "155.0.8059.0",
   "behavior": {
     "changed_datasets": [
@@ -4960,8 +6838,7 @@
       "unit",
       "nonfinite",
       "unordered",
-      "negative",
-      "invalid_generalization"
+      "negative"
     ],
     "mode_roundtrip": true,
     "keyboard_links": true,
@@ -4969,19 +6846,20 @@
     "failed_data_message": true
   },
   "source_sha256": {
-    "examples/overfitting-generalization/content.html": "c110a1c8681acca5720ae740d85b500f033ea987ed435fceff897abad894e2e0",
+    "examples/overfitting-generalization/content.html": "f75e704884eb1890c59df33e9d1dadc062f6822d6107d601de73c0274a57579b",
     "examples/overfitting-generalization/scroll.html": "c3d618f2f5accc5471da5506955a9dd2c38d62427f224e2bf5c6938636db4936",
     "examples/overfitting-generalization/slides.html": "20ceb16b62eacd01b0c22601a04c3b87756b216c3dce5ae89c7b0cecf97c7171",
-    "examples/overfitting-generalization/lesson.css": "8c980e6b70e4e2f423b514b8e69bca143f98622c9eee9300a35e7f6adce740c5",
+    "examples/overfitting-generalization/lesson.css": "d510dfc21d24b984c8d7ad45113c984112b456ed431b69e879644d59710f5276",
     "examples/overfitting-generalization/viewer.css": "b03e8785c652fd9711e4eca188e29c555024a998c53013ce8b389e61825860a7",
     "examples/overfitting-generalization/viewer.js": "a15e739f880682df368572875033d204eab63789b812cebad965f6eb566229a3",
-    "examples/overfitting-generalization/curves.js": "aa63d1091e70db263001b285522559c8e86c03c51482c450bef31691be44b5c2",
-    "examples/overfitting-generalization/curves.json": "674e43302c58725f3975794474a4088701ed71fbce82b638dc56fbd8a519bfaa",
-    "examples/overfitting-generalization/DESIGN.md": "d66a7b22015afec528b952e70f2ceec17f84cba41c486754b4ec4d02a45d9c61",
-    "scripts/verify_overfitting.py": "2645f126ad4fd4ca805f08d58a78e083df139ec3d8a3de3bd6032004d5d841d5"
+    "examples/overfitting-generalization/curves.js": "cb4ec6d094757719a93756517965c97208be515c4fe68f80284927f50df47016",
+    "examples/overfitting-generalization/curves.json": "d9e995fa132145654184d2f3a5a7a0b076debc789f8311bd3a7d96d7bc6521a8",
+    "examples/overfitting-generalization/DESIGN.md": "fa24e5bbdb3c26527c159b9701fab241327dfd1f903fa00942f57f551f2f8518",
+    "scripts/verify_overfitting.py": "30ae076a784718268336f7dd533e15145a49b7b8c0fb5b27e450dbe0b91f21bc",
+    "templates/html/graph-annotations.js": "e220346f8f73670e23d0a32610e53c60e08632123bf298b2e18e454adcc589fc"
   },
   "preview_sha256": {
-    "scroll.png": "4da1edfc66df2dc090bb5a5dc03b549b5960266b3b28200b8419fb6ab52fc2f1",
-    "slide.png": "b4b6b316c0437616bb3ad7c9909702fc46d45d556a4621843ccaea308dea9d10"
+    "scroll.png": "6eba21669a2efcfca5bf1f1dd03f7bedf2858f67ffd5b4e81ac8b01958cfc4a1",
+    "slide.png": "f12b90dbdee4fffe3706a551ee581cf20cb364483e516797be6d69e9d22a0853"
   }
 }

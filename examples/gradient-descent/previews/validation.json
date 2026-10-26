@@ -49,6 +49,12 @@
         "fallback": 0
       },
       "geometry": {
+        "axisAlignment": {
+          "yCenterError": 3.814697265625e-06,
+          "yGap": 8,
+          "xCenterError": 0,
+          "xGap": 8
+        },
         "outside": [],
         "overflow": [],
         "clipped": [],
@@ -56,34 +62,6 @@
         "collisions": [],
         "dataCollisions": [],
         "ink": [
-          {
-            "id": "loss-axis",
-            "x": 48,
-            "y": 2,
-            "right": 75.35905456542969,
-            "bottom": 22
-          },
-          {
-            "id": "loss-axis-math",
-            "x": 91,
-            "y": 5,
-            "right": 118.47994995117188,
-            "bottom": 22
-          },
-          {
-            "id": "parameter-axis",
-            "x": 48,
-            "y": 462,
-            "right": 103.07716369628906,
-            "bottom": 482
-          },
-          {
-            "id": "parameter-symbol",
-            "x": 127,
-            "y": 465,
-            "right": 136,
-            "bottom": 482
-          },
           {
             "id": "tangent-label",
             "x": 177.30331420898438,
@@ -95,7 +73,7 @@
             "id": "update-label",
             "x": 113.046875,
             "y": 334,
-            "right": 226.6299285888672,
+            "right": 226.62994384765625,
             "bottom": 354
           },
           {
@@ -109,7 +87,7 @@
             "id": "next-label",
             "x": 199.02713012695312,
             "y": 305.3163757324219,
-            "right": 227.3861846923828,
+            "right": 227.38616943359375,
             "bottom": 325.3163757324219
           },
           {
@@ -130,8 +108,36 @@
             "id": "next-symbol",
             "x": 229.72244262695312,
             "y": 457,
-            "right": 253.1581268310547,
+            "right": 253.15814208984375,
             "bottom": 478
+          },
+          {
+            "id": "loss-axis",
+            "x": 16.58049774169922,
+            "y": 1,
+            "right": 43.939544677734375,
+            "bottom": 21
+          },
+          {
+            "id": "loss-axis-math",
+            "x": 51.939544677734375,
+            "y": 4,
+            "right": 79.41949462890625,
+            "bottom": 21
+          },
+          {
+            "id": "parameter-axis",
+            "x": 140.46142578125,
+            "y": 462,
+            "right": 195.53857421875,
+            "bottom": 482
+          },
+          {
+            "id": "parameter-symbol",
+            "x": 203.53857421875,
+            "y": 465,
+            "right": 212.53857421875,
+            "bottom": 482
           }
         ],
         "math": [
@@ -266,7 +272,7 @@
         }
       },
       "mode_identity": {
-        "elements": 100,
+        "elements": 102,
         "styles_equal": true,
         "max_box_error_px": 3.0517578125e-05
       },
@@ -349,6 +355,12 @@
         "fallback": 0
       },
       "geometry": {
+        "axisAlignment": {
+          "yCenterError": 3.814697265625e-06,
+          "yGap": 8,
+          "xCenterError": 0,
+          "xGap": 8
+        },
         "outside": [],
         "overflow": [],
         "clipped": [],
@@ -356,34 +368,6 @@
         "collisions": [],
         "dataCollisions": [],
         "ink": [
-          {
-            "id": "loss-axis",
-            "x": 48,
-            "y": 2,
-            "right": 75.35905456542969,
-            "bottom": 22
-          },
-          {
-            "id": "loss-axis-math",
-            "x": 91,
-            "y": 5,
-            "right": 118.47994995117188,
-            "bottom": 22
-          },
-          {
-            "id": "parameter-axis",
-            "x": 48,
-            "y": 462,
-            "right": 103.07716369628906,
-            "bottom": 482
-          },
-          {
-            "id": "parameter-symbol",
-            "x": 127,
-            "y": 465,
-            "right": 136,
-            "bottom": 482
-          },
           {
             "id": "tangent-label",
             "x": 177.30331420898438,
@@ -395,7 +379,7 @@
             "id": "update-label",
             "x": 113.046875,
             "y": 334,
-            "right": 226.6299285888672,
+            "right": 226.62994384765625,
             "bottom": 354
           },
           {
@@ -409,7 +393,7 @@
             "id": "next-label",
             "x": 199.02713012695312,
             "y": 305.3163757324219,
-            "right": 227.3861846923828,
+            "right": 227.38616943359375,
             "bottom": 325.3163757324219
           },
           {
@@ -430,8 +414,36 @@
             "id": "next-symbol",
             "x": 229.72244262695312,
             "y": 457,
-            "right": 253.1581268310547,
+            "right": 253.15814208984375,
             "bottom": 478
+          },
+          {
+            "id": "loss-axis",
+            "x": 16.58049774169922,
+            "y": 1,
+            "right": 43.939544677734375,
+            "bottom": 21
+          },
+          {
+            "id": "loss-axis-math",
+            "x": 51.939544677734375,
+            "y": 4,
+            "right": 79.41949462890625,
+            "bottom": 21
+          },
+          {
+            "id": "parameter-axis",
+            "x": 140.46142578125,
+            "y": 462,
+            "right": 195.53857421875,
+            "bottom": 482
+          },
+          {
+            "id": "parameter-symbol",
+            "x": 203.53857421875,
+            "y": 465,
+            "right": 212.53857421875,
+            "bottom": 482
           }
         ],
         "math": [
@@ -566,7 +578,7 @@
         }
       },
       "mode_identity": {
-        "elements": 100,
+        "elements": 102,
         "styles_equal": true,
         "max_box_error_px": 3.0517578125e-05
       },
@@ -649,6 +661,12 @@
         "fallback": 0
       },
       "geometry": {
+        "axisAlignment": {
+          "yCenterError": 3.814697265625e-06,
+          "yGap": 8,
+          "xCenterError": 0,
+          "xGap": 8
+        },
         "outside": [],
         "overflow": [],
         "clipped": [],
@@ -656,34 +674,6 @@
         "collisions": [],
         "dataCollisions": [],
         "ink": [
-          {
-            "id": "loss-axis",
-            "x": 48,
-            "y": 2,
-            "right": 75.35905456542969,
-            "bottom": 22
-          },
-          {
-            "id": "loss-axis-math",
-            "x": 91,
-            "y": 5,
-            "right": 118.47994995117188,
-            "bottom": 22
-          },
-          {
-            "id": "parameter-axis",
-            "x": 48,
-            "y": 462,
-            "right": 103.07716369628906,
-            "bottom": 482
-          },
-          {
-            "id": "parameter-symbol",
-            "x": 127,
-            "y": 465,
-            "right": 136,
-            "bottom": 482
-          },
           {
             "id": "tangent-label",
             "x": 177.30331420898438,
@@ -695,7 +685,7 @@
             "id": "update-label",
             "x": 113.046875,
             "y": 334,
-            "right": 226.6299285888672,
+            "right": 226.62994384765625,
             "bottom": 354
           },
           {
@@ -709,7 +699,7 @@
             "id": "next-label",
             "x": 199.02713012695312,
             "y": 305.3163757324219,
-            "right": 227.3861846923828,
+            "right": 227.38616943359375,
             "bottom": 325.3163757324219
           },
           {
@@ -730,8 +720,36 @@
             "id": "next-symbol",
             "x": 229.72244262695312,
             "y": 457,
-            "right": 253.1581268310547,
+            "right": 253.15814208984375,
             "bottom": 478
+          },
+          {
+            "id": "loss-axis",
+            "x": 16.58049774169922,
+            "y": 1,
+            "right": 43.939544677734375,
+            "bottom": 21
+          },
+          {
+            "id": "loss-axis-math",
+            "x": 51.939544677734375,
+            "y": 4,
+            "right": 79.41949462890625,
+            "bottom": 21
+          },
+          {
+            "id": "parameter-axis",
+            "x": 140.46142578125,
+            "y": 462,
+            "right": 195.53857421875,
+            "bottom": 482
+          },
+          {
+            "id": "parameter-symbol",
+            "x": 203.53857421875,
+            "y": 465,
+            "right": 212.53857421875,
+            "bottom": 482
           }
         ],
         "math": [
@@ -866,7 +884,7 @@
         }
       },
       "mode_identity": {
-        "elements": 100,
+        "elements": 102,
         "styles_equal": true,
         "max_box_error_px": 3.0517578125e-05
       },
@@ -949,6 +967,12 @@
         "fallback": 0
       },
       "geometry": {
+        "axisAlignment": {
+          "yCenterError": 3.814697265625e-06,
+          "yGap": 8,
+          "xCenterError": 0,
+          "xGap": 8
+        },
         "outside": [],
         "overflow": [],
         "clipped": [],
@@ -956,34 +980,6 @@
         "collisions": [],
         "dataCollisions": [],
         "ink": [
-          {
-            "id": "loss-axis",
-            "x": 48,
-            "y": 2,
-            "right": 75.35905456542969,
-            "bottom": 22
-          },
-          {
-            "id": "loss-axis-math",
-            "x": 91,
-            "y": 5,
-            "right": 118.47994995117188,
-            "bottom": 22
-          },
-          {
-            "id": "parameter-axis",
-            "x": 48,
-            "y": 462,
-            "right": 103.07716369628906,
-            "bottom": 482
-          },
-          {
-            "id": "parameter-symbol",
-            "x": 127,
-            "y": 465,
-            "right": 136,
-            "bottom": 482
-          },
           {
             "id": "tangent-label",
             "x": 177.30331420898438,
@@ -995,7 +991,7 @@
             "id": "update-label",
             "x": 113.046875,
             "y": 334,
-            "right": 226.6299285888672,
+            "right": 226.62994384765625,
             "bottom": 354
           },
           {
@@ -1009,7 +1005,7 @@
             "id": "next-label",
             "x": 199.02713012695312,
             "y": 305.3163757324219,
-            "right": 227.3861846923828,
+            "right": 227.38616943359375,
             "bottom": 325.3163757324219
           },
           {
@@ -1030,8 +1026,36 @@
             "id": "next-symbol",
             "x": 229.72244262695312,
             "y": 457,
-            "right": 253.1581268310547,
+            "right": 253.15814208984375,
             "bottom": 478
+          },
+          {
+            "id": "loss-axis",
+            "x": 16.58049774169922,
+            "y": 1,
+            "right": 43.939544677734375,
+            "bottom": 21
+          },
+          {
+            "id": "loss-axis-math",
+            "x": 51.939544677734375,
+            "y": 4,
+            "right": 79.41949462890625,
+            "bottom": 21
+          },
+          {
+            "id": "parameter-axis",
+            "x": 140.46142578125,
+            "y": 462,
+            "right": 195.53857421875,
+            "bottom": 482
+          },
+          {
+            "id": "parameter-symbol",
+            "x": 203.53857421875,
+            "y": 465,
+            "right": 212.53857421875,
+            "bottom": 482
           }
         ],
         "math": [
@@ -1166,7 +1190,7 @@
         }
       },
       "mode_identity": {
-        "elements": 100,
+        "elements": 102,
         "styles_equal": true,
         "max_box_error_px": 3.0517578125e-05
       },
@@ -1249,6 +1273,12 @@
         "fallback": 0
       },
       "geometry": {
+        "axisAlignment": {
+          "yCenterError": 3.814697265625e-06,
+          "yGap": 8,
+          "xCenterError": 0,
+          "xGap": 8
+        },
         "outside": [],
         "overflow": [],
         "clipped": [],
@@ -1256,34 +1286,6 @@
         "collisions": [],
         "dataCollisions": [],
         "ink": [
-          {
-            "id": "loss-axis",
-            "x": 48,
-            "y": 2,
-            "right": 75.35905456542969,
-            "bottom": 22
-          },
-          {
-            "id": "loss-axis-math",
-            "x": 91,
-            "y": 5,
-            "right": 118.47994995117188,
-            "bottom": 22
-          },
-          {
-            "id": "parameter-axis",
-            "x": 48,
-            "y": 462,
-            "right": 103.07716369628906,
-            "bottom": 482
-          },
-          {
-            "id": "parameter-symbol",
-            "x": 127,
-            "y": 465,
-            "right": 136,
-            "bottom": 482
-          },
           {
             "id": "tangent-label",
             "x": 177.30331420898438,
@@ -1295,7 +1297,7 @@
             "id": "update-label",
             "x": 113.046875,
             "y": 334,
-            "right": 226.6299285888672,
+            "right": 226.62994384765625,
             "bottom": 354
           },
           {
@@ -1309,7 +1311,7 @@
             "id": "next-label",
             "x": 199.02713012695312,
             "y": 305.3163757324219,
-            "right": 227.3861846923828,
+            "right": 227.38616943359375,
             "bottom": 325.3163757324219
           },
           {
@@ -1330,8 +1332,36 @@
             "id": "next-symbol",
             "x": 229.72244262695312,
             "y": 457,
-            "right": 253.1581268310547,
+            "right": 253.15814208984375,
             "bottom": 478
+          },
+          {
+            "id": "loss-axis",
+            "x": 16.58049774169922,
+            "y": 1,
+            "right": 43.939544677734375,
+            "bottom": 21
+          },
+          {
+            "id": "loss-axis-math",
+            "x": 51.939544677734375,
+            "y": 4,
+            "right": 79.41949462890625,
+            "bottom": 21
+          },
+          {
+            "id": "parameter-axis",
+            "x": 140.46142578125,
+            "y": 462,
+            "right": 195.53857421875,
+            "bottom": 482
+          },
+          {
+            "id": "parameter-symbol",
+            "x": 203.53857421875,
+            "y": 465,
+            "right": 212.53857421875,
+            "bottom": 482
           }
         ],
         "math": [
@@ -1466,7 +1496,7 @@
         }
       },
       "mode_identity": {
-        "elements": 100,
+        "elements": 102,
         "styles_equal": true,
         "max_box_error_px": 3.0517578125e-05
       },
@@ -1549,6 +1579,12 @@
         "fallback": 0
       },
       "geometry": {
+        "axisAlignment": {
+          "yCenterError": 3.814697265625e-06,
+          "yGap": 8,
+          "xCenterError": 0,
+          "xGap": 8
+        },
         "outside": [],
         "overflow": [],
         "clipped": [],
@@ -1556,34 +1592,6 @@
         "collisions": [],
         "dataCollisions": [],
         "ink": [
-          {
-            "id": "loss-axis",
-            "x": 48,
-            "y": 2,
-            "right": 75.35905456542969,
-            "bottom": 22
-          },
-          {
-            "id": "loss-axis-math",
-            "x": 91,
-            "y": 5,
-            "right": 118.47994995117188,
-            "bottom": 22
-          },
-          {
-            "id": "parameter-axis",
-            "x": 48,
-            "y": 462,
-            "right": 103.07716369628906,
-            "bottom": 482
-          },
-          {
-            "id": "parameter-symbol",
-            "x": 127,
-            "y": 465,
-            "right": 136,
-            "bottom": 482
-          },
           {
             "id": "tangent-label",
             "x": 177.30331420898438,
@@ -1595,7 +1603,7 @@
             "id": "update-label",
             "x": 113.046875,
             "y": 334,
-            "right": 226.6299285888672,
+            "right": 226.62994384765625,
             "bottom": 354
           },
           {
@@ -1609,7 +1617,7 @@
             "id": "next-label",
             "x": 199.02713012695312,
             "y": 305.3163757324219,
-            "right": 227.3861846923828,
+            "right": 227.38616943359375,
             "bottom": 325.3163757324219
           },
           {
@@ -1630,8 +1638,36 @@
             "id": "next-symbol",
             "x": 229.72244262695312,
             "y": 457,
-            "right": 253.1581268310547,
+            "right": 253.15814208984375,
             "bottom": 478
+          },
+          {
+            "id": "loss-axis",
+            "x": 16.58049774169922,
+            "y": 1,
+            "right": 43.939544677734375,
+            "bottom": 21
+          },
+          {
+            "id": "loss-axis-math",
+            "x": 51.939544677734375,
+            "y": 4,
+            "right": 79.41949462890625,
+            "bottom": 21
+          },
+          {
+            "id": "parameter-axis",
+            "x": 140.46142578125,
+            "y": 462,
+            "right": 195.53857421875,
+            "bottom": 482
+          },
+          {
+            "id": "parameter-symbol",
+            "x": 203.53857421875,
+            "y": 465,
+            "right": 212.53857421875,
+            "bottom": 482
           }
         ],
         "math": [
@@ -1766,7 +1802,7 @@
         }
       },
       "mode_identity": {
-        "elements": 100,
+        "elements": 102,
         "styles_equal": true,
         "max_box_error_px": 3.0517578125e-05
       },
@@ -1849,6 +1885,12 @@
         "fallback": 0
       },
       "geometry": {
+        "axisAlignment": {
+          "yCenterError": 3.814697265625e-06,
+          "yGap": 8,
+          "xCenterError": 0,
+          "xGap": 8
+        },
         "outside": [],
         "overflow": [],
         "clipped": [],
@@ -1856,34 +1898,6 @@
         "collisions": [],
         "dataCollisions": [],
         "ink": [
-          {
-            "id": "loss-axis",
-            "x": 48,
-            "y": 2,
-            "right": 75.35905456542969,
-            "bottom": 22
-          },
-          {
-            "id": "loss-axis-math",
-            "x": 91,
-            "y": 5,
-            "right": 118.47994995117188,
-            "bottom": 22
-          },
-          {
-            "id": "parameter-axis",
-            "x": 48,
-            "y": 462,
-            "right": 103.07716369628906,
-            "bottom": 482
-          },
-          {
-            "id": "parameter-symbol",
-            "x": 127,
-            "y": 465,
-            "right": 136,
-            "bottom": 482
-          },
           {
             "id": "tangent-label",
             "x": 177.30331420898438,
@@ -1895,7 +1909,7 @@
             "id": "update-label",
             "x": 113.046875,
             "y": 334,
-            "right": 226.6299285888672,
+            "right": 226.62994384765625,
             "bottom": 354
           },
           {
@@ -1909,7 +1923,7 @@
             "id": "next-label",
             "x": 199.02713012695312,
             "y": 305.3163757324219,
-            "right": 227.3861846923828,
+            "right": 227.38616943359375,
             "bottom": 325.3163757324219
           },
           {
@@ -1930,8 +1944,36 @@
             "id": "next-symbol",
             "x": 229.72244262695312,
             "y": 457,
-            "right": 253.1581268310547,
+            "right": 253.15814208984375,
             "bottom": 478
+          },
+          {
+            "id": "loss-axis",
+            "x": 16.58049774169922,
+            "y": 1,
+            "right": 43.939544677734375,
+            "bottom": 21
+          },
+          {
+            "id": "loss-axis-math",
+            "x": 51.939544677734375,
+            "y": 4,
+            "right": 79.41949462890625,
+            "bottom": 21
+          },
+          {
+            "id": "parameter-axis",
+            "x": 140.46142578125,
+            "y": 462,
+            "right": 195.53857421875,
+            "bottom": 482
+          },
+          {
+            "id": "parameter-symbol",
+            "x": 203.53857421875,
+            "y": 465,
+            "right": 212.53857421875,
+            "bottom": 482
           }
         ],
         "math": [
@@ -2066,7 +2108,7 @@
         }
       },
       "mode_identity": {
-        "elements": 100,
+        "elements": 102,
         "styles_equal": true,
         "max_box_error_px": 3.0517578125e-05
       },
@@ -2149,6 +2191,12 @@
         "fallback": 0
       },
       "geometry": {
+        "axisAlignment": {
+          "yCenterError": 3.814697265625e-06,
+          "yGap": 8,
+          "xCenterError": 0,
+          "xGap": 8
+        },
         "outside": [],
         "overflow": [],
         "clipped": [],
@@ -2156,34 +2204,6 @@
         "collisions": [],
         "dataCollisions": [],
         "ink": [
-          {
-            "id": "loss-axis",
-            "x": 48,
-            "y": 2,
-            "right": 75.35905456542969,
-            "bottom": 22
-          },
-          {
-            "id": "loss-axis-math",
-            "x": 91,
-            "y": 5,
-            "right": 118.47994995117188,
-            "bottom": 22
-          },
-          {
-            "id": "parameter-axis",
-            "x": 48,
-            "y": 462,
-            "right": 103.07716369628906,
-            "bottom": 482
-          },
-          {
-            "id": "parameter-symbol",
-            "x": 127,
-            "y": 465,
-            "right": 136,
-            "bottom": 482
-          },
           {
             "id": "tangent-label",
             "x": 177.30331420898438,
@@ -2195,7 +2215,7 @@
             "id": "update-label",
             "x": 113.046875,
             "y": 334,
-            "right": 226.6299285888672,
+            "right": 226.62994384765625,
             "bottom": 354
           },
           {
@@ -2209,7 +2229,7 @@
             "id": "next-label",
             "x": 199.02713012695312,
             "y": 305.3163757324219,
-            "right": 227.3861846923828,
+            "right": 227.38616943359375,
             "bottom": 325.3163757324219
           },
           {
@@ -2230,8 +2250,36 @@
             "id": "next-symbol",
             "x": 229.72244262695312,
             "y": 457,
-            "right": 253.1581268310547,
+            "right": 253.15814208984375,
             "bottom": 478
+          },
+          {
+            "id": "loss-axis",
+            "x": 16.58049774169922,
+            "y": 1,
+            "right": 43.939544677734375,
+            "bottom": 21
+          },
+          {
+            "id": "loss-axis-math",
+            "x": 51.939544677734375,
+            "y": 4,
+            "right": 79.41949462890625,
+            "bottom": 21
+          },
+          {
+            "id": "parameter-axis",
+            "x": 140.46142578125,
+            "y": 462,
+            "right": 195.53857421875,
+            "bottom": 482
+          },
+          {
+            "id": "parameter-symbol",
+            "x": 203.53857421875,
+            "y": 465,
+            "right": 212.53857421875,
+            "bottom": 482
           }
         ],
         "math": [
@@ -2366,7 +2414,7 @@
         }
       },
       "mode_identity": {
-        "elements": 100,
+        "elements": 102,
         "styles_equal": true,
         "max_box_error_px": 3.0517578125e-05
       },
@@ -2411,30 +2459,33 @@
     "single_page_boundary": true,
     "script_failure_message": true
   },
-  "canonical_and_common_rules_unchanged": true,
+  "canonical_sources_unchanged": true,
+  "new_shared_axis_module": "templates/html/graph-annotations.js",
+  "intentional_common_rule_change": "FIGURE_PRODUCTION_STANDARD: user-requested axis-title alignment; other pinned common rules unchanged",
   "source_sha256": {
     "examples/gradient-descent/viewer.js": "3ac80b1ecaad631929c6bab5967203980df85c81bd1f1ebc3bddd1cc01795c1f",
     "examples/gradient-descent/gradient-descent.css": "65e56c3ad2699d49ce8556ae43625994908826b2125ba199b7b1394f483e00dc",
-    "examples/gradient-descent/content.html": "1abd01c315d06ba24b3b8ce805ad80c8d02fbc5d3d28d5a61d6f7262d16b7e31",
+    "examples/gradient-descent/content.html": "1e0bad7b1b999f0846438109a6811b287ce9b7577cc49fd350c12ff3464629b1",
     "examples/gradient-descent/scroll.html": "9713427e58072186778fd6f370cf55935d1a4cf7ffda09b7a020a158a091de24",
     "examples/gradient-descent/slides.html": "209f3193df4284200353aaa4c40e227d65cb04f6354a5b7254acbff1cfcde593",
-    "examples/gradient-descent/gradient-descent.js": "c59d7cc4525ef7e9c2bbb3310caabd804dc4e9b2a6816811198cea32b278b15f",
+    "examples/gradient-descent/gradient-descent.js": "2afc4544aa42c7ece8a076fe9df21a8aee37f225fc3e386446becfe8fa68713f",
     "examples/gradient-descent/viewer.css": "8a435498fed6a04df20ec0b38089828622a320822c1b162660ef85e3240385d1",
-    "scripts/verify_gradient_descent.py": "bf69073bf09f37b486b27a398987ddf2f1c7bf9d862b10238ef2174f20a09649",
+    "scripts/verify_gradient_descent.py": "db8f5cc70b91424dca7f5fb34d901149094548b333a4c5d06667ba8fd8ce7be7",
     "templates/html/styles.css": "3c05e00284aae4ea538e697efae7682a2c9b35b318cab372fa8493613de4df22",
     "templates/html/reference-layout.css": "c29f52fd9852d80b29e277b7d60218a7b02da599a059a8395051caada3525bcc",
     "templates/html/math-typography.css": "c390ffe17b8c0f02d10a34b99bca892bb63f99af98766e7b47c0a88da38e2f3a",
-    "scripts/reference_validation.py": "8360e648f0a6aaa7a1b3bf56a9824de18cb48cefbd8e79a87f494633af25780e"
+    "scripts/reference_validation.py": "8360e648f0a6aaa7a1b3bf56a9824de18cb48cefbd8e79a87f494633af25780e",
+    "templates/html/graph-annotations.js": "e220346f8f73670e23d0a32610e53c60e08632123bf298b2e18e454adcc589fc"
   },
   "font_sha256": {
     "templates/html/assets/fonts/pretendard/PretendardVariable.woff2": "9599f12fd42fc0bce1cd50b47a0c022e108d7aa64dd0d1bb0ed44f3282d900b4",
     "templates/html/assets/fonts/stix-two-math/STIXTwoMath-Regular.woff2": "d18b6ab10cd6670ec5d4067f3ad2678a156b6b6642d9a0985243a1da729e6a95"
   },
-  "design_sha256": "ae57ae6903da79b2e018c4e0ee8ad50e0636bb57f3f970001fe112030fc30835",
+  "design_sha256": "27f49744f111e67d84d4a12a8ffb1ae9d73517540daae89361d67b4b32f0fa57",
   "preview_sha256": {
-    "scroll.png": "96873d99b19b6e00a6696b93d4364722d060045911079aff949b87b821dd65af",
-    "slide.png": "defdac61688075cb965614d4454824860b5999bafa090396f70ecbff3e534b7e"
+    "scroll.png": "f377faa88b466ec20cab00bd2b562e1f3a885e852b0fbf37cb34b71b6939b1a4",
+    "slide.png": "7ed5882a4a13dca526c14626391a8d2a8d90cc35b4e53b821f1efde1edb5aff7"
   },
   "status": "passed",
-  "created_utc": "2026-10-26T02:23:07.907108+00:00"
+  "created_utc": "2026-10-26T03:18:02.247232+00:00"
 }

@@ -108,7 +108,17 @@ centerX(x축 이름) = (가로축 시작 X + 가로축 끝 X) / 2
 top(x축 이름의 글자 경계) = 가로축 Y + 8
 ```
 
-공통 opt-in 구현은 [graph-annotations.js](../templates/html/graph-annotations.js)의 `packInline`/`alignAxes`다. 각 페이지는 먼저 실제 폰트 로딩을 기다린다. 검증은 구현이 계산한 위치를 기대값으로 복사하지 않고, Chromium의 `getBoundingClientRect()`를 SVG 설계 좌표로 환산해 위 관계를 독립 대조한다. 기본 허용 오차는0.1 설계px이며 실제 서체/−1pt·클리핑/충돌 검사와 함께 사용한다.
+공통 opt-in 구현은 [graph-annotations.js](../templates/html/graph-annotations.js)의 `packInline`/`alignAxes`다. 각 페이지는 먼저 실제 폰트 로딩을 기다린다. 호출의 `left/right/top/bottom`은 `viewBox`의 경계가 아닌 실제 축 끝점이다.
+
+```js
+await document.fonts.ready;
+GraphAnnotations.alignAxes({
+  svg, yLabel, xLabel,
+  left: axisStartX, right: axisEndX, top: yAxisTipY, bottom: xAxisY
+});
+```
+
+ 검증은 구현이 계산한 위치를 기대값으로 복사하지 않고, Chromium의 `getBoundingClientRect()`를 SVG 설계 좌표로 환산해 위 관계를 독립 대조한다. 기본 허용 오차는0.1 설계px이며 실제 서체/−1pt·클리핑/충돌 검사와 함께 사용한다.
 
 ## 7. SVG 화살표와 Bounding Box 계산
 

@@ -98,3 +98,12 @@ CI에는 이 사례의 검증 명령과 프리뷰/화면 artifact 경로를 추�
 
 
 사용자개정최종검증: 소스233d80c, [두자료전용실행](https://github.com/sh0427-han/design-template-library/actions/runs/40258756285)과[전체회귀](https://github.com/sh0427-han/design-template-library/actions/runs/40258756289) 모두success. 실제폰트/수학/기하/두모드8화면/실패안내통과. 모든SVG글자와곡선/상태점/현재·다음투영선의충돌검사8화면0건. 독립Reviewer가새실제대표PNG와8화면contact를직접열어확인했고[개정3차](../overfitting-generalization/review/revision-3.md)에서미해결결함0으로통과했다. 갱신설명은최종x225/end/y350, '다음'은점의왼쪽으로옮겨데이터와투영선을가리지않는다. 새비율의한계/중간지적·수정은DESIGN및과적합사례의개정기록에남겼다. 공통MD규칙을추가보완하지않았고최초D0/D1기록을소급변경하지않는다.
+
+
+## 2차 사용자 개정 · 공통 축 이름 규칙 적용 결과
+
+사용자가 축 이름을 일관된 위치에 놓도록 요청해 Figure표준§6과새 opt-in graph-annotations.js를 적용했다. y축은 끝점 위, x축은 가로축 중앙 아래이며 글자 경계와 축 사이8px이다. 본문/수학 기호를 함께 묶어 정렬하고 각 글리프의 서체를 유지한다. 곡선·접선·6상태·161점·갱신 수학은 직전판과 같다.
+
+소스a219c92의 [전용 검증](https://github.com/sh0427-han/design-template-library/actions/runs/40263267197)과 [전체 회귀](https://github.com/sh0427-han/design-template-library/actions/runs/40263267233)가 모두 성공했다.8화면의 축 이름 최대 중심 오차0.000003815px, 두 축의 실제 간격8px, 글자/곡선/점/투영선 충돌0건이다. 실제폰트·−1pt·모드동일성·수학·잘림·실패 안내도 통과했다. [독립 최종 검토](../overfitting-generalization/review/second-revision-2.md)가 새 실제이미지/JSON/해시를 확인해 미해결0건으로 판정했다.
+
+기존8종은 고정 기준의 파일 목록으로 보존 검사하고, 새 공통 모듈과 Figure표준의 축 규칙 추가는 사용자 지시의 의도된 변경으로 따로 기록했다. 이전의 공통 규칙 전체 변경없음이라는 판정을 현행판에 그대로 적용하지 않는다.
