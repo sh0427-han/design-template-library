@@ -19,7 +19,7 @@ ROLES={
  'architecture':('.arch-title','.arch-phase-band span,.arch-step-roles b,.arch-operation'),
  'experiment':('.experiment-card > h2,.metric h3','.ref-k'),
  'executive-summary':('.exec-impact h2,.exec-action-panel h2,.exec-metric-head h3,.exec-action b','.ref-k'),
- 'overfitting-generalization':('.definition h2,#overfit-heading,#generalization-heading','.definition-label,.figure-label'),
+ 'overfitting-generalization':('.concept-card h2,#overfit-heading,#generalization-heading','.definition-label'),
 }
 CARD_PAIRS={
  'concept':[('.concept-panel','.card-label','h2',1)],
@@ -30,7 +30,7 @@ CARD_PAIRS={
  'architecture':[('.arch-stage','.arch-operation','.arch-title',6)],
  'experiment':[('.experiment-card','.ref-k','h2',2)],
  'executive-summary':[('.exec-impact,.exec-action-panel','.ref-k','h2',2)],
- 'overfitting-generalization':[('.definition','.definition-label','h2',2),('.curve-panel','.figure-label','.diagram-heading',2)],
+ 'overfitting-generalization':[('.concept-card','.definition-label','h2',2)],
 }
 COLORS={'title':'rgb(18, 35, 63)','label':'rgb(49, 104, 200)'}
 INSPECT="""es=>es.map(e=>{const s=getComputedStyle(e),r=e.getBoundingClientRect();return {text:e.textContent.trim(),color:e instanceof SVGElement?s.fill:s.color,font:s.fontFamily,size:s.fontSize,weight:s.fontWeight,lineHeight:s.lineHeight,spacing:s.letterSpacing,visible:r.width>0&&r.height>0}})"""

@@ -8,13 +8,10 @@
 <body class="source-page"><main><section class="slide reference-slide overfit-slide" aria-labelledby="lesson-title">
 <header><div class="kicker">머신러닝 기초</div><h1 id="lesson-title">과적합과 일반화</h1><p class="subtitle">학습 데이터에만 잘 맞아 새 데이터 성능이 떨어지는 과적합과, 새 데이터에서도 잘 동작하는 일반화</p></header>
 <div class="content">
-<div class="definition-grid">
-<article class="card definition" aria-labelledby="overfit-title"><p class="definition-label" lang="en">OVERFITTING</p><h2 id="overfit-title">과적합</h2><p class="meaning">학습 데이터의 특성·잡음에 <b>지나치게 맞춰</b> <b>새 데이터에서 성능이 저하</b>되는 현상</p></article>
-<article class="card definition" aria-labelledby="general-title"><p class="definition-label" lang="en">GENERALIZATION</p><h2 id="general-title">일반화</h2><p class="meaning">학습에 쓰지 않은 <b>새 데이터에서도 잘 동작</b>하는 능력</p></article>
-</div>
-<section class="loss-panel" aria-label="과적합의 손실 곡선과 일반화의 새 이미지 예측 비교">
+<section class="comparison-grid loss-panel" aria-label="과적합과 일반화 비교">
+<article class="card concept-card" aria-labelledby="overfit-title"><header class="concept-heading"><p class="definition-label" lang="en">OVERFITTING</p><h2 id="overfit-title">과적합</h2><p class="meaning">학습 데이터의 특성·잡음에 <b>지나치게 맞춰</b> <b>새 데이터에서 성능이 저하</b>되는 현상</p></header>
 <figure class="curve-panel" aria-labelledby="overfit-heading">
-<div class="plot-header"><div class="figure-heading"><p class="figure-label">LOSS CURVE</p><h3 class="diagram-heading" id="overfit-heading">검증 손실 최소에서 모델 선택</h3></div><div class="legend"><span><i class="training-key"></i>학습</span><span><i class="validation-key"></i>검증(학습 미사용)</span></div></div>
+<div class="plot-header"><h3 class="diagram-heading" id="overfit-heading">검증 손실 최소에서 모델 선택</h3><div class="legend"><span><i class="training-key"></i>학습</span><span><i class="validation-key"></i>검증(학습 미사용)</span></div></div>
 <svg id="overfit-chart" class="loss-chart" viewBox="0 0 380 320" role="img" aria-labelledby="overfit-chart-title overfit-chart-desc"><title id="overfit-chart-title">검증 손실 최소에서 모델 선택</title><desc id="overfit-chart-desc">같은 기준의 학습 손실과 검증 손실을 비교하는 개념도. 실제 측정 결과가 아님.</desc>
 <text class="loss-definition" x="190" y="22" text-anchor="middle">손실(Loss) · 예측 오차의 크기</text>
 <rect id="overfit-region" class="overfit-region" y="58" height="208" hidden/>
@@ -24,8 +21,11 @@
 <g class="curve-artwork"><path id="overfit-training-line" class="training-line"/><path id="overfit-validation-line" class="validation-line"/></g>
 <g id="best-selection" class="selection-artwork" hidden><circle id="best-point" r="5"/><text id="best-label" class="best-label" y="315" text-anchor="middle">best.pt</text></g>
 <g id="overfit-annotation" class="overfit-artwork" hidden><path id="overfit-direction" class="overfit-direction"/><text class="overfit-label" x="245" y="85" text-anchor="middle">과적합 진행</text><text class="overfit-description" x="245" y="108" text-anchor="middle">검증 ↑ · 학습 ↓</text></g></svg>
-</figure><figure class="curve-panel generalization-panel" aria-labelledby="generalization-heading">
-<div class="figure-heading"><p class="figure-label">IMAGE PREDICTION</p><h3 class="diagram-heading" id="generalization-heading">학습한 특징을 새 이미지에도 적용</h3></div>
+</figure>
+</article>
+<article class="card concept-card" aria-labelledby="general-title"><header class="concept-heading"><p class="definition-label" lang="en">GENERALIZATION</p><h2 id="general-title">일반화</h2><p class="meaning">학습에 쓰지 않은 <b>새 데이터에서도 잘 동작</b>하는 능력</p></header>
+<figure class="curve-panel generalization-panel" aria-labelledby="generalization-heading">
+<div class="plot-header"><h3 class="diagram-heading" id="generalization-heading">학습한 특징을 새 이미지에도 적용</h3></div>
 <svg id="generalization-diagram" viewBox="0 0 580 320" role="img" aria-labelledby="generalization-diagram-title generalization-diagram-desc"><title id="generalization-diagram-title">학습 이미지에서 새 이미지 예측으로</title><desc id="generalization-diagram-desc">학습에 쓴 세 이미지와 정답으로 모델을 학습한 뒤, 학습에 쓰지 않은 별개의 이미지 A와 B도 같은 모델이 사과와 토마토로 예측하는 개념도. 실제 모델을 학습하거나 추론한 결과는 아님.</desc>
 <text class="diagram-section" x="18" y="24">학습에 쓴 이미지</text>
 <g id="training-images">
@@ -45,6 +45,7 @@
 <text class="diagram-label" x="501" y="207" text-anchor="middle">예측</text>
 <g id="predictions"><g data-prediction-for="new-A" data-predicted-class="사과"><text class="image-id" x="464" y="237">A</text><text class="prediction-label" x="495" y="237">사과</text></g><g data-prediction-for="new-B" data-predicted-class="토마토"><text class="image-id" x="464" y="274">B</text><text class="prediction-label" x="495" y="274">토마토</text></g></g>
 </svg></figure>
+</article>
 <p id="chart-status" role="status">곡선을 불러오는 중</p></section>
 <div class="ref-takeaway"><strong>핵심</strong><span>낮은 학습 손실만으로 새 데이터의 오차가 작다고 보장할 수 없음</span></div>
 </div><footer class="footer"><span>머신러닝 기초 · 과적합과 일반화</span><span>01 / 01</span></footer>

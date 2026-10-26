@@ -30,7 +30,7 @@ const box=e=>{const r=e.getBoundingClientRect();return {x:r.x,y:r.y,right:r.righ
 const visible=[...s.querySelectorAll('*')].filter(e=>e.getBoundingClientRect().width&&e.getBoundingClientRect().height&&!e.matches('title,desc'));
 const sb=box(s),fb=box(footer);
 const outside=visible.filter(e=>{const b=box(e);return b.x<sb.x-1||b.right>sb.right+1||b.y<sb.y-1||b.bottom>sb.bottom+1}).map(e=>e.id||e.className.baseVal||e.className||e.tagName);
-const containers=[...s.querySelectorAll('.definition,.curve-panel')];
+const containers=[...s.querySelectorAll('.concept-card')];
 const padding=containers.map(e=>{const b=box(e),st=getComputedStyle(e);const inner={x:b.x+parseFloat(st.paddingLeft)+1,y:b.y+parseFloat(st.paddingTop)+1,right:b.right-parseFloat(st.paddingRight)-1,bottom:b.bottom-parseFloat(st.paddingBottom)-1};
 const escaped=[...e.querySelectorAll('*')].filter(c=>!c.matches('title,desc')&&c.getBoundingClientRect().width&&c.getBoundingClientRect().height).filter(c=>{const r=box(c);return r.x<inner.x-1||r.right>inner.right+1||r.y<inner.y-1||r.bottom>inner.bottom+1}).map(c=>c.id||c.className.baseVal||c.className||c.tagName);return {name:e.className,inner,escaped}});
 const text=visible.filter(e=>[...e.childNodes].some(n=>n.nodeType===3&&n.textContent.trim()));const clipped=[];
@@ -41,13 +41,14 @@ for(const svg of s.querySelectorAll('svg')){
  labels.push(...group);labelOutside.push(...group.filter(e=>e.bbox.x<0||e.bbox.y<0||e.bbox.x+e.bbox.width>vb.width||e.bbox.y+e.bbox.height>vb.height));
  for(let i=0;i<group.length;i++)for(let j=i+1;j<group.length;j++){const a=group[i].bbox,b=group[j].bbox;if(a.x<b.x+b.width&&a.x+a.width>b.x&&a.y<b.y+b.height&&a.y+a.height>b.y)collisions.push([svg.id,group[i].text,group[j].text]);}
 }
-const d=[...s.querySelectorAll('.definition')];const alignment=['h2','.meaning'].map(sel=>{const a=box(d[0].querySelector(sel)),b=box(d[1].querySelector(sel));return {selector:sel,yError:Math.abs(a.y-box(d[0]).y-b.y+box(d[1]).y),heightError:Math.abs(a.height-b.height)}});
+const d=[...s.querySelectorAll('.concept-card')];const alignment=['h2','.meaning'].map(sel=>{const a=box(d[0].querySelector(sel)),b=box(d[1].querySelector(sel));return {selector:sel,yError:Math.abs(a.y-box(d[0]).y-b.y+box(d[1]).y),heightError:Math.abs(a.height-b.height)}});
+const cardLayout=d.map(card=>{const label=box(card.querySelector('.definition-label')),title=box(card.querySelector('h2')),st=getComputedStyle(card),svg=box(card.querySelector('svg')),figure=card.querySelector('figure'),fs=getComputedStyle(figure);return {labelTitleGap:title.y-label.bottom,labelTitleXError:Math.abs(label.x-title.x),graphLeftError:Math.abs(svg.x-box(card).x-parseFloat(st.paddingLeft)-parseFloat(st.borderLeftWidth)),figureBorder:parseFloat(fs.borderTopWidth),figureBackground:fs.backgroundColor,sameCard:card.contains(figure)}});
 const last=box(s.querySelector('.ref-takeaway'));
 const charts=[...s.querySelectorAll('.loss-chart')].map(box);
 const general=s.querySelector('#general-title').nextElementSibling;const gr=document.createRange();gr.selectNodeContents(general);const generalLineYs=[];for(const r of gr.getClientRects())if(r.width&&!generalLineYs.some(y=>Math.abs(y-r.y)<2))generalLineYs.push(r.y);const graph=s.querySelector('#overfit-chart'),sg=box(graph);const norm=e=>{const r=box(e);return {cx:r.x+r.width/2-sg.x,cy:r.y+r.height/2-sg.y,right:r.right-sg.x,top:r.y-sg.y,bottom:r.bottom-sg.y}};const yAxis=norm(s.querySelector('#overfit-y-title')),xAxis=norm(s.querySelector('#overfit-x-title'));
 const axisAlignment={yCenterError:Math.abs(yAxis.cy-162),yGap:46-yAxis.right,xCenterError:Math.abs(xAxis.cx-202),xGap:xAxis.top-266,yRotation:s.querySelector('#overfit-y-title').getAttribute('transform')};
 const over=s.querySelector('#overfit-title').nextElementSibling,or=document.createRange();or.selectNodeContents(over);const overLineYs=[];for(const r of or.getClientRects())if(r.width&&!overLineYs.some(y=>Math.abs(y-r.y)<2))overLineYs.push(r.y);
-return {axisAlignment,overfittingLines:overLineYs.length,generalizationLines:generalLineYs.length,subtitle:s.querySelector('.subtitle').textContent,lossDefinitionInGraph:!!s.querySelector('.curve-panel .loss-definition'),charts,removedSubjects:s.querySelectorAll('.subject').length,removedGrid:s.querySelectorAll('.grid-lines').length,slide:sb,footer:fb,content:box(s.querySelector('.content')),outside,padding,clipped,labels,labelOutside,collisions,alignment,footerGap:fb.y-last.bottom,figureCaptionGap:last.y-box(s.querySelector('.loss-panel')).bottom,title:s.querySelector('h1').textContent};
+return {cardLayout,cardCount:d.length,oldSplitCards:s.querySelectorAll('.definition-grid,.definition').length,axisAlignment,overfittingLines:overLineYs.length,generalizationLines:generalLineYs.length,subtitle:s.querySelector('.subtitle').textContent,lossDefinitionInGraph:!!s.querySelector('.curve-panel .loss-definition'),charts,removedSubjects:s.querySelectorAll('.subject').length,removedGrid:s.querySelectorAll('.grid-lines').length,slide:sb,footer:fb,content:box(s.querySelector('.content')),outside,padding,clipped,labels,labelOutside,collisions,alignment,footerGap:fb.y-last.bottom,figureCaptionGap:last.y-box(s.querySelector('.loss-panel')).bottom,title:s.querySelector('h1').textContent};
 }'''
 
 def fonts(page,frame,selector):
@@ -126,7 +127,7 @@ def selection(frame,data):
 STYLE="""e=>{const s=getComputedStyle(e);return Object.fromEntries(['fontFamily','fontSize','fontWeight','lineHeight','letterSpacing','color'].map(k=>[k,s[k]]))}"""
 
 def typography(frame,reference):
-    headings=frame.locator('.definition h2');paragraphs=frame.locator('.definition .meaning')
+    headings=frame.locator('.concept-card h2');paragraphs=frame.locator('.concept-card .meaning')
     for i in range(2):
         assert headings.nth(i).evaluate(STYLE)==reference['heading']
         assert paragraphs.nth(i).evaluate(STYLE)==reference['description']
@@ -201,6 +202,8 @@ def main():
                     assert all(not v['escaped'] for v in geometry['padding']),(mode,width,geometry['padding'])
                     assert all(v['yError']<.1 and v['heightError']<.1 for v in geometry['alignment'])
                     assert geometry['removedSubjects']==0 and geometry['removedGrid']==0
+                    assert geometry['cardCount']==2 and geometry['oldSplitCards']==0
+                    assert all(c['sameCard'] and c['labelTitleGap']>=7.5 and c['labelTitleXError']<.1 and c['graphLeftError']<.1 and c['figureBorder']==0 and c['figureBackground']=='rgba(0, 0, 0, 0)' for c in geometry['cardLayout']),geometry['cardLayout']
                     assert len(geometry['charts'])==1 and all(abs(c['width']-380)<.1 and abs(c['height']-320)<.1 for c in geometry['charts'])
                     assert geometry['overfittingLines']==1 and geometry['generalizationLines']==1 and geometry['lossDefinitionInGraph']
                     assert '손실' not in geometry['subtitle'] and '검증 데이터' not in geometry['subtitle']

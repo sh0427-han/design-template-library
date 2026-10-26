@@ -2,22 +2,21 @@
 .source-page {width:1440px;height:810px;min-height:0;background:transparent;}
 .overfit-slide {zoom:1;overflow:visible;padding:26px 66px 24px;}
 .overfit-slide .content {display:flex;flex-direction:column;margin-top:13px;}
-.overfit-slide .definition-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;height:129px;flex:none;}
-.overfit-slide .definition {padding:17px 26px;display:grid;grid-template-rows:20px 34px 22px;row-gap:var(--gap-related);min-width:0;}
-.overfit-slide .definition-label,.overfit-slide .figure-label {margin:0;font-size:16px;line-height:20px;font-weight:800;color:var(--blue);}
-.overfit-slide .definition h2 {margin:0;font-size:29px;line-height:34px;color:var(--navy);}
+.overfit-slide .comparison-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;height:521px;flex:none;position:relative;}
+.overfit-slide .concept-card {padding:18px 26px;display:flex;flex-direction:column;min-width:0;min-height:0;}
+.overfit-slide .concept-heading {display:grid;grid-template-rows:20px 34px 22px;row-gap:var(--gap-related);min-width:0;}
+.overfit-slide .definition-label {margin:0;font-size:16px;line-height:20px;font-weight:800;color:var(--blue);}
+.overfit-slide .concept-heading h2 {margin:0;font-size:29px;line-height:34px;color:var(--navy);}
 .overfit-slide .meaning {font-size:19px;line-height:22px;margin:0;color:var(--muted);}
 .overfit-slide .meaning b {color:var(--deep);font-weight:700;}
-.overfit-slide .loss-panel {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin:16px 0 0;height:376px;flex:none;position:relative;}
-.overfit-slide .curve-panel {margin:0;padding:12px 26px;border:1px solid var(--border);border-radius:17px;background:var(--white);min-width:0;}
-.overfit-slide .plot-header {display:flex;align-items:center;justify-content:space-between;gap:16px;height:22px;}
+.overfit-slide .curve-panel {margin:16px 0 0;padding:0;border:0;border-radius:0;background:transparent;min-width:0;flex:none;}
+.overfit-slide .plot-header {display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;height:44px;}
 .overfit-slide .loss-definition {margin:0;font-size:17px;line-height:22px;color:var(--deep);fill:var(--deep);}
-.overfit-slide .figure-heading {display:flex;align-items:center;gap:var(--gap-related);height:22px;}
 .overfit-slide .legend {display:flex;gap:16px;font-size:17px;line-height:22px;color:var(--deep);}
 .overfit-slide .legend span {display:flex;align-items:center;gap:8px;}
 .overfit-slide .legend i {display:inline-block;width:25px;border-top:3px solid var(--blue);}
 .overfit-slide .legend .validation-key {border-color:var(--amber);border-top-style:dashed;}
-.overfit-slide .loss-chart {width:380px;height:320px;display:block;margin:8px auto 0;overflow:visible;}
+.overfit-slide .loss-chart {width:380px;height:320px;display:block;margin:8px 0 0;overflow:visible;}
 .overfit-slide .axis {fill:none;stroke:var(--muted);stroke-width:1.2;}
 .overfit-slide .axis-title {font-size:17px;fill:var(--deep);}
 .overfit-slide .case-heading {font-size:19px;font-weight:750;fill:var(--navy);}
@@ -35,11 +34,11 @@
 .overfit-slide .selection-artwork[hidden],.overfit-slide .overfit-artwork[hidden],.overfit-slide .overfit-region[hidden],.overfit-slide .best-guide[hidden] {display:none;}
 .overfit-slide .ref-takeaway {flex:none;margin-top:14px;}
 .overfit-slide .footer {margin-top:auto;}
-.overfit-slide #chart-status {position:absolute;left:24px;top:80px;background:var(--white);padding:8px;font-size:17px;line-height:24px;color:var(--muted);margin:0;}
+.overfit-slide #chart-status {position:absolute;left:26px;top:200px;background:var(--white);padding:8px;font-size:17px;line-height:24px;color:var(--muted);margin:0;}
 .overfit-slide #chart-status[hidden] {display:none;}
 
 .overfit-slide .diagram-heading {font-size:17px;line-height:22px;margin:0;color:var(--navy);font-weight:750;}
-.overfit-slide #generalization-diagram {display:block;width:580px;height:320px;margin:8px auto 0;}
+.overfit-slide #generalization-diagram {display:block;width:580px;height:320px;margin:8px 0 0;}
 .overfit-slide .diagram-section {font-size:17px;font-weight:750;fill:var(--deep);}
 .overfit-slide .image-label,.overfit-slide .image-id,.overfit-slide .diagram-label {font-size:17px;fill:var(--muted);}
 .overfit-slide .model-label {font-size:20px;font-weight:750;fill:var(--navy);}

@@ -25,7 +25,7 @@
     },
     "examples/overfitting-generalization/lesson.css": {
       "before_sha256": "b01915959c7ea615125f9db09cfc9ea13109ce711702c59c6a781bf3fa0325ab",
-      "after_sha256": "3cec140ce68867f77fb1bb13b49ea6fecb8b829d486aa1d791c95b5cc4f55b58"
+      "after_sha256": "4b7edb9f7d8b071f5f4820aa44baeb5c7d7046ba09a168e5d39fa5a85a9869ef"
     },
     "templates/html/architecture.html": {
       "before_sha256": "0b40aa7f35960458292b8fd691a0ffcac83e8646993dda516b85e809efac28e1",
@@ -37,7 +37,7 @@
     },
     "examples/overfitting-generalization/content.html": {
       "before_sha256": "44c7f22b1683213b219bdc4349c015095136ab5618bc8b172236f02d3f51971b",
-      "after_sha256": "ffdf81851b117f9b1a1c49beec305ac578fc27b36caeb36dd80ac0073d0410b5"
+      "after_sha256": "3fcd5133015211088c8f4ea6d3a6421e91793cf601f29329ffcecb5d94c89687"
     }
   },
   "role_notes": {
@@ -54,6 +54,15 @@
     "figures": "LOSS CURVE / IMAGE PREDICTION labels and navy titles in existing header rows; graph coordinates unchanged",
     "card_height": 129,
     "definition_padding": "17px 26px",
+    "markdown": "pending user review"
+  },
+  "active_followup": {
+    "baseline": "5385296ca3f933221cfd7270493bc70936548245",
+    "scope": "only overfitting layout and its validation",
+    "approved_concept_preserved": true,
+    "cards": "one continuous card for overfitting; one for generalization; no inner figure card borders",
+    "heading": "blue label above navy title, never inline",
+    "graph": "left aligned within card padding; unchanged 380x320 SVG and data/axis coordinates",
     "markdown": "pending user review"
   }
 }
