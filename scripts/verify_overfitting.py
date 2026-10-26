@@ -46,7 +46,8 @@ const last=box(s.querySelector('.ref-takeaway'));
 const charts=[...s.querySelectorAll('.loss-chart')].map(box);
 const general=s.querySelector('#general-title').nextElementSibling;const gr=document.createRange();gr.selectNodeContents(general);const generalLineYs=[];for(const r of gr.getClientRects())if(r.width&&!generalLineYs.some(y=>Math.abs(y-r.y)<2))generalLineYs.push(r.y);const graph=s.querySelector('#overfit-chart'),sg=box(graph);const norm=e=>{const r=box(e);return {cx:r.x+r.width/2-sg.x,cy:r.y+r.height/2-sg.y,right:r.right-sg.x,top:r.y-sg.y,bottom:r.bottom-sg.y}};const yAxis=norm(s.querySelector('#overfit-y-title')),xAxis=norm(s.querySelector('#overfit-x-title'));
 const axisAlignment={yCenterError:Math.abs(yAxis.cy-162),yGap:46-yAxis.right,xCenterError:Math.abs(xAxis.cx-202),xGap:xAxis.top-266,yRotation:s.querySelector('#overfit-y-title').getAttribute('transform')};
-return {axisAlignment,generalizationLines:generalLineYs.length,subtitle:s.querySelector('.subtitle').textContent,lossDefinitionInGraph:!!s.querySelector('.curve-panel .loss-definition'),charts,removedSubjects:s.querySelectorAll('.subject').length,removedGrid:s.querySelectorAll('.grid-lines').length,slide:sb,footer:fb,content:box(s.querySelector('.content')),outside,padding,clipped,labels,labelOutside,collisions,alignment,footerGap:fb.y-last.bottom,figureCaptionGap:last.y-box(s.querySelector('.loss-panel')).bottom,title:s.querySelector('h1').textContent};
+const over=s.querySelector('#overfit-title').nextElementSibling,or=document.createRange();or.selectNodeContents(over);const overLineYs=[];for(const r of or.getClientRects())if(r.width&&!overLineYs.some(y=>Math.abs(y-r.y)<2))overLineYs.push(r.y);
+return {axisAlignment,overfittingLines:overLineYs.length,generalizationLines:generalLineYs.length,subtitle:s.querySelector('.subtitle').textContent,lossDefinitionInGraph:!!s.querySelector('.curve-panel .loss-definition'),charts,removedSubjects:s.querySelectorAll('.subject').length,removedGrid:s.querySelectorAll('.grid-lines').length,slide:sb,footer:fb,content:box(s.querySelector('.content')),outside,padding,clipped,labels,labelOutside,collisions,alignment,footerGap:fb.y-last.bottom,figureCaptionGap:last.y-box(s.querySelector('.loss-panel')).bottom,title:s.querySelector('h1').textContent};
 }'''
 
 def fonts(page,frame,selector):
@@ -95,16 +96,25 @@ def selection(frame,data):
         }
       }
       const p=q('best-point'),r=q('overfit-region');
-      return {index:Number(svg.dataset.bestIndex),point:[+p.getAttribute('cx'),+p.getAttribute('cy')],selectionVisible:!q('best-selection').hasAttribute('hidden'),regionVisible:!r.hasAttribute('hidden'),annotationVisible:!q('overfit-annotation').hasAttribute('hidden'),region:[+r.getAttribute('x'),+r.getAttribute('width'),+r.getAttribute('y'),+r.getAttribute('height')],guide:q('best-guide').getAttribute('d'),label:q('best-label').textContent,criterion:q('best-description').textContent,collisions};
+      const label=q('best-label'),lb=b(label);
+      return {index:Number(svg.dataset.bestIndex),point:[+p.getAttribute('cx'),+p.getAttribute('cy')],selectionVisible:!q('best-selection').hasAttribute('hidden'),regionVisible:!r.hasAttribute('hidden'),annotationVisible:!q('overfit-annotation').hasAttribute('hidden'),region:[+r.getAttribute('x'),+r.getAttribute('width'),+r.getAttribute('y'),+r.getAttribute('height')],guide:q('best-guide').getAttribute('d'),label:label.textContent,labelX:+label.getAttribute('x'),labelBox:lb,labelAnchor:label.getAttribute('text-anchor'),arrow:q('overfit-direction').getAttribute('d'),oldCallout:!!q('best-leader')||!!q('best-description'),collisions};
     }""")
     assert result['index']==index and result['selectionVisible']
     assert abs(result['point'][0]-expected_x)<1e-10 and abs(result['point'][1]-expected_y)<1e-10
     assert result['regionVisible']==expected_region and result['annotationVisible']==expected_region
     assert abs(result['region'][0]-expected_x)<1e-10 and abs(result['region'][1]-(358-expected_x))<1e-10
-    assert result['region'][2:]==[58,208] and 'Best model'==result['label'] and '검증 손실 최소'==result['criterion']
-    assert result['guide']==f'M{expected_x:g} 58 V266' or abs(float(re.search(r'M([^ ]+)',result['guide'])[1])-expected_x)<1e-10
+    assert result['region'][2:]==[58,208] and 'best.pt'==result['label'] and not result['oldCallout']
+    assert abs(result['labelX']-expected_x)<1e-10 and result['labelBox']['y']>=299 and result['labelBox']['bottom']<=320
+    assert result['labelAnchor']==('end' if expected_x>330 else 'middle')
+    if expected_x<=330:assert abs((result['labelBox']['x']+result['labelBox']['right'])/2-expected_x)<1, result['labelBox']
+    guide=[float(x) for x in re.findall(r'-?\d+(?:\.\d+)?',result['guide'])]
+    assert abs(guide[0]-expected_x)<1e-10 and guide[1:]==[50,296]
+    arrow=[float(x) for x in re.findall(r'-?\d+(?:\.\d+)?',result['arrow'])]
+    assert abs(arrow[0]-expected_x)<1e-10 and arrow[1:3]==[50,358]
+    if expected_x<358:assert arrow[5:7]==[358,50] and arrow[3]<358 and arrow[4]<50 and arrow[8]>50
+    else:assert arrow[3:]==[358,50,358,50,358,50]
     assert not result['collisions'],result['collisions']
-    return {'minimum_checkpoint_index':index,'minimum_validation_loss':best['validation'],'point':result['point'],'post_minimum_overfitting_region':expected_region,'selection_criterion':'validation loss among displayed checkpoints; not independent test optimum','label_curve_collisions':result['collisions']}
+    return {'minimum_checkpoint_index':index,'minimum_validation_loss':best['validation'],'point':result['point'],'post_minimum_overfitting_region':expected_region,'selection_criterion':'validation loss among displayed checkpoints; not independent test optimum','x_axis_label':result['label'],'x_axis_label_x':result['labelX'],'right_arrow_from_minimum':expected_region,'label_curve_collisions':result['collisions']}
 
 STYLE="""e=>{const s=getComputedStyle(e);return Object.fromEntries(['fontFamily','fontSize','fontWeight','lineHeight','letterSpacing','color'].map(k=>[k,s[k]]))}"""
 
@@ -185,7 +195,7 @@ def main():
                     assert all(v['yError']<.1 and v['heightError']<.1 for v in geometry['alignment'])
                     assert geometry['removedSubjects']==0 and geometry['removedGrid']==0
                     assert len(geometry['charts'])==1 and all(abs(c['width']-380)<.1 and abs(c['height']-320)<.1 for c in geometry['charts'])
-                    assert abs(geometry['generalizationLines']-1)<.01 and geometry['lossDefinitionInGraph']
+                    assert geometry['overfittingLines']==1 and geometry['generalizationLines']==1 and geometry['lossDefinitionInGraph']
                     assert '손실' not in geometry['subtitle'] and '검증 데이터' not in geometry['subtitle']
                     ax=geometry['axisAlignment'];assert ax['yCenterError']<.1 and ax['xCenterError']<.1 and abs(ax['yGap']-8)<.1 and abs(ax['xGap']-8)<.1,ax
                     assert 'rotate(-90)' in ax['yRotation']

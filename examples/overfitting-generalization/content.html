@@ -9,7 +9,7 @@
 <header><div class="kicker">머신러닝 기초</div><h1 id="lesson-title">과적합과 일반화</h1><p class="subtitle">학습 데이터에만 잘 맞아 새 데이터 성능이 떨어지는 과적합과, 새 데이터에서도 잘 동작하는 일반화</p></header>
 <div class="content">
 <div class="definition-grid">
-<article class="card definition" aria-labelledby="overfit-title"><h2 id="overfit-title">과적합 <span lang="en">Overfitting</span></h2><p class="meaning">학습 데이터의 특성·잡음에 <b>지나치게 맞춰</b><br><b>새 데이터에서 성능이 저하</b>되는 현상</p></article>
+<article class="card definition" aria-labelledby="overfit-title"><h2 id="overfit-title">과적합 <span lang="en">Overfitting</span></h2><p class="meaning">학습 데이터의 특성·잡음에 <b>지나치게 맞춰</b> <b>새 데이터에서 성능이 저하</b>되는 현상</p></article>
 <article class="card definition" aria-labelledby="general-title"><h2 id="general-title">일반화 <span lang="en">Generalization</span></h2><p class="meaning">학습에 쓰지 않은 <b>새 데이터에서도 잘 동작</b>하는 능력</p></article>
 </div>
 <section class="loss-panel" aria-label="과적합의 손실 곡선과 일반화의 새 이미지 예측 비교">
@@ -22,8 +22,8 @@
 <text id="overfit-y-title" class="axis-title" x="46" y="50">평균 손실</text><text class="math-number zero" x="35" y="272" text-anchor="end">0</text><text id="overfit-x-title" class="axis-title" x="202" y="307" text-anchor="middle">학습 진행</text><text class="direction" x="358" y="287" text-anchor="end">많아짐</text>
 <path id="best-guide" class="best-guide" hidden/>
 <g class="curve-artwork"><path id="overfit-training-line" class="training-line"/><path id="overfit-validation-line" class="validation-line"/></g>
-<g id="best-selection" class="selection-artwork" hidden><path id="best-leader" class="best-leader"/><circle id="best-point" r="5"/><text id="best-label" class="best-label" y="91" text-anchor="middle">Best model</text><text id="best-description" class="selection-description" y="113" text-anchor="middle">검증 손실 최소</text></g>
-<g id="overfit-annotation" class="overfit-artwork" hidden><text class="overfit-label" x="245" y="85" text-anchor="middle">과적합 진행</text><text class="overfit-description" x="245" y="108" text-anchor="middle">검증 ↑ · 학습 ↓</text></g></svg>
+<g id="best-selection" class="selection-artwork" hidden><circle id="best-point" r="5"/><text id="best-label" class="best-label" y="315" text-anchor="middle">best.pt</text></g>
+<g id="overfit-annotation" class="overfit-artwork" hidden><path id="overfit-direction" class="overfit-direction"/><text class="overfit-label" x="245" y="85" text-anchor="middle">과적합 진행</text><text class="overfit-description" x="245" y="108" text-anchor="middle">검증 ↑ · 학습 ↓</text></g></svg>
 </figure><figure class="curve-panel generalization-panel" aria-labelledby="generalization-heading">
 <p class="diagram-heading" id="generalization-heading">학습한 특징을 새 이미지에도 적용</p>
 <svg id="generalization-diagram" viewBox="0 0 580 320" role="img" aria-labelledby="generalization-diagram-title generalization-diagram-desc"><title id="generalization-diagram-title">학습 이미지에서 새 이미지 예측으로</title><desc id="generalization-diagram-desc">학습에 쓴 세 이미지와 정답으로 모델을 학습한 뒤, 학습에 쓰지 않은 별개의 이미지 A와 B도 같은 모델이 사과와 토마토로 예측하는 개념도. 실제 모델을 학습하거나 추론한 결과는 아님.</desc>

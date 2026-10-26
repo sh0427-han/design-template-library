@@ -26,10 +26,9 @@
 .overfit-slide .validation-line {stroke:var(--amber);stroke-dasharray:8 6;}
 .overfit-slide .overfit-region {fill:var(--amber);fill-opacity:.08;}
 .overfit-slide .best-guide {fill:none;stroke:var(--teal);stroke-width:1;stroke-dasharray:3 4;}
-.overfit-slide .best-leader {fill:none;stroke:#157b77;stroke-width:1.2;}
 .overfit-slide #best-point {fill:#157b77;stroke:var(--white);stroke-width:2;}
-.overfit-slide .best-label {fill:#157b77;font-size:19px;font-weight:750;}
-.overfit-slide .selection-description {fill:var(--deep);font-size:15px;}
+.overfit-slide .best-label {fill:#157b77;font-size:17px;font-weight:750;}
+.overfit-slide .overfit-direction {fill:none;stroke:#8b5316;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
 .overfit-slide .overfit-label {fill:#8b5316;font-size:19px;font-weight:750;}
 .overfit-slide .overfit-description {fill:#8b5316;font-size:15px;}
 .overfit-slide .selection-artwork[hidden],.overfit-slide .overfit-artwork[hidden],.overfit-slide .overfit-region[hidden],.overfit-slide .best-guide[hidden] {display:none;}

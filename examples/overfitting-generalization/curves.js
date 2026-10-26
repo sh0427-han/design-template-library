@@ -15,14 +15,15 @@
     const q=id=>document.getElementById(id),points=data.points;
     const index=points.reduce((best,p,i)=>p.validation<points[best].validation?i:best,0);
     const best=points[index],x=46+best.progress*312,y=266-best.validation/1.2*208;
-    const labelX=Math.max(107,Math.min(310,x-48));
     q('best-point').setAttribute('cx',x);q('best-point').setAttribute('cy',y);
-    q('best-guide').setAttribute('d',`M${x} 58 V266`);
-    for(const id of ['best-label','best-description'])q(id).setAttribute('x',labelX);
-    // The label stays in the empty upper plot; the leader ends at the selected point.
-    q('best-leader').setAttribute('d',`M${labelX} 128 H${x} V${y-8}`);
+    q('best-guide').setAttribute('d',`M${x} 50 V296`);
+    const label=q('best-label');label.setAttribute('x',x);label.setAttribute('text-anchor',x>330?'end':'middle');
     const overfitting=data.interpretation==='divergence'&&index>0&&index<points.length-1&&points.slice(index+1).every((p,j)=>p.validation>points[index+j].validation&&p.training<points[index+j].training);
     q('overfit-region').setAttribute('x',x);q('overfit-region').setAttribute('width',358-x);
+    // The rightward arrow starts on the selected-checkpoint boundary, above the curves.
+    const head=Math.min(7,(358-x)/2);
+    q('overfit-direction').setAttribute('d',`M${x} 50 H358 M${358-head} ${50-head*5/7} L358 50 L${358-head} ${50+head*5/7}`);
+    for(const text of q('overfit-annotation').querySelectorAll('text'))text.setAttribute('x',(x+358)/2);
     for(const id of ['best-selection','best-guide'])q(id).removeAttribute('hidden');
     for(const id of ['overfit-region','overfit-annotation'])q(id).toggleAttribute('hidden',!overfitting);
     q('overfit-chart').dataset.bestIndex=String(index);q('overfit-chart').dataset.overfitting=String(overfitting);
@@ -53,7 +54,7 @@
     annotateSelection(data);
     document.querySelector('#overfit-heading').textContent=headings[data.interpretation];
     document.querySelector('#overfit-chart-title').textContent=headings[data.interpretation];
-    document.querySelector('#overfit-chart-desc').textContent=(data.interpretation==='divergence'?'초기 두 손실이 함께 감소한 뒤 검증 손실 최소 지점의 모델을 선택하고, 이후 학습 손실은 감소하지만 검증 손실이 상승하는 과적합 구간을 강조.':data.interpretation==='improving'?'학습 손실과 검증 손실이 함께 감소하는 경우.':'두 손실이 교차하는 경우. 격차만으로 과적합을 확정하지 않음.')+' Best model은 표시된 학습 시점들 중 검증 손실 기준 선택이며 독립 테스트 성능의 최적을 보장하지 않음. 직접 작성한 설명용 개념도이며 실측 결과가 아님.';
+    document.querySelector('#overfit-chart-desc').textContent=(data.interpretation==='divergence'?'초기 두 손실이 함께 감소한 뒤 검증 손실 최소 지점의 모델을 선택하고, 이후 학습 손실은 감소하지만 검증 손실이 상승하는 과적합 구간을 오른쪽 화살표와 함께 강조.':data.interpretation==='improving'?'학습 손실과 검증 손실이 함께 감소하는 경우.':'두 손실이 교차하는 경우. 격차만으로 과적합을 확정하지 않음.')+' x축의 best.pt는 표시된 학습 시점들 중 검증 손실이 최소인 모델 선택 시점을 뜻하며 독립 테스트 성능의 최적을 보장하지 않음. 직접 작성한 설명용 개념도이며 실측 결과가 아님.';
     window.GraphAnnotations.alignAxes({svg:document.querySelector('#overfit-chart'),yLabel:document.querySelector('#overfit-y-title'),xLabel:document.querySelector('#overfit-x-title'),left:46,right:358,top:58,bottom:266});
     document.querySelector('#chart-status').hidden=true;window.CurveExample.data=structuredClone(data);window.CurveExample.status='ready';
   }
