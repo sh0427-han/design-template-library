@@ -86,7 +86,7 @@ def selection(frame,data):
     result=frame.evaluate("""()=>{
       const q=id=>document.getElementById(id),svg=q('overfit-chart'),root=svg.getBoundingClientRect();
       const b=e=>{const r=e.getBoundingClientRect();return {x:r.x-root.x,y:r.y-root.y,right:r.right-root.x,bottom:r.bottom-root.y}};
-      const collisions=[];
+      const collisions=[],annotationCollisions=[];
       for(const text of svg.querySelectorAll('text')){
         if(!text.getBoundingClientRect().width)continue;
         const r=b(text);
@@ -94,10 +94,15 @@ def selection(frame,data):
           const length=path.getTotalLength(),n=Math.ceil(length*2);
           for(let i=0;i<=n;i++){const p=path.getPointAtLength(length*i/n);if(p.x>r.x-2&&p.x<r.right+2&&p.y>r.y-2&&p.y<r.bottom+2){collisions.push([text.id||text.textContent,path.id]);break;}}
         }
+        for(const path of [q('best-guide'),q('overfit-direction')]){
+          if(!path.getBoundingClientRect().height&&!path.getBoundingClientRect().width)continue;
+          const length=path.getTotalLength(),n=Math.ceil(length*2);
+          for(let i=0;i<=n;i++){const p=path.getPointAtLength(length*i/n);if(p.x>r.x-2&&p.x<r.right+2&&p.y>r.y-2&&p.y<r.bottom+2){annotationCollisions.push([text.id||text.textContent,path.id]);break;}}
+        }
       }
       const p=q('best-point'),r=q('overfit-region');
       const label=q('best-label'),lb=b(label);
-      return {index:Number(svg.dataset.bestIndex),point:[+p.getAttribute('cx'),+p.getAttribute('cy')],selectionVisible:!q('best-selection').hasAttribute('hidden'),regionVisible:!r.hasAttribute('hidden'),annotationVisible:!q('overfit-annotation').hasAttribute('hidden'),region:[+r.getAttribute('x'),+r.getAttribute('width'),+r.getAttribute('y'),+r.getAttribute('height')],guide:q('best-guide').getAttribute('d'),label:label.textContent,labelX:+label.getAttribute('x'),labelBox:lb,labelAnchor:label.getAttribute('text-anchor'),arrow:q('overfit-direction').getAttribute('d'),oldCallout:!!q('best-leader')||!!q('best-description'),collisions};
+      return {index:Number(svg.dataset.bestIndex),point:[+p.getAttribute('cx'),+p.getAttribute('cy')],selectionVisible:!q('best-selection').hasAttribute('hidden'),regionVisible:!r.hasAttribute('hidden'),annotationVisible:!q('overfit-annotation').hasAttribute('hidden'),region:[+r.getAttribute('x'),+r.getAttribute('width'),+r.getAttribute('y'),+r.getAttribute('height')],guide:q('best-guide').getAttribute('d'),label:label.textContent,labelX:+label.getAttribute('x'),labelBox:lb,labelAnchor:label.getAttribute('text-anchor'),arrow:q('overfit-direction').getAttribute('d'),oldCallout:!!q('best-leader')||!!q('best-description'),collisions,annotationCollisions};
     }""")
     assert result['index']==index and result['selectionVisible']
     assert abs(result['point'][0]-expected_x)<1e-10 and abs(result['point'][1]-expected_y)<1e-10
@@ -107,14 +112,16 @@ def selection(frame,data):
     assert abs(result['labelX']-expected_x)<1e-10 and result['labelBox']['y']>=299 and result['labelBox']['bottom']<=320
     assert result['labelAnchor']==('end' if expected_x>330 else 'middle')
     if expected_x<=330:assert abs((result['labelBox']['x']+result['labelBox']['right'])/2-expected_x)<1, result['labelBox']
-    guide=[float(x) for x in re.findall(r'-?\d+(?:\.\d+)?',result['guide'])]
-    assert abs(guide[0]-expected_x)<1e-10 and guide[1:]==[50,296]
+    segments=[tuple(map(float,m)) for m in re.findall(r'M([\d.]+) ([\d.]+) V([\d.]+)',result['guide'])]
+    assert segments and abs(segments[0][1]-50)<.1
+    assert all(abs(x-expected_x)<1e-10 and 50<=a<b<=296 for x,a,b in segments)
+    assert all(a[2]<b[1] for a,b in zip(segments,segments[1:]))
     arrow=[float(x) for x in re.findall(r'-?\d+(?:\.\d+)?',result['arrow'])]
     assert abs(arrow[0]-expected_x)<1e-10 and arrow[1:3]==[50,358]
     if expected_x<358:assert arrow[5:7]==[358,50] and arrow[3]<358 and arrow[4]<50 and arrow[8]>50
     else:assert arrow[3:]==[358,50,358,50,358,50]
-    assert not result['collisions'],result['collisions']
-    return {'minimum_checkpoint_index':index,'minimum_validation_loss':best['validation'],'point':result['point'],'post_minimum_overfitting_region':expected_region,'selection_criterion':'validation loss among displayed checkpoints; not independent test optimum','x_axis_label':result['label'],'x_axis_label_x':result['labelX'],'right_arrow_from_minimum':expected_region,'label_curve_collisions':result['collisions']}
+    assert not result['collisions'] and not result['annotationCollisions'],(result['collisions'],result['annotationCollisions'])
+    return {'minimum_checkpoint_index':index,'minimum_validation_loss':best['validation'],'point':result['point'],'post_minimum_overfitting_region':expected_region,'selection_criterion':'validation loss among displayed checkpoints; not independent test optimum','x_axis_label':result['label'],'x_axis_label_x':result['labelX'],'right_arrow_from_minimum':expected_region,'guide_segments':segments,'label_curve_collisions':result['collisions'],'label_annotation_collisions':result['annotationCollisions']}
 
 STYLE="""e=>{const s=getComputedStyle(e);return Object.fromEntries(['fontFamily','fontSize','fontWeight','lineHeight','letterSpacing','color'].map(k=>[k,s[k]]))}"""
 
@@ -218,13 +225,15 @@ def main():
                     print('PASS',mode,width,height,flush=True);page.close()
             page=browser.new_page(viewport={'width':1600,'height':950});page.goto(base+'slides.html',wait_until='networkidle');page.wait_for_function("document.body.dataset.ready==='true'");frame=page.locator('iframe').element_handle().content_frame()
             changes=[]
-            for kind in ('improving','crossing'):
+            for kind in ('improving','crossing','middle-minimum'):
                 changed=json.loads(json.dumps(data));changed['interpretation']=kind
+                if kind=='middle-minimum':changed['interpretation']='divergence'
                 for point in changed['points']:
-                    u=point['progress'];point['training']=.8-.5*u;point['validation']=(.95-.5*u if kind=='improving' else .4+.15*u)
+                    u=point['progress'];point['training']=.8-.5*u;point['validation']=(.95-.5*u if kind=='improving' else .25+(u-.5)**2 if kind=='middle-minimum' else .4+.15*u)
                 frame.evaluate('(d)=>window.CurveExample.render(d)',changed);coordinates(frame,changed)
-                selection(frame,changed)
-                expected='학습·검증 손실이 함께 감소' if kind=='improving' else '손실 격차만으로 판단하지 않기'
+                selected=selection(frame,changed)
+                if kind=='middle-minimum':assert selected['minimum_checkpoint_index']==20 and selected['x_axis_label_x']==202 and selected['guide_segments'][-1][2]<274
+                expected='학습·검증 손실이 함께 감소' if kind=='improving' else '검증 손실 최소에서 모델 선택' if kind=='middle-minimum' else '손실 격차만으로 판단하지 않기'
                 assert expected in frame.locator('#overfit-heading').text_content()
                 g=frame.evaluate(GEOMETRY)
                 assert not any(g[k] for k in ('outside','clipped','labelOutside','collisions')) and all(not x['escaped'] for x in g['padding']) and g['footerGap']>=12
