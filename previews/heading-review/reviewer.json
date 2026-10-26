@@ -63,7 +63,6 @@
       380,
       320
     ],
-    "right_svg_relative_shift_vs_previous_revision_px": -14,
     "label_title_gap_px": 8,
     "label_title_x_error_px": 0,
     "svg_inner_card_left_error_px": 0,
@@ -185,7 +184,8 @@
     "data_curve_js_svg_coordinates_fruit_paths_shared_css_axis_helper_preserved": true,
     "markdown_source_changes_from_spacing_baseline": [],
     "common_rule_reused": "Existing --gap-major token resolves to 24px. This local presentation revision adds no common Markdown rule.",
-    "right_additional_explanation": "Proposal only; not added. The user has not selected or approved new explanatory content."
+    "right_additional_explanation": "Proposal only; not added. The user has not selected or approved new explanatory content.",
+    "right_svg_relative_shift_from_declared_layout_px": -14
   },
   "limits": [
     "This is an internal preview pass. User visual review of the revised appearance and common Markdown finalization remain separate pending steps.",
