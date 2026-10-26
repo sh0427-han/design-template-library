@@ -25,17 +25,35 @@
     },
     "examples/overfitting-generalization/lesson.css": {
       "before_sha256": "b01915959c7ea615125f9db09cfc9ea13109ce711702c59c6a781bf3fa0325ab",
-      "after_sha256": "d1668f5964bd1ee7fe14495e040a209eb81202826a4576f257a97e8c31ad1a12"
+      "after_sha256": "3cec140ce68867f77fb1bb13b49ea6fecb8b829d486aa1d791c95b5cc4f55b58"
     },
     "templates/html/architecture.html": {
       "before_sha256": "0b40aa7f35960458292b8fd691a0ffcac83e8646993dda516b85e809efac28e1",
       "after_sha256": "276ab89f9c266542827d6ec4ff2b06dcee177978a9e381cf59a1f6536306a6c5"
+    },
+    "templates/html/concept.html": {
+      "before_sha256": "81a4d341ca86eb5550e0d58411fdda6f040d1e3cdcf9a98ee9b84ff6b8ad0364",
+      "after_sha256": "ddef1b01d7919cb46784659e41933556e103640d73b32a98ccdfa474626d9f37"
+    },
+    "examples/overfitting-generalization/content.html": {
+      "before_sha256": "44c7f22b1683213b219bdc4349c015095136ab5618bc8b172236f02d3f51971b",
+      "after_sha256": "ffdf81851b117f9b1a1c49beec305ac578fc27b36caeb36dd80ac0073d0410b5"
     }
   },
   "role_notes": {
     "titles": "primary card and item names",
     "labels": "category/stage headers; comparison prepare/predict; architecture group/operation labels",
     "data_and_figure_labels": "retain semantic axis, dataset, condition, result, and channel colors",
+    "markdown": "pending user review",
+    "presence": "Each teaching card has its own blue label and navy title; a page-level kicker cannot satisfy a card label."
+  },
+  "followup": {
+    "reason": "User identified missing card labels in Concept and overfitting; color-only audit was insufficient",
+    "concept": "IMAGE REPRESENTATION label above existing title",
+    "definitions": "English names moved from muted inline glosses to blue labels above Korean titles",
+    "figures": "LOSS CURVE / IMAGE PREDICTION labels and navy titles in existing header rows; graph coordinates unchanged",
+    "card_height": 129,
+    "definition_padding": "17px 26px",
     "markdown": "pending user review"
   }
 }

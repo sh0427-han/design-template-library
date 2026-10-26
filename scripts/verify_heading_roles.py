@@ -11,7 +11,7 @@ from verify_dual_mode import NAMES,SIZES,get_frame
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'previews/heading-review'
 ROLES={
- 'concept':('.concept-panel h2,.concept-step-label',''),
+ 'concept':('.concept-panel h2,.concept-step-label','.concept-panel .card-label'),
  'process':('.node-title','.node-step'),
  'comparison':('.compare-card h2','.comparison-heading .pill,.phase-heading h3'),
  'step-by-step':('.calc-heading','.calc-step'),
@@ -19,7 +19,18 @@ ROLES={
  'architecture':('.arch-title','.arch-phase-band span,.arch-step-roles b,.arch-operation'),
  'experiment':('.experiment-card > h2,.metric h3','.ref-k'),
  'executive-summary':('.exec-impact h2,.exec-action-panel h2,.exec-metric-head h3,.exec-action b','.ref-k'),
- 'overfitting-generalization':('.definition h2,#overfit-heading,#generalization-heading',''),
+ 'overfitting-generalization':('.definition h2,#overfit-heading,#generalization-heading','.definition-label,.figure-label'),
+}
+CARD_PAIRS={
+ 'concept':[('.concept-panel','.card-label','h2',1)],
+ 'process':[('.node','.node-step','.node-title',4)],
+ 'comparison':[('.compare-card','.comparison-heading .pill','h2',2)],
+ 'step-by-step':[('.calc-panel','.calc-step','.calc-heading',2)],
+ 'interactive':[('.live-card','.ref-k','h2',2)],
+ 'architecture':[('.arch-stage','.arch-operation','.arch-title',6)],
+ 'experiment':[('.experiment-card','.ref-k','h2',2)],
+ 'executive-summary':[('.exec-impact,.exec-action-panel','.ref-k','h2',2)],
+ 'overfitting-generalization':[('.definition','.definition-label','h2',2),('.curve-panel','.figure-label','.diagram-heading',2)],
 }
 COLORS={'title':'rgb(18, 35, 63)','label':'rgb(49, 104, 200)'}
 INSPECT="""es=>es.map(e=>{const s=getComputedStyle(e),r=e.getBoundingClientRect();return {text:e.textContent.trim(),color:e instanceof SVGElement?s.fill:s.color,font:s.fontFamily,size:s.fontSize,weight:s.fontWeight,lineHeight:s.lineHeight,spacing:s.letterSpacing,visible:r.width>0&&r.height>0}})"""
@@ -31,7 +42,15 @@ class Quiet(SimpleHTTPRequestHandler):
   super().do_GET()
 
 def inspect(frame,name):
- rows=[]
+ rows=[];pairs=[]
+ for card_selector,label_selector,title_selector,count in CARD_PAIRS[name]:
+  cards=frame.locator(card_selector);assert cards.count()==count,(name,card_selector,cards.count())
+  for i in range(count):
+   card=cards.nth(i);label=card.locator(label_selector);title=card.locator(title_selector)
+   assert label.count()==1 and title.count()==1,(name,i,'missing or duplicated card label/title')
+   ls=label.evaluate_all(INSPECT)[0];ts=title.evaluate_all(INSPECT)[0]
+   assert ls['visible'] and ls['color']==COLORS['label'] and ts['visible'] and ts['color']==COLORS['title'],(name,i,ls,ts)
+   pairs.append({'card':card_selector,'label':ls['text'],'title':ts['text'],'own_label':True,'own_title':True})
  for role,selector in [('title','h1,'+ROLES[name][0]),('label','.kicker'+(','+ROLES[name][1] if ROLES[name][1] else ''))]:
   nodes=frame.locator(selector).evaluate_all(INSPECT);assert nodes,(name,role)
   for node in nodes:
@@ -40,7 +59,7 @@ def inspect(frame,name):
    rows.append({'role':role,**node})
  g=frame.evaluate(GEOMETRY)
  for key in ('outside','overflow','footerOverlap','spacing','clippedText','arrowErrors'):assert not g[key],(name,key,g[key])
- return rows,g
+ return rows,g,pairs
 
 def gallery():
  names=list(NAMES)+['overfitting-generalization']
@@ -74,15 +93,15 @@ def main():
      page.goto(base+'/templates/dual-mode-learning/'+mode+'.html',wait_until='networkidle')
      for name in NAMES:
       if mode=='slides':page.evaluate('(id)=>{location.hash=id}','ref-'+name)
-      frame=get_frame(page,name);rows,g=inspect(frame,name)
+      frame=get_frame(page,name);rows,g,pairs=inspect(frame,name)
       if name not in baseline:baseline[name]=rows
       assert rows==baseline[name],(name,mode,width,'role style mismatch')
-      report['cases'].append({'reference':name,'mode':mode,'viewport':[width,height],'headings':rows,'geometry':g})
+      report['cases'].append({'reference':name,'mode':mode,'viewport':[width,height],'headings':rows,'card_pairs':pairs,'geometry':g})
      page.goto(base+'/examples/overfitting-generalization/'+mode+'.html',wait_until='networkidle');page.wait_for_function("document.body.dataset.ready==='true'")
-     frame=page.locator('iframe').element_handle().content_frame();frame.evaluate('document.fonts.ready');name='overfitting-generalization';rows,g=inspect(frame,name)
+     frame=page.locator('iframe').element_handle().content_frame();frame.evaluate('document.fonts.ready');name='overfitting-generalization';rows,g,pairs=inspect(frame,name)
      if name not in baseline:baseline[name]=rows
      assert rows==baseline[name],(name,mode,width,'role style mismatch')
-     report['cases'].append({'reference':name,'mode':mode,'viewport':[width,height],'headings':rows,'geometry':g})
+     report['cases'].append({'reference':name,'mode':mode,'viewport':[width,height],'headings':rows,'card_pairs':pairs,'geometry':g})
      if width==1600 and mode=='slides':frame.locator('.slide').screenshot(path=str(OUT/'overfitting.png'))
      print('PASS heading roles',mode,width,height,flush=True)
    assert not errors and not failed,(errors,failed);assert len(report['cases'])==72
