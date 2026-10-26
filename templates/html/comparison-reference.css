@@ -9,7 +9,7 @@
 .comparison-slide .comparison-heading p {margin:0;font-size:19px;line-height:22px;}
 .comparison-slide .comparison-diagram {position:relative;display:grid;grid-template-rows:94px 146px;gap:10px;min-width:0;}
 .comparison-slide .phase-heading {display:flex;justify-content:space-between;align-items:center;gap:10px;height:18px;}
-.comparison-slide .phase-heading h3 {margin:0;color:var(--deep);font-size:15px;line-height:18px;font-weight:800;}
+.comparison-slide .phase-heading h3 {margin:0;color:var(--blue);font-size:15px;line-height:18px;font-weight:800;}
 .comparison-slide .phase-heading > span {color:var(--muted);font-size:14px;line-height:18px;}
 .comparison-slide .phase-predict {border-top:1px solid var(--border);padding-top:8px;}
 .comparison-slide .prepare-flow {height:74px;display:grid;grid-template-columns:206px 56px 150px;justify-content:center;align-items:center;}

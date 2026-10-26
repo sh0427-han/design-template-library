@@ -13,10 +13,10 @@ OUT=ROOT/'previews/heading-review'
 ROLES={
  'concept':('.concept-panel h2,.concept-step-label',''),
  'process':('.node-title','.node-step'),
- 'comparison':('.compare-card h2','.comparison-heading .pill'),
+ 'comparison':('.compare-card h2','.comparison-heading .pill,.phase-heading h3'),
  'step-by-step':('.calc-heading','.calc-step'),
  'interactive':('.live-card > h2,.live-metric h3','.ref-k'),
- 'architecture':('.arch-title',''),
+ 'architecture':('.arch-title','.arch-phase-band span,.arch-step-roles b,.arch-operation'),
  'experiment':('.experiment-card > h2,.metric h3','.ref-k'),
  'executive-summary':('.exec-impact h2,.exec-action-panel h2,.exec-metric-head h3,.exec-action b','.ref-k'),
  'overfitting-generalization':('.definition h2,#overfit-heading,#generalization-heading',''),

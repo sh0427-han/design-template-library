@@ -275,7 +275,7 @@ def main():
     # User-authorized heading preview is the only exception to the pinned sources.
     paths=['AGENTS.md','DESIGN_SYSTEM.md','docs/DESIGN_COMPONENT_RECIPES.md','docs/REFERENCE_PAGE_SPECS.md']
     paths += subprocess.check_output(['git','ls-tree','-r','--name-only',BASE,'templates/html'],cwd=ROOT,text=True).splitlines()
-    heading_paths={'templates/html/comparison-reference.css','templates/html/interactive.html','templates/html/experiment.html','templates/html/executive-summary.html'}
+    heading_paths={'templates/html/comparison-reference.css','templates/html/interactive.html','templates/html/experiment.html','templates/html/executive-summary.html','templates/html/architecture.html'}
     heading_scope=json.loads((ROOT/'previews/heading-review/change-scope.json').read_text())
     assert heading_scope['baseline']=='a5ea4b64f2df6945f0f40eb88de99179a190dc3b'
     changed=[];heading_changes=[]
