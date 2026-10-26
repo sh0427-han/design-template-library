@@ -37,7 +37,7 @@
 .overfit-slide #chart-status {position:absolute;left:24px;top:80px;background:var(--white);padding:8px;font-size:17px;line-height:24px;color:var(--muted);margin:0;}
 .overfit-slide #chart-status[hidden] {display:none;}
 
-.overfit-slide .diagram-heading {font-size:17px;line-height:22px;margin:0;color:var(--deep);font-weight:750;}
+.overfit-slide .diagram-heading {font-size:17px;line-height:22px;margin:0;color:var(--navy);font-weight:750;}
 .overfit-slide #generalization-diagram {display:block;width:580px;height:320px;margin:8px auto 0;}
 .overfit-slide .diagram-section {font-size:17px;font-weight:750;fill:var(--deep);}
 .overfit-slide .image-label,.overfit-slide .image-id,.overfit-slide .diagram-label {font-size:17px;fill:var(--muted);}

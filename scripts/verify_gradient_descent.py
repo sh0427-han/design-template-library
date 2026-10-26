@@ -272,15 +272,28 @@ def main():
             browser.close()
     finally:
         server.shutdown();server.server_close()
-    # Existing canonical sources and common design rules must remain unchanged.
+    # User-authorized heading preview is the only exception to the pinned sources.
     paths=['AGENTS.md','DESIGN_SYSTEM.md','docs/DESIGN_COMPONENT_RECIPES.md','docs/REFERENCE_PAGE_SPECS.md']
     paths += subprocess.check_output(['git','ls-tree','-r','--name-only',BASE,'templates/html'],cwd=ROOT,text=True).splitlines()
-    changed=[]
+    heading_paths={'templates/html/comparison-reference.css','templates/html/interactive.html','templates/html/experiment.html','templates/html/executive-summary.html'}
+    heading_scope=json.loads((ROOT/'previews/heading-review/change-scope.json').read_text())
+    assert heading_scope['baseline']=='a5ea4b64f2df6945f0f40eb88de99179a190dc3b'
+    changed=[];heading_changes=[]
     for path in paths:
         old=subprocess.check_output(['git','show',f'{BASE}:{path}'],cwd=ROOT)
-        if hashlib.sha256(old).hexdigest()!=digest(ROOT/path):changed.append(path)
+        if hashlib.sha256(old).hexdigest()!=digest(ROOT/path):
+            if path in heading_paths:
+                expected=heading_scope['changes'][path]
+                before=subprocess.check_output(['git','show',f"{heading_scope['baseline']}:{path}"],cwd=ROOT)
+                assert hashlib.sha256(before).hexdigest()==expected['before_sha256']
+                assert digest(ROOT/path)==expected['after_sha256']
+                heading_changes.append(path)
+            else:changed.append(path)
     assert not changed,changed
-    report['canonical_sources_unchanged']=True
+    report['canonical_sources_unchanged']=not heading_changes
+    report['authorized_heading_preview_changes']=heading_changes
+    report['heading_review_status']=heading_scope['status']
+    report['other_canonical_sources_unchanged']=True
     report['new_shared_axis_module']='templates/html/graph-annotations.js'
     report['intentional_common_rule_change']='FIGURE_PRODUCTION_STANDARD: user-requested axis-title alignment; other pinned common rules unchanged'
     source_paths=[p for p in CASE.iterdir() if p.suffix in ('.html','.css','.js')]+[Path(__file__),ROOT/'templates/html/styles.css',ROOT/'templates/html/reference-layout.css',ROOT/'templates/html/math-typography.css',ROOT/'scripts/reference_validation.py',ROOT/'templates/html/graph-annotations.js']
@@ -290,7 +303,7 @@ def main():
     report['preview_sha256']={p.name:digest(p) for p in (CASE/'previews').glob('*.png')}
     report.update(status='passed',created_utc=datetime.now(timezone.utc).isoformat())
     (CASE/'previews/validation.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
-    print('PASS: independent mathematics, actual fonts, geometry, PC4 x two modes (8 screens), failure handling; canonical sources unchanged')
+    print('PASS: independent mathematics, actual fonts, geometry, PC4 x two modes (8 screens), failure handling; scoped heading preview changes recorded')
 
 if __name__=='__main__':
     main()

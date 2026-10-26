@@ -1,0 +1,31 @@
+{
+  "status": "preview_pending_user_review",
+  "baseline": "a5ea4b64f2df6945f0f40eb88de99179a190dc3b",
+  "markdown_finalized": false,
+  "role_colors": {
+    "core_title": "#12233F",
+    "category_or_stage_label": "#3168C8"
+  },
+  "changes": {
+    "templates/html/comparison-reference.css": {
+      "before_sha256": "2a4afa51bfd30efe7f59422c3fa5483f74ac6c3a2b2c64288bb476dfce14f422",
+      "after_sha256": "6e5eff856ed9957525fc9e75ae3108d3ec865602fce26fa5933d2f6ad5943663"
+    },
+    "templates/html/interactive.html": {
+      "before_sha256": "999cc515d9f3ad03dbee7c1437959b79463ad251e890142233471e4ff7722869",
+      "after_sha256": "0ea53081b4b5e89f2eb2b6c8ded09b38977331d114616474fb83fcbcdb4aeaa3"
+    },
+    "templates/html/experiment.html": {
+      "before_sha256": "711282187d6138e69e2b92ab6f2730387be8cb491d8401d0928d33c96caf62dd",
+      "after_sha256": "c2424515f1ceebfbdf616dbc0a6b227b27d453fcde5383b899653df3d643c961"
+    },
+    "templates/html/executive-summary.html": {
+      "before_sha256": "9717607f3a1c742fe72dd63990d2edaccb5bb0c33b844a43943cdea9b56fe37c",
+      "after_sha256": "fc0b46ace4bc81b108b199d12121cd12fbc940aebe1cdef30639a859ddab95b6"
+    },
+    "examples/overfitting-generalization/lesson.css": {
+      "before_sha256": "b01915959c7ea615125f9db09cfc9ea13109ce711702c59c6a781bf3fa0325ab",
+      "after_sha256": "d1668f5964bd1ee7fe14495e040a209eb81202826a4576f257a97e8c31ad1a12"
+    }
+  }
+}
