@@ -103,9 +103,21 @@ GEOMETRY = '''()=>{
  const collisions=[];for(let i=0;i<ink.length;i++)for(let j=i+1;j<ink.length;j++){
    const a=ink[i],b=ink[j];if(Math.min(a.right,b.right)-Math.max(a.x,b.x)>1&&Math.min(a.bottom,b.bottom)-Math.max(a.y,b.y)>1)collisions.push([a.id,b.id]);
  }
+ const dataCollisions=[];
+ const curve=q('#loss-curve');
+ for(const text of plot.querySelectorAll('text')){
+   const b=text.getBBox(),pad=2;
+   const inside=(x,y)=>x>=b.x-pad&&x<=b.x+b.width+pad&&y>=b.y-pad&&y<=b.y+b.height+pad;
+   for(const circle of plot.querySelectorAll('circle')){
+     const x=+circle.getAttribute('cx'),y=+circle.getAttribute('cy'),r=+circle.getAttribute('r');
+     const nearX=Math.max(b.x-pad,Math.min(x,b.x+b.width+pad)),nearY=Math.max(b.y-pad,Math.min(y,b.y+b.height+pad));
+     if(Math.hypot(x-nearX,y-nearY)<=r)dataCollisions.push([text.id,circle.id]);
+   }
+   if(curve){const length=curve.getTotalLength(),samples=Math.ceil(length*2);for(let i=0;i<=samples;i++){const p=curve.getPointAtLength(i/samples*length);if(inside(p.x,p.y)){dataCollisions.push([text.id,'loss-curve']);break;}}}
+ }
  const math=[...slide.querySelectorAll('math')].map(e=>({text:e.textContent,display:getComputedStyle(e).fontFamily,box:box(e)}));
  for(const e of slide.querySelectorAll('math')){const r=box(e),p=box(e.parentElement);if(r.x<p.x-1||r.right>p.right+1||r.y<box(panel).y||r.bottom>box(panel).bottom)clipped.push('math '+e.textContent);} 
- return {outside,overflow,clipped,overlaps,collisions,ink,math,slide:box(slide),panel:box(panel),main:box(q('.gd-main')),steps:box(q('.gd-steps')),definitions:box(q('.gd-definitions')),takeaway:box(q('.gd-takeaway')),footer:box(footer)};
+ return {outside,overflow,clipped,overlaps,collisions,dataCollisions,ink,math,slide:box(slide),panel:box(panel),main:box(q('.gd-main')),steps:box(q('.gd-steps')),definitions:box(q('.gd-definitions')),takeaway:box(q('.gd-takeaway')),footer:box(footer)};
 }'''
 
 def technical(frame):
@@ -208,7 +220,7 @@ def main():
                     geometry=frame.evaluate(GEOMETRY)
                     output=EVIDENCE/f'{mode}-{width}x{height}.png';page.screenshot(path=str(output),full_page=mode=='scroll')
                     if width==1600:page.screenshot(path=str(CASE/'previews'/('slide.png' if mode=='slides' else 'scroll.png')))
-                    assert not any(geometry[k] for k in ('outside','overflow','clipped','overlaps','collisions')),geometry
+                    assert not any(geometry[k] for k in ('outside','overflow','clipped','overlaps','collisions','dataCollisions')),geometry
                     assert geometry['slide']['w']==1440 and geometry['slide']['h']==810
                     shot=frame.evaluate(SNAPSHOT)
                     identity=compare(shot,reference)
