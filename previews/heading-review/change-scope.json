@@ -25,7 +25,7 @@
     },
     "examples/overfitting-generalization/lesson.css": {
       "before_sha256": "b01915959c7ea615125f9db09cfc9ea13109ce711702c59c6a781bf3fa0325ab",
-      "after_sha256": "4b7edb9f7d8b071f5f4820aa44baeb5c7d7046ba09a168e5d39fa5a85a9869ef"
+      "after_sha256": "df7745f811b84a1beed9afe753a55e1fbf765ae6c2890eb08f4ab8e835c59850"
     },
     "templates/html/architecture.html": {
       "before_sha256": "0b40aa7f35960458292b8fd691a0ffcac83e8646993dda516b85e809efac28e1",
@@ -63,6 +63,17 @@
     "cards": "one continuous card for overfitting; one for generalization; no inner figure card borders",
     "heading": "blue label above navy title, never inline",
     "graph": "left aligned within card padding; unchanged 380x320 SVG and data/axis coordinates",
+    "markdown": "pending user review"
+  },
+  "spacing_followup": {
+    "baseline": "e86b4c16216da09c9a6aa6b4508179f734002cc1",
+    "scope": "only overfitting figure subheading hierarchy",
+    "definition_to_figure_heading_px": 24,
+    "figure_heading_font_px": 19,
+    "generalization_heading_to_svg_px": 8,
+    "loss_svg_position": "unchanged: redistribute former 8px chart top margin before the subheading",
+    "generalization": "remove unused second header row",
+    "additional_right_explanation": "proposal only; pending content discussion",
     "markdown": "pending user review"
   }
 }

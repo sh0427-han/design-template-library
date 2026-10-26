@@ -9,14 +9,14 @@
 .overfit-slide .concept-heading h2 {margin:0;font-size:29px;line-height:34px;color:var(--navy);}
 .overfit-slide .meaning {font-size:19px;line-height:22px;margin:0;color:var(--muted);}
 .overfit-slide .meaning b {color:var(--deep);font-weight:700;}
-.overfit-slide .curve-panel {margin:16px 0 0;padding:0;border:0;border-radius:0;background:transparent;min-width:0;flex:none;}
+.overfit-slide .curve-panel {margin:var(--gap-major) 0 0;padding:0;border:0;border-radius:0;background:transparent;min-width:0;flex:none;}
 .overfit-slide .plot-header {display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;height:44px;}
 .overfit-slide .loss-definition {margin:0;font-size:17px;line-height:22px;color:var(--deep);fill:var(--deep);}
 .overfit-slide .legend {display:flex;gap:16px;font-size:17px;line-height:22px;color:var(--deep);}
 .overfit-slide .legend span {display:flex;align-items:center;gap:8px;}
 .overfit-slide .legend i {display:inline-block;width:25px;border-top:3px solid var(--blue);}
 .overfit-slide .legend .validation-key {border-color:var(--amber);border-top-style:dashed;}
-.overfit-slide .loss-chart {width:380px;height:320px;display:block;margin:8px 0 0;overflow:visible;}
+.overfit-slide .loss-chart {width:380px;height:320px;display:block;margin:0;overflow:visible;}
 .overfit-slide .axis {fill:none;stroke:var(--muted);stroke-width:1.2;}
 .overfit-slide .axis-title {font-size:17px;fill:var(--deep);}
 .overfit-slide .case-heading {font-size:19px;font-weight:750;fill:var(--navy);}
@@ -37,7 +37,8 @@
 .overfit-slide #chart-status {position:absolute;left:26px;top:200px;background:var(--white);padding:8px;font-size:17px;line-height:24px;color:var(--muted);margin:0;}
 .overfit-slide #chart-status[hidden] {display:none;}
 
-.overfit-slide .diagram-heading {font-size:17px;line-height:22px;margin:0;color:var(--navy);font-weight:750;}
+.overfit-slide .diagram-heading {font-size:19px;line-height:22px;margin:0;color:var(--navy);font-weight:750;}
+.overfit-slide .generalization-panel .plot-header {height:22px;}
 .overfit-slide #generalization-diagram {display:block;width:580px;height:320px;margin:8px 0 0;}
 .overfit-slide .diagram-section {font-size:17px;font-weight:750;fill:var(--deep);}
 .overfit-slide .image-label,.overfit-slide .image-id,.overfit-slide .diagram-label {font-size:17px;fill:var(--muted);}
