@@ -92,7 +92,8 @@ GEOMETRY = '''()=>{
      }
    }
  }
- for(const s of ['.gd-figure','.gd-steps'])if(box(q(s)).bottom>box(q('.gd-definitions')).y-8)overlaps.push(s+' vs definitions');
+ if(box(q('.gd-steps ol')).bottom>box(q('.gd-definitions')).y-8)overlaps.push('steps vs definitions');
+ if(box(q('#loss-plot')).bottom>box(panel).bottom-parseFloat(getComputedStyle(panel).paddingBottom)-1)overlaps.push('plot vs panel padding');
  if(box(q('.gd-takeaway')).bottom>box(footer).y-10)overlaps.push('takeaway/footer');
  const plot=q('#loss-plot'),vb=plot.viewBox.baseVal,ink=[];
  for(const e of plot.querySelectorAll('text')){
@@ -112,8 +113,8 @@ def technical(frame):
     assert data
     # Independent specification: do not take equation, rate or expected answer from rendered labels.
     expected = [2.8 * .72**i for i in range(6)]
-    px = lambda theta: 68 + (theta + 3.4) / 6.8 * 576
-    py = lambda loss: 300 - loss / 6.5 * 248
+    px = lambda theta: 48 + (theta + 3.4) / 6.8 * 242
+    py = lambda loss: 454 - loss / 6.5 * 434
     for state, theta in zip(data['states'], expected):
         loss = theta**2/2
         derivative = (((theta+1e-5)**2/2)-((theta-1e-5)**2/2))/(2e-5)
@@ -122,6 +123,9 @@ def technical(frame):
         assert math.isclose(state['loss'], loss, abs_tol=1e-12)
         assert abs(state['x']-px(theta)) < 1e-9 and abs(state['y']-py(loss)) < 1e-9
     assert len(data['states']) == 6 and len(data['points']) == 161
+    assert frame.locator('#loss-plot').evaluate('e=>e.getBoundingClientRect().width')==345
+    assert frame.locator('#loss-plot').evaluate('e=>e.getBoundingClientRect().height')==482
+    assert frame.locator('#plot-context').count()==0
     for i, point in enumerate(data['points']):
         theta = -3.4 + 6.8*i/160
         assert abs(point['theta']-theta) < 1e-12
@@ -149,7 +153,7 @@ def technical(frame):
         assert abs(tangent_nums[2*i+1]-py(2.8**2/2+2.8*delta)) < 1e-9
     arrow_nums = [float(s) for s in re.findall(r'-?\d+(?:\.\d+)?',rendered['arrow'])]
     assert abs(arrow_nums[0]-(px(2.8)-3.5))<1e-9 and abs(arrow_nums[2]-(px(expected[1])+3.5))<1e-9
-    assert arrow_nums[0]>arrow_nums[2] and arrow_nums[1]==arrow_nums[3]==260
+    assert arrow_nums[0]>arrow_nums[2] and arrow_nums[1]==arrow_nums[3]==394
     assert len(arrow_nums)==10 and arrow_nums[6:8]==arrow_nums[2:4], 'arrow head and body do not share tip'
     assert rendered['formula']=='θt+1=θt−ηL′(θt)'
     assert not any(re.search(r'\d[.,]\d', label) for label in rendered['labels'])
@@ -202,6 +206,8 @@ def main():
                     audit=fonts(page,frame,'.gd-slide *')
                     ui=fonts(page,page.main_frame,'body *')
                     geometry=frame.evaluate(GEOMETRY)
+                    output=EVIDENCE/f'{mode}-{width}x{height}.png';page.screenshot(path=str(output),full_page=mode=='scroll')
+                    if width==1600:page.screenshot(path=str(CASE/'previews'/('slide.png' if mode=='slides' else 'scroll.png')))
                     assert not any(geometry[k] for k in ('outside','overflow','clipped','overlaps','collisions')),geometry
                     assert geometry['slide']['w']==1440 and geometry['slide']['h']==810
                     shot=frame.evaluate(SNAPSHOT)

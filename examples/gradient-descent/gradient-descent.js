@@ -4,7 +4,7 @@
   const art = document.getElementById('plot-art');
   const slide = document.querySelector('.gd-slide');
   const model = {start:2.8, rate:0.28, states:6, samples:161,
-    domain:[-3.4,3.4], range:[0,6.5], plot:{left:68,right:644,top:52,bottom:300}};
+    domain:[-3.4,3.4], range:[0,6.5], plot:{left:48,right:290,top:20,bottom:454}};
   const loss = theta => theta * theta / 2;
   const gradient = theta => theta;
   const x = theta => model.plot.left + (theta-model.domain[0])/(model.domain[1]-model.domain[0])*(model.plot.right-model.plot.left);
@@ -28,24 +28,23 @@
     const points=Array.from({length:model.samples},(_,i)=>{const theta=model.domain[0]+i/(model.samples-1)*(model.domain[1]-model.domain[0]);return {theta,loss:loss(theta),x:x(theta),y:y(loss(theta))};});
     const states=[];let theta=model.start;
     for(let i=0;i<model.states;i++){states.push({theta,loss:loss(theta),gradient:gradient(theta),x:x(theta),y:y(loss(theta))});theta-=model.rate*gradient(theta);}
-    arrow('y-axis',68,300,68,33,'#b7c4d5',1.5);
-    arrow('x-axis',68,300,657,300,'#b7c4d5',1.5);
-    label('loss-axis',68,20,'손실','plot-strong');
-    label('loss-axis-math',112,20,'𝐿(𝜃)','math-number plot-strong');
-    label('parameter-axis',644,349,'매개변수 θ','plot-strong','end');
+    arrow('y-axis',48,454,48,29,'#b7c4d5',1.5);
+    arrow('x-axis',48,454,305,454,'#b7c4d5',1.5);
+    label('loss-axis',48,18,'손실','plot-strong');
+    label('loss-axis-math',92,18,'𝐿(𝜃)','math-number plot-strong');
+    label('parameter-axis',48,478,'매개변수 θ','plot-strong','start');
     // Keep mathematical θ in the math font, ordinary Korean in Pretendard.
     document.getElementById('parameter-axis').textContent='매개변수';
-    label('parameter-symbol',662,349,'𝜃','math-number plot-strong','end');
-    label('plot-context',644,20,'매개변수 하나 · 설명용 곡선','','end');
+    label('parameter-symbol',127,478,'𝜃','math-number plot-strong','start');
     path('loss-curve',points.map((p,i)=>`${i?'L':'M'}${p.x} ${p.y}`).join(' '),'#1b3558',3);
     const current=states[0],next=states[1];
     const tangent= [-0.55,0.40].map(delta=>({x:x(current.theta+delta),y:y(current.loss+current.gradient*delta)}));
     path('tangent',`M${tangent[0].x} ${tangent[0].y} L${tangent[1].x} ${tangent[1].y}`,'#e49a4d',2,{'stroke-dasharray':'6 4'});
     label('tangent-label',current.x-22,current.y-43,'양의 기울기','plot-amber','end');
-    path('current-guide',`M${current.x} ${current.y+12} V296`,'#9bb5da',1.3,{'stroke-dasharray':'4 5'});
-    path('next-guide',`M${next.x} ${next.y+12} V296`,'#9ccfca',1.3,{'stroke-dasharray':'4 5'});
-    arrow('update-arrow',current.x-3.5,260,next.x+3.5,260,'#3168c8',2.5);
-    label('update-label',(current.x+next.x)/2,287,'기울기의 반대 방향','plot-blue','middle');
+    path('current-guide',`M${current.x} ${current.y+12} V448`,'#9bb5da',1.3,{'stroke-dasharray':'4 5'});
+    path('next-guide',`M${next.x} ${next.y+12} V448`,'#9ccfca',1.3,{'stroke-dasharray':'4 5'});
+    arrow('update-arrow',current.x-3.5,394,next.x+3.5,394,'#3168c8',2.5);
+    label('update-label',(current.x+next.x)/2,421,'기울기의 반대 방향','plot-blue','middle');
     label('current-label',current.x+16,current.y+6,'현재','plot-blue');
     label('next-label',next.x+15,next.y+5,'다음','plot-teal');
     for(const [i,p] of states.entries()) {
@@ -54,7 +53,7 @@
     label('repeat-label',states[4].x-30,states[4].y-35,'반복','plot-teal','end');
     path('repeat-leader',`M${states[4].x-23} ${states[4].y-29} L${states[4].x-7} ${states[4].y-9}`,'#9ccfca',1.3);
     for(const [id,state,index,cls] of [['current-symbol',current,'𝑡','plot-blue'],['next-symbol',next,'𝑡+1','plot-teal']]) {
-      const text=label(id,state.x,322,'𝜃',`math-number ${cls}`,'middle');
+      const text=label(id,state.x,470,'𝜃',`math-number ${cls}`,'middle');
       const sub=document.createElementNS('http://www.w3.org/2000/svg','tspan');
       sub.setAttribute('dy','5');sub.setAttribute('font-size','12');sub.textContent=index;text.append(sub);
     }

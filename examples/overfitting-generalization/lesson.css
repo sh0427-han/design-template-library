@@ -1,42 +1,27 @@
-/* Topic-specific geometry; shared tokens and source references stay canonical. */
+/* Shared styling stays canonical; all new geometry belongs to this topic. */
 .source-page {width:1440px;height:810px;min-height:0;background:transparent;}
-.overfit-slide {zoom:1;overflow:visible;padding:40px 66px 24px;}
+.overfit-slide {zoom:1;overflow:visible;padding:26px 66px 24px;}
 .overfit-slide .content {display:flex;flex-direction:column;margin-top:13px;}
-.overfit-slide h1 {font-size:49px;}
-.overfit-slide .definition-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;height:184px;flex:none;}
-.overfit-slide .definition {padding:18px 26px;display:grid;grid-template-rows:35px 56px 35px;row-gap:8px;min-width:0;}
+.overfit-slide .definition-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;height:129px;flex:none;}
+.overfit-slide .definition {padding:14px 26px;display:grid;grid-template-rows:35px 56px;row-gap:8px;min-width:0;}
 .overfit-slide .definition h2 {margin:0;font-size:29px;line-height:35px;color:var(--navy);}
 .overfit-slide .definition h2 span {font-size:20px;font-weight:500;color:var(--muted);margin-left:8px;}
 .overfit-slide .meaning {font-size:21px;line-height:28px;margin:0;color:var(--ink);}
-.overfit-slide .subject {display:grid;grid-template-columns:102px 1fr;gap:12px;font-size:18px;line-height:26px;border-top:1px solid var(--border);padding-top:8px;margin-top:0;}
-.overfit-slide .subject b {color:var(--deep);font-weight:750;}
-.overfit-slide .subject span {color:var(--muted);}
-.overfit-slide .loss-panel {margin:16px 0 0;padding:18px 24px;border:1px solid var(--border);border-radius:17px;background:var(--white);height:302px;flex:none;}
-.overfit-slide .plot-heading {display:flex;align-items:baseline;justify-content:space-between;gap:16px;}
-.overfit-slide .plot-heading h2 {font-size:23px;line-height:28px;color:var(--navy);margin:0;}
-.overfit-slide .plot-heading > span {font-size:16px;line-height:22px;color:var(--muted);}
-.overfit-slide .plot-layout {display:grid;grid-template-columns:760px minmax(0,1fr);gap:24px;margin-top:8px;}
-.overfit-slide .legend {display:flex;gap:24px;font-size:16px;line-height:22px;color:var(--muted);}
-.overfit-slide .legend span {display:flex;align-items:center;gap:4px;}
-.overfit-slide .legend b {color:var(--deep);}
-.overfit-slide .legend i {display:inline-block;width:25px;border-top:3px solid var(--blue);margin-right:4px;}
+.overfit-slide .loss-panel {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin:16px 0 0;height:376px;flex:none;position:relative;}
+.overfit-slide .curve-panel {margin:0;padding:12px 26px;border:1px solid var(--border);border-radius:17px;background:var(--white);min-width:0;}
+.overfit-slide .legend {display:flex;justify-content:center;gap:24px;font-size:17px;line-height:22px;color:var(--deep);}
+.overfit-slide .legend span {display:flex;align-items:center;gap:8px;}
+.overfit-slide .legend i {display:inline-block;width:25px;border-top:3px solid var(--blue);}
 .overfit-slide .legend .validation-key {border-color:var(--amber);border-top-style:dashed;}
-.overfit-slide #loss-chart {width:760px;height:160px;display:block;margin-top:8px;overflow:visible;}
+.overfit-slide .loss-chart {width:380px;height:320px;display:block;margin:8px auto 0;overflow:visible;}
 .overfit-slide .axis {fill:none;stroke:var(--muted);stroke-width:1.2;}
-.overfit-slide .grid-lines {fill:none;stroke:var(--border);stroke-width:1;}
 .overfit-slide .axis-title {font-size:17px;fill:var(--deep);}
+.overfit-slide .case-heading {font-size:19px;font-weight:750;fill:var(--navy);}
 .overfit-slide .direction {font-size:15px;fill:var(--muted);}
 .overfit-slide .zero {font-size:17px;fill:var(--muted);}
 .overfit-slide .training-line,.overfit-slide .validation-line {fill:none;stroke:var(--blue);stroke-width:3;stroke-linejoin:round;stroke-linecap:round;}
 .overfit-slide .validation-line {stroke:var(--amber);stroke-dasharray:8 6;}
-.overfit-slide .reading-guide {display:grid;align-content:start;gap:8px;}
-.overfit-slide .reading-guide p {margin:0;font-size:17px;line-height:24px;color:var(--muted);}
-.overfit-slide .reading-guide .loss-definition {font-size:17px;color:var(--deep);}
-.overfit-slide .reading-guide .interpretation {font-size:20px;line-height:27px;color:var(--deep);}
-.overfit-slide .reading-guide .interpretation b {color:var(--navy);}
-.overfit-slide .reading-guide .test-note {border-top:1px solid var(--border);padding-top:8px;}
-.overfit-slide .conditions {margin:0;font-size:14px;line-height:20px;color:var(--muted);}
 .overfit-slide .ref-takeaway {flex:none;margin-top:14px;}
 .overfit-slide .footer {margin-top:auto;}
-.overfit-slide #chart-status {position:absolute;font-size:17px;line-height:24px;color:var(--muted);margin:0;}
+.overfit-slide #chart-status {position:absolute;left:24px;top:80px;background:var(--white);padding:8px;font-size:17px;line-height:24px;color:var(--muted);margin:0;}
 .overfit-slide #chart-status[hidden] {display:none;}

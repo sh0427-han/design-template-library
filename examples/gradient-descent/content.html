@@ -11,8 +11,8 @@
 <div class="content">
 <section class="gd-panel" aria-label="손실 곡선과 경사하강법의 세 단계">
 <div class="gd-main">
-<figure class="gd-figure"><h2>손실을 줄이는 방향 찾기</h2>
-<svg id="loss-plot" viewBox="0 0 690 360" role="img" aria-labelledby="plot-title plot-description">
+<figure class="gd-figure">
+<svg id="loss-plot" viewBox="0 0 345 482" role="img" aria-labelledby="plot-title plot-description">
 <title id="plot-title">매개변수 하나의 설명용 손실 곡선</title><desc id="plot-description">현재 위치에서 기울기는 양수. 매개변수를 왼쪽으로 갱신하면 다음 위치의 손실이 낮아집니다. 적절한 학습률에서 반복하는 예이며 실제 학습 기록이 아닙니다.</desc>
 <g id="plot-art"></g></svg>
 <p class="gd-failure" role="status">손실 곡선을 준비하고 있습니다. JavaScript가 필요합니다.</p>
@@ -23,9 +23,9 @@
 <li><span class="gd-step-number">01</span><div><h3>현재 기울기 확인</h3><p>기울기 <math class="math"><msup><mi>L</mi><mo>′</mo></msup></math>: 손실 변화의 방향과 정도</p></div></li>
 <li><span class="gd-step-number">02</span><div><h3>반대 방향으로 갱신</h3><p>양의 학습률 <math class="math"><mi>η</mi></math>로 이동 크기를 조절</p><div class="gd-update"><math class="math" aria-label="다음 매개변수는 현재 매개변수에서 학습률 곱하기 현재 기울기를 뺀 값"><msub><mi>θ</mi><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><msub><mi>θ</mi><mi>t</mi></msub><mo>−</mo><mi>η</mi><msup><mi>L</mi><mo>′</mo></msup><mo>(</mo><msub><mi>θ</mi><mi>t</mi></msub><mo>)</mo></math></div></div></li>
 <li><span class="gd-step-number">03</span><div><h3>새 위치에서 다시 반복</h3><p>바뀐 매개변수에서 기울기를 다시 확인</p></div></li>
-</ol></section>
+</ol><div class="gd-definitions"><p><math class="math"><mi>θ</mi></math> 매개변수 <span>·</span> <math class="math"><mi>L</mi></math> 손실: 줄이려는 오차의 척도 <span>·</span> <math class="math"><mi>t</mi></math> 반복 순서</p><p><strong>학습률 주의</strong> 너무 크면 손실이 증가하거나 발산할 수 있음</p></div></section>
 </div>
-<div class="gd-definitions"><p><math class="math"><mi>θ</mi></math> 매개변수 <span>·</span> <math class="math"><mi>L</mi></math> 손실: 줄이려는 오차의 척도 <span>·</span> <math class="math"><mi>t</mi></math> 반복 순서</p><p><strong>학습률 주의</strong> 너무 크면 손실이 증가하거나 발산할 수 있음</p></div>
+
 </section>
 <div class="gd-takeaway"><strong>핵심 원리</strong><span>기울기의 반대 방향으로 갱신하고, 새 위치에서 다시 기울기를 확인</span></div>
 </div>

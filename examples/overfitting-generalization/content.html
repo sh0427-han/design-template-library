@@ -6,23 +6,29 @@
 <link rel="stylesheet" href="../../templates/html/math-typography.css">
 <link rel="stylesheet" href="lesson.css"><script src="curves.js" defer></script></head>
 <body class="source-page"><main><section class="slide reference-slide overfit-slide" aria-labelledby="lesson-title">
-<header><div class="kicker">머신러닝 기초</div><h1 id="lesson-title">과적합과 일반화</h1><p class="subtitle">학습 데이터에 잘 맞는 것과 새로운 데이터에 잘 동작하는 것의 차이</p></header>
+<header><div class="kicker">머신러닝 기초</div><h1 id="lesson-title">과적합과 일반화</h1><p class="subtitle">학습 데이터로 학습 · 학습에 쓰지 않은 검증 데이터로 성능 확인 · 손실(Loss): 예측 오차의 크기</p></header>
 <div class="content">
 <div class="definition-grid">
-<article class="card definition" aria-labelledby="overfit-title"><h2 id="overfit-title">과적합 <span lang="en">Overfitting</span></h2><p class="meaning">학습 데이터의 특성·잡음에 지나치게 맞춰<br>새로운 데이터에서 성능이 저하되는 <b>현상</b></p><div class="subject"><b>점검 관점</b><span>학습·검증 손실의 변화와 차이</span></div></article>
-<article class="card definition" aria-labelledby="general-title"><h2 id="general-title">일반화 <span lang="en">Generalization</span></h2><p class="meaning">학습에 쓰지 않은 새로운 데이터에서도<br>잘 동작하는 <b>능력</b></p><div class="subject"><b>점검 관점</b><span>검증 데이터로 새 데이터 성능 추정</span></div></article>
+<article class="card definition" aria-labelledby="overfit-title"><h2 id="overfit-title">과적합 <span lang="en">Overfitting</span></h2><p class="meaning">학습 데이터의 특성·잡음에 지나치게 맞춰<br>새로운 데이터에서 성능이 저하되는 <b>현상</b></p></article>
+<article class="card definition" aria-labelledby="general-title"><h2 id="general-title">일반화 <span lang="en">Generalization</span></h2><p class="meaning">학습에 쓰지 않은 새로운 데이터에서도<br>잘 동작하는 <b>능력</b></p></article>
 </div>
-<figure class="loss-panel" aria-labelledby="loss-title">
-<div class="plot-heading"><h2 id="loss-title">학습·검증 손실로 살펴보는 단서</h2><span>설명용 곡선 · 실험 결과 아님</span></div>
-<div class="plot-layout"><div class="chart-column"><div class="legend"><span><i class="training-key"></i><b>학습</b> · 모델 학습에 사용</span><span><i class="validation-key"></i><b>검증</b> · 학습에 쓰지 않고 성능 점검</span></div>
-<svg id="loss-chart" viewBox="0 0 760 160" role="img" aria-labelledby="chart-title chart-desc"><title id="chart-title">학습 진행에 따른 평균 손실의 설명용 곡선</title><desc id="chart-desc">초기에는 두 손실이 함께 감소. 후반에는 학습 손실 감소와 검증 손실 상승으로 격차 확대. 과적합의 단서이며 확정 판정이나 독립 테스트 결과가 아님.</desc>
-<g class="grid-lines"><path d="M62 68H722"/></g><path class="axis" d="M62 16V120H722"/>
-<text class="axis-title" x="80" y="20">평균 손실</text><text class="math-number zero" x="49" y="126" text-anchor="end">0</text><text class="axis-title" x="392" y="154" text-anchor="middle">학습 진행</text><text class="direction" x="722" y="140" text-anchor="end">많아짐</text>
-<g id="curve-artwork"><path id="training-line" class="training-line"/><path id="validation-line" class="validation-line"/></g></svg>
-<p id="chart-status" role="status">곡선 로딩 중 · 표시되지 않으면 데이터를 확인하세요.</p></div>
-<figcaption class="reading-guide"><p class="loss-definition"><b>손실(Loss)</b> · 예측 오차의 크기, 낮을수록 좋음</p><p class="interpretation" id="interpretation">검증 손실의 상승·격차 확대는<br><b>과적합을 살펴보는 단서</b></p><p class="guardrail">학습 손실이 줄 때 검증 손실도 함께 줄 수 있음.<br>격차만으로 과적합을 확정하지 않음.</p><p class="test-note">최종 성능은 모델 선택에 쓰지 않은<br><b>독립 테스트</b> 데이터로 평가</p></figcaption></div>
-<p class="conditions">동일 모델·고정 분할 · 같은 평가 조건의 표본별 평균제곱오차(정규화 대상, 무차원, 벌점 제외)</p>
+<section class="loss-panel" aria-label="과적합과 일반화의 손실 곡선 비교">
+<figure class="curve-panel" aria-labelledby="overfit-heading">
+<div class="legend"><span><i class="training-key"></i>학습 손실</span><span><i class="validation-key"></i>검증 손실</span></div>
+<svg id="overfit-chart" class="loss-chart" viewBox="0 0 380 320" role="img" aria-labelledby="overfit-chart-title overfit-chart-desc"><title id="overfit-chart-title">검증 손실 상승은 과적합의 단서</title><desc id="overfit-chart-desc">같은 기준의 학습 손실과 검증 손실을 비교하는 개념도. 실제 측정 결과가 아님.</desc>
+<text id="overfit-heading" class="case-heading" x="190" y="22" text-anchor="middle">검증 손실 상승은 과적합의 단서</text>
+<path class="axis" d="M46 58V266H358"/>
+<text class="axis-title" x="46" y="50">평균 손실</text><text class="math-number zero" x="35" y="272" text-anchor="end">0</text><text class="axis-title" x="202" y="307" text-anchor="middle">학습 진행</text><text class="direction" x="358" y="287" text-anchor="end">많아짐</text>
+<g class="curve-artwork"><path id="overfit-training-line" class="training-line"/><path id="overfit-validation-line" class="validation-line"/></g></svg>
+</figure><figure class="curve-panel" aria-labelledby="generalization-heading">
+<div class="legend"><span><i class="training-key"></i>학습 손실</span><span><i class="validation-key"></i>검증 손실</span></div>
+<svg id="generalization-chart" class="loss-chart" viewBox="0 0 380 320" role="img" aria-labelledby="generalization-chart-title generalization-chart-desc"><title id="generalization-chart-title">새 데이터에서도 낮은 손실</title><desc id="generalization-chart-desc">같은 기준의 학습 손실과 검증 손실을 비교하는 개념도. 실제 측정 결과가 아님.</desc>
+<text id="generalization-heading" class="case-heading" x="190" y="22" text-anchor="middle">새 데이터에서도 낮은 손실</text>
+<path class="axis" d="M46 58V266H358"/>
+<text class="axis-title" x="46" y="50">평균 손실</text><text class="math-number zero" x="35" y="272" text-anchor="end">0</text><text class="axis-title" x="202" y="307" text-anchor="middle">학습 진행</text><text class="direction" x="358" y="287" text-anchor="end">많아짐</text>
+<g class="curve-artwork"><path id="generalization-training-line" class="training-line"/><path id="generalization-validation-line" class="validation-line"/></g></svg>
 </figure>
-<div class="ref-takeaway"><strong>핵심</strong><span>학습 데이터에서의 낮은 손실만으로 새로운 데이터의 성능을 보장할 수 없음</span></div>
+<p id="chart-status" role="status">곡선을 불러오는 중</p></section>
+<div class="ref-takeaway"><strong>핵심</strong><span>낮은 학습 손실만으로 새 데이터의 오차가 작다고 보장할 수 없음</span></div>
 </div><footer class="footer"><span>머신러닝 기초 · 과적합과 일반화</span><span>01 / 01</span></footer>
 </section></main></body></html>

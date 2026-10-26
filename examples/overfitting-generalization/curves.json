@@ -220,5 +220,215 @@
       "training": 0.13584668922486204,
       "validation": 1.1109893833332405
     }
-  ]
+  ],
+  "generalization": {
+    "interpretation": "improving",
+    "points": [
+      {
+        "progress": 0.0,
+        "training": 0.82,
+        "validation": 0.8
+      },
+      {
+        "progress": 0.025,
+        "training": 0.767975310156558,
+        "validation": 0.7429024508215758
+      },
+      {
+        "progress": 0.05,
+        "training": 0.7197097430260416,
+        "validation": 0.6912384518467891
+      },
+      {
+        "progress": 0.075,
+        "training": 0.6749316775067514,
+        "validation": 0.6444909324090307
+      },
+      {
+        "progress": 0.1,
+        "training": 0.6333891188908368,
+        "validation": 0.6021920276213836
+      },
+      {
+        "progress": 0.125,
+        "training": 0.5948482807295,
+        "validation": 0.5639183958275801
+      },
+      {
+        "progress": 0.15,
+        "training": 0.5590922691676767,
+        "validation": 0.5292869816564159
+      },
+      {
+        "progress": 0.175,
+        "training": 0.5259198623441068,
+        "validation": 0.4979511822748457
+      },
+      {
+        "progress": 0.2,
+        "training": 0.49514437798769895,
+        "validation": 0.46959737847033295
+      },
+      {
+        "progress": 0.225,
+        "training": 0.4665926228374354,
+        "validation": 0.44394179584435944
+      },
+      {
+        "progress": 0.25,
+        "training": 0.44010391797353055,
+        "validation": 0.4207276647028654
+      },
+      {
+        "progress": 0.275,
+        "training": 0.41552919457476345,
+        "validation": 0.39972265021884773
+      },
+      {
+        "progress": 0.3,
+        "training": 0.3927301550132314,
+        "validation": 0.3807165271473213
+      },
+      {
+        "progress": 0.325,
+        "training": 0.371578494565473,
+        "validation": 0.36351907582040754
+      },
+      {
+        "progress": 0.35,
+        "training": 0.35195517936003184,
+        "validation": 0.3479581783649639
+      },
+      {
+        "progress": 0.375,
+        "training": 0.3337497764980118,
+        "validation": 0.3338780960890579
+      },
+      {
+        "progress": 0.4,
+        "training": 0.3168598325767855,
+        "validation": 0.3211379107967932
+      },
+      {
+        "progress": 0.425,
+        "training": 0.30119029711941325,
+        "validation": 0.3096101144316408
+      },
+      {
+        "progress": 0.45,
+        "training": 0.2866529876650419,
+        "validation": 0.29917933293295196
+      },
+      {
+        "progress": 0.475,
+        "training": 0.2731660935100063,
+        "validation": 0.28974117153358103
+      },
+      {
+        "progress": 0.5,
+        "training": 0.2606537153068695,
+        "validation": 0.28120116994196764
+      },
+      {
+        "progress": 0.525,
+        "training": 0.2490454379304299,
+        "validation": 0.27347385695178916
+      },
+      {
+        "progress": 0.55,
+        "training": 0.23827593420694299,
+        "validation": 0.2664818950174003
+      },
+      {
+        "progress": 0.575,
+        "training": 0.22828459727648687,
+        "validation": 0.26015530623368227
+      },
+      {
+        "progress": 0.6,
+        "training": 0.2190151995195423,
+        "validation": 0.2544307719736475
+      },
+      {
+        "progress": 0.625,
+        "training": 0.2104155761283485,
+        "validation": 0.2492509991743393
+      },
+      {
+        "progress": 0.65,
+        "training": 0.20243733154228977,
+        "validation": 0.24456414692860035
+      },
+      {
+        "progress": 0.675,
+        "training": 0.19503556709523778,
+        "validation": 0.24032330764384985
+      },
+      {
+        "progress": 0.7,
+        "training": 0.18816862834214698,
+        "validation": 0.2364860375751308
+      },
+      {
+        "progress": 0.725,
+        "training": 0.18179787064294992,
+        "validation": 0.23301393203384435
+      },
+      {
+        "progress": 0.75,
+        "training": 0.17588744168454232,
+        "validation": 0.22987224102071838
+      },
+      {
+        "progress": 0.775,
+        "training": 0.17040407971697202,
+        "validation": 0.2270295214361347
+      },
+      {
+        "progress": 0.8,
+        "training": 0.16531692636837703,
+        "validation": 0.22445732238701974
+      },
+      {
+        "progress": 0.825,
+        "training": 0.16059735298526345,
+        "validation": 0.22212990044074402
+      },
+      {
+        "progress": 0.85,
+        "training": 0.1562187995208303,
+        "validation": 0.22002396197619567
+      },
+      {
+        "progress": 0.875,
+        "training": 0.15215662506466104,
+        "validation": 0.2181184300533911
+      },
+      {
+        "progress": 0.9,
+        "training": 0.14838796917261982,
+        "validation": 0.21639423346837555
+      },
+      {
+        "progress": 0.925,
+        "training": 0.14489162321656487,
+        "validation": 0.21483411588220364
+      },
+      {
+        "progress": 0.95,
+        "training": 0.1416479110298837,
+        "validation": 0.21342246311369936
+      },
+      {
+        "progress": 0.975,
+        "training": 0.1386385781771657,
+        "validation": 0.21214514686748265
+      },
+      {
+        "progress": 1.0,
+        "training": 0.13584668922486204,
+        "validation": 0.21098938333324052
+      }
+    ]
+  }
 }
