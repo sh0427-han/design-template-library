@@ -17,6 +17,26 @@
         950
       ],
       "geometry": {
+        "cardLayout": [
+          {
+            "labelTitleGap": 8,
+            "labelTitleXError": 0,
+            "graphLeftError": 0,
+            "figureBorder": 0,
+            "figureBackground": "rgba(0, 0, 0, 0)",
+            "sameCard": true
+          },
+          {
+            "labelTitleGap": 8,
+            "labelTitleXError": 0,
+            "graphLeftError": 0,
+            "figureBorder": 0,
+            "figureBackground": "rgba(0, 0, 0, 0)",
+            "sameCard": true
+          }
+        ],
+        "cardCount": 2,
+        "oldSplitCards": 0,
         "axisAlignment": {
           "yCenterError": 0,
           "yGap": 8,
@@ -30,10 +50,10 @@
         "lossDefinitionInGraph": true,
         "charts": [
           {
-            "x": 197.5,
-            "y": 344.328125,
-            "right": 577.5,
-            "bottom": 664.328125,
+            "x": 93,
+            "y": 335.328125,
+            "right": 473,
+            "bottom": 655.328125,
             "width": 380,
             "height": 320
           }
@@ -67,42 +87,22 @@
         "outside": [],
         "padding": [
           {
-            "name": "card definition",
+            "name": "card concept-card",
             "inner": {
               "x": 93,
-              "y": 174.328125,
+              "y": 175.328125,
               "right": 682,
-              "bottom": 267.328125
+              "bottom": 658.328125
             },
             "escaped": []
           },
           {
-            "name": "card definition",
+            "name": "card concept-card",
             "inner": {
               "x": 758,
-              "y": 174.328125,
+              "y": 175.328125,
               "right": 1347,
-              "bottom": 267.328125
-            },
-            "escaped": []
-          },
-          {
-            "name": "curve-panel",
-            "inner": {
-              "x": 93,
-              "y": 314.328125,
-              "right": 682,
-              "bottom": 664.328125
-            },
-            "escaped": []
-          },
-          {
-            "name": "curve-panel generalization-panel",
-            "inner": {
-              "x": 758,
-              "y": 314.328125,
-              "right": 1347,
-              "bottom": 664.328125
+              "bottom": 658.328125
             },
             "escaped": []
           }
@@ -155,7 +155,7 @@
             "bbox": {
               "x": 323.09375,
               "y": 273,
-              "width": 35.2611083984375,
+              "width": 35.261077880859375,
               "height": 18
             }
           },
@@ -163,9 +163,9 @@
             "svg": "overfit-chart",
             "text": "best.pt",
             "bbox": {
-              "x": 131.05157470703125,
+              "x": 131.0515594482422,
               "y": 299,
-              "width": 49.24072265625,
+              "width": 49.24073791503906,
               "height": 20
             }
           },
@@ -422,7 +422,7 @@
         "flow_alignment": true
       },
       "fonts": {
-        "text_nodes": 45,
+        "text_nodes": 43,
         "letter_spacing": "-1pt",
         "rendered": [
           {
@@ -510,61 +510,6 @@
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 14
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 14
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 3
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 28
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 13
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 10
               }
             ]
           },
@@ -696,7 +641,40 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 16
+                "glyphCount": 14
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 3
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 28
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 13
               }
             ]
           },
@@ -977,7 +955,7 @@
         "max_svg_coordinate_error": 2.842170943040401e-14
       },
       "mode_parity": {
-        "elements": 113,
+        "elements": 111,
         "style_match": true,
         "max_box_error_px": 0,
         "box_tolerance_px": {
@@ -1005,6 +983,26 @@
         950
       ],
       "geometry": {
+        "cardLayout": [
+          {
+            "labelTitleGap": 8,
+            "labelTitleXError": 0,
+            "graphLeftError": 0,
+            "figureBorder": 0,
+            "figureBackground": "rgba(0, 0, 0, 0)",
+            "sameCard": true
+          },
+          {
+            "labelTitleGap": 8,
+            "labelTitleXError": 0,
+            "graphLeftError": 0,
+            "figureBorder": 0,
+            "figureBackground": "rgba(0, 0, 0, 0)",
+            "sameCard": true
+          }
+        ],
+        "cardCount": 2,
+        "oldSplitCards": 0,
         "axisAlignment": {
           "yCenterError": 0,
           "yGap": 8,
@@ -1018,10 +1016,10 @@
         "lossDefinitionInGraph": true,
         "charts": [
           {
-            "x": 197.5,
-            "y": 344.328125,
-            "right": 577.5,
-            "bottom": 664.328125,
+            "x": 93,
+            "y": 335.328125,
+            "right": 473,
+            "bottom": 655.328125,
             "width": 380,
             "height": 320
           }
@@ -1055,42 +1053,22 @@
         "outside": [],
         "padding": [
           {
-            "name": "card definition",
+            "name": "card concept-card",
             "inner": {
               "x": 93,
-              "y": 174.328125,
+              "y": 175.328125,
               "right": 682,
-              "bottom": 267.328125
+              "bottom": 658.328125
             },
             "escaped": []
           },
           {
-            "name": "card definition",
+            "name": "card concept-card",
             "inner": {
               "x": 758,
-              "y": 174.328125,
+              "y": 175.328125,
               "right": 1347,
-              "bottom": 267.328125
-            },
-            "escaped": []
-          },
-          {
-            "name": "curve-panel",
-            "inner": {
-              "x": 93,
-              "y": 314.328125,
-              "right": 682,
-              "bottom": 664.328125
-            },
-            "escaped": []
-          },
-          {
-            "name": "curve-panel generalization-panel",
-            "inner": {
-              "x": 758,
-              "y": 314.328125,
-              "right": 1347,
-              "bottom": 664.328125
+              "bottom": 658.328125
             },
             "escaped": []
           }
@@ -1143,7 +1121,7 @@
             "bbox": {
               "x": 323.09375,
               "y": 273,
-              "width": 35.2611083984375,
+              "width": 35.261077880859375,
               "height": 18
             }
           },
@@ -1151,9 +1129,9 @@
             "svg": "overfit-chart",
             "text": "best.pt",
             "bbox": {
-              "x": 131.05157470703125,
+              "x": 131.0515594482422,
               "y": 299,
-              "width": 49.24072265625,
+              "width": 49.24073791503906,
               "height": 20
             }
           },
@@ -1410,7 +1388,7 @@
         "flow_alignment": true
       },
       "fonts": {
-        "text_nodes": 45,
+        "text_nodes": 43,
         "letter_spacing": "-1pt",
         "rendered": [
           {
@@ -1498,61 +1476,6 @@
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 14
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 14
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 3
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 28
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 13
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 10
               }
             ]
           },
@@ -1684,7 +1607,40 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 16
+                "glyphCount": 14
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 3
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 28
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 13
               }
             ]
           },
@@ -1965,7 +1921,7 @@
         "max_svg_coordinate_error": 2.842170943040401e-14
       },
       "mode_parity": {
-        "elements": 113,
+        "elements": 111,
         "style_match": true,
         "max_box_error_px": 0,
         "box_tolerance_px": {
@@ -1993,6 +1949,26 @@
         810
       ],
       "geometry": {
+        "cardLayout": [
+          {
+            "labelTitleGap": 8,
+            "labelTitleXError": 0,
+            "graphLeftError": 0,
+            "figureBorder": 0,
+            "figureBackground": "rgba(0, 0, 0, 0)",
+            "sameCard": true
+          },
+          {
+            "labelTitleGap": 8,
+            "labelTitleXError": 0,
+            "graphLeftError": 0,
+            "figureBorder": 0,
+            "figureBackground": "rgba(0, 0, 0, 0)",
+            "sameCard": true
+          }
+        ],
+        "cardCount": 2,
+        "oldSplitCards": 0,
         "axisAlignment": {
           "yCenterError": 0,
           "yGap": 8,
@@ -2006,10 +1982,10 @@
         "lossDefinitionInGraph": true,
         "charts": [
           {
-            "x": 197.5,
-            "y": 344.328125,
-            "right": 577.5,
-            "bottom": 664.328125,
+            "x": 93,
+            "y": 335.328125,
+            "right": 473,
+            "bottom": 655.328125,
             "width": 380,
             "height": 320
           }
@@ -2043,42 +2019,22 @@
         "outside": [],
         "padding": [
           {
-            "name": "card definition",
+            "name": "card concept-card",
             "inner": {
               "x": 93,
-              "y": 174.328125,
+              "y": 175.328125,
               "right": 682,
-              "bottom": 267.328125
+              "bottom": 658.328125
             },
             "escaped": []
           },
           {
-            "name": "card definition",
+            "name": "card concept-card",
             "inner": {
               "x": 758,
-              "y": 174.328125,
+              "y": 175.328125,
               "right": 1347,
-              "bottom": 267.328125
-            },
-            "escaped": []
-          },
-          {
-            "name": "curve-panel",
-            "inner": {
-              "x": 93,
-              "y": 314.328125,
-              "right": 682,
-              "bottom": 664.328125
-            },
-            "escaped": []
-          },
-          {
-            "name": "curve-panel generalization-panel",
-            "inner": {
-              "x": 758,
-              "y": 314.328125,
-              "right": 1347,
-              "bottom": 664.328125
+              "bottom": 658.328125
             },
             "escaped": []
           }
@@ -2131,7 +2087,7 @@
             "bbox": {
               "x": 323.09375,
               "y": 273,
-              "width": 35.2611083984375,
+              "width": 35.261077880859375,
               "height": 18
             }
           },
@@ -2139,9 +2095,9 @@
             "svg": "overfit-chart",
             "text": "best.pt",
             "bbox": {
-              "x": 131.05157470703125,
+              "x": 131.0515594482422,
               "y": 299,
-              "width": 49.24072265625,
+              "width": 49.24073791503906,
               "height": 20
             }
           },
@@ -2398,7 +2354,7 @@
         "flow_alignment": true
       },
       "fonts": {
-        "text_nodes": 45,
+        "text_nodes": 43,
         "letter_spacing": "-1pt",
         "rendered": [
           {
@@ -2486,61 +2442,6 @@
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 14
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 14
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 3
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 28
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 13
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 10
               }
             ]
           },
@@ -2672,7 +2573,40 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 16
+                "glyphCount": 14
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 3
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 28
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 13
               }
             ]
           },
@@ -2953,7 +2887,7 @@
         "max_svg_coordinate_error": 2.842170943040401e-14
       },
       "mode_parity": {
-        "elements": 113,
+        "elements": 111,
         "style_match": true,
         "max_box_error_px": 0,
         "box_tolerance_px": {
@@ -2981,6 +2915,26 @@
         810
       ],
       "geometry": {
+        "cardLayout": [
+          {
+            "labelTitleGap": 8,
+            "labelTitleXError": 0,
+            "graphLeftError": 0,
+            "figureBorder": 0,
+            "figureBackground": "rgba(0, 0, 0, 0)",
+            "sameCard": true
+          },
+          {
+            "labelTitleGap": 8,
+            "labelTitleXError": 0,
+            "graphLeftError": 0,
+            "figureBorder": 0,
+            "figureBackground": "rgba(0, 0, 0, 0)",
+            "sameCard": true
+          }
+        ],
+        "cardCount": 2,
+        "oldSplitCards": 0,
         "axisAlignment": {
           "yCenterError": 0,
           "yGap": 8,
@@ -2994,10 +2948,10 @@
         "lossDefinitionInGraph": true,
         "charts": [
           {
-            "x": 197.5,
-            "y": 344.328125,
-            "right": 577.5,
-            "bottom": 664.328125,
+            "x": 93,
+            "y": 335.328125,
+            "right": 473,
+            "bottom": 655.328125,
             "width": 380,
             "height": 320
           }
@@ -3031,42 +2985,22 @@
         "outside": [],
         "padding": [
           {
-            "name": "card definition",
+            "name": "card concept-card",
             "inner": {
               "x": 93,
-              "y": 174.328125,
+              "y": 175.328125,
               "right": 682,
-              "bottom": 267.328125
+              "bottom": 658.328125
             },
             "escaped": []
           },
           {
-            "name": "card definition",
+            "name": "card concept-card",
             "inner": {
               "x": 758,
-              "y": 174.328125,
+              "y": 175.328125,
               "right": 1347,
-              "bottom": 267.328125
-            },
-            "escaped": []
-          },
-          {
-            "name": "curve-panel",
-            "inner": {
-              "x": 93,
-              "y": 314.328125,
-              "right": 682,
-              "bottom": 664.328125
-            },
-            "escaped": []
-          },
-          {
-            "name": "curve-panel generalization-panel",
-            "inner": {
-              "x": 758,
-              "y": 314.328125,
-              "right": 1347,
-              "bottom": 664.328125
+              "bottom": 658.328125
             },
             "escaped": []
           }
@@ -3119,7 +3053,7 @@
             "bbox": {
               "x": 323.09375,
               "y": 273,
-              "width": 35.2611083984375,
+              "width": 35.261077880859375,
               "height": 18
             }
           },
@@ -3127,9 +3061,9 @@
             "svg": "overfit-chart",
             "text": "best.pt",
             "bbox": {
-              "x": 131.05157470703125,
+              "x": 131.0515594482422,
               "y": 299,
-              "width": 49.24072265625,
+              "width": 49.24073791503906,
               "height": 20
             }
           },
@@ -3386,7 +3320,7 @@
         "flow_alignment": true
       },
       "fonts": {
-        "text_nodes": 45,
+        "text_nodes": 43,
         "letter_spacing": "-1pt",
         "rendered": [
           {
@@ -3474,61 +3408,6 @@
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 14
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 14
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 3
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 28
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 13
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 10
               }
             ]
           },
@@ -3660,7 +3539,40 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 16
+                "glyphCount": 14
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 3
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 28
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 13
               }
             ]
           },
@@ -3941,7 +3853,7 @@
         "max_svg_coordinate_error": 2.842170943040401e-14
       },
       "mode_parity": {
-        "elements": 113,
+        "elements": 111,
         "style_match": true,
         "max_box_error_px": 0,
         "box_tolerance_px": {
@@ -3969,6 +3881,26 @@
         768
       ],
       "geometry": {
+        "cardLayout": [
+          {
+            "labelTitleGap": 8,
+            "labelTitleXError": 0,
+            "graphLeftError": 0,
+            "figureBorder": 0,
+            "figureBackground": "rgba(0, 0, 0, 0)",
+            "sameCard": true
+          },
+          {
+            "labelTitleGap": 8,
+            "labelTitleXError": 0,
+            "graphLeftError": 0,
+            "figureBorder": 0,
+            "figureBackground": "rgba(0, 0, 0, 0)",
+            "sameCard": true
+          }
+        ],
+        "cardCount": 2,
+        "oldSplitCards": 0,
         "axisAlignment": {
           "yCenterError": 0,
           "yGap": 8,
@@ -3982,10 +3914,10 @@
         "lossDefinitionInGraph": true,
         "charts": [
           {
-            "x": 197.5,
-            "y": 344.328125,
-            "right": 577.5,
-            "bottom": 664.328125,
+            "x": 93,
+            "y": 335.328125,
+            "right": 473,
+            "bottom": 655.328125,
             "width": 380,
             "height": 320
           }
@@ -4019,42 +3951,22 @@
         "outside": [],
         "padding": [
           {
-            "name": "card definition",
+            "name": "card concept-card",
             "inner": {
               "x": 93,
-              "y": 174.328125,
+              "y": 175.328125,
               "right": 682,
-              "bottom": 267.328125
+              "bottom": 658.328125
             },
             "escaped": []
           },
           {
-            "name": "card definition",
+            "name": "card concept-card",
             "inner": {
               "x": 758,
-              "y": 174.328125,
+              "y": 175.328125,
               "right": 1347,
-              "bottom": 267.328125
-            },
-            "escaped": []
-          },
-          {
-            "name": "curve-panel",
-            "inner": {
-              "x": 93,
-              "y": 314.328125,
-              "right": 682,
-              "bottom": 664.328125
-            },
-            "escaped": []
-          },
-          {
-            "name": "curve-panel generalization-panel",
-            "inner": {
-              "x": 758,
-              "y": 314.328125,
-              "right": 1347,
-              "bottom": 664.328125
+              "bottom": 658.328125
             },
             "escaped": []
           }
@@ -4107,7 +4019,7 @@
             "bbox": {
               "x": 323.09375,
               "y": 273,
-              "width": 35.2611083984375,
+              "width": 35.261077880859375,
               "height": 18
             }
           },
@@ -4115,9 +4027,9 @@
             "svg": "overfit-chart",
             "text": "best.pt",
             "bbox": {
-              "x": 131.05157470703125,
+              "x": 131.0515594482422,
               "y": 299,
-              "width": 49.24072265625,
+              "width": 49.24073791503906,
               "height": 20
             }
           },
@@ -4374,7 +4286,7 @@
         "flow_alignment": true
       },
       "fonts": {
-        "text_nodes": 45,
+        "text_nodes": 43,
         "letter_spacing": "-1pt",
         "rendered": [
           {
@@ -4462,61 +4374,6 @@
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 14
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 14
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 3
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 28
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 13
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 10
               }
             ]
           },
@@ -4648,7 +4505,40 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 16
+                "glyphCount": 14
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 3
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 28
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 13
               }
             ]
           },
@@ -4929,7 +4819,7 @@
         "max_svg_coordinate_error": 2.842170943040401e-14
       },
       "mode_parity": {
-        "elements": 113,
+        "elements": 111,
         "style_match": true,
         "max_box_error_px": 0,
         "box_tolerance_px": {
@@ -4957,6 +4847,26 @@
         768
       ],
       "geometry": {
+        "cardLayout": [
+          {
+            "labelTitleGap": 8,
+            "labelTitleXError": 0,
+            "graphLeftError": 0,
+            "figureBorder": 0,
+            "figureBackground": "rgba(0, 0, 0, 0)",
+            "sameCard": true
+          },
+          {
+            "labelTitleGap": 8,
+            "labelTitleXError": 0,
+            "graphLeftError": 0,
+            "figureBorder": 0,
+            "figureBackground": "rgba(0, 0, 0, 0)",
+            "sameCard": true
+          }
+        ],
+        "cardCount": 2,
+        "oldSplitCards": 0,
         "axisAlignment": {
           "yCenterError": 0,
           "yGap": 8,
@@ -4970,10 +4880,10 @@
         "lossDefinitionInGraph": true,
         "charts": [
           {
-            "x": 197.5,
-            "y": 344.328125,
-            "right": 577.5,
-            "bottom": 664.328125,
+            "x": 93,
+            "y": 335.328125,
+            "right": 473,
+            "bottom": 655.328125,
             "width": 380,
             "height": 320
           }
@@ -5007,42 +4917,22 @@
         "outside": [],
         "padding": [
           {
-            "name": "card definition",
+            "name": "card concept-card",
             "inner": {
               "x": 93,
-              "y": 174.328125,
+              "y": 175.328125,
               "right": 682,
-              "bottom": 267.328125
+              "bottom": 658.328125
             },
             "escaped": []
           },
           {
-            "name": "card definition",
+            "name": "card concept-card",
             "inner": {
               "x": 758,
-              "y": 174.328125,
+              "y": 175.328125,
               "right": 1347,
-              "bottom": 267.328125
-            },
-            "escaped": []
-          },
-          {
-            "name": "curve-panel",
-            "inner": {
-              "x": 93,
-              "y": 314.328125,
-              "right": 682,
-              "bottom": 664.328125
-            },
-            "escaped": []
-          },
-          {
-            "name": "curve-panel generalization-panel",
-            "inner": {
-              "x": 758,
-              "y": 314.328125,
-              "right": 1347,
-              "bottom": 664.328125
+              "bottom": 658.328125
             },
             "escaped": []
           }
@@ -5095,7 +4985,7 @@
             "bbox": {
               "x": 323.09375,
               "y": 273,
-              "width": 35.2611083984375,
+              "width": 35.261077880859375,
               "height": 18
             }
           },
@@ -5103,9 +4993,9 @@
             "svg": "overfit-chart",
             "text": "best.pt",
             "bbox": {
-              "x": 131.05157470703125,
+              "x": 131.0515594482422,
               "y": 299,
-              "width": 49.24072265625,
+              "width": 49.24073791503906,
               "height": 20
             }
           },
@@ -5362,7 +5252,7 @@
         "flow_alignment": true
       },
       "fonts": {
-        "text_nodes": 45,
+        "text_nodes": 43,
         "letter_spacing": "-1pt",
         "rendered": [
           {
@@ -5450,61 +5340,6 @@
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 14
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 14
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 3
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 28
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 13
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 10
               }
             ]
           },
@@ -5636,7 +5471,40 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 16
+                "glyphCount": 14
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 3
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 28
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 13
               }
             ]
           },
@@ -5917,7 +5785,7 @@
         "max_svg_coordinate_error": 2.842170943040401e-14
       },
       "mode_parity": {
-        "elements": 113,
+        "elements": 111,
         "style_match": true,
         "max_box_error_px": 0,
         "box_tolerance_px": {
@@ -5945,6 +5813,26 @@
         720
       ],
       "geometry": {
+        "cardLayout": [
+          {
+            "labelTitleGap": 8,
+            "labelTitleXError": 0,
+            "graphLeftError": 0,
+            "figureBorder": 0,
+            "figureBackground": "rgba(0, 0, 0, 0)",
+            "sameCard": true
+          },
+          {
+            "labelTitleGap": 8,
+            "labelTitleXError": 0,
+            "graphLeftError": 0,
+            "figureBorder": 0,
+            "figureBackground": "rgba(0, 0, 0, 0)",
+            "sameCard": true
+          }
+        ],
+        "cardCount": 2,
+        "oldSplitCards": 0,
         "axisAlignment": {
           "yCenterError": 0,
           "yGap": 8,
@@ -5958,10 +5846,10 @@
         "lossDefinitionInGraph": true,
         "charts": [
           {
-            "x": 197.5,
-            "y": 344.328125,
-            "right": 577.5,
-            "bottom": 664.328125,
+            "x": 93,
+            "y": 335.328125,
+            "right": 473,
+            "bottom": 655.328125,
             "width": 380,
             "height": 320
           }
@@ -5995,42 +5883,22 @@
         "outside": [],
         "padding": [
           {
-            "name": "card definition",
+            "name": "card concept-card",
             "inner": {
               "x": 93,
-              "y": 174.328125,
+              "y": 175.328125,
               "right": 682,
-              "bottom": 267.328125
+              "bottom": 658.328125
             },
             "escaped": []
           },
           {
-            "name": "card definition",
+            "name": "card concept-card",
             "inner": {
               "x": 758,
-              "y": 174.328125,
+              "y": 175.328125,
               "right": 1347,
-              "bottom": 267.328125
-            },
-            "escaped": []
-          },
-          {
-            "name": "curve-panel",
-            "inner": {
-              "x": 93,
-              "y": 314.328125,
-              "right": 682,
-              "bottom": 664.328125
-            },
-            "escaped": []
-          },
-          {
-            "name": "curve-panel generalization-panel",
-            "inner": {
-              "x": 758,
-              "y": 314.328125,
-              "right": 1347,
-              "bottom": 664.328125
+              "bottom": 658.328125
             },
             "escaped": []
           }
@@ -6083,7 +5951,7 @@
             "bbox": {
               "x": 323.09375,
               "y": 273,
-              "width": 35.2611083984375,
+              "width": 35.261077880859375,
               "height": 18
             }
           },
@@ -6091,9 +5959,9 @@
             "svg": "overfit-chart",
             "text": "best.pt",
             "bbox": {
-              "x": 131.05157470703125,
+              "x": 131.0515594482422,
               "y": 299,
-              "width": 49.24072265625,
+              "width": 49.24073791503906,
               "height": 20
             }
           },
@@ -6350,7 +6218,7 @@
         "flow_alignment": true
       },
       "fonts": {
-        "text_nodes": 45,
+        "text_nodes": 43,
         "letter_spacing": "-1pt",
         "rendered": [
           {
@@ -6438,61 +6306,6 @@
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 14
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 14
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 3
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 28
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 13
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 10
               }
             ]
           },
@@ -6624,7 +6437,40 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 16
+                "glyphCount": 14
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 3
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 28
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 13
               }
             ]
           },
@@ -6905,7 +6751,7 @@
         "max_svg_coordinate_error": 2.842170943040401e-14
       },
       "mode_parity": {
-        "elements": 113,
+        "elements": 111,
         "style_match": true,
         "max_box_error_px": 0,
         "box_tolerance_px": {
@@ -6933,6 +6779,26 @@
         720
       ],
       "geometry": {
+        "cardLayout": [
+          {
+            "labelTitleGap": 8,
+            "labelTitleXError": 0,
+            "graphLeftError": 0,
+            "figureBorder": 0,
+            "figureBackground": "rgba(0, 0, 0, 0)",
+            "sameCard": true
+          },
+          {
+            "labelTitleGap": 8,
+            "labelTitleXError": 0,
+            "graphLeftError": 0,
+            "figureBorder": 0,
+            "figureBackground": "rgba(0, 0, 0, 0)",
+            "sameCard": true
+          }
+        ],
+        "cardCount": 2,
+        "oldSplitCards": 0,
         "axisAlignment": {
           "yCenterError": 0,
           "yGap": 8,
@@ -6946,10 +6812,10 @@
         "lossDefinitionInGraph": true,
         "charts": [
           {
-            "x": 197.5,
-            "y": 344.328125,
-            "right": 577.5,
-            "bottom": 664.328125,
+            "x": 93,
+            "y": 335.328125,
+            "right": 473,
+            "bottom": 655.328125,
             "width": 380,
             "height": 320
           }
@@ -6983,42 +6849,22 @@
         "outside": [],
         "padding": [
           {
-            "name": "card definition",
+            "name": "card concept-card",
             "inner": {
               "x": 93,
-              "y": 174.328125,
+              "y": 175.328125,
               "right": 682,
-              "bottom": 267.328125
+              "bottom": 658.328125
             },
             "escaped": []
           },
           {
-            "name": "card definition",
+            "name": "card concept-card",
             "inner": {
               "x": 758,
-              "y": 174.328125,
+              "y": 175.328125,
               "right": 1347,
-              "bottom": 267.328125
-            },
-            "escaped": []
-          },
-          {
-            "name": "curve-panel",
-            "inner": {
-              "x": 93,
-              "y": 314.328125,
-              "right": 682,
-              "bottom": 664.328125
-            },
-            "escaped": []
-          },
-          {
-            "name": "curve-panel generalization-panel",
-            "inner": {
-              "x": 758,
-              "y": 314.328125,
-              "right": 1347,
-              "bottom": 664.328125
+              "bottom": 658.328125
             },
             "escaped": []
           }
@@ -7071,7 +6917,7 @@
             "bbox": {
               "x": 323.09375,
               "y": 273,
-              "width": 35.2611083984375,
+              "width": 35.261077880859375,
               "height": 18
             }
           },
@@ -7079,9 +6925,9 @@
             "svg": "overfit-chart",
             "text": "best.pt",
             "bbox": {
-              "x": 131.05157470703125,
+              "x": 131.0515594482422,
               "y": 299,
-              "width": 49.24072265625,
+              "width": 49.24073791503906,
               "height": 20
             }
           },
@@ -7338,7 +7184,7 @@
         "flow_alignment": true
       },
       "fonts": {
-        "text_nodes": 45,
+        "text_nodes": 43,
         "letter_spacing": "-1pt",
         "rendered": [
           {
@@ -7426,61 +7272,6 @@
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 14
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 14
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 3
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 28
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 13
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 10
               }
             ]
           },
@@ -7612,7 +7403,40 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 16
+                "glyphCount": 14
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 3
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 28
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 13
               }
             ]
           },
@@ -7893,7 +7717,7 @@
         "max_svg_coordinate_error": 2.842170943040401e-14
       },
       "mode_parity": {
-        "elements": 113,
+        "elements": 111,
         "style_match": true,
         "max_box_error_px": 0,
         "box_tolerance_px": {
@@ -7946,6 +7770,26 @@
         "label_annotation_collisions": []
       },
       "geometry": {
+        "cardLayout": [
+          {
+            "labelTitleGap": 8,
+            "labelTitleXError": 0,
+            "graphLeftError": 0,
+            "figureBorder": 0,
+            "figureBackground": "rgba(0, 0, 0, 0)",
+            "sameCard": true
+          },
+          {
+            "labelTitleGap": 8,
+            "labelTitleXError": 0,
+            "graphLeftError": 0,
+            "figureBorder": 0,
+            "figureBackground": "rgba(0, 0, 0, 0)",
+            "sameCard": true
+          }
+        ],
+        "cardCount": 2,
+        "oldSplitCards": 0,
         "axisAlignment": {
           "yCenterError": 0,
           "yGap": 8,
@@ -7959,10 +7803,10 @@
         "lossDefinitionInGraph": true,
         "charts": [
           {
-            "x": 197.5,
-            "y": 344.328125,
-            "right": 577.5,
-            "bottom": 664.328125,
+            "x": 93,
+            "y": 335.328125,
+            "right": 473,
+            "bottom": 655.328125,
             "width": 380,
             "height": 320
           }
@@ -7996,42 +7840,22 @@
         "outside": [],
         "padding": [
           {
-            "name": "card definition",
+            "name": "card concept-card",
             "inner": {
               "x": 93,
-              "y": 174.328125,
+              "y": 175.328125,
               "right": 682,
-              "bottom": 267.328125
+              "bottom": 658.328125
             },
             "escaped": []
           },
           {
-            "name": "card definition",
+            "name": "card concept-card",
             "inner": {
               "x": 758,
-              "y": 174.328125,
+              "y": 175.328125,
               "right": 1347,
-              "bottom": 267.328125
-            },
-            "escaped": []
-          },
-          {
-            "name": "curve-panel",
-            "inner": {
-              "x": 93,
-              "y": 314.328125,
-              "right": 682,
-              "bottom": 664.328125
-            },
-            "escaped": []
-          },
-          {
-            "name": "curve-panel generalization-panel",
-            "inner": {
-              "x": 758,
-              "y": 314.328125,
-              "right": 1347,
-              "bottom": 664.328125
+              "bottom": 658.328125
             },
             "escaped": []
           }
@@ -8084,7 +7908,7 @@
             "bbox": {
               "x": 323.09375,
               "y": 273,
-              "width": 35.2611083984375,
+              "width": 35.261077880859375,
               "height": 18
             }
           },
@@ -8094,7 +7918,7 @@
             "bbox": {
               "x": 309.703125,
               "y": 299,
-              "width": 49.24072265625,
+              "width": 49.240753173828125,
               "height": 20
             }
           },
@@ -8294,6 +8118,26 @@
         "label_annotation_collisions": []
       },
       "geometry": {
+        "cardLayout": [
+          {
+            "labelTitleGap": 8,
+            "labelTitleXError": 0,
+            "graphLeftError": 0,
+            "figureBorder": 0,
+            "figureBackground": "rgba(0, 0, 0, 0)",
+            "sameCard": true
+          },
+          {
+            "labelTitleGap": 8,
+            "labelTitleXError": 0,
+            "graphLeftError": 0,
+            "figureBorder": 0,
+            "figureBackground": "rgba(0, 0, 0, 0)",
+            "sameCard": true
+          }
+        ],
+        "cardCount": 2,
+        "oldSplitCards": 0,
         "axisAlignment": {
           "yCenterError": 0,
           "yGap": 8,
@@ -8307,10 +8151,10 @@
         "lossDefinitionInGraph": true,
         "charts": [
           {
-            "x": 197.5,
-            "y": 344.328125,
-            "right": 577.5,
-            "bottom": 664.328125,
+            "x": 93,
+            "y": 335.328125,
+            "right": 473,
+            "bottom": 655.328125,
             "width": 380,
             "height": 320
           }
@@ -8344,42 +8188,22 @@
         "outside": [],
         "padding": [
           {
-            "name": "card definition",
+            "name": "card concept-card",
             "inner": {
               "x": 93,
-              "y": 174.328125,
+              "y": 175.328125,
               "right": 682,
-              "bottom": 267.328125
+              "bottom": 658.328125
             },
             "escaped": []
           },
           {
-            "name": "card definition",
+            "name": "card concept-card",
             "inner": {
               "x": 758,
-              "y": 174.328125,
+              "y": 175.328125,
               "right": 1347,
-              "bottom": 267.328125
-            },
-            "escaped": []
-          },
-          {
-            "name": "curve-panel",
-            "inner": {
-              "x": 93,
-              "y": 314.328125,
-              "right": 682,
-              "bottom": 664.328125
-            },
-            "escaped": []
-          },
-          {
-            "name": "curve-panel generalization-panel",
-            "inner": {
-              "x": 758,
-              "y": 314.328125,
-              "right": 1347,
-              "bottom": 664.328125
+              "bottom": 658.328125
             },
             "escaped": []
           }
@@ -8432,7 +8256,7 @@
             "bbox": {
               "x": 323.09375,
               "y": 273,
-              "width": 35.2611083984375,
+              "width": 35.261077880859375,
               "height": 18
             }
           },
@@ -8642,6 +8466,26 @@
         "label_annotation_collisions": []
       },
       "geometry": {
+        "cardLayout": [
+          {
+            "labelTitleGap": 8,
+            "labelTitleXError": 0,
+            "graphLeftError": 0,
+            "figureBorder": 0,
+            "figureBackground": "rgba(0, 0, 0, 0)",
+            "sameCard": true
+          },
+          {
+            "labelTitleGap": 8,
+            "labelTitleXError": 0,
+            "graphLeftError": 0,
+            "figureBorder": 0,
+            "figureBackground": "rgba(0, 0, 0, 0)",
+            "sameCard": true
+          }
+        ],
+        "cardCount": 2,
+        "oldSplitCards": 0,
         "axisAlignment": {
           "yCenterError": 0,
           "yGap": 8,
@@ -8655,10 +8499,10 @@
         "lossDefinitionInGraph": true,
         "charts": [
           {
-            "x": 197.5,
-            "y": 344.328125,
-            "right": 577.5,
-            "bottom": 664.328125,
+            "x": 93,
+            "y": 335.328125,
+            "right": 473,
+            "bottom": 655.328125,
             "width": 380,
             "height": 320
           }
@@ -8692,42 +8536,22 @@
         "outside": [],
         "padding": [
           {
-            "name": "card definition",
+            "name": "card concept-card",
             "inner": {
               "x": 93,
-              "y": 174.328125,
+              "y": 175.328125,
               "right": 682,
-              "bottom": 267.328125
+              "bottom": 658.328125
             },
             "escaped": []
           },
           {
-            "name": "card definition",
+            "name": "card concept-card",
             "inner": {
               "x": 758,
-              "y": 174.328125,
+              "y": 175.328125,
               "right": 1347,
-              "bottom": 267.328125
-            },
-            "escaped": []
-          },
-          {
-            "name": "curve-panel",
-            "inner": {
-              "x": 93,
-              "y": 314.328125,
-              "right": 682,
-              "bottom": 664.328125
-            },
-            "escaped": []
-          },
-          {
-            "name": "curve-panel generalization-panel",
-            "inner": {
-              "x": 758,
-              "y": 314.328125,
-              "right": 1347,
-              "bottom": 664.328125
+              "bottom": 658.328125
             },
             "escaped": []
           }
@@ -8780,7 +8604,7 @@
             "bbox": {
               "x": 323.09375,
               "y": 273,
-              "width": 35.2611083984375,
+              "width": 35.261077880859375,
               "height": 18
             }
           },
@@ -8986,7 +8810,7 @@
       "evidence": "examples/overfitting-generalization/review/screens/middle-minimum.png"
     }
   ],
-  "created_utc": "2026-10-26T07:35:02.908726+00:00",
+  "created_utc": "2026-10-26T09:03:33.572232+00:00",
   "chromium": "155.0.8059.0",
   "behavior": {
     "changed_datasets": [
@@ -9006,20 +8830,20 @@
     "failed_data_message": true
   },
   "source_sha256": {
-    "examples/overfitting-generalization/content.html": "ffdf81851b117f9b1a1c49beec305ac578fc27b36caeb36dd80ac0073d0410b5",
+    "examples/overfitting-generalization/content.html": "3fcd5133015211088c8f4ea6d3a6421e91793cf601f29329ffcecb5d94c89687",
     "examples/overfitting-generalization/scroll.html": "c3d618f2f5accc5471da5506955a9dd2c38d62427f224e2bf5c6938636db4936",
     "examples/overfitting-generalization/slides.html": "20ceb16b62eacd01b0c22601a04c3b87756b216c3dce5ae89c7b0cecf97c7171",
-    "examples/overfitting-generalization/lesson.css": "3cec140ce68867f77fb1bb13b49ea6fecb8b829d486aa1d791c95b5cc4f55b58",
+    "examples/overfitting-generalization/lesson.css": "4b7edb9f7d8b071f5f4820aa44baeb5c7d7046ba09a168e5d39fa5a85a9869ef",
     "examples/overfitting-generalization/viewer.css": "b03e8785c652fd9711e4eca188e29c555024a998c53013ce8b389e61825860a7",
     "examples/overfitting-generalization/viewer.js": "a15e739f880682df368572875033d204eab63789b812cebad965f6eb566229a3",
     "examples/overfitting-generalization/curves.js": "509e63b6f9660e713d99fd83b66b5fe22004d278f2ce0a1b6842fd339b11e884",
     "examples/overfitting-generalization/curves.json": "d9e995fa132145654184d2f3a5a7a0b076debc789f8311bd3a7d96d7bc6521a8",
     "examples/overfitting-generalization/DESIGN.md": "298eaf219aa36e791b6ac38449560f516e07942ce611f5b663f7f7e046061a61",
-    "scripts/verify_overfitting.py": "4ee5a6e3d252a9779cbd5b478d26cb050f7dcdcee385e86df9825ca147e5a3b4",
+    "scripts/verify_overfitting.py": "c08ae629a1de00a557c591b9c654075eb260ca89e70906d23d10aa9c7f18f0a0",
     "templates/html/graph-annotations.js": "deeee6a81fae900035c9b5398c1c17aa7ac4694bf986313b1a810ec20bfec92b"
   },
   "preview_sha256": {
-    "scroll.png": "31fa194902ae63cea6a87c07d2cecd2bb290ec4d1a7809e08b84d78cc23c7f6e",
-    "slide.png": "6a72fa5b83f9f7dd801720c3a957661d67863f66dea6280de41368618cad1ad8"
+    "scroll.png": "7636520ae6d53b274958e72778094423c2a27bb9ceea99a71aba00e443d7f184",
+    "slide.png": "3042728bd95527155ded52827f651c721884b3488b2b0099e6d81c5cc604eff5"
   }
 }

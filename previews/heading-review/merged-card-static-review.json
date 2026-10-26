@@ -1,0 +1,103 @@
+{
+  "reviewer": "/root/independent_reviewer",
+  "review_type": "independent_static_review",
+  "reviewed_commit": "2adc369b1930988bc33969840cc356c4d4bf567f",
+  "created_utc": "2026-10-26T09:05:44.530220+00:00",
+  "status": "static_review_passed_pending_actual_browser_and_visual_review",
+  "scope": "Overfitting-only follow-up: one continuous outer card per concept, Blue label/Navy title/definition on separate rows, left-aligned unchanged graph. Approved Concept version is preserved.",
+  "visual_review_performed": false,
+  "current_browser_result_reviewed": false,
+  "severity_counts": {
+    "high": 0,
+    "medium": 0,
+    "low": 0
+  },
+  "confirmed_findings": [],
+  "source_code_modified_by_reviewer": false,
+  "markdown_files_created_or_modified_by_reviewer": [],
+  "markdown_changed_count": 0,
+  "markdown_finalized": false,
+  "user_review_pending": true,
+  "user_approval_for_markdown": false,
+  "merge_authorized": false,
+  "verified_static": {
+    "independent_dom_method": "lxml HTML parsing, exact direct-child checks and old/new SVG serialization comparison against 5385296ca3f933221cfd7270493bc70936548245.",
+    "outer_concept_cards": 2,
+    "each_card_contains_own_header_and_figure": true,
+    "each_header_has_one_blue_label_one_navy_h2_and_one_definition": true,
+    "previous_split_definition_cards_absent": true,
+    "nested_figure_border_removed": true,
+    "nested_figure_background_transparent": true,
+    "graph_left_alignment": "380x320 loss SVG has margin:8px 0 0; actual left edge is checked against outer card border+padding by the dedicated verifier.",
+    "right_diagram_alignment": "580x320 diagram uses margin:8px 0 0 and shares the header/figure start row.",
+    "label_title_stacked": "concept-heading explicitly uses 20/34/22px grid rows and 8px gaps. The verifier checks vertical label/title separation and equal left edge.",
+    "both_svg_doms_byte_identical_after_serialization": true,
+    "plot_coordinates_data_curve_js_and_fruit_shapes_preserved": true,
+    "approved_concept_source_identical_to_5385296": true,
+    "shared_styles_and_axis_helper_identical_to_5385296": true,
+    "heading_card_pair_scope": {
+      "teaching_cards": 23,
+      "expected_observations_pc4_both_modes": 184,
+      "page_cases": 72,
+      "overfitting_outer_cards": 2,
+      "previous_version_teaching_cards": 25,
+      "previous_version_observations": 200
+    },
+    "card_scope_explanation": "Two definition cards and two figure cards become two continuous concept cards. Figures are now subordinate content rather than separately labeled outer cards. Historical 200-pair results are not claimed for the new 184-pair structure.",
+    "dedicated_verifier_updates": [
+      "exactly two concept-card elements and no old split-definition containers",
+      "all descendants within outer-card padding",
+      "label/title vertical gap and matching left edge",
+      "each SVG left edge matches card inner edge",
+      "figure border zero and transparent background",
+      "same-card containment",
+      "existing independent graph arithmetic, axes, collisions, typography and mode parity remain"
+    ],
+    "python_ast_syntax_pass": [
+      "scripts/verify_overfitting.py",
+      "scripts/verify_heading_roles.py"
+    ],
+    "manifest_before_and_after_sha256_all_match": true,
+    "new_canonical_reference_changes": 0,
+    "markdown_diff_from_active_followup_baseline": [],
+    "manifest_status": "preview_pending_user_review",
+    "active_followup_scope": "only overfitting layout and its validation"
+  },
+  "layout_budget_static": {
+    "outer_card_height_px": 521,
+    "header_tracks_and_gaps_px": 92,
+    "figure_top_margin_px": 16,
+    "figure_heading_track_px": 44,
+    "svg_top_margin_px": 8,
+    "svg_height_px": 320,
+    "vertical_padding_plus_borders_px": 38,
+    "estimated_total_px": 518,
+    "estimated_remaining_px": 3,
+    "interpretation": "The declared fixed-height pieces fit the nominal budget. Actual font metrics, child bounds, SVG glyph bounds and bottom padding still require the new browser result; static arithmetic is not visual approval."
+  },
+  "pending_actual_checks": [
+    "Directly open new source-matched Scroll/Slide previews and eight-view contact; do not use older a0ec1df screenshots as evidence for this layout.",
+    "Check two-card continuity and absence of inner figure-card borders in actual rendering.",
+    "Verify label, main title and definition use separate rows and matching relative positions across left/right cards; retain both one-line definitions and actual original #3 typography.",
+    "Check graph frame left edge at the card inner padding and unchanged 380x320 dimensions, actual axis names, best.pt, minimum guide and rightward annotation bounds.",
+    "Check subordinate figure heading/legend rows and the Loss meaning row for clipping or overlap.",
+    "Check both complete figures and all text remain inside the outer card padding, particularly the small remaining vertical budget, and retain takeaway/footer separation.",
+    "Run and inspect the current 72-case role/color audit with 184 owned-card pairs, dedicated eight-view overfitting checks and complete original/GD/logistic regressions.",
+    "Recheck current source/preview/manifest hashes, including nested dual-mode source hashes and representative JPEG hashes.",
+    "Keep approved Concept unchanged, Markdown unmodified and user review pending."
+  ],
+  "limits": [
+    "No new screenshots or current browser result were reviewed in this static pass.",
+    "The two SVG coordinate systems are unchanged; their overall placement changes with the requested card layout.",
+    "Historical color-only and label-presence results remain records of their respective earlier versions.",
+    "This review neither finalizes common Markdown nor authorizes main merge."
+  ],
+  "source_sha256": {
+    "examples/overfitting-generalization/content.html": "3fcd5133015211088c8f4ea6d3a6421e91793cf601f29329ffcecb5d94c89687",
+    "examples/overfitting-generalization/lesson.css": "4b7edb9f7d8b071f5f4820aa44baeb5c7d7046ba09a168e5d39fa5a85a9869ef",
+    "scripts/verify_heading_roles.py": "c143973b60fd818e37aed12b43d8d547c1ea116cb7fed6c3d9130ee772822d11",
+    "scripts/verify_overfitting.py": "c08ae629a1de00a557c591b9c654075eb260ca89e70906d23d10aa9c7f18f0a0",
+    "previews/heading-review/change-scope.json": "2d3c7977e4f57bd7dd48890f37f76dea4acd000b079b92abb19bd7fa3825609a",
+    "templates/html/concept.html": "ddef1b01d7919cb46784659e41933556e103640d73b32a98ccdfa474626d9f37"
+  }
+}

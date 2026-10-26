@@ -1,6 +1,6 @@
 {
   "status": "passed",
-  "started_utc": "2026-10-26T07:35:00.192525+00:00",
+  "started_utc": "2026-10-26T09:03:45.387541+00:00",
   "viewports": [
     [
       1600,
@@ -17186,14 +17186,14 @@
   "canonical_preview_sha256": {
     "previews/html-concept.png": "a7e07908fe83a9d6dbc290a5a192c41181f0e9935d2f6b61715735bd845a4e51",
     "previews/html-process.png": "a8e5504c6f66f485a10a65ce4afbecf86f57813b8d0dfa3d6cbdaf09a4ca9566",
-    "previews/html-comparison.png": "8d5d1f891ffb31fdd358b961b4daf8fa80fbf5a79bc5b78b18a0f6772e2212a8",
+    "previews/html-comparison.png": "cc2269321aab83b95ed234e347bb6df3b56bb18e4aee7c7ba318d1d21210a171",
     "previews/html-step-by-step.jpg": "b48a137f8226ad5eba17ff335b0b5eba84aa8ebd3655859fd7bab839aaa001e7",
     "previews/html-interactive.jpg": "6552cc759523c967de8aadd317b95e76a93446fb043810e47db5aa43c1b012c4",
     "previews/html-architecture.jpg": "b36556f3baa04017fd118792a7d851f00af9defd7446597be5c4b291e728eda5",
     "previews/html-experiment.jpg": "a46a7083f4bdbcc4e6f57f81ff0c0624f4cb751ebc412a179a6213545e3a505f",
     "previews/html-executive-summary.jpg": "966d0f37c6eb520097c6872372c0c8199d95ef60486ee27bf38fb87c05953a24"
   },
-  "finished_utc": "2026-10-26T07:36:20.170386+00:00",
+  "finished_utc": "2026-10-26T09:05:02.720015+00:00",
   "canonical_preview_updates": [
     "concept",
     "process",

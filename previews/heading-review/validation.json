@@ -1347,23 +1347,23 @@
         },
         {
           "role": "title",
-          "text": "일반화",
-          "color": "rgb(18, 35, 63)",
-          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
-          "size": "29px",
-          "weight": "700",
-          "lineHeight": "34px",
-          "spacing": "-1.33333px",
-          "visible": true
-        },
-        {
-          "role": "title",
           "text": "검증 손실 최소에서 모델 선택",
           "color": "rgb(18, 35, 63)",
           "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
           "size": "17px",
           "weight": "750",
           "lineHeight": "22px",
+          "spacing": "-1.33333px",
+          "visible": true
+        },
+        {
+          "role": "title",
+          "text": "일반화",
+          "color": "rgb(18, 35, 63)",
+          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+          "size": "29px",
+          "weight": "700",
+          "lineHeight": "34px",
           "spacing": "-1.33333px",
           "visible": true
         },
@@ -1410,56 +1410,20 @@
           "lineHeight": "20px",
           "spacing": "-1.33333px",
           "visible": true
-        },
-        {
-          "role": "label",
-          "text": "LOSS CURVE",
-          "color": "rgb(49, 104, 200)",
-          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
-          "size": "16px",
-          "weight": "800",
-          "lineHeight": "20px",
-          "spacing": "-1.33333px",
-          "visible": true
-        },
-        {
-          "role": "label",
-          "text": "IMAGE PREDICTION",
-          "color": "rgb(49, 104, 200)",
-          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
-          "size": "16px",
-          "weight": "800",
-          "lineHeight": "20px",
-          "spacing": "-1.33333px",
-          "visible": true
         }
       ],
       "card_pairs": [
         {
-          "card": ".definition",
+          "card": ".concept-card",
           "label": "OVERFITTING",
           "title": "과적합",
           "own_label": true,
           "own_title": true
         },
         {
-          "card": ".definition",
+          "card": ".concept-card",
           "label": "GENERALIZATION",
           "title": "일반화",
-          "own_label": true,
-          "own_title": true
-        },
-        {
-          "card": ".curve-panel",
-          "label": "LOSS CURVE",
-          "title": "검증 손실 최소에서 모델 선택",
-          "own_label": true,
-          "own_title": true
-        },
-        {
-          "card": ".curve-panel",
-          "label": "IMAGE PREDICTION",
-          "title": "학습한 특징을 새 이미지에도 적용",
           "own_label": true,
           "own_title": true
         }
@@ -2824,23 +2788,23 @@
         },
         {
           "role": "title",
-          "text": "일반화",
-          "color": "rgb(18, 35, 63)",
-          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
-          "size": "29px",
-          "weight": "700",
-          "lineHeight": "34px",
-          "spacing": "-1.33333px",
-          "visible": true
-        },
-        {
-          "role": "title",
           "text": "검증 손실 최소에서 모델 선택",
           "color": "rgb(18, 35, 63)",
           "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
           "size": "17px",
           "weight": "750",
           "lineHeight": "22px",
+          "spacing": "-1.33333px",
+          "visible": true
+        },
+        {
+          "role": "title",
+          "text": "일반화",
+          "color": "rgb(18, 35, 63)",
+          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+          "size": "29px",
+          "weight": "700",
+          "lineHeight": "34px",
           "spacing": "-1.33333px",
           "visible": true
         },
@@ -2887,56 +2851,20 @@
           "lineHeight": "20px",
           "spacing": "-1.33333px",
           "visible": true
-        },
-        {
-          "role": "label",
-          "text": "LOSS CURVE",
-          "color": "rgb(49, 104, 200)",
-          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
-          "size": "16px",
-          "weight": "800",
-          "lineHeight": "20px",
-          "spacing": "-1.33333px",
-          "visible": true
-        },
-        {
-          "role": "label",
-          "text": "IMAGE PREDICTION",
-          "color": "rgb(49, 104, 200)",
-          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
-          "size": "16px",
-          "weight": "800",
-          "lineHeight": "20px",
-          "spacing": "-1.33333px",
-          "visible": true
         }
       ],
       "card_pairs": [
         {
-          "card": ".definition",
+          "card": ".concept-card",
           "label": "OVERFITTING",
           "title": "과적합",
           "own_label": true,
           "own_title": true
         },
         {
-          "card": ".definition",
+          "card": ".concept-card",
           "label": "GENERALIZATION",
           "title": "일반화",
-          "own_label": true,
-          "own_title": true
-        },
-        {
-          "card": ".curve-panel",
-          "label": "LOSS CURVE",
-          "title": "검증 손실 최소에서 모델 선택",
-          "own_label": true,
-          "own_title": true
-        },
-        {
-          "card": ".curve-panel",
-          "label": "IMAGE PREDICTION",
-          "title": "학습한 특징을 새 이미지에도 적용",
           "own_label": true,
           "own_title": true
         }
@@ -4301,23 +4229,23 @@
         },
         {
           "role": "title",
-          "text": "일반화",
-          "color": "rgb(18, 35, 63)",
-          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
-          "size": "29px",
-          "weight": "700",
-          "lineHeight": "34px",
-          "spacing": "-1.33333px",
-          "visible": true
-        },
-        {
-          "role": "title",
           "text": "검증 손실 최소에서 모델 선택",
           "color": "rgb(18, 35, 63)",
           "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
           "size": "17px",
           "weight": "750",
           "lineHeight": "22px",
+          "spacing": "-1.33333px",
+          "visible": true
+        },
+        {
+          "role": "title",
+          "text": "일반화",
+          "color": "rgb(18, 35, 63)",
+          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+          "size": "29px",
+          "weight": "700",
+          "lineHeight": "34px",
           "spacing": "-1.33333px",
           "visible": true
         },
@@ -4364,56 +4292,20 @@
           "lineHeight": "20px",
           "spacing": "-1.33333px",
           "visible": true
-        },
-        {
-          "role": "label",
-          "text": "LOSS CURVE",
-          "color": "rgb(49, 104, 200)",
-          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
-          "size": "16px",
-          "weight": "800",
-          "lineHeight": "20px",
-          "spacing": "-1.33333px",
-          "visible": true
-        },
-        {
-          "role": "label",
-          "text": "IMAGE PREDICTION",
-          "color": "rgb(49, 104, 200)",
-          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
-          "size": "16px",
-          "weight": "800",
-          "lineHeight": "20px",
-          "spacing": "-1.33333px",
-          "visible": true
         }
       ],
       "card_pairs": [
         {
-          "card": ".definition",
+          "card": ".concept-card",
           "label": "OVERFITTING",
           "title": "과적합",
           "own_label": true,
           "own_title": true
         },
         {
-          "card": ".definition",
+          "card": ".concept-card",
           "label": "GENERALIZATION",
           "title": "일반화",
-          "own_label": true,
-          "own_title": true
-        },
-        {
-          "card": ".curve-panel",
-          "label": "LOSS CURVE",
-          "title": "검증 손실 최소에서 모델 선택",
-          "own_label": true,
-          "own_title": true
-        },
-        {
-          "card": ".curve-panel",
-          "label": "IMAGE PREDICTION",
-          "title": "학습한 특징을 새 이미지에도 적용",
           "own_label": true,
           "own_title": true
         }
@@ -5778,23 +5670,23 @@
         },
         {
           "role": "title",
-          "text": "일반화",
-          "color": "rgb(18, 35, 63)",
-          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
-          "size": "29px",
-          "weight": "700",
-          "lineHeight": "34px",
-          "spacing": "-1.33333px",
-          "visible": true
-        },
-        {
-          "role": "title",
           "text": "검증 손실 최소에서 모델 선택",
           "color": "rgb(18, 35, 63)",
           "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
           "size": "17px",
           "weight": "750",
           "lineHeight": "22px",
+          "spacing": "-1.33333px",
+          "visible": true
+        },
+        {
+          "role": "title",
+          "text": "일반화",
+          "color": "rgb(18, 35, 63)",
+          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+          "size": "29px",
+          "weight": "700",
+          "lineHeight": "34px",
           "spacing": "-1.33333px",
           "visible": true
         },
@@ -5841,56 +5733,20 @@
           "lineHeight": "20px",
           "spacing": "-1.33333px",
           "visible": true
-        },
-        {
-          "role": "label",
-          "text": "LOSS CURVE",
-          "color": "rgb(49, 104, 200)",
-          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
-          "size": "16px",
-          "weight": "800",
-          "lineHeight": "20px",
-          "spacing": "-1.33333px",
-          "visible": true
-        },
-        {
-          "role": "label",
-          "text": "IMAGE PREDICTION",
-          "color": "rgb(49, 104, 200)",
-          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
-          "size": "16px",
-          "weight": "800",
-          "lineHeight": "20px",
-          "spacing": "-1.33333px",
-          "visible": true
         }
       ],
       "card_pairs": [
         {
-          "card": ".definition",
+          "card": ".concept-card",
           "label": "OVERFITTING",
           "title": "과적합",
           "own_label": true,
           "own_title": true
         },
         {
-          "card": ".definition",
+          "card": ".concept-card",
           "label": "GENERALIZATION",
           "title": "일반화",
-          "own_label": true,
-          "own_title": true
-        },
-        {
-          "card": ".curve-panel",
-          "label": "LOSS CURVE",
-          "title": "검증 손실 최소에서 모델 선택",
-          "own_label": true,
-          "own_title": true
-        },
-        {
-          "card": ".curve-panel",
-          "label": "IMAGE PREDICTION",
-          "title": "학습한 특징을 새 이미지에도 적용",
           "own_label": true,
           "own_title": true
         }
@@ -7255,23 +7111,23 @@
         },
         {
           "role": "title",
-          "text": "일반화",
-          "color": "rgb(18, 35, 63)",
-          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
-          "size": "29px",
-          "weight": "700",
-          "lineHeight": "34px",
-          "spacing": "-1.33333px",
-          "visible": true
-        },
-        {
-          "role": "title",
           "text": "검증 손실 최소에서 모델 선택",
           "color": "rgb(18, 35, 63)",
           "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
           "size": "17px",
           "weight": "750",
           "lineHeight": "22px",
+          "spacing": "-1.33333px",
+          "visible": true
+        },
+        {
+          "role": "title",
+          "text": "일반화",
+          "color": "rgb(18, 35, 63)",
+          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+          "size": "29px",
+          "weight": "700",
+          "lineHeight": "34px",
           "spacing": "-1.33333px",
           "visible": true
         },
@@ -7318,56 +7174,20 @@
           "lineHeight": "20px",
           "spacing": "-1.33333px",
           "visible": true
-        },
-        {
-          "role": "label",
-          "text": "LOSS CURVE",
-          "color": "rgb(49, 104, 200)",
-          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
-          "size": "16px",
-          "weight": "800",
-          "lineHeight": "20px",
-          "spacing": "-1.33333px",
-          "visible": true
-        },
-        {
-          "role": "label",
-          "text": "IMAGE PREDICTION",
-          "color": "rgb(49, 104, 200)",
-          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
-          "size": "16px",
-          "weight": "800",
-          "lineHeight": "20px",
-          "spacing": "-1.33333px",
-          "visible": true
         }
       ],
       "card_pairs": [
         {
-          "card": ".definition",
+          "card": ".concept-card",
           "label": "OVERFITTING",
           "title": "과적합",
           "own_label": true,
           "own_title": true
         },
         {
-          "card": ".definition",
+          "card": ".concept-card",
           "label": "GENERALIZATION",
           "title": "일반화",
-          "own_label": true,
-          "own_title": true
-        },
-        {
-          "card": ".curve-panel",
-          "label": "LOSS CURVE",
-          "title": "검증 손실 최소에서 모델 선택",
-          "own_label": true,
-          "own_title": true
-        },
-        {
-          "card": ".curve-panel",
-          "label": "IMAGE PREDICTION",
-          "title": "학습한 특징을 새 이미지에도 적용",
           "own_label": true,
           "own_title": true
         }
@@ -8732,23 +8552,23 @@
         },
         {
           "role": "title",
-          "text": "일반화",
-          "color": "rgb(18, 35, 63)",
-          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
-          "size": "29px",
-          "weight": "700",
-          "lineHeight": "34px",
-          "spacing": "-1.33333px",
-          "visible": true
-        },
-        {
-          "role": "title",
           "text": "검증 손실 최소에서 모델 선택",
           "color": "rgb(18, 35, 63)",
           "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
           "size": "17px",
           "weight": "750",
           "lineHeight": "22px",
+          "spacing": "-1.33333px",
+          "visible": true
+        },
+        {
+          "role": "title",
+          "text": "일반화",
+          "color": "rgb(18, 35, 63)",
+          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+          "size": "29px",
+          "weight": "700",
+          "lineHeight": "34px",
           "spacing": "-1.33333px",
           "visible": true
         },
@@ -8795,56 +8615,20 @@
           "lineHeight": "20px",
           "spacing": "-1.33333px",
           "visible": true
-        },
-        {
-          "role": "label",
-          "text": "LOSS CURVE",
-          "color": "rgb(49, 104, 200)",
-          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
-          "size": "16px",
-          "weight": "800",
-          "lineHeight": "20px",
-          "spacing": "-1.33333px",
-          "visible": true
-        },
-        {
-          "role": "label",
-          "text": "IMAGE PREDICTION",
-          "color": "rgb(49, 104, 200)",
-          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
-          "size": "16px",
-          "weight": "800",
-          "lineHeight": "20px",
-          "spacing": "-1.33333px",
-          "visible": true
         }
       ],
       "card_pairs": [
         {
-          "card": ".definition",
+          "card": ".concept-card",
           "label": "OVERFITTING",
           "title": "과적합",
           "own_label": true,
           "own_title": true
         },
         {
-          "card": ".definition",
+          "card": ".concept-card",
           "label": "GENERALIZATION",
           "title": "일반화",
-          "own_label": true,
-          "own_title": true
-        },
-        {
-          "card": ".curve-panel",
-          "label": "LOSS CURVE",
-          "title": "검증 손실 최소에서 모델 선택",
-          "own_label": true,
-          "own_title": true
-        },
-        {
-          "card": ".curve-panel",
-          "label": "IMAGE PREDICTION",
-          "title": "학습한 특징을 새 이미지에도 적용",
           "own_label": true,
           "own_title": true
         }
@@ -10209,23 +9993,23 @@
         },
         {
           "role": "title",
-          "text": "일반화",
-          "color": "rgb(18, 35, 63)",
-          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
-          "size": "29px",
-          "weight": "700",
-          "lineHeight": "34px",
-          "spacing": "-1.33333px",
-          "visible": true
-        },
-        {
-          "role": "title",
           "text": "검증 손실 최소에서 모델 선택",
           "color": "rgb(18, 35, 63)",
           "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
           "size": "17px",
           "weight": "750",
           "lineHeight": "22px",
+          "spacing": "-1.33333px",
+          "visible": true
+        },
+        {
+          "role": "title",
+          "text": "일반화",
+          "color": "rgb(18, 35, 63)",
+          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+          "size": "29px",
+          "weight": "700",
+          "lineHeight": "34px",
           "spacing": "-1.33333px",
           "visible": true
         },
@@ -10272,56 +10056,20 @@
           "lineHeight": "20px",
           "spacing": "-1.33333px",
           "visible": true
-        },
-        {
-          "role": "label",
-          "text": "LOSS CURVE",
-          "color": "rgb(49, 104, 200)",
-          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
-          "size": "16px",
-          "weight": "800",
-          "lineHeight": "20px",
-          "spacing": "-1.33333px",
-          "visible": true
-        },
-        {
-          "role": "label",
-          "text": "IMAGE PREDICTION",
-          "color": "rgb(49, 104, 200)",
-          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
-          "size": "16px",
-          "weight": "800",
-          "lineHeight": "20px",
-          "spacing": "-1.33333px",
-          "visible": true
         }
       ],
       "card_pairs": [
         {
-          "card": ".definition",
+          "card": ".concept-card",
           "label": "OVERFITTING",
           "title": "과적합",
           "own_label": true,
           "own_title": true
         },
         {
-          "card": ".definition",
+          "card": ".concept-card",
           "label": "GENERALIZATION",
           "title": "일반화",
-          "own_label": true,
-          "own_title": true
-        },
-        {
-          "card": ".curve-panel",
-          "label": "LOSS CURVE",
-          "title": "검증 손실 최소에서 모델 선택",
-          "own_label": true,
-          "own_title": true
-        },
-        {
-          "card": ".curve-panel",
-          "label": "IMAGE PREDICTION",
-          "title": "학습한 특징을 새 이미지에도 적용",
           "own_label": true,
           "own_title": true
         }
@@ -11686,23 +11434,23 @@
         },
         {
           "role": "title",
-          "text": "일반화",
-          "color": "rgb(18, 35, 63)",
-          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
-          "size": "29px",
-          "weight": "700",
-          "lineHeight": "34px",
-          "spacing": "-1.33333px",
-          "visible": true
-        },
-        {
-          "role": "title",
           "text": "검증 손실 최소에서 모델 선택",
           "color": "rgb(18, 35, 63)",
           "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
           "size": "17px",
           "weight": "750",
           "lineHeight": "22px",
+          "spacing": "-1.33333px",
+          "visible": true
+        },
+        {
+          "role": "title",
+          "text": "일반화",
+          "color": "rgb(18, 35, 63)",
+          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+          "size": "29px",
+          "weight": "700",
+          "lineHeight": "34px",
           "spacing": "-1.33333px",
           "visible": true
         },
@@ -11749,56 +11497,20 @@
           "lineHeight": "20px",
           "spacing": "-1.33333px",
           "visible": true
-        },
-        {
-          "role": "label",
-          "text": "LOSS CURVE",
-          "color": "rgb(49, 104, 200)",
-          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
-          "size": "16px",
-          "weight": "800",
-          "lineHeight": "20px",
-          "spacing": "-1.33333px",
-          "visible": true
-        },
-        {
-          "role": "label",
-          "text": "IMAGE PREDICTION",
-          "color": "rgb(49, 104, 200)",
-          "font": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
-          "size": "16px",
-          "weight": "800",
-          "lineHeight": "20px",
-          "spacing": "-1.33333px",
-          "visible": true
         }
       ],
       "card_pairs": [
         {
-          "card": ".definition",
+          "card": ".concept-card",
           "label": "OVERFITTING",
           "title": "과적합",
           "own_label": true,
           "own_title": true
         },
         {
-          "card": ".definition",
+          "card": ".concept-card",
           "label": "GENERALIZATION",
           "title": "일반화",
-          "own_label": true,
-          "own_title": true
-        },
-        {
-          "card": ".curve-panel",
-          "label": "LOSS CURVE",
-          "title": "검증 손실 최소에서 모델 선택",
-          "own_label": true,
-          "own_title": true
-        },
-        {
-          "card": ".curve-panel",
-          "label": "IMAGE PREDICTION",
-          "title": "학습한 특징을 새 이미지에도 적용",
           "own_label": true,
           "own_title": true
         }
@@ -11837,10 +11549,10 @@
     "templates/html/experiment.html": "c2424515f1ceebfbdf616dbc0a6b227b27d453fcde5383b899653df3d643c961",
     "templates/html/executive-summary.html": "fc0b46ace4bc81b108b199d12121cd12fbc940aebe1cdef30639a859ddab95b6",
     "templates/html/comparison-reference.css": "4010e007a80a100fe3b7ee4dd5ea1bf6a4b2691d3e90a6e125ad70ba1f7b97b2",
-    "examples/overfitting-generalization/lesson.css": "3cec140ce68867f77fb1bb13b49ea6fecb8b829d486aa1d791c95b5cc4f55b58",
-    "examples/overfitting-generalization/content.html": "ffdf81851b117f9b1a1c49beec305ac578fc27b36caeb36dd80ac0073d0410b5",
-    "scripts/verify_heading_roles.py": "0ee1bfa6f6d2157767d3cba6eca59c4573df999a83f60a0ab77ca54bda4f05cb",
-    "previews/heading-review/change-scope.json": "229cc8915bfe634242e7a5ecccac53e299b37732c12d3b8bff50bee7c4725782"
+    "examples/overfitting-generalization/lesson.css": "4b7edb9f7d8b071f5f4820aa44baeb5c7d7046ba09a168e5d39fa5a85a9869ef",
+    "examples/overfitting-generalization/content.html": "3fcd5133015211088c8f4ea6d3a6421e91793cf601f29329ffcecb5d94c89687",
+    "scripts/verify_heading_roles.py": "c143973b60fd818e37aed12b43d8d547c1ea116cb7fed6c3d9130ee772822d11",
+    "previews/heading-review/change-scope.json": "2d3c7977e4f57bd7dd48890f37f76dea4acd000b079b92abb19bd7fa3825609a"
   },
   "preview_sha256": {
     "previews/html-architecture.jpg": "b36556f3baa04017fd118792a7d851f00af9defd7446597be5c4b291e728eda5",
@@ -11849,9 +11561,9 @@
     "previews/html-interactive.jpg": "6552cc759523c967de8aadd317b95e76a93446fb043810e47db5aa43c1b012c4",
     "previews/html-concept.png": "a7e07908fe83a9d6dbc290a5a192c41181f0e9935d2f6b61715735bd845a4e51",
     "previews/html-executive-summary.jpg": "966d0f37c6eb520097c6872372c0c8199d95ef60486ee27bf38fb87c05953a24",
-    "previews/html-comparison.png": "8d5d1f891ffb31fdd358b961b4daf8fa80fbf5a79bc5b78b18a0f6772e2212a8",
+    "previews/html-comparison.png": "cc2269321aab83b95ed234e347bb6df3b56bb18e4aee7c7ba318d1d21210a171",
     "previews/html-step-by-step.jpg": "b48a137f8226ad5eba17ff335b0b5eba84aa8ebd3655859fd7bab839aaa001e7",
-    "previews/heading-review/overfitting.png": "f216411fd5ee0119d0e13a0c1882c395d50a3b70b1c273429fcd96a5005a4aad",
-    "previews/heading-review/contact.jpg": "23a6d3ef09d23bfca0886a8a24835dbac943c0f74a39c0dac763506125ff895f"
+    "previews/heading-review/overfitting.png": "df4dcce97bffaa17741a1e286054c95de9e9f4d39bf3b90184baa75da2681149",
+    "previews/heading-review/contact.jpg": "e3d1385718be1f55c9dc2ab9490b2a076f58a5444b07341ea6d6e99372363518"
   }
 }
