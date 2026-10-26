@@ -47,9 +47,24 @@ const last=box(s.querySelector('.ref-takeaway'));
 const charts=[...s.querySelectorAll('.loss-chart')].map(box);
 const general=s.querySelector('#general-title').nextElementSibling;const gr=document.createRange();gr.selectNodeContents(general);const generalLineYs=[];for(const r of gr.getClientRects())if(r.width&&!generalLineYs.some(y=>Math.abs(y-r.y)<2))generalLineYs.push(r.y);const graph=s.querySelector('#overfit-chart'),sg=box(graph);const norm=e=>{const r=box(e);return {cx:r.x+r.width/2-sg.x,cy:r.y+r.height/2-sg.y,right:r.right-sg.x,top:r.y-sg.y,bottom:r.bottom-sg.y}};const yAxis=norm(s.querySelector('#overfit-y-title')),xAxis=norm(s.querySelector('#overfit-x-title'));
 const axisAlignment={yCenterError:Math.abs(yAxis.cy-162),yGap:46-yAxis.right,xCenterError:Math.abs(xAxis.cx-202),xGap:xAxis.top-266,yRotation:s.querySelector('#overfit-y-title').getAttribute('transform')};
+const cause=s.querySelector('.overfit-cause'),cb=box(cause),causeLayout={gap:cb.x-sg.right,topError:Math.abs(cb.y-sg.y),width:cb.width,height:cb.height,nestedCards:cause.querySelectorAll('.card').length,overflow:[...cause.querySelectorAll('*')].filter(e=>!e.matches('title,desc')&&box(e).width&&box(e).height).filter(e=>{const b=box(e);return b.x<cb.x-1||b.right>cb.right+1||b.y<cb.y-1||b.bottom>cb.bottom+1}).map(e=>e.id||e.tagName)};
 const over=s.querySelector('#overfit-title').nextElementSibling,or=document.createRange();or.selectNodeContents(over);const overLineYs=[];for(const r of or.getClientRects())if(r.width&&!overLineYs.some(y=>Math.abs(y-r.y)<2))overLineYs.push(r.y);
-return {cardLayout,cardCount:d.length,oldSplitCards:s.querySelectorAll('.definition-grid,.definition').length,axisAlignment,overfittingLines:overLineYs.length,generalizationLines:generalLineYs.length,subtitle:s.querySelector('.subtitle').textContent,lossDefinitionInGraph:!!s.querySelector('.curve-panel .loss-definition'),charts,removedSubjects:s.querySelectorAll('.subject').length,removedGrid:s.querySelectorAll('.grid-lines').length,slide:sb,footer:fb,content:box(s.querySelector('.content')),outside,padding,clipped,labels,labelOutside,collisions,alignment,footerGap:fb.y-last.bottom,figureCaptionGap:last.y-box(s.querySelector('.loss-panel')).bottom,title:s.querySelector('h1').textContent};
+return {causeLayout,cardLayout,cardCount:d.length,oldSplitCards:s.querySelectorAll('.definition-grid,.definition').length,axisAlignment,overfittingLines:overLineYs.length,generalizationLines:generalLineYs.length,subtitle:s.querySelector('.subtitle').textContent,lossDefinitionInGraph:!!s.querySelector('.curve-panel .loss-definition'),charts,removedSubjects:s.querySelectorAll('.subject').length,removedGrid:s.querySelectorAll('.grid-lines').length,slide:sb,footer:fb,content:box(s.querySelector('.content')),outside,padding,clipped,labels,labelOutside,collisions,alignment,footerGap:fb.y-last.bottom,figureCaptionGap:last.y-box(s.querySelector('.loss-panel')).bottom,title:s.querySelector('h1').textContent};
 }'''
+
+def cause_sketches(frame):
+    rows=frame.locator('.pattern-sketch').evaluate_all('''es=>es.map(s=>({points:[...s.querySelectorAll('circle')].map(c=>[Number(c.getAttribute('cx')),Number(c.getAttribute('cy'))]),path:s.querySelector('path').getAttribute('d')}))''')
+    assert len(rows)==2 and rows[0]['points']==rows[1]['points'] and len(rows[0]['points'])==5
+    points=rows[0]['points'];mx=sum(x for x,y in points)/len(points);my=sum(y for x,y in points)/len(points)
+    slope=sum((x-mx)*(y-my) for x,y in points)/sum((x-mx)**2 for x,y in points);intercept=my-slope*mx
+    endpoints=list(map(float,re.findall(r'-?\d+(?:\.\d+)?',rows[0]['path'])))
+    assert len(endpoints)==4 and endpoints[0]==points[0][0] and endpoints[2]==points[-1][0]
+    assert max(abs(y-(slope*x+intercept)) for x,y in zip(endpoints[::2],endpoints[1::2]))<1e-12
+    fitted=list(map(float,re.findall(r'-?\d+(?:\.\d+)?',rows[1]['path'])))
+    assert list(zip(fitted[::2],fitted[1::2]))==list(map(tuple,points))
+    residual=sum((y-(slope*x+intercept))**2 for x,y in points)
+    assert residual>0 and '커질 수 있음' in frame.locator('.cause-outcome').inner_text()
+    return {'shared_points':5,'trend_is_least_squares':True,'trend_training_residual':residual,'interpolation_training_residual':0,'measured_generalization_claim':False}
 
 def fonts(page,frame,selector):
     entries=frame.evaluate('''sel=>[...document.querySelectorAll(sel)].filter(e=>!e.matches('title,desc')&&e.getBoundingClientRect().width&&e.getBoundingClientRect().height&&[...e.childNodes].some(n=>n.nodeType===3&&n.textContent.trim())).map((e,i)=>{e.dataset.fontCheck=String(i);return {id:i,math:!!e.closest('.math-number'),spacing:getComputedStyle(e).letterSpacing}})''',selector)
@@ -206,6 +221,8 @@ def main():
                     assert all(c['sameCard'] and c['labelTitleGap']>=7.5 and c['labelTitleXError']<.1 and c['graphLeftError']<.1 and c['figureBorder']==0 and c['figureBackground']=='rgba(0, 0, 0, 0)' for c in geometry['cardLayout']),geometry['cardLayout']
                     assert all(abs(c['sectionGap']-24)<.1 and 0<=c['titleToContentGap']<c['sectionGap'] and c['figureTitleFont']==19 and c['figureTitleWeight']>=700 for c in geometry['cardLayout']),geometry['cardLayout']
                     assert len(geometry['charts'])==1 and all(abs(c['width']-380)<.1 and abs(c['height']-320)<.1 for c in geometry['charts'])
+                    cause=geometry['causeLayout'];assert abs(cause['gap']-24)<.1 and cause['topError']<.1 and cause['height']==320 and cause['width']>=175 and cause['nestedCards']==0 and not cause['overflow'],cause
+                    report['cases'][-1]['cause_sketches']=cause_sketches(frame)
                     assert geometry['overfittingLines']==1 and geometry['generalizationLines']==1 and geometry['lossDefinitionInGraph']
                     assert '손실' not in geometry['subtitle'] and '검증 데이터' not in geometry['subtitle']
                     ax=geometry['axisAlignment'];assert ax['yCenterError']<.1 and ax['xCenterError']<.1 and abs(ax['yGap']-8)<.1 and abs(ax['xGap']-8)<.1,ax

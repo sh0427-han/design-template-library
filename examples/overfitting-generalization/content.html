@@ -12,6 +12,7 @@
 <article class="card concept-card" aria-labelledby="overfit-title"><header class="concept-heading"><p class="definition-label" lang="en">OVERFITTING</p><h2 id="overfit-title">과적합</h2><p class="meaning">학습 데이터의 특성·잡음에 <b>지나치게 맞춰</b> <b>새 데이터에서 성능이 저하</b>되는 현상</p></header>
 <figure class="curve-panel" aria-labelledby="overfit-heading">
 <div class="plot-header"><h3 class="diagram-heading" id="overfit-heading">검증 손실 최소에서 모델 선택</h3><div class="legend"><span><i class="training-key"></i>학습</span><span><i class="validation-key"></i>검증(학습 미사용)</span></div></div>
+<div class="loss-explanation-layout">
 <svg id="overfit-chart" class="loss-chart" viewBox="0 0 380 320" role="img" aria-labelledby="overfit-chart-title overfit-chart-desc"><title id="overfit-chart-title">검증 손실 최소에서 모델 선택</title><desc id="overfit-chart-desc">같은 기준의 학습 손실과 검증 손실을 비교하는 개념도. 실제 측정 결과가 아님.</desc>
 <text class="loss-definition" x="190" y="22" text-anchor="middle">손실(Loss) · 예측 오차의 크기</text>
 <rect id="overfit-region" class="overfit-region" y="58" height="208" hidden/>
@@ -21,6 +22,18 @@
 <g class="curve-artwork"><path id="overfit-training-line" class="training-line"/><path id="overfit-validation-line" class="validation-line"/></g>
 <g id="best-selection" class="selection-artwork" hidden><circle id="best-point" r="5"/><text id="best-label" class="best-label" y="315" text-anchor="middle">best.pt</text></g>
 <g id="overfit-annotation" class="overfit-artwork" hidden><path id="overfit-direction" class="overfit-direction"/><text class="overfit-label" x="245" y="85" text-anchor="middle">과적합 진행</text><text class="overfit-description" x="245" y="108" text-anchor="middle">검증 ↑ · 학습 ↓</text></g></svg>
+<aside class="overfit-cause" aria-labelledby="cause-title">
+<h4 id="cause-title" class="cause-title">과적합이 생기는 이유</h4>
+<p class="cause-key"><i aria-hidden="true"></i>점: 학습 데이터</p>
+<div class="cause-steps">
+<div class="cause-step"><h5>공통 패턴 학습</h5>
+<svg class="pattern-sketch" id="pattern-sketch" viewBox="0 0 175 40" role="img" aria-labelledby="pattern-title pattern-desc"><title id="pattern-title">반복되는 전체 경향을 포착</title><desc id="pattern-desc">설명용 다섯 점의 전체 경향을 직선으로 요약한 개념도. 좌표는 실제 실험 결과가 아님.</desc><path class="pattern-fit" d="M10 28L162 11.6"/><g class="sample-points"><circle cx="10" cy="32" r="3"/><circle cx="48" cy="17" r="3"/><circle cx="86" cy="26" r="3"/><circle cx="124" cy="8" r="3"/><circle cx="162" cy="16" r="3"/></g></svg>
+<p>반복되는 특징 학습</p></div>
+<div class="cause-step"><h5>잡음까지 지나치게 맞춤</h5>
+<svg class="pattern-sketch" id="noise-sketch" viewBox="0 0 175 40" role="img" aria-labelledby="noise-title noise-desc"><title id="noise-title">개별 데이터의 차이까지 추종</title><desc id="noise-desc">위와 같은 다섯 점을 모두 통과하도록 맞춘 꺾은선 개념도. 잡음까지 맞추는 상황을 설명하며, 이 그림만으로 새 데이터의 성능을 측정한 것은 아님.</desc><path class="noise-fit" d="M10 32L48 17L86 26L124 8L162 16"/><g class="sample-points"><circle cx="10" cy="32" r="3"/><circle cx="48" cy="17" r="3"/><circle cx="86" cy="26" r="3"/><circle cx="124" cy="8" r="3"/><circle cx="162" cy="16" r="3"/></g></svg>
+<p>우연한 차이까지 반영</p></div>
+</div><p class="cause-outcome">새 데이터에서는 오히려<br><b>오차가 커질 수 있음</b></p>
+</aside></div>
 </figure>
 </article>
 <article class="card concept-card" aria-labelledby="general-title"><header class="concept-heading"><p class="definition-label" lang="en">GENERALIZATION</p><h2 id="general-title">일반화</h2><p class="meaning">학습에 쓰지 않은 <b>새 데이터에서도 잘 동작</b>하는 능력</p></header>
