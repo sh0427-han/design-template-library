@@ -14,7 +14,7 @@
     if(![left,right,top,bottom,spacing].every(Number.isFinite)||right<=left||bottom<=top) throw new Error('Invalid axis geometry');
     for(const label of [yLabel,xLabel]) label.removeAttribute('transform');
     const y=yLabel.getBBox(),x=xLabel.getBBox();
-    yLabel.setAttribute('transform',`translate(${left-y.x-y.width/2} ${top-spacing-y.y-y.height})`);
+    yLabel.setAttribute('transform',`translate(${left-spacing-y.y-y.height} ${(top+bottom)/2+y.x+y.width/2}) rotate(-90)`);
     xLabel.setAttribute('transform',`translate(${(left+right)/2-x.x-x.width/2} ${bottom+spacing-x.y})`);
     svg.dataset.axisAligned='true';
   }

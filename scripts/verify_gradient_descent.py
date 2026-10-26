@@ -119,7 +119,7 @@ GEOMETRY = '''()=>{
  }
  const math=[...slide.querySelectorAll('math')].map(e=>({text:e.textContent,display:getComputedStyle(e).fontFamily,box:box(e)}));
  for(const e of slide.querySelectorAll('math')){const r=box(e),p=box(e.parentElement);if(r.x<p.x-1||r.right>p.right+1||r.y<box(panel).y||r.bottom>box(panel).bottom)clipped.push('math '+e.textContent);} 
- const yt=inkBox(q('#gd-y-title')),xt=inkBox(q('#gd-x-title'));const axisAlignment={yCenterError:Math.abs(yt.x+yt.width/2-48),yGap:29-yt.y-yt.height,xCenterError:Math.abs(xt.x+xt.width/2-176.5),xGap:xt.y-454};
+ const yt=inkBox(q('#gd-y-title')),xt=inkBox(q('#gd-x-title'));const axisAlignment={yCenterError:Math.abs(yt.y+yt.height/2-241.5),yGap:48-yt.x-yt.width,xCenterError:Math.abs(xt.x+xt.width/2-176.5),xGap:xt.y-454,yRotation:q('#gd-y-title').getAttribute('transform')};
  return {axisAlignment,outside,overflow,clipped,overlaps,collisions,dataCollisions,ink,math,slide:box(slide),panel:box(panel),main:box(q('.gd-main')),steps:box(q('.gd-steps')),definitions:box(q('.gd-definitions')),takeaway:box(q('.gd-takeaway')),footer:box(footer)};
 }'''
 
@@ -226,6 +226,7 @@ def main():
                     assert not any(geometry[k] for k in ('outside','overflow','clipped','overlaps','collisions','dataCollisions')),geometry
                     assert geometry['slide']['w']==1440 and geometry['slide']['h']==810
                     ax=geometry['axisAlignment'];assert ax['yCenterError']<.1 and ax['xCenterError']<.1 and abs(ax['yGap']-8)<.1 and abs(ax['xGap']-8)<.1,ax
+                    assert 'rotate(-90)' in ax['yRotation']
                     shot=frame.evaluate(SNAPSHOT)
                     identity=compare(shot,reference)
                     outer=page.evaluate('''()=>{const a=document.querySelector('.reference-viewport').getBoundingClientRect(),b=document.querySelector('iframe').getBoundingClientRect();

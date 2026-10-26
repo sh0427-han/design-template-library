@@ -37,15 +37,15 @@ const text=visible.filter(e=>[...e.childNodes].some(n=>n.nodeType===3&&n.textCon
 for(const e of text){if(e instanceof SVGElement)continue;const b=box(e);for(const n of e.childNodes){if(n.nodeType!==3||!n.textContent.trim())continue;const r=document.createRange();r.selectNodeContents(n);for(const a of r.getClientRects())if(a.left<b.x-1||a.right>b.right+1||a.top<b.y-2||a.bottom>b.bottom+2)clipped.push(e.className||e.tagName)}}
 const labels=[],labelOutside=[],collisions=[];
 for(const svg of s.querySelectorAll('svg')){
- const vb=svg.viewBox.baseVal,origin=svg.getBoundingClientRect(),sx=origin.width/vb.width,sy=origin.height/vb.height;const group=[...svg.querySelectorAll('text')].map(e=>({svg:svg.id,text:e.textContent,bbox:(()=>{const b=e.getBoundingClientRect();return {x:(b.x-origin.x)/sx,y:(b.y-origin.y)/sy,width:b.width/sx,height:b.height/sy}})()}));
+ const vb=svg.viewBox.baseVal,origin=svg.getBoundingClientRect(),sx=origin.width/vb.width,sy=origin.height/vb.height;const group=[...svg.querySelectorAll('text')].filter(e=>e.getBoundingClientRect().width).map(e=>({svg:svg.id,text:e.textContent,bbox:(()=>{const b=e.getBoundingClientRect();return {x:(b.x-origin.x)/sx,y:(b.y-origin.y)/sy,width:b.width/sx,height:b.height/sy}})()}));
  labels.push(...group);labelOutside.push(...group.filter(e=>e.bbox.x<0||e.bbox.y<0||e.bbox.x+e.bbox.width>vb.width||e.bbox.y+e.bbox.height>vb.height));
  for(let i=0;i<group.length;i++)for(let j=i+1;j<group.length;j++){const a=group[i].bbox,b=group[j].bbox;if(a.x<b.x+b.width&&a.x+a.width>b.x&&a.y<b.y+b.height&&a.y+a.height>b.y)collisions.push([svg.id,group[i].text,group[j].text]);}
 }
 const d=[...s.querySelectorAll('.definition')];const alignment=['h2','.meaning'].map(sel=>{const a=box(d[0].querySelector(sel)),b=box(d[1].querySelector(sel));return {selector:sel,yError:Math.abs(a.y-box(d[0]).y-b.y+box(d[1]).y),heightError:Math.abs(a.height-b.height)}});
 const last=box(s.querySelector('.ref-takeaway'));
 const charts=[...s.querySelectorAll('.loss-chart')].map(box);
-const general=s.querySelector('#general-title').nextElementSibling;const gr=document.createRange();gr.selectNodeContents(general);const generalLineYs=[];for(const r of gr.getClientRects())if(r.width&&!generalLineYs.some(y=>Math.abs(y-r.y)<2))generalLineYs.push(r.y);const graph=s.querySelector('#overfit-chart'),sg=box(graph);const norm=e=>{const r=box(e);return {cx:(r.x+r.width/2-sg.x),top:r.y-sg.y,bottom:r.bottom-sg.y}};const yAxis=norm(s.querySelector('#overfit-y-title')),xAxis=norm(s.querySelector('#overfit-x-title'));
-const axisAlignment={yCenterError:Math.abs(yAxis.cx-46),yGap:58-yAxis.bottom,xCenterError:Math.abs(xAxis.cx-202),xGap:xAxis.top-266};
+const general=s.querySelector('#general-title').nextElementSibling;const gr=document.createRange();gr.selectNodeContents(general);const generalLineYs=[];for(const r of gr.getClientRects())if(r.width&&!generalLineYs.some(y=>Math.abs(y-r.y)<2))generalLineYs.push(r.y);const graph=s.querySelector('#overfit-chart'),sg=box(graph);const norm=e=>{const r=box(e);return {cx:r.x+r.width/2-sg.x,cy:r.y+r.height/2-sg.y,right:r.right-sg.x,top:r.y-sg.y,bottom:r.bottom-sg.y}};const yAxis=norm(s.querySelector('#overfit-y-title')),xAxis=norm(s.querySelector('#overfit-x-title'));
+const axisAlignment={yCenterError:Math.abs(yAxis.cy-162),yGap:46-yAxis.right,xCenterError:Math.abs(xAxis.cx-202),xGap:xAxis.top-266,yRotation:s.querySelector('#overfit-y-title').getAttribute('transform')};
 return {axisAlignment,generalizationLines:generalLineYs.length,subtitle:s.querySelector('.subtitle').textContent,lossDefinitionInGraph:!!s.querySelector('.curve-panel .loss-definition'),charts,removedSubjects:s.querySelectorAll('.subject').length,removedGrid:s.querySelectorAll('.grid-lines').length,slide:sb,footer:fb,content:box(s.querySelector('.content')),outside,padding,clipped,labels,labelOutside,collisions,alignment,footerGap:fb.y-last.bottom,figureCaptionGap:last.y-box(s.querySelector('.loss-panel')).bottom,title:s.querySelector('h1').textContent};
 }'''
 
@@ -76,6 +76,47 @@ def coordinates(frame,data):
     assert maxerr<1e-10,maxerr
     return {'point_pairs':len(data['points'])*2,'max_svg_coordinate_error':maxerr}
 
+def selection(frame,data):
+    # Independently sort the tabulated checkpoints; do not read the renderer's chosen index.
+    index=min(range(len(data['points'])),key=lambda i:(data['points'][i]['validation'],i))
+    best=data['points'][index];expected_x=46+(358-46)*best['progress'];expected_y=266-(266-58)*best['validation']/1.2
+    after=data['points'][index:]
+    expected_region=data['interpretation']=='divergence' and 0<index<len(data['points'])-1 and all(b['validation']>a['validation'] and b['training']<a['training'] for a,b in zip(after,after[1:]))
+    result=frame.evaluate("""()=>{
+      const q=id=>document.getElementById(id),svg=q('overfit-chart'),root=svg.getBoundingClientRect();
+      const b=e=>{const r=e.getBoundingClientRect();return {x:r.x-root.x,y:r.y-root.y,right:r.right-root.x,bottom:r.bottom-root.y}};
+      const collisions=[];
+      for(const text of svg.querySelectorAll('text')){
+        if(!text.getBoundingClientRect().width)continue;
+        const r=b(text);
+        for(const path of svg.querySelectorAll('.curve-artwork path')){
+          const length=path.getTotalLength(),n=Math.ceil(length*2);
+          for(let i=0;i<=n;i++){const p=path.getPointAtLength(length*i/n);if(p.x>r.x-2&&p.x<r.right+2&&p.y>r.y-2&&p.y<r.bottom+2){collisions.push([text.id||text.textContent,path.id]);break;}}
+        }
+      }
+      const p=q('best-point'),r=q('overfit-region');
+      return {index:Number(svg.dataset.bestIndex),point:[+p.getAttribute('cx'),+p.getAttribute('cy')],selectionVisible:!q('best-selection').hasAttribute('hidden'),regionVisible:!r.hasAttribute('hidden'),annotationVisible:!q('overfit-annotation').hasAttribute('hidden'),region:[+r.getAttribute('x'),+r.getAttribute('width'),+r.getAttribute('y'),+r.getAttribute('height')],guide:q('best-guide').getAttribute('d'),label:q('best-label').textContent,criterion:q('best-description').textContent,collisions};
+    }""")
+    assert result['index']==index and result['selectionVisible']
+    assert abs(result['point'][0]-expected_x)<1e-10 and abs(result['point'][1]-expected_y)<1e-10
+    assert result['regionVisible']==expected_region and result['annotationVisible']==expected_region
+    assert abs(result['region'][0]-expected_x)<1e-10 and abs(result['region'][1]-(358-expected_x))<1e-10
+    assert result['region'][2:]==[58,208] and 'Best model'==result['label'] and '검증 손실 최소'==result['criterion']
+    assert result['guide']==f'M{expected_x:g} 58 V266' or abs(float(re.search(r'M([^ ]+)',result['guide'])[1])-expected_x)<1e-10
+    assert not result['collisions'],result['collisions']
+    return {'minimum_checkpoint_index':index,'minimum_validation_loss':best['validation'],'point':result['point'],'post_minimum_overfitting_region':expected_region,'selection_criterion':'validation loss among displayed checkpoints; not independent test optimum','label_curve_collisions':result['collisions']}
+
+STYLE="""e=>{const s=getComputedStyle(e);return Object.fromEntries(['fontFamily','fontSize','fontWeight','lineHeight','letterSpacing','color'].map(k=>[k,s[k]]))}"""
+
+def typography(frame,reference):
+    headings=frame.locator('.definition h2');paragraphs=frame.locator('.definition .meaning')
+    for i in range(2):
+        assert headings.nth(i).evaluate(STYLE)==reference['heading']
+        assert paragraphs.nth(i).evaluate(STYLE)==reference['description']
+    bold=frame.locator('.meaning b').all_text_contents()
+    assert bold==['지나치게 맞춰','새 데이터에서 성능이 저하','새 데이터에서도 잘 동작'],bold
+    return {'matches_canonical_comparison':True,'reference':reference,'emphasis':bold}
+
 
 def diagram(frame):
     result=frame.evaluate("""()=>{
@@ -83,7 +124,7 @@ def diagram(frame):
       const box=e=>{const r=e.getBoundingClientRect();return {x:(r.x-root.x)*v.width/root.width,y:(r.y-root.y)*v.height/root.height,width:r.width*v.width/root.width,height:r.height*v.height/root.height}};
       const q=id=>svg.querySelector('#'+id);
       return {ready:svg.dataset.ready,oldGraph:!!document.querySelector('#generalization-chart'),
-        images:[...svg.querySelectorAll('[data-image-id]')].map(e=>({id:e.dataset.imageId,split:e.dataset.split,cls:e.dataset.class,signature:[...e.querySelectorAll('path,ellipse')].map(x=>x.outerHTML).join(''),box:box(e)})),
+        images:[...svg.querySelectorAll('[data-image-id]')].map(e=>({id:e.dataset.imageId,split:e.dataset.split,cls:e.dataset.class,signature:[...e.querySelectorAll('path,ellipse')].map(x=>x.outerHTML).join(''),rotated:!!e.querySelector('.fruit-art[transform*="rotate"]'),fills:[...e.querySelectorAll('[fill]')].map(x=>x.getAttribute('fill')),box:box(e)})),
         predictions:[...svg.querySelectorAll('[data-prediction-for]')].map(e=>({for:e.dataset.predictionFor,cls:e.dataset.predictedClass,text:e.textContent})),
         models:[...svg.querySelectorAll('[data-model-ref]')].map(e=>({ref:e.dataset.modelRef,box:box(e)})),
         boxes:Object.fromEntries(['training-images','trained-model','new-images','applied-model','predictions'].map(id=>[id,box(q(id))])),
@@ -95,6 +136,7 @@ def diagram(frame):
     assert [i['cls'] for i in training]==['사과','사과','토마토']
     assert {i['id']:i['cls'] for i in new}=={'new-A':'사과','new-B':'토마토'}
     assert all(i['signature'] not in {t['signature'] for t in training} for i in new)
+    assert all(i['rotated'] for i in new) and '#d9b85b' in new[0]['fills'] and '#d87049' in new[1]['fills']
     expected={'new-A':'사과','new-B':'토마토'};assert {p['for']:p['cls'] for p in result['predictions']}==expected
     assert all(p['cls'] in p['text'] for p in result['predictions'])
     assert [m['ref'] for m in result['models']]==['fruit-model','fruit-model']
@@ -106,7 +148,7 @@ def diagram(frame):
         assert abs(values[1]-(b['y']+b['height']/2))<.1
         assert values[2]>values[0] and values[5:7]==[values[2],values[1]]
     assert result['flows']['model-transfer']
-    return {'training_images':3,'unseen_images':2,'same_model':True,'semantic_predictions':expected,'inputs_are_distinct':True,'editable_svg':True,'inference_executed':False,'flow_alignment':True}
+    return {'training_images':3,'unseen_images':2,'same_model':True,'semantic_predictions':expected,'inputs_are_distinct':True,'new_appearances':'yellow tilted apple; lobed tilted tomato with ribs and highlights','editable_svg':True,'inference_executed':False,'flow_alignment':True}
 
 class Quiet(SimpleHTTPRequestHandler):
     def log_message(self,*a):pass
@@ -125,6 +167,8 @@ def main():
         with sync_playwright() as p:
             browser=p.chromium.launch(**browser_options());report['chromium']=browser.version
             base=f'http://127.0.0.1:{server.server_port}/examples/overfitting-generalization/'
+            reference_page=browser.new_page(viewport={'width':1600,'height':950});reference_page.goto(f'http://127.0.0.1:{server.server_port}/templates/html/comparison.html',wait_until='networkidle');reference_page.evaluate('document.fonts.ready')
+            reference={'heading':reference_page.locator('.comparison-heading h2').first.evaluate(STYLE),'description':reference_page.locator('.comparison-heading p').first.evaluate(STYLE)};reference_page.close()
             parity=None
             for width,height in SIZES:
                 for mode in ('scroll','slides'):
@@ -144,6 +188,9 @@ def main():
                     assert abs(geometry['generalizationLines']-1)<.01 and geometry['lossDefinitionInGraph']
                     assert '손실' not in geometry['subtitle'] and '검증 데이터' not in geometry['subtitle']
                     ax=geometry['axisAlignment'];assert ax['yCenterError']<.1 and ax['xCenterError']<.1 and abs(ax['yGap']-8)<.1 and abs(ax['xGap']-8)<.1,ax
+                    assert 'rotate(-90)' in ax['yRotation']
+                    report['cases'][-1]['selection']=selection(frame,data)
+                    report['cases'][-1]['typography']=typography(frame,reference)
                     report['cases'][-1]['generalization']=diagram(frame)
                     visible=frame.locator('body').inner_text();assert '설명용 곡선' not in visible and '실험 결과 아님' not in visible
                     assert geometry['footerGap']>=12 and geometry['figureCaptionGap']>=13,geometry
@@ -166,6 +213,7 @@ def main():
                 for point in changed['points']:
                     u=point['progress'];point['training']=.8-.5*u;point['validation']=(.95-.5*u if kind=='improving' else .4+.15*u)
                 frame.evaluate('(d)=>window.CurveExample.render(d)',changed);coordinates(frame,changed)
+                selection(frame,changed)
                 expected='학습·검증 손실이 함께 감소' if kind=='improving' else '손실 격차만으로 판단하지 않기'
                 assert expected in frame.locator('#overfit-heading').text_content()
                 g=frame.evaluate(GEOMETRY)
@@ -178,7 +226,7 @@ def main():
                 if kind=='nonfinite':changed['points'][1]['validation']=None
                 if kind=='unordered':changed['points'][1]['progress']=0
                 if kind=='negative':changed['points'][1]['training']=-.1
-                result=frame.evaluate('(d)=>{try{window.CurveExample.render(d);return false}catch(e){return window.CurveExample.status==="error"&&[...document.querySelectorAll(".curve-artwork path")].every(p=>!p.hasAttribute("d"))}}',changed)
+                result=frame.evaluate('(d)=>{try{window.CurveExample.render(d);return false}catch(e){return window.CurveExample.status==="error"&&[...document.querySelectorAll(".curve-artwork path")].every(p=>!p.hasAttribute("d"))&&["best-selection","overfit-region","overfit-annotation"].every(id=>document.getElementById(id).hasAttribute("hidden"))}}',changed)
                 assert result,kind;rejected.append(kind)
             page.close()
             # Real mode navigation, refresh, keyboard focus, and failed data load.

@@ -93,7 +93,7 @@ artwork.setAttribute('transform', `translate(${offset} 0)`);
 
 새로 만들거나 축 이름을 수정하는 좌표 그래프에 적용한다. 축 이름은 데이터 계열의 범례와 눈금 숫자와 구분한다. 기존 승인 8종에 자동 전역 스타일을 흘리지 않고 변경하는 자료에서 명시적으로 사용한다.
 
-- **y축 이름:** y축 상단 끝점 바로 위. 글자 묶음의 실제 가로 중심을 y축의 X좌표에 맞추고, 실제 글자 경계의 아래쪽을 축 끝점보다 `--gap-related`(8px) 위에 둔다.
+- **y축 이름:** y축 중앙의 왼쪽에 세로로 배치한다. 글자 묶음 전체를 −90° 회전하고, 회전한 실제 글자 경계의 세로 중심을 y축 시작~끝의 중간에 맞춘다. 글자 경계의 오른쪽과 y축 사이에 `--gap-related`(8px)를 둔다. 본문과 수학 기호도 같은 그룹으로 회전한다.
 - **x축 이름:** 가로축 전체의 중앙 아래. 글자 묶음의 실제 가로 중심을 축 시작점과 끝점의 중간에 맞추고, 실제 글자 경계의 위쪽을 축보다 같은 8px 아래에 둔다. 화살촉이 있으면 끝점은 화살촉 tip이다.
 - 본문과 수학 기호를 함께 쓰는 축 이름은 한 그룹으로 다룬다. 각 부분은 원래 서체·기준선을 유지하고 실제 글자 경계 사이8px로 연결한 뒤 **그룹 전체**를 정렬한다. `손실`과 수식, `매개변수`와 수학 변수의 위치를 별도로 눈대중 보정하지 않는다.
 - SVG text의 baseline이나 viewBox 중앙을 글자 중심으로 가정하지 않는다. `document.fonts.load/ready` 이후 실제 `getBBox()`를 사용한다. 축 좌표·문구·서체가 바뀌면 다시 계산한다. 고정 viewBox 전체를 같은 배율로 축소하는 PC 뷰어에서는 간격도 함께 비례 축소된다.
@@ -102,13 +102,13 @@ artwork.setAttribute('transform', `translate(${offset} 0)`);
 설계 좌표에서 만족할 관계:
 
 ```text
-centerX(y축 이름) = y축 X
-bottom(y축 이름의 글자 경계) = y축 상단 끝점 Y − 8
+centerY(y축 이름) = (y축 상단 끝점 Y + 가로축 Y) / 2
+right(y축 이름의 회전한 글자 경계) = y축 X − 8
 centerX(x축 이름) = (가로축 시작 X + 가로축 끝 X) / 2
 top(x축 이름의 글자 경계) = 가로축 Y + 8
 ```
 
-공통 opt-in 구현은 [graph-annotations.js](../templates/html/graph-annotations.js)의 `packInline`/`alignAxes`다. 각 페이지는 먼저 실제 폰트 로딩을 기다린다. 호출의 `left/right/top/bottom`은 `viewBox`의 경계가 아닌 실제 축 끝점이다.
+공통 opt-in 구현은 [graph-annotations.js](../templates/html/graph-annotations.js)의 `packInline`/`alignAxes`다. 각 페이지는 먼저 실제 폰트 로딩을 기다린다. 호출의 `left/right/top/bottom`은 `viewBox`의 경계가 아닌 실제 축 끝점이다. y축의 기존 '상단 위' 계약은 사용자 요청으로 '중앙 왼쪽·세로'로 대체되었다. 과거 검증 기록은 당시 규칙의 결과로 보존한다.
 
 ```js
 await document.fonts.ready;
