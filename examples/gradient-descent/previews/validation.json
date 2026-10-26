@@ -50,10 +50,11 @@
       },
       "geometry": {
         "axisAlignment": {
-          "yCenterError": 3.814697265625e-06,
+          "yCenterError": 0,
           "yGap": 8,
           "xCenterError": 0,
-          "xGap": 8
+          "xGap": 8,
+          "yRotation": "translate(18 272.9195022583008) rotate(-90)"
         },
         "outside": [],
         "overflow": [],
@@ -113,17 +114,17 @@
           },
           {
             "id": "loss-axis",
-            "x": 16.58049774169922,
-            "y": 1,
-            "right": 43.939544677734375,
-            "bottom": 21
+            "x": 20,
+            "y": 245.5604248046875,
+            "right": 40,
+            "bottom": 272.91949462890625
           },
           {
             "id": "loss-axis-math",
-            "x": 51.939544677734375,
-            "y": 4,
-            "right": 79.41949462890625,
-            "bottom": 21
+            "x": 23,
+            "y": 210.08050537109375,
+            "right": 40,
+            "bottom": 237.5604248046875
           },
           {
             "id": "parameter-axis",
@@ -356,10 +357,11 @@
       },
       "geometry": {
         "axisAlignment": {
-          "yCenterError": 3.814697265625e-06,
+          "yCenterError": 0,
           "yGap": 8,
           "xCenterError": 0,
-          "xGap": 8
+          "xGap": 8,
+          "yRotation": "translate(18 272.9195022583008) rotate(-90)"
         },
         "outside": [],
         "overflow": [],
@@ -419,17 +421,17 @@
           },
           {
             "id": "loss-axis",
-            "x": 16.58049774169922,
-            "y": 1,
-            "right": 43.939544677734375,
-            "bottom": 21
+            "x": 20,
+            "y": 245.5604248046875,
+            "right": 40,
+            "bottom": 272.91949462890625
           },
           {
             "id": "loss-axis-math",
-            "x": 51.939544677734375,
-            "y": 4,
-            "right": 79.41949462890625,
-            "bottom": 21
+            "x": 23,
+            "y": 210.08050537109375,
+            "right": 40,
+            "bottom": 237.5604248046875
           },
           {
             "id": "parameter-axis",
@@ -662,10 +664,11 @@
       },
       "geometry": {
         "axisAlignment": {
-          "yCenterError": 3.814697265625e-06,
+          "yCenterError": 0,
           "yGap": 8,
           "xCenterError": 0,
-          "xGap": 8
+          "xGap": 8,
+          "yRotation": "translate(18 272.9195022583008) rotate(-90)"
         },
         "outside": [],
         "overflow": [],
@@ -725,17 +728,17 @@
           },
           {
             "id": "loss-axis",
-            "x": 16.58049774169922,
-            "y": 1,
-            "right": 43.939544677734375,
-            "bottom": 21
+            "x": 20,
+            "y": 245.5604248046875,
+            "right": 40,
+            "bottom": 272.91949462890625
           },
           {
             "id": "loss-axis-math",
-            "x": 51.939544677734375,
-            "y": 4,
-            "right": 79.41949462890625,
-            "bottom": 21
+            "x": 23,
+            "y": 210.08050537109375,
+            "right": 40,
+            "bottom": 237.5604248046875
           },
           {
             "id": "parameter-axis",
@@ -968,10 +971,11 @@
       },
       "geometry": {
         "axisAlignment": {
-          "yCenterError": 3.814697265625e-06,
+          "yCenterError": 0,
           "yGap": 8,
           "xCenterError": 0,
-          "xGap": 8
+          "xGap": 8,
+          "yRotation": "translate(18 272.9195022583008) rotate(-90)"
         },
         "outside": [],
         "overflow": [],
@@ -1031,17 +1035,17 @@
           },
           {
             "id": "loss-axis",
-            "x": 16.58049774169922,
-            "y": 1,
-            "right": 43.939544677734375,
-            "bottom": 21
+            "x": 20,
+            "y": 245.5604248046875,
+            "right": 40,
+            "bottom": 272.91949462890625
           },
           {
             "id": "loss-axis-math",
-            "x": 51.939544677734375,
-            "y": 4,
-            "right": 79.41949462890625,
-            "bottom": 21
+            "x": 23,
+            "y": 210.08050537109375,
+            "right": 40,
+            "bottom": 237.5604248046875
           },
           {
             "id": "parameter-axis",
@@ -1274,10 +1278,11 @@
       },
       "geometry": {
         "axisAlignment": {
-          "yCenterError": 3.814697265625e-06,
+          "yCenterError": 0,
           "yGap": 8,
           "xCenterError": 0,
-          "xGap": 8
+          "xGap": 8,
+          "yRotation": "translate(18 272.9195022583008) rotate(-90)"
         },
         "outside": [],
         "overflow": [],
@@ -1337,17 +1342,17 @@
           },
           {
             "id": "loss-axis",
-            "x": 16.58049774169922,
-            "y": 1,
-            "right": 43.939544677734375,
-            "bottom": 21
+            "x": 20,
+            "y": 245.5604248046875,
+            "right": 40,
+            "bottom": 272.91949462890625
           },
           {
             "id": "loss-axis-math",
-            "x": 51.939544677734375,
-            "y": 4,
-            "right": 79.41949462890625,
-            "bottom": 21
+            "x": 23,
+            "y": 210.08050537109375,
+            "right": 40,
+            "bottom": 237.5604248046875
           },
           {
             "id": "parameter-axis",
@@ -1580,10 +1585,11 @@
       },
       "geometry": {
         "axisAlignment": {
-          "yCenterError": 3.814697265625e-06,
+          "yCenterError": 0,
           "yGap": 8,
           "xCenterError": 0,
-          "xGap": 8
+          "xGap": 8,
+          "yRotation": "translate(18 272.9195022583008) rotate(-90)"
         },
         "outside": [],
         "overflow": [],
@@ -1643,17 +1649,17 @@
           },
           {
             "id": "loss-axis",
-            "x": 16.58049774169922,
-            "y": 1,
-            "right": 43.939544677734375,
-            "bottom": 21
+            "x": 20,
+            "y": 245.5604248046875,
+            "right": 40,
+            "bottom": 272.91949462890625
           },
           {
             "id": "loss-axis-math",
-            "x": 51.939544677734375,
-            "y": 4,
-            "right": 79.41949462890625,
-            "bottom": 21
+            "x": 23,
+            "y": 210.08050537109375,
+            "right": 40,
+            "bottom": 237.5604248046875
           },
           {
             "id": "parameter-axis",
@@ -1886,10 +1892,11 @@
       },
       "geometry": {
         "axisAlignment": {
-          "yCenterError": 3.814697265625e-06,
+          "yCenterError": 0,
           "yGap": 8,
           "xCenterError": 0,
-          "xGap": 8
+          "xGap": 8,
+          "yRotation": "translate(18 272.9195022583008) rotate(-90)"
         },
         "outside": [],
         "overflow": [],
@@ -1949,17 +1956,17 @@
           },
           {
             "id": "loss-axis",
-            "x": 16.58049774169922,
-            "y": 1,
-            "right": 43.939544677734375,
-            "bottom": 21
+            "x": 20,
+            "y": 245.5604248046875,
+            "right": 40,
+            "bottom": 272.91949462890625
           },
           {
             "id": "loss-axis-math",
-            "x": 51.939544677734375,
-            "y": 4,
-            "right": 79.41949462890625,
-            "bottom": 21
+            "x": 23,
+            "y": 210.08050537109375,
+            "right": 40,
+            "bottom": 237.5604248046875
           },
           {
             "id": "parameter-axis",
@@ -2192,10 +2199,11 @@
       },
       "geometry": {
         "axisAlignment": {
-          "yCenterError": 3.814697265625e-06,
+          "yCenterError": 0,
           "yGap": 8,
           "xCenterError": 0,
-          "xGap": 8
+          "xGap": 8,
+          "yRotation": "translate(18 272.9195022583008) rotate(-90)"
         },
         "outside": [],
         "overflow": [],
@@ -2255,17 +2263,17 @@
           },
           {
             "id": "loss-axis",
-            "x": 16.58049774169922,
-            "y": 1,
-            "right": 43.939544677734375,
-            "bottom": 21
+            "x": 20,
+            "y": 245.5604248046875,
+            "right": 40,
+            "bottom": 272.91949462890625
           },
           {
             "id": "loss-axis-math",
-            "x": 51.939544677734375,
-            "y": 4,
-            "right": 79.41949462890625,
-            "bottom": 21
+            "x": 23,
+            "y": 210.08050537109375,
+            "right": 40,
+            "bottom": 237.5604248046875
           },
           {
             "id": "parameter-axis",
@@ -2470,22 +2478,22 @@
     "examples/gradient-descent/slides.html": "209f3193df4284200353aaa4c40e227d65cb04f6354a5b7254acbff1cfcde593",
     "examples/gradient-descent/gradient-descent.js": "2afc4544aa42c7ece8a076fe9df21a8aee37f225fc3e386446becfe8fa68713f",
     "examples/gradient-descent/viewer.css": "8a435498fed6a04df20ec0b38089828622a320822c1b162660ef85e3240385d1",
-    "scripts/verify_gradient_descent.py": "db8f5cc70b91424dca7f5fb34d901149094548b333a4c5d06667ba8fd8ce7be7",
+    "scripts/verify_gradient_descent.py": "52a933fbde388a16b5db583d734b3ddedd8d51278a678f8e01284e6e0ec4d47a",
     "templates/html/styles.css": "3c05e00284aae4ea538e697efae7682a2c9b35b318cab372fa8493613de4df22",
     "templates/html/reference-layout.css": "c29f52fd9852d80b29e277b7d60218a7b02da599a059a8395051caada3525bcc",
     "templates/html/math-typography.css": "c390ffe17b8c0f02d10a34b99bca892bb63f99af98766e7b47c0a88da38e2f3a",
     "scripts/reference_validation.py": "8360e648f0a6aaa7a1b3bf56a9824de18cb48cefbd8e79a87f494633af25780e",
-    "templates/html/graph-annotations.js": "e220346f8f73670e23d0a32610e53c60e08632123bf298b2e18e454adcc589fc"
+    "templates/html/graph-annotations.js": "deeee6a81fae900035c9b5398c1c17aa7ac4694bf986313b1a810ec20bfec92b"
   },
   "font_sha256": {
     "templates/html/assets/fonts/pretendard/PretendardVariable.woff2": "9599f12fd42fc0bce1cd50b47a0c022e108d7aa64dd0d1bb0ed44f3282d900b4",
     "templates/html/assets/fonts/stix-two-math/STIXTwoMath-Regular.woff2": "d18b6ab10cd6670ec5d4067f3ad2678a156b6b6642d9a0985243a1da729e6a95"
   },
-  "design_sha256": "27f49744f111e67d84d4a12a8ffb1ae9d73517540daae89361d67b4b32f0fa57",
+  "design_sha256": "d98c6a2214881f14d5f7528ffe96c1470542f5ae7f1761a3d6893b3421d7f429",
   "preview_sha256": {
-    "scroll.png": "f377faa88b466ec20cab00bd2b562e1f3a885e852b0fbf37cb34b71b6939b1a4",
-    "slide.png": "7ed5882a4a13dca526c14626391a8d2a8d90cc35b4e53b821f1efde1edb5aff7"
+    "scroll.png": "dc8acc748f5f5a0b7fd869c5121677005a5d0749e180cccaa0b8efe958a23db7",
+    "slide.png": "4b9b1dab74ee327e56a5b7730ba9a4dbc69037af13e38036941fcf92d9c54be6"
   },
   "status": "passed",
-  "created_utc": "2026-10-26T03:18:02.247232+00:00"
+  "created_utc": "2026-10-26T05:12:35.289888+00:00"
 }

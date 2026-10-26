@@ -130,4 +130,6 @@
 
 ## 3차 타주제 재사용 검증 · 과적합과 일반화
 
+현행 사용자 개정에서는 검증 손실 최소의 Best model과 이후 과적합 구간을 데이터에서 계산해 표시한다. 새 이미지의 색·윤곽·자세를 학습 이미지와 구별하고, 정의 카드의 제목/본문 서식은 #3 원본과 대조한다. y축 이름은 공통 Figure표준에 따라 축 중앙 왼쪽에 세로로 배치한다. 과거 D0/D1 및 개정별 결과는 각 검증 기록에 보존한다.
+
 [과적합과 일반화 개념 한 장](examples/overfitting-generalization/README.md)은 #3 Comparison의 동등 White·대응 행과 #8의 동일 기준/축/범례 원칙 일부를 재구성한 별도 검증 산출물이다. 과적합(현상)과 일반화(새 데이터 성능 관점)를 구분하고 왼쪽의 학습·검증 손실 Figure와 오른쪽의 학습 이미지→같은 모델→새 이미지 예측 Figure로 두 개념을 나란히 읽는다. 같은 [편집 원본](examples/overfitting-generalization/content.html)을 [Scroll](examples/overfitting-generalization/scroll.html)/[Slide](examples/overfitting-generalization/slides.html)로 표시한다. [설계·출처](examples/overfitting-generalization/DESIGN.md), [D0/D1 및 독립검토](examples/overfitting-generalization/VALIDATION.md), [Slide PNG](examples/overfitting-generalization/previews/slide.png), [Scroll PNG](examples/overfitting-generalization/previews/scroll.png), [8화면 실제 검증](examples/overfitting-generalization/previews/validation.json)을 함께 확인한다. 새 canonical 번호를 추가하지 않으며 사용하지 않은 패턴의 타주제 재사용을 검증한 것은 아니다.

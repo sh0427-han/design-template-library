@@ -107,3 +107,9 @@ CI에는 이 사례의 검증 명령과 프리뷰/화면 artifact 경로를 추�
 소스a219c92의 [전용 검증](https://github.com/sh0427-han/design-template-library/actions/runs/40263267197)과 [전체 회귀](https://github.com/sh0427-han/design-template-library/actions/runs/40263267233)가 모두 성공했다.8화면의 축 이름 최대 중심 오차0.000003815px, 두 축의 실제 간격8px, 글자/곡선/점/투영선 충돌0건이다. 실제폰트·−1pt·모드동일성·수학·잘림·실패 안내도 통과했다. [독립 최종 검토](../overfitting-generalization/review/second-revision-2.md)가 새 실제이미지/JSON/해시를 확인해 미해결0건으로 판정했다.
 
 기존8종은 고정 기준의 파일 목록으로 보존 검사하고, 새 공통 모듈과 Figure표준의 축 규칙 추가는 사용자 지시의 의도된 변경으로 따로 기록했다. 이전의 공통 규칙 전체 변경없음이라는 판정을 현행판에 그대로 적용하지 않는다.
+
+## 3차 사용자 개정 · y축 중앙 왼쪽 세로 배치 결과
+
+공통 축 이름 계약을 사용자 요청으로 바꿔 y축 이름의 본문/STIX 묶음 전체를−90° 회전했다. 실제 y축 tip29~하단454의 중앙241.5와 글자centerY 오차0px/축X48과글자rightX40의 간격8px, x축 중앙176.5와오차0px/아래8px를 PC4×Scroll/Slide8화면 모두 확인했다. 이 계약 변경은 새로운 문서 누락으로 세지 않는다. 이전 상단 위 결과는 당시 규칙의 기록이다.
+
+소스d09aa692의 [전용 검사](https://github.com/sh0427-han/design-template-library/actions/runs/40272864640)와 [전체 회귀](https://github.com/sh0427-han/design-template-library/actions/runs/40272864649)가 모두success.161점·6상태·미분/접선·갱신·15반례와모드/폰트/−1pt/클리핑/곡선·점·투영선충돌0건,실패안내를 재검증했다. source/대표PNG SHA256이JSON과 일치한다. [독립 최종 검토](../overfitting-generalization/review/third-revision-2.md)가 최신대표2PNG/8화면모음과수치·해시/CI를 직접 확인했고 높음/중간/낮음 미해결0건이다. 기존8종과로지스틱소스는 유지한다.
