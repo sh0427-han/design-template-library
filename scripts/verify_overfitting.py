@@ -125,7 +125,9 @@ def main():
                 frame.evaluate('(d)=>window.CurveExample.render(d)',changed);coordinates(frame,changed)
                 expected='두 손실이 함께 감소' if kind=='improving' else '손실의 높낮이가 바뀌는'
                 assert expected in frame.locator('#interpretation').inner_text()
-                assert not frame.evaluate(GEOMETRY)['clipped'];page.screenshot(path=str(evidence/f'{kind}.png'));changes.append(kind)
+                g=frame.evaluate(GEOMETRY)
+                assert not any(g[k] for k in ('outside','clipped','labelOutside','collisions')) and all(not x['escaped'] for x in g['padding']) and g['footerGap']>=12
+                page.screenshot(path=str(evidence/f'{kind}.png'));changes.append(kind)
             rejected=[]
             for kind in ('unit','nonfinite','unordered','negative'):
                 changed=json.loads(json.dumps(data))
@@ -137,7 +139,7 @@ def main():
                 assert result,kind;rejected.append(kind)
             page.close()
             # Real mode navigation, refresh, keyboard focus, and failed data load.
-            page=browser.new_page();page.goto(base+'scroll.html#concept');page.wait_for_function("document.body.dataset.ready==='true'")
+            page=browser.new_page();page.goto(base+'scroll.html');page.wait_for_function("document.body.dataset.ready==='true'")
             page.keyboard.press('Tab');assert page.locator('a[href="scroll.html#concept"]').evaluate('e=>e===document.activeElement')
             page.keyboard.press('Tab');page.keyboard.press('Enter');page.wait_for_url('**/slides.html#concept');page.wait_for_function("document.body.dataset.ready==='true'")
             page.reload();page.wait_for_function("document.body.dataset.ready==='true'");page.locator('a[href="scroll.html#concept"]').click();page.wait_for_url('**/scroll.html#concept')
