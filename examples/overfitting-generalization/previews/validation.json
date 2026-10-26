@@ -24,6 +24,7 @@
           "xGap": 8,
           "yRotation": "translate(-16 236.1875) rotate(-90)"
         },
+        "overfittingLines": 1,
         "generalizationLines": 1,
         "subtitle": "학습 데이터에만 잘 맞아 새 데이터 성능이 떨어지는 과적합과, 새 데이터에서도 잘 동작하는 일반화",
         "lossDefinitionInGraph": true,
@@ -160,31 +161,21 @@
           },
           {
             "svg": "overfit-chart",
-            "text": "Best model",
+            "text": "best.pt",
             "bbox": {
-              "x": 63.48126220703125,
-              "y": 73,
-              "width": 87.76077270507812,
-              "height": 23
-            }
-          },
-          {
-            "svg": "overfit-chart",
-            "text": "검증 손실 최소",
-            "bbox": {
-              "x": 69.87188720703125,
-              "y": 99,
-              "width": 76.01531982421875,
-              "height": 18
+              "x": 131.05157470703125,
+              "y": 299,
+              "width": 49.24072265625,
+              "height": 20
             }
           },
           {
             "svg": "overfit-chart",
             "text": "과적합 진행",
             "bbox": {
-              "x": 205.78125,
+              "x": 217.38125610351562,
               "y": 67,
-              "width": 79.3402099609375,
+              "width": 79.34017944335938,
               "height": 23
             }
           },
@@ -192,7 +183,7 @@
             "svg": "overfit-chart",
             "text": "검증 ↑ · 학습 ↓",
             "bbox": {
-              "x": 203.2734375,
+              "x": 214.87344360351562,
               "y": 94,
               "width": 83.453125,
               "height": 18
@@ -377,7 +368,18 @@
         ],
         "post_minimum_overfitting_region": true,
         "selection_criterion": "validation loss among displayed checkpoints; not independent test optimum",
-        "label_curve_collisions": []
+        "x_axis_label": "best.pt",
+        "x_axis_label_x": 155.2,
+        "right_arrow_from_minimum": true,
+        "guide_segments": [
+          [
+            155.2,
+            50.0,
+            296.0
+          ]
+        ],
+        "label_curve_collisions": [],
+        "label_annotation_collisions": []
       },
       "typography": {
         "matches_canonical_comparison": true,
@@ -420,7 +422,7 @@
         "flow_alignment": true
       },
       "fonts": {
-        "text_nodes": 45,
+        "text_nodes": 44,
         "letter_spacing": "-1pt",
         "rendered": [
           {
@@ -485,7 +487,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 41
+                "glyphCount": 42
               }
             ]
           },
@@ -661,18 +663,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 10
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 8
+                "glyphCount": 7
               }
             ]
           },
@@ -975,7 +966,7 @@
         "max_svg_coordinate_error": 2.842170943040401e-14
       },
       "mode_parity": {
-        "elements": 111,
+        "elements": 110,
         "style_match": true,
         "max_box_error_px": 0,
         "box_tolerance_px": {
@@ -1010,6 +1001,7 @@
           "xGap": 8,
           "yRotation": "translate(-16 236.1875) rotate(-90)"
         },
+        "overfittingLines": 1,
         "generalizationLines": 1,
         "subtitle": "학습 데이터에만 잘 맞아 새 데이터 성능이 떨어지는 과적합과, 새 데이터에서도 잘 동작하는 일반화",
         "lossDefinitionInGraph": true,
@@ -1146,31 +1138,21 @@
           },
           {
             "svg": "overfit-chart",
-            "text": "Best model",
+            "text": "best.pt",
             "bbox": {
-              "x": 63.48126220703125,
-              "y": 73,
-              "width": 87.76077270507812,
-              "height": 23
-            }
-          },
-          {
-            "svg": "overfit-chart",
-            "text": "검증 손실 최소",
-            "bbox": {
-              "x": 69.87188720703125,
-              "y": 99,
-              "width": 76.01531982421875,
-              "height": 18
+              "x": 131.05157470703125,
+              "y": 299,
+              "width": 49.24072265625,
+              "height": 20
             }
           },
           {
             "svg": "overfit-chart",
             "text": "과적합 진행",
             "bbox": {
-              "x": 205.78125,
+              "x": 217.38125610351562,
               "y": 67,
-              "width": 79.3402099609375,
+              "width": 79.34017944335938,
               "height": 23
             }
           },
@@ -1178,7 +1160,7 @@
             "svg": "overfit-chart",
             "text": "검증 ↑ · 학습 ↓",
             "bbox": {
-              "x": 203.2734375,
+              "x": 214.87344360351562,
               "y": 94,
               "width": 83.453125,
               "height": 18
@@ -1363,7 +1345,18 @@
         ],
         "post_minimum_overfitting_region": true,
         "selection_criterion": "validation loss among displayed checkpoints; not independent test optimum",
-        "label_curve_collisions": []
+        "x_axis_label": "best.pt",
+        "x_axis_label_x": 155.2,
+        "right_arrow_from_minimum": true,
+        "guide_segments": [
+          [
+            155.2,
+            50.0,
+            296.0
+          ]
+        ],
+        "label_curve_collisions": [],
+        "label_annotation_collisions": []
       },
       "typography": {
         "matches_canonical_comparison": true,
@@ -1406,7 +1399,7 @@
         "flow_alignment": true
       },
       "fonts": {
-        "text_nodes": 45,
+        "text_nodes": 44,
         "letter_spacing": "-1pt",
         "rendered": [
           {
@@ -1471,7 +1464,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 41
+                "glyphCount": 42
               }
             ]
           },
@@ -1647,18 +1640,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 10
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 8
+                "glyphCount": 7
               }
             ]
           },
@@ -1961,7 +1943,7 @@
         "max_svg_coordinate_error": 2.842170943040401e-14
       },
       "mode_parity": {
-        "elements": 111,
+        "elements": 110,
         "style_match": true,
         "max_box_error_px": 0,
         "box_tolerance_px": {
@@ -1996,6 +1978,7 @@
           "xGap": 8,
           "yRotation": "translate(-16 236.1875) rotate(-90)"
         },
+        "overfittingLines": 1,
         "generalizationLines": 1,
         "subtitle": "학습 데이터에만 잘 맞아 새 데이터 성능이 떨어지는 과적합과, 새 데이터에서도 잘 동작하는 일반화",
         "lossDefinitionInGraph": true,
@@ -2132,31 +2115,21 @@
           },
           {
             "svg": "overfit-chart",
-            "text": "Best model",
+            "text": "best.pt",
             "bbox": {
-              "x": 63.48126220703125,
-              "y": 73,
-              "width": 87.76077270507812,
-              "height": 23
-            }
-          },
-          {
-            "svg": "overfit-chart",
-            "text": "검증 손실 최소",
-            "bbox": {
-              "x": 69.87188720703125,
-              "y": 99,
-              "width": 76.01531982421875,
-              "height": 18
+              "x": 131.05157470703125,
+              "y": 299,
+              "width": 49.24072265625,
+              "height": 20
             }
           },
           {
             "svg": "overfit-chart",
             "text": "과적합 진행",
             "bbox": {
-              "x": 205.78125,
+              "x": 217.38125610351562,
               "y": 67,
-              "width": 79.3402099609375,
+              "width": 79.34017944335938,
               "height": 23
             }
           },
@@ -2164,7 +2137,7 @@
             "svg": "overfit-chart",
             "text": "검증 ↑ · 학습 ↓",
             "bbox": {
-              "x": 203.2734375,
+              "x": 214.87344360351562,
               "y": 94,
               "width": 83.453125,
               "height": 18
@@ -2349,7 +2322,18 @@
         ],
         "post_minimum_overfitting_region": true,
         "selection_criterion": "validation loss among displayed checkpoints; not independent test optimum",
-        "label_curve_collisions": []
+        "x_axis_label": "best.pt",
+        "x_axis_label_x": 155.2,
+        "right_arrow_from_minimum": true,
+        "guide_segments": [
+          [
+            155.2,
+            50.0,
+            296.0
+          ]
+        ],
+        "label_curve_collisions": [],
+        "label_annotation_collisions": []
       },
       "typography": {
         "matches_canonical_comparison": true,
@@ -2392,7 +2376,7 @@
         "flow_alignment": true
       },
       "fonts": {
-        "text_nodes": 45,
+        "text_nodes": 44,
         "letter_spacing": "-1pt",
         "rendered": [
           {
@@ -2457,7 +2441,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 41
+                "glyphCount": 42
               }
             ]
           },
@@ -2633,18 +2617,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 10
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 8
+                "glyphCount": 7
               }
             ]
           },
@@ -2947,7 +2920,7 @@
         "max_svg_coordinate_error": 2.842170943040401e-14
       },
       "mode_parity": {
-        "elements": 111,
+        "elements": 110,
         "style_match": true,
         "max_box_error_px": 0,
         "box_tolerance_px": {
@@ -2982,6 +2955,7 @@
           "xGap": 8,
           "yRotation": "translate(-16 236.1875) rotate(-90)"
         },
+        "overfittingLines": 1,
         "generalizationLines": 1,
         "subtitle": "학습 데이터에만 잘 맞아 새 데이터 성능이 떨어지는 과적합과, 새 데이터에서도 잘 동작하는 일반화",
         "lossDefinitionInGraph": true,
@@ -3118,31 +3092,21 @@
           },
           {
             "svg": "overfit-chart",
-            "text": "Best model",
+            "text": "best.pt",
             "bbox": {
-              "x": 63.48126220703125,
-              "y": 73,
-              "width": 87.76077270507812,
-              "height": 23
-            }
-          },
-          {
-            "svg": "overfit-chart",
-            "text": "검증 손실 최소",
-            "bbox": {
-              "x": 69.87188720703125,
-              "y": 99,
-              "width": 76.01531982421875,
-              "height": 18
+              "x": 131.05157470703125,
+              "y": 299,
+              "width": 49.24072265625,
+              "height": 20
             }
           },
           {
             "svg": "overfit-chart",
             "text": "과적합 진행",
             "bbox": {
-              "x": 205.78125,
+              "x": 217.38125610351562,
               "y": 67,
-              "width": 79.3402099609375,
+              "width": 79.34017944335938,
               "height": 23
             }
           },
@@ -3150,7 +3114,7 @@
             "svg": "overfit-chart",
             "text": "검증 ↑ · 학습 ↓",
             "bbox": {
-              "x": 203.2734375,
+              "x": 214.87344360351562,
               "y": 94,
               "width": 83.453125,
               "height": 18
@@ -3335,7 +3299,18 @@
         ],
         "post_minimum_overfitting_region": true,
         "selection_criterion": "validation loss among displayed checkpoints; not independent test optimum",
-        "label_curve_collisions": []
+        "x_axis_label": "best.pt",
+        "x_axis_label_x": 155.2,
+        "right_arrow_from_minimum": true,
+        "guide_segments": [
+          [
+            155.2,
+            50.0,
+            296.0
+          ]
+        ],
+        "label_curve_collisions": [],
+        "label_annotation_collisions": []
       },
       "typography": {
         "matches_canonical_comparison": true,
@@ -3378,7 +3353,7 @@
         "flow_alignment": true
       },
       "fonts": {
-        "text_nodes": 45,
+        "text_nodes": 44,
         "letter_spacing": "-1pt",
         "rendered": [
           {
@@ -3443,7 +3418,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 41
+                "glyphCount": 42
               }
             ]
           },
@@ -3619,18 +3594,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 10
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 8
+                "glyphCount": 7
               }
             ]
           },
@@ -3933,7 +3897,7 @@
         "max_svg_coordinate_error": 2.842170943040401e-14
       },
       "mode_parity": {
-        "elements": 111,
+        "elements": 110,
         "style_match": true,
         "max_box_error_px": 0,
         "box_tolerance_px": {
@@ -3968,6 +3932,7 @@
           "xGap": 8,
           "yRotation": "translate(-16 236.1875) rotate(-90)"
         },
+        "overfittingLines": 1,
         "generalizationLines": 1,
         "subtitle": "학습 데이터에만 잘 맞아 새 데이터 성능이 떨어지는 과적합과, 새 데이터에서도 잘 동작하는 일반화",
         "lossDefinitionInGraph": true,
@@ -4104,31 +4069,21 @@
           },
           {
             "svg": "overfit-chart",
-            "text": "Best model",
+            "text": "best.pt",
             "bbox": {
-              "x": 63.48126220703125,
-              "y": 73,
-              "width": 87.76077270507812,
-              "height": 23
-            }
-          },
-          {
-            "svg": "overfit-chart",
-            "text": "검증 손실 최소",
-            "bbox": {
-              "x": 69.87188720703125,
-              "y": 99,
-              "width": 76.01531982421875,
-              "height": 18
+              "x": 131.05157470703125,
+              "y": 299,
+              "width": 49.24072265625,
+              "height": 20
             }
           },
           {
             "svg": "overfit-chart",
             "text": "과적합 진행",
             "bbox": {
-              "x": 205.78125,
+              "x": 217.38125610351562,
               "y": 67,
-              "width": 79.3402099609375,
+              "width": 79.34017944335938,
               "height": 23
             }
           },
@@ -4136,7 +4091,7 @@
             "svg": "overfit-chart",
             "text": "검증 ↑ · 학습 ↓",
             "bbox": {
-              "x": 203.2734375,
+              "x": 214.87344360351562,
               "y": 94,
               "width": 83.453125,
               "height": 18
@@ -4321,7 +4276,18 @@
         ],
         "post_minimum_overfitting_region": true,
         "selection_criterion": "validation loss among displayed checkpoints; not independent test optimum",
-        "label_curve_collisions": []
+        "x_axis_label": "best.pt",
+        "x_axis_label_x": 155.2,
+        "right_arrow_from_minimum": true,
+        "guide_segments": [
+          [
+            155.2,
+            50.0,
+            296.0
+          ]
+        ],
+        "label_curve_collisions": [],
+        "label_annotation_collisions": []
       },
       "typography": {
         "matches_canonical_comparison": true,
@@ -4364,7 +4330,7 @@
         "flow_alignment": true
       },
       "fonts": {
-        "text_nodes": 45,
+        "text_nodes": 44,
         "letter_spacing": "-1pt",
         "rendered": [
           {
@@ -4429,7 +4395,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 41
+                "glyphCount": 42
               }
             ]
           },
@@ -4605,18 +4571,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 10
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 8
+                "glyphCount": 7
               }
             ]
           },
@@ -4919,7 +4874,7 @@
         "max_svg_coordinate_error": 2.842170943040401e-14
       },
       "mode_parity": {
-        "elements": 111,
+        "elements": 110,
         "style_match": true,
         "max_box_error_px": 0,
         "box_tolerance_px": {
@@ -4954,6 +4909,7 @@
           "xGap": 8,
           "yRotation": "translate(-16 236.1875) rotate(-90)"
         },
+        "overfittingLines": 1,
         "generalizationLines": 1,
         "subtitle": "학습 데이터에만 잘 맞아 새 데이터 성능이 떨어지는 과적합과, 새 데이터에서도 잘 동작하는 일반화",
         "lossDefinitionInGraph": true,
@@ -5090,31 +5046,21 @@
           },
           {
             "svg": "overfit-chart",
-            "text": "Best model",
+            "text": "best.pt",
             "bbox": {
-              "x": 63.48126220703125,
-              "y": 73,
-              "width": 87.76077270507812,
-              "height": 23
-            }
-          },
-          {
-            "svg": "overfit-chart",
-            "text": "검증 손실 최소",
-            "bbox": {
-              "x": 69.87188720703125,
-              "y": 99,
-              "width": 76.01531982421875,
-              "height": 18
+              "x": 131.05157470703125,
+              "y": 299,
+              "width": 49.24072265625,
+              "height": 20
             }
           },
           {
             "svg": "overfit-chart",
             "text": "과적합 진행",
             "bbox": {
-              "x": 205.78125,
+              "x": 217.38125610351562,
               "y": 67,
-              "width": 79.3402099609375,
+              "width": 79.34017944335938,
               "height": 23
             }
           },
@@ -5122,7 +5068,7 @@
             "svg": "overfit-chart",
             "text": "검증 ↑ · 학습 ↓",
             "bbox": {
-              "x": 203.2734375,
+              "x": 214.87344360351562,
               "y": 94,
               "width": 83.453125,
               "height": 18
@@ -5307,7 +5253,18 @@
         ],
         "post_minimum_overfitting_region": true,
         "selection_criterion": "validation loss among displayed checkpoints; not independent test optimum",
-        "label_curve_collisions": []
+        "x_axis_label": "best.pt",
+        "x_axis_label_x": 155.2,
+        "right_arrow_from_minimum": true,
+        "guide_segments": [
+          [
+            155.2,
+            50.0,
+            296.0
+          ]
+        ],
+        "label_curve_collisions": [],
+        "label_annotation_collisions": []
       },
       "typography": {
         "matches_canonical_comparison": true,
@@ -5350,7 +5307,7 @@
         "flow_alignment": true
       },
       "fonts": {
-        "text_nodes": 45,
+        "text_nodes": 44,
         "letter_spacing": "-1pt",
         "rendered": [
           {
@@ -5415,7 +5372,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 41
+                "glyphCount": 42
               }
             ]
           },
@@ -5591,18 +5548,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 10
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 8
+                "glyphCount": 7
               }
             ]
           },
@@ -5905,7 +5851,7 @@
         "max_svg_coordinate_error": 2.842170943040401e-14
       },
       "mode_parity": {
-        "elements": 111,
+        "elements": 110,
         "style_match": true,
         "max_box_error_px": 0,
         "box_tolerance_px": {
@@ -5940,6 +5886,7 @@
           "xGap": 8,
           "yRotation": "translate(-16 236.1875) rotate(-90)"
         },
+        "overfittingLines": 1,
         "generalizationLines": 1,
         "subtitle": "학습 데이터에만 잘 맞아 새 데이터 성능이 떨어지는 과적합과, 새 데이터에서도 잘 동작하는 일반화",
         "lossDefinitionInGraph": true,
@@ -6076,31 +6023,21 @@
           },
           {
             "svg": "overfit-chart",
-            "text": "Best model",
+            "text": "best.pt",
             "bbox": {
-              "x": 63.48126220703125,
-              "y": 73,
-              "width": 87.76077270507812,
-              "height": 23
-            }
-          },
-          {
-            "svg": "overfit-chart",
-            "text": "검증 손실 최소",
-            "bbox": {
-              "x": 69.87188720703125,
-              "y": 99,
-              "width": 76.01531982421875,
-              "height": 18
+              "x": 131.05157470703125,
+              "y": 299,
+              "width": 49.24072265625,
+              "height": 20
             }
           },
           {
             "svg": "overfit-chart",
             "text": "과적합 진행",
             "bbox": {
-              "x": 205.78125,
+              "x": 217.38125610351562,
               "y": 67,
-              "width": 79.3402099609375,
+              "width": 79.34017944335938,
               "height": 23
             }
           },
@@ -6108,7 +6045,7 @@
             "svg": "overfit-chart",
             "text": "검증 ↑ · 학습 ↓",
             "bbox": {
-              "x": 203.2734375,
+              "x": 214.87344360351562,
               "y": 94,
               "width": 83.453125,
               "height": 18
@@ -6293,7 +6230,18 @@
         ],
         "post_minimum_overfitting_region": true,
         "selection_criterion": "validation loss among displayed checkpoints; not independent test optimum",
-        "label_curve_collisions": []
+        "x_axis_label": "best.pt",
+        "x_axis_label_x": 155.2,
+        "right_arrow_from_minimum": true,
+        "guide_segments": [
+          [
+            155.2,
+            50.0,
+            296.0
+          ]
+        ],
+        "label_curve_collisions": [],
+        "label_annotation_collisions": []
       },
       "typography": {
         "matches_canonical_comparison": true,
@@ -6336,7 +6284,7 @@
         "flow_alignment": true
       },
       "fonts": {
-        "text_nodes": 45,
+        "text_nodes": 44,
         "letter_spacing": "-1pt",
         "rendered": [
           {
@@ -6401,7 +6349,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 41
+                "glyphCount": 42
               }
             ]
           },
@@ -6577,18 +6525,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 10
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 8
+                "glyphCount": 7
               }
             ]
           },
@@ -6891,7 +6828,7 @@
         "max_svg_coordinate_error": 2.842170943040401e-14
       },
       "mode_parity": {
-        "elements": 111,
+        "elements": 110,
         "style_match": true,
         "max_box_error_px": 0,
         "box_tolerance_px": {
@@ -6926,6 +6863,7 @@
           "xGap": 8,
           "yRotation": "translate(-16 236.1875) rotate(-90)"
         },
+        "overfittingLines": 1,
         "generalizationLines": 1,
         "subtitle": "학습 데이터에만 잘 맞아 새 데이터 성능이 떨어지는 과적합과, 새 데이터에서도 잘 동작하는 일반화",
         "lossDefinitionInGraph": true,
@@ -7062,31 +7000,21 @@
           },
           {
             "svg": "overfit-chart",
-            "text": "Best model",
+            "text": "best.pt",
             "bbox": {
-              "x": 63.48126220703125,
-              "y": 73,
-              "width": 87.76077270507812,
-              "height": 23
-            }
-          },
-          {
-            "svg": "overfit-chart",
-            "text": "검증 손실 최소",
-            "bbox": {
-              "x": 69.87188720703125,
-              "y": 99,
-              "width": 76.01531982421875,
-              "height": 18
+              "x": 131.05157470703125,
+              "y": 299,
+              "width": 49.24072265625,
+              "height": 20
             }
           },
           {
             "svg": "overfit-chart",
             "text": "과적합 진행",
             "bbox": {
-              "x": 205.78125,
+              "x": 217.38125610351562,
               "y": 67,
-              "width": 79.3402099609375,
+              "width": 79.34017944335938,
               "height": 23
             }
           },
@@ -7094,7 +7022,7 @@
             "svg": "overfit-chart",
             "text": "검증 ↑ · 학습 ↓",
             "bbox": {
-              "x": 203.2734375,
+              "x": 214.87344360351562,
               "y": 94,
               "width": 83.453125,
               "height": 18
@@ -7279,7 +7207,18 @@
         ],
         "post_minimum_overfitting_region": true,
         "selection_criterion": "validation loss among displayed checkpoints; not independent test optimum",
-        "label_curve_collisions": []
+        "x_axis_label": "best.pt",
+        "x_axis_label_x": 155.2,
+        "right_arrow_from_minimum": true,
+        "guide_segments": [
+          [
+            155.2,
+            50.0,
+            296.0
+          ]
+        ],
+        "label_curve_collisions": [],
+        "label_annotation_collisions": []
       },
       "typography": {
         "matches_canonical_comparison": true,
@@ -7322,7 +7261,7 @@
         "flow_alignment": true
       },
       "fonts": {
-        "text_nodes": 45,
+        "text_nodes": 44,
         "letter_spacing": "-1pt",
         "rendered": [
           {
@@ -7387,7 +7326,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 41
+                "glyphCount": 42
               }
             ]
           },
@@ -7563,18 +7502,7 @@
                 "familyName": "Pretendard Variable",
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
-                "glyphCount": 10
-              }
-            ]
-          },
-          {
-            "expected": "Pretendard Variable",
-            "actual": [
-              {
-                "familyName": "Pretendard Variable",
-                "postScriptName": "PretendardVariable-Regular",
-                "isCustomFont": true,
-                "glyphCount": 8
+                "glyphCount": 7
               }
             ]
           },
@@ -7877,7 +7805,7 @@
         "max_svg_coordinate_error": 2.842170943040401e-14
       },
       "mode_parity": {
-        "elements": 111,
+        "elements": 110,
         "style_match": true,
         "max_box_error_px": 0,
         "box_tolerance_px": {
@@ -7899,12 +7827,1084 @@
       "http_errors": []
     }
   ],
-  "created_utc": "2026-10-26T05:11:36.435191+00:00",
+  "changed_cases": [
+    {
+      "kind": "improving",
+      "selection": {
+        "minimum_checkpoint_index": 40,
+        "minimum_validation_loss": 0.44999999999999996,
+        "point": [
+          358,
+          188
+        ],
+        "post_minimum_overfitting_region": false,
+        "selection_criterion": "validation loss among displayed checkpoints; not independent test optimum",
+        "x_axis_label": "best.pt",
+        "x_axis_label_x": 358,
+        "right_arrow_from_minimum": false,
+        "guide_segments": [
+          [
+            358.0,
+            50.0,
+            270.0
+          ],
+          [
+            358.0,
+            294.0,
+            296.0
+          ]
+        ],
+        "label_curve_collisions": [],
+        "label_annotation_collisions": []
+      },
+      "geometry": {
+        "axisAlignment": {
+          "yCenterError": 0,
+          "yGap": 8,
+          "xCenterError": 0,
+          "xGap": 8,
+          "yRotation": "translate(-16 236.1875) rotate(-90)"
+        },
+        "overfittingLines": 1,
+        "generalizationLines": 1,
+        "subtitle": "학습 데이터에만 잘 맞아 새 데이터 성능이 떨어지는 과적합과, 새 데이터에서도 잘 동작하는 일반화",
+        "lossDefinitionInGraph": true,
+        "charts": [
+          {
+            "x": 197.5,
+            "y": 344.328125,
+            "right": 577.5,
+            "bottom": 664.328125,
+            "width": 380,
+            "height": 320
+          }
+        ],
+        "removedSubjects": 0,
+        "removedGrid": 0,
+        "slide": {
+          "x": 0,
+          "y": 0,
+          "right": 1440,
+          "bottom": 810,
+          "width": 1440,
+          "height": 810
+        },
+        "footer": {
+          "x": 66,
+          "y": 756,
+          "right": 1374,
+          "bottom": 786,
+          "width": 1308,
+          "height": 30
+        },
+        "content": {
+          "x": 66,
+          "y": 156.328125,
+          "right": 1374,
+          "bottom": 756,
+          "width": 1308,
+          "height": 599.671875
+        },
+        "outside": [],
+        "padding": [
+          {
+            "name": "card definition",
+            "inner": {
+              "x": 93,
+              "y": 175.328125,
+              "right": 682,
+              "bottom": 266.328125
+            },
+            "escaped": []
+          },
+          {
+            "name": "card definition",
+            "inner": {
+              "x": 758,
+              "y": 175.328125,
+              "right": 1347,
+              "bottom": 266.328125
+            },
+            "escaped": []
+          },
+          {
+            "name": "curve-panel",
+            "inner": {
+              "x": 93,
+              "y": 314.328125,
+              "right": 682,
+              "bottom": 664.328125
+            },
+            "escaped": []
+          },
+          {
+            "name": "curve-panel generalization-panel",
+            "inner": {
+              "x": 758,
+              "y": 314.328125,
+              "right": 1347,
+              "bottom": 664.328125
+            },
+            "escaped": []
+          }
+        ],
+        "clipped": [],
+        "labels": [
+          {
+            "svg": "overfit-chart",
+            "text": "학습·검증 손실이 함께 감소",
+            "bbox": {
+              "x": 100.4765625,
+              "y": 4,
+              "width": 179.95791625976562,
+              "height": 23
+            }
+          },
+          {
+            "svg": "overfit-chart",
+            "text": "평균 손실",
+            "bbox": {
+              "x": 18,
+              "y": 133.8125,
+              "width": 20,
+              "height": 56.375
+            }
+          },
+          {
+            "svg": "overfit-chart",
+            "text": "0",
+            "bbox": {
+              "x": 27.90625,
+              "y": 259,
+              "width": 8,
+              "height": 17
+            }
+          },
+          {
+            "svg": "overfit-chart",
+            "text": "학습 진행",
+            "bbox": {
+              "x": 173.49478149414062,
+              "y": 274,
+              "width": 57.01043701171875,
+              "height": 20
+            }
+          },
+          {
+            "svg": "overfit-chart",
+            "text": "많아짐",
+            "bbox": {
+              "x": 323.09375,
+              "y": 273,
+              "width": 35.2611083984375,
+              "height": 18
+            }
+          },
+          {
+            "svg": "overfit-chart",
+            "text": "best.pt",
+            "bbox": {
+              "x": 309.703125,
+              "y": 299,
+              "width": 49.24072265625,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "학습에 쓴 이미지",
+            "bbox": {
+              "x": 18,
+              "y": 8,
+              "width": 99.2239990234375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "사과",
+            "bbox": {
+              "x": 40.640625,
+              "y": 103.875,
+              "width": 28.35906982421875,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "사과",
+            "bbox": {
+              "x": 120.640625,
+              "y": 103.875,
+              "width": 28.35906982421875,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "토마토",
+            "bbox": {
+              "x": 193.9609375,
+              "y": 103.875,
+              "width": 41.7181396484375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "학습",
+            "bbox": {
+              "x": 289.640625,
+              "y": 47,
+              "width": 28.359130859375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "학습된 모델",
+            "bbox": {
+              "x": 400.987548828125,
+              "y": 72,
+              "width": 84.02490234375,
+              "height": 24
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "학습에 쓰지 않은 새 이미지",
+            "bbox": {
+              "x": 18,
+              "y": 172,
+              "width": 157.7298583984375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "A",
+            "bbox": {
+              "x": 49.1796875,
+              "y": 279.20458984375,
+              "width": 11,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "B",
+            "bbox": {
+              "x": 149.3984375,
+              "y": 279.20458984375,
+              "width": 10,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "같은 모델",
+            "bbox": {
+              "x": 304.9635009765625,
+              "y": 240,
+              "width": 68.072998046875,
+              "height": 24
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "예측",
+            "bbox": {
+              "x": 487.640625,
+              "y": 191,
+              "width": 28.359130859375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "A",
+            "bbox": {
+              "x": 464,
+              "y": 225,
+              "width": 11,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "사과",
+            "bbox": {
+              "x": 495,
+              "y": 221,
+              "width": 35.816162109375,
+              "height": 25
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "B",
+            "bbox": {
+              "x": 464,
+              "y": 262,
+              "width": 10,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "토마토",
+            "bbox": {
+              "x": 495,
+              "y": 258,
+              "width": 51.6322021484375,
+              "height": 25
+            }
+          }
+        ],
+        "labelOutside": [],
+        "collisions": [],
+        "alignment": [
+          {
+            "selector": "h2",
+            "yError": 0,
+            "heightError": 0
+          },
+          {
+            "selector": ".meaning",
+            "yError": 0,
+            "heightError": 0
+          }
+        ],
+        "footerGap": 13.125,
+        "figureCaptionGap": 14,
+        "title": "과적합과 일반화"
+      },
+      "evidence": "examples/overfitting-generalization/review/screens/improving.png"
+    },
+    {
+      "kind": "crossing",
+      "selection": {
+        "minimum_checkpoint_index": 0,
+        "minimum_validation_loss": 0.4,
+        "point": [
+          46,
+          196.66666666666666
+        ],
+        "post_minimum_overfitting_region": false,
+        "selection_criterion": "validation loss among displayed checkpoints; not independent test optimum",
+        "x_axis_label": "best.pt",
+        "x_axis_label_x": 46,
+        "right_arrow_from_minimum": false,
+        "guide_segments": [
+          [
+            46.0,
+            50.0,
+            296.0
+          ]
+        ],
+        "label_curve_collisions": [],
+        "label_annotation_collisions": []
+      },
+      "geometry": {
+        "axisAlignment": {
+          "yCenterError": 0,
+          "yGap": 8,
+          "xCenterError": 0,
+          "xGap": 8,
+          "yRotation": "translate(-16 236.1875) rotate(-90)"
+        },
+        "overfittingLines": 1,
+        "generalizationLines": 1,
+        "subtitle": "학습 데이터에만 잘 맞아 새 데이터 성능이 떨어지는 과적합과, 새 데이터에서도 잘 동작하는 일반화",
+        "lossDefinitionInGraph": true,
+        "charts": [
+          {
+            "x": 197.5,
+            "y": 344.328125,
+            "right": 577.5,
+            "bottom": 664.328125,
+            "width": 380,
+            "height": 320
+          }
+        ],
+        "removedSubjects": 0,
+        "removedGrid": 0,
+        "slide": {
+          "x": 0,
+          "y": 0,
+          "right": 1440,
+          "bottom": 810,
+          "width": 1440,
+          "height": 810
+        },
+        "footer": {
+          "x": 66,
+          "y": 756,
+          "right": 1374,
+          "bottom": 786,
+          "width": 1308,
+          "height": 30
+        },
+        "content": {
+          "x": 66,
+          "y": 156.328125,
+          "right": 1374,
+          "bottom": 756,
+          "width": 1308,
+          "height": 599.671875
+        },
+        "outside": [],
+        "padding": [
+          {
+            "name": "card definition",
+            "inner": {
+              "x": 93,
+              "y": 175.328125,
+              "right": 682,
+              "bottom": 266.328125
+            },
+            "escaped": []
+          },
+          {
+            "name": "card definition",
+            "inner": {
+              "x": 758,
+              "y": 175.328125,
+              "right": 1347,
+              "bottom": 266.328125
+            },
+            "escaped": []
+          },
+          {
+            "name": "curve-panel",
+            "inner": {
+              "x": 93,
+              "y": 314.328125,
+              "right": 682,
+              "bottom": 664.328125
+            },
+            "escaped": []
+          },
+          {
+            "name": "curve-panel generalization-panel",
+            "inner": {
+              "x": 758,
+              "y": 314.328125,
+              "right": 1347,
+              "bottom": 664.328125
+            },
+            "escaped": []
+          }
+        ],
+        "clipped": [],
+        "labels": [
+          {
+            "svg": "overfit-chart",
+            "text": "손실 격차만으로 판단하지 않기",
+            "bbox": {
+              "x": 87.4453125,
+              "y": 4,
+              "width": 205.109375,
+              "height": 23
+            }
+          },
+          {
+            "svg": "overfit-chart",
+            "text": "평균 손실",
+            "bbox": {
+              "x": 18,
+              "y": 133.8125,
+              "width": 20,
+              "height": 56.375
+            }
+          },
+          {
+            "svg": "overfit-chart",
+            "text": "0",
+            "bbox": {
+              "x": 27.90625,
+              "y": 259,
+              "width": 8,
+              "height": 17
+            }
+          },
+          {
+            "svg": "overfit-chart",
+            "text": "학습 진행",
+            "bbox": {
+              "x": 173.49478149414062,
+              "y": 274,
+              "width": 57.01043701171875,
+              "height": 20
+            }
+          },
+          {
+            "svg": "overfit-chart",
+            "text": "많아짐",
+            "bbox": {
+              "x": 323.09375,
+              "y": 273,
+              "width": 35.2611083984375,
+              "height": 18
+            }
+          },
+          {
+            "svg": "overfit-chart",
+            "text": "best.pt",
+            "bbox": {
+              "x": 21.8515625,
+              "y": 299,
+              "width": 49.240753173828125,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "학습에 쓴 이미지",
+            "bbox": {
+              "x": 18,
+              "y": 8,
+              "width": 99.2239990234375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "사과",
+            "bbox": {
+              "x": 40.640625,
+              "y": 103.875,
+              "width": 28.35906982421875,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "사과",
+            "bbox": {
+              "x": 120.640625,
+              "y": 103.875,
+              "width": 28.35906982421875,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "토마토",
+            "bbox": {
+              "x": 193.9609375,
+              "y": 103.875,
+              "width": 41.7181396484375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "학습",
+            "bbox": {
+              "x": 289.640625,
+              "y": 47,
+              "width": 28.359130859375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "학습된 모델",
+            "bbox": {
+              "x": 400.987548828125,
+              "y": 72,
+              "width": 84.02490234375,
+              "height": 24
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "학습에 쓰지 않은 새 이미지",
+            "bbox": {
+              "x": 18,
+              "y": 172,
+              "width": 157.7298583984375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "A",
+            "bbox": {
+              "x": 49.1796875,
+              "y": 279.20458984375,
+              "width": 11,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "B",
+            "bbox": {
+              "x": 149.3984375,
+              "y": 279.20458984375,
+              "width": 10,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "같은 모델",
+            "bbox": {
+              "x": 304.9635009765625,
+              "y": 240,
+              "width": 68.072998046875,
+              "height": 24
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "예측",
+            "bbox": {
+              "x": 487.640625,
+              "y": 191,
+              "width": 28.359130859375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "A",
+            "bbox": {
+              "x": 464,
+              "y": 225,
+              "width": 11,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "사과",
+            "bbox": {
+              "x": 495,
+              "y": 221,
+              "width": 35.816162109375,
+              "height": 25
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "B",
+            "bbox": {
+              "x": 464,
+              "y": 262,
+              "width": 10,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "토마토",
+            "bbox": {
+              "x": 495,
+              "y": 258,
+              "width": 51.6322021484375,
+              "height": 25
+            }
+          }
+        ],
+        "labelOutside": [],
+        "collisions": [],
+        "alignment": [
+          {
+            "selector": "h2",
+            "yError": 0,
+            "heightError": 0
+          },
+          {
+            "selector": ".meaning",
+            "yError": 0,
+            "heightError": 0
+          }
+        ],
+        "footerGap": 13.125,
+        "figureCaptionGap": 14,
+        "title": "과적합과 일반화"
+      },
+      "evidence": "examples/overfitting-generalization/review/screens/crossing.png"
+    },
+    {
+      "kind": "middle-minimum",
+      "selection": {
+        "minimum_checkpoint_index": 20,
+        "minimum_validation_loss": 0.25,
+        "point": [
+          202,
+          222.66666666666666
+        ],
+        "post_minimum_overfitting_region": true,
+        "selection_criterion": "validation loss among displayed checkpoints; not independent test optimum",
+        "x_axis_label": "best.pt",
+        "x_axis_label_x": 202,
+        "right_arrow_from_minimum": true,
+        "guide_segments": [
+          [
+            202.0,
+            50.0,
+            271.0
+          ]
+        ],
+        "label_curve_collisions": [],
+        "label_annotation_collisions": []
+      },
+      "geometry": {
+        "axisAlignment": {
+          "yCenterError": 0,
+          "yGap": 8,
+          "xCenterError": 0,
+          "xGap": 8,
+          "yRotation": "translate(-16 236.1875) rotate(-90)"
+        },
+        "overfittingLines": 1,
+        "generalizationLines": 1,
+        "subtitle": "학습 데이터에만 잘 맞아 새 데이터 성능이 떨어지는 과적합과, 새 데이터에서도 잘 동작하는 일반화",
+        "lossDefinitionInGraph": true,
+        "charts": [
+          {
+            "x": 197.5,
+            "y": 344.328125,
+            "right": 577.5,
+            "bottom": 664.328125,
+            "width": 380,
+            "height": 320
+          }
+        ],
+        "removedSubjects": 0,
+        "removedGrid": 0,
+        "slide": {
+          "x": 0,
+          "y": 0,
+          "right": 1440,
+          "bottom": 810,
+          "width": 1440,
+          "height": 810
+        },
+        "footer": {
+          "x": 66,
+          "y": 756,
+          "right": 1374,
+          "bottom": 786,
+          "width": 1308,
+          "height": 30
+        },
+        "content": {
+          "x": 66,
+          "y": 156.328125,
+          "right": 1374,
+          "bottom": 756,
+          "width": 1308,
+          "height": 599.671875
+        },
+        "outside": [],
+        "padding": [
+          {
+            "name": "card definition",
+            "inner": {
+              "x": 93,
+              "y": 175.328125,
+              "right": 682,
+              "bottom": 266.328125
+            },
+            "escaped": []
+          },
+          {
+            "name": "card definition",
+            "inner": {
+              "x": 758,
+              "y": 175.328125,
+              "right": 1347,
+              "bottom": 266.328125
+            },
+            "escaped": []
+          },
+          {
+            "name": "curve-panel",
+            "inner": {
+              "x": 93,
+              "y": 314.328125,
+              "right": 682,
+              "bottom": 664.328125
+            },
+            "escaped": []
+          },
+          {
+            "name": "curve-panel generalization-panel",
+            "inner": {
+              "x": 758,
+              "y": 314.328125,
+              "right": 1347,
+              "bottom": 664.328125
+            },
+            "escaped": []
+          }
+        ],
+        "clipped": [],
+        "labels": [
+          {
+            "svg": "overfit-chart",
+            "text": "검증 손실 최소에서 모델 선택",
+            "bbox": {
+              "x": 93.4921875,
+              "y": 4,
+              "width": 193.92291259765625,
+              "height": 23
+            }
+          },
+          {
+            "svg": "overfit-chart",
+            "text": "평균 손실",
+            "bbox": {
+              "x": 18,
+              "y": 133.8125,
+              "width": 20,
+              "height": 56.375
+            }
+          },
+          {
+            "svg": "overfit-chart",
+            "text": "0",
+            "bbox": {
+              "x": 27.90625,
+              "y": 259,
+              "width": 8,
+              "height": 17
+            }
+          },
+          {
+            "svg": "overfit-chart",
+            "text": "학습 진행",
+            "bbox": {
+              "x": 173.49478149414062,
+              "y": 274,
+              "width": 57.01043701171875,
+              "height": 20
+            }
+          },
+          {
+            "svg": "overfit-chart",
+            "text": "많아짐",
+            "bbox": {
+              "x": 323.09375,
+              "y": 273,
+              "width": 35.2611083984375,
+              "height": 18
+            }
+          },
+          {
+            "svg": "overfit-chart",
+            "text": "best.pt",
+            "bbox": {
+              "x": 177.8515625,
+              "y": 299,
+              "width": 49.240753173828125,
+              "height": 20
+            }
+          },
+          {
+            "svg": "overfit-chart",
+            "text": "과적합 진행",
+            "bbox": {
+              "x": 240.78125,
+              "y": 67,
+              "width": 79.3402099609375,
+              "height": 23
+            }
+          },
+          {
+            "svg": "overfit-chart",
+            "text": "검증 ↑ · 학습 ↓",
+            "bbox": {
+              "x": 238.2734375,
+              "y": 94,
+              "width": 83.453125,
+              "height": 18
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "학습에 쓴 이미지",
+            "bbox": {
+              "x": 18,
+              "y": 8,
+              "width": 99.2239990234375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "사과",
+            "bbox": {
+              "x": 40.640625,
+              "y": 103.875,
+              "width": 28.35906982421875,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "사과",
+            "bbox": {
+              "x": 120.640625,
+              "y": 103.875,
+              "width": 28.35906982421875,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "토마토",
+            "bbox": {
+              "x": 193.9609375,
+              "y": 103.875,
+              "width": 41.7181396484375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "학습",
+            "bbox": {
+              "x": 289.640625,
+              "y": 47,
+              "width": 28.359130859375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "학습된 모델",
+            "bbox": {
+              "x": 400.987548828125,
+              "y": 72,
+              "width": 84.02490234375,
+              "height": 24
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "학습에 쓰지 않은 새 이미지",
+            "bbox": {
+              "x": 18,
+              "y": 172,
+              "width": 157.7298583984375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "A",
+            "bbox": {
+              "x": 49.1796875,
+              "y": 279.20458984375,
+              "width": 11,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "B",
+            "bbox": {
+              "x": 149.3984375,
+              "y": 279.20458984375,
+              "width": 10,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "같은 모델",
+            "bbox": {
+              "x": 304.9635009765625,
+              "y": 240,
+              "width": 68.072998046875,
+              "height": 24
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "예측",
+            "bbox": {
+              "x": 487.640625,
+              "y": 191,
+              "width": 28.359130859375,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "A",
+            "bbox": {
+              "x": 464,
+              "y": 225,
+              "width": 11,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "사과",
+            "bbox": {
+              "x": 495,
+              "y": 221,
+              "width": 35.816162109375,
+              "height": 25
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "B",
+            "bbox": {
+              "x": 464,
+              "y": 262,
+              "width": 10,
+              "height": 20
+            }
+          },
+          {
+            "svg": "generalization-diagram",
+            "text": "토마토",
+            "bbox": {
+              "x": 495,
+              "y": 258,
+              "width": 51.6322021484375,
+              "height": 25
+            }
+          }
+        ],
+        "labelOutside": [],
+        "collisions": [],
+        "alignment": [
+          {
+            "selector": "h2",
+            "yError": 0,
+            "heightError": 0
+          },
+          {
+            "selector": ".meaning",
+            "yError": 0,
+            "heightError": 0
+          }
+        ],
+        "footerGap": 13.125,
+        "figureCaptionGap": 14,
+        "title": "과적합과 일반화"
+      },
+      "evidence": "examples/overfitting-generalization/review/screens/middle-minimum.png"
+    }
+  ],
+  "created_utc": "2026-10-26T05:48:19.803299+00:00",
   "chromium": "155.0.8059.0",
   "behavior": {
     "changed_datasets": [
       "improving",
-      "crossing"
+      "crossing",
+      "middle-minimum"
     ],
     "rejected_datasets": [
       "unit",
@@ -7918,20 +8918,20 @@
     "failed_data_message": true
   },
   "source_sha256": {
-    "examples/overfitting-generalization/content.html": "307f3c7b07c54ff8ce8d4a3c7240ef943b3f68cedd2f2fcf253f13f2b4659127",
+    "examples/overfitting-generalization/content.html": "44c7f22b1683213b219bdc4349c015095136ab5618bc8b172236f02d3f51971b",
     "examples/overfitting-generalization/scroll.html": "c3d618f2f5accc5471da5506955a9dd2c38d62427f224e2bf5c6938636db4936",
     "examples/overfitting-generalization/slides.html": "20ceb16b62eacd01b0c22601a04c3b87756b216c3dce5ae89c7b0cecf97c7171",
-    "examples/overfitting-generalization/lesson.css": "63f1188f4c465f6ab4d756f6bd2bc6d2d2f32fd1248c2929f43ef74ad000e59e",
+    "examples/overfitting-generalization/lesson.css": "b01915959c7ea615125f9db09cfc9ea13109ce711702c59c6a781bf3fa0325ab",
     "examples/overfitting-generalization/viewer.css": "b03e8785c652fd9711e4eca188e29c555024a998c53013ce8b389e61825860a7",
     "examples/overfitting-generalization/viewer.js": "a15e739f880682df368572875033d204eab63789b812cebad965f6eb566229a3",
-    "examples/overfitting-generalization/curves.js": "57f43ce3683b503c652031194e9c20974e2e6be21ecd4d4c5e4bb91cd98b8b42",
+    "examples/overfitting-generalization/curves.js": "509e63b6f9660e713d99fd83b66b5fe22004d278f2ce0a1b6842fd339b11e884",
     "examples/overfitting-generalization/curves.json": "d9e995fa132145654184d2f3a5a7a0b076debc789f8311bd3a7d96d7bc6521a8",
-    "examples/overfitting-generalization/DESIGN.md": "5dcb1519802915d84c6fec014fd9a368e83a1d6b080c972e1a9327dcbb44cf09",
-    "scripts/verify_overfitting.py": "dc627ea763609925c70d4c1efaeaa8cc09d62b5f7acc4973bbc9e37c288de616",
+    "examples/overfitting-generalization/DESIGN.md": "298eaf219aa36e791b6ac38449560f516e07942ce611f5b663f7f7e046061a61",
+    "scripts/verify_overfitting.py": "4ee5a6e3d252a9779cbd5b478d26cb050f7dcdcee385e86df9825ca147e5a3b4",
     "templates/html/graph-annotations.js": "deeee6a81fae900035c9b5398c1c17aa7ac4694bf986313b1a810ec20bfec92b"
   },
   "preview_sha256": {
-    "scroll.png": "1527af5c41a20871499e1e5b25af1dfa48e431d19a817ace2210402e746331c2",
-    "slide.png": "491176db5e9e2abde425934e6fdcccb567664da07fa8654a475e9c21e1f08690"
+    "scroll.png": "bfa3f565dac1679bda43b2b65579bf61d7f3bd618a55ff3847fbbbdbb1312f19",
+    "slide.png": "f4a8807f6e8cfaa720cc155a5d64cc18d09480d9e7e67d29cb759d6088363479"
   }
 }
