@@ -113,7 +113,7 @@ GEOMETRY = '''()=>{
      const nearX=Math.max(b.x-pad,Math.min(x,b.x+b.width+pad)),nearY=Math.max(b.y-pad,Math.min(y,b.y+b.height+pad));
      if(Math.hypot(x-nearX,y-nearY)<=r)dataCollisions.push([text.id,circle.id]);
    }
-   if(curve){const length=curve.getTotalLength(),samples=Math.ceil(length*2);for(let i=0;i<=samples;i++){const p=curve.getPointAtLength(i/samples*length);if(inside(p.x,p.y)){dataCollisions.push([text.id,'loss-curve']);break;}}}
+   for(const line of [curve,q('#current-guide'),q('#next-guide')].filter(Boolean)){const length=line.getTotalLength(),samples=Math.ceil(length*2);for(let i=0;i<=samples;i++){const p=line.getPointAtLength(i/samples*length);if(inside(p.x,p.y)){dataCollisions.push([text.id,line.id]);break;}}}
  }
  const math=[...slide.querySelectorAll('math')].map(e=>({text:e.textContent,display:getComputedStyle(e).fontFamily,box:box(e)}));
  for(const e of slide.querySelectorAll('math')){const r=box(e),p=box(e.parentElement);if(r.x<p.x-1||r.right>p.right+1||r.y<box(panel).y||r.bottom>box(panel).bottom)clipped.push('math '+e.textContent);} 

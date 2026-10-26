@@ -44,9 +44,9 @@
     path('current-guide',`M${current.x} ${current.y+12} V448`,'#9bb5da',1.3,{'stroke-dasharray':'4 5'});
     path('next-guide',`M${next.x} ${next.y+12} V448`,'#9ccfca',1.3,{'stroke-dasharray':'4 5'});
     arrow('update-arrow',current.x-3.5,394,next.x+3.5,394,'#3168c8',2.5);
-    label('update-label',335,421,'기울기의 반대 방향','plot-blue','end');
+    label('update-label',225,350,'기울기의 반대 방향','plot-blue','end');
     label('current-label',current.x+16,current.y+6,'현재','plot-blue');
-    label('next-label',next.x+15,next.y+5,'다음','plot-teal');
+    label('next-label',next.x-15,next.y+3,'다음','plot-teal','end');
     for(const [i,p] of states.entries()) {
       add('circle',{id:`state-${i}`,cx:p.x,cy:p.y,r:i<2?7:4.5,fill:i===0?'#3168c8':'#26a6a1',stroke:'#fff','stroke-width':2,'data-theta':p.theta,'data-loss':p.loss});
     }
