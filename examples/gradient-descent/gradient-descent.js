@@ -57,6 +57,13 @@
       const sub=document.createElementNS('http://www.w3.org/2000/svg','tspan');
       sub.setAttribute('dy','5');sub.setAttribute('font-size','12');sub.textContent=index;text.append(sub);
     }
+    // Axis names are grouped across the body/math font boundary, then aligned by ink bounds.
+    const yTitle=add('g',{id:'gd-y-title'}),xTitle=add('g',{id:'gd-x-title'});
+    const yp=['loss-axis','loss-axis-math'].map(id=>document.getElementById(id));
+    const xp=['parameter-axis','parameter-symbol'].map(id=>document.getElementById(id));
+    yTitle.append(...yp);xTitle.append(...xp);
+    window.GraphAnnotations.packInline(yp);window.GraphAnnotations.packInline(xp);
+    window.GraphAnnotations.alignAxes({svg,yLabel:yTitle,xLabel:xTitle,left:48,right:305,top:29,bottom:454});
     window.gradientDescentEvidence={model,points,states,tangent};
     slide.dataset.ready='true';
   }

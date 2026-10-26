@@ -1,34 +1,55 @@
-/* Conceptual scenarios, not a model-training implementation or measured study. */
+/* The graph and image prediction scene are conceptual, not measured results. */
 (() => {
   'use strict';
-  const headings={divergence:'검증 손실 상승은 과적합의 단서',improving:'새 데이터에서도 낮은 손실',crossing:'손실 격차만으로 판단하지 않기'};
-  function validateScenario(scenario) {
-    if (!scenario || !Object.hasOwn(headings,scenario.interpretation) || !Array.isArray(scenario.points) || scenario.points.length<2) throw new Error('Invalid scenario');
+  const headings={divergence:'검증 손실 상승은 과적합의 단서',improving:'학습·검증 손실이 함께 감소',crossing:'손실 격차만으로 판단하지 않기'};
+  function validate(data) {
+    if(data.kind!=='schematic'||data.metric!=='mean_squared_error'||data.unit!=='dimensionless'||data.aggregation!=='sample_mean'||data.regularization!==false||data.evaluation!=='same_inference_mode'||JSON.stringify(data.xDomain)!=='[0,1]'||JSON.stringify(data.yDomain)!=='[0,1.2]') throw new Error('Invalid comparison conditions');
+    if(!Object.hasOwn(headings,data.interpretation)||!Array.isArray(data.points)||data.points.length<2) throw new Error('Invalid curve');
     let previous=-Infinity;
-    for(const p of scenario.points) {
-      if(!['progress','training','validation'].every(k=>typeof p[k]==='number'&&Number.isFinite(p[k])) || p.progress<0 || p.progress>1 || p.progress<=previous || p.training<0 || p.training>1.2 || p.validation<0 || p.validation>1.2) throw new Error('Invalid point');
+    for(const p of data.points){
+      if(!['progress','training','validation'].every(k=>typeof p[k]==='number'&&Number.isFinite(p[k]))||p.progress<0||p.progress>1||p.progress<=previous||p.training<0||p.training>1.2||p.validation<0||p.validation>1.2)throw new Error('Invalid point');
       previous=p.progress;
     }
   }
-  function render(data) {
-    if(data.kind!=='schematic'||data.metric!=='mean_squared_error'||data.unit!=='dimensionless'||data.aggregation!=='sample_mean'||data.regularization!==false||data.evaluation!=='same_inference_mode'||JSON.stringify(data.xDomain)!=='[0,1]'||JSON.stringify(data.yDomain)!=='[0,1.2]') throw new Error('Invalid comparison conditions');
-    validateScenario(data);validateScenario(data.generalization);
-    for(const [key,scenario] of [['overfit',data],['generalization',data.generalization]]) {
-      for(const series of ['training','validation']) document.querySelector(`#${key}-${series}-line`).setAttribute('d',scenario.points.map((p,i)=>`${i?'L':'M'}${46+p.progress*312} ${266-p[series]/1.2*208}`).join(' '));
-      document.querySelector(`#${key}-heading`).textContent=headings[scenario.interpretation];
-      document.querySelector(`#${key}-chart-title`).textContent=headings[scenario.interpretation];
-      document.querySelector(`#${key}-chart-desc`).textContent= (scenario.interpretation==='divergence'?'초기 두 손실이 함께 감소한 뒤 검증 손실 상승. 과적합의 단서이며 격차만으로 확정하지 않음.':scenario.interpretation==='improving'?'학습에 쓰지 않은 데이터의 검증 손실도 낮아지는 경우. 검증은 일반화 성능의 추정이며 독립 테스트 결과가 아님.':'두 손실이 교차하는 경우. 격차만으로 과적합을 확정하지 않음.')+' 직접 작성한 설명용 개념도이며 실측 결과가 아님.';
+  function layoutDiagram() {
+    const svg=document.querySelector('#generalization-diagram');
+    const q=id=>svg.querySelector('#'+id);
+    for(const [id,center] of [['training-images',84],['new-images',252],['predictions',252]]){
+      const g=q(id);g.removeAttribute('transform');const b=g.getBBox();g.setAttribute('transform',`translate(0 ${center-b.y-b.height/2})`);
     }
-    document.querySelector('#chart-status').hidden=true;
-    window.CurveExample.data=structuredClone(data);window.CurveExample.status='ready';
+    for(const id of ['trained-model','applied-model']){
+      const g=q(id),r=g.querySelector('rect'),t=g.querySelector('text');t.removeAttribute('transform');const b=t.getBBox();
+      t.setAttribute('transform',`translate(${Number(r.getAttribute('x'))+Number(r.getAttribute('width'))/2-b.x-b.width/2} ${Number(r.getAttribute('y'))+Number(r.getAttribute('height'))/2-b.y-b.height/2})`);
+    }
+    const box=e=>window.GraphAnnotations.bounds(svg,e),centerY=b=>b.y+b.height/2;
+    const arrow=(id,from,to,y)=>q(id).setAttribute('d',`M${from} ${y} H${to} M${to-6} ${y-5} L${to} ${y} L${to-6} ${y+5}`);
+    const training=box(q('training-images')),trained=box(q('trained-model')),inputs=box(q('new-images')),model=box(q('applied-model')),outputs=box(q('predictions'));
+    arrow('training-flow',training.x+training.width+4,trained.x-4,centerY(trained));
+    arrow('prediction-input-flow',inputs.x+inputs.width+4,model.x-4,centerY(model));
+    arrow('prediction-output-flow',model.x+model.width+4,outputs.x-4,centerY(model));
+    const x1=trained.x+trained.width/2,y1=trained.y+trained.height+4,x2=model.x+model.width/2,y2=model.y-4;
+    q('model-transfer').setAttribute('d',`M${x1} ${y1} V160 H${x2} V${y2} M${x2-4} ${y2-6} L${x2} ${y2} L${x2+4} ${y2-6}`);
+    svg.dataset.ready='true';
+  }
+  function render(data) {
+    validate(data);
+    for(const series of ['training','validation'])document.querySelector(`#overfit-${series}-line`).setAttribute('d',data.points.map((p,i)=>`${i?'L':'M'}${46+p.progress*312} ${266-p[series]/1.2*208}`).join(' '));
+    document.querySelector('#overfit-heading').textContent=headings[data.interpretation];
+    document.querySelector('#overfit-chart-title').textContent=headings[data.interpretation];
+    document.querySelector('#overfit-chart-desc').textContent=(data.interpretation==='divergence'?'초기 두 손실이 함께 감소한 뒤 검증 손실 상승. 과적합의 단서이며 격차만으로 확정하지 않음.':data.interpretation==='improving'?'학습 손실과 검증 손실이 함께 감소하는 경우.':'두 손실이 교차하는 경우. 격차만으로 과적합을 확정하지 않음.')+' 직접 작성한 설명용 개념도이며 실측 결과가 아님.';
+    window.GraphAnnotations.alignAxes({svg:document.querySelector('#overfit-chart'),yLabel:document.querySelector('#overfit-y-title'),xLabel:document.querySelector('#overfit-x-title'),left:46,right:358,top:58,bottom:266});
+    document.querySelector('#chart-status').hidden=true;window.CurveExample.data=structuredClone(data);window.CurveExample.status='ready';
   }
   function fail() {
     document.querySelectorAll('.curve-artwork path').forEach(p=>p.removeAttribute('d'));
     const s=document.querySelector('#chart-status');s.hidden=false;s.textContent='곡선 표시 불가 · 데이터를 확인하세요.';
-    document.querySelectorAll('.case-heading').forEach(e=>e.textContent='곡선 데이터를 읽지 못함');
-    document.querySelectorAll('svg desc').forEach(e=>e.textContent='데이터 오류로 곡선을 표시하지 못함');
-    window.CurveExample.status='error';
+    document.querySelector('#overfit-heading').textContent='곡선 데이터를 읽지 못함';
+    document.querySelector('#overfit-chart-desc').textContent='데이터 오류로 곡선을 표시하지 못함';window.CurveExample.status='error';
   }
   window.CurveExample={status:'loading',render(data){try{render(data);}catch(e){fail();throw e;}}};
-  fetch('curves.json').then(r=>{if(!r.ok)throw new Error('Curve load failed');return r.json();}).then(render).catch(fail);
+  async function start(){
+    await Promise.all([document.fonts.load('400 17px "STIX Two Math"','0'),document.fonts.load('750 20px "Pretendard Variable"','학습 예측')]);await document.fonts.ready;
+    layoutDiagram();const r=await fetch('curves.json');if(!r.ok)throw new Error('Curve load failed');render(await r.json());
+  }
+  start().catch(fail);
 })();

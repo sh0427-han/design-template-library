@@ -4,30 +4,43 @@
 <link rel="stylesheet" href="../../templates/html/styles.css">
 <link rel="stylesheet" href="../../templates/html/reference-layout.css">
 <link rel="stylesheet" href="../../templates/html/math-typography.css">
-<link rel="stylesheet" href="lesson.css"><script src="curves.js" defer></script></head>
+<link rel="stylesheet" href="lesson.css"><script src="../../templates/html/graph-annotations.js" defer></script><script src="curves.js" defer></script></head>
 <body class="source-page"><main><section class="slide reference-slide overfit-slide" aria-labelledby="lesson-title">
-<header><div class="kicker">머신러닝 기초</div><h1 id="lesson-title">과적합과 일반화</h1><p class="subtitle">학습 데이터로 학습 · 학습에 쓰지 않은 검증 데이터로 성능 확인 · 손실(Loss): 예측 오차의 크기</p></header>
+<header><div class="kicker">머신러닝 기초</div><h1 id="lesson-title">과적합과 일반화</h1><p class="subtitle">학습 데이터에 잘 맞는 것과 새로운 데이터에도 잘 동작하는 것의 차이</p></header>
 <div class="content">
 <div class="definition-grid">
 <article class="card definition" aria-labelledby="overfit-title"><h2 id="overfit-title">과적합 <span lang="en">Overfitting</span></h2><p class="meaning">학습 데이터의 특성·잡음에 지나치게 맞춰<br>새로운 데이터에서 성능이 저하되는 <b>현상</b></p></article>
-<article class="card definition" aria-labelledby="general-title"><h2 id="general-title">일반화 <span lang="en">Generalization</span></h2><p class="meaning">학습에 쓰지 않은 새로운 데이터에서도<br>잘 동작하는 <b>능력</b></p></article>
+<article class="card definition" aria-labelledby="general-title"><h2 id="general-title">일반화 <span lang="en">Generalization</span></h2><p class="meaning">학습에 쓰지 않은 새 데이터에서도 잘 동작하는 <b>능력</b></p></article>
 </div>
-<section class="loss-panel" aria-label="과적합과 일반화의 손실 곡선 비교">
+<section class="loss-panel" aria-label="과적합의 손실 곡선과 일반화의 새 이미지 예측 비교">
 <figure class="curve-panel" aria-labelledby="overfit-heading">
-<div class="legend"><span><i class="training-key"></i>학습 손실</span><span><i class="validation-key"></i>검증 손실</span></div>
+<div class="plot-header"><p class="loss-definition"><b>손실(Loss)</b> · 예측 오차의 크기</p><div class="legend"><span><i class="training-key"></i>학습</span><span><i class="validation-key"></i>검증(학습 미사용)</span></div></div>
 <svg id="overfit-chart" class="loss-chart" viewBox="0 0 380 320" role="img" aria-labelledby="overfit-chart-title overfit-chart-desc"><title id="overfit-chart-title">검증 손실 상승은 과적합의 단서</title><desc id="overfit-chart-desc">같은 기준의 학습 손실과 검증 손실을 비교하는 개념도. 실제 측정 결과가 아님.</desc>
 <text id="overfit-heading" class="case-heading" x="190" y="22" text-anchor="middle">검증 손실 상승은 과적합의 단서</text>
 <path class="axis" d="M46 58V266H358"/>
-<text class="axis-title" x="46" y="50">평균 손실</text><text class="math-number zero" x="35" y="272" text-anchor="end">0</text><text class="axis-title" x="202" y="307" text-anchor="middle">학습 진행</text><text class="direction" x="358" y="287" text-anchor="end">많아짐</text>
+<text id="overfit-y-title" class="axis-title" x="46" y="50">평균 손실</text><text class="math-number zero" x="35" y="272" text-anchor="end">0</text><text id="overfit-x-title" class="axis-title" x="202" y="307" text-anchor="middle">학습 진행</text><text class="direction" x="358" y="287" text-anchor="end">많아짐</text>
 <g class="curve-artwork"><path id="overfit-training-line" class="training-line"/><path id="overfit-validation-line" class="validation-line"/></g></svg>
-</figure><figure class="curve-panel" aria-labelledby="generalization-heading">
-<div class="legend"><span><i class="training-key"></i>학습 손실</span><span><i class="validation-key"></i>검증 손실</span></div>
-<svg id="generalization-chart" class="loss-chart" viewBox="0 0 380 320" role="img" aria-labelledby="generalization-chart-title generalization-chart-desc"><title id="generalization-chart-title">새 데이터에서도 낮은 손실</title><desc id="generalization-chart-desc">같은 기준의 학습 손실과 검증 손실을 비교하는 개념도. 실제 측정 결과가 아님.</desc>
-<text id="generalization-heading" class="case-heading" x="190" y="22" text-anchor="middle">새 데이터에서도 낮은 손실</text>
-<path class="axis" d="M46 58V266H358"/>
-<text class="axis-title" x="46" y="50">평균 손실</text><text class="math-number zero" x="35" y="272" text-anchor="end">0</text><text class="axis-title" x="202" y="307" text-anchor="middle">학습 진행</text><text class="direction" x="358" y="287" text-anchor="end">많아짐</text>
-<g class="curve-artwork"><path id="generalization-training-line" class="training-line"/><path id="generalization-validation-line" class="validation-line"/></g></svg>
-</figure>
+</figure><figure class="curve-panel generalization-panel" aria-labelledby="generalization-heading">
+<p class="diagram-heading" id="generalization-heading">학습한 특징을 새 이미지에도 적용</p>
+<svg id="generalization-diagram" viewBox="0 0 580 320" role="img" aria-labelledby="generalization-diagram-title generalization-diagram-desc"><title id="generalization-diagram-title">학습 이미지에서 새 이미지 예측으로</title><desc id="generalization-diagram-desc">학습에 쓴 세 이미지와 정답으로 모델을 학습한 뒤, 학습에 쓰지 않은 별개의 이미지 A와 B도 같은 모델이 사과와 토마토로 예측하는 개념도. 실제 모델을 학습하거나 추론한 결과는 아님.</desc>
+<text class="diagram-section" x="18" y="24">학습에 쓴 이미지</text>
+<g id="training-images">
+<g data-image-id="train-red" data-split="training" data-class="사과"><g transform="translate(24 42) scale(1.25)"><path d="M24 15 C8 6 4 23 13 38 Q24 47 35 37 C44 22 38 7 24 15Z" fill="#d65c57"/><path d="M24 17 Q21 10 25 5" fill="none" stroke="#796349" stroke-width="2"/><path d="M25 11 Q30 2 38 7 Q34 14 25 11" fill="#64885d"/></g><text class="image-label" x="54" y="124" text-anchor="middle">사과</text></g>
+<g data-image-id="train-green" data-split="training" data-class="사과"><g transform="translate(104 42) scale(1.25)"><path d="M22 14 C7 8 4 27 15 39 Q28 47 37 33 C43 19 34 8 22 14Z" fill="#93ae68"/><path d="M24 17 Q21 10 25 5" fill="none" stroke="#796349" stroke-width="2"/><path d="M26 11 Q19 2 12 7 Q16 14 26 11" fill="#64885d"/></g><text class="image-label" x="134" y="124" text-anchor="middle">사과</text></g>
+<g data-image-id="train-tomato" data-split="training" data-class="토마토"><g transform="translate(184 42) scale(1.25)"><ellipse cx="24" cy="28" rx="19" ry="15" fill="#e58161"/><path d="M24 5 L27 14 L37 11 L31 19 L37 25 L25 21 L16 26 L18 18 L10 13 L21 14Z" fill="#64885d"/></g><text class="image-label" x="214" y="124" text-anchor="middle">토마토</text></g>
+</g><path id="training-flow" class="diagram-arrow"/><text class="diagram-label" x="303" y="63" text-anchor="middle">학습</text>
+<g id="trained-model" data-model-ref="fruit-model"><rect x="362" y="51" width="162" height="66" rx="10"/><text class="model-label" x="443" y="90" text-anchor="middle">학습된 모델</text></g>
+<path id="model-transfer" class="diagram-arrow transfer"/>
+<text class="diagram-section" x="18" y="188">학습에 쓰지 않은 새 이미지</text>
+<g id="new-images">
+<g data-image-id="new-A" data-split="new" data-class="사과"><g transform="translate(24 211) scale(1.25)"><path d="M23 14 C6 8 2 25 13 39 Q25 48 37 34 C44 18 33 6 23 14Z" fill="#cf665c"/><path d="M24 17 Q21 10 25 5" fill="none" stroke="#796349" stroke-width="2"/><path d="M25 10 Q30 1 39 7 Q34 15 25 10" fill="#64885d"/></g><text class="image-id" x="54" y="296" text-anchor="middle">A</text></g>
+<g data-image-id="new-B" data-split="new" data-class="토마토"><g transform="translate(124 211) scale(1.25)"><path d="M6 29 C5 9 40 9 43 27 C46 45 9 49 6 29Z" fill="#dc795a"/><path d="M24 7 L28 16 L39 14 L31 22 L35 29 L24 23 L13 28 L16 19 L8 15 L20 16Z" fill="#64885d"/></g><text class="image-id" x="154" y="296" text-anchor="middle">B</text></g>
+</g><path id="prediction-input-flow" class="diagram-arrow"/>
+<g id="applied-model" data-model-ref="fruit-model"><rect x="274" y="220" width="130" height="64" rx="10"/><text class="model-label" x="339" y="258" text-anchor="middle">같은 모델</text></g>
+<path id="prediction-output-flow" class="diagram-arrow"/>
+<text class="diagram-label" x="501" y="207" text-anchor="middle">예측</text>
+<g id="predictions"><g data-prediction-for="new-A" data-predicted-class="사과"><text class="image-id" x="464" y="237">A</text><text class="prediction-label" x="495" y="237">사과</text></g><g data-prediction-for="new-B" data-predicted-class="토마토"><text class="image-id" x="464" y="274">B</text><text class="prediction-label" x="495" y="274">토마토</text></g></g>
+</svg></figure>
 <p id="chart-status" role="status">곡선을 불러오는 중</p></section>
 <div class="ref-takeaway"><strong>핵심</strong><span>낮은 학습 손실만으로 새 데이터의 오차가 작다고 보장할 수 없음</span></div>
 </div><footer class="footer"><span>머신러닝 기초 · 과적합과 일반화</span><span>01 / 01</span></footer>

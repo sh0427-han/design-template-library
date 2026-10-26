@@ -96,9 +96,11 @@ GEOMETRY = '''()=>{
  if(box(q('#loss-plot')).bottom>box(panel).bottom-parseFloat(getComputedStyle(panel).paddingBottom)-1)overlaps.push('plot vs panel padding');
  if(box(q('.gd-takeaway')).bottom>box(footer).y-10)overlaps.push('takeaway/footer');
  const plot=q('#loss-plot'),vb=plot.viewBox.baseVal,ink=[];
+ const rootBox=plot.getBoundingClientRect(),sx=rootBox.width/vb.width,sy=rootBox.height/vb.height;
+ const inkBox=e=>{const r=e.getBoundingClientRect();return {x:(r.x-rootBox.x)/sx,y:(r.y-rootBox.y)/sy,width:r.width/sx,height:r.height/sy}};
  for(const e of plot.querySelectorAll('text')){
-   const b=e.getBBox();ink.push({id:e.id,x:b.x,y:b.y,right:b.x+b.width,bottom:b.y+b.height});
-   if(b.x<0||b.y<0||b.x+b.width>vb.width||b.y+b.height>vb.height)clipped.push(e.id);
+   const b=inkBox(e);ink.push({id:e.id,x:b.x,y:b.y,right:b.x+b.width,bottom:b.y+b.height});
+   if(b.x<-.05||b.y<-.05||b.x+b.width>vb.width+.05||b.y+b.height>vb.height+.05)clipped.push(e.id);
  }
  const collisions=[];for(let i=0;i<ink.length;i++)for(let j=i+1;j<ink.length;j++){
    const a=ink[i],b=ink[j];if(Math.min(a.right,b.right)-Math.max(a.x,b.x)>1&&Math.min(a.bottom,b.bottom)-Math.max(a.y,b.y)>1)collisions.push([a.id,b.id]);
@@ -106,7 +108,7 @@ GEOMETRY = '''()=>{
  const dataCollisions=[];
  const curve=q('#loss-curve');
  for(const text of plot.querySelectorAll('text')){
-   const b=text.getBBox(),pad=2;
+   const b=inkBox(text),pad=2;
    const inside=(x,y)=>x>=b.x-pad&&x<=b.x+b.width+pad&&y>=b.y-pad&&y<=b.y+b.height+pad;
    for(const circle of plot.querySelectorAll('circle')){
      const x=+circle.getAttribute('cx'),y=+circle.getAttribute('cy'),r=+circle.getAttribute('r');
@@ -117,7 +119,8 @@ GEOMETRY = '''()=>{
  }
  const math=[...slide.querySelectorAll('math')].map(e=>({text:e.textContent,display:getComputedStyle(e).fontFamily,box:box(e)}));
  for(const e of slide.querySelectorAll('math')){const r=box(e),p=box(e.parentElement);if(r.x<p.x-1||r.right>p.right+1||r.y<box(panel).y||r.bottom>box(panel).bottom)clipped.push('math '+e.textContent);} 
- return {outside,overflow,clipped,overlaps,collisions,dataCollisions,ink,math,slide:box(slide),panel:box(panel),main:box(q('.gd-main')),steps:box(q('.gd-steps')),definitions:box(q('.gd-definitions')),takeaway:box(q('.gd-takeaway')),footer:box(footer)};
+ const yt=inkBox(q('#gd-y-title')),xt=inkBox(q('#gd-x-title'));const axisAlignment={yCenterError:Math.abs(yt.x+yt.width/2-48),yGap:29-yt.y-yt.height,xCenterError:Math.abs(xt.x+xt.width/2-176.5),xGap:xt.y-454};
+ return {axisAlignment,outside,overflow,clipped,overlaps,collisions,dataCollisions,ink,math,slide:box(slide),panel:box(panel),main:box(q('.gd-main')),steps:box(q('.gd-steps')),definitions:box(q('.gd-definitions')),takeaway:box(q('.gd-takeaway')),footer:box(footer)};
 }'''
 
 def technical(frame):
@@ -222,6 +225,7 @@ def main():
                     if width==1600:page.screenshot(path=str(CASE/'previews'/('slide.png' if mode=='slides' else 'scroll.png')))
                     assert not any(geometry[k] for k in ('outside','overflow','clipped','overlaps','collisions','dataCollisions')),geometry
                     assert geometry['slide']['w']==1440 and geometry['slide']['h']==810
+                    ax=geometry['axisAlignment'];assert ax['yCenterError']<.1 and ax['xCenterError']<.1 and abs(ax['yGap']-8)<.1 and abs(ax['xGap']-8)<.1,ax
                     shot=frame.evaluate(SNAPSHOT)
                     identity=compare(shot,reference)
                     outer=page.evaluate('''()=>{const a=document.querySelector('.reference-viewport').getBoundingClientRect(),b=document.querySelector('iframe').getBoundingClientRect();
@@ -268,15 +272,17 @@ def main():
     finally:
         server.shutdown();server.server_close()
     # Existing canonical sources and common design rules must remain unchanged.
-    paths=['AGENTS.md','DESIGN_SYSTEM.md','docs/FIGURE_PRODUCTION_STANDARD.md','docs/DESIGN_COMPONENT_RECIPES.md','docs/REFERENCE_PAGE_SPECS.md']
-    paths += [str(p.relative_to(ROOT)) for p in (ROOT/'templates/html').rglob('*') if p.is_file()]
+    paths=['AGENTS.md','DESIGN_SYSTEM.md','docs/DESIGN_COMPONENT_RECIPES.md','docs/REFERENCE_PAGE_SPECS.md']
+    paths += subprocess.check_output(['git','ls-tree','-r','--name-only',BASE,'templates/html'],cwd=ROOT,text=True).splitlines()
     changed=[]
     for path in paths:
         old=subprocess.check_output(['git','show',f'{BASE}:{path}'],cwd=ROOT)
         if hashlib.sha256(old).hexdigest()!=digest(ROOT/path):changed.append(path)
     assert not changed,changed
-    report['canonical_and_common_rules_unchanged']=True
-    source_paths=[p for p in CASE.iterdir() if p.suffix in ('.html','.css','.js')]+[Path(__file__),ROOT/'templates/html/styles.css',ROOT/'templates/html/reference-layout.css',ROOT/'templates/html/math-typography.css',ROOT/'scripts/reference_validation.py']
+    report['canonical_sources_unchanged']=True
+    report['new_shared_axis_module']='templates/html/graph-annotations.js'
+    report['intentional_common_rule_change']='FIGURE_PRODUCTION_STANDARD: user-requested axis-title alignment; other pinned common rules unchanged'
+    source_paths=[p for p in CASE.iterdir() if p.suffix in ('.html','.css','.js')]+[Path(__file__),ROOT/'templates/html/styles.css',ROOT/'templates/html/reference-layout.css',ROOT/'templates/html/math-typography.css',ROOT/'scripts/reference_validation.py',ROOT/'templates/html/graph-annotations.js']
     report['source_sha256']={str(p.relative_to(ROOT)):digest(p) for p in source_paths}
     report['font_sha256']={str(p.relative_to(ROOT)):digest(p) for p in (ROOT/'templates/html/assets/fonts').rglob('*.woff2')}
     report['design_sha256']=digest(CASE/'DESIGN.md')
