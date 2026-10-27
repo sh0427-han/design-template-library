@@ -1,18 +1,10 @@
 {
   "reviewer": "/root/independent_reviewer",
-  "review_type": "independent_final_static_and_actual_visual_review",
-  "reviewed_commit": "29c3ff7a15acf3b11bec07d431bff4867c12c9ce",
-  "created_utc": "2026-10-27T00:22:32.172227+00:00",
-  "status": "final_numbered_cause_preview_review_passed",
-  "scope": "User-requested simplification of the cause explanation beside the existing loss graph: three numbered sentences replace the abstract pattern comparison, miniature graphs and their key.",
-  "visual_review_performed": true,
-  "source_code_modified_by_reviewer": false,
-  "markdown_files_created_or_modified_by_reviewer": [],
-  "markdown_changed_count": 0,
-  "markdown_finalized": false,
-  "user_review_pending": true,
-  "user_approval_for_markdown": false,
-  "merge_authorized": false,
+  "review_type": "independent_final_documentation_and_current_evidence_review",
+  "reviewed_documentation_source": "3c27bdf0ac12b3bfdae5a13da8c0f1a06b1b2b2d",
+  "created_utc": "2026-10-27T04:19:12.142882+00:00",
+  "status": "passed_for_documentation_source",
+  "scope": "User-approved final wording/layout and common Markdown role contracts; preserve D0/revision history and verify current CI artifacts against the documentation source.",
   "severity_counts": {
     "high": 0,
     "medium": 0,
@@ -20,139 +12,87 @@
   },
   "unresolved_findings": [],
   "revision_requested": false,
-  "technical_review": {
-    "ordered_steps": [
-      "학습 데이터의 예측 오차를 줄이도록 모델을 맞춤.",
-      "지나치게 맞추면 학습 데이터에만 있는 잡음까지 배움.",
-      "새 데이터에선 그 잡음이 통하지 않아 오차가 커질 수 있음."
-    ],
-    "assessment": "The first sentence describes ordinary fitting. The second introduces excessive fitting as a condition, and the third states a possible consequence on unseen data. Together they describe an introductory noise-fitting mechanism without stating that normal learning always overfits or that unseen-data error must increase.",
-    "no_new_measured_performance_claim": true,
-    "no_validation_test_confusion_introduced": true,
-    "miniature_svg_graphs_removed": true,
-    "abstract_common_pattern_heading_removed": true,
-    "scope_limit": "These sentences explain one common overfitting mechanism, not an exhaustive account of all causes."
+  "source_code_modified_by_reviewer": false,
+  "markdown_files_created_or_modified_by_reviewer": [],
+  "reviewer_output_only": "previews/heading-review/docs-final-review.json",
+  "resolved_findings": [
+    {
+      "id": "DOC-S1",
+      "severity_before": "low",
+      "status": "resolved_before_3c27bdf",
+      "problem": "The draft DESIGN claimed that every actual capture was checked by a separate Reviewer, exceeding the explicitly performed direct visual review.",
+      "resolution": "DESIGN now limits direct review to representative PNGs, the eight-view contact, central-minimum case and nine-source contact, and distinguishes all individual full-resolution/other-state automated evidence.",
+      "verification": "Read the corrected sentence, verified its current approved Markdown SHA256, and retained the performed/unperformed review boundaries below."
+    }
+  ],
+  "documentation_review": {
+    "changed_markdown_files": 16,
+    "common_contract_and_link_files": 8,
+    "index_or_release_files": 4,
+    "example_or_history_files": 4,
+    "role_contract": "Core card/item titles use Navy; category/stage/role labels use Blue. Deep and other colors retain formula, emphasis and data semantics. Language or heading tag does not determine role.",
+    "owned_unit_contract": "Each declared teaching unit owns exactly one selected main title and category/role label. Page kicker/h1 or another card cannot substitute. Other internal headings/stage labels have separate semantic selectors.",
+    "scope_and_order": "The 21 original units plus 2 overfitting cards form the declared 23-unit audit scope. #2 label/Figure/title and #6 title/Figure/shape/operation order remain intact. Tiny metric tiles, matrix cells, fruit images and numbered prose are not universally forced to receive another Blue label.",
+    "concept_leaf_titles": "The #1 .concept-step-label elements are documented as Navy stage titles, distinct from its Blue IMAGE REPRESENTATION category label.",
+    "overfitting_current_spec": "DESIGN now describes two 643x521px continuous cards, the unchanged 380x320 loss SVG plus 24px gap and 185x320 three-item prose aside, 24px/19px figure-subheading hierarchy, and independent 580x320 generalization SVG.",
+    "generalization_geometry": "The new current specification retains training/new-input/prediction mapping, model rectangles, group-center alignment and real-boundary connector semantics, without treating the standalone image diagram as another loss curve.",
+    "source_traceability": "Common contracts link to one semantic role source of truth and a per-pattern application table. Topic-specific coordinates/text remain local; previous source declarations and release baseline are marked historical.",
+    "approval_state": "User visual approval, Markdown authorization, CI/review results and actual merge are recorded as separate states. The explicit user instruction authorizes merge; old pending review records remain historical."
   },
-  "visual_checks": {
-    "images_directly_opened": [
-      "examples/overfitting-generalization/previews/slide.png",
-      "examples/overfitting-generalization/previews/scroll.png",
-      "examples/overfitting-generalization/review/contact.jpg",
-      "examples/overfitting-generalization/review/middle-minimum.png",
-      "previews/heading-review/overfitting.png",
-      "previews/heading-review/contact.jpg"
+  "historical_integrity": {
+    "baseline": "ce840a68b423ae7508381dc2745e3e7e12ebd41a",
+    "design_history_contains_exact_original_design_as_suffix": true,
+    "validation_D0_through_previous_end_preserved_as_exact_prefix_after_current_notice": true,
+    "D0_initial_common_gap_count": 0,
+    "D1_at_the_time_common_gap_count": 0,
+    "earlier_U2_axis_gap_preserved": 1,
+    "new_common_gaps": 2,
+    "cumulative_expanded_scope_common_gaps": 3,
+    "new_gap_ids": [
+      "D-H1",
+      "D-H2"
     ],
-    "numbered_text": "The three items are distinct and sequential. In the directly inspected representative views each sentence occupies three lines; the Navy number aligns with its first text line.",
-    "layout": "The list remains within the 185px-wide borderless aside. Item spacing, text wrapping and the bottom of item 3 are clear; there is no overlap with the main loss graph or card boundary.",
-    "simplification": "Readers no longer need to interpret the miniature line comparison or its separate color roles to follow the cause explanation.",
-    "preserved_page": "Blue concept labels, Navy titles, definitions, figure headings, loss legend, axes, selected minimum, best.pt, fruit/model diagram, takeaway and footer remain readable.",
-    "variants": "The eight-view contact shows consistent list layout in both modes and all four PC sizes. The central-minimum view remains collision-free with the list present.",
-    "confirmed_visual_defects": []
+    "classification": "Role-boundary clarification and owned-card presence are the two new reusable contract gaps. User-requested composition/spacing/text changes remain C; missed color/label requirements and audit selectors remain E. The existing axis and guide-intersection error histories are not reset or reclassified.",
+    "comprehension_limit_preserved": "Former miniature-figure arithmetic/render checks did not establish beginner comprehension. User feedback prompted simpler numbered prose; the old passing numerical results are retained as version-specific evidence.",
+    "historical_pending_fields_preserved": true
   },
-  "dedicated_browser_evidence": {
-    "status": "passed",
-    "chromium": "155.0.8059.0",
-    "cases": 8,
-    "pc_sizes": [
-      [
-        1600,
-        950
-      ],
-      [
-        1440,
-        810
-      ],
-      [
-        1366,
-        768
-      ],
-      [
-        1280,
-        720
-      ]
+  "independent_static_checks": {
+    "local_documentation_check": "PASS 47 Markdown files / 532 local links; eight final specs, source/preview hashes, approved documentation and preserved design history",
+    "all_16_current_markdown_after_sha256_match": true,
+    "all_16_baseline_before_sha256_match": true,
+    "runtime_html_css_js_diff_from_approved_ce840": [],
+    "guard_baseline": "878b9f0fe75723bb74f0a2180fdf6dfb7effd437",
+    "independently_recomputed_pinned_paths": 29,
+    "exact_original_template_exceptions": 6,
+    "exact_document_exceptions": [
+      "DESIGN_SYSTEM.md",
+      "docs/DESIGN_COMPONENT_RECIPES.md",
+      "docs/REFERENCE_PAGE_SPECS.md"
     ],
-    "modes": [
-      "scroll",
-      "slides"
-    ],
-    "ordered_items_each_case": 3,
-    "numbers_each_case": [
-      "1.",
-      "2.",
-      "3."
-    ],
-    "auxiliary_sketches_each_case": 0,
-    "conditional_unseen_error_text_checked": true,
-    "aside_size_px": [
-      185,
-      320
-    ],
-    "aside_chart_gap_px": 24,
-    "aside_top_error_px": 0,
-    "aside_overflow_count": 0,
-    "nested_cards": 0,
-    "original_loss_graph_size_px": [
-      380,
-      320
-    ],
-    "original_loss_graph_absolute_box_change_vs_a6f9bdb_px": 0,
-    "outer_card_padding_escapes": 0,
-    "text_and_svg_label_collisions": 0,
-    "definition_lines_each": [
-      1,
-      1
-    ],
-    "footer_gap_px": 13.125,
-    "declared_number_and_body_style": {
-      "fontSize": "18px",
-      "lineHeight": "24px",
-      "numberColor": "Navy",
-      "bodyColor": "Muted"
+    "document_exception_before_digest_equals_pinned_baseline_and_ce840_manifest_digest": true,
+    "unapproved_pinned_changes": [],
+    "python_ast_checked": [
+      "scripts/check_documentation.py",
+      "scripts/verify_gradient_descent.py",
+      "scripts/verify_heading_roles.py"
+    ]
+  },
+  "latest_ci_and_evidence": {
+    "full_ci": {
+      "run": 40429127559,
+      "job": 121942233772,
+      "status": "completed",
+      "conclusion": "success",
+      "independently_queried": true
     },
-    "mode_style_match": true,
-    "max_mode_box_error_px": 0,
-    "independent_original_curve_data": {
-      "points": 41,
-      "series": 2,
-      "max_independent_value_error": 1.1102230246251565e-16,
-      "same_loss_basis": true,
-      "late_divergence": true,
-      "generalization_is_image_diagram": true,
-      "real_experiment": false
+    "dedicated_ci": {
+      "run": 40429127597,
+      "job": 121942233868,
+      "status": "completed",
+      "conclusion": "success",
+      "independently_queried": true
     },
-    "behavior": {
-      "changed_datasets": [
-        "improving",
-        "crossing",
-        "middle-minimum"
-      ],
-      "rejected_datasets": [
-        "unit",
-        "nonfinite",
-        "unordered",
-        "negative"
-      ],
-      "mode_roundtrip": true,
-      "keyboard_links": true,
-      "reload": true,
-      "failed_data_message": true
-    },
-    "console_or_load_failures": []
-  },
-  "latest_heading_audit": {
-    "status": "passed",
-    "cases": 72,
-    "owned_teaching_cards": 23,
-    "owned_card_pair_observations": 184,
-    "actual_title_observations": 408,
-    "actual_blue_label_observations": 328,
-    "cause_title_actual_navy_observations": 8,
-    "all_selected_role_colors_pretendard_minus_one_pt_visibility_and_geometry_pass": true,
-    "page_errors": [],
-    "failed_requests": []
-  },
-  "evidence_and_regression": {
-    "passed_reports": [
+    "passed_report_files": [
       "previews/heading-review/validation.json",
       "previews/review/reference-validation.json",
       "previews/review/interactive-validation.json",
@@ -161,66 +101,82 @@
       "examples/gradient-descent/previews/validation.json"
     ],
     "report_source_and_preview_sha256_checks": 108,
-    "manifest_current_after_sha256_checks": 8,
-    "total_current_file_sha256_checks": 116,
+    "runtime_manifest_current_sha256_checks": 8,
+    "current_report_and_runtime_manifest_hash_checks": 116,
     "mismatches": [],
-    "manifest_baseline_before_sha256_checks": 8,
-    "manifest_before_mismatches": [],
-    "nested_dual_mode_pc_source_sha256_checked": true,
-    "dual_mode_representative_jpeg_sha256_checked": true,
-    "dedicated_ci": {
-      "run": 40424555034,
-      "job": 121926956089,
-      "status": "completed",
-      "conclusion": "success",
-      "independently_queried": true
-    },
-    "full_ci": {
-      "run": 40424554952,
-      "job": 121928017127,
-      "status": "completed",
-      "conclusion": "success",
-      "independently_queried": true
-    },
-    "regression_scope": "Current original references/fonts/six viewports, interactive boundary states, dual-mode gallery/PC checks, logistic regression, gradient descent, Markdown checks and heading/card-pair audit passed. Dedicated overfitting checks include independent data, changed/rejected datasets and viewer behavior."
+    "additional_current_markdown_hash_checks": 16,
+    "nested_dual_mode_pc_source_and_representative_preview_hashes_checked": true,
+    "heading_report_markdown_finalized": true,
+    "heading_cases": 72,
+    "owned_card_pair_observations": 184,
+    "actual_title_observations": 408,
+    "actual_blue_label_observations": 328,
+    "all_selected_roles_actual_colors_pretendard_minus_one_pt_visibility_and_geometry_pass": true,
+    "overfitting_cases": 8,
+    "gradient_descent_cases": 8,
+    "coverage": "The full CI passed original-reference/font/six-viewport checks, interactive states, dual-mode regression, logistic regression, gradient descent, approved-document checks and the heading/card audit. Dedicated CI passed overfitting and gradient-descent validation.",
+    "gallery_finalized_status_copy_verified_in_generated_HTML": true
   },
-  "preservation": {
-    "active_baseline": "a6f9bdb4c996bbfa60757fed9f70b5f38f0a3ee0",
-    "approved_concept_and_other_template_changes": [],
-    "both_original_svg_doms_identical_to_baseline": true,
-    "main_loss_data_curve_js_axis_coordinates_fruit_shapes_shared_css_axis_helper_preserved": true,
-    "markdown_changes": [],
-    "common_markdown_additions": 0,
-    "classification": "C: topic-specific wording and explanatory structure refined after user comprehension feedback. Existing common spacing, typography and colors are reused; no new common Markdown omission is established."
+  "visual_review_scope": {
+    "directly_opened_in_this_final_documentation_turn": [
+      "previews/heading-review/overfitting.png",
+      "previews/heading-review/contact.jpg"
+    ],
+    "previous_direct_review": "Representative Overfitting Scroll/Slide PNGs, its PC8 contact, central-minimum variant and nine-source contact were reviewed during the final numbered-cause pass. The runtime files are byte-identical to the user-approved version.",
+    "current_image_comparison": "Five of the six prior recorded image hashes remain identical. The regenerated nine-source contact has a new hash and was directly opened again; the current images match their new CI report hashes.",
+    "no_new_confirmed_visual_defects": true,
+    "not_performed": "This final documentation turn did not freshly open every individual full-resolution artifact or every alternate/error-state screenshot, run a local Chromium browser, conduct a reader study, or test a screen reader."
   },
-  "history_and_limits": [
-    "The former miniature graphs passed drawing arithmetic and browser geometry checks. Those results did not prove beginner comprehension, and user feedback showed that the former explanation did not meet the expected simplicity. Historical reports remain preserved.",
-    "This review verifies the revised wording, technical conditionality, actual visual layout and regression evidence. It is not a reader study or proof that every beginner understands the material.",
-    "The revised list explains ordinary fitting, possible excessive fitting and possible unseen-data error. It does not claim that every training-loss reduction causes overfitting.",
-    "The removed miniature-graph numerical checks are not claimed as current-content verification. Independent arithmetic for the unchanged main loss graph remains applicable.",
-    "The declared 23-card/184-pair scope remains unchanged; the borderless numbered aside is subordinate content, not an additional teaching card.",
-    "Other canonical patterns are preserved and regression-checked, not newly reused to author this concept. No universal independent-author reproduction or untested-pattern reuse claim is made.",
-    "User visual review and common Markdown finalization remain pending. This internal preview pass does not authorize main merge."
-  ],
-  "image_sha256": {
-    "examples/overfitting-generalization/previews/slide.png": "53b0ebcd4cc087d758f5b718a40cb2d6971c210def6a29a61f9797d05d3d058e",
-    "examples/overfitting-generalization/previews/scroll.png": "fd5d2e9750b5e71d3902b413660b8c7c940b512f1ab4be044780f55ac9e7527a",
-    "examples/overfitting-generalization/review/contact.jpg": "0f46c59627d3ae88abebf0b2c37b856120009b7236b81c121b37c8f266dbcade",
-    "examples/overfitting-generalization/review/middle-minimum.png": "b82c723c8244896c3ea0cdb6547454523916e1f4b358cd59a6276bfd40619e0a",
-    "previews/heading-review/overfitting.png": "697a9915ba6fae918ba3dc877f2437055074ff008d0e4d74a3a6dcd5e5bd3a87",
-    "previews/heading-review/contact.jpg": "1409466f2fc48eb746f6432d8a36948767ea778129afd9ae8c6349a40bcd2990"
+  "reusability_judgment": {
+    "D0_and_original_D1": "Sufficient within their historical #3/#8-partial scope; retained as historical results.",
+    "expanded_contracts_before_documentation": "Some supplementation needed: earlier axis contract plus two new role/presence contracts.",
+    "after_current_documentation": "Sufficient within the actually tested Comparison reconstruction and selected graph principles.",
+    "untested": "New-topic reuse of the other patterns, independent-author reproduction from Markdown alone, actual model training/independent-test performance, mobile/tablet, screen-reader listening and arbitrary SVG transforms remain unverified.",
+    "no_all_pattern_new_topic_success_claim": true
+  },
+  "approval_and_delivery": {
+    "user_visual_approved": true,
+    "approved_preview_head": "ce840a68b423ae7508381dc2745e3e7e12ebd41a",
+    "visual_validation_source": "29c3ff7a15acf3b11bec07d431bff4867c12c9ce",
+    "markdown_finalized": true,
+    "merge_authorized_by_user": true,
+    "merge_performed_by_reviewer": false,
+    "actual_merge_status_not_claimed": "Actual merge/SHA must be confirmed from PR #22.",
+    "remaining_owner_delivery_steps": [
+      "Update documentation-finalization.json from its pending seed with these verified CI/review results.",
+      "Commit the final evidence/review artifacts, confirm required CI on that final HEAD, then perform the already-authorized merge and verify the resulting main ancestry."
+    ],
+    "final_artifact_head_ci_not_yet_reviewed_in_this_record": true,
+    "D0_preservation": "Use the planned merge commit rather than squashing if preserving the individual D0 commits in main ancestry."
+  },
+  "markdown_sha256": {
+    "CHANGELOG.md": "80853bebaec4673b6f97106349dd29579f2045c9b8e82e3c19707e984346f1db",
+    "DESIGN_SYSTEM.md": "e4f03874786c326224c10bc42fc77fa0369a45c8c7458a6bbaa748a64a0c42da",
+    "README.md": "9f49840ace9130ddc1f048d3788d01d39ca407fec5e3d13714cfeb07572464a0",
+    "TEMPLATE_CATALOG.md": "e6cafc53a4f6e7e192890790dc7fa8a8469ed9c8d859440a29611acf3fbc7372",
+    "docs/CONCEPT_REUSE_PROMPT.md": "0d25064a63ade57b4d7e72cba170d51ad43a4359aeeb0afc69bdf04343e9c877",
+    "docs/DESIGN_COMPONENT_RECIPES.md": "bf6ef863cc242445fb4dd2aead048970aecef3172c73444c37d8eabd81ee10bf",
+    "docs/FIGURE_PRODUCTION_STANDARD.md": "89b3880f61db86e2a71c2a8ee9a21eb31b888ecab36a247058f2b18478d82a04",
+    "docs/REFERENCE_PAGE_SPECS.md": "4a1536fac1a4340af19bae783e030797a4dd8e88cd94b7d82559135b3fe20683",
+    "docs/REFERENCE_RELEASE_STATUS.md": "1642b8354f9a1fff5dc74db94cf7e457af5c1aff39608d919b7cf87bcbbd16ce",
+    "docs/REFERENCE_REUSE_WORKFLOW.md": "612ea9cf26d949915489a443555faef9244591c931f2cdf24d6aee04ce791254",
+    "docs/REFERENCE_REVIEW_GUIDE.md": "904b117a685a4254ea49fe18f5c1410845c967c48a15bc7209a1cfc8f0f0589f",
+    "docs/TEMPLATE_REUSE_VALIDATION.md": "bb033384f1b08b8f854f1ba9aa22010b57638bbfb16667ca601e2a1d416e8786",
+    "examples/overfitting-generalization/DESIGN.md": "ef7a17325425c1dfd690df0a655da6e020a9ded592c56948f8cdfe9ea68537ef",
+    "examples/overfitting-generalization/README.md": "3e40ce198764a58d224df8033659398ab0504045807cf0afbb5ea118f485d81f",
+    "examples/overfitting-generalization/VALIDATION.md": "8722a34e6f375d8cab795f65cdff0ec2015c6d8a8ad981772bab18fa14a913d7",
+    "examples/overfitting-generalization/review/design-history.md": "ce7c086f8fa5b78d79f9a18800dc82a777dddedd577e6cb287e2f6586f86fe00"
   },
   "evidence_sha256": {
-    "previews/heading-review/validation.json": "645cb971e6e488a3247b114687808c0cf7f8b16ea768fbc1d5bf2647eced6b80",
-    "previews/review/reference-validation.json": "a078666565a1f7c5bd9912e6504f0776482c5f0f5bc8e917f2375cbfb4f85265",
+    "previews/heading-review/validation.json": "6bee52e8283aee79414dd6befe3c37101bef52edf4c5813791e606325ca8af33",
+    "previews/review/reference-validation.json": "ea0aa8c7649c212addba74d231d6ef2b157cfe810980a6fc8ceeae77d5dcc724",
     "previews/review/interactive-validation.json": "16cedb33ac3e931307e58a9ecb0ab01b2ef6ab8fc23c710cc16e3a105202d153",
-    "previews/review/dual-mode-validation.json": "ea86d40ccdb4c9189f4c9ab18f2b749e4bc4ad2308c21bd727ba414eaf9d45a8",
-    "examples/overfitting-generalization/previews/validation.json": "fb44ca8b56164e3167223c57367473ecc08e5f307d2acbb9051b2be740acf6f4",
-    "examples/gradient-descent/previews/validation.json": "9780550ceec71e12e5da888d9afe6d78f01c4e3e7d43bfdf69906173fc654ca2",
-    "previews/heading-review/change-scope.json": "dcff443293be3c1b028f9ea0510229d6ef950314197940851bf4335c54703c25",
-    "scripts/verify_overfitting.py": "2298015f5791a3572111e522307f3d750313ebf8de56640e5979e1edde3ca381",
-    "scripts/verify_heading_roles.py": "8b22749c527566688e7f7902223adac7ff7ddca63f5a207f98d0a69f23db802a",
-    "examples/overfitting-generalization/content.html": "720bf636b7568d7f64ff227648faa983f30c49a28ba97501d3fab5ce4a4d8526",
-    "examples/overfitting-generalization/lesson.css": "e2b7c10a4b667764592b8d19028a67f6c910cd95dda1507fdf054d15aff9d2ef"
+    "previews/review/dual-mode-validation.json": "7791a8b10cc2f459371d7183837b86d8a7f91f9b0b417388363d2bd09d42d7c7",
+    "examples/overfitting-generalization/previews/validation.json": "dda5488df82dad5e986fdd65cf238a8f151b4f28c630c7f70d5db63c74303053",
+    "examples/gradient-descent/previews/validation.json": "100d9cb53195568c46c3a528e3c0828ffd77c5bb122e0e17ea5a0037e9ed1b20",
+    "previews/heading-review/change-scope.json": "37f7cd073dd2db3fe017c403eb81f43573e5b0cff0e4e7436f1d4afe7c15ca00",
+    "scripts/check_documentation.py": "9c2f798431e293e86c5e16ff1f5a9bf3d0a29ffebaab552a5abbb5a15837d210",
+    "scripts/verify_gradient_descent.py": "ebee825c1cdc8ddf1e50f5cc698a6d83de81127017c6761dbd2192e05e77ae5f",
+    "scripts/verify_heading_roles.py": "3ea998122463bf663abdf5de61af9b96b646f67155d8b0e3b08ec66f95ecf7b2"
   }
 }

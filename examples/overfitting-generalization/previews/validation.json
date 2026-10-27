@@ -9722,7 +9722,7 @@
       "evidence": "examples/overfitting-generalization/review/screens/middle-minimum.png"
     }
   ],
-  "created_utc": "2026-10-27T00:09:52.010288+00:00",
+  "created_utc": "2026-10-27T01:00:51.387592+00:00",
   "chromium": "155.0.8059.0",
   "behavior": {
     "changed_datasets": [
@@ -9750,7 +9750,7 @@
     "examples/overfitting-generalization/viewer.js": "a15e739f880682df368572875033d204eab63789b812cebad965f6eb566229a3",
     "examples/overfitting-generalization/curves.js": "509e63b6f9660e713d99fd83b66b5fe22004d278f2ce0a1b6842fd339b11e884",
     "examples/overfitting-generalization/curves.json": "d9e995fa132145654184d2f3a5a7a0b076debc789f8311bd3a7d96d7bc6521a8",
-    "examples/overfitting-generalization/DESIGN.md": "298eaf219aa36e791b6ac38449560f516e07942ce611f5b663f7f7e046061a61",
+    "examples/overfitting-generalization/DESIGN.md": "ef7a17325425c1dfd690df0a655da6e020a9ded592c56948f8cdfe9ea68537ef",
     "scripts/verify_overfitting.py": "2298015f5791a3572111e522307f3d750313ebf8de56640e5979e1edde3ca381",
     "templates/html/graph-annotations.js": "deeee6a81fae900035c9b5398c1c17aa7ac4694bf986313b1a810ec20bfec92b"
   },

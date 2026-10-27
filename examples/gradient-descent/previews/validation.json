@@ -2476,10 +2476,15 @@
     "templates/html/experiment.html",
     "templates/html/interactive.html"
   ],
-  "heading_review_status": "preview_pending_user_review",
+  "authorized_documentation_changes": [
+    "DESIGN_SYSTEM.md",
+    "docs/DESIGN_COMPONENT_RECIPES.md",
+    "docs/REFERENCE_PAGE_SPECS.md"
+  ],
+  "heading_review_status": "approved_documented",
   "other_canonical_sources_unchanged": true,
   "new_shared_axis_module": "templates/html/graph-annotations.js",
-  "intentional_common_rule_change": "FIGURE_PRODUCTION_STANDARD: user-requested axis-title alignment; other pinned common rules unchanged",
+  "intentional_common_rule_change": "Axis-title contract plus user-approved heading roles/owned-card documentation; exact SHA exceptions only",
   "source_sha256": {
     "examples/gradient-descent/viewer.js": "3ac80b1ecaad631929c6bab5967203980df85c81bd1f1ebc3bddd1cc01795c1f",
     "examples/gradient-descent/gradient-descent.css": "65e56c3ad2699d49ce8556ae43625994908826b2125ba199b7b1394f483e00dc",
@@ -2488,7 +2493,7 @@
     "examples/gradient-descent/slides.html": "209f3193df4284200353aaa4c40e227d65cb04f6354a5b7254acbff1cfcde593",
     "examples/gradient-descent/gradient-descent.js": "2afc4544aa42c7ece8a076fe9df21a8aee37f225fc3e386446becfe8fa68713f",
     "examples/gradient-descent/viewer.css": "8a435498fed6a04df20ec0b38089828622a320822c1b162660ef85e3240385d1",
-    "scripts/verify_gradient_descent.py": "6ead968952d07d40fab6cb88680c8db1bf4132908f82abc76f0963f6b3e6ccc9",
+    "scripts/verify_gradient_descent.py": "ebee825c1cdc8ddf1e50f5cc698a6d83de81127017c6761dbd2192e05e77ae5f",
     "templates/html/styles.css": "3c05e00284aae4ea538e697efae7682a2c9b35b318cab372fa8493613de4df22",
     "templates/html/reference-layout.css": "c29f52fd9852d80b29e277b7d60218a7b02da599a059a8395051caada3525bcc",
     "templates/html/math-typography.css": "c390ffe17b8c0f02d10a34b99bca892bb63f99af98766e7b47c0a88da38e2f3a",
@@ -2505,5 +2510,5 @@
     "slide.png": "4b9b1dab74ee327e56a5b7730ba9a4dbc69037af13e38036941fcf92d9c54be6"
   },
   "status": "passed",
-  "created_utc": "2026-10-27T00:10:46.605810+00:00"
+  "created_utc": "2026-10-27T01:01:43.824353+00:00"
 }

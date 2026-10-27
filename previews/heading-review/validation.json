@@ -1,6 +1,6 @@
 {
   "status": "passed",
-  "markdown_finalized": false,
+  "markdown_finalized": true,
   "scope": "8 original references + overfitting; PC4 x Scroll/Slide",
   "role_colors": {
     "title": "rgb(18, 35, 63)",
@@ -11639,8 +11639,8 @@
     "templates/html/comparison-reference.css": "4010e007a80a100fe3b7ee4dd5ea1bf6a4b2691d3e90a6e125ad70ba1f7b97b2",
     "examples/overfitting-generalization/lesson.css": "e2b7c10a4b667764592b8d19028a67f6c910cd95dda1507fdf054d15aff9d2ef",
     "examples/overfitting-generalization/content.html": "720bf636b7568d7f64ff227648faa983f30c49a28ba97501d3fab5ce4a4d8526",
-    "scripts/verify_heading_roles.py": "8b22749c527566688e7f7902223adac7ff7ddca63f5a207f98d0a69f23db802a",
-    "previews/heading-review/change-scope.json": "dcff443293be3c1b028f9ea0510229d6ef950314197940851bf4335c54703c25"
+    "scripts/verify_heading_roles.py": "3ea998122463bf663abdf5de61af9b96b646f67155d8b0e3b08ec66f95ecf7b2",
+    "previews/heading-review/change-scope.json": "37f7cd073dd2db3fe017c403eb81f43573e5b0cff0e4e7436f1d4afe7c15ca00"
   },
   "preview_sha256": {
     "previews/html-architecture.jpg": "b36556f3baa04017fd118792a7d851f00af9defd7446597be5c4b291e728eda5",
@@ -11649,9 +11649,9 @@
     "previews/html-interactive.jpg": "6552cc759523c967de8aadd317b95e76a93446fb043810e47db5aa43c1b012c4",
     "previews/html-concept.png": "a7e07908fe83a9d6dbc290a5a192c41181f0e9935d2f6b61715735bd845a4e51",
     "previews/html-executive-summary.jpg": "966d0f37c6eb520097c6872372c0c8199d95ef60486ee27bf38fb87c05953a24",
-    "previews/html-comparison.png": "cc2269321aab83b95ed234e347bb6df3b56bb18e4aee7c7ba318d1d21210a171",
+    "previews/html-comparison.png": "8d5d1f891ffb31fdd358b961b4daf8fa80fbf5a79bc5b78b18a0f6772e2212a8",
     "previews/html-step-by-step.jpg": "b48a137f8226ad5eba17ff335b0b5eba84aa8ebd3655859fd7bab839aaa001e7",
     "previews/heading-review/overfitting.png": "697a9915ba6fae918ba3dc877f2437055074ff008d0e4d74a3a6dcd5e5bd3a87",
-    "previews/heading-review/contact.jpg": "1409466f2fc48eb746f6432d8a36948767ea778129afd9ae8c6349a40bcd2990"
+    "previews/heading-review/contact.jpg": "b41f4855b0be2bdde66d983fbfcf4a0b9578898cc130a3e20269e54748ee2f64"
   }
 }
