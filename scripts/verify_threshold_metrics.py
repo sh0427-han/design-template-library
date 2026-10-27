@@ -186,7 +186,8 @@ def formula_semantics(page):
     expected={'precision':['TP','TP+FP'],'recall':['TP','TP+FN'],'accuracy':['TP+TN','N'],'f1':['2TP','2TP+FP+FN']}
     assert {key:value['fraction'] for key,value in actual.items()}==expected,actual
     harmonic=page.locator('.harmonic-equivalent mfrac').evaluate('(e)=>[...e.children].map(n=>n.textContent.replace(/\\s+/g,""))')
-    assert harmonic==['2PR','P+R']
+    normalized=[part.replace('Precision','P').replace('Recall','R').replace('×','') for part in harmonic]
+    assert normalized==['2PR','P+R'],harmonic
     assert all(value['meaning'] for value in actual.values())
     return {'metric_formulas':actual,'conditional_harmonic_equivalent':harmonic}
 
@@ -207,10 +208,13 @@ GEOMETRY = r"""id => {
  const escaped=[...p.querySelectorAll('*')].filter(e=>!e.closest('.sr-only,[hidden]')&&!e.matches('title,desc,script,style,option')&&box(e).width&&box(e).height).filter(e=>{const r=box(e);return r.x<inside.x-1||r.right>inside.right+1||r.y<inside.y-1||r.bottom>inside.bottom+1}).map(name);
  const labels=[...p.querySelectorAll('.panel-label')].filter(e=>e.closest('.teaching-panel')===p),titles=[...p.querySelectorAll('.panel-title')].filter(e=>e.closest('.teaching-panel')===p);
  return {escaped,labelCount:labels.length,titleCount:titles.length,labelColor:getComputedStyle(labels[0]).color,titleColor:getComputedStyle(titles[0]).color};});
+ const metricEscaped=[];
+ for(const p of s.querySelectorAll('.metric')){const b=box(p),st=getComputedStyle(p),inside={x:b.x+(parseFloat(st.paddingLeft)+1)*scale,right:b.right-(parseFloat(st.paddingRight)+1)*scale,y:b.y+(parseFloat(st.paddingTop)+1)*scale,bottom:b.bottom-(parseFloat(st.paddingBottom)+1)*scale};
+ for(const e of p.querySelectorAll('*')){if(e.closest('[hidden]')||getComputedStyle(e).display==='none')continue;const r=box(e);if(r.width&&r.height&&(r.x<inside.x-1||r.right>inside.right+1||r.y<inside.y-1||r.bottom>inside.bottom+1))metricEscaped.push(p.dataset.metric+':'+name(e));}}
  const svgOutside=[],svgCollisions=[];
  for(const svg of s.querySelectorAll('svg')){const boundary=box(svg),texts=[...svg.querySelectorAll('text')].filter(e=>box(e).width&&box(e).height);for(const e of texts){const r=box(e);if(r.x<boundary.x-1||r.right>boundary.right+1||r.y<boundary.y-1||r.bottom>boundary.bottom+1)svgOutside.push(name(e));}for(let i=0;i<texts.length;i++)for(let j=i+1;j<texts.length;j++){const a=box(texts[i]),b=box(texts[j]);if(a.x<b.right-.5&&a.right>b.x+.5&&a.y<b.bottom-.5&&a.bottom>b.y+.5)svgCollisions.push([name(texts[i]),name(texts[j])]);}}
  const bar=document.querySelector('.viewer-bar'),barBottom=bar?box(bar).bottom:0;
- return {slide:sb,scale,outside,overflow,footerOverlap,spacing,textClipping,panels,svgOutside,svgCollisions,
+ return {slide:sb,scale,outside,overflow,footerOverlap,spacing,textClipping,panels,metricEscaped,svgOutside,svgCollisions,
  viewportContainment:{top:sb.y,bottom:sb.bottom,barBottom,height:innerHeight,fullyVisible:sb.y>=barBottom-.5&&sb.bottom<=innerHeight+.5},
  heading:s.querySelector('h1').textContent,footerText:s.querySelector('footer').textContent,
  htmlOverflow:document.documentElement.scrollWidth>innerWidth+1};
@@ -220,7 +224,7 @@ GEOMETRY = r"""id => {
 def geometry(page, slide):
     result = page.evaluate(GEOMETRY, slide)
     assert result['slide']['width'] > 0 and result['slide']['height'] > 0
-    for key in ('outside', 'overflow', 'footerOverlap', 'spacing', 'textClipping', 'svgOutside', 'svgCollisions'):
+    for key in ('outside', 'overflow', 'footerOverlap', 'spacing', 'textClipping', 'svgOutside', 'svgCollisions','metricEscaped'):
         assert not result[key], (slide, key, result[key])
     assert not result['htmlOverflow']
     assert result['viewportContainment']['fullyVisible'], (slide, 'screenshot viewport clips the source', result['viewportContainment'])

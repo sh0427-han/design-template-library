@@ -189,6 +189,8 @@
   async function response(url,type) {const r=await fetch(url);if(!r.ok)throw new Error(url+'을 불러오지 못했습니다.');return type==='json'?r.json():r.text();}
   async function initialize() {
     normalizeURL();
+    const requestedSlide=state.activeSlide;
+    isNavigating=true;
     const [content,data]=await Promise.allSettled([response('content.html','text'),response('data.json','json')]);
     try {
       if(content.status!=='fulfilled')throw content.reason;
@@ -200,7 +202,8 @@
       const fontResults=await Promise.allSettled([document.fonts.load('20px "Pretendard Variable"','임계값 정상 불량 Precision'),document.fonts.load('20px "STIX Two Math"','TP0123456789≥')]);await document.fonts.ready;
       const fontsLoaded=fontResults.every(r=>r.status==='fulfilled');state.fontStatus=fontsLoaded?'loaded':'fallback';document.body.dataset.fontStatus=state.fontStatus;
       if(!fontsLoaded) {const notice=$('#url-notice');notice.hidden=false;notice.textContent='글꼴 파일을 불러오지 못해 시스템 글꼴로 표시합니다.';}
-      scalePages();if(mode==='scroll'&&state.activeSlide==='practice')selectSlide('practice',true);
+      scalePages();selectSlide(requestedSlide,mode==='scroll');
+      requestAnimationFrame(()=>{isNavigating=false;});
     } catch(error) {fail(error);}
     $('#lesson').setAttribute('aria-busy','false');document.body.dataset.ready=state.status;readyResolve(snapshot());
   }

@@ -1,0 +1,240 @@
+{
+  "status": "failed",
+  "baseline_commit": "ef9783e910f07a5e2c9343da17573e1a7cf30225",
+  "created_utc": "2026-10-27T11:44:34.773889+00:00",
+  "screen_cases": [
+    {
+      "viewport": [
+        1600,
+        950
+      ],
+      "mode": "scroll",
+      "slide": "concept",
+      "geometry": {
+        "slide": {
+          "x": 80,
+          "y": 68,
+          "right": 1520,
+          "bottom": 878,
+          "width": 1440,
+          "height": 810
+        },
+        "scale": 1,
+        "outside": [],
+        "overflow": [],
+        "footerOverlap": [],
+        "spacing": [],
+        "textClipping": [],
+        "panels": [
+          {
+            "escaped": [],
+            "labelCount": 1,
+            "titleCount": 1,
+            "labelColor": "rgb(49, 104, 200)",
+            "titleColor": "rgb(18, 35, 63)"
+          }
+        ],
+        "svgOutside": [],
+        "svgCollisions": [],
+        "viewportContainment": {
+          "top": 68,
+          "bottom": 878,
+          "barBottom": 44,
+          "height": 950,
+          "fullyVisible": true
+        },
+        "heading": "점수와 판정을 가르는 임계값",
+        "footerText": "Vision AI 기초 · 분류 임계값과 성능 변화01 / 02",
+        "htmlOverflow": false
+      },
+      "fonts": {
+        "elements": 45,
+        "families": {
+          "Pretendard Variable": 535,
+          "STIX Two Math": 8
+        },
+        "fallback": [],
+        "unpainted": [],
+        "bad_spacing": [],
+        "loaded": {
+          "counts": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "faces": [
+            {
+              "family": "Pretendard Variable",
+              "weight": "100 900",
+              "status": "loaded"
+            }
+          ],
+          "math": {
+            "count": 1,
+            "faces": [
+              {
+                "family": "STIX Two Math",
+                "status": "loaded",
+                "weight": "400"
+              }
+            ]
+          }
+        }
+      },
+      "viewer_fonts": {
+        "elements": 5,
+        "families": {
+          "Pretendard Variable": 43
+        },
+        "fallback": [],
+        "unpainted": [],
+        "bad_spacing": [],
+        "loaded": {
+          "counts": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "faces": [
+            {
+              "family": "Pretendard Variable",
+              "weight": "100 900",
+              "status": "loaded"
+            }
+          ],
+          "math": {
+            "count": 1,
+            "faces": [
+              {
+                "family": "STIX Two Math",
+                "status": "loaded",
+                "weight": "400"
+              }
+            ]
+          }
+        }
+      },
+      "connectors": [
+        {
+          "id": "arrow-image-score",
+          "from": "node-image",
+          "to": "node-score",
+          "start": [
+            215,
+            108
+          ],
+          "end": [
+            307,
+            108
+          ],
+          "d": "M215 108 H307 M301 103 L307 108 L301 113",
+          "expectedStart": [
+            215,
+            108
+          ],
+          "expectedEnd": [
+            307,
+            108
+          ]
+        },
+        {
+          "id": "arrow-score-threshold",
+          "from": "node-score",
+          "to": "node-threshold",
+          "start": [
+            547,
+            108
+          ],
+          "end": [
+            639,
+            108
+          ],
+          "d": "M547 108 H639 M633 103 L639 108 L633 113",
+          "expectedStart": [
+            547,
+            108
+          ],
+          "expectedEnd": [
+            639,
+            108
+          ]
+        },
+        {
+          "id": "arrow-threshold-positive",
+          "from": "node-threshold",
+          "to": "node-positive",
+          "start": [
+            919,
+            108
+          ],
+          "end": [
+            1011,
+            55
+          ],
+          "d": "M919 108 H965 V55 H1011 M1005 50 L1011 55 L1005 60",
+          "expectedStart": [
+            919,
+            108
+          ],
+          "expectedEnd": [
+            1011,
+            55
+          ]
+        },
+        {
+          "id": "arrow-threshold-negative",
+          "from": "node-threshold",
+          "to": "node-negative",
+          "start": [
+            919,
+            108
+          ],
+          "end": [
+            1011,
+            161
+          ],
+          "d": "M919 108 H965 V161 H1011 M1005 156 L1011 161 L1005 166",
+          "expectedStart": [
+            919,
+            108
+          ],
+          "expectedEnd": [
+            1011,
+            161
+          ]
+        }
+      ]
+    }
+  ],
+  "threshold_scenarios": [],
+  "screen_cases_are_not_scenario_counts": true,
+  "protected_sources": {
+    "baseline": "ef9783e910f07a5e2c9343da17573e1a7cf30225",
+    "protected_directories": [
+      "templates/",
+      "examples/logistic-regression/",
+      "examples/gradient-descent/",
+      "examples/overfitting-generalization/"
+    ],
+    "changed_paths": [],
+    "checked_before_regression_generates_previews": true
+  },
+  "independent_oracle": "Python integer truth table, exact Fraction, decimal half-up at display only",
+  "node_crosscheck": {
+    "production_model_vs_independent_python_states": 202,
+    "special_states": 20,
+    "rejected_invalid_samples": 8,
+    "rejected_invalid_thresholds": 6,
+    "expected_answers_from_production_code": false
+  },
+  "static_threshold_checks": 202,
+  "precision_monotonicity_assumed": false,
+  "precision_counterexample": {
+    "threshold_50": "62.5%",
+    "threshold_51": "57.1%"
+  },
+  "chromium": "154.0.8037.57",
+  "error": "Traceback (most recent call last):\n  File \"/workspace/design-template-library/scripts/verify_threshold_metrics.py\", line 535, in main\n    result={'viewport':list(size),'mode':mode,'slide':slide,'geometry':geometry(page,slide)}\n                                                                       ^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/design-template-library/scripts/verify_threshold_metrics.py\", line 229, in geometry\n    assert not panel['escaped'], (slide, 'inner padding', panel)\n           ^^^^^^^^^^^^^^^^^^^^\nAssertionError: ('practice', 'inner padding', {'escaped': ['harmonic-equivalent', 'SPAN'], 'labelCount': 1, 'titleCount': 1, 'labelColor': 'rgb(49, 104, 200)', 'titleColor': 'rgb(18, 35, 63)'})\n"
+}
