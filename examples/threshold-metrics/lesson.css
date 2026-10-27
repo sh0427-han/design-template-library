@@ -33,8 +33,9 @@
 .flow-stage h3 {font-size:22px;line-height:29px;margin:10px 0 4px;}
 .flow-stage p {font-size:17px;line-height:24px;color:var(--muted);}
 .score-symbol,.threshold-symbol {height:87px;display:flex;align-items:center;justify-content:center;font-size:61px;color:var(--deep);}
+.score-stage .score-symbol {font-size:48px;}
 .score-stage .concept-score-track {height:8px;background:var(--canvas);border-radius:4px;margin:8px 18px 0;border:1px solid var(--border);}
-.concept-score-track span {display:block;height:100%;width:100%;background:var(--blue);opacity:.25;border-radius:4px;}
+.concept-score-track span {display:block;height:100%;background:var(--blue);border-radius:4px;}
 .score-endpoints {display:flex;justify-content:space-between;margin:4px 18px 0;font-size:16px;line-height:20px;color:var(--muted);}
 .score-stage h3 {margin-top:2px;}
 .threshold-symbol {border:2px dashed var(--amber);border-radius:50%;width:92px;margin:0 auto;}
@@ -47,7 +48,6 @@
 .negative-branch {color:var(--muted);}
 .concept-connectors {position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;}
 .concept-connectors path {fill:none;stroke:var(--blue);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
-.score-caveat {font-size:16px;line-height:22px;color:var(--muted);text-align:center;margin-top:3px!important;}
 .concept-bottom {display:grid;grid-template-columns:1fr 2fr;gap:24px;margin-top:14px;}
 .truth-explanation {display:flex;flex-direction:column;align-items:flex-start;gap:7px;border-top:1px solid var(--border);padding-top:10px;font-size:17px;line-height:24px;}
 .truth-fixed {font-size:19px;font-weight:800;color:var(--navy);white-space:nowrap;}

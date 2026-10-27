@@ -392,7 +392,7 @@ def interaction_scenarios(browser, origin, data):
     assert slider.get_attribute('type') == 'range' and slider.get_attribute('aria-valuetext')
     assert page.get_by_role('slider').count() == 1
     assert page.get_by_role('slider',name='임계값').count()==1
-    assert page.get_by_role('combobox',name='합성 데이터').count()==1
+    assert page.get_by_role('combobox',name='데이터셋').count()==1
     assert page.locator('#evaluation-status[role=status][aria-live=polite]').count()==1
     slider.focus();slider.press('Home');check_snapshot(page, data['datasets']['default']['samples'], 0)
     slider.press('End');check_snapshot(page, data['datasets']['default']['samples'], 100)

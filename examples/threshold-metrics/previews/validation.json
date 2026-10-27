@@ -1,7 +1,7 @@
 {
   "status": "passed",
   "baseline_commit": "ef9783e910f07a5e2c9343da17573e1a7cf30225",
-  "created_utc": "2026-10-27T12:02:57.912341+00:00",
+  "created_utc": "2026-10-27T22:56:22.173826+00:00",
   "screen_cases": [
     {
       "viewport": [
@@ -49,10 +49,10 @@
         "htmlOverflow": false
       },
       "fonts": {
-        "elements": 45,
+        "elements": 46,
         "families": {
-          "Pretendard Variable": 544,
-          "STIX Two Math": 8
+          "Pretendard Variable": 498,
+          "STIX Two Math": 13
         },
         "fallback": [],
         "unpainted": [],
@@ -256,7 +256,7 @@
       "fonts": {
         "elements": 166,
         "families": {
-          "Pretendard Variable": 722,
+          "Pretendard Variable": 714,
           "STIX Two Math": 183
         },
         "fallback": [],
@@ -487,10 +487,10 @@
         "htmlOverflow": false
       },
       "fonts": {
-        "elements": 45,
+        "elements": 46,
         "families": {
-          "Pretendard Variable": 544,
-          "STIX Two Math": 8
+          "Pretendard Variable": 498,
+          "STIX Two Math": 13
         },
         "fallback": [],
         "unpainted": [],
@@ -694,7 +694,7 @@
       "fonts": {
         "elements": 166,
         "families": {
-          "Pretendard Variable": 722,
+          "Pretendard Variable": 714,
           "STIX Two Math": 183
         },
         "fallback": [],
@@ -925,10 +925,10 @@
         "htmlOverflow": false
       },
       "fonts": {
-        "elements": 45,
+        "elements": 46,
         "families": {
-          "Pretendard Variable": 544,
-          "STIX Two Math": 8
+          "Pretendard Variable": 498,
+          "STIX Two Math": 13
         },
         "fallback": [],
         "unpainted": [],
@@ -1132,7 +1132,7 @@
       "fonts": {
         "elements": 166,
         "families": {
-          "Pretendard Variable": 722,
+          "Pretendard Variable": 714,
           "STIX Two Math": 183
         },
         "fallback": [],
@@ -1363,10 +1363,10 @@
         "htmlOverflow": false
       },
       "fonts": {
-        "elements": 45,
+        "elements": 46,
         "families": {
-          "Pretendard Variable": 544,
-          "STIX Two Math": 8
+          "Pretendard Variable": 498,
+          "STIX Two Math": 13
         },
         "fallback": [],
         "unpainted": [],
@@ -1570,7 +1570,7 @@
       "fonts": {
         "elements": 166,
         "families": {
-          "Pretendard Variable": 722,
+          "Pretendard Variable": 714,
           "STIX Two Math": 183
         },
         "fallback": [],
@@ -1801,10 +1801,10 @@
         "htmlOverflow": false
       },
       "fonts": {
-        "elements": 45,
+        "elements": 46,
         "families": {
-          "Pretendard Variable": 544,
-          "STIX Two Math": 8
+          "Pretendard Variable": 498,
+          "STIX Two Math": 13
         },
         "fallback": [],
         "unpainted": [],
@@ -2008,7 +2008,7 @@
       "fonts": {
         "elements": 166,
         "families": {
-          "Pretendard Variable": 722,
+          "Pretendard Variable": 714,
           "STIX Two Math": 183
         },
         "fallback": [],
@@ -2239,10 +2239,10 @@
         "htmlOverflow": false
       },
       "fonts": {
-        "elements": 45,
+        "elements": 46,
         "families": {
-          "Pretendard Variable": 544,
-          "STIX Two Math": 8
+          "Pretendard Variable": 498,
+          "STIX Two Math": 13
         },
         "fallback": [],
         "unpainted": [],
@@ -2446,7 +2446,7 @@
       "fonts": {
         "elements": 166,
         "families": {
-          "Pretendard Variable": 722,
+          "Pretendard Variable": 714,
           "STIX Two Math": 183
         },
         "fallback": [],
@@ -2677,10 +2677,10 @@
         "htmlOverflow": false
       },
       "fonts": {
-        "elements": 45,
+        "elements": 46,
         "families": {
-          "Pretendard Variable": 544,
-          "STIX Two Math": 8
+          "Pretendard Variable": 498,
+          "STIX Two Math": 13
         },
         "fallback": [],
         "unpainted": [],
@@ -2884,7 +2884,7 @@
       "fonts": {
         "elements": 166,
         "families": {
-          "Pretendard Variable": 722,
+          "Pretendard Variable": 714,
           "STIX Two Math": 183
         },
         "fallback": [],
@@ -3115,10 +3115,10 @@
         "htmlOverflow": false
       },
       "fonts": {
-        "elements": 45,
+        "elements": 46,
         "families": {
-          "Pretendard Variable": 544,
-          "STIX Two Math": 8
+          "Pretendard Variable": 498,
+          "STIX Two Math": 13
         },
         "fallback": [],
         "unpainted": [],
@@ -3322,7 +3322,7 @@
       "fonts": {
         "elements": 166,
         "families": {
-          "Pretendard Variable": 722,
+          "Pretendard Variable": 714,
           "STIX Two Math": 183
         },
         "fallback": [],
@@ -10818,21 +10818,21 @@
   "source_sha256": {
     "examples/threshold-metrics/scroll.html": "d0a4b9390cbe21d1137b0195f12be26f49f988fecd19514f0335f89119bc88d0",
     "examples/threshold-metrics/slides.html": "bf5182ab361d909f0dcb5f1ce6b076320c0a9e08e5af2306b3169fa476073136",
-    "examples/threshold-metrics/content.html": "5411f09e786282138bd0f1f5b87680465a1388b379965c51a9c209003a92e04a",
-    "examples/threshold-metrics/lesson.css": "9fb510e15348dd4616e3d9f1fa38348e53901b81da7936b5554f9ff345d1e9ff",
+    "examples/threshold-metrics/content.html": "c030b8b80225be3f3268fa9c817bb2dfd5f9ae726008f601aee1c3fea90d4cae",
+    "examples/threshold-metrics/lesson.css": "a6eb1b2a5af400fcaee9b0179d2abe5269c58e159154a1037a6d6aa18518e9b1",
     "examples/threshold-metrics/model.js": "6985a5eb74e710151c9f4df5a3a3ff112a573dae7e7d4f55b03b77b279659ff9",
     "examples/threshold-metrics/app.js": "168d0331962fac84339fb2cb353ea8f1a3c06e22d7d19629cde91865f872e00f",
     "examples/threshold-metrics/data.json": "75e33c5d05a68e04696a13c9bc1ccccba8236591cbf930984ac2b0ffa59f0804",
-    "examples/threshold-metrics/DESIGN.md": "6b7ca55fd3c4b288798750d041b6b6ec2d64c0961ea2073fe481fd9585935f9f",
-    "scripts/verify_threshold_metrics.py": "cbece2c880c8032ba9977f7832a8cae364c4cd792b80174359a115acea1f7f9f",
+    "examples/threshold-metrics/DESIGN.md": "544e7f88956acc9076fc7bc26947684a21932cf2df71f57677ec4538e531c4e3",
+    "scripts/verify_threshold_metrics.py": "49ecad104d51f2c3c40f2cc556d105f816f394256079654f2e15436c58ee2d62",
     ".github/workflows/validate-threshold-metrics.yml": "3517a80af25ec350084745b82e4ca9e8fa9bb04d4743c5d96d7636b90512368a"
   },
   "preview_sha256": {
-    "examples/threshold-metrics/previews/scroll-concept.png": "813cd88dc4864c6061aed398baf98e4461dab0d77085f2798369692ed703aa93",
-    "examples/threshold-metrics/previews/scroll-practice.png": "3689ec1fc411641b23789deeb83d99043af397700a0c9c1e5d53d0022e4b7b06",
-    "examples/threshold-metrics/previews/slides-concept.png": "4f4f362b5d8909de6b99210bb113d13e63052f0402426875cc078e2a02865c22",
-    "examples/threshold-metrics/previews/slides-practice.png": "b5244d0f494d771fe011f63643166fb200c0bf9d41d25c4f74984498f9010f3a",
-    "examples/threshold-metrics/review/contact.jpg": "5abdf43353e7666fe2cd4630d0c5210befd8aa256f6e9be07bd754a2016930c1"
+    "examples/threshold-metrics/previews/scroll-concept.png": "d247bda342aa55a7bd93b0fc91e002387e624446fb6986b8c23b2e22428b9e52",
+    "examples/threshold-metrics/previews/scroll-practice.png": "bb84f05fc55a1c737a3e39561e2065b6951ce45485e806d4cea46e8af3345827",
+    "examples/threshold-metrics/previews/slides-concept.png": "f8830fb6aca19b52e599d14e41dee94624370bc34f7fb32e4087f5bc18aa2dd4",
+    "examples/threshold-metrics/previews/slides-practice.png": "f4f3a8b82ba39b47fd5e3ba7cbeeb1fedcc2e89187be5bb904951874cacd5546",
+    "examples/threshold-metrics/review/contact.jpg": "044ae44442b4dae9cb618740f89ea970c1bfebcc756cb0fda542a8da9b09c08c"
   },
   "full_resolution_screenshot_count": 16,
   "unverified": [

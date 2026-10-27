@@ -1,0 +1,592 @@
+{
+  "reviewer": "/root/feedback_reviewer",
+  "role": "independent Reviewer; did not author runtime, verifier, DESIGN, VALIDATION or README changes",
+  "created_utc": "2026-10-27T22:58:11.107772+00:00",
+  "status": "approved_with_scope_limits",
+  "review_round": 1,
+  "findings": [],
+  "unresolved_findings": 0,
+  "review_scope": "2026-10-28 user feedback: concept score example/label, screen meta-note removal, same-topic versus cross-concept interactive reuse claims",
+  "source_inspected": [
+    "AGENTS.md",
+    "DESIGN_SYSTEM.md",
+    "TEMPLATE_CATALOG.md",
+    "templates/html/interactive.html",
+    "templates/html/interactive-reference.js",
+    "templates/html/experiment.html",
+    "examples/threshold-metrics/content.html",
+    "examples/threshold-metrics/lesson.css",
+    "examples/threshold-metrics/model.js",
+    "examples/threshold-metrics/app.js",
+    "examples/threshold-metrics/DESIGN.md",
+    "examples/threshold-metrics/VALIDATION.md",
+    "examples/threshold-metrics/README.md",
+    "scripts/verify_threshold_metrics.py"
+  ],
+  "independent_fresh_chromium_probe": {
+    "concept_case_count": 8,
+    "viewport_mode_checks": [
+      {
+        "scoreText": "s=0.72",
+        "trackRole": "img",
+        "trackLabel": "결함 점수 0.72, 범위 0에서 1",
+        "fillRatio": 0.719970703125,
+        "scoreMathInside": true,
+        "thresholdHeading": "임계값",
+        "thresholdSymbol": "t",
+        "caveatCount": 0,
+        "metaTextPresent": false,
+        "scoreMathFont": "\"STIX Two Math\", math",
+        "viewport": [
+          1600,
+          950
+        ],
+        "mode": "scroll",
+        "fonts": {
+          "families": {
+            "Pretendard Variable": 23,
+            "STIX Two Math": 6
+          },
+          "fallback": [],
+          "unpainted": [],
+          "bad_spacing": []
+        },
+        "page_errors": []
+      },
+      {
+        "scoreText": "s=0.72",
+        "trackRole": "img",
+        "trackLabel": "결함 점수 0.72, 범위 0에서 1",
+        "fillRatio": 0.719970703125,
+        "scoreMathInside": true,
+        "thresholdHeading": "임계값",
+        "thresholdSymbol": "t",
+        "caveatCount": 0,
+        "metaTextPresent": false,
+        "scoreMathFont": "\"STIX Two Math\", math",
+        "viewport": [
+          1600,
+          950
+        ],
+        "mode": "slides",
+        "fonts": {
+          "families": {
+            "Pretendard Variable": 23,
+            "STIX Two Math": 6
+          },
+          "fallback": [],
+          "unpainted": [],
+          "bad_spacing": []
+        },
+        "page_errors": []
+      },
+      {
+        "scoreText": "s=0.72",
+        "trackRole": "img",
+        "trackLabel": "결함 점수 0.72, 범위 0에서 1",
+        "fillRatio": 0.7199204588971226,
+        "scoreMathInside": true,
+        "thresholdHeading": "임계값",
+        "thresholdSymbol": "t",
+        "caveatCount": 0,
+        "metaTextPresent": false,
+        "scoreMathFont": "\"STIX Two Math\", math",
+        "viewport": [
+          1440,
+          810
+        ],
+        "mode": "scroll",
+        "fonts": {
+          "families": {
+            "Pretendard Variable": 23,
+            "STIX Two Math": 6
+          },
+          "fallback": [],
+          "unpainted": [],
+          "bad_spacing": []
+        },
+        "page_errors": []
+      },
+      {
+        "scoreText": "s=0.72",
+        "trackRole": "img",
+        "trackLabel": "결함 점수 0.72, 범위 0에서 1",
+        "fillRatio": 0.7199204588971226,
+        "scoreMathInside": true,
+        "thresholdHeading": "임계값",
+        "thresholdSymbol": "t",
+        "caveatCount": 0,
+        "metaTextPresent": false,
+        "scoreMathFont": "\"STIX Two Math\", math",
+        "viewport": [
+          1440,
+          810
+        ],
+        "mode": "slides",
+        "fonts": {
+          "families": {
+            "Pretendard Variable": 23,
+            "STIX Two Math": 6
+          },
+          "fallback": [],
+          "unpainted": [],
+          "bad_spacing": []
+        },
+        "page_errors": []
+      },
+      {
+        "scoreText": "s=0.72",
+        "trackRole": "img",
+        "trackLabel": "결함 점수 0.72, 범위 0에서 1",
+        "fillRatio": 0.7199113724320599,
+        "scoreMathInside": true,
+        "thresholdHeading": "임계값",
+        "thresholdSymbol": "t",
+        "caveatCount": 0,
+        "metaTextPresent": false,
+        "scoreMathFont": "\"STIX Two Math\", math",
+        "viewport": [
+          1366,
+          768
+        ],
+        "mode": "scroll",
+        "fonts": {
+          "families": {
+            "Pretendard Variable": 23,
+            "STIX Two Math": 6
+          },
+          "fallback": [],
+          "unpainted": [],
+          "bad_spacing": []
+        },
+        "page_errors": []
+      },
+      {
+        "scoreText": "s=0.72",
+        "trackRole": "img",
+        "trackLabel": "결함 점수 0.72, 범위 0에서 1",
+        "fillRatio": 0.7199113724320599,
+        "scoreMathInside": true,
+        "thresholdHeading": "임계값",
+        "thresholdSymbol": "t",
+        "caveatCount": 0,
+        "metaTextPresent": false,
+        "scoreMathFont": "\"STIX Two Math\", math",
+        "viewport": [
+          1366,
+          768
+        ],
+        "mode": "slides",
+        "fonts": {
+          "families": {
+            "Pretendard Variable": 23,
+            "STIX Two Math": 6
+          },
+          "fallback": [],
+          "unpainted": [],
+          "bad_spacing": []
+        },
+        "page_errors": []
+      },
+      {
+        "scoreText": "s=0.72",
+        "trackRole": "img",
+        "trackLabel": "결함 점수 0.72, 범위 0에서 1",
+        "fillRatio": 0.7198954676797795,
+        "scoreMathInside": true,
+        "thresholdHeading": "임계값",
+        "thresholdSymbol": "t",
+        "caveatCount": 0,
+        "metaTextPresent": false,
+        "scoreMathFont": "\"STIX Two Math\", math",
+        "viewport": [
+          1280,
+          720
+        ],
+        "mode": "scroll",
+        "fonts": {
+          "families": {
+            "Pretendard Variable": 23,
+            "STIX Two Math": 6
+          },
+          "fallback": [],
+          "unpainted": [],
+          "bad_spacing": []
+        },
+        "page_errors": []
+      },
+      {
+        "scoreText": "s=0.72",
+        "trackRole": "img",
+        "trackLabel": "결함 점수 0.72, 범위 0에서 1",
+        "fillRatio": 0.7198954676797795,
+        "scoreMathInside": true,
+        "thresholdHeading": "임계값",
+        "thresholdSymbol": "t",
+        "caveatCount": 0,
+        "metaTextPresent": false,
+        "scoreMathFont": "\"STIX Two Math\", math",
+        "viewport": [
+          1280,
+          720
+        ],
+        "mode": "slides",
+        "fonts": {
+          "families": {
+            "Pretendard Variable": 23,
+            "STIX Two Math": 6
+          },
+          "fallback": [],
+          "unpainted": [],
+          "bad_spacing": []
+        },
+        "page_errors": []
+      }
+    ],
+    "practice_smoke_state_count": 16,
+    "practice_oracle": "Separate Counter of (truth, score>=threshold) and Decimal half-up percent; production evaluate() not used for expected values",
+    "practice_smoke_states": [
+      {
+        "mode": "scroll",
+        "dataset": "default",
+        "thresholdUnits": 0,
+        "counts": {
+          "tp": 7,
+          "fp": 7,
+          "fn": 0,
+          "tn": 0
+        },
+        "display": {
+          "precision": "50.0%",
+          "recall": "100.0%",
+          "accuracy": "50.0%",
+          "f1": "66.7%"
+        }
+      },
+      {
+        "mode": "scroll",
+        "dataset": "default",
+        "thresholdUnits": 50,
+        "counts": {
+          "tp": 5,
+          "fp": 3,
+          "fn": 2,
+          "tn": 4
+        },
+        "display": {
+          "precision": "62.5%",
+          "recall": "71.4%",
+          "accuracy": "64.3%",
+          "f1": "66.7%"
+        }
+      },
+      {
+        "mode": "scroll",
+        "dataset": "default",
+        "thresholdUnits": 51,
+        "counts": {
+          "tp": 4,
+          "fp": 3,
+          "fn": 3,
+          "tn": 4
+        },
+        "display": {
+          "precision": "57.1%",
+          "recall": "57.1%",
+          "accuracy": "57.1%",
+          "f1": "57.1%"
+        }
+      },
+      {
+        "mode": "scroll",
+        "dataset": "default",
+        "thresholdUnits": 100,
+        "counts": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 7,
+          "tn": 7
+        },
+        "display": {
+          "precision": "—",
+          "recall": "0.0%",
+          "accuracy": "50.0%",
+          "f1": "0.0%"
+        }
+      },
+      {
+        "mode": "scroll",
+        "dataset": "shifted",
+        "thresholdUnits": 0,
+        "counts": {
+          "tp": 4,
+          "fp": 10,
+          "fn": 0,
+          "tn": 0
+        },
+        "display": {
+          "precision": "28.6%",
+          "recall": "100.0%",
+          "accuracy": "28.6%",
+          "f1": "44.4%"
+        }
+      },
+      {
+        "mode": "scroll",
+        "dataset": "shifted",
+        "thresholdUnits": 50,
+        "counts": {
+          "tp": 3,
+          "fp": 4,
+          "fn": 1,
+          "tn": 6
+        },
+        "display": {
+          "precision": "42.9%",
+          "recall": "75.0%",
+          "accuracy": "64.3%",
+          "f1": "54.5%"
+        }
+      },
+      {
+        "mode": "scroll",
+        "dataset": "shifted",
+        "thresholdUnits": 51,
+        "counts": {
+          "tp": 2,
+          "fp": 4,
+          "fn": 2,
+          "tn": 6
+        },
+        "display": {
+          "precision": "33.3%",
+          "recall": "50.0%",
+          "accuracy": "57.1%",
+          "f1": "40.0%"
+        }
+      },
+      {
+        "mode": "scroll",
+        "dataset": "shifted",
+        "thresholdUnits": 100,
+        "counts": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 4,
+          "tn": 10
+        },
+        "display": {
+          "precision": "—",
+          "recall": "0.0%",
+          "accuracy": "71.4%",
+          "f1": "0.0%"
+        }
+      },
+      {
+        "mode": "slides",
+        "dataset": "default",
+        "thresholdUnits": 0,
+        "counts": {
+          "tp": 7,
+          "fp": 7,
+          "fn": 0,
+          "tn": 0
+        },
+        "display": {
+          "precision": "50.0%",
+          "recall": "100.0%",
+          "accuracy": "50.0%",
+          "f1": "66.7%"
+        }
+      },
+      {
+        "mode": "slides",
+        "dataset": "default",
+        "thresholdUnits": 50,
+        "counts": {
+          "tp": 5,
+          "fp": 3,
+          "fn": 2,
+          "tn": 4
+        },
+        "display": {
+          "precision": "62.5%",
+          "recall": "71.4%",
+          "accuracy": "64.3%",
+          "f1": "66.7%"
+        }
+      },
+      {
+        "mode": "slides",
+        "dataset": "default",
+        "thresholdUnits": 51,
+        "counts": {
+          "tp": 4,
+          "fp": 3,
+          "fn": 3,
+          "tn": 4
+        },
+        "display": {
+          "precision": "57.1%",
+          "recall": "57.1%",
+          "accuracy": "57.1%",
+          "f1": "57.1%"
+        }
+      },
+      {
+        "mode": "slides",
+        "dataset": "default",
+        "thresholdUnits": 100,
+        "counts": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 7,
+          "tn": 7
+        },
+        "display": {
+          "precision": "—",
+          "recall": "0.0%",
+          "accuracy": "50.0%",
+          "f1": "0.0%"
+        }
+      },
+      {
+        "mode": "slides",
+        "dataset": "shifted",
+        "thresholdUnits": 0,
+        "counts": {
+          "tp": 4,
+          "fp": 10,
+          "fn": 0,
+          "tn": 0
+        },
+        "display": {
+          "precision": "28.6%",
+          "recall": "100.0%",
+          "accuracy": "28.6%",
+          "f1": "44.4%"
+        }
+      },
+      {
+        "mode": "slides",
+        "dataset": "shifted",
+        "thresholdUnits": 50,
+        "counts": {
+          "tp": 3,
+          "fp": 4,
+          "fn": 1,
+          "tn": 6
+        },
+        "display": {
+          "precision": "42.9%",
+          "recall": "75.0%",
+          "accuracy": "64.3%",
+          "f1": "54.5%"
+        }
+      },
+      {
+        "mode": "slides",
+        "dataset": "shifted",
+        "thresholdUnits": 51,
+        "counts": {
+          "tp": 2,
+          "fp": 4,
+          "fn": 2,
+          "tn": 6
+        },
+        "display": {
+          "precision": "33.3%",
+          "recall": "50.0%",
+          "accuracy": "57.1%",
+          "f1": "40.0%"
+        }
+      },
+      {
+        "mode": "slides",
+        "dataset": "shifted",
+        "thresholdUnits": 100,
+        "counts": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 4,
+          "tn": 10
+        },
+        "display": {
+          "precision": "—",
+          "recall": "0.0%",
+          "accuracy": "71.4%",
+          "f1": "0.0%"
+        }
+      }
+    ],
+    "practice_meta_notes_absent": true,
+    "dataset_accessible_name": "데이터셋",
+    "full_404_state_independent_recalculation_repeated": false
+  },
+  "visual_inspection": {
+    "opened_reference_previews": [
+      "previews/html-interactive.jpg",
+      "previews/html-experiment.jpg"
+    ],
+    "opened_fresh_independent_captures": [
+      "1440x810 concept Scroll",
+      "1440x810 concept Slide",
+      "1280x720 practice Slide shifted threshold1.00"
+    ],
+    "opened_builder_canonical_previews": [
+      "examples/threshold-metrics/previews/slides-concept.png",
+      "examples/threshold-metrics/previews/slides-practice.png"
+    ],
+    "visual_findings": []
+  },
+  "builder_report_review": {
+    "path": "examples/threshold-metrics/previews/validation.json",
+    "status": "passed",
+    "screen_cases": 16,
+    "threshold_states": 404,
+    "source_sha256_all_match_current_files": true,
+    "preview_sha256_all_match_current_files": true,
+    "report_execution_was_builder_not_reviewer": true
+  },
+  "scope_assessment": {
+    "same_topic_reference_confirmed": "Canonical #5 already teaches threshold -> predictions -> confusion matrix/metrics. #7 also uses classification metrics. New sample count/layout does not prove transfer to a different concept.",
+    "topic_example_and_implemented_contracts": "sufficient for the declared threshold lesson and tested #5/#7 technical contracts",
+    "cross_concept_interactive_reuse": "not established; 일부 보완 필요 means further different-concept validation, not a newly found common-MD defect",
+    "responsive_vs_interactive": "PC viewport scaling and input-driven content updates are distinguished.",
+    "scope_expansion": "No extra lesson, new generic framework or modification to original patterns is implied."
+  },
+  "documentation_review": {
+    "D0_prefix_preserved": {
+      "DESIGN.md": true,
+      "VALIDATION.md": true
+    },
+    "user_overrides_recorded": "Single concept numeric example and omission of creator-facing sample notes are explicit current-user exceptions; shared source rules unchanged.",
+    "synthetic_uncalibrated_data_conditions_retained_in_DESIGN_and_README": true,
+    "original_D1_and_CI_claims_are_historical": true,
+    "prior_review_approval_not_reused_as_current_review": true,
+    "common_MD_new_gap_count": 0,
+    "common_MD_changes": 0,
+    "changed_protected_paths": []
+  },
+  "unchanged_calculation_and_state_sources": {
+    "app.js": true,
+    "model.js": true,
+    "data.json": true
+  },
+  "reviewed_source_sha256": {
+    "examples/threshold-metrics/content.html": "c030b8b80225be3f3268fa9c817bb2dfd5f9ae726008f601aee1c3fea90d4cae",
+    "examples/threshold-metrics/lesson.css": "a6eb1b2a5af400fcaee9b0179d2abe5269c58e159154a1037a6d6aa18518e9b1",
+    "examples/threshold-metrics/app.js": "168d0331962fac84339fb2cb353ea8f1a3c06e22d7d19629cde91865f872e00f",
+    "examples/threshold-metrics/model.js": "6985a5eb74e710151c9f4df5a3a3ff112a573dae7e7d4f55b03b77b279659ff9",
+    "examples/threshold-metrics/data.json": "75e33c5d05a68e04696a13c9bc1ccccba8236591cbf930984ac2b0ffa59f0804",
+    "scripts/verify_threshold_metrics.py": "49ecad104d51f2c3c40f2cc556d105f816f394256079654f2e15436c58ee2d62",
+    "examples/threshold-metrics/DESIGN.md": "544e7f88956acc9076fc7bc26947684a21932cf2df71f57677ec4538e531c4e3"
+  },
+  "limits": [
+    "No claim of full 404 independent oracle rerun in this feedback review; 16 independent practice smoke states plus Builder full suite reviewed.",
+    "Fresh independent geometry/font/numeric probe covers 8 concept screens; Builder full16 report independently read and hashes checked.",
+    "No actual novice comprehension or screen-reader listening study.",
+    "No independent latest remote CI/PR/CDN/public-image reachability check; publication belongs to coordinator.",
+    "Cross-concept general interactive transfer remains untested."
+  ]
+}

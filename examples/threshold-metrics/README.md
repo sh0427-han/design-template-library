@@ -16,9 +16,17 @@ Vision AI·머신러닝 입문자를 위한 개념 1장과 임계값 실습 1장
 
 검증 명령은 `python scripts/verify_threshold_metrics.py --static` 및 `python scripts/verify_threshold_metrics.py`다. 실제 Chromium 검사·16개 PC 화면·상태 시나리오·독립 Reviewer 결과는 VALIDATION.md와 검증 보고서에 별도로 기록했다. 모바일/태블릿, 실제 모델 학습, 실제 스크린리더 청취와 독립 독자의 이해도 실험은 범위에 포함하지 않는다.
 
-## 완성 프리뷰와 결과
+## 사용자 검토 후 현재 상태 · 2026-10-28
 
-기능 원본은 `cf17bdcc2d7961e2d3d1680bb3c5cbc6cb3dbb4a`로 고정했다. 두 보기는 같은 콘텐츠/계산/상태를 사용한다. 아래 CDN 링크의 외부 접속은 실행 환경의 CONNECT403 제한 때문에 직접 확인하지 못했으며, 실제 Chromium PNG와 저장소 원본/로컬 서버 경로를 함께 제공한다.
+개념 장 모델 출력에 `s = 0.72`와72% 막대를 넣고 판정 기준의 그림 이름을 ‘임계값’으로 정리했다. 두 장의 합성 예시 제작 문구는 화면에서 제거했다. 데이터 출처·점수의 의미는 이 문서와 설계 명세에 보존한다. 최신 실제 이미지는 아래 상대경로 PNG이며 과거 커밋으로 고정된 HTML 링크와 구분한다.
+
+실습은 불량 검출의 적용 예제로 유지한다. 원본#5도 임계값 예제이므로 이번 결과는 같은 분야의 재구성이다. 입력→단일 상태→계산→여러 표시의 동시 갱신은 재사용할 설계 관계지만, 현재 계산/타일/혼동행렬 코드는 이 주제 전용이다. 다른 개념의 인터랙티브 HTML까지 입증한 범용 템플릿으로 보지 않는다. 해당 계약의 재현은 충분하나 **범용 재사용성은 일부 보완 필요**이며 다른 개념 검증이 남았다. 공통 MD 결함을 새로 발견한 것은 아니므로 공통 파일 수정0건이다.
+
+[최신 검증](previews/validation.json) · [변경 기록](review/feedback-revision.json) · [이번 독립 검토](review/feedback-review.json)
+
+## 최초 D1 프리뷰와 결과 (현재 수정 전)
+
+최초 기능 원본은 `cf17bdcc2d7961e2d3d1680bb3c5cbc6cb3dbb4a`로 고정했다. 두 보기는 같은 콘텐츠/계산/상태를 사용한다. 아래 고정 CDN은 사용자 피드백 이전 화면이며, PNG 상대경로는 현재 수정본이다. 아래 CDN 링크의 외부 접속은 실행 환경의 CONNECT403 제한 때문에 직접 확인하지 못했으며, 실제 Chromium PNG와 저장소 원본/로컬 서버 경로를 함께 제공한다.
 
 - [Scroll 브라우저](https://raw.githack.com/sh0427-han/design-template-library/cf17bdcc2d7961e2d3d1680bb3c5cbc6cb3dbb4a/examples/threshold-metrics/scroll.html) · [Slide 브라우저](https://raw.githack.com/sh0427-han/design-template-library/cf17bdcc2d7961e2d3d1680bb3c5cbc6cb3dbb4a/examples/threshold-metrics/slides.html)
 - 개념 장: [Slide PNG](previews/slides-concept.png) · [Scroll PNG](previews/scroll-concept.png)
