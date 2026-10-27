@@ -122,3 +122,8 @@ R1-E01은 사용자 학습목표5/D0목표6의 화면 반영 누락(E)이다. �
 - 수정 전: ‘검사로 확인한 정답’ 및 하단 두 줄 문장. 수정 후: ‘모델 예측과 별도로 정해진 실제 정답’, 하단 ‘정답과 예측을 비교해 오탐·미탐 구분’. CSS 변경이나 강제 nowrap 없이 문구를 축약한다.
 - 이번 최신 증거는 `previews/validation.json`·대표 PNG와 `review/gt-wording-review.json`·`review/gt-wording-revision.json`이다. 이전 `feedback-review.json`·`feedback-revision.json`은62d56c4 소스의 검토 이력이며 최신 소스 검증과 구분한다.
 - 공통 Markdown 누락·모순·수정은 모두0건을 유지한다. 범용 재사용성의 미검증 범위와 ‘일부 보완 필요’ 평가는 변경하지 않는다.
+
+
+### 오탐·미탐 제목/설명 왼쪽 정렬
+
+2026-10-28 사용자 지적 E-ALIGN01: 제목은 왼쪽, 설명 flex행은 가운데여서 시작선이 달랐다. 기존 공통 카드/본문 정렬 기준의 구현 문제로 수정하며 공통 MD 추가0건이다. 부모 text-align:left와 설명 justify-content:flex-start를 적용했다. 최신 좁은 화면 검증은 `review/alignment-validation.json`, 독립 검토는 `review/alignment-review.json`이다. PC4크기×두모드의 개념8화면에서 제목과 첫 설명 문자의 실제 x좌표·경계·폰트를 확인한다. 계산/상태는 변경하지 않았으므로 이번에404상태를 다시 실행한 것으로 주장하지 않는다. `previews/validation.json`·contact·이전 GT 보고서는82cbf96 소스의 전체16화면/404상태 이력이며 최신 CSS 검사와 구분한다. 대표 개념PNG2개는 최신 정렬로 갱신한다.

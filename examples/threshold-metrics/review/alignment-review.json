@@ -1,0 +1,238 @@
+{
+  "reviewer": "/root/feedback_reviewer",
+  "role": "Independent Reviewer; root authored CSS alignment and documentation edits",
+  "created_utc": "2026-10-27T23:34:17.113104+00:00",
+  "review_round": 1,
+  "status": "approved_with_scope_limits",
+  "findings": [],
+  "unresolved_findings": 0,
+  "scope": "Only the concept slide FP/FN section title/description left-alignment CSS change. Independent fresh1440/1280 Scroll/Slide checks; no new full16/404 review claimed.",
+  "parent_revision": "82cbf96dcaef56fdb69809da4f1abb1e7e24d022",
+  "source_review": {
+    "CSS_changes": [
+      ".error-example text-align:left",
+      ".error-example p justify-content:flex-start"
+    ],
+    "content_and_model_state_data_unchanged": {
+      "content.html": true,
+      "app.js": true,
+      "model.js": true,
+      "data.json": true
+    },
+    "protected_paths_changed": [],
+    "common_MD_changed_count": 0,
+    "existing_rule_application": "Align title and related description to a shared start line; classify prior inconsistency as implementation issue E-ALIGN01, not new shared Markdown gap."
+  },
+  "independent_browser_review": {
+    "chromium": "154.0.8037.57",
+    "case_count": 4,
+    "viewports": [
+      [
+        1440,
+        810
+      ],
+      [
+        1280,
+        720
+      ]
+    ],
+    "modes": [
+      "scroll",
+      "slides"
+    ],
+    "method": "New local HTTP server and fresh Chromium contexts; separate TreeWalker and DOM Range measurement of first non-space character in each h3 and its first description. No Builder alignment checker function reused.",
+    "checks": [
+      {
+        "viewport": [
+          1440,
+          810
+        ],
+        "mode": "scroll",
+        "error_explanations": [
+          {
+            "title": "오탐 False Positive · FP",
+            "description": "실제 정상→불량 예측",
+            "titleFirstGlyphX": 552,
+            "descriptionFirstGlyphX": 552,
+            "xDifference": 0,
+            "normalizedDifference": 0,
+            "titleOffset": 0,
+            "descriptionOffset": 0,
+            "textAlign": "left",
+            "bodyJustifyContent": "flex-start",
+            "descriptionWithinSection": true,
+            "letterSpacing": "-1.33333px"
+          },
+          {
+            "title": "미탐 False Negative · FN",
+            "description": "실제 불량→정상 예측",
+            "titleFirstGlyphX": 919,
+            "descriptionFirstGlyphX": 919,
+            "xDifference": 0,
+            "normalizedDifference": 0,
+            "titleOffset": 0,
+            "descriptionOffset": 0,
+            "textAlign": "left",
+            "bodyJustifyContent": "flex-start",
+            "descriptionWithinSection": true,
+            "letterSpacing": "-1.33333px"
+          }
+        ],
+        "page_errors": [],
+        "independent_capture": "/tmp/alignment-independent-scroll-1440.png"
+      },
+      {
+        "viewport": [
+          1440,
+          810
+        ],
+        "mode": "slides",
+        "error_explanations": [
+          {
+            "title": "오탐 False Positive · FP",
+            "description": "실제 정상→불량 예측",
+            "titleFirstGlyphX": 552,
+            "descriptionFirstGlyphX": 552,
+            "xDifference": 0,
+            "normalizedDifference": 0,
+            "titleOffset": 0,
+            "descriptionOffset": 0,
+            "textAlign": "left",
+            "bodyJustifyContent": "flex-start",
+            "descriptionWithinSection": true,
+            "letterSpacing": "-1.33333px"
+          },
+          {
+            "title": "미탐 False Negative · FN",
+            "description": "실제 불량→정상 예측",
+            "titleFirstGlyphX": 919,
+            "descriptionFirstGlyphX": 919,
+            "xDifference": 0,
+            "normalizedDifference": 0,
+            "titleOffset": 0,
+            "descriptionOffset": 0,
+            "textAlign": "left",
+            "bodyJustifyContent": "flex-start",
+            "descriptionWithinSection": true,
+            "letterSpacing": "-1.33333px"
+          }
+        ],
+        "page_errors": [],
+        "independent_capture": "/tmp/alignment-independent-slides-1440.png"
+      },
+      {
+        "viewport": [
+          1280,
+          720
+        ],
+        "mode": "scroll",
+        "error_explanations": [
+          {
+            "title": "오탐 False Positive · FP",
+            "description": "실제 정상→불량 예측",
+            "titleFirstGlyphX": 493.6875,
+            "descriptionFirstGlyphX": 493.6875,
+            "xDifference": 0,
+            "normalizedDifference": 0,
+            "titleOffset": 0,
+            "descriptionOffset": 0,
+            "textAlign": "left",
+            "bodyJustifyContent": "flex-start",
+            "descriptionWithinSection": true,
+            "letterSpacing": "-1.33333px"
+          },
+          {
+            "title": "미탐 False Negative · FN",
+            "description": "실제 불량→정상 예측",
+            "titleFirstGlyphX": 813.296875,
+            "descriptionFirstGlyphX": 813.296875,
+            "xDifference": 0,
+            "normalizedDifference": 0,
+            "titleOffset": 0,
+            "descriptionOffset": 0,
+            "textAlign": "left",
+            "bodyJustifyContent": "flex-start",
+            "descriptionWithinSection": true,
+            "letterSpacing": "-1.33333px"
+          }
+        ],
+        "page_errors": [],
+        "independent_capture": "/tmp/alignment-independent-scroll-1280.png"
+      },
+      {
+        "viewport": [
+          1280,
+          720
+        ],
+        "mode": "slides",
+        "error_explanations": [
+          {
+            "title": "오탐 False Positive · FP",
+            "description": "실제 정상→불량 예측",
+            "titleFirstGlyphX": 493.6875,
+            "descriptionFirstGlyphX": 493.6875,
+            "xDifference": 0,
+            "normalizedDifference": 0,
+            "titleOffset": 0,
+            "descriptionOffset": 0,
+            "textAlign": "left",
+            "bodyJustifyContent": "flex-start",
+            "descriptionWithinSection": true,
+            "letterSpacing": "-1.33333px"
+          },
+          {
+            "title": "미탐 False Negative · FN",
+            "description": "실제 불량→정상 예측",
+            "titleFirstGlyphX": 813.296875,
+            "descriptionFirstGlyphX": 813.296875,
+            "xDifference": 0,
+            "normalizedDifference": 0,
+            "titleOffset": 0,
+            "descriptionOffset": 0,
+            "textAlign": "left",
+            "bodyJustifyContent": "flex-start",
+            "descriptionWithinSection": true,
+            "letterSpacing": "-1.33333px"
+          }
+        ],
+        "page_errors": [],
+        "independent_capture": "/tmp/alignment-independent-slides-1280.png"
+      }
+    ],
+    "max_abs_title_body_x_difference_px": 0,
+    "all_four_independent_PNGs_opened_visually": true,
+    "visual_assessment": "FP/FN headings and their actual/predicted explanatory rows share the left start line. Description arrows and class meanings remain legible. No visible clipping, overlaps or footer issue in inspected four captures."
+  },
+  "builder_evidence_review": {
+    "path": "examples/threshold-metrics/review/alignment-validation.json",
+    "status": "passed",
+    "concept_screen_cases": 8,
+    "source_sha256_match_current_files": true,
+    "preview_sha256_match_current_files": true,
+    "report_execution_was_by_builder": true,
+    "latest_canonical_preview_files": [
+      "examples/threshold-metrics/previews/scroll-concept.png",
+      "examples/threshold-metrics/previews/slides-concept.png"
+    ],
+    "historical_full_suite": "previews/validation.json and old contact/GT reports are from parent82cbf96; latest narrow report is not full16/404 rerun."
+  },
+  "documentation_review": {
+    "DESIGN_alignment_appendix_seen": true,
+    "VALIDATION_E_ALIGN01_and_narrow_scope_seen": true,
+    "README_current_alignment_report_link_seen": true,
+    "cross_concept_generic_interactive_assessment_unchanged": "일부 보완 필요"
+  },
+  "reviewed_source_sha256": {
+    "examples/threshold-metrics/lesson.css": "1ee831ba57e7ae514dae4b6d96aa2f7f62ce8b09f0abd00ea68e1dcdfb87a621",
+    "examples/threshold-metrics/content.html": "e92da0d126d04cb439235755215c0edc8119149b272b9f23e137384c166feb02",
+    "examples/threshold-metrics/app.js": "168d0331962fac84339fb2cb353ea8f1a3c06e22d7d19629cde91865f872e00f",
+    "examples/threshold-metrics/model.js": "6985a5eb74e710151c9f4df5a3a3ff112a573dae7e7d4f55b03b77b279659ff9",
+    "examples/threshold-metrics/data.json": "75e33c5d05a68e04696a13c9bc1ccccba8236591cbf930984ac2b0ffa59f0804"
+  },
+  "limits": [
+    "Independent alignment review covers4 representative concept screens, while Builder reviewed8 concept screens.",
+    "No new independent404-state arithmetic run; content, data, model and app state logic are byte-identical to parent revision.",
+    "This probe checks computed tracking and visual captures; actual font CDP results are Builder report evidence.",
+    "No actual screen-reader listening, learner study, mobile/tablet/other browser evaluation or remote publication/CI check."
+  ]
+}

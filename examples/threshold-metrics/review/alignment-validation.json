@@ -1,0 +1,812 @@
+{
+  "status": "passed",
+  "scope": "Only concept alignment: 4 PC sizes x Scroll/Slide. No repeated 404-state arithmetic run.",
+  "prior_full_validation_source": "82cbf96dcaef56fdb69809da4f1abb1e7e24d022",
+  "prior_full_validation": "../previews/validation.json",
+  "screen_cases": [
+    {
+      "viewport": [
+        1600,
+        950
+      ],
+      "mode": "scroll",
+      "alignment": [
+        {
+          "title": "오탐",
+          "titleX": 605,
+          "descriptionX": 605,
+          "delta": 0,
+          "textAlign": "left",
+          "justifyContent": "flex-start"
+        },
+        {
+          "title": "미탐",
+          "titleX": 1031,
+          "descriptionX": 1031,
+          "delta": 0,
+          "textAlign": "left",
+          "justifyContent": "flex-start"
+        }
+      ],
+      "geometry": {
+        "slide": {
+          "x": 80,
+          "y": 65,
+          "right": 1520,
+          "bottom": 875,
+          "width": 1440,
+          "height": 810
+        },
+        "scale": 1,
+        "outside": [],
+        "overflow": [],
+        "footerOverlap": [],
+        "spacing": [],
+        "textClipping": [],
+        "panels": [
+          {
+            "escaped": [],
+            "labelCount": 1,
+            "titleCount": 1,
+            "labelColor": "rgb(49, 104, 200)",
+            "titleColor": "rgb(18, 35, 63)"
+          }
+        ],
+        "metricEscaped": [],
+        "svgOutside": [],
+        "svgCollisions": [],
+        "viewportContainment": {
+          "top": 65,
+          "bottom": 875,
+          "barBottom": 44,
+          "height": 950,
+          "fullyVisible": true
+        },
+        "heading": "점수와 판정을 가르는 임계값",
+        "footerText": "Vision AI 기초 · 분류 임계값과 성능 변화01 / 02",
+        "htmlOverflow": false
+      },
+      "fonts": {
+        "elements": 46,
+        "families": {
+          "Pretendard Variable": 489,
+          "STIX Two Math": 13
+        },
+        "fallback": [],
+        "unpainted": [],
+        "bad_spacing": [],
+        "loaded": {
+          "counts": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "faces": [
+            {
+              "family": "Pretendard Variable",
+              "weight": "100 900",
+              "status": "loaded"
+            }
+          ],
+          "math": {
+            "count": 1,
+            "faces": [
+              {
+                "family": "STIX Two Math",
+                "status": "loaded",
+                "weight": "400"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "viewport": [
+        1600,
+        950
+      ],
+      "mode": "slides",
+      "alignment": [
+        {
+          "title": "오탐",
+          "titleX": 605,
+          "descriptionX": 605,
+          "delta": 0,
+          "textAlign": "left",
+          "justifyContent": "flex-start"
+        },
+        {
+          "title": "미탐",
+          "titleX": 1031,
+          "descriptionX": 1031,
+          "delta": 0,
+          "textAlign": "left",
+          "justifyContent": "flex-start"
+        }
+      ],
+      "geometry": {
+        "slide": {
+          "x": 80,
+          "y": 70,
+          "right": 1520,
+          "bottom": 880,
+          "width": 1440,
+          "height": 810
+        },
+        "scale": 1,
+        "outside": [],
+        "overflow": [],
+        "footerOverlap": [],
+        "spacing": [],
+        "textClipping": [],
+        "panels": [
+          {
+            "escaped": [],
+            "labelCount": 1,
+            "titleCount": 1,
+            "labelColor": "rgb(49, 104, 200)",
+            "titleColor": "rgb(18, 35, 63)"
+          }
+        ],
+        "metricEscaped": [],
+        "svgOutside": [],
+        "svgCollisions": [],
+        "viewportContainment": {
+          "top": 70,
+          "bottom": 880,
+          "barBottom": 44,
+          "height": 950,
+          "fullyVisible": true
+        },
+        "heading": "점수와 판정을 가르는 임계값",
+        "footerText": "Vision AI 기초 · 분류 임계값과 성능 변화01 / 02",
+        "htmlOverflow": false
+      },
+      "fonts": {
+        "elements": 46,
+        "families": {
+          "Pretendard Variable": 489,
+          "STIX Two Math": 13
+        },
+        "fallback": [],
+        "unpainted": [],
+        "bad_spacing": [],
+        "loaded": {
+          "counts": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "faces": [
+            {
+              "family": "Pretendard Variable",
+              "weight": "100 900",
+              "status": "loaded"
+            }
+          ],
+          "math": {
+            "count": 1,
+            "faces": [
+              {
+                "family": "STIX Two Math",
+                "status": "loaded",
+                "weight": "400"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "viewport": [
+        1440,
+        810
+      ],
+      "mode": "scroll",
+      "alignment": [
+        {
+          "title": "오탐",
+          "titleX": 552,
+          "descriptionX": 552,
+          "delta": 0,
+          "textAlign": "left",
+          "justifyContent": "flex-start"
+        },
+        {
+          "title": "미탐",
+          "titleX": 919,
+          "descriptionX": 919,
+          "delta": 0,
+          "textAlign": "left",
+          "justifyContent": "flex-start"
+        }
+      ],
+      "geometry": {
+        "slide": {
+          "x": 99.5625,
+          "y": 65,
+          "right": 1340.4375,
+          "bottom": 763,
+          "width": 1240.875,
+          "height": 698
+        },
+        "scale": 0.86171875,
+        "outside": [],
+        "overflow": [],
+        "footerOverlap": [],
+        "spacing": [],
+        "textClipping": [],
+        "panels": [
+          {
+            "escaped": [],
+            "labelCount": 1,
+            "titleCount": 1,
+            "labelColor": "rgb(49, 104, 200)",
+            "titleColor": "rgb(18, 35, 63)"
+          }
+        ],
+        "metricEscaped": [],
+        "svgOutside": [],
+        "svgCollisions": [],
+        "viewportContainment": {
+          "top": 65,
+          "bottom": 763,
+          "barBottom": 44,
+          "height": 810,
+          "fullyVisible": true
+        },
+        "heading": "점수와 판정을 가르는 임계값",
+        "footerText": "Vision AI 기초 · 분류 임계값과 성능 변화01 / 02",
+        "htmlOverflow": false
+      },
+      "fonts": {
+        "elements": 46,
+        "families": {
+          "Pretendard Variable": 489,
+          "STIX Two Math": 13
+        },
+        "fallback": [],
+        "unpainted": [],
+        "bad_spacing": [],
+        "loaded": {
+          "counts": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "faces": [
+            {
+              "family": "Pretendard Variable",
+              "weight": "100 900",
+              "status": "loaded"
+            }
+          ],
+          "math": {
+            "count": 1,
+            "faces": [
+              {
+                "family": "STIX Two Math",
+                "status": "loaded",
+                "weight": "400"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "viewport": [
+        1440,
+        810
+      ],
+      "mode": "slides",
+      "alignment": [
+        {
+          "title": "오탐",
+          "titleX": 552,
+          "descriptionX": 552,
+          "delta": 0,
+          "textAlign": "left",
+          "justifyContent": "flex-start"
+        },
+        {
+          "title": "미탐",
+          "titleX": 919,
+          "descriptionX": 919,
+          "delta": 0,
+          "textAlign": "left",
+          "justifyContent": "flex-start"
+        }
+      ],
+      "geometry": {
+        "slide": {
+          "x": 99.5625,
+          "y": 56,
+          "right": 1340.4375,
+          "bottom": 754,
+          "width": 1240.875,
+          "height": 698
+        },
+        "scale": 0.86171875,
+        "outside": [],
+        "overflow": [],
+        "footerOverlap": [],
+        "spacing": [],
+        "textClipping": [],
+        "panels": [
+          {
+            "escaped": [],
+            "labelCount": 1,
+            "titleCount": 1,
+            "labelColor": "rgb(49, 104, 200)",
+            "titleColor": "rgb(18, 35, 63)"
+          }
+        ],
+        "metricEscaped": [],
+        "svgOutside": [],
+        "svgCollisions": [],
+        "viewportContainment": {
+          "top": 56,
+          "bottom": 754,
+          "barBottom": 44,
+          "height": 810,
+          "fullyVisible": true
+        },
+        "heading": "점수와 판정을 가르는 임계값",
+        "footerText": "Vision AI 기초 · 분류 임계값과 성능 변화01 / 02",
+        "htmlOverflow": false
+      },
+      "fonts": {
+        "elements": 46,
+        "families": {
+          "Pretendard Variable": 489,
+          "STIX Two Math": 13
+        },
+        "fallback": [],
+        "unpainted": [],
+        "bad_spacing": [],
+        "loaded": {
+          "counts": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "faces": [
+            {
+              "family": "Pretendard Variable",
+              "weight": "100 900",
+              "status": "loaded"
+            }
+          ],
+          "math": {
+            "count": 1,
+            "faces": [
+              {
+                "family": "STIX Two Math",
+                "status": "loaded",
+                "weight": "400"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "viewport": [
+        1366,
+        768
+      ],
+      "mode": "scroll",
+      "alignment": [
+        {
+          "title": "오탐",
+          "titleX": 525.109375,
+          "descriptionX": 525.109375,
+          "delta": 0,
+          "textAlign": "left",
+          "justifyContent": "flex-start"
+        },
+        {
+          "title": "미탐",
+          "titleX": 870,
+          "descriptionX": 870,
+          "delta": 0,
+          "textAlign": "left",
+          "justifyContent": "flex-start"
+        }
+      ],
+      "geometry": {
+        "slide": {
+          "x": 99.890625,
+          "y": 65,
+          "right": 1266.109375,
+          "bottom": 721,
+          "width": 1166.21875,
+          "height": 656
+        },
+        "scale": 0.8098741319444445,
+        "outside": [],
+        "overflow": [],
+        "footerOverlap": [],
+        "spacing": [],
+        "textClipping": [],
+        "panels": [
+          {
+            "escaped": [],
+            "labelCount": 1,
+            "titleCount": 1,
+            "labelColor": "rgb(49, 104, 200)",
+            "titleColor": "rgb(18, 35, 63)"
+          }
+        ],
+        "metricEscaped": [],
+        "svgOutside": [],
+        "svgCollisions": [],
+        "viewportContainment": {
+          "top": 65,
+          "bottom": 721,
+          "barBottom": 44,
+          "height": 768,
+          "fullyVisible": true
+        },
+        "heading": "점수와 판정을 가르는 임계값",
+        "footerText": "Vision AI 기초 · 분류 임계값과 성능 변화01 / 02",
+        "htmlOverflow": false
+      },
+      "fonts": {
+        "elements": 46,
+        "families": {
+          "Pretendard Variable": 489,
+          "STIX Two Math": 13
+        },
+        "fallback": [],
+        "unpainted": [],
+        "bad_spacing": [],
+        "loaded": {
+          "counts": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "faces": [
+            {
+              "family": "Pretendard Variable",
+              "weight": "100 900",
+              "status": "loaded"
+            }
+          ],
+          "math": {
+            "count": 1,
+            "faces": [
+              {
+                "family": "STIX Two Math",
+                "status": "loaded",
+                "weight": "400"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "viewport": [
+        1366,
+        768
+      ],
+      "mode": "slides",
+      "alignment": [
+        {
+          "title": "오탐",
+          "titleX": 525.109375,
+          "descriptionX": 525.109375,
+          "delta": 0,
+          "textAlign": "left",
+          "justifyContent": "flex-start"
+        },
+        {
+          "title": "미탐",
+          "titleX": 870,
+          "descriptionX": 870,
+          "delta": 0,
+          "textAlign": "left",
+          "justifyContent": "flex-start"
+        }
+      ],
+      "geometry": {
+        "slide": {
+          "x": 99.890625,
+          "y": 56,
+          "right": 1266.109375,
+          "bottom": 712,
+          "width": 1166.21875,
+          "height": 656
+        },
+        "scale": 0.8098741319444445,
+        "outside": [],
+        "overflow": [],
+        "footerOverlap": [],
+        "spacing": [],
+        "textClipping": [],
+        "panels": [
+          {
+            "escaped": [],
+            "labelCount": 1,
+            "titleCount": 1,
+            "labelColor": "rgb(49, 104, 200)",
+            "titleColor": "rgb(18, 35, 63)"
+          }
+        ],
+        "metricEscaped": [],
+        "svgOutside": [],
+        "svgCollisions": [],
+        "viewportContainment": {
+          "top": 56,
+          "bottom": 712,
+          "barBottom": 44,
+          "height": 768,
+          "fullyVisible": true
+        },
+        "heading": "점수와 판정을 가르는 임계값",
+        "footerText": "Vision AI 기초 · 분류 임계값과 성능 변화01 / 02",
+        "htmlOverflow": false
+      },
+      "fonts": {
+        "elements": 46,
+        "families": {
+          "Pretendard Variable": 489,
+          "STIX Two Math": 13
+        },
+        "fallback": [],
+        "unpainted": [],
+        "bad_spacing": [],
+        "loaded": {
+          "counts": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "faces": [
+            {
+              "family": "Pretendard Variable",
+              "weight": "100 900",
+              "status": "loaded"
+            }
+          ],
+          "math": {
+            "count": 1,
+            "faces": [
+              {
+                "family": "STIX Two Math",
+                "status": "loaded",
+                "weight": "400"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "viewport": [
+        1280,
+        720
+      ],
+      "mode": "scroll",
+      "alignment": [
+        {
+          "title": "오탐",
+          "titleX": 493.6875,
+          "descriptionX": 493.6875,
+          "delta": 0,
+          "textAlign": "left",
+          "justifyContent": "flex-start"
+        },
+        {
+          "title": "미탐",
+          "titleX": 813.296875,
+          "descriptionX": 813.296875,
+          "delta": 0,
+          "textAlign": "left",
+          "justifyContent": "flex-start"
+        }
+      ],
+      "geometry": {
+        "slide": {
+          "x": 99.5625,
+          "y": 65,
+          "right": 1180.4375,
+          "bottom": 673,
+          "width": 1080.875,
+          "height": 608
+        },
+        "scale": 0.7506076388888889,
+        "outside": [],
+        "overflow": [],
+        "footerOverlap": [],
+        "spacing": [],
+        "textClipping": [],
+        "panels": [
+          {
+            "escaped": [],
+            "labelCount": 1,
+            "titleCount": 1,
+            "labelColor": "rgb(49, 104, 200)",
+            "titleColor": "rgb(18, 35, 63)"
+          }
+        ],
+        "metricEscaped": [],
+        "svgOutside": [],
+        "svgCollisions": [],
+        "viewportContainment": {
+          "top": 65,
+          "bottom": 673,
+          "barBottom": 44,
+          "height": 720,
+          "fullyVisible": true
+        },
+        "heading": "점수와 판정을 가르는 임계값",
+        "footerText": "Vision AI 기초 · 분류 임계값과 성능 변화01 / 02",
+        "htmlOverflow": false
+      },
+      "fonts": {
+        "elements": 46,
+        "families": {
+          "Pretendard Variable": 489,
+          "STIX Two Math": 13
+        },
+        "fallback": [],
+        "unpainted": [],
+        "bad_spacing": [],
+        "loaded": {
+          "counts": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "faces": [
+            {
+              "family": "Pretendard Variable",
+              "weight": "100 900",
+              "status": "loaded"
+            }
+          ],
+          "math": {
+            "count": 1,
+            "faces": [
+              {
+                "family": "STIX Two Math",
+                "status": "loaded",
+                "weight": "400"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "viewport": [
+        1280,
+        720
+      ],
+      "mode": "slides",
+      "alignment": [
+        {
+          "title": "오탐",
+          "titleX": 493.6875,
+          "descriptionX": 493.6875,
+          "delta": 0,
+          "textAlign": "left",
+          "justifyContent": "flex-start"
+        },
+        {
+          "title": "미탐",
+          "titleX": 813.296875,
+          "descriptionX": 813.296875,
+          "delta": 0,
+          "textAlign": "left",
+          "justifyContent": "flex-start"
+        }
+      ],
+      "geometry": {
+        "slide": {
+          "x": 99.5625,
+          "y": 56,
+          "right": 1180.4375,
+          "bottom": 664,
+          "width": 1080.875,
+          "height": 608
+        },
+        "scale": 0.7506076388888889,
+        "outside": [],
+        "overflow": [],
+        "footerOverlap": [],
+        "spacing": [],
+        "textClipping": [],
+        "panels": [
+          {
+            "escaped": [],
+            "labelCount": 1,
+            "titleCount": 1,
+            "labelColor": "rgb(49, 104, 200)",
+            "titleColor": "rgb(18, 35, 63)"
+          }
+        ],
+        "metricEscaped": [],
+        "svgOutside": [],
+        "svgCollisions": [],
+        "viewportContainment": {
+          "top": 56,
+          "bottom": 664,
+          "barBottom": 44,
+          "height": 720,
+          "fullyVisible": true
+        },
+        "heading": "점수와 판정을 가르는 임계값",
+        "footerText": "Vision AI 기초 · 분류 임계값과 성능 변화01 / 02",
+        "htmlOverflow": false
+      },
+      "fonts": {
+        "elements": 46,
+        "families": {
+          "Pretendard Variable": 489,
+          "STIX Two Math": 13
+        },
+        "fallback": [],
+        "unpainted": [],
+        "bad_spacing": [],
+        "loaded": {
+          "counts": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "faces": [
+            {
+              "family": "Pretendard Variable",
+              "weight": "100 900",
+              "status": "loaded"
+            }
+          ],
+          "math": {
+            "count": 1,
+            "faces": [
+              {
+                "family": "STIX Two Math",
+                "status": "loaded",
+                "weight": "400"
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "chromium": "154.0.8037.57",
+  "console_errors": [],
+  "failed_requests": [],
+  "http_errors": [],
+  "source_sha256": {
+    "examples/threshold-metrics/scroll.html": "d0a4b9390cbe21d1137b0195f12be26f49f988fecd19514f0335f89119bc88d0",
+    "examples/threshold-metrics/slides.html": "bf5182ab361d909f0dcb5f1ce6b076320c0a9e08e5af2306b3169fa476073136",
+    "examples/threshold-metrics/content.html": "e92da0d126d04cb439235755215c0edc8119149b272b9f23e137384c166feb02",
+    "examples/threshold-metrics/lesson.css": "1ee831ba57e7ae514dae4b6d96aa2f7f62ce8b09f0abd00ea68e1dcdfb87a621",
+    "examples/threshold-metrics/model.js": "6985a5eb74e710151c9f4df5a3a3ff112a573dae7e7d4f55b03b77b279659ff9",
+    "examples/threshold-metrics/app.js": "168d0331962fac84339fb2cb353ea8f1a3c06e22d7d19629cde91865f872e00f",
+    "examples/threshold-metrics/data.json": "75e33c5d05a68e04696a13c9bc1ccccba8236591cbf930984ac2b0ffa59f0804",
+    "examples/threshold-metrics/DESIGN.md": "5a03f17fa1163e87b339fd8ec30aa8cd0eeefdaacd078e4ddd11ab7c49c94233",
+    "examples/threshold-metrics/VALIDATION.md": "c07bc6af94734648915d5894567362d181d48f028b1d1d946bed254df94ee75a",
+    "examples/threshold-metrics/README.md": "91cabef8d10c4e3963d99414c841741aae7ebd5e1620ef9a710d0ce510808ed1"
+  },
+  "preview_sha256": {
+    "examples/threshold-metrics/previews/scroll-concept.png": "1bf209b5adf5eed87e80228d74eef023e8e98629cb2b3a7f134fff3ed001b93f",
+    "examples/threshold-metrics/previews/slides-concept.png": "bb4077a5758d31f7c0f67caa2060c979623a81b6b512400cb7c13269ae4373a9"
+  }
+}
