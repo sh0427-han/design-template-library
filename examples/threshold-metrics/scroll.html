@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ko"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>분류 임계값과 성능 변화 · Scroll</title>
+<link rel="stylesheet" href="../../templates/html/styles.css">
+<link rel="stylesheet" href="../../templates/html/reference-types.css">
+<link rel="stylesheet" href="../../templates/html/reference-layout.css">
+<link rel="stylesheet" href="../../templates/html/math-typography.css">
+<link rel="stylesheet" href="lesson.css">
+<script>
+window.showLessonScriptError = function () {
+  const root = document.getElementById('lesson');
+  if (!root) return;
+  root.replaceChildren();
+  const message = document.createElement('p');
+  message.className = 'loading-state';
+  message.textContent = '필수 스크립트를 불러오지 못했습니다. JavaScript와 파일 로드를 확인한 뒤 새로고침해 주세요. ';
+  const retry = document.createElement('button');
+  retry.type = 'button'; retry.textContent = '다시 불러오기';
+  retry.addEventListener('click', function () { location.reload(); });
+  message.appendChild(retry); root.appendChild(message);
+  root.setAttribute('aria-busy', 'false'); document.body.dataset.ready = 'error';
+};
+</script>
+<script src="model.js" defer onerror="showLessonScriptError()"></script><script src="app.js" defer onerror="showLessonScriptError()"></script>
+</head><body class="threshold-lesson" data-mode="scroll">
+<nav class="viewer-bar" aria-label="보기와 목차"><span class="viewer-name">분류 임계값과 성능 변화</span><a id="scroll-mode" href="scroll.html#concept" aria-current="page">Scroll</a><a id="slide-mode" href="slides.html#concept">Slide</a><span class="viewer-divider" aria-hidden="true"></span><a href="#concept" data-go="concept">1. 임계값의 의미</a><a href="#practice" data-go="practice">2. 임계값 실습</a></nav>
+<p class="viewer-notice" id="url-notice" role="status" hidden></p>
+<main id="lesson" aria-busy="true"><p class="loading-state">자료를 불러오는 중… 안내가 계속되면 JavaScript와 파일 로드를 확인한 뒤 새로고침해 주세요.</p></main>
+<nav class="slide-controls" aria-label="슬라이드 탐색"><button id="previous" type="button">이전</button><span id="page-status">1 / 2</span><button id="next" type="button">다음</button></nav>
+<noscript><p class="no-script">두 장의 콘텐츠와 임계값 실습에는 JavaScript가 필요합니다. JavaScript를 켜고 새로고침해 주세요.</p></noscript>
+</body></html>

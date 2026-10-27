@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "datasets": {
+    "default": {
+      "label": "기본 데이터 · 불량 7 / 정상 7",
+      "samples": [
+        {"id":"D01","scoreUnits":18,"truth":1},
+        {"id":"D02","scoreUnits":41,"truth":1},
+        {"id":"D03","scoreUnits":50,"truth":1},
+        {"id":"D04","scoreUnits":64,"truth":1},
+        {"id":"D05","scoreUnits":79,"truth":1},
+        {"id":"D06","scoreUnits":86,"truth":1},
+        {"id":"D07","scoreUnits":97,"truth":1},
+        {"id":"N01","scoreUnits":6,"truth":0},
+        {"id":"N02","scoreUnits":12,"truth":0},
+        {"id":"N03","scoreUnits":25,"truth":0},
+        {"id":"N04","scoreUnits":33,"truth":0},
+        {"id":"N05","scoreUnits":57,"truth":0},
+        {"id":"N06","scoreUnits":72,"truth":0},
+        {"id":"N07","scoreUnits":92,"truth":0}
+      ]
+    },
+    "shifted": {
+      "label": "다른 비율 · 불량 4 / 정상 10",
+      "samples": [
+        {"id":"S01","scoreUnits":4,"truth":0},
+        {"id":"S02","scoreUnits":11,"truth":0},
+        {"id":"S03","scoreUnits":16,"truth":1},
+        {"id":"S04","scoreUnits":23,"truth":0},
+        {"id":"S05","scoreUnits":29,"truth":0},
+        {"id":"S06","scoreUnits":37,"truth":0},
+        {"id":"S07","scoreUnits":46,"truth":0},
+        {"id":"S08","scoreUnits":50,"truth":1},
+        {"id":"S09","scoreUnits":58,"truth":0},
+        {"id":"S10","scoreUnits":66,"truth":0},
+        {"id":"S11","scoreUnits":74,"truth":1},
+        {"id":"S12","scoreUnits":81,"truth":0},
+        {"id":"S13","scoreUnits":89,"truth":0},
+        {"id":"S14","scoreUnits":96,"truth":1}
+      ]
+    }
+  }
+}
