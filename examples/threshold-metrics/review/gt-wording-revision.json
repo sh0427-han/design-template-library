@@ -1,0 +1,69 @@
+{
+  "revision": "GT wording clarification",
+  "date_korea": "2026-10-28",
+  "previous_source": "62d56c4b61a1086ec30c8fc4a33852b11a05c1a1",
+  "changes": {
+    "ground_truth_definition": "실제값(Ground Truth, GT)은 모델 예측과 별도로 정해진 실제 정답",
+    "fixed_truth_caption": "정답과 예측을 비교해 오탐·미탐 구분"
+  },
+  "reason": "Avoid connecting ground truth to the model inspection step; keep the lower caption naturally on one line.",
+  "classification": "E-GT01: ambiguous application of the existing actual-versus-prediction distinction; no shared Markdown gap.",
+  "browser": {
+    "report": "../previews/validation.json",
+    "status": "passed",
+    "chromium": "154.0.8037.57",
+    "screen_cases": 16,
+    "threshold_scenarios": 404,
+    "custom_states": 20,
+    "page_errors": [],
+    "failed_requests": [],
+    "http_errors": []
+  },
+  "independent_review": "gt-wording-review.json",
+  "independent_scope": "8 concept screens: actual one-line caption, bounds, actual fonts and semantic distinction. See reviewer report for exact scope.",
+  "source_sha256": {
+    "examples/threshold-metrics/scroll.html": "d0a4b9390cbe21d1137b0195f12be26f49f988fecd19514f0335f89119bc88d0",
+    "examples/threshold-metrics/slides.html": "bf5182ab361d909f0dcb5f1ce6b076320c0a9e08e5af2306b3169fa476073136",
+    "examples/threshold-metrics/content.html": "e92da0d126d04cb439235755215c0edc8119149b272b9f23e137384c166feb02",
+    "examples/threshold-metrics/lesson.css": "a6eb1b2a5af400fcaee9b0179d2abe5269c58e159154a1037a6d6aa18518e9b1",
+    "examples/threshold-metrics/model.js": "6985a5eb74e710151c9f4df5a3a3ff112a573dae7e7d4f55b03b77b279659ff9",
+    "examples/threshold-metrics/app.js": "168d0331962fac84339fb2cb353ea8f1a3c06e22d7d19629cde91865f872e00f",
+    "examples/threshold-metrics/data.json": "75e33c5d05a68e04696a13c9bc1ccccba8236591cbf930984ac2b0ffa59f0804",
+    "examples/threshold-metrics/DESIGN.md": "e05ffcf402bac8d42d500513832c496fc5d537e101fb37427029c5487d465a77",
+    "scripts/verify_threshold_metrics.py": "49ecad104d51f2c3c40f2cc556d105f816f394256079654f2e15436c58ee2d62",
+    ".github/workflows/validate-threshold-metrics.yml": "3517a80af25ec350084745b82e4ca9e8fa9bb04d4743c5d96d7636b90512368a"
+  },
+  "preview_sha256": {
+    "examples/threshold-metrics/previews/scroll-concept.png": "f69e744c7a72922fcf8afea2b1d10acbbddc2ccba4562f25dc3df318f1ae2c91",
+    "examples/threshold-metrics/previews/scroll-practice.png": "bb84f05fc55a1c737a3e39561e2065b6951ce45485e806d4cea46e8af3345827",
+    "examples/threshold-metrics/previews/slides-concept.png": "dad1ba10891040c0c100ef77272033585966afd5943c7413063d9d6d810df71a",
+    "examples/threshold-metrics/previews/slides-practice.png": "f4f3a8b82ba39b47fd5e3ba7cbeeb1fedcc2e89187be5bb904951874cacd5546",
+    "examples/threshold-metrics/review/contact.jpg": "4f6f18ac9973bb3b4564929f5d30e85961ff0402e55ccb48c4c0dc76d19616ec"
+  },
+  "unchanged_runtime_files": [
+    "lesson.css",
+    "app.js",
+    "model.js",
+    "data.json",
+    "scroll.html",
+    "slides.html"
+  ],
+  "shared_markdown_changes": 0,
+  "main_merge": false,
+  "prior_evidence": "feedback-review.json and feedback-revision.json belong to 62d56c4. ci-validation.json and delivery.json belong to cf17. They are historical, not runs of this text revision.",
+  "prior_62d_ci": [
+    {
+      "id": 40599142216,
+      "name": "Validate Threshold Metrics Reuse",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40599142217,
+      "name": "Validate Final HTML References",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "this_revision_ci": "New Actions will run after publishing; local checks above are complete."
+}

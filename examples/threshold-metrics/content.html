@@ -4,7 +4,7 @@
   <div class="content">
     <section class="teaching-panel concept-panel" aria-labelledby="concept-panel-title">
       <div class="panel-label">SCORE → DECISION</div><h2 class="panel-title" id="concept-panel-title">점수는 모델의 출력, 판정은 기준과 비교한 결과</h2>
-      <p class="concept-condition">불량 = 양성(Positive) · 정상 = 음성(Negative) · 실제값(Ground Truth, GT)은 검사로 확인한 정답</p>
+      <p class="concept-condition">불량 = 양성(Positive) · 정상 = 음성(Negative) · 실제값(Ground Truth, GT)은 모델 예측과 별도로 정해진 실제 정답</p>
       <div class="concept-flow" aria-label="이미지의 결함 점수를 임계값과 비교해 두 예측으로 나누는 개념도">
         <div class="flow-stage image-stage" id="node-image"><div class="stage-label">입력</div>
           <svg class="inspection-image" viewBox="0 0 160 120" role="img" aria-label="표면에 작은 균열이 있는 검사 부품의 개념도"><rect x="10" y="10" width="140" height="100" rx="8" fill="var(--canvas)" stroke="var(--border)"/><rect x="32" y="27" width="96" height="66" rx="8" fill="#d6dfe9" stroke="#9baabe" stroke-width="1.5"/><circle cx="48" cy="43" r="5" fill="white"/><circle cx="112" cy="43" r="5" fill="white"/><circle cx="48" cy="77" r="5" fill="white"/><circle cx="112" cy="77" r="5" fill="white"/><path d="M78 37 L72 52 L83 60 L74 72 L82 84" fill="none" stroke="var(--deep)" stroke-width="2.5" stroke-linejoin="round"/></svg>
@@ -18,7 +18,7 @@
         </div>
         <svg class="concept-connectors" aria-hidden="true"><path id="arrow-image-score" data-from="node-image" data-to="node-score"/><path id="arrow-score-threshold" data-from="node-score" data-to="node-threshold"/><path id="arrow-threshold-positive" data-from="node-threshold" data-to="node-positive"/><path id="arrow-threshold-negative" data-from="node-threshold" data-to="node-negative"/></svg>
       </div>
-      <div class="concept-bottom"><div class="truth-explanation"><span class="truth-fixed">실제값은 고정</span><p>검사로 확인한 정답과 모델의 예측을 비교해야 오탐·미탐을 구분할 수 있음</p></div>
+      <div class="concept-bottom"><div class="truth-explanation"><span class="truth-fixed">실제값은 고정</span><p>정답과 예측을 비교해 오탐·미탐 구분</p></div>
       <div class="error-pair">
         <div class="error-example"><h3>오탐 <span>False Positive · FP</span></h3><p><span>실제 정상</span><span class="small-arrow" aria-hidden="true">→</span><strong class="positive-text">불량 예측</strong></p></div>
         <div class="error-example"><h3>미탐 <span>False Negative · FN</span></h3><p><span>실제 불량</span><span class="small-arrow" aria-hidden="true">→</span><strong class="negative-text">정상 예측</strong></p></div>

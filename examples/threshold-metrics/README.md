@@ -22,7 +22,9 @@ Vision AI·머신러닝 입문자를 위한 개념 1장과 임계값 실습 1장
 
 실습은 불량 검출의 적용 예제로 유지한다. 원본#5도 임계값 예제이므로 이번 결과는 같은 분야의 재구성이다. 입력→단일 상태→계산→여러 표시의 동시 갱신은 재사용할 설계 관계지만, 현재 계산/타일/혼동행렬 코드는 이 주제 전용이다. 다른 개념의 인터랙티브 HTML까지 입증한 범용 템플릿으로 보지 않는다. 해당 계약의 재현은 충분하나 **범용 재사용성은 일부 보완 필요**이며 다른 개념 검증이 남았다. 공통 MD 결함을 새로 발견한 것은 아니므로 공통 파일 수정0건이다.
 
-[최신 검증](previews/validation.json) · [변경 기록](review/feedback-revision.json) · [이번 독립 검토](review/feedback-review.json)
+GT 설명도 ‘모델 예측과 별도로 정해진 실제 정답’으로 구분하고 하단은 ‘정답과 예측을 비교해 오탐·미탐 구분’ 한 줄로 줄였다.
+
+[최신 검증](previews/validation.json) · [GT 문구 변경](review/gt-wording-revision.json) · [이번 독립 검토](review/gt-wording-review.json) · [앞선 피드백 검토 이력](review/feedback-review.json)
 
 ## 최초 D1 프리뷰와 결과 (현재 수정 전)
 
