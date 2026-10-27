@@ -1,0 +1,55 @@
+{
+  "status": "passed_for_documentation_source",
+  "user_visual_approved": true,
+  "markdown_updated": true,
+  "merge_authorized": true,
+  "approval_date": "2026-10-27",
+  "approved_preview_head": "ce840a68b423ae7508381dc2745e3e7e12ebd41a",
+  "visual_validation_source": "29c3ff7a15acf3b11bec07d431bff4867c12c9ce",
+  "new_common_gaps": 2,
+  "earlier_axis_gap": 1,
+  "cumulative_common_gaps": 3,
+  "common_contract_markdown_files": 8,
+  "updated_markdown_files": 16,
+  "historical_d0_and_revision_records_preserved": true,
+  "merge_status_url": "https://github.com/sh0427-han/design-template-library/pull/22",
+  "note": "Documentation-source CI and independent review passed. The final artifact-only HEAD must pass CI before the authorized merge. Actual merge status and final HEAD are available at merge_status_url; source and D0 histories remain preserved.",
+  "documentation_source_commit": "3c27bdf0ac12b3bfdae5a13da8c0f1a06b1b2b2d",
+  "ci": {
+    "full_regression": {
+      "run_id": 40429127559,
+      "job_id": 121942233772,
+      "conclusion": "success"
+    },
+    "overfitting_and_gradient_descent": {
+      "run_id": 40429127597,
+      "job_id": 121942233868,
+      "conclusion": "success"
+    }
+  },
+  "verification": {
+    "markdown_files": 47,
+    "local_links": 532,
+    "evidence_reports": 6,
+    "sha256_checks": 116,
+    "heading_screens": 72,
+    "card_pair_observations": 184,
+    "overfitting_pc_screens": 8,
+    "markdown_finalized_in_rendered_gallery": true
+  },
+  "independent_review": {
+    "reviewer": "/root/independent_reviewer",
+    "report": "docs-final-review.json",
+    "status": "passed_for_documentation_source",
+    "unresolved_findings": 0,
+    "resolved_low_findings": [
+      "DOC-S1"
+    ]
+  },
+  "reusability": {
+    "before_expanded_contracts": "일부 보완 필요",
+    "after_within_tested_scope": "충분",
+    "scope": "#3 Comparison 및 #8 그래프 원칙 일부",
+    "independent_author_reproduction_from_markdown_alone": "not_tested"
+  }
+}

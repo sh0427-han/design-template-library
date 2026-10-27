@@ -199,7 +199,7 @@
         ],
         "source": "/templates/html/concept.html",
         "source_design": {
-          "elements": 160,
+          "elements": 161,
           "style_match": true,
           "max_box_error_px": 6.103515625e-05,
           "box_tolerance_px": {
@@ -227,11 +227,11 @@
           ]
         },
         "font": {
-          "text_nodes": 48,
+          "text_nodes": 49,
           "actual_family": [
             "Pretendard Variable"
           ],
-          "glyphs": 408,
+          "glyphs": 428,
           "korean_latin_loads": [
             1,
             1,
@@ -556,7 +556,7 @@
         ],
         "source": "/templates/html/executive-summary.html",
         "source_design": {
-          "elements": 89,
+          "elements": 91,
           "style_match": true,
           "max_box_error_px": 0,
           "box_tolerance_px": {
@@ -584,11 +584,11 @@
           ]
         },
         "font": {
-          "text_nodes": 45,
+          "text_nodes": 46,
           "actual_family": [
             "Pretendard Variable"
           ],
-          "glyphs": 389,
+          "glyphs": 401,
           "korean_latin_loads": [
             1,
             1,
@@ -607,7 +607,7 @@
         ],
         "source": "/templates/html/concept.html",
         "source_design": {
-          "elements": 160,
+          "elements": 161,
           "style_match": true,
           "max_box_error_px": 6.103515625e-05,
           "box_tolerance_px": {
@@ -635,11 +635,11 @@
           ]
         },
         "font": {
-          "text_nodes": 48,
+          "text_nodes": 49,
           "actual_family": [
             "Pretendard Variable"
           ],
-          "glyphs": 408,
+          "glyphs": 428,
           "korean_latin_loads": [
             1,
             1,
@@ -964,7 +964,7 @@
         ],
         "source": "/templates/html/executive-summary.html",
         "source_design": {
-          "elements": 89,
+          "elements": 91,
           "style_match": true,
           "max_box_error_px": 0,
           "box_tolerance_px": {
@@ -992,11 +992,11 @@
           ]
         },
         "font": {
-          "text_nodes": 45,
+          "text_nodes": 46,
           "actual_family": [
             "Pretendard Variable"
           ],
-          "glyphs": 389,
+          "glyphs": 401,
           "korean_latin_loads": [
             1,
             1,
@@ -1015,7 +1015,7 @@
         ],
         "source": "/templates/html/concept.html",
         "source_design": {
-          "elements": 160,
+          "elements": 161,
           "style_match": true,
           "max_box_error_px": 6.103515625e-05,
           "box_tolerance_px": {
@@ -1043,11 +1043,11 @@
           ]
         },
         "font": {
-          "text_nodes": 48,
+          "text_nodes": 49,
           "actual_family": [
             "Pretendard Variable"
           ],
-          "glyphs": 408,
+          "glyphs": 428,
           "korean_latin_loads": [
             1,
             1,
@@ -1372,7 +1372,7 @@
         ],
         "source": "/templates/html/executive-summary.html",
         "source_design": {
-          "elements": 89,
+          "elements": 91,
           "style_match": true,
           "max_box_error_px": 0,
           "box_tolerance_px": {
@@ -1400,11 +1400,11 @@
           ]
         },
         "font": {
-          "text_nodes": 45,
+          "text_nodes": 46,
           "actual_family": [
             "Pretendard Variable"
           ],
-          "glyphs": 389,
+          "glyphs": 401,
           "korean_latin_loads": [
             1,
             1,
@@ -1423,7 +1423,7 @@
         ],
         "source": "/templates/html/concept.html",
         "source_design": {
-          "elements": 160,
+          "elements": 161,
           "style_match": true,
           "max_box_error_px": 6.103515625e-05,
           "box_tolerance_px": {
@@ -1451,11 +1451,11 @@
           ]
         },
         "font": {
-          "text_nodes": 48,
+          "text_nodes": 49,
           "actual_family": [
             "Pretendard Variable"
           ],
-          "glyphs": 408,
+          "glyphs": 428,
           "korean_latin_loads": [
             1,
             1,
@@ -1780,7 +1780,7 @@
         ],
         "source": "/templates/html/executive-summary.html",
         "source_design": {
-          "elements": 89,
+          "elements": 91,
           "style_match": true,
           "max_box_error_px": 0,
           "box_tolerance_px": {
@@ -1808,11 +1808,11 @@
           ]
         },
         "font": {
-          "text_nodes": 45,
+          "text_nodes": 46,
           "actual_family": [
             "Pretendard Variable"
           ],
-          "glyphs": 389,
+          "glyphs": 401,
           "korean_latin_loads": [
             1,
             1,
@@ -1831,7 +1831,7 @@
         ],
         "source": "/templates/html/concept.html",
         "source_design": {
-          "elements": 160,
+          "elements": 161,
           "style_match": true,
           "max_box_error_px": 6.103515625e-05,
           "box_tolerance_px": {
@@ -1859,11 +1859,11 @@
           ]
         },
         "font": {
-          "text_nodes": 48,
+          "text_nodes": 49,
           "actual_family": [
             "Pretendard Variable"
           ],
-          "glyphs": 408,
+          "glyphs": 428,
           "korean_latin_loads": [
             1,
             1,
@@ -2188,7 +2188,7 @@
         ],
         "source": "/templates/html/executive-summary.html",
         "source_design": {
-          "elements": 89,
+          "elements": 91,
           "style_match": true,
           "max_box_error_px": 0,
           "box_tolerance_px": {
@@ -2216,11 +2216,11 @@
           ]
         },
         "font": {
-          "text_nodes": 45,
+          "text_nodes": 46,
           "actual_family": [
             "Pretendard Variable"
           ],
-          "glyphs": 389,
+          "glyphs": 401,
           "korean_latin_loads": [
             1,
             1,
@@ -2239,7 +2239,7 @@
         ],
         "source": "/templates/html/concept.html",
         "source_design": {
-          "elements": 160,
+          "elements": 161,
           "style_match": true,
           "max_box_error_px": 6.103515625e-05,
           "box_tolerance_px": {
@@ -2267,11 +2267,11 @@
           ]
         },
         "font": {
-          "text_nodes": 48,
+          "text_nodes": 49,
           "actual_family": [
             "Pretendard Variable"
           ],
-          "glyphs": 408,
+          "glyphs": 428,
           "korean_latin_loads": [
             1,
             1,
@@ -2596,7 +2596,7 @@
         ],
         "source": "/templates/html/executive-summary.html",
         "source_design": {
-          "elements": 89,
+          "elements": 91,
           "style_match": true,
           "max_box_error_px": 0,
           "box_tolerance_px": {
@@ -2624,11 +2624,11 @@
           ]
         },
         "font": {
-          "text_nodes": 45,
+          "text_nodes": 46,
           "actual_family": [
             "Pretendard Variable"
           ],
-          "glyphs": 389,
+          "glyphs": 401,
           "korean_latin_loads": [
             1,
             1,
@@ -2647,7 +2647,7 @@
         ],
         "source": "/templates/html/concept.html",
         "source_design": {
-          "elements": 160,
+          "elements": 161,
           "style_match": true,
           "max_box_error_px": 6.103515625e-05,
           "box_tolerance_px": {
@@ -2675,11 +2675,11 @@
           ]
         },
         "font": {
-          "text_nodes": 48,
+          "text_nodes": 49,
           "actual_family": [
             "Pretendard Variable"
           ],
-          "glyphs": 408,
+          "glyphs": 428,
           "korean_latin_loads": [
             1,
             1,
@@ -3004,7 +3004,7 @@
         ],
         "source": "/templates/html/executive-summary.html",
         "source_design": {
-          "elements": 89,
+          "elements": 91,
           "style_match": true,
           "max_box_error_px": 0,
           "box_tolerance_px": {
@@ -3032,11 +3032,11 @@
           ]
         },
         "font": {
-          "text_nodes": 45,
+          "text_nodes": 46,
           "actual_family": [
             "Pretendard Variable"
           ],
-          "glyphs": 389,
+          "glyphs": 401,
           "korean_latin_loads": [
             1,
             1,
@@ -3055,7 +3055,7 @@
         ],
         "source": "/templates/html/concept.html",
         "source_design": {
-          "elements": 160,
+          "elements": 161,
           "style_match": true,
           "max_box_error_px": 6.103515625e-05,
           "box_tolerance_px": {
@@ -3083,11 +3083,11 @@
           ]
         },
         "font": {
-          "text_nodes": 48,
+          "text_nodes": 49,
           "actual_family": [
             "Pretendard Variable"
           ],
-          "glyphs": 408,
+          "glyphs": 428,
           "korean_latin_loads": [
             1,
             1,
@@ -3412,7 +3412,7 @@
         ],
         "source": "/templates/html/executive-summary.html",
         "source_design": {
-          "elements": 89,
+          "elements": 91,
           "style_match": true,
           "max_box_error_px": 0,
           "box_tolerance_px": {
@@ -3440,11 +3440,11 @@
           ]
         },
         "font": {
-          "text_nodes": 45,
+          "text_nodes": 46,
           "actual_family": [
             "Pretendard Variable"
           ],
-          "glyphs": 389,
+          "glyphs": 401,
           "korean_latin_loads": [
             1,
             1,
@@ -5026,11 +5026,11 @@
             "ratio": 1,
             "box": {
               "x": 101.4375,
-              "y": 314.1875,
+              "y": 332.296875,
               "width": 29.5625,
               "height": 18,
               "right": 131,
-              "bottom": 332.1875
+              "bottom": 350.296875
             }
           },
           {
@@ -5038,11 +5038,11 @@
             "ratio": 0.5,
             "box": {
               "x": 106.21875,
-              "y": 444.1875,
+              "y": 462.296875,
               "width": 24.78125,
               "height": 18,
               "right": 131,
-              "bottom": 462.1875
+              "bottom": 480.296875
             }
           },
           {
@@ -5050,11 +5050,11 @@
             "ratio": 0,
             "box": {
               "x": 123.984375,
-              "y": 574.1875,
+              "y": 592.296875,
               "width": 7.015625,
               "height": 18,
               "right": 131,
-              "bottom": 592.1875
+              "bottom": 610.296875
             }
           }
         ],
@@ -5062,37 +5062,37 @@
           {
             "box": {
               "x": 139,
-              "y": 283.1875,
+              "y": 301.296875,
               "width": 218.953125,
               "height": 403.75,
               "right": 357.953125,
-              "bottom": 686.9375
+              "bottom": 705.046875
             },
             "title": "월간 수동 점검",
             "titleBox": {
               "x": 194.640625,
-              "y": 625.1875,
+              "y": 643.296875,
               "width": 107.671875,
               "height": 26.25,
               "right": 302.3125,
-              "bottom": 651.4375
+              "bottom": 669.546875
             },
             "valueBoxes": [
               {
                 "x": 176.90625,
-                "y": 287.1875,
+                "y": 305.296875,
                 "width": 54.125,
                 "height": 30,
                 "right": 231.03125,
-                "bottom": 317.1875
+                "bottom": 335.296875
               },
               {
                 "x": 270.46875,
-                "y": 373.859375,
+                "y": 391.96875,
                 "width": 44.984375,
                 "height": 30,
                 "right": 315.453125,
-                "bottom": 403.859375
+                "bottom": 421.96875
               }
             ],
             "before": 120,
@@ -5111,21 +5111,21 @@
             "bars": [
               {
                 "x": 177.96875,
-                "y": 323.1875,
+                "y": 341.296875,
                 "width": 52,
                 "height": 260,
                 "right": 229.96875,
-                "bottom": 583.1875,
+                "bottom": 601.296875,
                 "color": "rgb(49, 104, 200)",
                 "ratio": 1
               },
               {
                 "x": 266.96875,
-                "y": 409.859375,
+                "y": 427.96875,
                 "width": 52,
                 "height": 173.328125,
                 "right": 318.96875,
-                "bottom": 583.1875,
+                "bottom": 601.296875,
                 "color": "rgb(38, 166, 161)",
                 "ratio": 0.6667
               }
@@ -5136,37 +5136,37 @@
           {
             "box": {
               "x": 371.953125,
-              "y": 283.1875,
+              "y": 301.296875,
               "width": 218.96875,
               "height": 403.75,
               "right": 590.921875,
-              "bottom": 686.9375
+              "bottom": 705.046875
             },
             "title": "평균 처리 시간",
             "titleBox": {
               "x": 427.59375,
-              "y": 625.1875,
+              "y": 643.296875,
               "width": 107.671875,
               "height": 26.25,
               "right": 535.265625,
-              "bottom": 651.4375
+              "bottom": 669.546875
             },
             "valueBoxes": [
               {
                 "x": 405.609375,
-                "y": 287.1875,
+                "y": 305.296875,
                 "width": 62.65625,
                 "height": 30,
                 "right": 468.265625,
-                "bottom": 317.1875
+                "bottom": 335.296875
               },
               {
                 "x": 494.421875,
-                "y": 373.859375,
+                "y": 391.96875,
                 "width": 63.03125,
                 "height": 30,
                 "right": 557.453125,
-                "bottom": 403.859375
+                "bottom": 421.96875
               }
             ],
             "before": 45,
@@ -5185,21 +5185,21 @@
             "bars": [
               {
                 "x": 410.9375,
-                "y": 323.1875,
+                "y": 341.296875,
                 "width": 52,
                 "height": 260,
                 "right": 462.9375,
-                "bottom": 583.1875,
+                "bottom": 601.296875,
                 "color": "rgb(49, 104, 200)",
                 "ratio": 1
               },
               {
                 "x": 499.9375,
-                "y": 409.859375,
+                "y": 427.96875,
                 "width": 52,
                 "height": 173.328125,
                 "right": 551.9375,
-                "bottom": 583.1875,
+                "bottom": 601.296875,
                 "color": "rgb(38, 166, 161)",
                 "ratio": 0.6667
               }
@@ -5210,37 +5210,37 @@
           {
             "box": {
               "x": 604.921875,
-              "y": 283.1875,
+              "y": 301.296875,
               "width": 218.96875,
               "height": 403.75,
               "right": 823.890625,
-              "bottom": 686.9375
+              "bottom": 705.046875
             },
             "title": "월말 미처리",
             "titleBox": {
               "x": 670.671875,
-              "y": 625.1875,
+              "y": 643.296875,
               "width": 87.46875,
               "height": 26.25,
               "right": 758.140625,
-              "bottom": 651.4375
+              "bottom": 669.546875
             },
             "valueBoxes": [
               {
                 "x": 647.796875,
-                "y": 287.1875,
+                "y": 305.296875,
                 "width": 44.203125,
                 "height": 30,
                 "right": 692,
-                "bottom": 317.1875
+                "bottom": 335.296875
               },
               {
                 "x": 743.671875,
-                "y": 443.1875,
+                "y": 461.296875,
                 "width": 30.46875,
                 "height": 30,
                 "right": 774.140625,
-                "bottom": 473.1875
+                "bottom": 491.296875
               }
             ],
             "before": 20,
@@ -5259,21 +5259,21 @@
             "bars": [
               {
                 "x": 643.90625,
-                "y": 323.1875,
+                "y": 341.296875,
                 "width": 52,
                 "height": 260,
                 "right": 695.90625,
-                "bottom": 583.1875,
+                "bottom": 601.296875,
                 "color": "rgb(49, 104, 200)",
                 "ratio": 1
               },
               {
                 "x": 732.90625,
-                "y": 479.1875,
+                "y": 497.296875,
                 "width": 52,
                 "height": 104,
                 "right": 784.90625,
-                "bottom": 583.1875,
+                "bottom": 601.296875,
                 "color": "rgb(38, 166, 161)",
                 "ratio": 0.4
               }
@@ -5297,34 +5297,35 @@
     "source_sha256": {
       "templates/dual-mode-learning/scroll.html": "96d5b5e82639769644b1d313bf887b4c74bb9bd898f00977e706c6ac5faa573a",
       "templates/dual-mode-learning/slides.html": "2bcb425d00da9e8d7d344b67135e4ed95a4f344a8dbf54bdfc0457e16ec08e67",
-      "templates/dual-mode-learning/assets/js/scroll.js": "fa1a152d89bb68fcbede0a48d40d2e01b6509955b24c050c455a619ee682f32b",
-      "templates/dual-mode-learning/assets/js/render.js": "ea7769505895adcba0a11971b799546c0fddfe8d4390a9f545a6b2aa6a59bb50",
-      "templates/dual-mode-learning/assets/js/state.js": "40ed83ef33ba9eac71791032a84fad8cb77de91458c183a0f62e2cc427680485",
-      "templates/dual-mode-learning/assets/js/lesson.js": "30ea45a0901fba3be7a4e41a98fb1143d6f76f39e6e9c69b8e21170d6a77ca4c",
-      "templates/dual-mode-learning/assets/js/slides.js": "5e489efaed68c01fc5cdbebef2710b3ac2bfb372f954b9a9dc95a7d6a8f445d5",
-      "templates/dual-mode-learning/assets/css/tokens.css": "43c885ad305d0ceb8895b3eb9088842ef99a3907fd1257ba14e1e0df8a16cb8f",
       "templates/dual-mode-learning/assets/css/slides.css": "d4da50076686b4b9b3cd85b1aedac60359911ef254259dbde2b0c0a78f40f4a0",
-      "templates/dual-mode-learning/assets/css/scroll.css": "2978990697d2fc15807763a9c92472b5b8bb6537132383f4190580024ad92d1d",
+      "templates/dual-mode-learning/assets/css/tokens.css": "43c885ad305d0ceb8895b3eb9088842ef99a3907fd1257ba14e1e0df8a16cb8f",
       "templates/dual-mode-learning/assets/css/components.css": "6284751b2d744133ffa2fb923a746372e8189289d057fc9c5aca3a254c2c0d8a",
-      "templates/html/executive-summary.html": "9717607f3a1c742fe72dd63990d2edaccb5bb0c33b844a43943cdea9b56fe37c",
+      "templates/dual-mode-learning/assets/css/scroll.css": "2978990697d2fc15807763a9c92472b5b8bb6537132383f4190580024ad92d1d",
+      "templates/dual-mode-learning/assets/js/state.js": "40ed83ef33ba9eac71791032a84fad8cb77de91458c183a0f62e2cc427680485",
+      "templates/dual-mode-learning/assets/js/slides.js": "5e489efaed68c01fc5cdbebef2710b3ac2bfb372f954b9a9dc95a7d6a8f445d5",
+      "templates/dual-mode-learning/assets/js/scroll.js": "fa1a152d89bb68fcbede0a48d40d2e01b6509955b24c050c455a619ee682f32b",
+      "templates/dual-mode-learning/assets/js/lesson.js": "30ea45a0901fba3be7a4e41a98fb1143d6f76f39e6e9c69b8e21170d6a77ca4c",
+      "templates/dual-mode-learning/assets/js/render.js": "ea7769505895adcba0a11971b799546c0fddfe8d4390a9f545a6b2aa6a59bb50",
       "templates/html/comparison.html": "e90611664ef0a3ab1d94f6a226de42e14f4272acbdb30f90e9b770392d892c74",
-      "templates/html/index.html": "322dedee1a0cc94a136fc205e098a3c00c33f4a0169d082af3a909c0c50d41be",
-      "templates/html/experiment.html": "711282187d6138e69e2b92ab6f2730387be8cb491d8401d0928d33c96caf62dd",
-      "templates/html/interactive-reference.js": "0756c5facbf831184f561e3941bf37ef0a30a83af3118e6374735d37119951f7",
-      "templates/html/comparison-reference.css": "2a4afa51bfd30efe7f59422c3fa5483f74ac6c3a2b2c64288bb476dfce14f422",
-      "templates/html/reference-layout.css": "c29f52fd9852d80b29e277b7d60218a7b02da599a059a8395051caada3525bcc",
-      "templates/html/process-reference.js": "45629ef1192b6caa04aa05dd6ead9fd317eace58ba95ce873b966c27fd02a89d",
-      "templates/html/styles.css": "3c05e00284aae4ea538e697efae7682a2c9b35b318cab372fa8493613de4df22",
-      "templates/html/comparison-reference.js": "d427e9c2fcb0415c9ecd059ae723d53dc601b6f5350d3eb1872d1306aacf5469",
+      "templates/html/executive-summary.html": "fc0b46ace4bc81b108b199d12121cd12fbc940aebe1cdef30639a859ddab95b6",
       "templates/html/step-by-step.html": "8e7eed2d4bbeaeea3fb644973a0ff99f9e0c075bababf93a8964636197143d3c",
+      "templates/html/interactive.html": "0ea53081b4b5e89f2eb2b6c8ded09b38977331d114616474fb83fcbcdb4aeaa3",
       "templates/html/math-typography.css": "c390ffe17b8c0f02d10a34b99bca892bb63f99af98766e7b47c0a88da38e2f3a",
-      "templates/html/interactive.html": "999cc515d9f3ad03dbee7c1437959b79463ad251e890142233471e4ff7722869",
-      "templates/html/concept.html": "81a4d341ca86eb5550e0d58411fdda6f040d1e3cdcf9a98ee9b84ff6b8ad0364",
-      "templates/html/reference-types.css": "976c72a1d4e736fc6d7f7c328445f4e7feead457f4ef7165ca3926b5615e18b7",
-      "templates/html/architecture.html": "0b40aa7f35960458292b8fd691a0ffcac83e8646993dda516b85e809efac28e1",
       "templates/html/process.html": "39989a9073bd7a8a296dc4a7ece870f0e0da60010b8b8922393049678c733a1d",
-      "templates/html/assets/concept-apple-photo.jpg": "6a7524a8f5fce2700d50970d21ad7a9912c07ace760d08fd603ba79728e15efc",
+      "templates/html/concept.html": "ddef1b01d7919cb46784659e41933556e103640d73b32a98ccdfa474626d9f37",
+      "templates/html/process-reference.js": "45629ef1192b6caa04aa05dd6ead9fd317eace58ba95ce873b966c27fd02a89d",
+      "templates/html/reference-layout.css": "c29f52fd9852d80b29e277b7d60218a7b02da599a059a8395051caada3525bcc",
+      "templates/html/comparison-reference.css": "4010e007a80a100fe3b7ee4dd5ea1bf6a4b2691d3e90a6e125ad70ba1f7b97b2",
+      "templates/html/reference-types.css": "976c72a1d4e736fc6d7f7c328445f4e7feead457f4ef7165ca3926b5615e18b7",
+      "templates/html/architecture.html": "276ab89f9c266542827d6ec4ff2b06dcee177978a9e381cf59a1f6536306a6c5",
+      "templates/html/comparison-reference.js": "d427e9c2fcb0415c9ecd059ae723d53dc601b6f5350d3eb1872d1306aacf5469",
+      "templates/html/index.html": "322dedee1a0cc94a136fc205e098a3c00c33f4a0169d082af3a909c0c50d41be",
+      "templates/html/interactive-reference.js": "0756c5facbf831184f561e3941bf37ef0a30a83af3118e6374735d37119951f7",
+      "templates/html/graph-annotations.js": "deeee6a81fae900035c9b5398c1c17aa7ac4694bf986313b1a810ec20bfec92b",
+      "templates/html/styles.css": "3c05e00284aae4ea538e697efae7682a2c9b35b318cab372fa8493613de4df22",
+      "templates/html/experiment.html": "c2424515f1ceebfbdf616dbc0a6b227b27d453fcde5383b899653df3d643c961",
       "templates/html/assets/cnn-feature-maps.js": "b8a71c04fced7a9df2a568c2cd3577af3ddde56b3903cfd2b7d1031fc19d2c05",
+      "templates/html/assets/concept-apple-photo.jpg": "6a7524a8f5fce2700d50970d21ad7a9912c07ace760d08fd603ba79728e15efc",
       "templates/html/assets/fonts/pretendard/PretendardVariable.woff2": "9599f12fd42fc0bce1cd50b47a0c022e108d7aa64dd0d1bb0ed44f3282d900b4",
       "templates/html/assets/fonts/stix-two-math/STIXTwoMath-Regular.woff2": "d18b6ab10cd6670ec5d4067f3ad2678a156b6b6642d9a0985243a1da729e6a95"
     },
@@ -5332,7 +5333,7 @@
     "failed_requests": []
   },
   "preview_sha256": {
-    "dual-mode-scroll.jpg": "45d5558facda837129065c875c3d837ce1ac17192c45bf0b4b056f62b90b573c",
-    "dual-mode-slide.jpg": "c48e00dac326606d427591672d5452fe6128c730d05856db573c92676eac29c8"
+    "dual-mode-scroll.jpg": "b2fc5c925da137374a6b79a7d4814378605e8c0968541897f484496528e697ba",
+    "dual-mode-slide.jpg": "652e1829f1a0c4d4a89f886f86eed93c676846633b68af63d3b27084bee63c2b"
   }
 }

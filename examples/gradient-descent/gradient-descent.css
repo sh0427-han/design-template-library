@@ -29,3 +29,11 @@
 .gd-definitions strong {color:var(--deep);margin-right:8px;}
 .gd-takeaway {display:flex;align-items:baseline;gap:16px;flex:none;margin-top:14px;border-left:4px solid var(--teal);border-radius:0 10px 10px 0;background:var(--white);padding:12px 17px;font-size:19px;line-height:var(--line-height-body);color:var(--deep);}
 .gd-takeaway strong {color:#157b77;white-space:nowrap;}
+
+/* User-requested narrow, tall plot; definitions now belong to the explanation column. */
+.gd-slide {padding:28px 66px 24px;}
+.gd-slide .content {margin-top:13px;}
+.gd-main {grid-template-columns:345px minmax(0,1fr);gap:48px;}
+.gd-panel {padding:14px 25px;}
+#loss-plot {width:345px;height:482px;margin-top:0;}
+.gd-definitions {display:grid;justify-content:start;gap:8px;margin-top:16px;}

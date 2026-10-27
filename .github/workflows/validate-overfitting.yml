@@ -1,0 +1,62 @@
+name: Validate Overfitting Reuse
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'examples/overfitting-generalization/**'
+      - 'scripts/verify_overfitting.py'
+      - 'examples/gradient-descent/**'
+      - 'scripts/verify_gradient_descent.py'
+      - '.github/workflows/validate-overfitting.yml'
+permissions:
+  contents: read
+jobs:
+  overfitting:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install playwright Pillow
+      - run: python -m playwright install --with-deps chromium
+      - run: python scripts/verify_overfitting.py
+      - run: python scripts/verify_gradient_descent.py
+        if: always()
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: overfitting-browser-evidence
+          path: |
+            examples/overfitting-generalization/previews
+            examples/overfitting-generalization/review/screens
+            examples/gradient-descent/previews
+            /tmp/gradient-descent-review
+      - name: Transfer review evidence through job log
+        if: always()
+        run: |
+          python - <<'PYTHON'
+          from pathlib import Path
+          from PIL import Image,ImageDraw
+          import base64
+          files=[]
+          for name in ['overfitting-generalization','gradient-descent']:
+              root=Path('examples')/name
+              files.extend([root/'previews/validation.json',root/'previews/slide.png',root/'previews/scroll.png'])
+              if name=='overfitting-generalization':files.append(root/'review/screens/middle-minimum.png')
+              folder=root/'review/screens' if name=='overfitting-generalization' else Path('/tmp/gradient-descent-review')
+              shots=sorted(folder.glob('*x*.png'))
+              if shots:
+                  contact=Image.new('RGB',(1600,4*510),'white')
+                  draw=ImageDraw.Draw(contact)
+                  for i,f in enumerate(shots[:8]):
+                      im=Image.open(f);im.thumbnail((790,475));x=(i%2)*800;y=(i//2)*510
+                      contact.paste(im,(x,y+25));draw.text((x+8,y+5),f.stem,fill='black')
+                  (root/'review').mkdir(exist_ok=True)
+                  contact.save(root/'review/contact.jpg',quality=92)
+                  files.append(root/'review/contact.jpg')
+          for f in files:
+              if f.exists():print('REVIEW_EVIDENCE '+str(f)+' '+base64.b64encode(f.read_bytes()).decode())
+          PYTHON

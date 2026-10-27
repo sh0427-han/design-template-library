@@ -1,0 +1,227 @@
+{
+  "reviewer": "/root/independent_reviewer",
+  "review_type": "independent_final_static_and_actual_visual_review",
+  "reviewed_commit": "2adc369b1930988bc33969840cc356c4d4bf567f",
+  "created_utc": "2026-10-26T09:12:51.933527+00:00",
+  "status": "final_merged_card_preview_review_passed",
+  "scope": "Overfitting concept follow-up: two continuous concept cards, separate Blue label/Navy title/definition rows, left-aligned unchanged loss graph. Preserve approved Concept and all other template sources. User review of common Markdown is a separate pending step.",
+  "visual_review_performed": true,
+  "source_code_modified_by_reviewer": false,
+  "markdown_files_created_or_modified_by_reviewer": [],
+  "markdown_changed_count": 0,
+  "markdown_finalized": false,
+  "user_review_pending": true,
+  "user_approval_for_markdown": false,
+  "merge_authorized": false,
+  "severity_counts": {
+    "high": 0,
+    "medium": 0,
+    "low": 0
+  },
+  "unresolved_findings": [],
+  "revision_requested": false,
+  "visual_checks": {
+    "images_directly_opened": [
+      "examples/overfitting-generalization/previews/slide.png",
+      "examples/overfitting-generalization/previews/scroll.png",
+      "examples/overfitting-generalization/review/contact.jpg",
+      "examples/overfitting-generalization/review/middle-minimum.png",
+      "previews/heading-review/overfitting.png",
+      "previews/heading-review/contact.jpg"
+    ],
+    "two_continuous_cards": "Each definition and its figure now belong to one outer card. Inner figure borders/backgrounds are absent; both concept cards read as complete comparable units.",
+    "heading_hierarchy": "Blue English labels sit on their own row above Navy Korean titles; unchanged definitions occupy a third row. Subordinate figure headings remain Navy and separate from the main titles.",
+    "left_alignment": "The loss SVG begins at the card inner left edge. Its axis, minimum, selection guide, best.pt and conditional rightward region retain their relative coordinates and remain readable.",
+    "header_and_legend": "The loss figure heading is followed by a separate legend row. Both series labels are complete. The Loss meaning remains inside the graph above the plot without label collisions.",
+    "generalization": "Training and unused images are distinct; the same model transfer and A-to-apple/B-to-tomato mapping remain clear. Teal transfer endpoints and labels do not cross.",
+    "height_and_padding": "Neither complete figure, best.pt nor any definition escapes the outer card padding. Takeaway and footer remain clear in the representative views and eight-view contact.",
+    "middle_minimum": "The independently changed central-minimum screenshot retains a readable best.pt and the guide gap at the x-axis title; no new collision is visible.",
+    "contact": "The new nine-source contact shows the requested overfitting composition while retaining the approved Concept appearance.",
+    "confirmed_visual_defects": []
+  },
+  "actual_browser_evidence": {
+    "chromium": "155.0.8059.0",
+    "dedicated_status": "passed",
+    "dedicated_cases": 8,
+    "pc_sizes": [
+      [
+        1600,
+        950
+      ],
+      [
+        1440,
+        810
+      ],
+      [
+        1366,
+        768
+      ],
+      [
+        1280,
+        720
+      ]
+    ],
+    "modes": [
+      "scroll",
+      "slides"
+    ],
+    "outer_cards_each_case": 2,
+    "old_split_card_containers_each_case": 0,
+    "label_title_gap_px_each_card": 8,
+    "label_title_left_error_px": 0,
+    "svg_card_inner_left_error_px": 0,
+    "inner_figure_border_px": 0,
+    "inner_figure_background": "rgba(0, 0, 0, 0)",
+    "outer_card_padding_escapes": 0,
+    "body_lines_each_definition": 1,
+    "footer_gap_px": 13.125,
+    "mode_style_match": true,
+    "max_mode_box_error_px": 0,
+    "console_and_failed_loads": [],
+    "graph_size_px": [
+      380,
+      320
+    ],
+    "independent_data": {
+      "points": 41,
+      "series": 2,
+      "max_independent_value_error": 1.1102230246251565e-16,
+      "same_loss_basis": true,
+      "late_divergence": true,
+      "generalization_is_image_diagram": true,
+      "real_experiment": false
+    },
+    "changed_data_cases": [
+      "improving",
+      "crossing",
+      "middle-minimum"
+    ],
+    "changed_minimum_indices": [
+      40,
+      0,
+      20
+    ],
+    "rejected_invalid_datasets": [
+      "unit",
+      "nonfinite",
+      "unordered",
+      "negative"
+    ],
+    "behavior_checks": {
+      "changed_datasets": [
+        "improving",
+        "crossing",
+        "middle-minimum"
+      ],
+      "rejected_datasets": [
+        "unit",
+        "nonfinite",
+        "unordered",
+        "negative"
+      ],
+      "mode_roundtrip": true,
+      "keyboard_links": true,
+      "reload": true,
+      "failed_data_message": true
+    },
+    "heading_role_cases": 72,
+    "owned_card_count": 23,
+    "owned_card_pair_observations": 184,
+    "owned_card_pair_observations_by_reference": {
+      "concept": 8,
+      "process": 32,
+      "comparison": 16,
+      "step-by-step": 16,
+      "interactive": 16,
+      "architecture": 48,
+      "experiment": 16,
+      "executive-summary": 16,
+      "overfitting-generalization": 16
+    },
+    "actual_title_observations": 400,
+    "actual_blue_label_observations": 328,
+    "title_color": "rgb(18, 35, 63)",
+    "label_color": "rgb(49, 104, 200)",
+    "all_roles_visible_pretendard_minus_one_pt_and_colors_pass": true,
+    "page_geometry_failures": [],
+    "heading_page_errors": [],
+    "heading_failed_requests": []
+  },
+  "preservation_and_provenance": {
+    "active_followup_baseline": "5385296ca3f933221cfd7270493bc70936548245",
+    "approved_concept_source_preserved": true,
+    "all_templates_source_diff_from_active_baseline": [],
+    "both_svgs_serialized_doms_identical_to_active_baseline": true,
+    "curves_js_data_fruit_paths_common_styles_axis_helper_preserved": true,
+    "source_and_preview_hash_reports_rechecked": 6,
+    "declared_report_hash_checks": 108,
+    "declared_report_hash_mismatches": [],
+    "manifest_files": 8,
+    "manifest_before_and_after_comparisons": 16,
+    "manifest_mismatches": [],
+    "nested_dual_mode_pc_source_hashes_match": true,
+    "dual_mode_representative_jpeg_hashes_match": true,
+    "markdown_diff_from_active_baseline": [],
+    "manifest_status": "preview_pending_user_review",
+    "manifest_markdown_finalized": false
+  },
+  "regression": {
+    "dedicated_ci": {
+      "run": 40296609963,
+      "job": 121484090283,
+      "status": "completed",
+      "conclusion": "success",
+      "independently_queried": true
+    },
+    "full_ci": {
+      "run": 40296609940,
+      "job": 121484089780,
+      "status": "completed",
+      "conclusion": "success",
+      "independently_queried": true
+    },
+    "all_local_reports_passed": [
+      "previews/heading-review/validation.json",
+      "previews/review/reference-validation.json",
+      "previews/review/interactive-validation.json",
+      "previews/review/dual-mode-validation.json",
+      "examples/overfitting-generalization/previews/validation.json",
+      "examples/gradient-descent/previews/validation.json"
+    ],
+    "coverage": "Current original-reference/font/six-viewport checks, interactive boundary states, dual-mode gallery/PC regression, logistic regression, gradient descent, Markdown checks and heading-role/card-pair audit passed. Dedicated overfitting rendering, independent data, alternate datasets and failure behaviors passed."
+  },
+  "historical_scope": {
+    "previous_label_presence_result": "25 teaching cards x 8 views = 200 owned pairs before the requested consolidation.",
+    "current_label_presence_result": "23 teaching cards x 8 views = 184 owned pairs after two definition cards plus two figure cards become two continuous concept cards.",
+    "reason_not_a_presence_regression": "Each current outer concept card owns one Blue label and one Navy title. Its figure is subordinate content rather than an additional outer teaching card.",
+    "prior_audit_omission_preserved": "The earlier color-only audit did not establish card-owned label presence. Its reports and the later 200-pair correction are preserved as records of those versions.",
+    "markdown_assessment": "This is a requested presentation revision. It does not count as a newly discovered common Markdown omission and does not finalize any new Markdown rule."
+  },
+  "limits": [
+    "This internal pass covers the displayed merged-card preview; the user still reviews the new appearance before common Markdown finalization.",
+    "Concept was preserved as an approved source, not redesigned in this review. The other canonical patterns were regression-checked, not newly reused to author this concept.",
+    "Direct image inspection covers the new overfitting Scroll/Slide views, eight-view contact, central-minimum variant and latest nine-source contact; CI measurements support all 72 role cases.",
+    "No universal independent-author reproduction claim or main merge approval is made.",
+    "The former static budget concern is resolved by current actual padding/bounds checks and direct image review; no source adjustment was required."
+  ],
+  "image_sha256": {
+    "examples/overfitting-generalization/previews/slide.png": "3042728bd95527155ded52827f651c721884b3488b2b0099e6d81c5cc604eff5",
+    "examples/overfitting-generalization/previews/scroll.png": "7636520ae6d53b274958e72778094423c2a27bb9ceea99a71aba00e443d7f184",
+    "examples/overfitting-generalization/review/contact.jpg": "5721a8c31d89cf3adbccc124d50550524bc317b12c83d88143312726f0445aed",
+    "examples/overfitting-generalization/review/middle-minimum.png": "e3fd8db7807961ce302c64445a7a40036b2436b363b29b4cf81a02f07b9b9183",
+    "previews/heading-review/overfitting.png": "df4dcce97bffaa17741a1e286054c95de9e9f4d39bf3b90184baa75da2681149",
+    "previews/heading-review/contact.jpg": "e3d1385718be1f55c9dc2ab9490b2a076f58a5444b07341ea6d6e99372363518"
+  },
+  "evidence_sha256": {
+    "previews/heading-review/validation.json": "8078d4e4adf041443fdb3cff97f297fd0eba5f9a2e1b1ca5605655a99110c906",
+    "previews/review/reference-validation.json": "59a15e36c264bbf8e0cce4356af51c496291838d893b79e19a78e2ff0d0d8ecd",
+    "previews/review/interactive-validation.json": "16cedb33ac3e931307e58a9ecb0ab01b2ef6ab8fc23c710cc16e3a105202d153",
+    "previews/review/dual-mode-validation.json": "7791a8b10cc2f459371d7183837b86d8a7f91f9b0b417388363d2bd09d42d7c7",
+    "examples/overfitting-generalization/previews/validation.json": "3ca9183c1f04b1568b362b753f301434283f8e33a60f84cce73e032e2d29b0ea",
+    "examples/gradient-descent/previews/validation.json": "989f03e20cc2c9cd3a685d20ad5b569eec4ab78389ac6a079dfbd6de2287c6cb",
+    "previews/heading-review/change-scope.json": "2d3c7977e4f57bd7dd48890f37f76dea4acd000b079b92abb19bd7fa3825609a",
+    "scripts/verify_heading_roles.py": "c143973b60fd818e37aed12b43d8d547c1ea116cb7fed6c3d9130ee772822d11",
+    "scripts/verify_overfitting.py": "c08ae629a1de00a557c591b9c654075eb260ca89e70906d23d10aa9c7f18f0a0",
+    "templates/html/concept.html": "ddef1b01d7919cb46784659e41933556e103640d73b32a98ccdfa474626d9f37"
+  }
+}

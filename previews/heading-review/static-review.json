@@ -1,0 +1,121 @@
+{
+  "reviewer": "/root/independent_reviewer",
+  "review_type": "independent_static_review",
+  "reviewed_commit": "ab25af2f3576fae8f50ed4a958693a04fca989ff",
+  "created_utc": "2026-10-26T06:32:06.139907+00:00",
+  "status": "changes_requested_static",
+  "visual_review_performed": false,
+  "markdown_finalized": false,
+  "markdown_files_created_or_modified_by_reviewer": [],
+  "merge_authorized": false,
+  "scope": "User-requested preview of Navy core card titles and Blue category/stage labels across original eight references and overfitting; actual browser evidence pending.",
+  "severity_counts": {
+    "high": 0,
+    "medium": 1,
+    "low": 0
+  },
+  "findings": [
+    {
+      "id": "H-R1",
+      "severity": "medium",
+      "classification": "implementation_and_audit_scope",
+      "status": "open",
+      "title": "Explicit Comparison stage labels remain Deep and are omitted from the role audit",
+      "evidence": [
+        {
+          "file": "templates/html/comparison.html",
+          "selectors": ".phase-heading h3",
+          "texts": [
+            "01 준비",
+            "02 예측"
+          ],
+          "occurrences": 4
+        },
+        {
+          "file": "templates/html/comparison-reference.css",
+          "line": 12,
+          "declaration": "color:var(--deep)",
+          "resolved_token": "#1B3558"
+        },
+        {
+          "file": "scripts/verify_heading_roles.py",
+          "key": "ROLES['comparison']",
+          "label_selector": ".comparison-heading .pill",
+          "omitted": ".phase-heading h3"
+        }
+      ],
+      "impact": "The stated Blue category/stage-label proposal is not consistently applied to the four explicit numbered phase labels. A 72-screen pass of the current selected roles would not detect this omission and cannot establish that every category/stage role follows the proposal.",
+      "recommendation": "Include the four Comparison phase labels in the intended Blue stage-label treatment and in the audit, or explicitly present their exclusion as a deliberate role exception for user review. Do not finalize Markdown before user review.",
+      "recheck": "Check actual computed color #3168C8 for the selected phase labels in both modes/PC4, regenerate current previews and verify the amended scope hashes."
+    }
+  ],
+  "observations": [
+    {
+      "id": "H-O1",
+      "severity": "informational",
+      "file": "templates/html/architecture.html",
+      "selector": ".arch-phase-band span",
+      "texts": [
+        "FEATURE EXTRACTOR",
+        "CLASSIFIER"
+      ],
+      "current_colors": [
+        "Deep",
+        "Teal"
+      ],
+      "note": "These may be intentionally preserved semantic functional-partition colors rather than generic category labels. The audit currently excludes them. Keep that distinction explicit in the user preview; do not claim uniform treatment of all colored labels or recolor technical meaning automatically."
+    },
+    {
+      "id": "H-O2",
+      "severity": "informational",
+      "note": "The selected core-title changes are narrowly scoped: Comparison pills are equal Blue/PaleBlue while Amber rule-diagram semantics remain; Interactive/Experiment metric names become Navy; Executive Summary separates its Blue English category from a new Navy Korean heading and gives action subheadings Navy; overfitting diagram heading becomes Navy."
+    },
+    {
+      "id": "H-O3",
+      "severity": "informational",
+      "note": "Executive Summary adds real header height. Its chart/cards/footer and small-screen layout require current browser geometry and direct image review; static inspection is not visual approval."
+    }
+  ],
+  "verified_static": {
+    "python_syntax": [
+      "scripts/verify_heading_roles.py",
+      "scripts/verify_gradient_descent.py"
+    ],
+    "change_scope_before_after_sha256_matches": true,
+    "scope_manifest_files": 5,
+    "canonical_exception_paths": 4,
+    "noncanonical_example_css_paths": 1,
+    "markdown_diff_from_manifest_baseline": [],
+    "manifest_status": "preview_pending_user_review",
+    "manifest_markdown_finalized": false,
+    "canonical_exception_guard": "Four allowlisted original paths are checked against explicit before/after SHA256; other pinned originals and common Markdown remain strict.",
+    "data_calculations_common_css_axis_helper_changes_found": false
+  },
+  "local_documentation_check": {
+    "result": "not_passed_due_to_stale_render_evidence",
+    "error": "rendered source changed: templates/html/executive-summary.html",
+    "interpretation": "Expected while the new source has not yet received refreshed canonical render JSON. The workflow runs validate_references before check_documentation and should regenerate that evidence. Do not cite this local run as a pass."
+  },
+  "pending": [
+    "Resolve H-R1 and inspect the actual role scope before presenting a universal role-color claim.",
+    "Current Chromium 72-case audit and existing full regression results.",
+    "Directly open the new nine-source preview gallery/contact and representative original images.",
+    "Actual local fonts/-1pt, Executive Summary title/plot/footer geometry, and Scroll/Slide parity for the preview source.",
+    "User review before any Markdown rule finalization; no main merge."
+  ],
+  "limits": [
+    "This is a preview review, not approval of new common Markdown.",
+    "Selected-role color checks do not certify every diagram label or every possible theme.",
+    "No current browser render or new screenshot was reviewed in this static pass."
+  ],
+  "source_sha256": {
+    "templates/html/comparison-reference.css": "4010e007a80a100fe3b7ee4dd5ea1bf6a4b2691d3e90a6e125ad70ba1f7b97b2",
+    "templates/html/interactive.html": "0ea53081b4b5e89f2eb2b6c8ded09b38977331d114616474fb83fcbcdb4aeaa3",
+    "templates/html/experiment.html": "c2424515f1ceebfbdf616dbc0a6b227b27d453fcde5383b899653df3d643c961",
+    "templates/html/executive-summary.html": "fc0b46ace4bc81b108b199d12121cd12fbc940aebe1cdef30639a859ddab95b6",
+    "examples/overfitting-generalization/lesson.css": "d1668f5964bd1ee7fe14495e040a209eb81202826a4576f257a97e8c31ad1a12",
+    "scripts/verify_heading_roles.py": "1422becf2ab1ad43c3f77a27a3d1764e6d464afea881b76f920131af01638fec",
+    "scripts/verify_gradient_descent.py": "2169382513ee269e91e92615442fe13b1d112e672584f95e5dde2983692f38a7",
+    "previews/heading-review/change-scope.json": "5305d285b95f87c87c3fb1e118205fd5a10ea7fa6aa28b8c5df9b5b7a45d391b"
+  }
+}

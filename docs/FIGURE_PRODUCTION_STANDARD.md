@@ -89,6 +89,37 @@ artwork.setAttribute('transform', `translate(${offset} 0)`);
 
 반복 Block 내부 연산은 서로 가깝게, 다른 Stage 사이는 더 넓게 둡니다. 도형 사이 11px 미만의 공간에 화살표를 억지로 집어넣지 않습니다. 카드 안의 요약·각주까지 패딩을 지키고 `overflow:hidden`으로 문제를 감추지 않습니다.
 
+### 그래프 축 이름의 공통 정렬
+
+새로 만들거나 축 이름을 수정하는 좌표 그래프에 적용한다. 축 이름은 데이터 계열의 범례와 눈금 숫자와 구분한다. 기존 승인 8종에 자동 전역 스타일을 흘리지 않고 변경하는 자료에서 명시적으로 사용한다.
+
+- **y축 이름:** y축 중앙의 왼쪽에 세로로 배치한다. 글자 묶음 전체를 −90° 회전하고, 회전한 실제 글자 경계의 세로 중심을 y축 시작~끝의 중간에 맞춘다. 글자 경계의 오른쪽과 y축 사이에 `--gap-related`(8px)를 둔다. 본문과 수학 기호도 같은 그룹으로 회전한다.
+- **x축 이름:** 가로축 전체의 중앙 아래. 글자 묶음의 실제 가로 중심을 축 시작점과 끝점의 중간에 맞추고, 실제 글자 경계의 위쪽을 축보다 같은 8px 아래에 둔다. 화살촉이 있으면 끝점은 화살촉 tip이다.
+- 본문과 수학 기호를 함께 쓰는 축 이름은 한 그룹으로 다룬다. 각 부분은 원래 서체·기준선을 유지하고 실제 글자 경계 사이8px로 연결한 뒤 **그룹 전체**를 정렬한다. `손실`과 수식, `매개변수`와 수학 변수의 위치를 별도로 눈대중 보정하지 않는다.
+- SVG text의 baseline이나 viewBox 중앙을 글자 중심으로 가정하지 않는다. `document.fonts.load/ready` 이후 실제 `getBBox()`를 사용한다. 축 좌표·문구·서체가 바뀌면 다시 계산한다. 고정 viewBox 전체를 같은 배율로 축소하는 PC 뷰어에서는 간격도 함께 비례 축소된다.
+- 축 바깥에 글자 높이와8px 간격을 포함한 여백을 확보한다. 잘림을 숨기거나 특정 축의 폰트/자간을 줄여 맞추지 않는다. 축 이름·눈금·투영선·곡선·다른 라벨의 실제 경계도 검사한다.
+
+설계 좌표에서 만족할 관계:
+
+```text
+centerY(y축 이름) = (y축 상단 끝점 Y + 가로축 Y) / 2
+right(y축 이름의 회전한 글자 경계) = y축 X − 8
+centerX(x축 이름) = (가로축 시작 X + 가로축 끝 X) / 2
+top(x축 이름의 글자 경계) = 가로축 Y + 8
+```
+
+공통 opt-in 구현은 [graph-annotations.js](../templates/html/graph-annotations.js)의 `packInline`/`alignAxes`다. 각 페이지는 먼저 실제 폰트 로딩을 기다린다. 호출의 `left/right/top/bottom`은 `viewBox`의 경계가 아닌 실제 축 끝점이다. y축의 기존 '상단 위' 계약은 사용자 요청으로 '중앙 왼쪽·세로'로 대체되었다. 과거 검증 기록은 당시 규칙의 결과로 보존한다.
+
+```js
+await document.fonts.ready;
+GraphAnnotations.alignAxes({
+  svg, yLabel, xLabel,
+  left: axisStartX, right: axisEndX, top: yAxisTipY, bottom: xAxisY
+});
+```
+
+ 검증은 구현이 계산한 위치를 기대값으로 복사하지 않고, Chromium의 `getBoundingClientRect()`를 SVG 설계 좌표로 환산해 위 관계를 독립 대조한다. 기본 허용 오차는0.1 설계px이며 실제 서체/−1pt·클리핑/충돌 검사와 함께 사용한다.
+
 ## 7. SVG 화살표와 Bounding Box 계산
 
 **외부 Stage connector**는 Blue, **내부 변환 connector**는 Teal입니다. 색뿐 아니라 블록 제목·공간적 묶음도 역할을 전달합니다.
@@ -125,6 +156,8 @@ const d = `M${fromX} ${centerY} H${tipX} ` +
 외부 Figure는 가까이에 원문 URL을 둡니다. 자체 도형이라도 실제 측정·모식도·계산 예시의 차이를 설명합니다. 이미지의 크기와 경계가 예측 가능하도록 preserveAspectRatio와 object-fit을 목적에 맞게 지정합니다. 새 사진을 쓰면 파생 픽셀·맵·라벨도 다시 계산합니다.
 
 ## 9. 색상 의미와 일관성
+
+핵심 제목·분류 라벨·데이터 라벨은 [디자인 시스템의 역할 계약](../DESIGN_SYSTEM.md#제목과-분류-라벨의-역할)을 따릅니다. [선언된 설명 단위](DESIGN_COMPONENT_RECIPES.md#제목라벨-검사의-적용-단위)의 자기 소유 라벨/제목과 유형별 배치를 확인하며, 그림의 축·채널·클래스·결과색을 제목 규칙으로 덮어쓰지 않습니다.
 
 [색 토큰 표](../DESIGN_SYSTEM.md)를 사용합니다. 일반 카드 White, 캔버스 Off-white, 핵심 텍스트 Navy, 흐름 Blue, 내부 변환·결론 Teal, 오류·임계값·대조 조건 Amber입니다.
 

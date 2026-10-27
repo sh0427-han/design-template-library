@@ -1911,7 +1911,7 @@
     "sha256": "9599f12fd42fc0bce1cd50b47a0c022e108d7aa64dd0d1bb0ed44f3282d900b4",
     "bytes": 2057688
   },
-  "browser": "154.0.8037.57",
+  "browser": "155.0.8059.0",
   "reuse": {
     "sample_count": 6,
     "actual_anomaly": 4,
@@ -2189,8 +2189,8 @@
         "예측 정상"
       ],
       "dividerGaps": {
-        "left": 8.765625,
-        "right": 8.78125
+        "left": 6.25,
+        "right": 6.265625
       },
       "badTypography": [],
       "fontsLoaded": 0
@@ -2281,8 +2281,8 @@
         "예측 정상"
       ],
       "dividerGaps": {
-        "left": 8.765625,
-        "right": 8.78125
+        "left": 6.25,
+        "right": 6.265625
       },
       "badTypography": [],
       "fontsLoaded": 0
@@ -2373,8 +2373,8 @@
         "예측 정상"
       ],
       "dividerGaps": {
-        "left": 7.984375,
-        "right": 8
+        "left": 5.59375,
+        "right": 5.609375
       },
       "badTypography": [],
       "fontsLoaded": 0
@@ -2465,8 +2465,8 @@
         "예측 정상"
       ],
       "dividerGaps": {
-        "left": 7.984375,
-        "right": 8
+        "left": 5.59375,
+        "right": 5.609375
       },
       "badTypography": [],
       "fontsLoaded": 0
@@ -2557,8 +2557,8 @@
         "예측 정상"
       ],
       "dividerGaps": {
-        "left": 7.703125,
-        "right": 7.71875
+        "left": 5.453125,
+        "right": 5.453125
       },
       "badTypography": [],
       "fontsLoaded": 0
@@ -2649,8 +2649,8 @@
         "예측 정상"
       ],
       "dividerGaps": {
-        "left": 7.703125,
-        "right": 7.71875
+        "left": 5.453125,
+        "right": 5.453125
       },
       "badTypography": [],
       "fontsLoaded": 0
@@ -2741,8 +2741,8 @@
         "예측 정상"
       ],
       "dividerGaps": {
-        "left": 7.34375,
-        "right": 7.359375
+        "left": 5.21875,
+        "right": 5.25
       },
       "badTypography": [],
       "fontsLoaded": 0
@@ -2833,8 +2833,8 @@
         "예측 정상"
       ],
       "dividerGaps": {
-        "left": 7.34375,
-        "right": 7.359375
+        "left": 5.21875,
+        "right": 5.25
       },
       "badTypography": [],
       "fontsLoaded": 0
@@ -2925,8 +2925,8 @@
         "예측 정상"
       ],
       "dividerGaps": {
-        "left": 8.765625,
-        "right": 8.78125
+        "left": 6.25,
+        "right": 6.265625
       },
       "badTypography": [],
       "fontsLoaded": 0
@@ -3017,8 +3017,8 @@
         "예측 정상"
       ],
       "dividerGaps": {
-        "left": 8.765625,
-        "right": 8.78125
+        "left": 6.25,
+        "right": 6.265625
       },
       "badTypography": [],
       "fontsLoaded": 0
@@ -3033,33 +3033,33 @@
         "x": 10,
         "y": 10,
         "right": 380,
-        "bottom": 1639.71875,
+        "bottom": 1667.71875,
         "width": 370,
-        "height": 1629.71875
+        "height": 1657.71875
       },
       "cards": [
         {
           "x": 30,
           "y": 184.625,
           "right": 360,
-          "bottom": 743.78125,
+          "bottom": 741.78125,
           "width": 330,
-          "height": 559.15625
+          "height": 557.15625
         },
         {
           "x": 30,
-          "y": 761.78125,
+          "y": 759.78125,
           "right": 360,
-          "bottom": 1438.921875,
+          "bottom": 1436.921875,
           "width": 330,
           "height": 677.140625
         }
       ],
       "footer": {
         "x": 30,
-        "y": 1582.921875,
+        "y": 1610.921875,
         "right": 360,
-        "bottom": 1611.71875,
+        "bottom": 1639.71875,
         "width": 330,
         "height": 28.796875
       },
@@ -3067,9 +3067,9 @@
         "x": 30,
         "y": 184.625,
         "right": 360,
-        "bottom": 1567.921875,
+        "bottom": 1595.921875,
         "width": 330,
-        "height": 1383.296875
+        "height": 1411.296875
       },
       "pageWidth": 390,
       "overflow": [],
@@ -3109,8 +3109,8 @@
         "예측 정상"
       ],
       "dividerGaps": {
-        "left": 3.71875,
-        "right": 3.71875
+        "left": 10.328125,
+        "right": 10.328125
       },
       "badTypography": [],
       "fontsLoaded": 0
@@ -3125,33 +3125,33 @@
         "x": 10,
         "y": 10,
         "right": 380,
-        "bottom": 1639.71875,
+        "bottom": 1667.71875,
         "width": 370,
-        "height": 1629.71875
+        "height": 1657.71875
       },
       "cards": [
         {
           "x": 30,
           "y": 184.625,
           "right": 360,
-          "bottom": 743.78125,
+          "bottom": 741.78125,
           "width": 330,
-          "height": 559.15625
+          "height": 557.15625
         },
         {
           "x": 30,
-          "y": 761.78125,
+          "y": 759.78125,
           "right": 360,
-          "bottom": 1438.921875,
+          "bottom": 1436.921875,
           "width": 330,
           "height": 677.140625
         }
       ],
       "footer": {
         "x": 30,
-        "y": 1582.921875,
+        "y": 1610.921875,
         "right": 360,
-        "bottom": 1611.71875,
+        "bottom": 1639.71875,
         "width": 330,
         "height": 28.796875
       },
@@ -3159,9 +3159,9 @@
         "x": 30,
         "y": 184.625,
         "right": 360,
-        "bottom": 1567.921875,
+        "bottom": 1595.921875,
         "width": 330,
-        "height": 1383.296875
+        "height": 1411.296875
       },
       "pageWidth": 390,
       "overflow": [],
@@ -3201,8 +3201,8 @@
         "예측 정상"
       ],
       "dividerGaps": {
-        "left": 3.71875,
-        "right": 3.71875
+        "left": 10.328125,
+        "right": 10.328125
       },
       "badTypography": [],
       "fontsLoaded": 0

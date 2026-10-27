@@ -18,6 +18,7 @@
   border-radius:18px;background:var(--white);
 }
 .concept-panel h2 {margin:0;color:var(--navy);font-size:23px;font-weight:800;}
+.concept-panel .card-label {flex:none;margin:0 0 var(--gap-related);font-size:16px;line-height:20px;font-weight:800;color:var(--blue);}
 .concept-flow {
   display:grid;
   grid-template-columns:minmax(0,.95fr) 25px minmax(0,1.15fr) 25px minmax(0,.85fr) 25px minmax(0,1.25fr);
@@ -269,6 +270,7 @@
     </header>
     <div class="concept-stage">
       <article class="concept-panel visual-panel" aria-label="입력 이미지에서 RGB 행렬, 4×4 확대, 선택 픽셀 숫자로 이어지는 과정">
+        <p class="card-label">IMAGE REPRESENTATION</p>
         <h2>이미지 → RGB 채널 → 픽셀 확대 → RGB 값</h2>
         <div class="concept-flow">
           <div class="concept-step image-step">

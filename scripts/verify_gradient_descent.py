@@ -92,19 +92,35 @@ GEOMETRY = '''()=>{
      }
    }
  }
- for(const s of ['.gd-figure','.gd-steps'])if(box(q(s)).bottom>box(q('.gd-definitions')).y-8)overlaps.push(s+' vs definitions');
+ if(box(q('.gd-steps ol')).bottom>box(q('.gd-definitions')).y-8)overlaps.push('steps vs definitions');
+ if(box(q('#loss-plot')).bottom>box(panel).bottom-parseFloat(getComputedStyle(panel).paddingBottom)-1)overlaps.push('plot vs panel padding');
  if(box(q('.gd-takeaway')).bottom>box(footer).y-10)overlaps.push('takeaway/footer');
  const plot=q('#loss-plot'),vb=plot.viewBox.baseVal,ink=[];
+ const rootBox=plot.getBoundingClientRect(),sx=rootBox.width/vb.width,sy=rootBox.height/vb.height;
+ const inkBox=e=>{const r=e.getBoundingClientRect();return {x:(r.x-rootBox.x)/sx,y:(r.y-rootBox.y)/sy,width:r.width/sx,height:r.height/sy}};
  for(const e of plot.querySelectorAll('text')){
-   const b=e.getBBox();ink.push({id:e.id,x:b.x,y:b.y,right:b.x+b.width,bottom:b.y+b.height});
-   if(b.x<0||b.y<0||b.x+b.width>vb.width||b.y+b.height>vb.height)clipped.push(e.id);
+   const b=inkBox(e);ink.push({id:e.id,x:b.x,y:b.y,right:b.x+b.width,bottom:b.y+b.height});
+   if(b.x<-.05||b.y<-.05||b.x+b.width>vb.width+.05||b.y+b.height>vb.height+.05)clipped.push(e.id);
  }
  const collisions=[];for(let i=0;i<ink.length;i++)for(let j=i+1;j<ink.length;j++){
    const a=ink[i],b=ink[j];if(Math.min(a.right,b.right)-Math.max(a.x,b.x)>1&&Math.min(a.bottom,b.bottom)-Math.max(a.y,b.y)>1)collisions.push([a.id,b.id]);
  }
+ const dataCollisions=[];
+ const curve=q('#loss-curve');
+ for(const text of plot.querySelectorAll('text')){
+   const b=inkBox(text),pad=2;
+   const inside=(x,y)=>x>=b.x-pad&&x<=b.x+b.width+pad&&y>=b.y-pad&&y<=b.y+b.height+pad;
+   for(const circle of plot.querySelectorAll('circle')){
+     const x=+circle.getAttribute('cx'),y=+circle.getAttribute('cy'),r=+circle.getAttribute('r');
+     const nearX=Math.max(b.x-pad,Math.min(x,b.x+b.width+pad)),nearY=Math.max(b.y-pad,Math.min(y,b.y+b.height+pad));
+     if(Math.hypot(x-nearX,y-nearY)<=r)dataCollisions.push([text.id,circle.id]);
+   }
+   for(const line of [curve,q('#current-guide'),q('#next-guide')].filter(Boolean)){const length=line.getTotalLength(),samples=Math.ceil(length*2);for(let i=0;i<=samples;i++){const p=line.getPointAtLength(i/samples*length);if(inside(p.x,p.y)){dataCollisions.push([text.id,line.id]);break;}}}
+ }
  const math=[...slide.querySelectorAll('math')].map(e=>({text:e.textContent,display:getComputedStyle(e).fontFamily,box:box(e)}));
  for(const e of slide.querySelectorAll('math')){const r=box(e),p=box(e.parentElement);if(r.x<p.x-1||r.right>p.right+1||r.y<box(panel).y||r.bottom>box(panel).bottom)clipped.push('math '+e.textContent);} 
- return {outside,overflow,clipped,overlaps,collisions,ink,math,slide:box(slide),panel:box(panel),main:box(q('.gd-main')),steps:box(q('.gd-steps')),definitions:box(q('.gd-definitions')),takeaway:box(q('.gd-takeaway')),footer:box(footer)};
+ const yt=inkBox(q('#gd-y-title')),xt=inkBox(q('#gd-x-title'));const axisAlignment={yCenterError:Math.abs(yt.y+yt.height/2-241.5),yGap:48-yt.x-yt.width,xCenterError:Math.abs(xt.x+xt.width/2-176.5),xGap:xt.y-454,yRotation:q('#gd-y-title').getAttribute('transform')};
+ return {axisAlignment,outside,overflow,clipped,overlaps,collisions,dataCollisions,ink,math,slide:box(slide),panel:box(panel),main:box(q('.gd-main')),steps:box(q('.gd-steps')),definitions:box(q('.gd-definitions')),takeaway:box(q('.gd-takeaway')),footer:box(footer)};
 }'''
 
 def technical(frame):
@@ -112,8 +128,8 @@ def technical(frame):
     assert data
     # Independent specification: do not take equation, rate or expected answer from rendered labels.
     expected = [2.8 * .72**i for i in range(6)]
-    px = lambda theta: 68 + (theta + 3.4) / 6.8 * 576
-    py = lambda loss: 300 - loss / 6.5 * 248
+    px = lambda theta: 48 + (theta + 3.4) / 6.8 * 242
+    py = lambda loss: 454 - loss / 6.5 * 434
     for state, theta in zip(data['states'], expected):
         loss = theta**2/2
         derivative = (((theta+1e-5)**2/2)-((theta-1e-5)**2/2))/(2e-5)
@@ -122,6 +138,9 @@ def technical(frame):
         assert math.isclose(state['loss'], loss, abs_tol=1e-12)
         assert abs(state['x']-px(theta)) < 1e-9 and abs(state['y']-py(loss)) < 1e-9
     assert len(data['states']) == 6 and len(data['points']) == 161
+    assert frame.locator('#loss-plot').evaluate('e=>e.getBoundingClientRect().width')==345
+    assert frame.locator('#loss-plot').evaluate('e=>e.getBoundingClientRect().height')==482
+    assert frame.locator('#plot-context').count()==0
     for i, point in enumerate(data['points']):
         theta = -3.4 + 6.8*i/160
         assert abs(point['theta']-theta) < 1e-12
@@ -149,7 +168,7 @@ def technical(frame):
         assert abs(tangent_nums[2*i+1]-py(2.8**2/2+2.8*delta)) < 1e-9
     arrow_nums = [float(s) for s in re.findall(r'-?\d+(?:\.\d+)?',rendered['arrow'])]
     assert abs(arrow_nums[0]-(px(2.8)-3.5))<1e-9 and abs(arrow_nums[2]-(px(expected[1])+3.5))<1e-9
-    assert arrow_nums[0]>arrow_nums[2] and arrow_nums[1]==arrow_nums[3]==260
+    assert arrow_nums[0]>arrow_nums[2] and arrow_nums[1]==arrow_nums[3]==394
     assert len(arrow_nums)==10 and arrow_nums[6:8]==arrow_nums[2:4], 'arrow head and body do not share tip'
     assert rendered['formula']=='θt+1=θt−ηL′(θt)'
     assert not any(re.search(r'\d[.,]\d', label) for label in rendered['labels'])
@@ -202,8 +221,12 @@ def main():
                     audit=fonts(page,frame,'.gd-slide *')
                     ui=fonts(page,page.main_frame,'body *')
                     geometry=frame.evaluate(GEOMETRY)
-                    assert not any(geometry[k] for k in ('outside','overflow','clipped','overlaps','collisions')),geometry
+                    output=EVIDENCE/f'{mode}-{width}x{height}.png';page.screenshot(path=str(output),full_page=mode=='scroll')
+                    if width==1600:page.screenshot(path=str(CASE/'previews'/('slide.png' if mode=='slides' else 'scroll.png')))
+                    assert not any(geometry[k] for k in ('outside','overflow','clipped','overlaps','collisions','dataCollisions')),geometry
                     assert geometry['slide']['w']==1440 and geometry['slide']['h']==810
+                    ax=geometry['axisAlignment'];assert ax['yCenterError']<.1 and ax['xCenterError']<.1 and abs(ax['yGap']-8)<.1 and abs(ax['xGap']-8)<.1,ax
+                    assert 'rotate(-90)' in ax['yRotation']
                     shot=frame.evaluate(SNAPSHOT)
                     identity=compare(shot,reference)
                     outer=page.evaluate('''()=>{const a=document.querySelector('.reference-viewport').getBoundingClientRect(),b=document.querySelector('iframe').getBoundingClientRect();
@@ -249,23 +272,48 @@ def main():
             browser.close()
     finally:
         server.shutdown();server.server_close()
-    # Existing canonical sources and common design rules must remain unchanged.
-    paths=['AGENTS.md','DESIGN_SYSTEM.md','docs/FIGURE_PRODUCTION_STANDARD.md','docs/DESIGN_COMPONENT_RECIPES.md','docs/REFERENCE_PAGE_SPECS.md']
-    paths += [str(p.relative_to(ROOT)) for p in (ROOT/'templates/html').rglob('*') if p.is_file()]
-    changed=[]
+    # Only exact user-authorized heading and documentation revisions may differ.
+    paths=['AGENTS.md','DESIGN_SYSTEM.md','docs/DESIGN_COMPONENT_RECIPES.md','docs/REFERENCE_PAGE_SPECS.md']
+    paths += subprocess.check_output(['git','ls-tree','-r','--name-only',BASE,'templates/html'],cwd=ROOT,text=True).splitlines()
+    heading_paths={'templates/html/comparison-reference.css','templates/html/interactive.html','templates/html/experiment.html','templates/html/executive-summary.html','templates/html/architecture.html','templates/html/concept.html'}
+    heading_scope=json.loads((ROOT/'previews/heading-review/change-scope.json').read_text())
+    assert heading_scope['baseline']=='a5ea4b64f2df6945f0f40eb88de99179a190dc3b'
+    documented_paths={'DESIGN_SYSTEM.md','docs/DESIGN_COMPONENT_RECIPES.md','docs/REFERENCE_PAGE_SPECS.md'}
+    changed=[];heading_changes=[];documentation_changes=[]
     for path in paths:
         old=subprocess.check_output(['git','show',f'{BASE}:{path}'],cwd=ROOT)
-        if hashlib.sha256(old).hexdigest()!=digest(ROOT/path):changed.append(path)
+        if hashlib.sha256(old).hexdigest()!=digest(ROOT/path):
+            if path in heading_paths:
+                expected=heading_scope['changes'][path]
+                before=subprocess.check_output(['git','show',f"{heading_scope['baseline']}:{path}"],cwd=ROOT)
+                assert hashlib.sha256(before).hexdigest()==expected['before_sha256']
+                assert digest(ROOT/path)==expected['after_sha256']
+                heading_changes.append(path)
+            elif path in documented_paths:
+                approval=heading_scope['documentation_approval']
+                assert approval['user_approved'] and approval['baseline']=='ce840a68b423ae7508381dc2745e3e7e12ebd41a'
+                expected=heading_scope['documentation_changes'][path]
+                before=subprocess.check_output(['git','show',f"{approval['baseline']}:{path}"],cwd=ROOT)
+                assert hashlib.sha256(before).hexdigest()==expected['before_sha256']==hashlib.sha256(old).hexdigest()
+                assert digest(ROOT/path)==expected['after_sha256']
+                documentation_changes.append(path)
+            else:changed.append(path)
     assert not changed,changed
-    report['canonical_and_common_rules_unchanged']=True
-    source_paths=[p for p in CASE.iterdir() if p.suffix in ('.html','.css','.js')]+[Path(__file__),ROOT/'templates/html/styles.css',ROOT/'templates/html/reference-layout.css',ROOT/'templates/html/math-typography.css',ROOT/'scripts/reference_validation.py']
+    report['canonical_sources_unchanged']=not heading_changes and not documentation_changes
+    report['authorized_heading_preview_changes']=heading_changes
+    report['authorized_documentation_changes']=documentation_changes
+    report['heading_review_status']=heading_scope['status']
+    report['other_canonical_sources_unchanged']=True
+    report['new_shared_axis_module']='templates/html/graph-annotations.js'
+    report['intentional_common_rule_change']='Axis-title contract plus user-approved heading roles/owned-card documentation; exact SHA exceptions only'
+    source_paths=[p for p in CASE.iterdir() if p.suffix in ('.html','.css','.js')]+[Path(__file__),ROOT/'templates/html/styles.css',ROOT/'templates/html/reference-layout.css',ROOT/'templates/html/math-typography.css',ROOT/'scripts/reference_validation.py',ROOT/'templates/html/graph-annotations.js']
     report['source_sha256']={str(p.relative_to(ROOT)):digest(p) for p in source_paths}
     report['font_sha256']={str(p.relative_to(ROOT)):digest(p) for p in (ROOT/'templates/html/assets/fonts').rglob('*.woff2')}
     report['design_sha256']=digest(CASE/'DESIGN.md')
     report['preview_sha256']={p.name:digest(p) for p in (CASE/'previews').glob('*.png')}
     report.update(status='passed',created_utc=datetime.now(timezone.utc).isoformat())
     (CASE/'previews/validation.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
-    print('PASS: independent mathematics, actual fonts, geometry, PC4 x two modes (8 screens), failure handling; canonical sources unchanged')
+    print('PASS: independent mathematics, actual fonts, geometry, PC4 x two modes (8 screens), failure handling; scoped heading preview changes recorded')
 
 if __name__=='__main__':
     main()

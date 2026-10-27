@@ -1,0 +1,182 @@
+{
+  "reviewer": "/root/independent_reviewer",
+  "review_type": "independent_final_documentation_and_current_evidence_review",
+  "reviewed_documentation_source": "3c27bdf0ac12b3bfdae5a13da8c0f1a06b1b2b2d",
+  "created_utc": "2026-10-27T04:19:12.142882+00:00",
+  "status": "passed_for_documentation_source",
+  "scope": "User-approved final wording/layout and common Markdown role contracts; preserve D0/revision history and verify current CI artifacts against the documentation source.",
+  "severity_counts": {
+    "high": 0,
+    "medium": 0,
+    "low": 0
+  },
+  "unresolved_findings": [],
+  "revision_requested": false,
+  "source_code_modified_by_reviewer": false,
+  "markdown_files_created_or_modified_by_reviewer": [],
+  "reviewer_output_only": "previews/heading-review/docs-final-review.json",
+  "resolved_findings": [
+    {
+      "id": "DOC-S1",
+      "severity_before": "low",
+      "status": "resolved_before_3c27bdf",
+      "problem": "The draft DESIGN claimed that every actual capture was checked by a separate Reviewer, exceeding the explicitly performed direct visual review.",
+      "resolution": "DESIGN now limits direct review to representative PNGs, the eight-view contact, central-minimum case and nine-source contact, and distinguishes all individual full-resolution/other-state automated evidence.",
+      "verification": "Read the corrected sentence, verified its current approved Markdown SHA256, and retained the performed/unperformed review boundaries below."
+    }
+  ],
+  "documentation_review": {
+    "changed_markdown_files": 16,
+    "common_contract_and_link_files": 8,
+    "index_or_release_files": 4,
+    "example_or_history_files": 4,
+    "role_contract": "Core card/item titles use Navy; category/stage/role labels use Blue. Deep and other colors retain formula, emphasis and data semantics. Language or heading tag does not determine role.",
+    "owned_unit_contract": "Each declared teaching unit owns exactly one selected main title and category/role label. Page kicker/h1 or another card cannot substitute. Other internal headings/stage labels have separate semantic selectors.",
+    "scope_and_order": "The 21 original units plus 2 overfitting cards form the declared 23-unit audit scope. #2 label/Figure/title and #6 title/Figure/shape/operation order remain intact. Tiny metric tiles, matrix cells, fruit images and numbered prose are not universally forced to receive another Blue label.",
+    "concept_leaf_titles": "The #1 .concept-step-label elements are documented as Navy stage titles, distinct from its Blue IMAGE REPRESENTATION category label.",
+    "overfitting_current_spec": "DESIGN now describes two 643x521px continuous cards, the unchanged 380x320 loss SVG plus 24px gap and 185x320 three-item prose aside, 24px/19px figure-subheading hierarchy, and independent 580x320 generalization SVG.",
+    "generalization_geometry": "The new current specification retains training/new-input/prediction mapping, model rectangles, group-center alignment and real-boundary connector semantics, without treating the standalone image diagram as another loss curve.",
+    "source_traceability": "Common contracts link to one semantic role source of truth and a per-pattern application table. Topic-specific coordinates/text remain local; previous source declarations and release baseline are marked historical.",
+    "approval_state": "User visual approval, Markdown authorization, CI/review results and actual merge are recorded as separate states. The explicit user instruction authorizes merge; old pending review records remain historical."
+  },
+  "historical_integrity": {
+    "baseline": "ce840a68b423ae7508381dc2745e3e7e12ebd41a",
+    "design_history_contains_exact_original_design_as_suffix": true,
+    "validation_D0_through_previous_end_preserved_as_exact_prefix_after_current_notice": true,
+    "D0_initial_common_gap_count": 0,
+    "D1_at_the_time_common_gap_count": 0,
+    "earlier_U2_axis_gap_preserved": 1,
+    "new_common_gaps": 2,
+    "cumulative_expanded_scope_common_gaps": 3,
+    "new_gap_ids": [
+      "D-H1",
+      "D-H2"
+    ],
+    "classification": "Role-boundary clarification and owned-card presence are the two new reusable contract gaps. User-requested composition/spacing/text changes remain C; missed color/label requirements and audit selectors remain E. The existing axis and guide-intersection error histories are not reset or reclassified.",
+    "comprehension_limit_preserved": "Former miniature-figure arithmetic/render checks did not establish beginner comprehension. User feedback prompted simpler numbered prose; the old passing numerical results are retained as version-specific evidence.",
+    "historical_pending_fields_preserved": true
+  },
+  "independent_static_checks": {
+    "local_documentation_check": "PASS 47 Markdown files / 532 local links; eight final specs, source/preview hashes, approved documentation and preserved design history",
+    "all_16_current_markdown_after_sha256_match": true,
+    "all_16_baseline_before_sha256_match": true,
+    "runtime_html_css_js_diff_from_approved_ce840": [],
+    "guard_baseline": "878b9f0fe75723bb74f0a2180fdf6dfb7effd437",
+    "independently_recomputed_pinned_paths": 29,
+    "exact_original_template_exceptions": 6,
+    "exact_document_exceptions": [
+      "DESIGN_SYSTEM.md",
+      "docs/DESIGN_COMPONENT_RECIPES.md",
+      "docs/REFERENCE_PAGE_SPECS.md"
+    ],
+    "document_exception_before_digest_equals_pinned_baseline_and_ce840_manifest_digest": true,
+    "unapproved_pinned_changes": [],
+    "python_ast_checked": [
+      "scripts/check_documentation.py",
+      "scripts/verify_gradient_descent.py",
+      "scripts/verify_heading_roles.py"
+    ]
+  },
+  "latest_ci_and_evidence": {
+    "full_ci": {
+      "run": 40429127559,
+      "job": 121942233772,
+      "status": "completed",
+      "conclusion": "success",
+      "independently_queried": true
+    },
+    "dedicated_ci": {
+      "run": 40429127597,
+      "job": 121942233868,
+      "status": "completed",
+      "conclusion": "success",
+      "independently_queried": true
+    },
+    "passed_report_files": [
+      "previews/heading-review/validation.json",
+      "previews/review/reference-validation.json",
+      "previews/review/interactive-validation.json",
+      "previews/review/dual-mode-validation.json",
+      "examples/overfitting-generalization/previews/validation.json",
+      "examples/gradient-descent/previews/validation.json"
+    ],
+    "report_source_and_preview_sha256_checks": 108,
+    "runtime_manifest_current_sha256_checks": 8,
+    "current_report_and_runtime_manifest_hash_checks": 116,
+    "mismatches": [],
+    "additional_current_markdown_hash_checks": 16,
+    "nested_dual_mode_pc_source_and_representative_preview_hashes_checked": true,
+    "heading_report_markdown_finalized": true,
+    "heading_cases": 72,
+    "owned_card_pair_observations": 184,
+    "actual_title_observations": 408,
+    "actual_blue_label_observations": 328,
+    "all_selected_roles_actual_colors_pretendard_minus_one_pt_visibility_and_geometry_pass": true,
+    "overfitting_cases": 8,
+    "gradient_descent_cases": 8,
+    "coverage": "The full CI passed original-reference/font/six-viewport checks, interactive states, dual-mode regression, logistic regression, gradient descent, approved-document checks and the heading/card audit. Dedicated CI passed overfitting and gradient-descent validation.",
+    "gallery_finalized_status_copy_verified_in_generated_HTML": true
+  },
+  "visual_review_scope": {
+    "directly_opened_in_this_final_documentation_turn": [
+      "previews/heading-review/overfitting.png",
+      "previews/heading-review/contact.jpg"
+    ],
+    "previous_direct_review": "Representative Overfitting Scroll/Slide PNGs, its PC8 contact, central-minimum variant and nine-source contact were reviewed during the final numbered-cause pass. The runtime files are byte-identical to the user-approved version.",
+    "current_image_comparison": "Five of the six prior recorded image hashes remain identical. The regenerated nine-source contact has a new hash and was directly opened again; the current images match their new CI report hashes.",
+    "no_new_confirmed_visual_defects": true,
+    "not_performed": "This final documentation turn did not freshly open every individual full-resolution artifact or every alternate/error-state screenshot, run a local Chromium browser, conduct a reader study, or test a screen reader."
+  },
+  "reusability_judgment": {
+    "D0_and_original_D1": "Sufficient within their historical #3/#8-partial scope; retained as historical results.",
+    "expanded_contracts_before_documentation": "Some supplementation needed: earlier axis contract plus two new role/presence contracts.",
+    "after_current_documentation": "Sufficient within the actually tested Comparison reconstruction and selected graph principles.",
+    "untested": "New-topic reuse of the other patterns, independent-author reproduction from Markdown alone, actual model training/independent-test performance, mobile/tablet, screen-reader listening and arbitrary SVG transforms remain unverified.",
+    "no_all_pattern_new_topic_success_claim": true
+  },
+  "approval_and_delivery": {
+    "user_visual_approved": true,
+    "approved_preview_head": "ce840a68b423ae7508381dc2745e3e7e12ebd41a",
+    "visual_validation_source": "29c3ff7a15acf3b11bec07d431bff4867c12c9ce",
+    "markdown_finalized": true,
+    "merge_authorized_by_user": true,
+    "merge_performed_by_reviewer": false,
+    "actual_merge_status_not_claimed": "Actual merge/SHA must be confirmed from PR #22.",
+    "remaining_owner_delivery_steps": [
+      "Update documentation-finalization.json from its pending seed with these verified CI/review results.",
+      "Commit the final evidence/review artifacts, confirm required CI on that final HEAD, then perform the already-authorized merge and verify the resulting main ancestry."
+    ],
+    "final_artifact_head_ci_not_yet_reviewed_in_this_record": true,
+    "D0_preservation": "Use the planned merge commit rather than squashing if preserving the individual D0 commits in main ancestry."
+  },
+  "markdown_sha256": {
+    "CHANGELOG.md": "80853bebaec4673b6f97106349dd29579f2045c9b8e82e3c19707e984346f1db",
+    "DESIGN_SYSTEM.md": "e4f03874786c326224c10bc42fc77fa0369a45c8c7458a6bbaa748a64a0c42da",
+    "README.md": "9f49840ace9130ddc1f048d3788d01d39ca407fec5e3d13714cfeb07572464a0",
+    "TEMPLATE_CATALOG.md": "e6cafc53a4f6e7e192890790dc7fa8a8469ed9c8d859440a29611acf3fbc7372",
+    "docs/CONCEPT_REUSE_PROMPT.md": "0d25064a63ade57b4d7e72cba170d51ad43a4359aeeb0afc69bdf04343e9c877",
+    "docs/DESIGN_COMPONENT_RECIPES.md": "bf6ef863cc242445fb4dd2aead048970aecef3172c73444c37d8eabd81ee10bf",
+    "docs/FIGURE_PRODUCTION_STANDARD.md": "89b3880f61db86e2a71c2a8ee9a21eb31b888ecab36a247058f2b18478d82a04",
+    "docs/REFERENCE_PAGE_SPECS.md": "4a1536fac1a4340af19bae783e030797a4dd8e88cd94b7d82559135b3fe20683",
+    "docs/REFERENCE_RELEASE_STATUS.md": "1642b8354f9a1fff5dc74db94cf7e457af5c1aff39608d919b7cf87bcbbd16ce",
+    "docs/REFERENCE_REUSE_WORKFLOW.md": "612ea9cf26d949915489a443555faef9244591c931f2cdf24d6aee04ce791254",
+    "docs/REFERENCE_REVIEW_GUIDE.md": "904b117a685a4254ea49fe18f5c1410845c967c48a15bc7209a1cfc8f0f0589f",
+    "docs/TEMPLATE_REUSE_VALIDATION.md": "bb033384f1b08b8f854f1ba9aa22010b57638bbfb16667ca601e2a1d416e8786",
+    "examples/overfitting-generalization/DESIGN.md": "ef7a17325425c1dfd690df0a655da6e020a9ded592c56948f8cdfe9ea68537ef",
+    "examples/overfitting-generalization/README.md": "3e40ce198764a58d224df8033659398ab0504045807cf0afbb5ea118f485d81f",
+    "examples/overfitting-generalization/VALIDATION.md": "8722a34e6f375d8cab795f65cdff0ec2015c6d8a8ad981772bab18fa14a913d7",
+    "examples/overfitting-generalization/review/design-history.md": "ce7c086f8fa5b78d79f9a18800dc82a777dddedd577e6cb287e2f6586f86fe00"
+  },
+  "evidence_sha256": {
+    "previews/heading-review/validation.json": "6bee52e8283aee79414dd6befe3c37101bef52edf4c5813791e606325ca8af33",
+    "previews/review/reference-validation.json": "ea0aa8c7649c212addba74d231d6ef2b157cfe810980a6fc8ceeae77d5dcc724",
+    "previews/review/interactive-validation.json": "16cedb33ac3e931307e58a9ecb0ab01b2ef6ab8fc23c710cc16e3a105202d153",
+    "previews/review/dual-mode-validation.json": "7791a8b10cc2f459371d7183837b86d8a7f91f9b0b417388363d2bd09d42d7c7",
+    "examples/overfitting-generalization/previews/validation.json": "dda5488df82dad5e986fdd65cf238a8f151b4f28c630c7f70d5db63c74303053",
+    "examples/gradient-descent/previews/validation.json": "100d9cb53195568c46c3a528e3c0828ffd77c5bb122e0e17ea5a0037e9ed1b20",
+    "previews/heading-review/change-scope.json": "37f7cd073dd2db3fe017c403eb81f43573e5b0cff0e4e7436f1d4afe7c15ca00",
+    "scripts/check_documentation.py": "9c2f798431e293e86c5e16ff1f5a9bf3d0a29ffebaab552a5abbb5a15837d210",
+    "scripts/verify_gradient_descent.py": "ebee825c1cdc8ddf1e50f5cc698a6d83de81127017c6761dbd2192e05e77ae5f",
+    "scripts/verify_heading_roles.py": "3ea998122463bf663abdf5de61af9b96b646f67155d8b0e3b08ec66f95ecf7b2"
+  }
+}

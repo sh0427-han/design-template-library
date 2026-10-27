@@ -126,3 +126,15 @@
 ## 타주제 재사용 검증 사례 · 경사하강법
 
 [경사하강법 개념 한 장](examples/gradient-descent/README.md)은 위8종과 공통 Markdown의 충분성을 검토한 별도 산출물이며 canonical 번호를 추가하지 않습니다. #1의 White 단일 패널, #2의 역할별 설명 트랙, #8의 축/데이터 대응 원칙 일부를 선택했습니다. 편집 가능한 손실 곡선·접선·갱신 방향과 스칼라 일반식을 사용하고 실제 숫자 대입 장은 없습니다. 같은 [원본](examples/gradient-descent/content.html)을 [Scroll](examples/gradient-descent/scroll.html)/[Slide](examples/gradient-descent/slides.html)에서 표시합니다. [설계 출처·주제 전용 수치](examples/gradient-descent/DESIGN.md), [D0/D1 판단](examples/gradient-descent/VALIDATION.md), [Slide 프리뷰](examples/gradient-descent/previews/slide.png), [Scroll 프리뷰](examples/gradient-descent/previews/scroll.png), [검증 JSON](examples/gradient-descent/previews/validation.json)을 함께 봅니다.8종 전체의 타주제 재사용을 통과했다는 의미는 아닙니다.
+
+
+## 3차 타주제 재사용 검증 · 과적합과 일반화
+
+2026-10-27 사용자 확정본은 검증 손실 최소의 선택 시점을 x축의 best.pt로, 이후 과적합 구간을 음영과 오른쪽 화살표로 표시한다. 정의·그림을 각 개념의 한 카드로 합치고, 왼쪽 정렬 손실 그래프 오른쪽에 과적합 원인을 1·2·3 문장으로 설명한다. 새 이미지의 색·윤곽·자세를 학습 이미지와 구별하고, 정의 카드의 제목/본문 서식은 #3 원본과 대조한다. y축 이름은 공통 Figure표준에 따라 축 중앙 왼쪽에 세로로 배치한다. 과거 D0/D1 및 개정별 결과는 각 검증 기록에 보존한다.
+
+[과적합과 일반화 개념 한 장](examples/overfitting-generalization/README.md)은 #3 Comparison의 동등 White·대응 행과 #8의 동일 기준/축/범례 원칙 일부를 재구성한 별도 검증 산출물이다. 과적합(현상)과 일반화(새 데이터 성능 관점)를 구분하고 왼쪽의 학습·검증 손실 Figure와 오른쪽의 학습 이미지→같은 모델→새 이미지 예측 Figure로 두 개념을 나란히 읽는다. 같은 [편집 원본](examples/overfitting-generalization/content.html)을 [Scroll](examples/overfitting-generalization/scroll.html)/[Slide](examples/overfitting-generalization/slides.html)로 표시한다. [설계·출처](examples/overfitting-generalization/DESIGN.md), [D0/D1 및 독립검토](examples/overfitting-generalization/VALIDATION.md), [Slide PNG](examples/overfitting-generalization/previews/slide.png), [Scroll PNG](examples/overfitting-generalization/previews/scroll.png), [8화면 실제 검증](examples/overfitting-generalization/previews/validation.json)을 함께 확인한다. 새 canonical 번호를 추가하지 않으며 사용하지 않은 패턴의 타주제 재사용을 검증한 것은 아니다.
+
+
+## 제목과 분류 라벨의 확정 기준
+
+[디자인 시스템의 역할 계약](DESIGN_SYSTEM.md#제목과-분류-라벨의-역할)에 따라 핵심 제목은 Navy, 분류·단계 라벨은 Blue다. [8종의 적용 단위](docs/DESIGN_COMPONENT_RECIPES.md#제목라벨-검사의-적용-단위)를 유지하며 페이지 Kicker로 카드 소유 라벨을 대신하지 않는다. #1 IMAGE REPRESENTATION과 #3/5/6/7/8의 역할색 정리는 사용자 승인된 PR #22 범위다. 기술 데이터·의미색을 일괄 변경하지 않는다. [9종 적용 이미지](previews/heading-review/index.html)와 [72화면 감사](previews/heading-review/validation.json), [문서 확정 상태](previews/heading-review/documentation-finalization.json)에서 검증 범위를 확인한다.
