@@ -272,13 +272,14 @@ def main():
             browser.close()
     finally:
         server.shutdown();server.server_close()
-    # User-authorized heading preview is the only exception to the pinned sources.
+    # Only exact user-authorized heading and documentation revisions may differ.
     paths=['AGENTS.md','DESIGN_SYSTEM.md','docs/DESIGN_COMPONENT_RECIPES.md','docs/REFERENCE_PAGE_SPECS.md']
     paths += subprocess.check_output(['git','ls-tree','-r','--name-only',BASE,'templates/html'],cwd=ROOT,text=True).splitlines()
     heading_paths={'templates/html/comparison-reference.css','templates/html/interactive.html','templates/html/experiment.html','templates/html/executive-summary.html','templates/html/architecture.html','templates/html/concept.html'}
     heading_scope=json.loads((ROOT/'previews/heading-review/change-scope.json').read_text())
     assert heading_scope['baseline']=='a5ea4b64f2df6945f0f40eb88de99179a190dc3b'
-    changed=[];heading_changes=[]
+    documented_paths={'DESIGN_SYSTEM.md','docs/DESIGN_COMPONENT_RECIPES.md','docs/REFERENCE_PAGE_SPECS.md'}
+    changed=[];heading_changes=[];documentation_changes=[]
     for path in paths:
         old=subprocess.check_output(['git','show',f'{BASE}:{path}'],cwd=ROOT)
         if hashlib.sha256(old).hexdigest()!=digest(ROOT/path):
@@ -288,14 +289,23 @@ def main():
                 assert hashlib.sha256(before).hexdigest()==expected['before_sha256']
                 assert digest(ROOT/path)==expected['after_sha256']
                 heading_changes.append(path)
+            elif path in documented_paths:
+                approval=heading_scope['documentation_approval']
+                assert approval['user_approved'] and approval['baseline']=='ce840a68b423ae7508381dc2745e3e7e12ebd41a'
+                expected=heading_scope['documentation_changes'][path]
+                before=subprocess.check_output(['git','show',f"{approval['baseline']}:{path}"],cwd=ROOT)
+                assert hashlib.sha256(before).hexdigest()==expected['before_sha256']==hashlib.sha256(old).hexdigest()
+                assert digest(ROOT/path)==expected['after_sha256']
+                documentation_changes.append(path)
             else:changed.append(path)
     assert not changed,changed
-    report['canonical_sources_unchanged']=not heading_changes
+    report['canonical_sources_unchanged']=not heading_changes and not documentation_changes
     report['authorized_heading_preview_changes']=heading_changes
+    report['authorized_documentation_changes']=documentation_changes
     report['heading_review_status']=heading_scope['status']
     report['other_canonical_sources_unchanged']=True
     report['new_shared_axis_module']='templates/html/graph-annotations.js'
-    report['intentional_common_rule_change']='FIGURE_PRODUCTION_STANDARD: user-requested axis-title alignment; other pinned common rules unchanged'
+    report['intentional_common_rule_change']='Axis-title contract plus user-approved heading roles/owned-card documentation; exact SHA exceptions only'
     source_paths=[p for p in CASE.iterdir() if p.suffix in ('.html','.css','.js')]+[Path(__file__),ROOT/'templates/html/styles.css',ROOT/'templates/html/reference-layout.css',ROOT/'templates/html/math-typography.css',ROOT/'scripts/reference_validation.py',ROOT/'templates/html/graph-annotations.js']
     report['source_sha256']={str(p.relative_to(ROOT)):digest(p) for p in source_paths}
     report['font_sha256']={str(p.relative_to(ROOT)):digest(p) for p in (ROOT/'templates/html/assets/fonts').rglob('*.woff2')}

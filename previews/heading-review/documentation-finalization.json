@@ -1,0 +1,17 @@
+{
+  "status": "awaiting_final_verification",
+  "user_visual_approved": true,
+  "markdown_updated": true,
+  "merge_authorized": true,
+  "approval_date": "2026-10-27",
+  "approved_preview_head": "ce840a68b423ae7508381dc2745e3e7e12ebd41a",
+  "visual_validation_source": "29c3ff7a15acf3b11bec07d431bff4867c12c9ce",
+  "new_common_gaps": 2,
+  "earlier_axis_gap": 1,
+  "cumulative_common_gaps": 3,
+  "common_contract_markdown_files": 8,
+  "updated_markdown_files": 16,
+  "historical_d0_and_revision_records_preserved": true,
+  "merge_status_url": "https://github.com/sh0427-han/design-template-library/pull/22",
+  "note": "CI, independent documentation review, and the actual merge are separate states; no success or merge is claimed by this pending record."
+}

@@ -119,6 +119,10 @@ python scripts/validate_references.py --templates architecture step-by-step --ev
 
 추가 검증 사례: [경사하강법 개념 한 장](examples/gradient-descent/README.md). 기존8종과 공통 지침만을 설계 입력으로 사용했으며, [D0/D1 평가](examples/gradient-descent/VALIDATION.md)에서 재사용 범위·문서 부족·개념 고유 설계·구현 오류를 구분합니다. 검증은 `python scripts/verify_gradient_descent.py`로 재현합니다.
 
+추가 검증 사례: [과적합과 일반화](examples/overfitting-generalization/README.md). #3 비교 재구성과 #8 그래프 원칙 일부를 한 장에서 검증했고, 기존8종 전체의 타주제 재사용 성공으로 확대하지 않습니다. [최종 설계](examples/overfitting-generalization/DESIGN.md)와 [D0/D1·문서 보완](examples/overfitting-generalization/VALIDATION.md)을 구분해 기록했습니다.
+
+제목·라벨은 [Navy 핵심 제목/Blue 분류 라벨](DESIGN_SYSTEM.md#제목과-분류-라벨의-역할)로 통일하고, 선언된 설명 단위가 자기 라벨과 제목을 갖도록 검사합니다. [8종+과적합 적용 결과](previews/heading-review/index.html) · [문서 확정 검사](previews/heading-review/documentation-finalization.json).
+
 ## 문서 지도와 통합 상태
 
 - [사용 방법](docs/USAGE.md): 실행·복사·편집 요령

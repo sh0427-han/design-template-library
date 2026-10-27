@@ -75,13 +75,14 @@ def gallery():
   im=Image.open(src).convert('RGB');im.thumbnail((630,354));x=(i%3)*640;y=(i//3)*390
   draw.text((x+10,y+6),f'{i+1:02d} {name}',fill='#12233f');contact.paste(im,(x+5,y+30))
  contact.save(OUT/'contact.jpg',quality=92)
- html='''<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>제목 색상 · 검토용 9종</title><link rel="stylesheet" href="../../templates/html/styles.css"><style>body{display:block;padding:28px;min-height:100vh}header{max-width:1500px;margin:0 auto 24px}h1{font-size:34px;margin:8px 0}header p{color:var(--muted)}main{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;max-width:1500px;margin:auto}article{border:1px solid var(--border);border-radius:16px;background:white;padding:18px}small,a{color:var(--blue)}article h2{font-size:24px;color:var(--navy);margin:5px 0 14px}img{width:100%;height:auto;display:block}article p{margin:12px 0 0}a{font-weight:700} @media(max-width:900px){main{grid-template-columns:1fr}}</style></head><body><header><div class="kicker">HEADING COLOR REVIEW</div><h1>핵심 제목은 Navy, 분류·단계 라벨은 Blue</h1><p>8종 레퍼런스와 과적합 자료의 적용 시안 · 공통 Markdown 규칙은 검토 후 확정</p></header><main>'''+''.join(cards)+'</main></body></html>'
+ html='''<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>제목 색상 · 9종 적용 결과</title><link rel="stylesheet" href="../../templates/html/styles.css"><style>body{display:block;padding:28px;min-height:100vh}header{max-width:1500px;margin:0 auto 24px}h1{font-size:34px;margin:8px 0}header p{color:var(--muted)}main{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;max-width:1500px;margin:auto}article{border:1px solid var(--border);border-radius:16px;background:white;padding:18px}small,a{color:var(--blue)}article h2{font-size:24px;color:var(--navy);margin:5px 0 14px}img{width:100%;height:auto;display:block}article p{margin:12px 0 0}a{font-weight:700} @media(max-width:900px){main{grid-template-columns:1fr}}</style></head><body><header><div class="kicker">HEADING COLOR REVIEW</div><h1>핵심 제목은 Navy, 분류·단계 라벨은 Blue</h1><p>8종 레퍼런스와 과적합 자료의 적용 결과 · 공통 Markdown 기준 반영 완료</p></header><main>'''+''.join(cards)+'</main></body></html>'
  (OUT/'index.html').write_text(html)
 
 def main():
  OUT.mkdir(parents=True,exist_ok=True);server=ThreadingHTTPServer(('127.0.0.1',0),partial(Quiet,directory=str(ROOT)))
  threading.Thread(target=server.serve_forever,daemon=True).start();base=f'http://127.0.0.1:{server.server_port}'
- report={'status':'running','markdown_finalized':False,'scope':'8 original references + overfitting; PC4 x Scroll/Slide','role_colors':COLORS,'cases':[]}
+ scope_data=json.loads((OUT/'change-scope.json').read_text())
+ report={'status':'running','markdown_finalized':scope_data['markdown_finalized'],'scope':'8 original references + overfitting; PC4 x Scroll/Slide','role_colors':COLORS,'cases':[]}
  errors=[];failed=[];baseline={}
  try:
   with sync_playwright() as p:
@@ -115,6 +116,6 @@ def main():
   report['source_sha256']={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in paths}
   report['preview_sha256']={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in [*(ROOT/'previews').glob('html-*.*'),OUT/'overfitting.png',OUT/'contact.jpg'] if p.is_file()}
   (OUT/'validation.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
- print('PASS 72 heading-role screens; 9-source preview gallery; Markdown pending user review')
+ print('PASS 72 heading-role screens; 9-source preview gallery; documentation state recorded')
 
 if __name__=='__main__':main()

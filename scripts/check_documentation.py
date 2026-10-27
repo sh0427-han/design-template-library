@@ -1,6 +1,6 @@
 """Check all Markdown file links and final design / rendered-source contracts."""
 from pathlib import Path
-import hashlib,json,re
+import hashlib,json,re,subprocess
 ROOT=Path(__file__).resolve().parents[1]
 
 def main():
@@ -44,5 +44,17 @@ def main():
     assert set(pilot['review_preview_sha256'])=={'concept.png'}
     for name,expected in pilot['review_preview_sha256'].items():
         assert hashlib.sha256((pilot_root/'review'/name).read_bytes()).hexdigest()==expected,('pilot review image changed',name)
-    print(f'PASS {len(docs)} Markdown files / {links} local links; eight final specs, source/preview hashes and Interactive reuse evidence')
+    scope=json.loads((ROOT/'previews/heading-review/change-scope.json').read_text())
+    assert scope['markdown_finalized'] and scope['documentation_approval']['user_approved']
+    baseline=scope['documentation_approval']['baseline']
+    assert baseline=='ce840a68b423ae7508381dc2745e3e7e12ebd41a'
+    for path,expected in scope['documentation_changes'].items():
+        assert path.endswith('.md')
+        assert hashlib.sha256((ROOT/path).read_bytes()).hexdigest()==expected['after_sha256'],('document changed',path)
+        before=subprocess.run(['git','show',f'{baseline}:{path}'],cwd=ROOT,capture_output=True)
+        assert (hashlib.sha256(before.stdout).hexdigest() if before.returncode==0 else None)==expected['before_sha256'],('document baseline',path)
+    history=(ROOT/'examples/overfitting-generalization/review/design-history.md').read_text()
+    old_design=subprocess.check_output(['git','show',f'{baseline}:examples/overfitting-generalization/DESIGN.md'],cwd=ROOT).decode()
+    assert history.endswith(old_design),'historical D0/revision design must remain intact'
+    print(f'PASS {len(docs)} Markdown files / {links} local links; eight final specs, source/preview hashes, approved documentation and preserved design history')
 if __name__=='__main__':main()

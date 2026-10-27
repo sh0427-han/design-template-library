@@ -4,7 +4,7 @@
 
 ## 기준 소스
 
-이번 문서 정리의 기준은 `main`의 **`889cc6e30fc7b8a957bce315207f9f856f37cd45`**입니다. 아래 PR은 모두 이 커밋에 반영되어 있습니다. 이번 작업은 승인된 8종 HTML/CSS/JS를 다시 설계하지 않습니다.
+최초 문서 정리의 역사적 기준은 `main`의 **`889cc6e30fc7b8a957bce315207f9f856f37cd45`**입니다. 아래 PR은 모두 이 커밋에 반영되어 있습니다. 그 시점에는 승인된 8종 HTML/CSS/JS를 다시 설계하지 않았습니다.
 
 | 번호 | 최종 소스와 프리뷰 | 구현 출처 | 유지할 핵심 계약 |
 | --- | --- | --- | --- |
@@ -18,6 +18,14 @@
 | 08 | [Executive Summary](../templates/html/executive-summary.html) · [JPG](../previews/html-executive-summary.jpg) | 기존 승인 레이아웃→#12 | 원래 값·단위·지표별 기준100%, −33.3/−33.3/−60.0% |
 
 PR URL은 `https://github.com/sh0427-han/design-template-library/pull/번호`입니다. #9/#10/#11은 초기 통합 #12로 정리됐습니다. #16은 PC 전용 제작 기준, #17은 같은 8개 원본을 직접 표시하는 Scroll/Slide 및 용어 첫 등장 기준입니다.
+
+## PR #22 사용자 확정 후속 반영
+
+2026-10-27 사용자가 8종의 제목/라벨 체계와 과적합 시안을 확정하고 Markdown 정리·병합을 승인했습니다. 기존 치수/기술 계약 위에 핵심 제목 Navy/분류·단계 라벨 Blue와 설명 단위 소유 관계를 명시합니다. #1의 IMAGE REPRESENTATION 라벨을 포함한 원본6개 경로 변경은 [정확한 전후 SHA manifest](../previews/heading-review/change-scope.json)로 한정합니다. 숫자·수식·이미지 데이터·조작 계약은 보존합니다.
+
+원본21단위+과적합2단위의 색/소유 관계를 PC4×두 모드의72자료 화면/184쌍에서 검사합니다. 기존 원본48화면/두 모드64화면 회귀와 새 개념의 재사용 범위는 별개입니다. [공통 적용표](DESIGN_COMPONENT_RECIPES.md#제목라벨-검사의-적용-단위) · [현재 감사 JSON](../previews/heading-review/validation.json) · [문서 확정 결과](../previews/heading-review/documentation-finalization.json). 실제 병합 상태·SHA는 [PR #22](https://github.com/sh0427-han/design-template-library/pull/22)에서 확인합니다.
+
+아래 최초 정리의 소스/브라우저 수치·삭제 내역은 당시 기록이며 최신 실행값은 현재 JSON을 따릅니다.
 
 ## 문서의 책임
 
@@ -45,6 +53,6 @@ PR URL은 `https://github.com/sh0427-han/design-template-library/pull/번호`입
 
 다음 라운드의 기준은 **기존8종 레퍼런스와 갱신한 공통 Markdown**입니다. 로지스틱 회귀는 첫 검토 사례이며 다음 제작의 기준 템플릿이 아닙니다. 현재 보존한 개념 한 장의8개 화면/161점 검증과, 검토에서 얻은 일반 원칙·전용 값·한계는 [검증 기준](TEMPLATE_REUSE_VALIDATION.md)에 연결했습니다.
 
-[검증 프롬프트](CONCEPT_REUSE_PROMPT.md)로 다른 개념을 제작하며 `DESIGN.md`에 규칙 출처, `VALIDATION.md`에 시작 문서D0/보완 후D1·문서 누락·고유 설계·구현 오류·검증/미검증 패턴을 기록합니다. 목적은 새 슬라이드의 완성도와 템플릿/문서의 재현 가능성을 함께 확인하는 것입니다. 다음 새 주제의 검증은 아직 수행하지 않았습니다.
+[검증 프롬프트](CONCEPT_REUSE_PROMPT.md)로 다른 개념을 제작하며 `DESIGN.md`에 규칙 출처, `VALIDATION.md`에 시작 문서D0/보완 후D1·문서 누락·고유 설계·구현 오류·검증/미검증 패턴을 기록합니다. 목적은 새 슬라이드의 완성도와 템플릿/문서의 재현 가능성을 함께 확인하는 것입니다. 이후 경사하강법과 과적합·일반화의 새 주제 검증을 수행했으며 각각의 VALIDATION 기록에 한정합니다.
 
 기존8종의 사용자 승인·기술 회귀·새 개념의 재사용·문서 충분성·main 반영을 구분합니다. 원본의 통과가 다른 개념의 기술적 정확성과8종 전체의 일반화를 자동 보장하지 않습니다.
