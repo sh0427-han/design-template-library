@@ -52,19 +52,15 @@ const over=s.querySelector('#overfit-title').nextElementSibling,or=document.crea
 return {causeLayout,cardLayout,cardCount:d.length,oldSplitCards:s.querySelectorAll('.definition-grid,.definition').length,axisAlignment,overfittingLines:overLineYs.length,generalizationLines:generalLineYs.length,subtitle:s.querySelector('.subtitle').textContent,lossDefinitionInGraph:!!s.querySelector('.curve-panel .loss-definition'),charts,removedSubjects:s.querySelectorAll('.subject').length,removedGrid:s.querySelectorAll('.grid-lines').length,slide:sb,footer:fb,content:box(s.querySelector('.content')),outside,padding,clipped,labels,labelOutside,collisions,alignment,footerGap:fb.y-last.bottom,figureCaptionGap:last.y-box(s.querySelector('.loss-panel')).bottom,title:s.querySelector('h1').textContent};
 }'''
 
-def cause_sketches(frame):
-    rows=frame.locator('.pattern-sketch').evaluate_all('''es=>es.map(s=>({points:[...s.querySelectorAll('circle')].map(c=>[Number(c.getAttribute('cx')),Number(c.getAttribute('cy'))]),path:s.querySelector('path').getAttribute('d')}))''')
-    assert len(rows)==2 and rows[0]['points']==rows[1]['points'] and len(rows[0]['points'])==5
-    points=rows[0]['points'];mx=sum(x for x,y in points)/len(points);my=sum(y for x,y in points)/len(points)
-    slope=sum((x-mx)*(y-my) for x,y in points)/sum((x-mx)**2 for x,y in points);intercept=my-slope*mx
-    endpoints=list(map(float,re.findall(r'-?\d+(?:\.\d+)?',rows[0]['path'])))
-    assert len(endpoints)==4 and endpoints[0]==points[0][0] and endpoints[2]==points[-1][0]
-    assert max(abs(y-(slope*x+intercept)) for x,y in zip(endpoints[::2],endpoints[1::2]))<1e-12
-    fitted=list(map(float,re.findall(r'-?\d+(?:\.\d+)?',rows[1]['path'])))
-    assert list(zip(fitted[::2],fitted[1::2]))==list(map(tuple,points))
-    residual=sum((y-(slope*x+intercept))**2 for x,y in points)
-    assert residual>0 and '커질 수 있음' in frame.locator('.cause-outcome').inner_text()
-    return {'shared_points':5,'trend_is_least_squares':True,'trend_training_residual':residual,'interpolation_training_residual':0,'measured_generalization_claim':False}
+def cause_text(frame):
+    cause=frame.locator('.overfit-cause')
+    assert cause.locator('ol.cause-steps > li').count()==3 and cause.locator('svg').count()==0
+    numbers=cause.locator('.cause-number').all_text_contents()
+    assert numbers==['1.','2.','3.'],numbers
+    steps=cause.locator('.cause-step p').all_text_contents()
+    assert '예측 오차' in steps[0] and '학습 데이터에만' in steps[1] and '잡음' in steps[1] and '커질 수 있음' in steps[2]
+    assert '공통 패턴' not in cause.inner_text()
+    return {'ordered_steps':3,'numbers':numbers,'step_text':steps,'auxiliary_sketches':0,'conditional_unseen_error':True}
 
 def fonts(page,frame,selector):
     entries=frame.evaluate('''sel=>[...document.querySelectorAll(sel)].filter(e=>!e.matches('title,desc')&&e.getBoundingClientRect().width&&e.getBoundingClientRect().height&&[...e.childNodes].some(n=>n.nodeType===3&&n.textContent.trim())).map((e,i)=>{e.dataset.fontCheck=String(i);return {id:i,math:!!e.closest('.math-number'),spacing:getComputedStyle(e).letterSpacing}})''',selector)
@@ -222,7 +218,7 @@ def main():
                     assert all(abs(c['sectionGap']-24)<.1 and 0<=c['titleToContentGap']<c['sectionGap'] and c['figureTitleFont']==19 and c['figureTitleWeight']>=700 for c in geometry['cardLayout']),geometry['cardLayout']
                     assert len(geometry['charts'])==1 and all(abs(c['width']-380)<.1 and abs(c['height']-320)<.1 for c in geometry['charts'])
                     cause=geometry['causeLayout'];assert abs(cause['gap']-24)<.1 and cause['topError']<.1 and cause['height']==320 and cause['width']>=175 and cause['nestedCards']==0 and not cause['overflow'],cause
-                    report['cases'][-1]['cause_sketches']=cause_sketches(frame)
+                    report['cases'][-1]['cause_text']=cause_text(frame)
                     assert geometry['overfittingLines']==1 and geometry['generalizationLines']==1 and geometry['lossDefinitionInGraph']
                     assert '손실' not in geometry['subtitle'] and '검증 데이터' not in geometry['subtitle']
                     ax=geometry['axisAlignment'];assert ax['yCenterError']<.1 and ax['xCenterError']<.1 and abs(ax['yGap']-8)<.1 and abs(ax['xGap']-8)<.1,ax

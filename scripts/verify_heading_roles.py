@@ -19,7 +19,7 @@ ROLES={
  'architecture':('.arch-title','.arch-phase-band span,.arch-step-roles b,.arch-operation'),
  'experiment':('.experiment-card > h2,.metric h3','.ref-k'),
  'executive-summary':('.exec-impact h2,.exec-action-panel h2,.exec-metric-head h3,.exec-action b','.ref-k'),
- 'overfitting-generalization':('.concept-card h2,#overfit-heading,#generalization-heading,.cause-title,.cause-step h5','.definition-label'),
+ 'overfitting-generalization':('.concept-card h2,#overfit-heading,#generalization-heading,.cause-title','.definition-label'),
 }
 CARD_PAIRS={
  'concept':[('.concept-panel','.card-label','h2',1)],

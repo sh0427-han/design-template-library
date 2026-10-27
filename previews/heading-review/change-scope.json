@@ -25,7 +25,7 @@
     },
     "examples/overfitting-generalization/lesson.css": {
       "before_sha256": "b01915959c7ea615125f9db09cfc9ea13109ce711702c59c6a781bf3fa0325ab",
-      "after_sha256": "f76260672e65f8e40773dafe8a67593390c7d306a30757df7738fbdb2ae2c901"
+      "after_sha256": "e2b7c10a4b667764592b8d19028a67f6c910cd95dda1507fdf054d15aff9d2ef"
     },
     "templates/html/architecture.html": {
       "before_sha256": "0b40aa7f35960458292b8fd691a0ffcac83e8646993dda516b85e809efac28e1",
@@ -37,7 +37,7 @@
     },
     "examples/overfitting-generalization/content.html": {
       "before_sha256": "44c7f22b1683213b219bdc4349c015095136ab5618bc8b172236f02d3f51971b",
-      "after_sha256": "4cbd118a5e881f020b47f1f63307abf7afb826e4e160e4d88ab75c6afcd5e42a"
+      "after_sha256": "720bf636b7568d7f64ff227648faa983f30c49a28ba97501d3fab5ce4a4d8526"
     }
   },
   "role_notes": {
@@ -84,6 +84,16 @@
     "content": "shared trend versus fitting individual differences; conditional effect on unseen data",
     "sketches": "same five illustrative observations; least-squares trend versus interpolation; no measured unseen-data performance",
     "preserved": "approved Concept, generalization diagram, loss data/coordinates, 24px figure-title spacing",
+    "markdown": "pending user visual review"
+  },
+  "numbered_cause_followup": {
+    "baseline": "a6f9bdb4c996bbfa60757fed9f70b5f38f0a3ee0",
+    "scope": "replace cause sketches with three short numbered sentences",
+    "classification": "C: beginner-specific wording refinement after user comprehension feedback",
+    "removed": "two miniature sketches, their legend, and the abstract common-pattern explanation",
+    "preserved": "loss graph, best.pt, generalization diagram, approved original sources and figure-title spacing",
+    "layout": "185x320 borderless explanation; 18px/24px body; three ordered items",
+    "prior_review_limit": "Earlier rendering and numerical review passed; that did not establish beginner comprehension. Historical reports are preserved.",
     "markdown": "pending user visual review"
   }
 }
