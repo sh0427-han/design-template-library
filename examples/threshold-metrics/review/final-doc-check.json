@@ -1,0 +1,110 @@
+{
+  "reviewer": "/root/threshold_reviewer_final",
+  "created_utc": "2026-10-27T12:21:59.777622+00:00",
+  "check_type": "final documentation/evidence synchronization; no new runtime revision or third technical correction round",
+  "decision": "approved_document_content_and_evidence_consistency",
+  "runtime_approval": "reviewer-round2.json at cf17bdcc2d7961e2d3d1680bb3c5cbc6cb3dbb4a",
+  "findings": [],
+  "unresolved_technical_findings": 0,
+  "documents_read": [
+    "README.md",
+    "VALIDATION.md D1 completion and CI provenance",
+    "review/delivery.json",
+    "review/ci-validation.json",
+    "local .gitignore",
+    "reviewer-round1.json",
+    "reviewer-round2.json"
+  ],
+  "document_assessment": {
+    "D0_preserved": {
+      "DESIGN.md": true,
+      "VALIDATION.md": true
+    },
+    "D0_versus_D1_judgment_separated": true,
+    "A_to_E_classification_consistent": true,
+    "R1_E01_resolved_as_E_not_common_gap": true,
+    "common_md_missing_contradiction_source_only_required_rule_amendment_counts": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "pattern_5_and_7_individually_assessed": true,
+    "unused_patterns_not_overclaimed": true,
+    "screen16_threshold404_custom20_counts_kept_separate": true,
+    "mode_equality_limited_to_selected_concept11_practice35_elements": true,
+    "normal_fonts_vs_intentional_fallback_separated": true,
+    "exception_viewport_mode_scope_disclosed": true,
+    "initial_failure_and_prior_environment_limits_retained": true,
+    "independent_reviewer_actual_scope_and_untested_scope_truthful": true,
+    "local_CDP154_vs_CI155_evidence_distinct": true,
+    "runtime_CI_vs_final_artifact_HEAD_distinct": true,
+    "no_main_merge_claim_or_authorization": true,
+    "external_CDN_reachability_not_falsely_claimed": true
+  },
+  "fingerprint_checks": {
+    "source10_current_match": {
+      "examples/threshold-metrics/scroll.html": true,
+      "examples/threshold-metrics/slides.html": true,
+      "examples/threshold-metrics/content.html": true,
+      "examples/threshold-metrics/lesson.css": true,
+      "examples/threshold-metrics/model.js": true,
+      "examples/threshold-metrics/app.js": true,
+      "examples/threshold-metrics/data.json": true,
+      "examples/threshold-metrics/DESIGN.md": true,
+      "scripts/verify_threshold_metrics.py": true,
+      ".github/workflows/validate-threshold-metrics.yml": true
+    },
+    "source10_pinned_runtime_commit_match": {
+      "examples/threshold-metrics/scroll.html": true,
+      "examples/threshold-metrics/slides.html": true,
+      "examples/threshold-metrics/content.html": true,
+      "examples/threshold-metrics/lesson.css": true,
+      "examples/threshold-metrics/model.js": true,
+      "examples/threshold-metrics/app.js": true,
+      "examples/threshold-metrics/data.json": true,
+      "examples/threshold-metrics/DESIGN.md": true,
+      "scripts/verify_threshold_metrics.py": true,
+      ".github/workflows/validate-threshold-metrics.yml": true
+    },
+    "preview5_match": {
+      "examples/threshold-metrics/previews/scroll-concept.png": true,
+      "examples/threshold-metrics/previews/scroll-practice.png": true,
+      "examples/threshold-metrics/previews/slides-concept.png": true,
+      "examples/threshold-metrics/previews/slides-practice.png": true,
+      "examples/threshold-metrics/review/contact.jpg": true
+    },
+    "ci_source10_match": true,
+    "protected_source_or_common_md_changes": []
+  },
+  "ci_evidence_reviewed": {
+    "full": {
+      "run": 40500963818,
+      "job": 122178724934,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    "threshold_and_overfitting": {
+      "run": 40500963756,
+      "job": 122178236568,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    "provenance": "Reviewed supplied delivery run/job/step evidence and preserved original CI JSON; root separately confirmed cf17 workflow_runs. Reviewer did not independently fetch GitHub API in this documentation check."
+  },
+  "local_markdown_link_checks": {
+    "targets_checked": 26,
+    "missing": 0
+  },
+  "publication_followup_owned_by_root": [
+    "Commit and push final docs/canonical images/contact/local+CI reports and this independent report",
+    "Update PR23 with final artifact commit and truthful runtime cf17 CI provenance",
+    "Verify final GitHub image links/publication and display accessible rendered previews in final response; CDN HTML remains unverified due documented CONNECT403",
+    "Do not claim artifact HEAD independently ran Chromium; do not merge main"
+  ],
+  "limits": [
+    "This document approval does not itself perform commit/push/PR mutation or verify final remote publication",
+    "No new browser suite rerun for documentation-only finalization; round1/round2 technical review remains applicable because all10 source fingerprints match cf17",
+    "No screen-reader listening, reader-comprehension study, independent-from-scratch reproduction, other-pattern new-topic reuse or mobile/tablet/other-browser coverage claimed"
+  ]
+}

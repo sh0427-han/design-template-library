@@ -1,0 +1,171 @@
+{
+  "status": "validation_passed",
+  "baseline_commit": "ef9783e910f07a5e2c9343da17573e1a7cf30225",
+  "d0_commit": "91cc46f1175efaa2a9d10a3929e3e842ee079ce7",
+  "runtime_source_commit": "cf17bdcc2d7961e2d3d1680bb3c5cbc6cb3dbb4a",
+  "pull_request": 23,
+  "main_merged": false,
+  "main_merge_authorized": false,
+  "local_chromium": "154.0.8037.57",
+  "local_browser_report": "../previews/validation.json",
+  "screens": 16,
+  "threshold_scenarios": 404,
+  "custom_scenarios": 20,
+  "node_crosscheck": {
+    "production_model_vs_independent_python_states": 202,
+    "special_states": 20,
+    "rejected_invalid_samples": 8,
+    "rejected_invalid_thresholds": 6,
+    "expected_answers_from_production_code": false
+  },
+  "source_sha256": {
+    "examples/threshold-metrics/scroll.html": "d0a4b9390cbe21d1137b0195f12be26f49f988fecd19514f0335f89119bc88d0",
+    "examples/threshold-metrics/slides.html": "bf5182ab361d909f0dcb5f1ce6b076320c0a9e08e5af2306b3169fa476073136",
+    "examples/threshold-metrics/content.html": "5411f09e786282138bd0f1f5b87680465a1388b379965c51a9c209003a92e04a",
+    "examples/threshold-metrics/lesson.css": "9fb510e15348dd4616e3d9f1fa38348e53901b81da7936b5554f9ff345d1e9ff",
+    "examples/threshold-metrics/model.js": "6985a5eb74e710151c9f4df5a3a3ff112a573dae7e7d4f55b03b77b279659ff9",
+    "examples/threshold-metrics/app.js": "168d0331962fac84339fb2cb353ea8f1a3c06e22d7d19629cde91865f872e00f",
+    "examples/threshold-metrics/data.json": "75e33c5d05a68e04696a13c9bc1ccccba8236591cbf930984ac2b0ffa59f0804",
+    "examples/threshold-metrics/DESIGN.md": "6b7ca55fd3c4b288798750d041b6b6ec2d64c0961ea2073fe481fd9585935f9f",
+    "scripts/verify_threshold_metrics.py": "cbece2c880c8032ba9977f7832a8cae364c4cd792b80174359a115acea1f7f9f",
+    ".github/workflows/validate-threshold-metrics.yml": "3517a80af25ec350084745b82e4ca9e8fa9bb04d4743c5d96d7636b90512368a"
+  },
+  "preview_sha256": {
+    "examples/threshold-metrics/previews/scroll-concept.png": "813cd88dc4864c6061aed398baf98e4461dab0d77085f2798369692ed703aa93",
+    "examples/threshold-metrics/previews/scroll-practice.png": "3689ec1fc411641b23789deeb83d99043af397700a0c9c1e5d53d0022e4b7b06",
+    "examples/threshold-metrics/previews/slides-concept.png": "4f4f362b5d8909de6b99210bb113d13e63052f0402426875cc078e2a02865c22",
+    "examples/threshold-metrics/previews/slides-practice.png": "b5244d0f494d771fe011f63643166fb200c0bf9d41d25c4f74984498f9010f3a",
+    "examples/threshold-metrics/review/contact.jpg": "5abdf43353e7666fe2cd4630d0c5210befd8aa256f6e9be07bd754a2016930c1"
+  },
+  "common_markdown": {
+    "missing": 0,
+    "contradictions": 0,
+    "source_only_required_rules": 0,
+    "amended_files": 0
+  },
+  "independent_review": {
+    "rounds": 2,
+    "round1": "reviewer-round1.json",
+    "round2": "reviewer-round2.json",
+    "resolved": [
+      "R1-E01"
+    ],
+    "unresolved": []
+  },
+  "ci": {
+    "full": {
+      "run": 40500963818,
+      "status": "completed",
+      "conclusion": "success",
+      "job": 122178724934,
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run python -m pip install playwright Pillow",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run python -m playwright install --with-deps chromium",
+          "conclusion": "success"
+        },
+        {
+          "name": "Syntax and shared token checks",
+          "conclusion": "success"
+        },
+        {
+          "name": "Eight references, real fonts and six viewports",
+          "conclusion": "success"
+        },
+        {
+          "name": "Interactive boundary states and reuse",
+          "conclusion": "success"
+        },
+        {
+          "name": "Gallery and Scroll / Slide regression",
+          "conclusion": "success"
+        },
+        {
+          "name": "Logistic regression Markdown reuse pilot",
+          "conclusion": "success"
+        },
+        {
+          "name": "Gradient descent D0/D1 reuse validation",
+          "conclusion": "success"
+        },
+        {
+          "name": "Markdown links and final design contracts",
+          "conclusion": "success"
+        },
+        {
+          "name": "Heading hierarchy preview, nine sources and both modes",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Transfer heading preview evidence",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-node@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-python@v5",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    },
+    "threshold_and_overfitting": {
+      "run": 40500963756,
+      "status": "completed",
+      "conclusion": "success",
+      "job": 122178236568,
+      "report": "ci-validation.json",
+      "chromium": "155.0.8059.0"
+    }
+  },
+  "full_resolution_images": "All16 in the threshold-metrics-browser-evidence Actions artifact; contact and four canonical PNGs are committed.",
+  "preview_hosting": {
+    "html": "Pinned raw.githack.com URLs in README",
+    "cdn_reachability_from_execution_environment": "Unverified: CONNECT proxy returned403 before requesting the public URL. No bypass attempted.",
+    "images": "Canonical rendered PNGs are committed and linked on GitHub."
+  },
+  "reusability": {
+    "interactive_5": "충분",
+    "experiment_7": "충분",
+    "scope": "Only selected #5/#7 contracts; no claim of other patterns new-topic reuse."
+  },
+  "artifact_commit_policy": "The final documentation/evidence-only commit may use [skip ci]. Runtime fingerprints must equal the completed cf17 CI source; document/link checks run locally. This does not claim final artifact HEAD ran Chromium.",
+  "independent_documentation_review": {
+    "report": "final-doc-check.json",
+    "state": "see linked independent report"
+  },
+  "publication_status_url": "https://github.com/sh0427-han/design-template-library/pull/23",
+  "publication_note": "This snapshot records completed validation. Actual final artifact commit and publication are verified at the linked PR, not claimed by a self-referential commit hash."
+}
