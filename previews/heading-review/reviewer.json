@@ -1,10 +1,10 @@
 {
   "reviewer": "/root/independent_reviewer",
   "review_type": "independent_final_static_and_actual_visual_review",
-  "reviewed_commit": "f5529cc978cd119ab0d6747d5ee8454f0526ac0b",
-  "created_utc": "2026-10-26T23:40:18.950059+00:00",
-  "status": "final_subheading_spacing_preview_review_passed",
-  "scope": "Only the overfitting figure-subheading hierarchy: 24px separation from definitions, 19px bold subheadings, closely grouped legend/diagram content; preserve approved Concept, data, graph geometry and all other templates.",
+  "reviewed_commit": "28595f89ca1aedb4fd74fe4f8ba731f01e61c09b",
+  "created_utc": "2026-10-27T00:00:52.888958+00:00",
+  "status": "final_cause_explanation_preview_review_passed",
+  "scope": "User-authorized borderless explanation beside the unchanged overfitting loss graph: shared illustrative observations, common trend versus fitting individual variation, and conditional consequences for new data.",
   "visual_review_performed": true,
   "source_code_modified_by_reviewer": false,
   "markdown_files_created_or_modified_by_reviewer": [],
@@ -22,66 +22,63 @@
   "revision_requested": false,
   "visual_checks": {
     "images_directly_opened": [
-      "previews/heading-review/overfitting.png",
-      "previews/heading-review/contact.jpg",
       "examples/overfitting-generalization/previews/slide.png",
       "examples/overfitting-generalization/previews/scroll.png",
       "examples/overfitting-generalization/review/contact.jpg",
-      "examples/overfitting-generalization/review/middle-minimum.png"
+      "examples/overfitting-generalization/review/middle-minimum.png",
+      "previews/heading-review/overfitting.png",
+      "previews/heading-review/contact.jpg"
     ],
-    "subheading_hierarchy": "The enlarged Navy subheadings read as a clear new section below each definition. The 24px separation is visually stronger than the relationship to the figure content below.",
-    "left_group": "The model-selection subheading and complete training/validation legend form one group. The Loss meaning remains within the graph, with no collision or clipping.",
-    "right_group": "Removing the unused second header row brings the diagram closer to its subheading. Training images, unused images, same-model transfer and prediction mapping remain clear.",
-    "main_hierarchy": "Blue concept labels and Navy main titles remain distinct from the subordinate figure headings. The unchanged definitions stay on one line.",
-    "geometry": "Both continuous cards contain all text/figures within padding. Left-aligned graph, minimum marker, guide gap, best.pt, arrows, axes, takeaway and footer remain readable in both representative modes and the eight-view contact.",
-    "middle_minimum": "The changed central-minimum view remains collision-free with the updated subheadings.",
+    "aside_layout": "The 185px borderless explanation is visually separate from the loss plot while remaining inside its concept card. Its title, shared-point key, mini figures and conditional outcome fit without wrapping errors or clipping.",
+    "mini_comparison": "Both small figures show the same five gray observations. The blue line summarizes their overall trend; the solid Amber polyline follows each observation. Direct headings make the comparison readable.",
+    "main_legend_distinction": "The main legend names loss series as training Blue solid and validation Amber dashed. The aside has its own title, gray-point training-data key and direct subheadings; its Amber model-fit line is solid and its mini plots show observations rather than loss over progress. In these rendered views the legend roles remain distinguishable, with no confirmed incorrect mapping requiring a revision.",
+    "technical_wording": "The outcome says new-data error may increase. It does not state every interpolation necessarily overfits, nor that new-data performance was measured from these sketches. SVG descriptions preserve their illustrative status.",
+    "preserved_figures": "The main loss graph, axes, minimum marker, guide gap, best.pt, conditional region and generalization fruit/model diagram remain readable. The central-minimum variant also fits with the aside present.",
+    "main_hierarchy": "The Blue concept labels, Navy main titles, 24px-separated figure headings and definitions remain coherent; new h4/h5 titles render Navy.",
+    "bounds": "Representative Scroll/Slide views, eight-view contact and latest nine-source contact show no new text/graph/card/footer overlap.",
     "confirmed_visual_defects": []
   },
-  "measured_layout_all_eight_cases": {
-    "definition_to_subheading_layout_box_gap_px": [
-      24,
-      24
+  "independent_mini_figure_check": {
+    "method": "Parsed the actual source point coordinates and used the uncentered least-squares normal equations, independently of the verifier centered-covariance formula.",
+    "shared_points": [
+      [
+        10,
+        32
+      ],
+      [
+        48,
+        17
+      ],
+      [
+        86,
+        26
+      ],
+      [
+        124,
+        8
+      ],
+      [
+        162,
+        16
+      ]
     ],
-    "subheading_font_size_px": [
-      19,
-      19
+    "least_squares_slope": -0.10789473684210527,
+    "least_squares_intercept": 29.07894736842105,
+    "line_endpoint_y_values": [
+      28,
+      11.6
     ],
-    "subheading_line_height_px": [
-      22,
-      22
-    ],
-    "subheading_font_weight": [
-      750,
-      750
-    ],
-    "subheading_to_content_layout_box_gap_px": {
-      "left_legend": 0,
-      "right_svg": 8
-    },
-    "loss_svg_absolute_box_max_change_vs_previous_revision_px": 0,
-    "loss_svg_size_px": [
-      380,
-      320
-    ],
-    "label_title_gap_px": 8,
-    "label_title_x_error_px": 0,
-    "svg_inner_card_left_error_px": 0,
-    "outer_card_count": 2,
-    "old_split_cards": 0,
-    "inner_figure_border_px": 0,
-    "outer_card_padding_escapes": 0,
-    "definition_lines_each": [
-      1,
-      1
-    ],
-    "footer_gap_px": 13.125,
-    "mode_style_match": true,
-    "max_mode_box_error_px": 0
+    "observed_path": "M10 28L162 11.6",
+    "trend_residual_sum_of_squares_svg_coordinate_units": 180.7,
+    "interpolation_passes_all_five_points": true,
+    "interpolation_residual_sum_of_squares_svg_coordinate_units": 0,
+    "metric_scope": "These residuals verify drawing arithmetic in SVG coordinate units. They are not the mean squared loss or unit of the main learning-progress graph and are not measured validation/test performance.",
+    "generalization_claim_limit": "Five training observations and their fit do not establish the true data-generating pattern or unseen-data performance. The mini figures illustrate the stated noise-fitting scenario and conditional risk."
   },
-  "actual_browser_and_data_evidence": {
+  "measured_all_eight_dedicated_cases": {
+    "status": "passed",
     "chromium": "155.0.8059.0",
-    "dedicated_status": "passed",
-    "dedicated_cases": 8,
+    "cases": 8,
     "pc_sizes": [
       [
         1600,
@@ -104,13 +101,27 @@
       "scroll",
       "slides"
     ],
-    "heading_role_cases": 72,
-    "owned_teaching_cards": 23,
-    "owned_card_pair_observations": 184,
-    "actual_title_observations": 400,
-    "actual_blue_label_observations": 328,
-    "all_selected_role_colors_pretendard_minus_one_pt_visibility_and_geometry_pass": true,
-    "independent_data": {
+    "aside_chart_gap_px": 24,
+    "aside_top_error_px": 0,
+    "aside_width_px": 185,
+    "aside_height_px": 320,
+    "nested_cards": 0,
+    "aside_overflow_count": 0,
+    "original_loss_graph_size_px": [
+      380,
+      320
+    ],
+    "original_loss_graph_absolute_box_change_vs_23979ff_px": 0,
+    "outer_card_padding_escapes": 0,
+    "text_and_svg_label_collisions": 0,
+    "figure_title_to_definition_gap_px": 24,
+    "body_lines_each_definition": [
+      1,
+      1
+    ],
+    "footer_gap_px": 13.125,
+    "same_five_points_and_independent_fit_check_passed_every_case": true,
+    "independent_main_curve_data": {
       "points": 41,
       "series": 2,
       "max_independent_value_error": 1.1102230246251565e-16,
@@ -119,12 +130,7 @@
       "generalization_is_image_diagram": true,
       "real_experiment": false
     },
-    "alternate_datasets": [
-      "improving",
-      "crossing",
-      "middle-minimum"
-    ],
-    "behavior_checks": {
+    "behavior": {
       "changed_datasets": [
         "improving",
         "crossing",
@@ -141,9 +147,35 @@
       "reload": true,
       "failed_data_message": true
     },
+    "mode_style_match": true,
+    "max_mode_box_error_px": 0,
     "console_or_load_failures": []
   },
-  "independent_evidence_checks": {
+  "latest_heading_audit": {
+    "status": "passed",
+    "cases": 72,
+    "owned_teaching_cards": 23,
+    "owned_card_pair_observations": 184,
+    "actual_title_observations": 424,
+    "actual_blue_label_observations": 328,
+    "new_h4_h5_observations": 24,
+    "new_h4_style": {
+      "fontSize": "19px",
+      "lineHeight": "24px",
+      "fontWeight": "750",
+      "color": "rgb(18, 35, 63)"
+    },
+    "new_h5_styles": {
+      "fontSize": "17px",
+      "lineHeight": "22px",
+      "fontWeight": "750",
+      "color": "rgb(18, 35, 63)"
+    },
+    "all_selected_roles_actual_colors_pretendard_minus_one_pt_visibility_and_geometry_pass": true,
+    "page_errors": [],
+    "failed_requests": []
+  },
+  "evidence_checks": {
     "passed_reports": [
       "previews/heading-review/validation.json",
       "previews/review/reference-validation.json",
@@ -152,65 +184,66 @@
       "examples/overfitting-generalization/previews/validation.json",
       "examples/gradient-descent/previews/validation.json"
     ],
-    "declared_report_source_and_preview_sha256_checks": 108,
+    "report_source_and_preview_sha256_checks": 108,
     "manifest_current_after_sha256_checks": 8,
     "total_current_file_sha256_checks": 116,
     "mismatches": [],
     "manifest_baseline_before_sha256_checks": 8,
     "manifest_before_mismatches": [],
-    "nested_dual_mode_pc_source_hashes_checked": true,
-    "dual_mode_representative_jpeg_hashes_checked": true,
-    "previous_vs_current_loss_svg_boxes": "Compared x/y/right/bottom/width/height for all eight case-matched chart boxes against the saved e86b4c1 report; maximum change is 0px.",
-    "full_ci": {
-      "run": 40417147764,
-      "job": 121902220294,
+    "nested_dual_mode_pc_source_sha256_checked": true,
+    "dual_mode_representative_jpeg_sha256_checked": true,
+    "dedicated_ci": {
+      "run": 40422170621,
+      "job": 121919001929,
       "status": "completed",
       "conclusion": "success",
       "independently_queried": true
     },
-    "dedicated_ci": {
-      "run": 40417147805,
-      "job": 121902219759,
+    "full_ci": {
+      "run": 40422170687,
+      "job": 121920580868,
       "status": "completed",
       "conclusion": "success",
       "independently_queried": true
-    }
+    },
+    "regression_scope": "Current eight-reference/font/six-viewport checks, interactive boundary states, Scroll/Slide regression, logistic regression, gradient descent, Markdown checks and 72-case heading/card audit passed. Dedicated overfitting tests include altered and rejected data, keyboard/mode behavior, fonts and graph geometry."
   },
-  "preservation": {
-    "spacing_baseline": "e86b4c16216da09c9a6aa6b4508179f734002cc1",
-    "approved_concept_preserved": true,
-    "all_template_source_changes_from_spacing_baseline": [],
-    "content_html_preserved": true,
-    "data_curve_js_svg_coordinates_fruit_paths_shared_css_axis_helper_preserved": true,
-    "markdown_source_changes_from_spacing_baseline": [],
-    "common_rule_reused": "Existing --gap-major token resolves to 24px. This local presentation revision adds no common Markdown rule.",
-    "right_additional_explanation": "Proposal only; not added. The user has not selected or approved new explanatory content.",
-    "right_svg_relative_shift_from_declared_layout_px": -14
+  "preservation_and_classification": {
+    "active_baseline": "23979ff834b5bc8e40af967d61f3a787c1cc63d6",
+    "approved_concept_and_all_templates_source_changes": [],
+    "both_original_svg_doms_identical_to_baseline": true,
+    "main_loss_data_curve_js_axis_coordinates_fruit_shapes_shared_css_axis_helper_preserved": true,
+    "markdown_changes": [],
+    "classification": "C: topic-specific illustrative observations, explanatory structure and geometry. Existing common gap, color and typography tokens are reused; no new common Markdown omission is established by this change.",
+    "common_markdown_additions": 0
   },
   "limits": [
-    "This is an internal preview pass. User visual review of the revised appearance and common Markdown finalization remain separate pending steps.",
-    "The right diagram intentionally moves 14px upward after removing an unused reserved header row; preservation of absolute graph position refers to the left loss SVG.",
-    "The 23-card/184-pair audit scope is retained. Historical 200-pair and merged-card review results remain version-specific records.",
-    "Other canonical patterns are preserved and regression-checked; this review does not claim new-concept reuse or universal independent-author reproduction for all eight patterns.",
-    "No additional explanation, Markdown finalization or main merge is authorized by this review."
+    "This is an internal preview pass for the displayed authorized explanation. User visual review and common Markdown finalization remain separate pending steps.",
+    "Blue/Amber have local meanings in the separate figures; interpretation depends on their explicit direct labels and distinct dashed/solid validation/interpolation treatment. This review is not a reader-study claim that color reuse can never confuse.",
+    "The mini least-squares line is an illustrative trend, not proof of the true pattern. Interpolation alone is not sufficient evidence of overfitting; new-data behavior remains a conditional statement.",
+    "The new aside is subordinate borderless content, not another outer teaching card; the declared 23-card/184-pair scope is retained.",
+    "Historical color-only, label-presence, merged-card and spacing reviews are preserved as records of those versions.",
+    "No universal independent-author reproduction claim, new-concept reuse approval for every pattern, common Markdown finalization or main merge approval is made."
   ],
   "image_sha256": {
-    "previews/heading-review/overfitting.png": "1f1cf4fbfa40c216ae139ee5c246f59d3dea7d8d0f7f72db7b370937ba8d5098",
-    "previews/heading-review/contact.jpg": "421ace7e74967cce0a37b18f81e7a8255827ec750611783896853b5988991e48",
-    "examples/overfitting-generalization/previews/slide.png": "41eb6c254f87e1e5f1678f684ef82f31db1a4d06a0a2811c2bdbb7f2a933363a",
-    "examples/overfitting-generalization/previews/scroll.png": "ca54abcb35faeb155103bc5ed5c0f1f0ea37c0cf44d7e32a4c3e79cc5bdcf537",
-    "examples/overfitting-generalization/review/contact.jpg": "332be9202aa3de22389ac35ff245eca6f52bc550150b013522dd32d30b578265",
-    "examples/overfitting-generalization/review/middle-minimum.png": "6e4875e847198c3653805bca4ad4ca189d197a4b7be21476606ebf2683f821ed"
+    "examples/overfitting-generalization/previews/slide.png": "59cdcb187ca15a64d6946d988e540345d82da2873c71c481e323a0e2a84762f2",
+    "examples/overfitting-generalization/previews/scroll.png": "94c8668312f6bf6d9b8448c902ad1892c1607012efe3e97e50785ab7db26414e",
+    "examples/overfitting-generalization/review/contact.jpg": "b5110215fb5b7f56ee818e0c881f3bdb653fbccdee9475c930a6694fd4f80bbd",
+    "examples/overfitting-generalization/review/middle-minimum.png": "57aa18399e99765f1a6e4fb745f2a8850dd986bd17a11f8a65b02ae9c8b3f37d",
+    "previews/heading-review/overfitting.png": "6986ada1e0e11dbebab00a0a8eae5e537fa901f06f6361a4ff12baaef5842a56",
+    "previews/heading-review/contact.jpg": "2cd8afd07bf8fdc8ef6e48df8ba51514a095f647cbde39f0a5a074c2646d03fe"
   },
   "evidence_sha256": {
-    "previews/heading-review/validation.json": "0f0112193b1ff936ca30ef2108a11b2f651072db410b68401357a50d9b8d2423",
-    "previews/review/reference-validation.json": "fb13b10ded7fe27b807054c02f5231e1bbadd4b53b6adf7c62d23427dcefdeb0",
+    "previews/heading-review/validation.json": "1b55f4993d6df54d08b24ede3f53b1e19b51ad0ada5f11aa12728d0dd0063e82",
+    "previews/review/reference-validation.json": "0c2306e5902585caf83d9d7d231eaed660c9fe1b77ecdbf861c46bd01a08d1f9",
     "previews/review/interactive-validation.json": "16cedb33ac3e931307e58a9ecb0ab01b2ef6ab8fc23c710cc16e3a105202d153",
     "previews/review/dual-mode-validation.json": "9b71e5dc7eff2726c36b994b566f1d597dd2b2f7e356536c9405e456e2be3f84",
-    "examples/overfitting-generalization/previews/validation.json": "2ab0efcc107f6b4c9b354d505fb88ed0d61bbd61682d87a2e8f2999fc2f5cc88",
-    "examples/gradient-descent/previews/validation.json": "b7acd2de4aa233c30c6220325aa62349b40dd875eb90cf4010a6d8a613c54308",
-    "previews/heading-review/change-scope.json": "0c876c095d2d87bf412f621bf1139659e5349e1d15f54966c5271b768b147638",
-    "scripts/verify_overfitting.py": "a3edec1051ea99557facaecf57daa2aafff17b549ebcd657afce68724f92f7dd",
-    "examples/overfitting-generalization/lesson.css": "df7745f811b84a1beed9afe753a55e1fbf765ae6c2890eb08f4ab8e835c59850"
+    "examples/overfitting-generalization/previews/validation.json": "f5573953b0cc5b243f2de75ffb0d0a360182f3d10c5769a0659132752467a127",
+    "examples/gradient-descent/previews/validation.json": "9a534f8b48ef141fecd90d50e2354bbe839faf0a70ecdd373e87c1c845ecab92",
+    "previews/heading-review/change-scope.json": "1fcd47f4da63757909fcb0b16a1432d34a83271d1be7f7dd122c9fc8ec76bf1a",
+    "scripts/verify_overfitting.py": "2fd9cf9f051eb316099a4dfc9464f0a319e1affd9478883122fb4f29cad351ac",
+    "scripts/verify_heading_roles.py": "fc25cf9f627ce46cae76606148103dcbcf2ef1c7e51cb38a991dbee2ef65d610",
+    "examples/overfitting-generalization/content.html": "4cbd118a5e881f020b47f1f63307abf7afb826e4e160e4d88ab75c6afcd5e42a",
+    "examples/overfitting-generalization/lesson.css": "f76260672e65f8e40773dafe8a67593390c7d306a30757df7738fbdb2ae2c901"
   }
 }

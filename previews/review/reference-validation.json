@@ -1,6 +1,6 @@
 {
   "status": "passed",
-  "started_utc": "2026-10-26T23:08:29.753671+00:00",
+  "started_utc": "2026-10-26T23:52:52.919372+00:00",
   "viewports": [
     [
       1600,
@@ -17193,7 +17193,7 @@
     "previews/html-experiment.jpg": "a46a7083f4bdbcc4e6f57f81ff0c0624f4cb751ebc412a179a6213545e3a505f",
     "previews/html-executive-summary.jpg": "966d0f37c6eb520097c6872372c0c8199d95ef60486ee27bf38fb87c05953a24"
   },
-  "finished_utc": "2026-10-26T23:09:50.198488+00:00",
+  "finished_utc": "2026-10-26T23:54:02.328641+00:00",
   "canonical_preview_updates": [
     "concept",
     "process",

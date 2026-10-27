@@ -17,6 +17,14 @@
         950
       ],
       "geometry": {
+        "causeLayout": {
+          "gap": 24,
+          "topError": 0,
+          "width": 185,
+          "height": 320,
+          "nestedCards": 0,
+          "overflow": []
+        },
         "cardLayout": [
           {
             "sectionGap": 24,
@@ -367,6 +375,13 @@
         "title": "과적합과 일반화"
       },
       "evidence": "examples/overfitting-generalization/review/screens/scroll-1600x950.png",
+      "cause_sketches": {
+        "shared_points": 5,
+        "trend_is_least_squares": true,
+        "trend_training_residual": 180.7,
+        "interpolation_training_residual": 0,
+        "measured_generalization_claim": false
+      },
       "selection": {
         "minimum_checkpoint_index": 14,
         "minimum_validation_loss": 0.45820817836496386,
@@ -430,7 +445,7 @@
         "flow_alignment": true
       },
       "fonts": {
-        "text_nodes": 43,
+        "text_nodes": 51,
         "letter_spacing": "-1pt",
         "rendered": [
           {
@@ -628,6 +643,94 @@
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 6
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 11
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 11
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 9
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 8
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 10
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 12
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 11
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 23
               }
             ]
           },
@@ -963,7 +1066,7 @@
         "max_svg_coordinate_error": 2.842170943040401e-14
       },
       "mode_parity": {
-        "elements": 111,
+        "elements": 141,
         "style_match": true,
         "max_box_error_px": 0,
         "box_tolerance_px": {
@@ -991,6 +1094,14 @@
         950
       ],
       "geometry": {
+        "causeLayout": {
+          "gap": 24,
+          "topError": 0,
+          "width": 185,
+          "height": 320,
+          "nestedCards": 0,
+          "overflow": []
+        },
         "cardLayout": [
           {
             "sectionGap": 24,
@@ -1341,6 +1452,13 @@
         "title": "과적합과 일반화"
       },
       "evidence": "examples/overfitting-generalization/review/screens/slides-1600x950.png",
+      "cause_sketches": {
+        "shared_points": 5,
+        "trend_is_least_squares": true,
+        "trend_training_residual": 180.7,
+        "interpolation_training_residual": 0,
+        "measured_generalization_claim": false
+      },
       "selection": {
         "minimum_checkpoint_index": 14,
         "minimum_validation_loss": 0.45820817836496386,
@@ -1404,7 +1522,7 @@
         "flow_alignment": true
       },
       "fonts": {
-        "text_nodes": 43,
+        "text_nodes": 51,
         "letter_spacing": "-1pt",
         "rendered": [
           {
@@ -1602,6 +1720,94 @@
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 6
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 11
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 11
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 9
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 8
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 10
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 12
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 11
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 23
               }
             ]
           },
@@ -1937,7 +2143,7 @@
         "max_svg_coordinate_error": 2.842170943040401e-14
       },
       "mode_parity": {
-        "elements": 111,
+        "elements": 141,
         "style_match": true,
         "max_box_error_px": 0,
         "box_tolerance_px": {
@@ -1965,6 +2171,14 @@
         810
       ],
       "geometry": {
+        "causeLayout": {
+          "gap": 24,
+          "topError": 0,
+          "width": 185,
+          "height": 320,
+          "nestedCards": 0,
+          "overflow": []
+        },
         "cardLayout": [
           {
             "sectionGap": 24,
@@ -2315,6 +2529,13 @@
         "title": "과적합과 일반화"
       },
       "evidence": "examples/overfitting-generalization/review/screens/scroll-1440x810.png",
+      "cause_sketches": {
+        "shared_points": 5,
+        "trend_is_least_squares": true,
+        "trend_training_residual": 180.7,
+        "interpolation_training_residual": 0,
+        "measured_generalization_claim": false
+      },
       "selection": {
         "minimum_checkpoint_index": 14,
         "minimum_validation_loss": 0.45820817836496386,
@@ -2378,7 +2599,7 @@
         "flow_alignment": true
       },
       "fonts": {
-        "text_nodes": 43,
+        "text_nodes": 51,
         "letter_spacing": "-1pt",
         "rendered": [
           {
@@ -2576,6 +2797,94 @@
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 6
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 11
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 11
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 9
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 8
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 10
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 12
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 11
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 23
               }
             ]
           },
@@ -2911,7 +3220,7 @@
         "max_svg_coordinate_error": 2.842170943040401e-14
       },
       "mode_parity": {
-        "elements": 111,
+        "elements": 141,
         "style_match": true,
         "max_box_error_px": 0,
         "box_tolerance_px": {
@@ -2939,6 +3248,14 @@
         810
       ],
       "geometry": {
+        "causeLayout": {
+          "gap": 24,
+          "topError": 0,
+          "width": 185,
+          "height": 320,
+          "nestedCards": 0,
+          "overflow": []
+        },
         "cardLayout": [
           {
             "sectionGap": 24,
@@ -3289,6 +3606,13 @@
         "title": "과적합과 일반화"
       },
       "evidence": "examples/overfitting-generalization/review/screens/slides-1440x810.png",
+      "cause_sketches": {
+        "shared_points": 5,
+        "trend_is_least_squares": true,
+        "trend_training_residual": 180.7,
+        "interpolation_training_residual": 0,
+        "measured_generalization_claim": false
+      },
       "selection": {
         "minimum_checkpoint_index": 14,
         "minimum_validation_loss": 0.45820817836496386,
@@ -3352,7 +3676,7 @@
         "flow_alignment": true
       },
       "fonts": {
-        "text_nodes": 43,
+        "text_nodes": 51,
         "letter_spacing": "-1pt",
         "rendered": [
           {
@@ -3550,6 +3874,94 @@
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 6
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 11
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 11
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 9
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 8
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 10
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 12
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 11
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 23
               }
             ]
           },
@@ -3885,7 +4297,7 @@
         "max_svg_coordinate_error": 2.842170943040401e-14
       },
       "mode_parity": {
-        "elements": 111,
+        "elements": 141,
         "style_match": true,
         "max_box_error_px": 0,
         "box_tolerance_px": {
@@ -3913,6 +4325,14 @@
         768
       ],
       "geometry": {
+        "causeLayout": {
+          "gap": 24,
+          "topError": 0,
+          "width": 185,
+          "height": 320,
+          "nestedCards": 0,
+          "overflow": []
+        },
         "cardLayout": [
           {
             "sectionGap": 24,
@@ -4263,6 +4683,13 @@
         "title": "과적합과 일반화"
       },
       "evidence": "examples/overfitting-generalization/review/screens/scroll-1366x768.png",
+      "cause_sketches": {
+        "shared_points": 5,
+        "trend_is_least_squares": true,
+        "trend_training_residual": 180.7,
+        "interpolation_training_residual": 0,
+        "measured_generalization_claim": false
+      },
       "selection": {
         "minimum_checkpoint_index": 14,
         "minimum_validation_loss": 0.45820817836496386,
@@ -4326,7 +4753,7 @@
         "flow_alignment": true
       },
       "fonts": {
-        "text_nodes": 43,
+        "text_nodes": 51,
         "letter_spacing": "-1pt",
         "rendered": [
           {
@@ -4524,6 +4951,94 @@
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 6
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 11
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 11
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 9
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 8
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 10
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 12
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 11
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 23
               }
             ]
           },
@@ -4859,7 +5374,7 @@
         "max_svg_coordinate_error": 2.842170943040401e-14
       },
       "mode_parity": {
-        "elements": 111,
+        "elements": 141,
         "style_match": true,
         "max_box_error_px": 0,
         "box_tolerance_px": {
@@ -4887,6 +5402,14 @@
         768
       ],
       "geometry": {
+        "causeLayout": {
+          "gap": 24,
+          "topError": 0,
+          "width": 185,
+          "height": 320,
+          "nestedCards": 0,
+          "overflow": []
+        },
         "cardLayout": [
           {
             "sectionGap": 24,
@@ -5237,6 +5760,13 @@
         "title": "과적합과 일반화"
       },
       "evidence": "examples/overfitting-generalization/review/screens/slides-1366x768.png",
+      "cause_sketches": {
+        "shared_points": 5,
+        "trend_is_least_squares": true,
+        "trend_training_residual": 180.7,
+        "interpolation_training_residual": 0,
+        "measured_generalization_claim": false
+      },
       "selection": {
         "minimum_checkpoint_index": 14,
         "minimum_validation_loss": 0.45820817836496386,
@@ -5300,7 +5830,7 @@
         "flow_alignment": true
       },
       "fonts": {
-        "text_nodes": 43,
+        "text_nodes": 51,
         "letter_spacing": "-1pt",
         "rendered": [
           {
@@ -5498,6 +6028,94 @@
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 6
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 11
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 11
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 9
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 8
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 10
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 12
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 11
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 23
               }
             ]
           },
@@ -5833,7 +6451,7 @@
         "max_svg_coordinate_error": 2.842170943040401e-14
       },
       "mode_parity": {
-        "elements": 111,
+        "elements": 141,
         "style_match": true,
         "max_box_error_px": 0,
         "box_tolerance_px": {
@@ -5861,6 +6479,14 @@
         720
       ],
       "geometry": {
+        "causeLayout": {
+          "gap": 24,
+          "topError": 0,
+          "width": 185,
+          "height": 320,
+          "nestedCards": 0,
+          "overflow": []
+        },
         "cardLayout": [
           {
             "sectionGap": 24,
@@ -6211,6 +6837,13 @@
         "title": "과적합과 일반화"
       },
       "evidence": "examples/overfitting-generalization/review/screens/scroll-1280x720.png",
+      "cause_sketches": {
+        "shared_points": 5,
+        "trend_is_least_squares": true,
+        "trend_training_residual": 180.7,
+        "interpolation_training_residual": 0,
+        "measured_generalization_claim": false
+      },
       "selection": {
         "minimum_checkpoint_index": 14,
         "minimum_validation_loss": 0.45820817836496386,
@@ -6274,7 +6907,7 @@
         "flow_alignment": true
       },
       "fonts": {
-        "text_nodes": 43,
+        "text_nodes": 51,
         "letter_spacing": "-1pt",
         "rendered": [
           {
@@ -6472,6 +7105,94 @@
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 6
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 11
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 11
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 9
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 8
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 10
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 12
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 11
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 23
               }
             ]
           },
@@ -6807,7 +7528,7 @@
         "max_svg_coordinate_error": 2.842170943040401e-14
       },
       "mode_parity": {
-        "elements": 111,
+        "elements": 141,
         "style_match": true,
         "max_box_error_px": 0,
         "box_tolerance_px": {
@@ -6835,6 +7556,14 @@
         720
       ],
       "geometry": {
+        "causeLayout": {
+          "gap": 24,
+          "topError": 0,
+          "width": 185,
+          "height": 320,
+          "nestedCards": 0,
+          "overflow": []
+        },
         "cardLayout": [
           {
             "sectionGap": 24,
@@ -7185,6 +7914,13 @@
         "title": "과적합과 일반화"
       },
       "evidence": "examples/overfitting-generalization/review/screens/slides-1280x720.png",
+      "cause_sketches": {
+        "shared_points": 5,
+        "trend_is_least_squares": true,
+        "trend_training_residual": 180.7,
+        "interpolation_training_residual": 0,
+        "measured_generalization_claim": false
+      },
       "selection": {
         "minimum_checkpoint_index": 14,
         "minimum_validation_loss": 0.45820817836496386,
@@ -7248,7 +7984,7 @@
         "flow_alignment": true
       },
       "fonts": {
-        "text_nodes": 43,
+        "text_nodes": 51,
         "letter_spacing": "-1pt",
         "rendered": [
           {
@@ -7446,6 +8182,94 @@
                 "postScriptName": "PretendardVariable-Regular",
                 "isCustomFont": true,
                 "glyphCount": 6
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 11
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 11
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 9
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 8
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 10
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 12
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 11
+              }
+            ]
+          },
+          {
+            "expected": "Pretendard Variable",
+            "actual": [
+              {
+                "familyName": "Pretendard Variable",
+                "postScriptName": "PretendardVariable-Regular",
+                "isCustomFont": true,
+                "glyphCount": 23
               }
             ]
           },
@@ -7781,7 +8605,7 @@
         "max_svg_coordinate_error": 2.842170943040401e-14
       },
       "mode_parity": {
-        "elements": 111,
+        "elements": 141,
         "style_match": true,
         "max_box_error_px": 0,
         "box_tolerance_px": {
@@ -7834,6 +8658,14 @@
         "label_annotation_collisions": []
       },
       "geometry": {
+        "causeLayout": {
+          "gap": 24,
+          "topError": 0,
+          "width": 185,
+          "height": 320,
+          "nestedCards": 0,
+          "overflow": []
+        },
         "cardLayout": [
           {
             "sectionGap": 24,
@@ -8190,6 +9022,14 @@
         "label_annotation_collisions": []
       },
       "geometry": {
+        "causeLayout": {
+          "gap": 24,
+          "topError": 0,
+          "width": 185,
+          "height": 320,
+          "nestedCards": 0,
+          "overflow": []
+        },
         "cardLayout": [
           {
             "sectionGap": 24,
@@ -8546,6 +9386,14 @@
         "label_annotation_collisions": []
       },
       "geometry": {
+        "causeLayout": {
+          "gap": 24,
+          "topError": 0,
+          "width": 185,
+          "height": 320,
+          "nestedCards": 0,
+          "overflow": []
+        },
         "cardLayout": [
           {
             "sectionGap": 24,
@@ -8898,7 +9746,7 @@
       "evidence": "examples/overfitting-generalization/review/screens/middle-minimum.png"
     }
   ],
-  "created_utc": "2026-10-26T23:13:54.339865+00:00",
+  "created_utc": "2026-10-26T23:48:37.049766+00:00",
   "chromium": "155.0.8059.0",
   "behavior": {
     "changed_datasets": [
@@ -8918,20 +9766,20 @@
     "failed_data_message": true
   },
   "source_sha256": {
-    "examples/overfitting-generalization/content.html": "3fcd5133015211088c8f4ea6d3a6421e91793cf601f29329ffcecb5d94c89687",
+    "examples/overfitting-generalization/content.html": "4cbd118a5e881f020b47f1f63307abf7afb826e4e160e4d88ab75c6afcd5e42a",
     "examples/overfitting-generalization/scroll.html": "c3d618f2f5accc5471da5506955a9dd2c38d62427f224e2bf5c6938636db4936",
     "examples/overfitting-generalization/slides.html": "20ceb16b62eacd01b0c22601a04c3b87756b216c3dce5ae89c7b0cecf97c7171",
-    "examples/overfitting-generalization/lesson.css": "df7745f811b84a1beed9afe753a55e1fbf765ae6c2890eb08f4ab8e835c59850",
+    "examples/overfitting-generalization/lesson.css": "f76260672e65f8e40773dafe8a67593390c7d306a30757df7738fbdb2ae2c901",
     "examples/overfitting-generalization/viewer.css": "b03e8785c652fd9711e4eca188e29c555024a998c53013ce8b389e61825860a7",
     "examples/overfitting-generalization/viewer.js": "a15e739f880682df368572875033d204eab63789b812cebad965f6eb566229a3",
     "examples/overfitting-generalization/curves.js": "509e63b6f9660e713d99fd83b66b5fe22004d278f2ce0a1b6842fd339b11e884",
     "examples/overfitting-generalization/curves.json": "d9e995fa132145654184d2f3a5a7a0b076debc789f8311bd3a7d96d7bc6521a8",
     "examples/overfitting-generalization/DESIGN.md": "298eaf219aa36e791b6ac38449560f516e07942ce611f5b663f7f7e046061a61",
-    "scripts/verify_overfitting.py": "a3edec1051ea99557facaecf57daa2aafff17b549ebcd657afce68724f92f7dd",
+    "scripts/verify_overfitting.py": "2fd9cf9f051eb316099a4dfc9464f0a319e1affd9478883122fb4f29cad351ac",
     "templates/html/graph-annotations.js": "deeee6a81fae900035c9b5398c1c17aa7ac4694bf986313b1a810ec20bfec92b"
   },
   "preview_sha256": {
-    "scroll.png": "ca54abcb35faeb155103bc5ed5c0f1f0ea37c0cf44d7e32a4c3e79cc5bdcf537",
-    "slide.png": "41eb6c254f87e1e5f1678f684ef82f31db1a4d06a0a2811c2bdbb7f2a933363a"
+    "scroll.png": "94c8668312f6bf6d9b8448c902ad1892c1607012efe3e97e50785ab7db26414e",
+    "slide.png": "59cdcb187ca15a64d6946d988e540345d82da2873c71c481e323a0e2a84762f2"
   }
 }
