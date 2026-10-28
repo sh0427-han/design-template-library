@@ -84,7 +84,7 @@
     }));
     const f=state.focus;
     const sumText=f.products.flat().map(n=>n<0?`(${n})`:String(n)).join(' + ');
-    $('#focus-equation').textContent=sumText;
+    $('#focus-equation').textContent=f.denominator===1?sumText:`(${sumText}) / ${f.denominator}`;
     $('#focus-result').textContent=f.denominator===1?`= ${f.display}`:
       `= ${f.numerator}/${f.denominator} ≈ ${f.display}`;
     $('#kernel-summary').textContent=state.kernelId==='mean'?'각 셀 가중치 1/9':
