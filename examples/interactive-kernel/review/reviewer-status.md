@@ -6,3 +6,8 @@
 - 특히 경로 실패시 DOM/상태 삭제·복구, 잘못된 `selectKernel`, URL 비정상 입력, 두 viewer 왕복/새로고침, native 키보드 포커스, 정확 분모·Sobel 부호/색, Pretendard/STIX·−1pt, 출력25셀, 4×2 실제 화면을 확인한다.
 - Chromium navigation 정책이 막힌 환경의 `set_content` 캡처는 시각 검토의 일부일 뿐 GitHub Pages HTTP 실행 증거가 아니다.
 - 결함이 발견되면 최대 3회 Builder 재작업→서로 다른 세션 Reviewer 재검토; 그 전에는 최종 PASS·v1.0 준비를 주장하지 않는다.
+
+## 실제 HTTP Chromium 검증 보충
+
+- `c542d30`에 대해 [GitHub Actions #40625146466](https://github.com/sh0427-han/design-template-library/actions/runs/40625146466)가 성공했고, 8개 실제 Scroll/Slide PNG를 artifact에 남겼다. 새 프리뷰는 `previews/*-real-ci.jpg`이다.
+- 자동 테스트와 작성자의 화면 육안 확인은 **독립 Reviewer 실행을 대체하지 않는다**. D01 문서와 회귀·모드/실패 및 시각 확인을 별도 주체가 재검토하고 결과를 기록할 것.

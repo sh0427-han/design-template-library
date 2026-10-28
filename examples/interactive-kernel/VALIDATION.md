@@ -98,3 +98,17 @@
 
 **최종 판정:** 일부 보완 필요 / PENDING independent review. D01 자체는 문서 보완안이 마련됐지만 원격 승인·전체 회귀와 독립 검토를 마쳐야 해결 완료라고 선언할 수 있다. 템플릿 v1.0 최종 검증으로 바로 넘어가는 것은 보류한다.
 
+
+---
+
+## D1 후속 검증 증거 — 실제 HTTP Chromium (2026-10-28)
+
+기존 D1의 브라우저·폰트 미검증 기록은 당시 구현 단계의 사실로 **보존**하고, 그 이후 실행한 실 URL 검증 결과를 다음과 같이 추가한다.
+
+- **검증 대상 소스 커밋:** `c542d30f8c74052a31ec4d6888a742643626e717` (스크립트 오류 시 reload 복구까지 포함).
+- **CI:** [Validate Interactive Kernel Real-URL · run 40625146466](https://github.com/sh0427-han/design-template-library/actions/runs/40625146466) — `completed/success`.
+- **검증 실행:** 로컬 HTTP 서버에서 실제 `scroll.html` 및 `slides.html`의 iframe 콘텐츠를 Chromium으로 열었다. Scroll/Slide 각각 1600×950, 1440×810, 1366×768, 1280×720 = **8개 고유 화면**. 출처 코드는 `verify_runtime.py`, 증거는 CI artifact `cnn-interactive-kernel-real-url-browser-evidence`의 PNG 8장과 `runtime-validation.json`이다.
+- **수학·상태:** 3필터×출력25셀의 독립 Fraction 비교, 평균 분모9를 포함한 선택 위치 계산, Select·Reset·모드 왕복·새로고침·잘못된 URL/ID·키보드 포커스·데이터 실패와 재시도가 CI에서 PASS. 초기 브라우저 주입 검사 `verify_kernel.py`도 별도 PASS.
+- **서체·레이아웃:** 실제 HTTP에서 Pretendard Variable / STIX Two Math가 `loaded`인 사실과 전체 −1pt 계산 스타일을 확인했다. 8개 화면의 브라우저 기하 검사 PASS. CI에서 받은 전체 8개 PNG를 검토용 montage로 열고 대표 1280×720 Slide 이미지도 개별적으로 확인했으며, 해당 검토 범위에서 카드·행렬·계산·Footer의 명백한 겹침·잘림이 없었다. 사용자의 최종 디자인 승인이나 별도 Reviewer PASS로 간주하지 않는다.
+- **GitHub 프리뷰:** [Scroll 실제 CI](previews/scroll-real-ci.jpg) · [Slide 실제 CI](previews/slides-real-ci.jpg). 이 이미지 두 개는 **위 소스 커밋의 실제 URL Chromium 실행에서 생성된 증거**의 JPG 축소본이다. 기존 `*-draft.jpg`는 초기 주입 기반 상태를 설명하기 위해 보존한다.
+- **전체 공통 회귀:** 기존 8종 통합 `Validate Final HTML References`는 이 기록 작성 시점에 최신 커밋에서 아직 종료되지 않았으므로 PASS를 주장하지 않는다. 본 사용자 요청의 독립 Reviewer는 여전히 **PENDING**이다. 재사용성 잠정 판정 **일부 보완 필요** 및 v1.0 최종 승인을 보류하는 결정은 유지한다.
