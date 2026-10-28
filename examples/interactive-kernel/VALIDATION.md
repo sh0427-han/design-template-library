@@ -112,3 +112,44 @@
 - **서체·레이아웃:** 실제 HTTP에서 Pretendard Variable / STIX Two Math가 `loaded`인 사실과 전체 −1pt 계산 스타일을 확인했다. 8개 화면의 브라우저 기하 검사 PASS. CI에서 받은 전체 8개 PNG를 검토용 montage로 열고 대표 1280×720 Slide 이미지도 개별적으로 확인했으며, 해당 검토 범위에서 카드·행렬·계산·Footer의 명백한 겹침·잘림이 없었다. 사용자의 최종 디자인 승인이나 별도 Reviewer PASS로 간주하지 않는다.
 - **GitHub 프리뷰:** [Scroll 실제 CI](previews/scroll-real-ci.jpg) · [Slide 실제 CI](previews/slides-real-ci.jpg). 이 이미지 두 개는 **위 소스 커밋의 실제 URL Chromium 실행에서 생성된 증거**의 JPG 축소본이다. 기존 `*-draft.jpg`는 초기 주입 기반 상태를 설명하기 위해 보존한다.
 - **전체 공통 회귀:** 기존 8종 통합 `Validate Final HTML References`는 이 기록 작성 시점에 최신 커밋에서 아직 종료되지 않았으므로 PASS를 주장하지 않는다. 본 사용자 요청의 독립 Reviewer는 여전히 **PENDING**이다. 재사용성 잠정 판정 **일부 보완 필요** 및 v1.0 최종 승인을 보류하는 결정은 유지한다.
+
+
+## Codex 재개 — Chat 진행분 보존 및 독립 검토
+
+[이어받기 기준](review/resume-baseline.json): 원격 PR #24의 `ab713e7`까지 fast-forward했다. D0 이후 Chat 커밋·초안 캡처·실제 URL CI와 당시 Reviewer PENDING은 이력으로 보존한다. 이전 로컬 미커밋 구현은 tar/git stash에 백업했으며 새 committed 구현을 덮어쓰지 않았다. main은 `b4fdef2` 그대로이고 이번 PR의 병합은 금지다.
+
+새 독립 Reviewer `/root/kernel_resume_reviewer`의 [1차 기록](review/resume-review-round1.json)은 ab713e7을 고정해 **수정 필요**로 판정했다. 정상8화면/24필터, 별도 Fraction 계산, 실제 CDP Pretendard/STIX·−1pt는 통과했지만 다음 적용 누락을 발견했다.
+
+| 항목 | 분류·심각도 / 수정 전 | 수정 내용 |
+| --- | --- | --- |
+| R1-01 | E·P1 콘텐츠 실패에서 영구 로딩/재시도 없음 | iframe 접근/응답 실패와 제한시간을 명시 오류로 처리하고 parent native 재시도 제공 |
+| R1-02 | E·P2 D0의 가시 연산/색/기호/좌표 계약 누락 | 미반전·단일채널·교차상관 식/커널 정의·출력3행2열·원값/색±36 명시 |
+| R1-03 | E·P2 화살표가 행렬 중앙보다14.5px 낮음 | matrix와 같은22/256/20px 트랙의 중앙으로 연결선 정렬 |
+| R1-04 | E·P2 invalid URL 안내 시1280×720 Slide 문서높이755 | 실제 notice/bar/footer/loading 높이를 stage와 scale에서 함께 차감 |
+| R1-05 | E·P2 새 분수가 일반 텍스트, 합성 bold 방지 누락 | 커널·현재분수·곱합을 MathML로 생성, 수학 서체 합성 방지 |
+| R1-06 | E·P2 폰트404에서도 정상처럼 보이며 안내 없음 | fallback 상태/가시 안내와 사용 가능한 배치; 정상 CDP 검증과 분리 |
+| R1-07 | E·P2 기존 QA의 실제 글리프/내부경계/다른입력/실패 검증 부족 | 독립 Fraction·CDP·안쪽 padding·SVG/Range·24필터·대체데이터·예외를 명시적으로 검증하도록 보강 |
+| E-CONTRAST | E·Builder 자체 QA: 출력28의 흰 숫자 대비3.458, 다른 입력5도 낮은 대비 | 입력/출력 셀의 원값·배경 매핑은 유지하고 검정/흰색 중 최대 sRGB 대비를 선택 |
+
+실제 Runtime 오류와 검증기 자체 오류는 구분한다. `review/verifier-corrections.json`의 V-E 항목은 자기 패널 포함 검사, fixture callback 인자, iframe URL 전파 대기, fault route 패턴과 같은 검증기 보정이며 공통 MD 누락이나 새 Runtime 결함으로 부풀리지 않는다.
+
+[기존 사례 회귀](review/regression-validation.json)는 4차 임계값16화면/404상태와 과적합8화면의 로컬 재실행 성공을 따로 보존한다. 원본 보고서 gzip도 보존하고 생성된 기존 프리뷰/보고서는 Git 원본으로 복원했다. 원본8종/#5/로지스틱/경사하강법은 ab713e7의 전체 CI40625533308 성공 이력이 있으며 최종 수정 기능 커밋에서도 CI를 다시 확인한다.
+
+D01은 신규 공통 누락1건/모순0건/공통 MD3개 보완이다. Chat 단계에서 추가한 일반 행동 계약을 보존하고 헤더/카탈로그에서 일반 목적과 임계값 예제 범위를 더 분명하게 표시했다. `documentation-delta.json`은3개 허용 문서의 실제 baseline 스냅샷/현재 Git blob을 검사하고 과거 승인 JSON은 bytes 그대로 보존한다. 이는 MAINT01 검증기 호환 보완이며 공통 지침 누락을 추가로 세지 않는다.
+
+이 표는 수정 작업을 기록한 것으로 독립 재검토 완료를 뜻하지 않는다. 최종 자동 검증과 2차 독립 판정은 아래 D1 결과에서 별도로 확정한다.
+
+
+후속 자동 QA의 E-FONT02: WOFF2 의도적404에서 대체 Noto의 Figure 제목 실제 글리프27px가 기존22px line box를 침범했다. `review/font-fallback-initial-failure.json`에 보존하고 fallback 상태의3개 Figure 제목만 min-height/line-height30px·중앙정렬로 보정했다. 정상 폰트와 행렬 트랙/화살표 좌표는 변경하지 않는다. 이는 새 공통 규칙 누락이 아니라 실패 상태의 기존 경계 규칙 적용 보정이다.
+
+
+초기 로드 C-INIT: HTML의 bare `content.html`과 viewer의 versioned URL을 연속 탐색하면서 초기 문서의 스크립트/폰트가 취소되는 현상을 확인했다. 실제 최종 문서 로드 실패와 구분해 진단한 뒤 placeholder를 `about:blank`로 두고 versioned 콘텐츠를 한 번만 요청하도록 단순화했다. 초기 빈 프레임의 load만 무시하고 실제 응답 실패/제한시간/재시도는 그대로 검사한다. JavaScript가 없을 때는 부모 보기의 기존 noscript 안내를 제공한다. 새로운 공통 엔진이나 도메인 계산 변경이 아니다.
+
+
+## D1 수정본 자동 검증 완료 (2차 독립 검토 전)
+
+[실제 HTTP/iframe Chromium](review/runtime-validation.json): 고유 화면8개(4PC×두모드), 필터 상태24개, 대체 입력 상태12개, 예외7종을 별도로 검사해 통과했다. 실제 CDP Pretendard/STIX·−1pt, MathML/원분수·동일 source 배치·셀 식별자 유지·색/숫자 대비·패널 안쪽 padding·텍스트/SVG/화살표/푸터·Select 키보드/포커스·초기화/모드/새로고침/비정상 API·URL을 확인했다. 정상 콘솔/요청/HTTP 오류와 초기 문서 교체 취소는 모두0건이다. 폰트 실패의 대체 글꼴 사용 가능성은 정상 글리프 성공과 분리했다.
+
+[독립 Python/Node 수학 검산](review/arithmetic-validation.json):5개 입력×3필터=15상태/375셀, 비대칭 커널로 미반전 방향 확인, 고정 signed색·클리핑7조건 및 invalid 검증을 수행했다. 기대값은 production 계산에서 만들지 않았다. 기본 입력에서 세 필터 출력은 구별되고 상수 입력에서 일부 필터의 값이 같아지는 것은 정상 결과로 처리했다.
+
+[Viewer 복구 자체 검증](review/viewer-fix-validation.json)과 [이전 사례 회귀](review/regression-validation.json)도 별도 기록이다. 검증기 자체 보정은 Runtime 오류에 합산하지 않았고, 폰트 실패 경계의 실제 오류 E-FONT02와 초기 탐색 C-INIT은 위에 그대로 남겼다. 2차 독립 검토와 최종 CI 결과는 기능 커밋 고정 후 추가한다. 사용자 디자인 승인이나 main 병합 완료를 뜻하지 않는다.

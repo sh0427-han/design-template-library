@@ -1,0 +1,37 @@
+{
+  "scope": "Verifier corrections, not lesson implementation defects",
+  "issues": [
+    {
+      "id": "V-E01",
+      "observation": "First enhanced geometry run included teaching-panel itself as a descendant subject to its own inner padding; returned padding=[teaching-panel].",
+      "resolution": "Exclude the panel node from its descendant inner-padding containment set. Keep every actual descendant check.",
+      "lesson_source_changed": false,
+      "preserved_failure": "initial-resume-verifier-failure.json"
+    },
+    {
+      "id": "V-E02",
+      "observation": "Playwright route handler supplied Request as the optional second parameter intended to capture fixture data. 24 default states already passed; first custom fixture could not be serialized.",
+      "resolution": "Use a single-argument route closure for the synchronous fixture context. No lesson-source change.",
+      "lesson_source_changed": false
+    },
+    {
+      "id": "V-E03",
+      "observation": "Immediate programmatic parent reload after a child Select change raced the postMessage URL synchronization.",
+      "resolution": "Wait for the parent URL to reflect the selected kernel, then test reload preservation. This still requires eventual synchronization and matches the actual asynchronous iframe contract.",
+      "lesson_source_changed": false
+    },
+    {
+      "id": "V-E04",
+      "observation": "The exact content.html route glob did not match the actual iframe URL containing version/kernel query parameters, so the intended content failure was not injected.",
+      "resolution": "Match a wildcard suffix for faulted lesson resources; use the same complete pattern when removing the route for retry.",
+      "lesson_source_changed": false
+    },
+    {
+      "id": "V-E05",
+      "observation": "The initial bare content.html document can be superseded before its model/app requests finish, producing ERR_ABORTED for obsolete requests although the final versioned document is fully successful.",
+      "resolution": "Preserve raw URL/referrer/failure/resource-type for exact same-origin ERR_ABORTED requests of the initial bare document or assets initiated by that bare document. Versioned-document asset failures and other cancellations still fail validation.",
+      "lesson_source_changed": false,
+      "follow_up_runtime_fix": "The Builder removed duplicate bare-document initialization. The final verifier requires zero request cancellations as well as zero current-resource failures."
+    }
+  ]
+}

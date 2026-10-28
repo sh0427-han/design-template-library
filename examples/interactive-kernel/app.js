@@ -12,6 +12,27 @@
   const ready = new Promise(resolve => { readyResolve = resolve; });
   const deepClone = value => JSON.parse(JSON.stringify(value));
   const ids = ['identity','mean','edge'];
+  const mathNS = 'http://www.w3.org/1998/Math/MathML';
+  function mathNode(tag, children) {
+    const node=document.createElementNS(mathNS,tag);
+    for(const child of children) node.append(child instanceof Node?child:document.createTextNode(String(child)));
+    return node;
+  }
+  const mn=value=>mathNode('mn',[String(value).replace('-', '−')]);
+  const fraction=(n,d)=>mathNode('mfrac',[mn(n),mn(d)]);
+  function setMath(host, children, label) {
+    const math=mathNode('math',children);math.classList.add('math');math.setAttribute('aria-label',label);host.replaceChildren(math);
+  }
+  async function checkFonts() {
+    let loaded=false;
+    try {
+      const faces=await Promise.all([document.fonts.load('17px "Pretendard Variable"'),document.fonts.load('18px "STIX Two Math"')]);
+      await document.fonts.ready;
+      loaded=faces.every(group=>group.length>0 && group.every(face=>face.status==='loaded'));
+    } catch (_error) { loaded=false; }
+    document.body.dataset.fontStatus=loaded?'loaded':'fallback';
+    $('#font-notice').hidden=loaded;
+  }
 
   function parseURL() {
     const params = new URLSearchParams(location.search);
@@ -35,6 +56,13 @@
     }
   }
 
+  function readableText(rgb) {
+    const linear=rgb.map(channel=>{const c=channel/255;return c<=.04045?c/12.92:((c+.055)/1.055)**2.4;});
+    const luminance=.2126*linear[0]+.7152*linear[1]+.0722*linear[2];
+    const whiteContrast=1.05/(luminance+.05),blackContrast=(luminance+.05)/.05;
+    return whiteContrast>=blackContrast?'#fff':'#000';
+  }
+
   function createCells(host, length) {
     host.replaceChildren();
     for (let i=0;i<length;i++) {
@@ -51,7 +79,7 @@
       const cell=$('#input-matrix').children[r*7+c];
       const channel=Math.round(n/9*255);
       cell.textContent=String(n);cell.style.backgroundColor=`rgb(${channel}, ${channel}, ${channel})`;
-      cell.style.color=channel>150?'#12233f':'#fff';
+      cell.style.color=readableText([channel,channel,channel]);
       if (r>=2&&r<=4&&c>=1&&c<=3) cell.classList.add('focus');
     }));
   }
@@ -66,7 +94,8 @@
     const entries=state.kernelNumerators.flat();
     entries.forEach((n,i)=>{
       const cell=$('#kernel-matrix').children[i];
-      cell.textContent=state.divisor===1?String(n):`${n}/${state.divisor}`;
+      setMath(cell,[state.divisor===1?mn(n):fraction(n,state.divisor)],state.divisor===1?String(n):`${n} 나누기 ${state.divisor}`);
+      cell.dataset.numerator=String(n);cell.dataset.denominator=String(state.divisor);
       cell.classList.toggle('fraction',state.divisor!==1);
       cell.setAttribute('aria-label',state.divisor===1?String(n):`${n} 나누기 ${state.divisor}`);
     });
@@ -75,18 +104,21 @@
       cell.textContent=Model.formatValue(value);
       cell.style.backgroundColor=Model.colorFor(value);
       const rgb=Model.colorFor(value).match(/\d+/g).map(Number);
-      const brightness=(.2126*rgb[0]+.7152*rgb[1]+.0722*rgb[2])/255;
-      cell.style.color=brightness<.55?'#fff':'#12233f';
+      cell.style.color=readableText(rgb);
       cell.classList.toggle('focus',r===2 && c===1);
       cell.setAttribute('aria-label',`출력 ${r+1}행 ${c+1}열, ${value<0?'음수 ':value>0?'양수 ':'0, '}${Model.formatValue(value)}`);
       cell.dataset.raw=String(value);cell.dataset.numerator=String(state.outputNumerators[r][c]);
       cell.dataset.denominator=String(state.divisor);
     }));
     const f=state.focus;
-    const sumText=f.products.flat().map(n=>n<0?`(${n})`:String(n)).join(' + ');
-    $('#focus-equation').textContent=f.denominator===1?sumText:`(${sumText}) / ${f.denominator}`;
-    $('#focus-result').textContent=f.denominator===1?`= ${f.display}`:
-      `= ${f.numerator}/${f.denominator} ≈ ${f.display}`;
+    const terms=[];
+    f.products.flat().forEach((n,i)=>{if(i)terms.push(mathNode('mo',['+']));terms.push(mn(n));});
+    const sum=mathNode('mrow',terms);
+    setMath($('#focus-equation'),[f.denominator===1?sum:mathNode('mfrac',[sum,mn(f.denominator)])],
+      `선택 영역 9개 곱의 합 ${f.numerator}, 분모 ${f.denominator}`);
+    setMath($('#focus-result'),f.denominator===1?[mathNode('mo',['=']),mn(f.display)]:
+      [mathNode('mo',['=']),fraction(f.numerator,f.denominator),mathNode('mo',['≈']),mn(f.display)],
+      f.denominator===1?String(f.display):`${f.numerator} 나누기 ${f.denominator}, 약 ${f.display}`);
     $('#kernel-summary').textContent=state.kernelId==='mean'?'각 셀 가중치 1/9':
       state.kernelId==='edge'?'좌우 변화에 반응':'중앙 값 유지 · 다른 셀 가중치 0';
     $('#role-name').textContent=state.kernelName;
@@ -147,5 +179,5 @@
     if (!Model) { location.reload();return; }
     state.kernelId='identity';load();
   });
-  parseURL();load();
+  parseURL();checkFonts().then(load);
 })();

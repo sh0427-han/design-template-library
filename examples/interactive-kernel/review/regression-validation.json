@@ -1,0 +1,51 @@
+{
+  "scope": "Current local rerun of unchanged fourth threshold and third overfitting examples; kept separate from new kernel screens/scenarios.",
+  "status": "passed",
+  "reports": {
+    "threshold": {
+      "status": "passed",
+      "raw_report": "regression-threshold.json.gz",
+      "raw_sha256": "1821f494e2c864127c74da0fbc2e7aebac53203396df8dfc1bc76991e5fba00b",
+      "compressed_sha256": "62747b15246a5681f2aefd2eb6b4d531a02540a0d5f8647dfa005034ecca6b3e",
+      "chromium": "154.0.8037.57",
+      "source_sha256": {
+        "examples/threshold-metrics/scroll.html": "d0a4b9390cbe21d1137b0195f12be26f49f988fecd19514f0335f89119bc88d0",
+        "examples/threshold-metrics/slides.html": "bf5182ab361d909f0dcb5f1ce6b076320c0a9e08e5af2306b3169fa476073136",
+        "examples/threshold-metrics/content.html": "e92da0d126d04cb439235755215c0edc8119149b272b9f23e137384c166feb02",
+        "examples/threshold-metrics/lesson.css": "1ee831ba57e7ae514dae4b6d96aa2f7f62ce8b09f0abd00ea68e1dcdfb87a621",
+        "examples/threshold-metrics/model.js": "6985a5eb74e710151c9f4df5a3a3ff112a573dae7e7d4f55b03b77b279659ff9",
+        "examples/threshold-metrics/app.js": "168d0331962fac84339fb2cb353ea8f1a3c06e22d7d19629cde91865f872e00f",
+        "examples/threshold-metrics/data.json": "75e33c5d05a68e04696a13c9bc1ccccba8236591cbf930984ac2b0ffa59f0804",
+        "examples/threshold-metrics/DESIGN.md": "fb411fdea943d18129d07ce38aa947f18e8d30048f8c22e9d64c691842e1a13e",
+        "scripts/verify_threshold_metrics.py": "49ecad104d51f2c3c40f2cc556d105f816f394256079654f2e15436c58ee2d62",
+        ".github/workflows/validate-threshold-metrics.yml": "3517a80af25ec350084745b82e4ca9e8fa9bb04d4743c5d96d7636b90512368a"
+      },
+      "screen_count": 16,
+      "threshold_state_count": 404
+    },
+    "overfitting": {
+      "status": "passed",
+      "raw_report": "regression-overfitting.json.gz",
+      "raw_sha256": "a4536e0eb2eb7aba7c065853a1f11cb0338f68df151b9b55322ec0e37ebb6213",
+      "compressed_sha256": "ac5a2e6aee496aa9fe6dd5b79d50b1a120c8b9a68988fdf24086f7ceb07930cd",
+      "chromium": "154.0.8037.57",
+      "source_sha256": {
+        "examples/overfitting-generalization/scroll.html": "c3d618f2f5accc5471da5506955a9dd2c38d62427f224e2bf5c6938636db4936",
+        "examples/overfitting-generalization/slides.html": "20ceb16b62eacd01b0c22601a04c3b87756b216c3dce5ae89c7b0cecf97c7171",
+        "examples/overfitting-generalization/content.html": "720bf636b7568d7f64ff227648faa983f30c49a28ba97501d3fab5ce4a4d8526",
+        "examples/overfitting-generalization/lesson.css": "e2b7c10a4b667764592b8d19028a67f6c910cd95dda1507fdf054d15aff9d2ef",
+        "examples/overfitting-generalization/viewer.css": "b03e8785c652fd9711e4eca188e29c555024a998c53013ce8b389e61825860a7",
+        "examples/overfitting-generalization/curves.js": "509e63b6f9660e713d99fd83b66b5fe22004d278f2ce0a1b6842fd339b11e884",
+        "examples/overfitting-generalization/viewer.js": "a15e739f880682df368572875033d204eab63789b812cebad965f6eb566229a3",
+        "examples/overfitting-generalization/curves.json": "d9e995fa132145654184d2f3a5a7a0b076debc789f8311bd3a7d96d7bc6521a8",
+        "examples/overfitting-generalization/DESIGN.md": "ef7a17325425c1dfd690df0a655da6e020a9ded592c56948f8cdfe9ea68537ef",
+        "scripts/verify_overfitting.py": "2298015f5791a3572111e522307f3d750313ebf8de56640e5979e1edde3ca381",
+        "templates/html/graph-annotations.js": "deeee6a81fae900035c9b5398c1c17aa7ac4694bf986313b1a810ec20bfec92b"
+      },
+      "screen_count": 8,
+      "threshold_state_count": null
+    }
+  },
+  "protected_sources_baseline": "b4fdef24b1c6567fd81e9ab4e9b20ad1295d8442",
+  "generated_original_artifacts_restored": true
+}

@@ -1,0 +1,105 @@
+{
+  "slide": {
+    "x": 0,
+    "y": 0,
+    "right": 1440,
+    "bottom": 810,
+    "width": 1440,
+    "height": 810,
+    "cx": 720,
+    "cy": 405
+  },
+  "panel": {
+    "x": 66,
+    "y": 184.65625,
+    "right": 1374,
+    "bottom": 734.65625,
+    "width": 1308,
+    "height": 550,
+    "cx": 720,
+    "cy": 459.65625
+  },
+  "inside": {
+    "x": 87,
+    "y": 205.65625,
+    "right": 1353,
+    "bottom": 713.65625
+  },
+  "footer": {
+    "x": 66,
+    "y": 737,
+    "right": 1374,
+    "bottom": 782,
+    "width": 1308,
+    "height": 45,
+    "cx": 720,
+    "cy": 759.5
+  },
+  "outside": [],
+  "padding": [],
+  "overflow": [],
+  "footerOverlap": [],
+  "textClipping": [
+    "input-heading",
+    "kernel-heading",
+    "output-heading"
+  ],
+  "matrixClipping": [],
+  "svgOutside": [],
+  "arrowErrors": [
+    {
+      "y": 0,
+      "leftGap": 12,
+      "rightGap": 12
+    },
+    {
+      "y": 0,
+      "leftGap": 12,
+      "rightGap": 12
+    }
+  ],
+  "labelColor": "rgb(49, 104, 200)",
+  "titleColor": "rgb(18, 35, 63)",
+  "headings": [
+    {
+      "id": "input-heading",
+      "lineHeight": "22px",
+      "element": [
+        287.65625,
+        309.65625
+      ],
+      "text": [
+        284.65625,
+        311.65625
+      ]
+    },
+    {
+      "id": "kernel-heading",
+      "lineHeight": "22px",
+      "element": [
+        287.65625,
+        309.65625
+      ],
+      "text": [
+        284.65625,
+        311.65625
+      ]
+    },
+    {
+      "id": "output-heading",
+      "lineHeight": "22px",
+      "element": [
+        287.65625,
+        309.65625
+      ],
+      "text": [
+        284.65625,
+        311.65625
+      ]
+    }
+  ],
+  "source_sha256": {
+    "examples/interactive-kernel/lesson.css": "5f5267bc71b0227263f88c4dffb3aa2ffce7a9b15e856e2297dcb7bfd7b64d00",
+    "examples/interactive-kernel/app.js": "f068f5623a62933742d5db62ff5e1e2ada5ceab94a11373079a0c5d44b8587fd"
+  }
+}

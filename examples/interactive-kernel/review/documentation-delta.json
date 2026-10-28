@@ -2,8 +2,16 @@
   "purpose": "Track legitimate D01 documentation updates without rewriting historical approvals",
   "baseline_main": "b4fdef24b1c6567fd81e9ab4e9b20ad1295d8442",
   "updated_document_git_blob_sha1": {
-    "TEMPLATE_CATALOG.md": "6e3e9e87ddaff640e97530b178a11baf2d405a5f",
+    "TEMPLATE_CATALOG.md": "b92ecdc43c1b4aa4ad93e75a0dbda727096568cd",
+    "docs/INTERACTIVE_PATTERN.md": "8935f9a40098233a59397ba8e1b5fe91d860f475",
     "docs/REFERENCE_REUSE_WORKFLOW.md": "0a1ea9f77ffc490a09390513e7eb744bc4d2c371"
   },
-  "independent_reviewer": "PENDING"
+  "independent_reviewer": "See resume-review-round1.json and subsequent re-review; no approval inferred from this ledger.",
+  "before_document_sha256": {
+    "TEMPLATE_CATALOG.md": "e6cafc53a4f6e7e192890790dc7fa8a8469ed9c8d859440a29611acf3fbc7372",
+    "docs/INTERACTIVE_PATTERN.md": "648b01a37d3c5c4f7b4630d17b2aa19c36e71e822f3a3e815b14f109915377dc",
+    "docs/REFERENCE_REUSE_WORKFLOW.md": "612ea9cf26d949915489a443555faef9244591c931f2cdf24d6aee04ce791254"
+  },
+  "gap_count": 1,
+  "D0_commit": "286bee0f719483dc02f831aa6638a734c2de4386"
 }

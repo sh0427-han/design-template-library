@@ -24,8 +24,9 @@ window.kernelScriptError = function () {
 <script src="app.js" defer onerror="kernelScriptError()"></script>
 </head><body class="kernel-page" data-ready="loading">
 <main class="kernel-slide" id="kernel" aria-label="CNN 필터 실습">
+  <p id="font-notice" role="status" hidden>기본 글꼴을 불러오지 못해 대체 글꼴로 표시합니다.</p>
   <header class="lesson-head">
-    <div class="kicker">VISION AI · FILTER PRACTICE</div>
+    <div class="kicker">합성곱 신경망(Convolutional Neural Network, CNN) · 필터 실습</div>
     <h1>필터를 바꾸면 달라지는 출력</h1>
     <p class="subtitle">같은 입력에 다른 가중치를 적용해 공간 특징의 변화를 확인</p>
   </header>
@@ -38,11 +39,11 @@ window.kernelScriptError = function () {
       <div class="figure-flow" aria-label="고정 입력 행렬, 선택 필터, 계산 출력의 대응">
         <section class="figure-part" aria-labelledby="input-heading"><h3 id="input-heading">01 · 입력 <span>7×7</span></h3><div class="matrix-slot"><div class="matrix-input" id="input-matrix" role="img" aria-label="7행 7열의 고정 입력 밝기 값"></div></div><p class="figure-caption">밝기 0–9 · 강조한 영역 3×3</p></section>
         <div class="flow-connector" aria-hidden="true"><svg viewBox="0 0 36 24"><path d="M1 12H29M23 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <section class="figure-part" aria-labelledby="kernel-heading"><h3 id="kernel-heading">02 · 필터 <span>3×3</span></h3><div class="matrix-slot"><div class="matrix-kernel" id="kernel-matrix" role="img" aria-label="선택 커널의 가중치 3행 3열"></div></div><p class="figure-caption" id="kernel-summary">중앙 값 유지 · 가중치 변경</p></section>
+        <section class="figure-part" aria-labelledby="kernel-heading"><h3 id="kernel-heading">02 · 커널 가중치 <span>3×3</span></h3><div class="matrix-slot"><div class="matrix-kernel" id="kernel-matrix" role="img" aria-label="선택 커널의 가중치 3행 3열"></div></div><p class="figure-caption" id="kernel-summary">중앙 값 유지 · 가중치 변경</p></section>
         <div class="flow-connector" aria-hidden="true"><svg viewBox="0 0 36 24"><path d="M1 12H29M23 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <section class="figure-part" aria-labelledby="output-heading"><h3 id="output-heading">03 · 출력 <span>5×5</span></h3><div class="matrix-slot"><div class="matrix-output" id="output-matrix" role="img" aria-label="필터 결과 5행 5열"></div></div><p class="figure-caption">음수 <i class="swatch negative"></i> · 0 <i class="swatch zero"></i> · 양수 <i class="swatch positive"></i></p></section>
+        <section class="figure-part" aria-labelledby="output-heading"><h3 id="output-heading">03 · 출력 <span>5×5</span></h3><div class="matrix-slot"><div class="matrix-output" id="output-matrix" role="img" aria-label="필터 결과 5행 5열"></div></div><p class="figure-caption">숫자 원값 · 색 고정 <i class="swatch negative"></i> −36 · <i class="swatch zero"></i> 0 · <i class="swatch positive"></i> +36</p></section>
       </div>
-      <div class="detail-zone"><div class="math-track"><p class="technical">교차상관 · 3×3 곱한 뒤 합산</p><p class="math-condition">Stride 1 · Padding 0 · Dilation 1 · Bias 0 · ReLU 없음</p><div class="focus-math"><span class="focus-label">선택 출력 [2][1]</span><span id="focus-equation" class="math-value" aria-label="선택 셀의 원소별 계산">—</span><strong id="focus-result" class="math-value">—</strong></div></div><div class="role-track"><p class="role-overline" id="role-name">현재 필터</p><p id="role-description">필터를 불러오는 중</p></div></div>
+      <div class="detail-zone"><div class="math-track"><div class="technical-line"><p class="technical">교차상관(cross-correlation) · 커널 반전 없음</p><math class="math general-relation" aria-label="출력 Y는 3×3 이웃의 입력 X와 같은 위치 커널 가중치 K의 곱을 더한 값"><mi>Y</mi><mo>=</mo><mo>∑</mo><mo>(</mo><mi>X</mi><mo>×</mo><mi>K</mi><mo>)</mo></math><span class="kernel-definition">K: 주변 픽셀의 가중치</span></div><p class="math-condition">3×3 이웃 · 단일 채널 · Stride 1 · Padding 0(valid) · Dilation 1 · Bias 0 · ReLU 없음</p><div class="focus-math"><span class="focus-label">출력 3행 2열</span><span id="focus-equation" class="math-value" aria-label="선택 셀의 원소별 계산">—</span><span id="focus-result" class="math-value">—</span></div></div><div class="role-track"><p class="role-overline" id="role-name">현재 필터</p><p id="role-description">필터를 불러오는 중</p></div></div>
       <div class="data-error" id="data-error" role="alert" hidden><p id="data-error-message">계산 데이터를 불러오지 못했습니다.</p><button id="retry-data" type="button">기본 데이터 다시 불러오기</button></div>
     </section>
   </div>

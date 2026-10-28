@@ -1,0 +1,61 @@
+{
+  "scope": "Supplementary actual selected-control glyph probe at1280Slide, not an additional viewport count",
+  "results": [
+    {
+      "kernel": "identity",
+      "actual": [
+        {
+          "familyName": "Pretendard Variable",
+          "postScriptName": "PretendardVariable-Regular",
+          "isCustomFont": true,
+          "glyphCount": 13
+        }
+      ],
+      "css": {
+        "family": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+        "spacing": "-1.33333px"
+      }
+    },
+    {
+      "kernel": "mean",
+      "actual": [
+        {
+          "familyName": "Pretendard Variable",
+          "postScriptName": "PretendardVariable-Regular",
+          "isCustomFont": true,
+          "glyphCount": 12
+        }
+      ],
+      "css": {
+        "family": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+        "spacing": "-1.33333px"
+      }
+    },
+    {
+      "kernel": "edge",
+      "actual": [
+        {
+          "familyName": "Pretendard Variable",
+          "postScriptName": "PretendardVariable-Regular",
+          "isCustomFont": true,
+          "glyphCount": 15
+        }
+      ],
+      "css": {
+        "family": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+        "spacing": "-1.33333px"
+      }
+    }
+  ],
+  "status": "passed",
+  "filter_states": 3,
+  "viewport": [
+    1280,
+    720
+  ],
+  "mode": "slides",
+  "source_sha256": {
+    "examples/interactive-kernel/content.html": "b12098643a369891bd18d8545fa18346115d72c8c1d0e3a4092f5c4005a75b5c",
+    "examples/interactive-kernel/lesson.css": "5e422aa32769325c4d5de59c294423e709c62ca5019dc8104ec689b0d2adbc4c"
+  }
+}

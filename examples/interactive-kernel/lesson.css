@@ -1,7 +1,6 @@
 /* #5 manipulation contract + #4 matrix correspondence; topic-specific, one-slide layout. */
-:root {--navy:#12233f;--blue:#3168c8;--deep:#1b3558;--muted:#64748b;--teal:#26a6a1;--border:#dde4ef;--canvas:#f6f8fc;--white:#fff;--amber:#e49a4d;--font-sans:"Pretendard Variable","Malgun Gothic",sans-serif;--character-spacing:-1pt;}
 html {letter-spacing:var(--character-spacing)}
-body.kernel-page {margin:0;background:var(--canvas);font-family:var(--font-sans);color:var(--deep);}
+body.kernel-page {position:relative;margin:0;background:var(--canvas);font-family:var(--font-sans);color:var(--deep);}
 .kernel-slide {width:1440px;height:810px;padding:40px 66px 28px;display:flex;flex-direction:column;overflow:visible;background:var(--canvas);box-sizing:border-box;}
 .kernel-slide * {box-sizing:border-box;}
 .kernel-slide .kicker {font-weight:800;font-size:16px;color:var(--blue);line-height:20px;}
@@ -41,16 +40,19 @@ body.kernel-page {margin:0;background:var(--canvas);font-family:var(--font-sans)
 .figure-caption {white-space:nowrap;font-size:16px;line-height:20px;margin:0;color:var(--muted);text-align:center;}
 .figure-caption .swatch {display:inline-block;width:12px;height:12px;border:1px solid var(--border);vertical-align:middle;border-radius:3px;}
 .swatch.negative {background:#26a6a1}.swatch.zero {background:#fff}.swatch.positive {background:#3168c8}
-.flow-connector {display:grid;align-items:center;justify-items:center;padding-top:31px;}
-.flow-connector svg {display:block;width:36px;height:24px;color:var(--blue);}
-.detail-zone {display:grid;grid-template-columns:1.28fr .72fr;gap:19px;margin-top:16px;padding-top:15px;border-top:1px solid var(--border);min-height:96px;}
+.flow-connector {display:grid;grid-template-rows:22px 256px 20px;row-gap:9px;align-items:center;justify-items:center;}
+.flow-connector svg {grid-row:2;display:block;width:36px;height:24px;color:var(--blue);}
+.detail-zone {display:grid;grid-template-columns:1.28fr .72fr;gap:19px;margin-top:12px;padding-top:8px;border-top:1px solid var(--border);min-height:96px;}
 .math-track {min-width:0;}
-.technical {display:inline;margin:0;font-size:17px;font-weight:700;color:var(--deep);}
-.math-condition {display:inline;margin:0 0 0 10px;font-size:15px;color:var(--muted);}
-.focus-math {display:flex;align-items:baseline;gap:9px;margin-top:12px;min-width:0;white-space:nowrap;}
+.technical-line {display:flex;align-items:center;gap:10px;min-height:22px;white-space:nowrap;}
+.technical {margin:0;font-size:15px;line-height:22px;font-weight:700;color:var(--deep);}
+.general-relation {font-size:18px;}
+.kernel-definition {font-size:14px;line-height:20px;color:var(--muted);}
+.math-condition {margin:2px 0 0;font-size:14px;line-height:18px;color:var(--muted);}
+.focus-math {display:flex;align-items:center;gap:9px;margin-top:4px;min-width:0;white-space:nowrap;}
 .focus-label {font-size:16px;font-weight:700;color:var(--blue);}
-.math-value {font-family:"STIX Two Math",var(--font-sans);font-variant-numeric:tabular-nums;color:var(--navy);}
-#focus-equation {font-size:18px;min-width:0;}
+.math-value {font-synthesis:none;font-weight:400;font-family:"STIX Two Math",var(--font-sans);font-variant-numeric:tabular-nums;color:var(--navy);}
+#focus-equation {font-size:17px;min-width:0;}
 #focus-result {font-size:21px;color:var(--blue);}
 .role-track {border-left:3px solid var(--teal);padding-left:15px;min-width:0;display:flex;flex-direction:column;justify-content:center;}
 .role-overline {margin:0 0 7px;font-size:17px;color:var(--blue);font-weight:800;}
@@ -62,3 +64,8 @@ body.kernel-page {margin:0;background:var(--canvas);font-family:var(--font-sans)
 .data-error p {font-size:20px;color:#7c4c20;}
 .data-error button {border:1px solid #b6c7df;padding:11px 15px;border-radius:8px;background:#fff;font:inherit;cursor:pointer;}
 @media (prefers-reduced-motion: reduce) {* {animation:none!important;transition:none!important;}}
+
+#font-notice {position:absolute;top:6px;right:66px;margin:0;max-width:1200px;font-size:14px;line-height:20px;color:#895515;white-space:nowrap;}
+#font-notice[hidden] {display:none;}
+.kernel-page[data-font-status="fallback"] .kernel-slide h1 {line-height:1.3;}
+.kernel-page[data-font-status="fallback"] .figure-part h3 {min-height:30px;line-height:30px;align-self:center;}
