@@ -143,6 +143,9 @@
   window.KernelInteractive={ready,getState,selectKernel,reset};
   $('#kernel-select').addEventListener('change',event=>selectKernel(event.target.value));
   $('#reset-kernel').addEventListener('click',reset);
-  $('#retry-data').addEventListener('click',()=>{state.kernelId='identity';load();});
+  $('#retry-data').addEventListener('click',()=>{
+    if (!Model) { location.reload();return; }
+    state.kernelId='identity';load();
+  });
   parseURL();load();
 })();

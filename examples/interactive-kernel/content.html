@@ -13,7 +13,9 @@ window.kernelScriptError = function () {
     if (message) { message.hidden = false; message.querySelector('p').textContent = '필수 스크립트를 불러오지 못했습니다. 파일 경로를 확인한 후 다시 불러오세요.'; }
     document.querySelector('#kernel-select').disabled = true;
     document.querySelector('#reset-kernel').disabled = true;
-    document.querySelector('#retry-data').hidden = false;
+    const retry = document.querySelector('#retry-data');
+    retry.hidden = false;
+    retry.addEventListener('click', () => location.reload(), {once: true});
     document.body.dataset.ready = 'error';
   }, {once: true});
 };
