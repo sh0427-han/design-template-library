@@ -127,3 +127,20 @@ R1-E01은 사용자 학습목표5/D0목표6의 화면 반영 누락(E)이다. �
 ### 오탐·미탐 제목/설명 왼쪽 정렬
 
 2026-10-28 사용자 지적 E-ALIGN01: 제목은 왼쪽, 설명 flex행은 가운데여서 시작선이 달랐다. 기존 공통 카드/본문 정렬 기준의 구현 문제로 수정하며 공통 MD 추가0건이다. 부모 text-align:left와 설명 justify-content:flex-start를 적용했다. 최신 좁은 화면 검증은 `review/alignment-validation.json`, 독립 검토는 `review/alignment-review.json`이다. PC4크기×두모드의 개념8화면에서 제목과 첫 설명 문자의 실제 x좌표·경계·폰트를 확인한다. 계산/상태는 변경하지 않았으므로 이번에404상태를 다시 실행한 것으로 주장하지 않는다. `previews/validation.json`·contact·이전 GT 보고서는82cbf96 소스의 전체16화면/404상태 이력이며 최신 CSS 검사와 구분한다. 대표 개념PNG2개는 최신 정렬로 갱신한다.
+
+
+## D1 최종 확정과 승인
+
+2026-10-28 사용자 최종 시안 승인 및 main 병합 지시를 확인했다. 승인 화면/동작 소스는 `e3b1d3e4f6a5a7444eabebbdf7fd44f74c593313`이며, [승인·최종 CI 기록](review/final-approval.json)에 원문 지시·소스 해시·실제 CI job/step 결론을 보존한다. 이전 ‘병합하지 않음’은 그 시점의 기록으로 유지하고 이번 사용자 지시로 병합 권한을 갱신한다. 실제 병합 결과는 [PR #23](https://github.com/sh0427-han/design-template-library/pull/23)의 상태로 확인한다.
+
+| 확인 범위 | 최종 결과 / 증거 |
+| --- | --- |
+| 임계값 자료 전체·독립 수학/상태 검산 | 승인 소스의 [전용 CI40603117006](https://github.com/sh0427-han/design-template-library/actions/runs/40603117006) completed/success. Threshold independent Python and Chromium verification 단계 성공: 16화면·404임계값 상태·별도 특수/오류 시나리오 |
+| 기존 예제 회귀 | 같은 전용CI의 과적합 회귀 성공. [전체 CI40603117070](https://github.com/sh0427-han/design-template-library/actions/runs/40603117070) completed/success: 원본8종·실제폰트/6뷰포트·Interactive·Gallery/Scroll/Slide·로지스틱·경사하강법·문서·제목역할 단계 성공 |
+| 최신 정렬 자체/독립 검토 | [Builder8화면](review/alignment-validation.json)에서 제목/본문 actual Range x차이0px. [독립4대표화면](review/alignment-review.json)의 새 Chromium/직접 PNG 검토 지적0·미해결0 |
+| D0/D1 및 원인 보존 | D0 별도 커밋 원문 유지. C 주제 고유값·사용자 예외, E 구현/설명/평가 오류를 공통 MD 결함과 구분. 이전 실패와 수정 이력 삭제0 |
+| 문서 마감 | 이번 추가 변경은 승인 MD/JSON만 포함. 렌더링 소스는 위 승인·CI 소스와 byte 단위로 동일. 문서 마감 HEAD에서 Chromium/전체 회귀를 다시 실행한 것으로 주장하지 않음 |
+
+최종 재사용성 판단은 **일부 보완 필요**다. #5의 단일 상태·판정/집계 갱신과 #7의 행렬·같은 개수의 네 지표 계약 재현은 충분하다. 다만 원본과 같은 분류 평가 분야이므로 다른 개념에 대한 범용 인터랙티브 전이는 여전히 미검증이다. 공통 Markdown 누락0·모순0·공통 지침 보완0건이며, 이번 전용 승인/설계/검증 MD 마감을 공통 규칙 추가로 세지 않는다.
+
+미검증 범위는 다른 개념으로의 전이·나머지 패턴의 새주제 재사용·독자 이해도/실제 스크린리더 청취·모바일/태블릿/다른 브라우저·실제 모델 성능/확률 보정 및 모든 예외×화면 조합이다. 승인으로 이 범위를 통과 처리하지 않는다.

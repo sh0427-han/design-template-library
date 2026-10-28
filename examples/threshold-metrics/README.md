@@ -1,5 +1,10 @@
 # 분류 임계값과 성능 변화
 
+**최종 시안 확정: 2026-10-28 (한국 시간).** 사용자가 현재2장과 오탐·미탐 왼쪽 정렬을 승인하고 main 병합을 지시했다. 승인 화면/동작 기준은 `e3b1d3e4f6a5a7444eabebbdf7fd44f74c593313`이며 이후 마감은 문서/검증 기록만 추가한다. [최종 승인·CI 기록](review/final-approval.json) · [최종 검증 판단](VALIDATION.md#d1-최종-확정과-승인) · [PR #23](https://github.com/sh0427-han/design-template-library/pull/23).
+
+[확정 Scroll](https://raw.githack.com/sh0427-han/design-template-library/e3b1d3e4f6a5a7444eabebbdf7fd44f74c593313/examples/threshold-metrics/scroll.html) · [확정 Slide](https://raw.githack.com/sh0427-han/design-template-library/e3b1d3e4f6a5a7444eabebbdf7fd44f74c593313/examples/threshold-metrics/slides.html) · [개념 이미지](previews/slides-concept.png) · [실습 이미지](previews/slides-practice.png). CDN 접속 제한과 로컬 실행 방법은 아래에 구분해 기록했다.
+
+
 Vision AI·머신러닝 입문자를 위한 개념 1장과 임계값 실습 1장이다. 불량을 양성, 정상을 음성으로 정의하며 설명용 합성 점수를 사용한다. 보정된 확률이나 실제 생산 성능이 아니다.
 
 - [Scroll](scroll.html) · [Slide](slides.html)
