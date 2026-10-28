@@ -1,0 +1,318 @@
+{
+  "reviewer": "/root/threshold_reviewer_final",
+  "role": "independent final Reviewer; separate from Planner and Builder; no product/common source edits",
+  "round": 1,
+  "reviewed_commit": "2aa1d050c9d65e8e3bdd57a428dfafd95a84f5a0",
+  "created_utc": "2026-10-27T12:02:06.416396+00:00",
+  "decision": "changes_requested",
+  "runtime_math_geometry_status": "passed within recorded scope",
+  "final_delivery_status": "pending one teaching-content correction and final D1/CI/PR synchronization",
+  "main_merge_authorized": false,
+  "findings_by_severity": {
+    "critical": [],
+    "high": [],
+    "medium": [
+      {
+        "id": "R1-E01",
+        "priority": "P2",
+        "classification": "E",
+        "file": "examples/threshold-metrics/content.html",
+        "line": 28,
+        "title": "오탐·미탐 절충 방향이 학습 화면에 명시되지 않음",
+        "evidence": "현재 핵심 캡션은 불량 예측 수의 증감만 설명한다. 앞쪽 FP/FN 정의와 실습 개수는 정확하지만, 임계값 증가와 두 오류의 서로 다른 방향을 연결하는 설명이 없다. 따라서 입문자는 학습목표5의 오탐/미탐 절충을 스스로 추론해야 한다.",
+        "basis": [
+          "사용자 학습목표5: 임계값의 오탐/미탐 절충 영향",
+          "examples/threshold-metrics/DESIGN.md §목표와 정확한 용어 6",
+          "docs/INTERACTIVE_PATTERN.md §데이터와 판정 계약 및 지표: 고정 점수의 집합 관계, Precision 항상 증가라고 설명하지 않음",
+          "DESIGN_SYSTEM.md §원칙과 정보 위계: 핵심 해석을 마지막 캡션으로 연결"
+        ],
+        "requested_change": "점수·실제값 고정이라는 핵심어를 유지하고, 보이는 개념 캡션에 임계값↑ → FP는 같거나 감소 / FN은 같거나 증가를 직접 연결한다. 예: 임계값을 높이면 오탐(FP)은 같거나 줄고, 미탐(FN)은 같거나 늘 수 있음.",
+        "verification_required": "개념 두 모드 PC4크기8화면의 실제 문구·패딩·Footer·폰트 및 공유 원본 동일성, 해당 문구의 소스/프리뷰 해시 동기화. Precision/Accuracy 증가 보장 문구를 추가하지 않는다.",
+        "common_document_gap": false
+      }
+    ],
+    "low": []
+  },
+  "scope": {
+    "preparation": [
+      "AGENTS.md",
+      "DESIGN_SYSTEM.md",
+      "TEMPLATE_CATALOG.md",
+      "docs/DESIGN_COMPONENT_RECIPES.md",
+      "docs/FIGURE_PRODUCTION_STANDARD.md",
+      "docs/REFERENCE_PAGE_SPECS.md",
+      "docs/INTERACTIVE_PATTERN.md",
+      "docs/EXPERIMENT_PATTERN.md",
+      "docs/REFERENCE_REUSE_WORKFLOW.md",
+      "docs/REFERENCE_REVIEW_GUIDE.md",
+      "docs/TEMPLATE_REUSE_VALIDATION.md",
+      "docs/CONCEPT_REUSE_PROMPT.md",
+      "templates/dual-mode-learning/DESIGN.md",
+      "templates/dual-mode-learning/MODES.md",
+      "원본 #5 interactive.html + interactive-reference.js; #7 experiment.html; 8종 실제 목적/프리뷰",
+      "새 예제 D0 DESIGN.md 및 VALIDATION.md"
+    ],
+    "new_source_reviewed": [
+      "scroll.html",
+      "slides.html",
+      "content.html",
+      "lesson.css",
+      "model.js",
+      "app.js",
+      "data.json",
+      "README.md",
+      "DESIGN.md",
+      "VALIDATION.md",
+      "scripts/verify_threshold_metrics.py",
+      ".github/workflows/validate-threshold-metrics.yml"
+    ],
+    "started_only_after_builder_qa_complete": true,
+    "all_full_resolution_16_images_opened": true,
+    "full_resolution_images_opened": [
+      "examples/threshold-metrics/review/screens/scroll-concept-1280x720.png",
+      "examples/threshold-metrics/review/screens/scroll-concept-1366x768.png",
+      "examples/threshold-metrics/review/screens/scroll-concept-1440x810.png",
+      "examples/threshold-metrics/review/screens/scroll-concept-1600x950.png",
+      "examples/threshold-metrics/review/screens/scroll-practice-1280x720.png",
+      "examples/threshold-metrics/review/screens/scroll-practice-1366x768.png",
+      "examples/threshold-metrics/review/screens/scroll-practice-1440x810.png",
+      "examples/threshold-metrics/review/screens/scroll-practice-1600x950.png",
+      "examples/threshold-metrics/review/screens/slides-concept-1280x720.png",
+      "examples/threshold-metrics/review/screens/slides-concept-1366x768.png",
+      "examples/threshold-metrics/review/screens/slides-concept-1440x810.png",
+      "examples/threshold-metrics/review/screens/slides-concept-1600x950.png",
+      "examples/threshold-metrics/review/screens/slides-practice-1280x720.png",
+      "examples/threshold-metrics/review/screens/slides-practice-1366x768.png",
+      "examples/threshold-metrics/review/screens/slides-practice-1440x810.png",
+      "examples/threshold-metrics/review/screens/slides-practice-1600x950.png"
+    ],
+    "contact_sheet_opened": true,
+    "additional_images_opened": [
+      "Reviewer own 1280x720 shifted Scroll",
+      "Reviewer own 1280x720 shifted Slide",
+      "Reviewer own 1280x720 all-negative/no-positive-prediction null-metric Slide"
+    ],
+    "reviewer_own_math_oracle": "Counter over (truth, scoreUnits>=threshold), Fraction ratios and Decimal ROUND_HALF_UP, independently written in /tmp/threshold_reviewer_probe.py. Does not call production or supplied oracle to produce expected answers.",
+    "reviewer_own_browser_states": 404,
+    "reported_threshold_states_recomputed_with_reviewers_own_oracle": 404,
+    "reviewer_own_browser_viewport": [
+      1280,
+      720
+    ],
+    "reviewer_own_browser_modes": [
+      "scroll",
+      "slides"
+    ],
+    "replayed_existing_contract_tests": "Reviewer separately executed custom_scenarios / interaction_scenarios / exceptional_scenarios with a fresh local Chromium/server. These reuse the supplied test code and are distinct from the independently written math oracle.",
+    "replayed_custom_states": 20,
+    "replayed_invalid_samples": 8,
+    "replayed_interaction": {
+      "native_keyboard_home_end_arrow": true,
+      "pointer_threshold": 24,
+      "mode_round_trip_and_reload": {
+        "thresholdUnits": 51,
+        "counts": {
+          "tp": 2,
+          "fp": 4,
+          "tn": 6,
+          "fn": 2
+        },
+        "display": {
+          "precision": "33.3%",
+          "recall": "50.0%",
+          "accuracy": "57.1%",
+          "f1": "40.0%"
+        }
+      },
+      "navigation_keys_leave_native_controls_alone": true,
+      "scroll_final_section_sync": true,
+      "invalid_url_cases": [
+        {
+          "input": "v=2&dataset=default&threshold=50",
+          "canonical_url": "slides.html?v=1&dataset=default&threshold=50#concept"
+        },
+        {
+          "input": "v=1&dataset=missing&threshold=50",
+          "canonical_url": "slides.html?v=1&dataset=default&threshold=50#concept"
+        },
+        {
+          "input": "v=1&dataset=default&threshold=0.50",
+          "canonical_url": "slides.html?v=1&dataset=default&threshold=50#concept"
+        },
+        {
+          "input": "v=1&dataset=default&threshold=-1",
+          "canonical_url": "slides.html?v=1&dataset=default&threshold=50#concept"
+        },
+        {
+          "input": "v=1&dataset=default&threshold=101",
+          "canonical_url": "slides.html?v=1&dataset=default&threshold=50#concept"
+        },
+        {
+          "input": "v=1&dataset=default&threshold=NaN",
+          "canonical_url": "slides.html?v=1&dataset=default&threshold=50#concept"
+        }
+      ],
+      "invalid_hash_normalized_with_notice": true
+    },
+    "replayed_faults": {
+      "reduced_motion": true,
+      "font_failure_layout_separate_from_normal_font_success": true,
+      "data_load_failure_clears_success_and_disables_control": true,
+      "content_load_failure_and_retry": true,
+      "app_script_load_failure_and_retry": true,
+      "no_javascript_notice": true,
+      "exception_viewport": [
+        1280,
+        720
+      ],
+      "exception_mode": "slides",
+      "screen_reader_listening": "not_performed"
+    },
+    "reviewer_own_fonts": [
+      {
+        "mode": "scroll",
+        "elements": 171,
+        "families": {
+          "Pretendard Variable": 769,
+          "STIX Two Math": 170
+        }
+      },
+      {
+        "mode": "slides",
+        "elements": 174,
+        "families": {
+          "Pretendard Variable": 778,
+          "STIX Two Math": 170
+        }
+      }
+    ],
+    "reviewer_extra_checks": {
+      "f1_sibling_rects": [
+        {
+          "name": "HEADER",
+          "y": 443.734375,
+          "bottom": 469.25
+        },
+        {
+          "name": "metric-meaning",
+          "y": 469.25,
+          "bottom": 485.015625
+        },
+        {
+          "name": "metric-formula",
+          "y": 485.015625,
+          "bottom": 512.78125
+        },
+        {
+          "name": "metric-calculation",
+          "y": 515.359375,
+          "bottom": 543.546875
+        },
+        {
+          "name": "harmonic-equivalent",
+          "y": 543.546875,
+          "bottom": 584.34375
+        }
+      ],
+      "native_select_key_not_intercepted": true,
+      "f1_null_vs_zero": true,
+      "invalid_data_then_visible_retry": true
+    },
+    "not_claimed": [
+      "Reviewer did not independently recreate/rerun every 16-screen geometry implementation; reviewed all16 Builder captures and measurements instead",
+      "Reviewer did not rerun all legacy 8-type/three-example regressions locally or independently fetch final in-progress CI conclusions",
+      "No production model training/performance",
+      "No screen-reader listening",
+      "No reader comprehension study",
+      "No mobile/tablet/Safari/Firefox test",
+      "No independent author starting without all context"
+    ]
+  },
+  "evidence_crosschecks": {
+    "builder_report_status": "passed",
+    "builder_screens": 16,
+    "builder_threshold_states": 404,
+    "builder_custom_states": 20,
+    "source_sha256_all_match": true,
+    "source_sha256_reviewed": {
+      "examples/threshold-metrics/scroll.html": "d0a4b9390cbe21d1137b0195f12be26f49f988fecd19514f0335f89119bc88d0",
+      "examples/threshold-metrics/slides.html": "bf5182ab361d909f0dcb5f1ce6b076320c0a9e08e5af2306b3169fa476073136",
+      "examples/threshold-metrics/content.html": "08ed32e832a6d22b0b3f18926ed6c37f73971a5e9a0027f7da11deea8a77c092",
+      "examples/threshold-metrics/lesson.css": "9fb510e15348dd4616e3d9f1fa38348e53901b81da7936b5554f9ff345d1e9ff",
+      "examples/threshold-metrics/model.js": "6985a5eb74e710151c9f4df5a3a3ff112a573dae7e7d4f55b03b77b279659ff9",
+      "examples/threshold-metrics/app.js": "168d0331962fac84339fb2cb353ea8f1a3c06e22d7d19629cde91865f872e00f",
+      "examples/threshold-metrics/data.json": "75e33c5d05a68e04696a13c9bc1ccccba8236591cbf930984ac2b0ffa59f0804",
+      "examples/threshold-metrics/DESIGN.md": "6b7ca55fd3c4b288798750d041b6b6ec2d64c0961ea2073fe481fd9585935f9f",
+      "scripts/verify_threshold_metrics.py": "cbece2c880c8032ba9977f7832a8cae364c4cd792b80174359a115acea1f7f9f",
+      ".github/workflows/validate-threshold-metrics.yml": "3517a80af25ec350084745b82e4ca9e8fa9bb04d4743c5d96d7636b90512368a"
+    },
+    "preview_sha256_all_match": true,
+    "d0_prefixes_preserved": {
+      "DESIGN.md": true,
+      "VALIDATION.md": true
+    },
+    "protected_source_diff_vs_main": [],
+    "normal_console_page_request_http_errors": [
+      [],
+      [],
+      []
+    ],
+    "matrix_max_divider_gap_error_css_px": 0.015625,
+    "mode_content_style_normalized_box_comparison": [
+      {
+        "slide": "concept",
+        "elements": 11,
+        "max_normalized_box_error": 0,
+        "styles_and_content_equal": true
+      },
+      {
+        "slide": "practice",
+        "elements": 35,
+        "max_normalized_box_error": 0,
+        "styles_and_content_equal": true
+      }
+    ],
+    "initial_browser_failure_preserved": true,
+    "prior_full_ci": "40457735313 successful per Builder report; first dedicated40457735474 failure explicitly retained",
+    "current_ci": "40499956471 full and40499956468 dedicated running at review; no success inferred"
+  },
+  "reuse_assessment": {
+    "common_md_missing": 0,
+    "common_md_contradictions": 0,
+    "required_contract_only_in_source_B": 0,
+    "common_md_edits_needed_for_this_finding": 0,
+    "reasoning": "Inclusive threshold / fixed truth & identities / one evaluation and render path / failure semantics already exist in #5 Markdown; TP FP / FN TN, actual-text divider, four meanings/formulas/substitutions/rounding exist in #7 Markdown; shared typography, inner padding and concept-first flow exist in common Markdown. Synthetic datasets,14tile layout, two-page split, integerURL/API and page-specific dimensions are C. F1 padding and missing on-screen FP/FN tradeoff are implementation/content application E, not new common contract gaps. D0 preimplementation zero-gap judgment is preserved, not retroactively rewritten.",
+    "A_documented_rules": [
+      "DESIGN_SYSTEM §개념 설명의 기본 순서 / Pretendard와 전역 자간 / 본문과 수식의 서체 분리 / 카드와 내부 정렬",
+      "INTERACTIVE_PATTERN §승인된 내용과 재사용 계약 / 데이터와 판정 계약 / 지표 / 조작",
+      "EXPERIMENT_PATTERN §3 축과 셀 / §4 정보 위계 / §5 수식과 대입 / §6 정렬",
+      "REFERENCE_REUSE_WORKFLOW and TEMPLATE_REUSE_VALIDATION: provenance, D0/D1 and A–E distinction"
+    ],
+    "B_source_only_required_contracts": [],
+    "C_topic_specific": [
+      "14+14 synthetic sets and7:7/4:10 prevalence",
+      "one concept + one practice page; tiled samples above four columns of metrics",
+      "version1 integerURL and test-only API;554px page-specific panel and measured adjustments"
+    ],
+    "D_common_gaps": [],
+    "E_implementation_issues": "Existing E01–E06 and test-checker E-T01 have evidence-consistent sources; new R1-E01 is separate and must be fixed/rechecked. C05 described as preventive hardening without a reproduced product failure should remain identified as such.",
+    "pattern_5_Interactive": {
+      "status": "technical_state_reuse_passed; teaching-content correction pending",
+      "reason": "Both14-sample datasets use new composition, inclusive equality boundary, fixed truth/sample DOM/positions and single model-state updates.404 live states, null/zero distinction, failure recovery, keyboard and URL restoration reviewed. Original6-row design was not copied."
+    },
+    "pattern_7_Experiment": {
+      "status": "matrix_and_metric_reuse_passed",
+      "reason": "GT columns / prediction rows TP FP / FN TN, same derived counts, exact four metrics, original-ratio F1, MathML general/current fractions, conditional harmonic equivalent and actual-text centered divider are present and independently math-checked. Four horizontal metrics differ from original2x2."
+    },
+    "other_patterns": "#1/#2/#3/#4/#6/#8 new-topic reuse remains unverified; unchanged legacy regression does not establish it.",
+    "document_sufficiency_vs_final_product": "Common Markdown sufficient for selected #5/#7 contracts within this scope. Final teaching artifact not yet approved due R1-E01; independent reader comprehension not established."
+  },
+  "handoff_pending_not_runtime_findings": [
+    "Append final D1 completion after correction and verified final CI; preserve D0 prefix and initial failure",
+    "Record final source commit, Reviewer round2 result, changed file list, validation numbers and limitations",
+    "Synchronize README/preview/catalog or task-required entrypoint documentation with final artifact; do not promote example to ninth canonical template",
+    "Update PR23 title/body/evidence with final code/doc commits and truthful CI state; do not merge main",
+    "Ensure final accessible preview URLs point to reviewed images and are actually accessible; local screenshots alone do not establish external delivery"
+  ],
+  "re_review_limit": 3
+}

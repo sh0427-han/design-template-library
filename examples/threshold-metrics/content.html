@@ -1,0 +1,63 @@
+<div class="page-frame" data-slide="concept">
+<section class="slide reference-slide threshold-slide" id="concept" aria-labelledby="concept-title">
+  <header><div class="kicker">불량 검출 · 개념</div><h1 id="concept-title">점수와 판정을 가르는 임계값</h1><p class="subtitle">같은 결함 점수라도 임계값이 달라지면 정상·불량 판정이 바뀔 수 있음</p></header>
+  <div class="content">
+    <section class="teaching-panel concept-panel" aria-labelledby="concept-panel-title">
+      <div class="panel-label">SCORE → DECISION</div><h2 class="panel-title" id="concept-panel-title">점수는 모델의 출력, 판정은 기준과 비교한 결과</h2>
+      <p class="concept-condition">불량 = 양성(Positive) · 정상 = 음성(Negative) · 실제값(Ground Truth, GT)은 모델 예측과 별도로 정해진 실제 정답</p>
+      <div class="concept-flow" aria-label="이미지의 결함 점수를 임계값과 비교해 두 예측으로 나누는 개념도">
+        <div class="flow-stage image-stage" id="node-image"><div class="stage-label">입력</div>
+          <svg class="inspection-image" viewBox="0 0 160 120" role="img" aria-label="표면에 작은 균열이 있는 검사 부품의 개념도"><rect x="10" y="10" width="140" height="100" rx="8" fill="var(--canvas)" stroke="var(--border)"/><rect x="32" y="27" width="96" height="66" rx="8" fill="#d6dfe9" stroke="#9baabe" stroke-width="1.5"/><circle cx="48" cy="43" r="5" fill="white"/><circle cx="112" cy="43" r="5" fill="white"/><circle cx="48" cy="77" r="5" fill="white"/><circle cx="112" cy="77" r="5" fill="white"/><path d="M78 37 L72 52 L83 60 L74 72 L82 84" fill="none" stroke="var(--deep)" stroke-width="2.5" stroke-linejoin="round"/></svg>
+          <h3>검사 이미지</h3><p>모델에 넣는 입력</p>
+        </div>
+        <div class="flow-stage score-stage" id="node-score"><div class="stage-label">모델 출력</div><div class="score-symbol"><math class="math" aria-label="결함 점수 s = 0.72"><mi>s</mi><mo>=</mo><mn>0.72</mn></math></div><div class="concept-score-track" role="img" aria-label="결함 점수 0.72, 범위 0에서 1"><span style="width:72%"></span></div><div class="score-endpoints"><span>0</span><span>1</span></div><h3>결함 점수</h3><p>클수록 불량 쪽 점수</p></div>
+        <div class="flow-stage threshold-stage" id="node-threshold"><div class="stage-label">판정 기준</div><div class="threshold-symbol"><math class="math" aria-label="임계값 t"><mi>t</mi></math></div><h3>임계값</h3><p>불량으로 판정할 최소 점수</p></div>
+        <div class="prediction-branches" id="node-branches">
+          <div class="branch positive-branch" id="node-positive"><math class="math" aria-label="점수 s가 임계값 t 이상"><mi>s</mi><mo>≥</mo><mi>t</mi></math><strong>불량 예측</strong><span>같은 점수도 포함</span></div>
+          <div class="branch negative-branch" id="node-negative"><math class="math" aria-label="점수 s가 임계값 t 미만"><mi>s</mi><mo>&lt;</mo><mi>t</mi></math><strong>정상 예측</strong></div>
+        </div>
+        <svg class="concept-connectors" aria-hidden="true"><path id="arrow-image-score" data-from="node-image" data-to="node-score"/><path id="arrow-score-threshold" data-from="node-score" data-to="node-threshold"/><path id="arrow-threshold-positive" data-from="node-threshold" data-to="node-positive"/><path id="arrow-threshold-negative" data-from="node-threshold" data-to="node-negative"/></svg>
+      </div>
+      <div class="concept-bottom"><div class="truth-explanation"><span class="truth-fixed">실제값은 고정</span><p>정답과 예측을 비교해 오탐·미탐 구분</p></div>
+      <div class="error-pair">
+        <div class="error-example"><h3>오탐 <span>False Positive · FP</span></h3><p><span>실제 정상</span><span class="small-arrow" aria-hidden="true">→</span><strong class="positive-text">불량 예측</strong></p></div>
+        <div class="error-example"><h3>미탐 <span>False Negative · FN</span></h3><p><span>실제 불량</span><span class="small-arrow" aria-hidden="true">→</span><strong class="negative-text">정상 예측</strong></p></div>
+      </div></div>
+    </section>
+    <div class="ref-takeaway"><strong>점수·실제값은 그대로</strong><span>임계값을 높이면 오탐(FP)은 같거나 줄고, 미탐(FN)은 같거나 늘 수 있음</span></div>
+  </div>
+  <footer class="footer"><span>Vision AI 기초 · 분류 임계값과 성능 변화</span><span>01 / 02</span></footer>
+</section></div>
+
+<div class="page-frame" data-slide="practice">
+<section class="slide reference-slide threshold-slide" id="practice" aria-labelledby="practice-title">
+  <header><div class="kicker">불량 검출 · 실습</div><h1 id="practice-title">임계값에 따른 판정과 성능 변화</h1><p class="subtitle">고정된 샘플의 예측이 바뀌면 혼동행렬과 네 지표도 함께 갱신</p></header>
+  <div class="content">
+    <section class="teaching-panel practice-panel" aria-labelledby="practice-panel-title">
+      <div class="practice-head">
+        <div class="panel-identity"><div class="panel-label">THRESHOLD → METRICS</div><h2 class="panel-title" id="practice-panel-title">같은 점수, 달라지는 판정</h2></div>
+        <div class="practice-controls">
+          <div class="threshold-control"><label for="threshold">임계값</label><output class="math-number" id="threshold-value" for="threshold">—</output><span class="range-end">0.00</span><input id="threshold" type="range" min="0" max="100" step="1" value="50" disabled><span class="range-end">1.00</span></div>
+          <div class="dataset-control"><label class="sr-only" for="dataset">데이터셋</label><select id="dataset" disabled><option value="default">기본 · 불량7 / 정상7</option><option value="shifted">다른 비율 · 불량4 / 정상10</option></select></div>
+          <p class="decision-rule">점수 ≥ 임계값 → 불량 예측 <span class="sample-summary" id="prediction-summary">데이터 준비 중</span></p><p class="threshold-legend"><span class="legend-line" aria-hidden="true"></span>현재 임계값</p>
+        </div>
+      </div>
+      <div class="practice-upper">
+        <section class="samples-region" aria-label="고정 실제값별 샘플과 바뀌는 예측"><div class="sample-group" data-truth="1"><div class="group-heading"><h3>실제 불량 <span>Positive</span></h3><span class="group-count" id="actual-positive-count">—</span></div><div class="sample-grid" id="samples-positive" role="list" aria-label="실제 불량 샘플"></div></div><div class="sample-group" data-truth="0"><div class="group-heading"><h3>실제 정상 <span>Negative</span></h3><span class="group-count" id="actual-negative-count">—</span></div><div class="sample-grid" id="samples-negative" role="list" aria-label="실제 정상 샘플"></div></div></section>
+        <section class="matrix-region" aria-label="같은 샘플의 혼동행렬"><div class="matrix-overline"><h3>혼동행렬</h3><p class="data-context" id="data-context">불량 = 양성</p></div>
+          <div class="confusion-figure"><table class="confusion-table"><caption class="sr-only">GT 실제값은 열, 모델 예측은 행. TP FP / FN TN 순서.</caption><colgroup><col class="axis-col"><col class="row-col"><col><col></colgroup><thead><tr><th colspan="2" aria-hidden="true"></th><th colspan="2" scope="colgroup" class="gt-axis">GT (실제값)</th></tr><tr><th colspan="2" aria-hidden="true"></th><th id="gt-positive" scope="col" class="column-label">실제 불량</th><th id="gt-negative" scope="col" class="column-label">실제 정상</th></tr></thead><tbody><tr><th rowspan="2" scope="rowgroup" class="pred-axis"><span class="pred-axis-label">모델<br>예측</span></th><th scope="row" id="pred-positive">예측 불량</th><td class="correct" data-code="TP" headers="pred-positive gt-positive"><span class="cm-code">TP</span><strong class="cm-count" id="cm-tp">—</strong></td><td class="error" data-code="FP" headers="pred-positive gt-negative"><span class="cm-code">FP</span><strong class="cm-count" id="cm-fp">—</strong></td></tr><tr><th scope="row" id="pred-negative">예측 정상</th><td class="error" data-code="FN" headers="pred-negative gt-positive"><span class="cm-code">FN</span><strong class="cm-count" id="cm-fn">—</strong></td><td class="correct" data-code="TN" headers="pred-negative gt-negative"><span class="cm-code">TN</span><strong class="cm-count" id="cm-tn">—</strong></td></tr></tbody></table><span class="prediction-divider" aria-hidden="true"></span></div>
+          <div class="matrix-explanations"><p><b>FP</b> 정상 → 불량 예측 <span>· 오탐</span><b>FN</b> 불량 → 정상 예측 <span>· 미탐</span></p><p><b>TP</b> True Positive · 불량을 찾음 <b>TN</b> True Negative · 정상을 맞힘</p></div>
+        </section>
+      </div>
+      <div class="metric-row">
+        <article class="metric" data-metric="precision"><header><h3>Precision <span>정밀도</span></h3><strong class="metric-value math-number">—</strong></header><p class="metric-meaning">불량 예측 중 실제 불량 비율</p><div class="metric-formula"><math class="math" displaystyle="true" aria-label="TP / (TP + FP)"><mfrac><mi mathvariant="normal">TP</mi><mrow><mi mathvariant="normal">TP</mi><mo>+</mo><mi mathvariant="normal">FP</mi></mrow></mfrac></math></div><div class="metric-calculation"><math class="math current-fraction" displaystyle="true"><mfrac><mn class="numerator">0</mn><mn class="denominator">0</mn></mfrac><mo>=</mo></math><span class="calculation-result math-number">—</span></div><p class="metric-condition">불량 예측이 0개이면 정의되지 않음</p></article>
+        <article class="metric" data-metric="recall"><header><h3>Recall <span>재현율</span></h3><strong class="metric-value math-number">—</strong></header><p class="metric-meaning">실제 불량 중 찾아낸 비율</p><div class="metric-formula"><math class="math" displaystyle="true" aria-label="TP / (TP + FN)"><mfrac><mi mathvariant="normal">TP</mi><mrow><mi mathvariant="normal">TP</mi><mo>+</mo><mi mathvariant="normal">FN</mi></mrow></mfrac></math></div><div class="metric-calculation"><math class="math current-fraction" displaystyle="true"><mfrac><mn class="numerator">0</mn><mn class="denominator">0</mn></mfrac><mo>=</mo></math><span class="calculation-result math-number">—</span></div><p class="metric-condition">실제 불량이 0개이면 정의되지 않음</p></article>
+        <article class="metric" data-metric="accuracy"><header><h3>Accuracy <span>정확도</span></h3><strong class="metric-value math-number">—</strong></header><p class="metric-meaning">전체 샘플 중 맞힌 비율</p><div class="metric-formula"><math class="math" displaystyle="true" aria-label="(TP + TN) / N"><mfrac><mrow><mi mathvariant="normal">TP</mi><mo>+</mo><mi mathvariant="normal">TN</mi></mrow><mi>N</mi></mfrac></math><span class="metric-symbol-note"><math class="math" aria-label="N"><mi>N</mi></math> = 전체 수</span></div><div class="metric-calculation"><math class="math current-fraction" displaystyle="true"><mfrac><mn class="numerator">0</mn><mn class="denominator">0</mn></mfrac><mo>=</mo></math><span class="calculation-result math-number">—</span></div><p class="metric-condition">전체 샘플이 0개이면 정의되지 않음</p></article>
+        <article class="metric f1-metric" data-metric="f1"><header><h3>F1-score</h3><strong class="metric-value math-number">—</strong></header><p class="metric-meaning">정밀도·재현율의 조화평균</p><div class="metric-formula"><math class="math" displaystyle="true" aria-label="2TP / (2TP + FP + FN)"><mfrac><mrow><mn>2</mn><mi mathvariant="normal">TP</mi></mrow><mrow><mn>2</mn><mi mathvariant="normal">TP</mi><mo>+</mo><mi mathvariant="normal">FP</mi><mo>+</mo><mi mathvariant="normal">FN</mi></mrow></mfrac></math></div><div class="metric-calculation"><math class="math current-fraction" displaystyle="true"><mfrac><mn class="numerator">0</mn><mn class="denominator">0</mn></mfrac><mo>=</mo></math><span class="calculation-result math-number">—</span></div><p class="metric-condition">분모가 0이면 정의되지 않음</p><div class="harmonic-equivalent"><math class="math" aria-label="2 곱하기 Precision 곱하기 Recall / (Precision + Recall)"><mo>=</mo><mfrac><mrow><mn>2</mn><mo>×</mo><mi mathvariant="normal">Precision</mi><mo>×</mo><mi mathvariant="normal">Recall</mi></mrow><mrow><mi mathvariant="normal">Precision</mi><mo>+</mo><mi mathvariant="normal">Recall</mi></mrow></mfrac></math><span>두 비율 정의 · 합이 양수일 때</span></div></article>
+      </div>
+      <div class="data-error" id="data-error" role="alert" hidden><p id="data-error-message"></p><button id="retry-data" type="button">기본 데이터 다시 불러오기</button></div>
+    </section>
+  </div>
+  <footer class="footer"><span>Vision AI 기초 · 분류 임계값과 성능 변화</span><span>02 / 02</span></footer>
+  <p class="sr-only" id="evaluation-status" role="status" aria-live="polite"></p>
+</section></div>

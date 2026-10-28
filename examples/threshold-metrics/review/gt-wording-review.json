@@ -1,0 +1,505 @@
+{
+  "reviewer": "/root/feedback_reviewer",
+  "role": "Independent Reviewer; root authored these text and documentation changes",
+  "created_utc": "2026-10-27T23:23:16.356228+00:00",
+  "review_round": 1,
+  "status": "approved_with_scope_limits",
+  "findings": [],
+  "unresolved_findings": 0,
+  "scope": "Two GT wording changes in the concept slide and their documentation. Fresh independent concept8-screen inspection only; no claim of a fresh full independent lesson or 404-state review.",
+  "parent_revision": "62d56c4b61a1086ec30c8fc4a33852b11a05c1a1",
+  "source_review": {
+    "upper_definition": "실제값(Ground Truth, GT)은 모델 예측과 별도로 정해진 실제 정답",
+    "lower_explanation": "정답과 예측을 비교해 오탐·미탐 구분",
+    "technical_assessment": "Ground Truth is introduced as the actual reference answer established separately from the current model prediction; the fixed actual-value label and FP/FN meaning remain consistent. Replacing 검사로 확인한 정답 removes the ambiguous link to the model inspection input.",
+    "CSS_state_calculation_data_unchanged": {
+      "lesson.css": true,
+      "app.js": true,
+      "model.js": true,
+      "data.json": true
+    },
+    "protected_paths_changed": [],
+    "D0_original_prefix_preserved": {
+      "DESIGN.md": true,
+      "VALIDATION.md": true
+    },
+    "new_common_MD_gap_count": 0,
+    "common_MD_changes": 0
+  },
+  "independent_browser_review": {
+    "chromium": "154.0.8037.57",
+    "screen_cases": 8,
+    "viewports": [
+      [
+        1600,
+        950
+      ],
+      [
+        1440,
+        810
+      ],
+      [
+        1366,
+        768
+      ],
+      [
+        1280,
+        720
+      ]
+    ],
+    "modes": [
+      "scroll",
+      "slides"
+    ],
+    "method": "New local HTTP server and fresh Chromium contexts. Separate DOM Range line count and text bounds checks; did not reuse Builder geometry function. CDP actual font check uses shared actual_fonts helper.",
+    "checks": [
+      {
+        "contextText": "불량 = 양성(Positive) · 정상 = 음성(Negative) · 실제값(Ground Truth, GT)은 모델 예측과 별도로 정해진 실제 정답",
+        "lowerText": "정답과 예측을 비교해 오탐·미탐 구분",
+        "lowerLineCount": 1,
+        "lowerTextRects": [
+          {
+            "left": 167,
+            "top": 641,
+            "right": 382.109375,
+            "bottom": 661
+          }
+        ],
+        "lowerBox": {
+          "left": 167,
+          "top": 639,
+          "right": 382.109375,
+          "bottom": 663,
+          "width": 215.109375,
+          "height": 24
+        },
+        "truthBox": {
+          "left": 167,
+          "top": 597,
+          "right": 581,
+          "bottom": 669,
+          "width": 414,
+          "height": 72
+        },
+        "lowerTextInsideOwnBox": true,
+        "lowerInsideTruth": true,
+        "truthInsidePanelPadding": true,
+        "separateFromLowerLabel": true,
+        "contextAboveFlow": true,
+        "panelAboveFooter": true,
+        "letterSpacing": "-1.33333px",
+        "lowerFont": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+        "viewport": [
+          1600,
+          950
+        ],
+        "mode": "scroll",
+        "fonts": {
+          "families": {
+            "Pretendard Variable": 110
+          },
+          "fallback": [],
+          "unpainted": [],
+          "bad_spacing": []
+        },
+        "page_errors": []
+      },
+      {
+        "contextText": "불량 = 양성(Positive) · 정상 = 음성(Negative) · 실제값(Ground Truth, GT)은 모델 예측과 별도로 정해진 실제 정답",
+        "lowerText": "정답과 예측을 비교해 오탐·미탐 구분",
+        "lowerLineCount": 1,
+        "lowerTextRects": [
+          {
+            "left": 167,
+            "top": 646,
+            "right": 382.109375,
+            "bottom": 666
+          }
+        ],
+        "lowerBox": {
+          "left": 167,
+          "top": 644,
+          "right": 382.109375,
+          "bottom": 668,
+          "width": 215.109375,
+          "height": 24
+        },
+        "truthBox": {
+          "left": 167,
+          "top": 602,
+          "right": 581,
+          "bottom": 674,
+          "width": 414,
+          "height": 72
+        },
+        "lowerTextInsideOwnBox": true,
+        "lowerInsideTruth": true,
+        "truthInsidePanelPadding": true,
+        "separateFromLowerLabel": true,
+        "contextAboveFlow": true,
+        "panelAboveFooter": true,
+        "letterSpacing": "-1.33333px",
+        "lowerFont": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+        "viewport": [
+          1600,
+          950
+        ],
+        "mode": "slides",
+        "fonts": {
+          "families": {
+            "Pretendard Variable": 110
+          },
+          "fallback": [],
+          "unpainted": [],
+          "bad_spacing": []
+        },
+        "page_errors": []
+      },
+      {
+        "contextText": "불량 = 양성(Positive) · 정상 = 음성(Negative) · 실제값(Ground Truth, GT)은 모델 예측과 별도로 정해진 실제 정답",
+        "lowerText": "정답과 예측을 비교해 오탐·미탐 구분",
+        "lowerLineCount": 1,
+        "lowerTextRects": [
+          {
+            "left": 174.65625,
+            "top": 560.84375,
+            "right": 359.671875,
+            "bottom": 578.84375
+          }
+        ],
+        "lowerBox": {
+          "left": 174.65625,
+          "top": 559.84375,
+          "right": 359.671875,
+          "bottom": 580.53125,
+          "width": 185.015625,
+          "height": 20.6875
+        },
+        "truthBox": {
+          "left": 174.65625,
+          "top": 523.515625,
+          "right": 531.328125,
+          "bottom": 585.828125,
+          "width": 356.671875,
+          "height": 62.3125
+        },
+        "lowerTextInsideOwnBox": true,
+        "lowerInsideTruth": true,
+        "truthInsidePanelPadding": true,
+        "separateFromLowerLabel": true,
+        "contextAboveFlow": true,
+        "panelAboveFooter": true,
+        "letterSpacing": "-1.33333px",
+        "lowerFont": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+        "viewport": [
+          1440,
+          810
+        ],
+        "mode": "scroll",
+        "fonts": {
+          "families": {
+            "Pretendard Variable": 110
+          },
+          "fallback": [],
+          "unpainted": [],
+          "bad_spacing": []
+        },
+        "page_errors": []
+      },
+      {
+        "contextText": "불량 = 양성(Positive) · 정상 = 음성(Negative) · 실제값(Ground Truth, GT)은 모델 예측과 별도로 정해진 실제 정답",
+        "lowerText": "정답과 예측을 비교해 오탐·미탐 구분",
+        "lowerLineCount": 1,
+        "lowerTextRects": [
+          {
+            "left": 174.65625,
+            "top": 551.84375,
+            "right": 359.671875,
+            "bottom": 569.84375
+          }
+        ],
+        "lowerBox": {
+          "left": 174.65625,
+          "top": 550.84375,
+          "right": 359.671875,
+          "bottom": 571.53125,
+          "width": 185.015625,
+          "height": 20.6875
+        },
+        "truthBox": {
+          "left": 174.65625,
+          "top": 514.515625,
+          "right": 531.328125,
+          "bottom": 576.828125,
+          "width": 356.671875,
+          "height": 62.3125
+        },
+        "lowerTextInsideOwnBox": true,
+        "lowerInsideTruth": true,
+        "truthInsidePanelPadding": true,
+        "separateFromLowerLabel": true,
+        "contextAboveFlow": true,
+        "panelAboveFooter": true,
+        "letterSpacing": "-1.33333px",
+        "lowerFont": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+        "viewport": [
+          1440,
+          810
+        ],
+        "mode": "slides",
+        "fonts": {
+          "families": {
+            "Pretendard Variable": 110
+          },
+          "fallback": [],
+          "unpainted": [],
+          "bad_spacing": []
+        },
+        "page_errors": []
+      },
+      {
+        "contextText": "불량 = 양성(Positive) · 정상 = 음성(Negative) · 실제값(Ground Truth, GT)은 모델 예측과 별도로 정해진 실제 정답",
+        "lowerText": "정답과 예측을 비교해 오탐·미탐 구분",
+        "lowerLineCount": 1,
+        "lowerTextRects": [
+          {
+            "left": 170.515625,
+            "top": 531.125,
+            "right": 344.46875,
+            "bottom": 547.125
+          }
+        ],
+        "lowerBox": {
+          "left": 170.515625,
+          "top": 530.125,
+          "right": 344.46875,
+          "bottom": 549.5625,
+          "width": 173.953125,
+          "height": 19.4375
+        },
+        "truthBox": {
+          "left": 170.515625,
+          "top": 495.9375,
+          "right": 505.6875,
+          "bottom": 554.609375,
+          "width": 335.171875,
+          "height": 58.671875
+        },
+        "lowerTextInsideOwnBox": true,
+        "lowerInsideTruth": true,
+        "truthInsidePanelPadding": true,
+        "separateFromLowerLabel": true,
+        "contextAboveFlow": true,
+        "panelAboveFooter": true,
+        "letterSpacing": "-1.33333px",
+        "lowerFont": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+        "viewport": [
+          1366,
+          768
+        ],
+        "mode": "scroll",
+        "fonts": {
+          "families": {
+            "Pretendard Variable": 110
+          },
+          "fallback": [],
+          "unpainted": [],
+          "bad_spacing": []
+        },
+        "page_errors": []
+      },
+      {
+        "contextText": "불량 = 양성(Positive) · 정상 = 음성(Negative) · 실제값(Ground Truth, GT)은 모델 예측과 별도로 정해진 실제 정답",
+        "lowerText": "정답과 예측을 비교해 오탐·미탐 구분",
+        "lowerLineCount": 1,
+        "lowerTextRects": [
+          {
+            "left": 170.515625,
+            "top": 522.125,
+            "right": 344.46875,
+            "bottom": 538.125
+          }
+        ],
+        "lowerBox": {
+          "left": 170.515625,
+          "top": 521.125,
+          "right": 344.46875,
+          "bottom": 540.5625,
+          "width": 173.953125,
+          "height": 19.4375
+        },
+        "truthBox": {
+          "left": 170.515625,
+          "top": 486.9375,
+          "right": 505.6875,
+          "bottom": 545.609375,
+          "width": 335.171875,
+          "height": 58.671875
+        },
+        "lowerTextInsideOwnBox": true,
+        "lowerInsideTruth": true,
+        "truthInsidePanelPadding": true,
+        "separateFromLowerLabel": true,
+        "contextAboveFlow": true,
+        "panelAboveFooter": true,
+        "letterSpacing": "-1.33333px",
+        "lowerFont": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+        "viewport": [
+          1366,
+          768
+        ],
+        "mode": "slides",
+        "fonts": {
+          "families": {
+            "Pretendard Variable": 110
+          },
+          "fallback": [],
+          "unpainted": [],
+          "bad_spacing": []
+        },
+        "page_errors": []
+      },
+      {
+        "contextText": "불량 = 양성(Positive) · 정상 = 음성(Negative) · 실제값(Ground Truth, GT)은 모델 예측과 별도로 정해진 실제 정답",
+        "lowerText": "정답과 예측을 비교해 오탐·미탐 구분",
+        "lowerLineCount": 1,
+        "lowerTextRects": [
+          {
+            "left": 165.09375,
+            "top": 497.25,
+            "right": 326.40625,
+            "bottom": 512.25
+          }
+        ],
+        "lowerBox": {
+          "left": 165.09375,
+          "top": 496.25,
+          "right": 326.40625,
+          "bottom": 514.265625,
+          "width": 161.3125,
+          "height": 18.015625
+        },
+        "truthBox": {
+          "left": 165.09375,
+          "top": 464.484375,
+          "right": 475.6875,
+          "bottom": 519.015625,
+          "width": 310.59375,
+          "height": 54.53125
+        },
+        "lowerTextInsideOwnBox": true,
+        "lowerInsideTruth": true,
+        "truthInsidePanelPadding": true,
+        "separateFromLowerLabel": true,
+        "contextAboveFlow": true,
+        "panelAboveFooter": true,
+        "letterSpacing": "-1.33333px",
+        "lowerFont": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+        "viewport": [
+          1280,
+          720
+        ],
+        "mode": "scroll",
+        "fonts": {
+          "families": {
+            "Pretendard Variable": 110
+          },
+          "fallback": [],
+          "unpainted": [],
+          "bad_spacing": []
+        },
+        "page_errors": []
+      },
+      {
+        "contextText": "불량 = 양성(Positive) · 정상 = 음성(Negative) · 실제값(Ground Truth, GT)은 모델 예측과 별도로 정해진 실제 정답",
+        "lowerText": "정답과 예측을 비교해 오탐·미탐 구분",
+        "lowerLineCount": 1,
+        "lowerTextRects": [
+          {
+            "left": 165.09375,
+            "top": 488.25,
+            "right": 326.40625,
+            "bottom": 503.25
+          }
+        ],
+        "lowerBox": {
+          "left": 165.09375,
+          "top": 487.25,
+          "right": 326.40625,
+          "bottom": 505.265625,
+          "width": 161.3125,
+          "height": 18.015625
+        },
+        "truthBox": {
+          "left": 165.09375,
+          "top": 455.484375,
+          "right": 475.6875,
+          "bottom": 510.015625,
+          "width": 310.59375,
+          "height": 54.53125
+        },
+        "lowerTextInsideOwnBox": true,
+        "lowerInsideTruth": true,
+        "truthInsidePanelPadding": true,
+        "separateFromLowerLabel": true,
+        "contextAboveFlow": true,
+        "panelAboveFooter": true,
+        "letterSpacing": "-1.33333px",
+        "lowerFont": "\"Pretendard Variable\", Pretendard, \"Malgun Gothic\", \"Apple SD Gothic Neo\", system-ui, sans-serif",
+        "viewport": [
+          1280,
+          720
+        ],
+        "mode": "slides",
+        "fonts": {
+          "families": {
+            "Pretendard Variable": 110
+          },
+          "fallback": [],
+          "unpainted": [],
+          "bad_spacing": []
+        },
+        "page_errors": []
+      }
+    ],
+    "all_lower_explanations_are_one_rendered_line": true,
+    "font_size_or_card_width_change_required": false,
+    "visual_captures_opened": [
+      "fresh independent Slide concept1440x810",
+      "fresh independent Slide concept1280x720"
+    ],
+    "visual_findings": []
+  },
+  "builder_evidence_review": {
+    "path": "examples/threshold-metrics/previews/validation.json",
+    "status": "passed",
+    "screen_cases": 16,
+    "threshold_states": 404,
+    "source_sha256_all_match_current_files": true,
+    "preview_sha256_all_match_current_files": true,
+    "full_suite_executed_by": "Builder root",
+    "independent_404_state_oracle_rerun_for_this_wording_change": false
+  },
+  "documentation_review": {
+    "DESIGN_appendix": "GT 설명 문구 후속 개정 — 2026-10-28",
+    "VALIDATION_appendix": "GT와 모델 예측 구분 · 후속 검토",
+    "README_current_status_updated": true,
+    "previous_feedback_review_and_revision_are_historical_parent_evidence": true,
+    "cross_concept_reuse_assessment_unchanged": "일부 보완 필요; no new cross-concept transfer claim"
+  },
+  "reviewed_source_sha256": {
+    "examples/threshold-metrics/content.html": "e92da0d126d04cb439235755215c0edc8119149b272b9f23e137384c166feb02",
+    "examples/threshold-metrics/lesson.css": "a6eb1b2a5af400fcaee9b0179d2abe5269c58e159154a1037a6d6aa18518e9b1",
+    "examples/threshold-metrics/app.js": "168d0331962fac84339fb2cb353ea8f1a3c06e22d7d19629cde91865f872e00f",
+    "examples/threshold-metrics/model.js": "6985a5eb74e710151c9f4df5a3a3ff112a573dae7e7d4f55b03b77b279659ff9",
+    "examples/threshold-metrics/data.json": "75e33c5d05a68e04696a13c9bc1ccccba8236591cbf930984ac2b0ffa59f0804",
+    "examples/threshold-metrics/DESIGN.md": "e05ffcf402bac8d42d500513832c496fc5d537e101fb37427029c5487d465a77",
+    "scripts/verify_threshold_metrics.py": "49ecad104d51f2c3c40f2cc556d105f816f394256079654f2e15436c58ee2d62"
+  },
+  "limits": [
+    "Only the GT wording changes and concept8-screen readability/bounds are independently rechecked here.",
+    "The full16 screens/404 threshold scenarios are Builder test evidence, independently read and source/image hashes checked.",
+    "No actual novice comprehension experiment or screen-reader listening study.",
+    "No independent check of latest remote publication/CI/CDN/main branch status; root handles publication."
+  ]
+}

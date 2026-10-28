@@ -1,0 +1,20 @@
+{
+  "repository": "sh0427-han/design-template-library",
+  "branch": "feat/threshold-metrics-template-validation",
+  "baseline_branch": "main",
+  "baseline_commit": "ef9783e910f07a5e2c9343da17573e1a7cf30225",
+  "baseline_tree": "fc7d6674a92cd00ffbe4cae68b1aeca07e88db48",
+  "verified_on": "2026-10-27",
+  "third_validation_pull_request": {
+    "number": 22,
+    "merged": true,
+    "merge_commit": "ef9783e910f07a5e2c9343da17573e1a7cf30225"
+  },
+  "baseline_ci": [
+    {"run_id": 40451004448, "event": "push", "status": "completed", "conclusion": "success"},
+    {"run_id": 40451004771, "event": "dynamic", "status": "completed", "conclusion": "success"}
+  ],
+  "design_sources": "Eight canonical HTML references and common Markdown at the baseline commit.",
+  "prior_example_implementations_used_as_design_sources": false,
+  "main_merge_authorized_for_this_round": false
+}

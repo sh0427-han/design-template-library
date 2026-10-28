@@ -1,0 +1,34 @@
+{
+  "status": "static_passed",
+  "baseline_commit": "ef9783e910f07a5e2c9343da17573e1a7cf30225",
+  "created_utc": "2026-10-27T05:39:14.871506+00:00",
+  "screen_cases": [],
+  "threshold_scenarios": [],
+  "screen_cases_are_not_scenario_counts": true,
+  "protected_sources": {
+    "baseline": "ef9783e910f07a5e2c9343da17573e1a7cf30225",
+    "protected_directories": [
+      "templates/",
+      "examples/logistic-regression/",
+      "examples/gradient-descent/",
+      "examples/overfitting-generalization/"
+    ],
+    "changed_paths": [],
+    "checked_before_regression_generates_previews": true
+  },
+  "independent_oracle": "Python integer truth table, exact Fraction, decimal half-up at display only",
+  "node_crosscheck": {
+    "production_model_vs_independent_python_states": 202,
+    "special_states": 20,
+    "rejected_invalid_samples": 8,
+    "rejected_invalid_thresholds": 6,
+    "expected_answers_from_production_code": false
+  },
+  "static_threshold_checks": 202,
+  "precision_monotonicity_assumed": false,
+  "precision_counterexample": {
+    "threshold_50": "62.5%",
+    "threshold_51": "57.1%"
+  },
+  "browser_validation": "not_performed"
+}

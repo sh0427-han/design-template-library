@@ -1,0 +1,87 @@
+{
+  "revision": "2026-10-28-user-feedback",
+  "user_facing_timezone": "Asia/Seoul",
+  "previous_artifact_head": "69c2e1850f94677a33fd1a8cd15991ded32dc762",
+  "original_D0_commit": "91cc46f1175efaa2a9d10a3929e3e842ee079ce7",
+  "changes": [
+    "Remove synthetic-example authoring caveats from both lesson slides; retain data provenance in DESIGN and README.",
+    "Show s = 0.72 and a matching 72% filled model-output bar on the concept slide.",
+    "Name threshold symbol t directly as 임계값.",
+    "Keep the practice as a defect-classification application; distinguish same-domain reconstruction from cross-concept general interactive reuse."
+  ],
+  "reuse_assessment": {
+    "within_domain_5_7_contract_reproduction": "충분",
+    "general_interactive_cross_concept_reuse": "일부 보완 필요",
+    "reason": "Canonical #5 already uses classification thresholds. Different samples and layout do not independently establish transfer to a different concept.",
+    "common_markdown_new_gaps": 0,
+    "common_markdown_new_contradictions": 0,
+    "common_markdown_files_changed": 0,
+    "new_generic_framework_or_additional_slide": false
+  },
+  "verification": {
+    "report": "../previews/validation.json",
+    "status": "passed",
+    "chromium": "154.0.8037.57",
+    "screen_cases": 16,
+    "threshold_states": 404,
+    "valid_custom_browser_states": 20,
+    "node_vs_independent_python": {
+      "production_model_vs_independent_python_states": 202,
+      "special_states": 20,
+      "rejected_invalid_samples": 8,
+      "rejected_invalid_thresholds": 6,
+      "expected_answers_from_production_code": false
+    },
+    "console_errors": [],
+    "failed_requests": [],
+    "http_errors": [],
+    "source_sha256": {
+      "examples/threshold-metrics/scroll.html": "d0a4b9390cbe21d1137b0195f12be26f49f988fecd19514f0335f89119bc88d0",
+      "examples/threshold-metrics/slides.html": "bf5182ab361d909f0dcb5f1ce6b076320c0a9e08e5af2306b3169fa476073136",
+      "examples/threshold-metrics/content.html": "c030b8b80225be3f3268fa9c817bb2dfd5f9ae726008f601aee1c3fea90d4cae",
+      "examples/threshold-metrics/lesson.css": "a6eb1b2a5af400fcaee9b0179d2abe5269c58e159154a1037a6d6aa18518e9b1",
+      "examples/threshold-metrics/model.js": "6985a5eb74e710151c9f4df5a3a3ff112a573dae7e7d4f55b03b77b279659ff9",
+      "examples/threshold-metrics/app.js": "168d0331962fac84339fb2cb353ea8f1a3c06e22d7d19629cde91865f872e00f",
+      "examples/threshold-metrics/data.json": "75e33c5d05a68e04696a13c9bc1ccccba8236591cbf930984ac2b0ffa59f0804",
+      "examples/threshold-metrics/DESIGN.md": "544e7f88956acc9076fc7bc26947684a21932cf2df71f57677ec4538e531c4e3",
+      "scripts/verify_threshold_metrics.py": "49ecad104d51f2c3c40f2cc556d105f816f394256079654f2e15436c58ee2d62",
+      ".github/workflows/validate-threshold-metrics.yml": "3517a80af25ec350084745b82e4ca9e8fa9bb04d4743c5d96d7636b90512368a"
+    },
+    "preview_sha256": {
+      "examples/threshold-metrics/previews/scroll-concept.png": "d247bda342aa55a7bd93b0fc91e002387e624446fb6986b8c23b2e22428b9e52",
+      "examples/threshold-metrics/previews/scroll-practice.png": "bb84f05fc55a1c737a3e39561e2065b6951ce45485e806d4cea46e8af3345827",
+      "examples/threshold-metrics/previews/slides-concept.png": "f8830fb6aca19b52e599d14e41dee94624370bc34f7fb32e4087f5bc18aa2dd4",
+      "examples/threshold-metrics/previews/slides-practice.png": "f4f3a8b82ba39b47fd5e3ba7cbeeb1fedcc2e89187be5bb904951874cacd5546",
+      "examples/threshold-metrics/review/contact.jpg": "044ae44442b4dae9cb618740f89ea970c1bfebcc756cb0fda542a8da9b09c08c"
+    }
+  },
+  "independent_review": "feedback-review.json",
+  "regression_provenance": {
+    "previous_full_ci": "https://github.com/sh0427-han/design-template-library/actions/runs/40500963818",
+    "previous_dedicated_ci": "https://github.com/sh0427-han/design-template-library/actions/runs/40500963756",
+    "previous_ci_source": "cf17bdcc2d7961e2d3d1680bb3c5cbc6cb3dbb4a",
+    "previous_ci_is_not_a_run_of_this_revision": true,
+    "protected_originals_and_previous_examples_diff": {
+      "baseline": "ef9783e910f07a5e2c9343da17573e1a7cf30225",
+      "protected_directories": [
+        "templates/",
+        "examples/logistic-regression/",
+        "examples/gradient-descent/",
+        "examples/overfitting-generalization/"
+      ],
+      "changed_paths": [],
+      "checked_before_regression_generates_previews": true
+    },
+    "new_revision_threshold_suite": "passed locally; CI status must be checked separately after publishing"
+  },
+  "prior_evidence": "ci-validation.json and delivery.json are historical cf17 records; current canonical PNGs and previews/validation.json belong to this revision.",
+  "unverified": [
+    "Cross-concept general Interactive/Experiment reuse",
+    "Other patterns new-topic transfer",
+    "Real calibrated probabilities or production model performance",
+    "Screen-reader listening and reader comprehension",
+    "Mobile/tablet/Firefox/Safari",
+    "Every exceptional condition across all sixteen screen cases"
+  ],
+  "merge": "not authorized; PR remains open"
+}

@@ -1,0 +1,57 @@
+name: Validate Threshold Metrics Reuse
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'examples/threshold-metrics/**'
+      - 'scripts/verify_threshold_metrics.py'
+      - '.github/workflows/validate-threshold-metrics.yml'
+permissions:
+  contents: read
+concurrency:
+  group: threshold-metrics-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  threshold:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: python -m pip install playwright Pillow
+      - run: python -m playwright install --with-deps chromium
+      - name: Threshold independent Python and Chromium verification
+        run: python scripts/verify_threshold_metrics.py
+      - name: Previous overfitting example regression
+        if: always()
+        run: python scripts/verify_overfitting.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: threshold-metrics-browser-evidence
+          path: |
+            examples/threshold-metrics/previews
+            examples/threshold-metrics/review/screens
+            examples/threshold-metrics/review/contact.jpg
+            examples/overfitting-generalization/previews/validation.json
+      - name: Transfer compact threshold review evidence
+        if: always()
+        run: |
+          python - <<'PYTHON'
+          from pathlib import Path
+          import base64,gzip,json
+          root=Path('examples/threshold-metrics')
+          reports=[root/'previews/validation.json',Path('examples/overfitting-generalization/previews/validation.json')]
+          for path in reports:
+              if path.exists():
+                  print('THRESHOLD_REPORT '+str(path)+' '+base64.b64encode(gzip.compress(path.read_bytes(),mtime=0)).decode())
+          images=sorted((root/'previews').glob('*.png'))+[root/'review/contact.jpg']
+          for path in images:
+              if path.exists():print('THRESHOLD_IMAGE '+str(path)+' '+base64.b64encode(path.read_bytes()).decode())
+          PYTHON

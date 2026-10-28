@@ -1,0 +1,267 @@
+{
+  "date_korea": "2026-10-28",
+  "user_authorization": "좋아 이렇게 수정안으로 확정하고, md 파일 수정 후 merge 해줘",
+  "approved_runtime_commit": "e3b1d3e4f6a5a7444eabebbdf7fd44f74c593313",
+  "approved_scope": "The current two-slide defect-threshold lesson including GT wording, single-line caption and FP/FN left alignment.",
+  "runtime_sha256": {
+    "examples/threshold-metrics/scroll.html": "d0a4b9390cbe21d1137b0195f12be26f49f988fecd19514f0335f89119bc88d0",
+    "examples/threshold-metrics/slides.html": "bf5182ab361d909f0dcb5f1ce6b076320c0a9e08e5af2306b3169fa476073136",
+    "examples/threshold-metrics/content.html": "e92da0d126d04cb439235755215c0edc8119149b272b9f23e137384c166feb02",
+    "examples/threshold-metrics/lesson.css": "1ee831ba57e7ae514dae4b6d96aa2f7f62ce8b09f0abd00ea68e1dcdfb87a621",
+    "examples/threshold-metrics/model.js": "6985a5eb74e710151c9f4df5a3a3ff112a573dae7e7d4f55b03b77b279659ff9",
+    "examples/threshold-metrics/app.js": "168d0331962fac84339fb2cb353ea8f1a3c06e22d7d19629cde91865f872e00f",
+    "examples/threshold-metrics/data.json": "75e33c5d05a68e04696a13c9bc1ccccba8236591cbf930984ac2b0ffa59f0804"
+  },
+  "finalization_scope": "Only dedicated lesson Markdown and this approval evidence. No runtime or shared-template/common-design changes.",
+  "D0_commit": "91cc46f1175efaa2a9d10a3929e3e842ee079ce7",
+  "D0_history_preserved": true,
+  "prior_no_merge_instruction_superseded_by_explicit_user_approval": true,
+  "pr": "https://github.com/sh0427-han/design-template-library/pull/23",
+  "ci_runs": [
+    {
+      "id": 40603117006,
+      "head_sha": "e3b1d3e4f6a5a7444eabebbdf7fd44f74c593313",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40603117070,
+      "head_sha": "e3b1d3e4f6a5a7444eabebbdf7fd44f74c593313",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "ci_jobs": [
+    {
+      "id": 122535902268,
+      "name": "threshold",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 40603117006,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Run python -m pip install playwright Pillow",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Run python -m playwright install --with-deps chromium",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Threshold independent Python and Chromium verification",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7
+        },
+        {
+          "name": "Previous overfitting example regression",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9
+        },
+        {
+          "name": "Transfer compact threshold review evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10
+        },
+        {
+          "name": "Post Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 18
+        },
+        {
+          "name": "Post Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 19
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 20
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 21
+        }
+      ]
+    },
+    {
+      "id": 122537061649,
+      "name": "validate",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 40603117070,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Run python -m pip install playwright Pillow",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Run python -m playwright install --with-deps chromium",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Syntax and shared token checks",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7
+        },
+        {
+          "name": "Eight references, real fonts and six viewports",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8
+        },
+        {
+          "name": "Interactive boundary states and reuse",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9
+        },
+        {
+          "name": "Gallery and Scroll / Slide regression",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10
+        },
+        {
+          "name": "Logistic regression Markdown reuse pilot",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11
+        },
+        {
+          "name": "Gradient descent D0/D1 reuse validation",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 12
+        },
+        {
+          "name": "Markdown links and final design contracts",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13
+        },
+        {
+          "name": "Heading hierarchy preview, nine sources and both modes",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 14
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 15
+        },
+        {
+          "name": "Transfer heading preview evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 16
+        },
+        {
+          "name": "Post Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 30
+        },
+        {
+          "name": "Post Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 31
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 32
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 33
+        }
+      ]
+    }
+  ],
+  "independent_review": "alignment-review.json",
+  "shared_markdown_gaps": 0,
+  "shared_markdown_contradictions": 0,
+  "shared_markdown_amendments": 0,
+  "within_domain_5_7_reproduction": "충분",
+  "cross_concept_general_reuse": "일부 보완 필요",
+  "merge_execution_record": "The actual merge SHA/status is recorded by PR #23 after this document-only commit. This authorization record does not claim the merge happened before execution."
+}
