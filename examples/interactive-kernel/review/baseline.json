@@ -1,0 +1,36 @@
+{
+  "repository": "sh0427-han/design-template-library",
+  "date_korea": "2026-10-28",
+  "baseline_commit": "b4fdef24b1c6567fd81e9ab4e9b20ad1295d8442",
+  "branch": "feat/interactive-generalization-validation",
+  "open_prs": [],
+  "fourth_round": {
+    "pr": 23,
+    "state": "closed",
+    "merged": true,
+    "merge_commit_sha": "b4fdef24b1c6567fd81e9ab4e9b20ad1295d8442",
+    "approved_runtime": "e3b1d3e4f6a5a7444eabebbdf7fd44f74c593313",
+    "dedicated_ci": 40603117006,
+    "full_regression_ci": 40603117070
+  },
+  "main_workflows": [
+    {
+      "id": 40606333993,
+      "name": "Validate Final HTML References",
+      "head_sha": "b4fdef24b1c6567fd81e9ab4e9b20ad1295d8442",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/sh0427-han/design-template-library/actions/runs/40606333993"
+    },
+    {
+      "id": 40606333192,
+      "name": "pages build and deployment",
+      "head_sha": "b4fdef24b1c6567fd81e9ab4e9b20ad1295d8442",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/sh0427-han/design-template-library/actions/runs/40606333192"
+    }
+  ],
+  "source": "Read from GitHub connector before implementation; local main was clean and identical.",
+  "merge_authorization": "No merge for this fifth-round PR."
+}
