@@ -1,0 +1,35 @@
+name: Validate Interactive Kernel Real-URL
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'examples/interactive-kernel/**'
+      - '.github/workflows/validate-interactive-kernel.yml'
+permissions:
+  contents: read
+jobs:
+  kernel:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: python -m pip install playwright Pillow
+      - run: python -m playwright install --with-deps chromium
+      - name: Independent arithmetic and injected smoke checks
+        run: python examples/interactive-kernel/verify_kernel.py
+      - name: Real HTTP viewer, all 8 PCs, fonts and state scenarios
+        run: python examples/interactive-kernel/verify_runtime.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cnn-interactive-kernel-real-url-browser-evidence
+          path: |
+            examples/interactive-kernel/review/browser-evidence
+            examples/interactive-kernel/previews/validation.json
