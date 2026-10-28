@@ -1,0 +1,64 @@
+/* #5 manipulation contract + #4 matrix correspondence; topic-specific, one-slide layout. */
+:root {--navy:#12233f;--blue:#3168c8;--deep:#1b3558;--muted:#64748b;--teal:#26a6a1;--border:#dde4ef;--canvas:#f6f8fc;--white:#fff;--amber:#e49a4d;--font-sans:"Pretendard Variable","Malgun Gothic",sans-serif;--character-spacing:-1pt;}
+html {letter-spacing:var(--character-spacing)}
+body.kernel-page {margin:0;background:var(--canvas);font-family:var(--font-sans);color:var(--deep);}
+.kernel-slide {width:1440px;height:810px;padding:40px 66px 28px;display:flex;flex-direction:column;overflow:visible;background:var(--canvas);box-sizing:border-box;}
+.kernel-slide * {box-sizing:border-box;}
+.kernel-slide .kicker {font-weight:800;font-size:16px;color:var(--blue);line-height:20px;}
+.kernel-slide h1 {font-size:49px;line-height:1.13;color:var(--navy);margin:7px 0 5px;font-weight:800;}
+.kernel-slide .subtitle {font-size:21px;color:var(--muted);line-height:1.38;margin:0;}
+.kernel-slide .lesson-head {flex:none;min-height:118px;}
+.kernel-slide .lesson-main {margin-top:20px;min-height:0;flex:1;}
+.kernel-slide .teaching-panel {background:white;border:1px solid var(--border);border-radius:17px;padding:20px;min-height:550px;position:relative;}
+.panel-head {display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:66px;}
+.panel-label {font-weight:800;color:var(--blue);font-size:16px;line-height:20px;}
+.panel-head h2 {margin:3px 0 0;color:var(--navy);font-size:25px;line-height:30px;}
+.controls {display:flex;align-items:end;gap:10px;flex:none;}
+.field {display:flex;flex-direction:column;gap:4px;}
+.field label {font-size:16px;font-weight:700;color:var(--deep);}
+.controls select,.controls button {height:38px;border:1px solid #b6c7df;border-radius:8px;background:white;padding:0 11px;color:var(--navy);font:700 17px var(--font-sans);letter-spacing:inherit;cursor:pointer;}
+.controls select {min-width:240px;}
+.controls button {min-width:80px;}
+.controls select:disabled,.controls button:disabled {opacity:.55;cursor:not-allowed;}
+.controls :is(select,button):focus-visible,.data-error button:focus-visible {outline:3px solid var(--amber);outline-offset:3px;}
+.figure-flow {display:grid;grid-template-columns:minmax(0,1fr) 36px minmax(0,.9fr) 36px minmax(0,1fr);gap:12px;align-items:stretch;margin-top:16px;}
+.figure-part {display:grid;grid-template-rows:22px 256px 20px;row-gap:9px;justify-items:center;min-width:0;}
+.figure-part h3 {font-size:20px;line-height:22px;margin:0;color:var(--navy);font-weight:800;}
+.figure-part h3 span {font-size:16px;color:var(--muted);font-weight:500;}
+.matrix-slot {width:100%;height:256px;display:grid;place-items:center;}
+.matrix-input,.matrix-kernel,.matrix-output {display:grid;align-content:center;justify-content:center;}
+.matrix-input {grid-template-columns:repeat(7,34px);gap:3px;}
+.matrix-kernel {grid-template-columns:repeat(3,46px);gap:4px;}
+.matrix-output {grid-template-columns:repeat(5,44px);gap:3px;}
+.cell {border:1px solid #d4dfed;border-radius:4px;display:grid;place-items:center;box-sizing:border-box;font-variant-numeric:tabular-nums;font-family:"STIX Two Math",var(--font-sans);}
+.matrix-input .cell {width:34px;height:34px;font-size:17px;}
+.matrix-kernel .cell {width:46px;height:46px;background:#e3f6f3;border-color:#a7d6ce;color:#153e43;font-size:19px;}
+.matrix-kernel .cell.fraction {font-size:18px;line-height:1.05;}
+.matrix-output .cell {width:44px;height:44px;font-size:18px;}
+.cell.focus {outline:3px solid var(--blue);outline-offset:-2px;position:relative;z-index:1;}
+.matrix-input .cell.focus {box-shadow:inset 0 0 0 2px #fff;}
+.matrix-output .cell.focus {outline:3px solid var(--navy);outline-offset:2px;}
+.figure-caption {white-space:nowrap;font-size:16px;line-height:20px;margin:0;color:var(--muted);text-align:center;}
+.figure-caption .swatch {display:inline-block;width:12px;height:12px;border:1px solid var(--border);vertical-align:middle;border-radius:3px;}
+.swatch.negative {background:#26a6a1}.swatch.zero {background:#fff}.swatch.positive {background:#3168c8}
+.flow-connector {display:grid;align-items:center;justify-items:center;padding-top:31px;}
+.flow-connector svg {display:block;width:36px;height:24px;color:var(--blue);}
+.detail-zone {display:grid;grid-template-columns:1.28fr .72fr;gap:19px;margin-top:16px;padding-top:15px;border-top:1px solid var(--border);min-height:96px;}
+.math-track {min-width:0;}
+.technical {display:inline;margin:0;font-size:17px;font-weight:700;color:var(--deep);}
+.math-condition {display:inline;margin:0 0 0 10px;font-size:15px;color:var(--muted);}
+.focus-math {display:flex;align-items:baseline;gap:9px;margin-top:12px;min-width:0;white-space:nowrap;}
+.focus-label {font-size:16px;font-weight:700;color:var(--blue);}
+.math-value {font-family:"STIX Two Math",var(--font-sans);font-variant-numeric:tabular-nums;color:var(--navy);}
+#focus-equation {font-size:18px;min-width:0;}
+#focus-result {font-size:21px;color:var(--blue);}
+.role-track {border-left:3px solid var(--teal);padding-left:15px;min-width:0;display:flex;flex-direction:column;justify-content:center;}
+.role-overline {margin:0 0 7px;font-size:17px;color:var(--blue);font-weight:800;}
+.role-track #role-description {font-size:17px;line-height:1.35;margin:0;}
+.kernel-slide .footer {display:flex;justify-content:space-between;flex:none;border-top:1px solid var(--border);padding-top:11px;margin-top:15px;font-size:15px;color:var(--muted);min-height:45px;}
+.sr-only {position:absolute;width:1px;height:1px;padding:0;margin:-1px;border:0;clip:rect(0,0,0,0);white-space:nowrap;overflow:hidden;}
+.data-error {position:absolute;inset:90px 20px 20px;border:1px solid #e4a15f;border-radius:12px;background:#fff9ef;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:15px;padding:30px;text-align:center;z-index:4;}
+.data-error[hidden] {display:none;}
+.data-error p {font-size:20px;color:#7c4c20;}
+.data-error button {border:1px solid #b6c7df;padding:11px 15px;border-radius:8px;background:#fff;font:inherit;cursor:pointer;}
+@media (prefers-reduced-motion: reduce) {* {animation:none!important;transition:none!important;}}

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CNN 필터 선택과 출력 변화</title>
+<link rel="stylesheet" href="../../templates/html/styles.css">
+<link rel="stylesheet" href="../../templates/html/reference-types.css">
+<link rel="stylesheet" href="../../templates/html/math-typography.css">
+<link rel="stylesheet" href="lesson.css">
+<script>
+window.kernelScriptError = function () {
+  document.addEventListener('DOMContentLoaded', () => {
+    if (document.body.dataset.ready === 'true') return;
+    const message = document.querySelector('#data-error');
+    if (message) { message.hidden = false; message.querySelector('p').textContent = '필수 스크립트를 불러오지 못했습니다. 파일 경로를 확인한 후 다시 불러오세요.'; }
+    document.querySelector('#kernel-select').disabled = true;
+    document.querySelector('#reset-kernel').disabled = true;
+    document.querySelector('#retry-data').hidden = false;
+    document.body.dataset.ready = 'error';
+  }, {once: true});
+};
+</script>
+<script src="model.js" defer onerror="kernelScriptError()"></script>
+<script src="app.js" defer onerror="kernelScriptError()"></script>
+</head><body class="kernel-page" data-ready="loading">
+<main class="kernel-slide" id="kernel" aria-label="CNN 필터 실습">
+  <header class="lesson-head">
+    <div class="kicker">VISION AI · FILTER PRACTICE</div>
+    <h1>필터를 바꾸면 달라지는 출력</h1>
+    <p class="subtitle">같은 입력에 다른 가중치를 적용해 공간 특징의 변화를 확인</p>
+  </header>
+  <div class="lesson-main">
+    <section class="teaching-panel" aria-labelledby="panel-title">
+      <div class="panel-head">
+        <div class="panel-identity"><div class="panel-label">FILTER → OUTPUT</div><h2 id="panel-title">같은 입력, 달라지는 필터 반응</h2></div>
+        <div class="controls"><div class="field"><label for="kernel-select">필터 선택</label><select id="kernel-select" disabled><option value="identity">Identity · 항등</option><option value="mean">Mean · 평균 블러</option><option value="edge">Sobel-x · 세로 에지</option></select></div><button id="reset-kernel" type="button" disabled>초기화</button></div>
+      </div>
+      <div class="figure-flow" aria-label="고정 입력 행렬, 선택 필터, 계산 출력의 대응">
+        <section class="figure-part" aria-labelledby="input-heading"><h3 id="input-heading">01 · 입력 <span>7×7</span></h3><div class="matrix-slot"><div class="matrix-input" id="input-matrix" role="img" aria-label="7행 7열의 고정 입력 밝기 값"></div></div><p class="figure-caption">밝기 0–9 · 강조한 영역 3×3</p></section>
+        <div class="flow-connector" aria-hidden="true"><svg viewBox="0 0 36 24"><path d="M1 12H29M23 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <section class="figure-part" aria-labelledby="kernel-heading"><h3 id="kernel-heading">02 · 필터 <span>3×3</span></h3><div class="matrix-slot"><div class="matrix-kernel" id="kernel-matrix" role="img" aria-label="선택 커널의 가중치 3행 3열"></div></div><p class="figure-caption" id="kernel-summary">중앙 값 유지 · 가중치 변경</p></section>
+        <div class="flow-connector" aria-hidden="true"><svg viewBox="0 0 36 24"><path d="M1 12H29M23 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <section class="figure-part" aria-labelledby="output-heading"><h3 id="output-heading">03 · 출력 <span>5×5</span></h3><div class="matrix-slot"><div class="matrix-output" id="output-matrix" role="img" aria-label="필터 결과 5행 5열"></div></div><p class="figure-caption">음수 <i class="swatch negative"></i> · 0 <i class="swatch zero"></i> · 양수 <i class="swatch positive"></i></p></section>
+      </div>
+      <div class="detail-zone"><div class="math-track"><p class="technical">교차상관 · 3×3 곱한 뒤 합산</p><p class="math-condition">Stride 1 · Padding 0 · Dilation 1 · Bias 0 · ReLU 없음</p><div class="focus-math"><span class="focus-label">선택 출력 [2][1]</span><span id="focus-equation" class="math-value" aria-label="선택 셀의 원소별 계산">—</span><strong id="focus-result" class="math-value">—</strong></div></div><div class="role-track"><p class="role-overline" id="role-name">현재 필터</p><p id="role-description">필터를 불러오는 중</p></div></div>
+      <div class="data-error" id="data-error" role="alert" hidden><p id="data-error-message">계산 데이터를 불러오지 못했습니다.</p><button id="retry-data" type="button">기본 데이터 다시 불러오기</button></div>
+    </section>
+  </div>
+  <footer class="footer"><span>Vision AI 기초 · CNN 필터의 국소 계산</span><span>01 / 01</span></footer>
+  <p class="sr-only" id="kernel-status" role="status" aria-live="polite"></p>
+</main>
+<noscript>행렬 계산과 조작에 JavaScript가 필요합니다. 스크립트를 활성화한 후 다시 불러오세요.</noscript>
+</body></html>

@@ -1,0 +1,132 @@
+{
+  "status": "partial",
+  "math": {
+    "filters": 3,
+    "cells": 75,
+    "focus": {
+      "identity": "6",
+      "mean": "51/9",
+      "edge": "28"
+    }
+  },
+  "screens": [
+    {
+      "mode": "scroll",
+      "viewport": [
+        1600,
+        950
+      ],
+      "content": {
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "scrollHeight": 810,
+        "clientHeight": 810
+      },
+      "status": "passed-injected"
+    },
+    {
+      "mode": "scroll",
+      "viewport": [
+        1440,
+        810
+      ],
+      "content": {
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "scrollHeight": 810,
+        "clientHeight": 810
+      },
+      "status": "passed-injected"
+    },
+    {
+      "mode": "scroll",
+      "viewport": [
+        1366,
+        768
+      ],
+      "content": {
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "scrollHeight": 810,
+        "clientHeight": 810
+      },
+      "status": "passed-injected"
+    },
+    {
+      "mode": "scroll",
+      "viewport": [
+        1280,
+        720
+      ],
+      "content": {
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "scrollHeight": 810,
+        "clientHeight": 810
+      },
+      "status": "passed-injected"
+    },
+    {
+      "mode": "slides",
+      "viewport": [
+        1600,
+        950
+      ],
+      "content": {
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "scrollHeight": 810,
+        "clientHeight": 810
+      },
+      "status": "passed-injected"
+    },
+    {
+      "mode": "slides",
+      "viewport": [
+        1440,
+        810
+      ],
+      "content": {
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "scrollHeight": 810,
+        "clientHeight": 810
+      },
+      "status": "passed-injected"
+    },
+    {
+      "mode": "slides",
+      "viewport": [
+        1366,
+        768
+      ],
+      "content": {
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "scrollHeight": 810,
+        "clientHeight": 810
+      },
+      "status": "passed-injected"
+    },
+    {
+      "mode": "slides",
+      "viewport": [
+        1280,
+        720
+      ],
+      "content": {
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "scrollHeight": 810,
+        "clientHeight": 810
+      },
+      "status": "passed-injected"
+    }
+  ],
+  "console_errors": [],
+  "limitations": [
+    "Chromium navigation blocked by administrator: content injected via set_content; real iframe/viewer and network paths not validated",
+    "Local staging does not contain canonical font assets; font load check pending",
+    "Independent agent reviewer not available"
+  ]
+}
