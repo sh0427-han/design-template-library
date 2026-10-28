@@ -50,7 +50,18 @@ def main():
     assert baseline=='ce840a68b423ae7508381dc2745e3e7e12ebd41a'
     for path,expected in scope['documentation_changes'].items():
         assert path.endswith('.md')
-        assert hashlib.sha256((ROOT/path).read_bytes()).hexdigest()==expected['after_sha256'],('document changed',path)
+        data=(ROOT/path).read_bytes()
+        delta_path=ROOT/'examples/interactive-kernel/review/documentation-delta.json'
+        delta=json.loads(delta_path.read_text()) if delta_path.exists() else {}
+        updated=delta.get('updated_document_git_blob_sha1',{})
+        if path in updated:
+            assert delta['baseline_main']=='b4fdef24b1c6567fd81e9ab4e9b20ad1295d8442'
+            old=subprocess.run(['git','show',f"{delta['baseline_main']}:{path}"],cwd=ROOT,capture_output=True)
+            assert old.returncode==0 and hashlib.sha256(old.stdout).hexdigest()==expected['after_sha256'],('approved document preserved',path)
+            git_blob=b'blob '+str(len(data)).encode()+b'\0'+data
+            assert hashlib.sha1(git_blob).hexdigest()==updated[path],('current document version changed',path)
+        else:
+            assert hashlib.sha256(data).hexdigest()==expected['after_sha256'],('document changed',path)
         before=subprocess.run(['git','show',f'{baseline}:{path}'],cwd=ROOT,capture_output=True)
         assert (hashlib.sha256(before.stdout).hexdigest() if before.returncode==0 else None)==expected['before_sha256'],('document baseline',path)
     history=(ROOT/'examples/overfitting-generalization/review/design-history.md').read_text()

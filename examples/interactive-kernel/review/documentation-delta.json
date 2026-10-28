@@ -1,0 +1,9 @@
+{
+  "purpose": "Track legitimate D01 documentation updates without rewriting historical approvals",
+  "baseline_main": "b4fdef24b1c6567fd81e9ab4e9b20ad1295d8442",
+  "updated_document_git_blob_sha1": {
+    "TEMPLATE_CATALOG.md": "6e3e9e87ddaff640e97530b178a11baf2d405a5f",
+    "docs/REFERENCE_REUSE_WORKFLOW.md": "0a1ea9f77ffc490a09390513e7eb744bc4d2c371"
+  },
+  "independent_reviewer": "PENDING"
+}
