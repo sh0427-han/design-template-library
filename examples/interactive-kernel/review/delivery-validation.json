@@ -1,0 +1,60 @@
+{
+  "baseline_main": "b4fdef24b1c6567fd81e9ab4e9b20ad1295d8442",
+  "functional_commit": "cbf2ec93ac4921c484e56c5900cb013300b7c7c8",
+  "D0_commit": "286bee0f719483dc02f831aa6638a734c2de4386",
+  "D0_immutable_prefixes": {
+    "DESIGN.md": {
+      "preserved_prefix": true,
+      "original_sha256": "57345e3fc74a0e3cc61c3030cb89d958a6dd819427062923957a90e162405f55"
+    },
+    "VALIDATION.md": {
+      "preserved_prefix": true,
+      "original_sha256": "346d2956bf4f5bc1e178b92506791f0a8d0f6303c1f6919ad74089f4b140a93c"
+    }
+  },
+  "preserved_paths": [
+    "templates",
+    "examples/threshold-metrics",
+    "examples/overfitting-generalization",
+    "examples/gradient-descent",
+    "examples/logistic-regression"
+  ],
+  "protected_diff_empty": true,
+  "runtime_sha256": {
+    "content.html": "b12098643a369891bd18d8545fa18346115d72c8c1d0e3a4092f5c4005a75b5c",
+    "model.js": "8b4a33c3a10efbc077ccd83c00a741102a7055b239be2914183d5b03bf04621a",
+    "app.js": "f068f5623a62933742d5db62ff5e1e2ada5ceab94a11373079a0c5d44b8587fd",
+    "lesson.css": "5e422aa32769325c4d5de59c294423e709c62ca5019dc8104ec689b0d2adbc4c",
+    "viewer.js": "f5c731d291503340151a580d03402cb6f865d36b6dfae2b29a9d3c462c23c705",
+    "viewer.css": "2cc85a2205d1eb5613e0c2d1e8beab2dababc9a0d8d281a8cc10296f931d1a44",
+    "scroll.html": "fddcd659bef5796a25a6ea823d264df87d5f9f22244da4e7800b60530c1a1fa9",
+    "slides.html": "fa7c6d8a7f1b5c67b033952efaeed870348ced13b85ce7cff41e6cf92a5b2f1c",
+    "data.json": "2fc8d1c4222216f9d95eec18812c846d73b4fb848bbc93a0a9ad516a4db30292"
+  },
+  "screen_count": 8,
+  "default_filter_states": 24,
+  "alternate_input_states": 12,
+  "exception_scenarios": 7,
+  "independent_math_states": 15,
+  "independent_math_output_cells": 375,
+  "common_document_gap_count": 1,
+  "common_document_contradiction_count": 0,
+  "updated_common_markdown_count": 3,
+  "independent_review": {
+    "round": 2,
+    "verdict": "PASS",
+    "unresolved": 0,
+    "report": "resume-review-round2.json"
+  },
+  "main_merged": false,
+  "limitations": [
+    "Toggle transfer",
+    "mobile/tablet",
+    "non-Chromium browsers",
+    "screenreader listening",
+    "learner comprehension",
+    "context-free independent reproduction",
+    "learned CNN performance",
+    "all failure x viewport combinations"
+  ]
+}

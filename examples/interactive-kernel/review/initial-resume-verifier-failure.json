@@ -1,0 +1,20 @@
+{
+  "status": "failed",
+  "created_utc": "2026-10-28T08:41:51.281544+00:00",
+  "screen_cases": [],
+  "filter_states": [],
+  "screen_cases_are_not_scenarios": true,
+  "runtime_sha256_at_start": {
+    "examples/interactive-kernel/scroll.html": "f7d264b90149b65824e9d83e757a0428bfb246009efafbe402a083da882ea9ac",
+    "examples/interactive-kernel/slides.html": "e645d58aa3eead53f2fd252ee7d1713bb5bf29b23515f9c927373d5f5c8a8923",
+    "examples/interactive-kernel/content.html": "ce9618422c81cdceb4306ba465e2b7dfe8b73b9d94737e066e79e588e6870fc7",
+    "examples/interactive-kernel/lesson.css": "5f5267bc71b0227263f88c4dffb3aa2ffce7a9b15e856e2297dcb7bfd7b64d00",
+    "examples/interactive-kernel/viewer.css": "2cc85a2205d1eb5613e0c2d1e8beab2dababc9a0d8d281a8cc10296f931d1a44",
+    "examples/interactive-kernel/model.js": "8b4a33c3a10efbc077ccd83c00a741102a7055b239be2914183d5b03bf04621a",
+    "examples/interactive-kernel/app.js": "32a151a31493cd171cca891b746e98893b6ba1721bdbfa1d0ea5307ff731ee88",
+    "examples/interactive-kernel/viewer.js": "85101c702f58b5db0b17063c23636a95f18e4a20444e2b5e1706479000f2c7ed",
+    "examples/interactive-kernel/data.json": "2fc8d1c4222216f9d95eec18812c846d73b4fb848bbc93a0a9ad516a4db30292"
+  },
+  "chromium": "154.0.8037.57",
+  "error": "Traceback (most recent call last):\n  File \"/workspace/design-template-library/examples/interactive-kernel/verify_runtime.py\", line 243, in main\n    result=check_state(page,frame,DATA,kid);result.update(viewport=[width,height],mode=mode,geometry=geometry(page,frame,mode),fonts=actual_fonts(page,frame))\n                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/design-template-library/examples/interactive-kernel/verify_runtime.py\", line 104, in geometry\n    assert not result[key],(key,result[key])\n           ^^^^^^^^^^^^^^^\nAssertionError: ('padding', ['teaching-panel'])\n"
+}

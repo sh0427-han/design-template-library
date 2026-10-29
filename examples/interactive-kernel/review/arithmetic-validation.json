@@ -1,0 +1,46 @@
+{
+  "status": "passed",
+  "oracle": "Independent Python integer/Fraction and exact decimal display rounding",
+  "filter_data_cases": 15,
+  "verified_output_cells": 375,
+  "asymmetric_correlation_differs_from_flipped_kernel": true,
+  "color_endpoints_and_clipping": [
+    {
+      "value": -72,
+      "color": "rgb(38, 166, 161)"
+    },
+    {
+      "value": -36,
+      "color": "rgb(38, 166, 161)"
+    },
+    {
+      "value": -18,
+      "color": "rgb(147, 211, 208)"
+    },
+    {
+      "value": 0,
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "value": 18,
+      "color": "rgb(152, 180, 228)"
+    },
+    {
+      "value": 36,
+      "color": "rgb(49, 104, 200)"
+    },
+    {
+      "value": 72,
+      "color": "rgb(49, 104, 200)"
+    }
+  ],
+  "invalid_data_rejected": 14,
+  "invalid_ids_rejected": 4,
+  "invalid_correlations_rejected": 7,
+  "focus": {
+    "identity": "6",
+    "mean": "51/9 ≈ 5.67",
+    "edge": "28"
+  },
+  "historical_injection_evidence_not_overwritten": true
+}

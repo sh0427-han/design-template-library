@@ -1,0 +1,44 @@
+{
+  "date_korea": "2026-10-28",
+  "main_sha": "b4fdef24b1c6567fd81e9ab4e9b20ad1295d8442",
+  "D0_sha": "286bee0f719483dc02f831aa6638a734c2de4386",
+  "chat_resume_head": "ab713e75ab92d5ad8a969d01e4b66a66a0a6691a",
+  "pr": 24,
+  "pr_state_on_resume": "open/draft",
+  "main_merge": false,
+  "prior_local_uncommitted_work": "Archived in /tmp/kernel-local-before-chat-resume.tgz and named git stash; latest committed Chat work adopted by fast-forward. No local draft overwritten without backup.",
+  "chat_commit_lineage": [
+    "ab713e75ab92d5ad8a969d01e4b66a66a0a6691a docs: attach actual Chromium viewer previews and record successful 8-screen CI",
+    "c542d30f8c74052a31ec4d6888a742643626e717 fix: provide reload recovery when kernel scripts fail",
+    "85ee64e2b72791cd8b0b8ef866827383c1db4979 test: verify real Scroll/Slide URLs, 8 desktop layouts and local fonts in Chromium CI",
+    "1d1bb0fadee411d5c70ba6c6d406423d1c41cece fix: include mean kernel divisor in displayed focus equation",
+    "f90d3413e70720ce59fc57a1d3cb4313320390e3 docs: attach Chromium content-injection draft visual references for both display modes",
+    "e3a56510ad18f4e95710ccfa9ea53338627aa7b0 docs: distinguish general Interactive contract from threshold-specific behavior; preserve D0 and record D1 pending review",
+    "2ab36aab178d9cd0c26f75714e578864f7a2a87b feat: add CNN kernel interactive Scroll/Slide prototype and math verification"
+  ],
+  "chat_ci": [
+    {
+      "id": 40625533383,
+      "name": "Validate Interactive Kernel Real-URL",
+      "status": "completed",
+      "conclusion": "success",
+      "head": "ab713e75ab92d5ad8a969d01e4b66a66a0a6691a"
+    },
+    {
+      "id": 40625533308,
+      "name": "Validate Final HTML References",
+      "status": "completed",
+      "conclusion": "success",
+      "head": "ab713e75ab92d5ad8a969d01e4b66a66a0a6691a"
+    }
+  ],
+  "remaining_on_resume": [
+    "Independent Reviewer not yet run",
+    "Actual CDP glyph evidence and internal geometry/scenario coverage weaker than D0",
+    "Fourth threshold and overfitting regression required"
+  ],
+  "first_independent_review": "resume-review-round1.json",
+  "initial_review_findings": 7,
+  "initial_verdict": "CHANGES_REQUIRED",
+  "no_claim_that_prior_smoke_or_CI_replaced_independent_review": true
+}

@@ -1,0 +1,40 @@
+{
+  "scope": "Read-only diagnostic of request cancellation provenance",
+  "events": [
+    {
+      "url": "http://127.0.0.1:37873/examples/interactive-kernel/content.html",
+      "failure": "net::ERR_ABORTED",
+      "referer": "http://127.0.0.1:37873/examples/interactive-kernel/slides.html",
+      "resource": "document",
+      "navigation": true
+    },
+    {
+      "url": "http://127.0.0.1:37873/examples/interactive-kernel/content.html",
+      "failure": "net::ERR_ABORTED",
+      "referer": "http://127.0.0.1:37873/examples/interactive-kernel/slides.html",
+      "resource": "document",
+      "navigation": true
+    },
+    {
+      "url": "http://127.0.0.1:37873/examples/interactive-kernel/content.html",
+      "failure": "net::ERR_ABORTED",
+      "referer": "http://127.0.0.1:37873/examples/interactive-kernel/slides.html",
+      "resource": "document",
+      "navigation": true
+    },
+    {
+      "url": "http://127.0.0.1:37873/examples/interactive-kernel/content.html",
+      "failure": "net::ERR_ABORTED",
+      "referer": "http://127.0.0.1:37873/examples/interactive-kernel/slides.html",
+      "resource": "document",
+      "navigation": true
+    },
+    {
+      "url": "http://127.0.0.1:37873/examples/interactive-kernel/content.html",
+      "failure": "net::ERR_ABORTED",
+      "referer": "http://127.0.0.1:37873/examples/interactive-kernel/slides.html",
+      "resource": "document",
+      "navigation": true
+    }
+  ]
+}

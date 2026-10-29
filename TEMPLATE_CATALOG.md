@@ -8,7 +8,7 @@
 | 02 | Process | 입력에서 결과까지 역할과 순서를 설명할 때 | Input → Feature → Task → Output + 마지막 캡션 | [HTML](templates/html/process.html) · [PNG](previews/html-process.png) |
 | 03 | Comparison | 판단 기준의 준비 방법과 예측 과정을 비교할 때 | 준비/예측 도식 + 같은 입력·3개 비교 행의 좌우 White 카드 | [HTML](templates/html/comparison.html) · [PNG](previews/html-comparison.png) |
 | 04 | Step-by-Step | 하나의 연산을 초급자에게 풀어 보여줄 때 | 입력/커널/출력 대응 + 원소별 곱/전체 합 | [HTML](templates/html/step-by-step.html) · [JPG](previews/html-step-by-step.jpg) |
-| 05 | Interactive | 변수를 조절하며 결과의 변화를 학습할 때 | 실제값별 샘플 그룹 + 혼동행렬/지표 | [HTML](templates/html/interactive.html) · [JPG](previews/html-interactive.jpg) |
+| 05 | Interactive | 입력을 조작해 계산·Figure·해석의 동기 변화를 학습할 때 | 실제값별 샘플 그룹 + 혼동행렬/지표 | [HTML](templates/html/interactive.html) · [JPG](previews/html-interactive.jpg) |
 | 06 | Architecture | 모델·시스템의 모듈과 데이터 차원을 설명할 때 | 6개 Stage, 반복 Conv Block, Feature Extractor/Classifier 범위 | [HTML](templates/html/architecture.html) · [JPG](previews/html-architecture.jpg) |
 | 07 | Experiment | 평가 개수에서 분류 지표를 설명할 때 | Confusion Matrix + 4개 Metrics 카드 | [HTML](templates/html/experiment.html) · [JPG](previews/html-experiment.jpg) |
 | 08 | Executive Summary | 수치 근거와 실행 항목을 한 장에 보고할 때 | 세 KPI의 그룹형 세로 막대 + Action 카드 | [HTML](templates/html/executive-summary.html) · [JPG](previews/html-executive-summary.jpg) |
@@ -61,10 +61,12 @@
 - **주의:** 입력 좌상단 3×3과 출력 좌상단 셀의 대응, 곱 9개, 합과 커널 이동 설명, 좌우 카드 하단 구분선 정렬을 삭제하지 않습니다. 원소별 곱 기호는 SVG로 표시해 글꼴 폴백을 막습니다.
 - **가이드:** [상세 명세와 전체 행렬](docs/REFERENCE_PAGE_SPECS.md#04-step-by-step).
 
-## 05 Interactive · 조작과 판정의 연결
+## 05 Interactive · 조작과 결과 변화
+
+**범용 패턴:** 입력 조작 → 상태 계산 → 연관된 수식·수치·시각화 동시 갱신 → 해석 피드백입니다. 연속형 수치는 Slider, 범주형 선택은 Select, 이진 전환은 Toggle이 자연스럽습니다. 아래의 GT/임계값/혼동행렬 규칙은 **기존 이진 분류 예제 전용**이며 모든 Interactive 자료의 필수 조건이 아닙니다. 원본 JavaScript는 특정 임계값 예제에 결합되어 있고, 범용 계산 엔진을 제공하지 않습니다. 다른 도메인의 [CNN 필터 실습](examples/interactive-kernel/README.md)은 디자인/행동 계약을 재사용한 별도 예제입니다. [일반 행동 계약과 원본 범위](docs/INTERACTIVE_PATTERN.md#범용-interactive-행동-계약--특정-도메인과-분리)를 확인합니다.
 
 - **선택한 구현:** 로컬 최종 승인본 `ae26ba0` 기반. 실제 이상 그룹이 위, 실제 정상 그룹이 아래입니다.
-- **사용 목적·청중:** threshold·파라미터 조절이 개별 판정과 전체 지표에 미치는 영향을 직접 보는 실습.
+- **원본 예제의 학습 목적:** threshold 조절이 개별 판정과 전체 지표에 미치는 영향을 직접 보는 실습.
 - **현재 구조:** 왼쪽 임계값·점수·예측 배지·유형·예측 개수, 오른쪽 TP FP / FN TN 행렬과 Precision·Recall의 뜻/일반식/대입식.
 - **데이터:** 6개 점수 0.15/0.32/0.48/0.67/0.82/0.94, 실제값 정상/이상/정상/이상/이상/정상. `score ≥ threshold`가 양성(이상)입니다.
 - **기본값:** 0.60 → TP=2, FP=1, FN=1, TN=2, 두 지표 66.7%. 분모가 0이면 `정의 불가`입니다.

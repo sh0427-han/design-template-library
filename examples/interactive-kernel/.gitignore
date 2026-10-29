@@ -1,0 +1,4 @@
+# Full-resolution scenario screenshots remain in Actions artifacts.
+review/browser-evidence/
+review/screens/
+__pycache__/

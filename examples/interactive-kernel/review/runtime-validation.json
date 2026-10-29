@@ -1,0 +1,2725 @@
+{
+  "status": "passed",
+  "created_utc": "2026-10-28T09:02:33.666287+00:00",
+  "screen_cases": [
+    {
+      "viewport": [
+        1600,
+        950
+      ],
+      "mode": "scroll",
+      "screenshot": "review/browser-evidence/scroll-1600x950.png",
+      "viewer_fonts": {
+        "elements": 4,
+        "actual_families": {
+          "Pretendard Variable": 54
+        },
+        "fallback": [],
+        "unpainted": [],
+        "bad_spacing": []
+      }
+    },
+    {
+      "viewport": [
+        1600,
+        950
+      ],
+      "mode": "slides",
+      "screenshot": "review/browser-evidence/slides-1600x950.png",
+      "viewer_fonts": {
+        "elements": 4,
+        "actual_families": {
+          "Pretendard Variable": 54
+        },
+        "fallback": [],
+        "unpainted": [],
+        "bad_spacing": []
+      }
+    },
+    {
+      "viewport": [
+        1440,
+        810
+      ],
+      "mode": "scroll",
+      "screenshot": "review/browser-evidence/scroll-1440x810.png",
+      "viewer_fonts": {
+        "elements": 4,
+        "actual_families": {
+          "Pretendard Variable": 54
+        },
+        "fallback": [],
+        "unpainted": [],
+        "bad_spacing": []
+      }
+    },
+    {
+      "viewport": [
+        1440,
+        810
+      ],
+      "mode": "slides",
+      "screenshot": "review/browser-evidence/slides-1440x810.png",
+      "viewer_fonts": {
+        "elements": 4,
+        "actual_families": {
+          "Pretendard Variable": 54
+        },
+        "fallback": [],
+        "unpainted": [],
+        "bad_spacing": []
+      }
+    },
+    {
+      "viewport": [
+        1366,
+        768
+      ],
+      "mode": "scroll",
+      "screenshot": "review/browser-evidence/scroll-1366x768.png",
+      "viewer_fonts": {
+        "elements": 4,
+        "actual_families": {
+          "Pretendard Variable": 54
+        },
+        "fallback": [],
+        "unpainted": [],
+        "bad_spacing": []
+      }
+    },
+    {
+      "viewport": [
+        1366,
+        768
+      ],
+      "mode": "slides",
+      "screenshot": "review/browser-evidence/slides-1366x768.png",
+      "viewer_fonts": {
+        "elements": 4,
+        "actual_families": {
+          "Pretendard Variable": 54
+        },
+        "fallback": [],
+        "unpainted": [],
+        "bad_spacing": []
+      }
+    },
+    {
+      "viewport": [
+        1280,
+        720
+      ],
+      "mode": "scroll",
+      "screenshot": "review/browser-evidence/scroll-1280x720.png",
+      "viewer_fonts": {
+        "elements": 4,
+        "actual_families": {
+          "Pretendard Variable": 54
+        },
+        "fallback": [],
+        "unpainted": [],
+        "bad_spacing": []
+      }
+    },
+    {
+      "viewport": [
+        1280,
+        720
+      ],
+      "mode": "slides",
+      "screenshot": "review/browser-evidence/slides-1280x720.png",
+      "viewer_fonts": {
+        "elements": 4,
+        "actual_families": {
+          "Pretendard Variable": 54
+        },
+        "fallback": [],
+        "unpainted": [],
+        "bad_spacing": []
+      }
+    }
+  ],
+  "filter_states": [
+    {
+      "kernel": "identity",
+      "focus_numerator": 6,
+      "focus_denominator": 1,
+      "focus_display": "6",
+      "verified_output_cells": 25,
+      "minimum_matrix_text_contrast": 9.039555596643915,
+      "viewport": [
+        1600,
+        950
+      ],
+      "mode": "scroll",
+      "geometry": {
+        "slide": {
+          "x": 0,
+          "y": 0,
+          "right": 1440,
+          "bottom": 810,
+          "width": 1440,
+          "height": 810,
+          "cx": 720,
+          "cy": 405
+        },
+        "panel": {
+          "x": 66,
+          "y": 178,
+          "right": 1374,
+          "bottom": 728,
+          "width": 1308,
+          "height": 550,
+          "cx": 720,
+          "cy": 453
+        },
+        "inside": {
+          "x": 87,
+          "y": 199,
+          "right": 1353,
+          "bottom": 707
+        },
+        "footer": {
+          "x": 66,
+          "y": 737,
+          "right": 1374,
+          "bottom": 782,
+          "width": 1308,
+          "height": 45,
+          "cx": 720,
+          "cy": 759.5
+        },
+        "outside": [],
+        "padding": [],
+        "overflow": [],
+        "footerOverlap": [],
+        "textClipping": [],
+        "matrixClipping": [],
+        "svgOutside": [],
+        "arrowErrors": [
+          {
+            "y": 0,
+            "leftGap": 12,
+            "rightGap": 12
+          },
+          {
+            "y": 0,
+            "leftGap": 12,
+            "rightGap": 12
+          }
+        ],
+        "labelColor": "rgb(49, 104, 200)",
+        "titleColor": "rgb(18, 35, 63)",
+        "viewer": {
+          "frame": {
+            "x": 80,
+            "y": 68,
+            "right": 1520,
+            "bottom": 878
+          },
+          "note": {
+            "x": 0,
+            "y": 906,
+            "right": 1600,
+            "bottom": 950
+          },
+          "width": 1600,
+          "height": 950,
+          "documentWidth": 1600
+        }
+      },
+      "fonts": {
+        "elements": 134,
+        "actual_families": {
+          "Pretendard Variable": 462,
+          "STIX Two Math": 110
+        },
+        "fallback": [],
+        "unpainted": [],
+        "bad_spacing": []
+      }
+    },
+    {
+      "kernel": "mean",
+      "focus_numerator": 51,
+      "focus_denominator": 9,
+      "focus_display": "5.67",
+      "verified_output_cells": 25,
+      "minimum_matrix_text_contrast": 9.039555596643915,
+      "viewport": [
+        1600,
+        950
+      ],
+      "mode": "scroll",
+      "geometry": {
+        "slide": {
+          "x": 0,
+          "y": 0,
+          "right": 1440,
+          "bottom": 810,
+          "width": 1440,
+          "height": 810,
+          "cx": 720,
+          "cy": 405
+        },
+        "panel": {
+          "x": 66,
+          "y": 178,
+          "right": 1374,
+          "bottom": 728,
+          "width": 1308,
+          "height": 550,
+          "cx": 720,
+          "cy": 453
+        },
+        "inside": {
+          "x": 87,
+          "y": 199,
+          "right": 1353,
+          "bottom": 707
+        },
+        "footer": {
+          "x": 66,
+          "y": 737,
+          "right": 1374,
+          "bottom": 782,
+          "width": 1308,
+          "height": 45,
+          "cx": 720,
+          "cy": 759.5
+        },
+        "outside": [],
+        "padding": [],
+        "overflow": [],
+        "footerOverlap": [],
+        "textClipping": [],
+        "matrixClipping": [],
+        "svgOutside": [],
+        "arrowErrors": [
+          {
+            "y": 0,
+            "leftGap": 12,
+            "rightGap": 12
+          },
+          {
+            "y": 0,
+            "leftGap": 12,
+            "rightGap": 12
+          }
+        ],
+        "labelColor": "rgb(49, 104, 200)",
+        "titleColor": "rgb(18, 35, 63)",
+        "viewer": {
+          "frame": {
+            "x": 80,
+            "y": 68,
+            "right": 1520,
+            "bottom": 878
+          },
+          "note": {
+            "x": 0,
+            "y": 906,
+            "right": 1600,
+            "bottom": 950
+          },
+          "width": 1600,
+          "height": 950,
+          "documentWidth": 1600
+        }
+      },
+      "fonts": {
+        "elements": 147,
+        "actual_families": {
+          "Pretendard Variable": 454,
+          "STIX Two Math": 193
+        },
+        "fallback": [],
+        "unpainted": [],
+        "bad_spacing": []
+      }
+    },
+    {
+      "kernel": "edge",
+      "focus_numerator": 28,
+      "focus_denominator": 1,
+      "focus_display": "28",
+      "verified_output_cells": 25,
+      "minimum_matrix_text_contrast": 6.072664002971961,
+      "viewport": [
+        1600,
+        950
+      ],
+      "mode": "scroll",
+      "geometry": {
+        "slide": {
+          "x": 0,
+          "y": 0,
+          "right": 1440,
+          "bottom": 810,
+          "width": 1440,
+          "height": 810,
+          "cx": 720,
+          "cy": 405
+        },
+        "panel": {
+          "x": 66,
+          "y": 178,
+          "right": 1374,
+          "bottom": 728,
+          "width": 1308,
+          "height": 550,
+          "cx": 720,
+          "cy": 453
+        },
+        "inside": {
+          "x": 87,
+          "y": 199,
+          "right": 1353,
+          "bottom": 707
+        },
+        "footer": {
+          "x": 66,
+          "y": 737,
+          "right": 1374,
+          "bottom": 782,
+          "width": 1308,
+          "height": 45,
+          "cx": 720,
+          "cy": 759.5
+        },
+        "outside": [],
+        "padding": [],
+        "overflow": [],
+        "footerOverlap": [],
+        "textClipping": [],
+        "matrixClipping": [],
+        "svgOutside": [],
+        "arrowErrors": [
+          {
+            "y": 0,
+            "leftGap": 12,
+            "rightGap": 12
+          },
+          {
+            "y": 0,
+            "leftGap": 12,
+            "rightGap": 12
+          }
+        ],
+        "labelColor": "rgb(49, 104, 200)",
+        "titleColor": "rgb(18, 35, 63)",
+        "viewer": {
+          "frame": {
+            "x": 80,
+            "y": 68,
+            "right": 1520,
+            "bottom": 878
+          },
+          "note": {
+            "x": 0,
+            "y": 906,
+            "right": 1600,
+            "bottom": 950
+          },
+          "width": 1600,
+          "height": 950,
+          "documentWidth": 1600
+        }
+      },
+      "fonts": {
+        "elements": 134,
+        "actual_families": {
+          "Pretendard Variable": 456,
+          "STIX Two Math": 148
+        },
+        "fallback": [],
+        "unpainted": [],
+        "bad_spacing": []
+      }
+    },
+    {
+      "kernel": "identity",
+      "focus_numerator": 6,
+      "focus_denominator": 1,
+      "focus_display": "6",
+      "verified_output_cells": 25,
+      "minimum_matrix_text_contrast": 9.039555596643915,
+      "viewport": [
+        1600,
+        950
+      ],
+      "mode": "slides",
+      "geometry": {
+        "slide": {
+          "x": 0,
+          "y": 0,
+          "right": 1440,
+          "bottom": 810,
+          "width": 1440,
+          "height": 810,
+          "cx": 720,
+          "cy": 405
+        },
+        "panel": {
+          "x": 66,
+          "y": 178,
+          "right": 1374,
+          "bottom": 728,
+          "width": 1308,
+          "height": 550,
+          "cx": 720,
+          "cy": 453
+        },
+        "inside": {
+          "x": 87,
+          "y": 199,
+          "right": 1353,
+          "bottom": 707
+        },
+        "footer": {
+          "x": 66,
+          "y": 737,
+          "right": 1374,
+          "bottom": 782,
+          "width": 1308,
+          "height": 45,
+          "cx": 720,
+          "cy": 759.5
+        },
+        "outside": [],
+        "padding": [],
+        "overflow": [],
+        "footerOverlap": [],
+        "textClipping": [],
+        "matrixClipping": [],
+        "svgOutside": [],
+        "arrowErrors": [
+          {
+            "y": 0,
+            "leftGap": 12,
+            "rightGap": 12
+          },
+          {
+            "y": 0,
+            "leftGap": 12,
+            "rightGap": 12
+          }
+        ],
+        "labelColor": "rgb(49, 104, 200)",
+        "titleColor": "rgb(18, 35, 63)",
+        "viewer": {
+          "frame": {
+            "x": 80,
+            "y": 70,
+            "right": 1520,
+            "bottom": 880
+          },
+          "note": {
+            "x": 0,
+            "y": 906,
+            "right": 1600,
+            "bottom": 950
+          },
+          "width": 1600,
+          "height": 950,
+          "documentWidth": 1600
+        }
+      },
+      "fonts": {
+        "elements": 134,
+        "actual_families": {
+          "Pretendard Variable": 462,
+          "STIX Two Math": 110
+        },
+        "fallback": [],
+        "unpainted": [],
+        "bad_spacing": []
+      }
+    },
+    {
+      "kernel": "mean",
+      "focus_numerator": 51,
+      "focus_denominator": 9,
+      "focus_display": "5.67",
+      "verified_output_cells": 25,
+      "minimum_matrix_text_contrast": 9.039555596643915,
+      "viewport": [
+        1600,
+        950
+      ],
+      "mode": "slides",
+      "geometry": {
+        "slide": {
+          "x": 0,
+          "y": 0,
+          "right": 1440,
+          "bottom": 810,
+          "width": 1440,
+          "height": 810,
+          "cx": 720,
+          "cy": 405
+        },
+        "panel": {
+          "x": 66,
+          "y": 178,
+          "right": 1374,
+          "bottom": 728,
+          "width": 1308,
+          "height": 550,
+          "cx": 720,
+          "cy": 453
+        },
+        "inside": {
+          "x": 87,
+          "y": 199,
+          "right": 1353,
+          "bottom": 707
+        },
+        "footer": {
+          "x": 66,
+          "y": 737,
+          "right": 1374,
+          "bottom": 782,
+          "width": 1308,
+          "height": 45,
+          "cx": 720,
+          "cy": 759.5
+        },
+        "outside": [],
+        "padding": [],
+        "overflow": [],
+        "footerOverlap": [],
+        "textClipping": [],
+        "matrixClipping": [],
+        "svgOutside": [],
+        "arrowErrors": [
+          {
+            "y": 0,
+            "leftGap": 12,
+            "rightGap": 12
+          },
+          {
+            "y": 0,
+            "leftGap": 12,
+            "rightGap": 12
+          }
+        ],
+        "labelColor": "rgb(49, 104, 200)",
+        "titleColor": "rgb(18, 35, 63)",
+        "viewer": {
+          "frame": {
+            "x": 80,
+            "y": 70,
+            "right": 1520,
+            "bottom": 880
+          },
+          "note": {
+            "x": 0,
+            "y": 906,
+            "right": 1600,
+            "bottom": 950
+          },
+          "width": 1600,
+          "height": 950,
+          "documentWidth": 1600
+        }
+      },
+      "fonts": {
+        "elements": 147,
+        "actual_families": {
+          "Pretendard Variable": 454,
+          "STIX Two Math": 193
+        },
+        "fallback": [],
+        "unpainted": [],
+        "bad_spacing": []
+      }
+    },
+    {
+      "kernel": "edge",
+      "focus_numerator": 28,
+      "focus_denominator": 1,
+      "focus_display": "28",
+      "verified_output_cells": 25,
+      "minimum_matrix_text_contrast": 6.072664002971961,
+      "viewport": [
+        1600,
+        950
+      ],
+      "mode": "slides",
+      "geometry": {
+        "slide": {
+          "x": 0,
+          "y": 0,
+          "right": 1440,
+          "bottom": 810,
+          "width": 1440,
+          "height": 810,
+          "cx": 720,
+          "cy": 405
+        },
+        "panel": {
+          "x": 66,
+          "y": 178,
+          "right": 1374,
+          "bottom": 728,
+          "width": 1308,
+          "height": 550,
+          "cx": 720,
+          "cy": 453
+        },
+        "inside": {
+          "x": 87,
+          "y": 199,
+          "right": 1353,
+          "bottom": 707
+        },
+        "footer": {
+          "x": 66,
+          "y": 737,
+          "right": 1374,
+          "bottom": 782,
+          "width": 1308,
+          "height": 45,
+          "cx": 720,
+          "cy": 759.5
+        },
+        "outside": [],
+        "padding": [],
+        "overflow": [],
+        "footerOverlap": [],
+        "textClipping": [],
+        "matrixClipping": [],
+        "svgOutside": [],
+        "arrowErrors": [
+          {
+            "y": 0,
+            "leftGap": 12,
+            "rightGap": 12
+          },
+          {
+            "y": 0,
+            "leftGap": 12,
+            "rightGap": 12
+          }
+        ],
+        "labelColor": "rgb(49, 104, 200)",
+        "titleColor": "rgb(18, 35, 63)",
+        "viewer": {
+          "frame": {
+            "x": 80,
+            "y": 70,
+            "right": 1520,
+            "bottom": 880
+          },
+          "note": {
+            "x": 0,
+            "y": 906,
+            "right": 1600,
+            "bottom": 950
+          },
+          "width": 1600,
+          "height": 950,
+          "documentWidth": 1600
+        }
+      },
+      "fonts": {
+        "elements": 134,
+        "actual_families": {
+          "Pretendard Variable": 456,
+          "STIX Two Math": 148
+        },
+        "fallback": [],
+        "unpainted": [],
+        "bad_spacing": []
+      }
+    },
+    {
+      "kernel": "identity",
+      "focus_numerator": 6,
+      "focus_denominator": 1,
+      "focus_display": "6",
+      "verified_output_cells": 25,
+      "minimum_matrix_text_contrast": 9.039555596643915,
+      "viewport": [
+        1440,
+        810
+      ],
+      "mode": "scroll",
+      "geometry": {
+        "slide": {
+          "x": 0,
+          "y": 0,
+          "right": 1440,
+          "bottom": 810,
+          "width": 1440,
+          "height": 810,
+          "cx": 720,
+          "cy": 405
+        },
+        "panel": {
+          "x": 66,
+          "y": 178,
+          "right": 1374,
+          "bottom": 728,
+          "width": 1308,
+          "height": 550,
+          "cx": 720,
+          "cy": 453
+        },
+        "inside": {
+          "x": 87,
+          "y": 199,
+          "right": 1353,
+          "bottom": 707
+        },
+        "footer": {
+          "x": 66,
+          "y": 737,
+          "right": 1374,
+          "bottom": 782,
+          "width": 1308,
+          "height": 45,
+          "cx": 720,
+          "cy": 759.5
+        },
+        "outside": [],
+        "padding": [],
+        "overflow": [],
+        "footerOverlap": [],
+        "textClipping": [],
+        "matrixClipping": [],
+        "svgOutside": [],
+        "arrowErrors": [
+          {
+            "y": 0,
+            "leftGap": 12,
+            "rightGap": 12
+          },
+          {
+            "y": 0,
+            "leftGap": 12,
+            "rightGap": 12
+          }
+        ],
+        "labelColor": "rgb(49, 104, 200)",
+        "titleColor": "rgb(18, 35, 63)",
+        "viewer": {
+          "frame": {
+            "x": 120.890625,
+            "y": 68,
+            "right": 1319.109375,
+            "bottom": 742
+          },
+          "note": {
+            "x": 0,
+            "y": 766,
+            "right": 1440,
+            "bottom": 810
+          },
+          "width": 1440,
+          "height": 810,
+          "documentWidth": 1440
+        }
+      },
+      "fonts": {
+        "elements": 134,
+        "actual_families": {
+          "Pretendard Variable": 462,
+          "STIX Two Math": 110
+        },
+        "fallback": [],
+        "unpainted": [],
+        "bad_spacing": []
+      }
+    },
+    {
+      "kernel": "mean",
+      "focus_numerator": 51,
+      "focus_denominator": 9,
+      "focus_display": "5.67",
+      "verified_output_cells": 25,
+      "minimum_matrix_text_contrast": 9.039555596643915,
+      "viewport": [
+        1440,
+        810
+      ],
+      "mode": "scroll",
+      "geometry": {
+        "slide": {
+          "x": 0,
+          "y": 0,
+          "right": 1440,
+          "bottom": 810,
+          "width": 1440,
+          "height": 810,
+          "cx": 720,
+          "cy": 405
+        },
+        "panel": {
+          "x": 66,
+          "y": 178,
+          "right": 1374,
+          "bottom": 728,
+          "width": 1308,
+          "height": 550,
+          "cx": 720,
+          "cy": 453
+        },
+        "inside": {
+          "x": 87,
+          "y": 199,
+          "right": 1353,
+          "bottom": 707
+        },
+        "footer": {
+          "x": 66,
+          "y": 737,
+          "right": 1374,
+          "bottom": 782,
+          "width": 1308,
+          "height": 45,
+          "cx": 720,
+          "cy": 759.5
+        },
+        "outside": [],
+        "padding": [],
+        "overflow": [],
+        "footerOverlap": [],
+        "textClipping": [],
+        "matrixClipping": [],
+        "svgOutside": [],
+        "arrowErrors": [
+          {
+            "y": 0,
+            "leftGap": 12,
+            "rightGap": 12
+          },
+          {
+            "y": 0,
+            "leftGap": 12,
+            "rightGap": 12
+          }
+        ],
+        "labelColor": "rgb(49, 104, 200)",
+        "titleColor": "rgb(18, 35, 63)",
+        "viewer": {
+          "frame": {
+            "x": 120.890625,
+            "y": 68,
+            "right": 1319.109375,
+            "bottom": 742
+          },
+          "note": {
+            "x": 0,
+            "y": 766,
+            "right": 1440,
+            "bottom": 810
+          },
+          "width": 1440,
+          "height": 810,
+          "documentWidth": 1440
+        }
+      },
+      "fonts": {
+        "elements": 147,
+        "actual_families": {
+          "Pretendard Variable": 454,
+          "STIX Two Math": 193
+        },
+        "fallback": [],
+        "unpainted": [],
+        "bad_spacing": []
+      }
+    },
+    {
+      "kernel": "edge",
+      "focus_numerator": 28,
+      "focus_denominator": 1,
+      "focus_display": "28",
+      "verified_output_cells": 25,
+      "minimum_matrix_text_contrast": 6.072664002971961,
+      "viewport": [
+        1440,
+        810
+      ],
+      "mode": "scroll",
+      "geometry": {
+        "slide": {
+          "x": 0,
+          "y": 0,
+          "right": 1440,
+          "bottom": 810,
+          "width": 1440,
+          "height": 810,
+          "cx": 720,
+          "cy": 405
+        },
+        "panel": {
+          "x": 66,
+          "y": 178,
+          "right": 1374,
+          "bottom": 728,
+          "width": 1308,
+          "height": 550,
+          "cx": 720,
+          "cy": 453
+        },
+        "inside": {
+          "x": 87,
+          "y": 199,
+          "right": 1353,
+          "bottom": 707
+        },
+        "footer": {
+          "x": 66,
+          "y": 737,
+          "right": 1374,
+          "bottom": 782,
+          "width": 1308,
+          "height": 45,
+          "cx": 720,
+          "cy": 759.5
+        },
+        "outside": [],
+        "padding": [],
+        "overflow": [],
+        "footerOverlap": [],
+        "textClipping": [],
+        "matrixClipping": [],
+        "svgOutside": [],
+        "arrowErrors": [
+          {
+            "y": 0,
+            "leftGap": 12,
+            "rightGap": 12
+          },
+          {
+            "y": 0,
+            "leftGap": 12,
+            "rightGap": 12
+          }
+        ],
+        "labelColor": "rgb(49, 104, 200)",
+        "titleColor": "rgb(18, 35, 63)",
+        "viewer": {
+          "frame": {
+            "x": 120.890625,
+            "y": 68,
+            "right": 1319.109375,
+            "bottom": 742
+          },
+          "note": {
+            "x": 0,
+            "y": 766,
+            "right": 1440,
+            "bottom": 810
+          },
+          "width": 1440,
+          "height": 810,
+          "documentWidth": 1440
+        }
+      },
+      "fonts": {
+        "elements": 134,
+        "actual_families": {
+          "Pretendard Variable": 456,
+          "STIX Two Math": 148
+        },
+        "fallback": [],
+        "unpainted": [],
+        "bad_spacing": []
+      }
+    },
+    {
+      "kernel": "identity",
+      "focus_numerator": 6,
+      "focus_denominator": 1,
+      "focus_display": "6",
+      "verified_output_cells": 25,
+      "minimum_matrix_text_contrast": 9.039555596643915,
+      "viewport": [
+        1440,
+        810
+      ],
+      "mode": "slides",
+      "geometry": {
+        "slide": {
+          "x": 0,
+          "y": 0,
+          "right": 1440,
+          "bottom": 810,
+          "width": 1440,
+          "height": 810,
+          "cx": 720,
+          "cy": 405
+        },
+        "panel": {
+          "x": 66,
+          "y": 178,
+          "right": 1374,
+          "bottom": 728,
+          "width": 1308,
+          "height": 550,
+          "cx": 720,
+          "cy": 453
+        },
+        "inside": {
+          "x": 87,
+          "y": 199,
+          "right": 1353,
+          "bottom": 707
+        },
+        "footer": {
+          "x": 66,
+          "y": 737,
+          "right": 1374,
+          "bottom": 782,
+          "width": 1308,
+          "height": 45,
+          "cx": 720,
+          "cy": 759.5
+        },
+        "outside": [],
+        "padding": [],
+        "overflow": [],
+        "footerOverlap": [],
+        "textClipping": [],
+        "matrixClipping": [],
+        "svgOutside": [],
+        "arrowErrors": [
+          {
+            "y": 0,
+            "leftGap": 12,
+            "rightGap": 12
+          },
+          {
+            "y": 0,
+            "leftGap": 12,
+            "rightGap": 12
+          }
+        ],
+        "labelColor": "rgb(49, 104, 200)",
+        "titleColor": "rgb(18, 35, 63)",
+        "viewer": {
+          "frame": {
+            "x": 99.5625,
+            "y": 56,
+            "right": 1340.4375,
+            "bottom": 754
+          },
+          "note": {
+            "x": 0,
+            "y": 766,
+            "right": 1440,
+            "bottom": 810
+          },
+          "width": 1440,
+          "height": 810,
+          "documentWidth": 1440
+        }
+      },
+      "fonts": {
+        "elements": 134,
+        "actual_families": {
+          "Pretendard Variable": 462,
+          "STIX Two Math": 110
+        },
+        "fallback": [],
+        "unpainted": [],
+        "bad_spacing": []
+      }
+    },
+    {
+      "kernel": "mean",
+      "focus_numerator": 51,
+      "focus_denominator": 9,
+      "focus_display": "5.67",
+      "verified_output_cells": 25,
+      "minimum_matrix_text_contrast": 9.039555596643915,
+      "viewport": [
+        1440,
+        810
+      ],
+      "mode": "slides",
+      "geometry": {
+        "slide": {
+          "x": 0,
+          "y": 0,
+          "right": 1440,
+          "bottom": 810,
+          "width": 1440,
+          "height": 810,
+          "cx": 720,
+          "cy": 405
+        },
+        "panel": {
+          "x": 66,
+          "y": 178,
+          "right": 1374,
+          "bottom": 728,
+          "width": 1308,
+          "height": 550,
+          "cx": 720,
+          "cy": 453
+        },
+        "inside": {
+          "x": 87,
+          "y": 199,
+          "right": 1353,
+          "bottom": 707
+        },
+        "footer": {
+          "x": 66,
+          "y": 737,
+          "right": 1374,
+          "bottom": 782,
+          "width": 1308,
+          "height": 45,
+          "cx": 720,
+          "cy": 759.5
+        },
+        "outside": [],
+        "padding": [],
+        "overflow": [],
+        "footerOverlap": [],
+        "textClipping": [],
+        "matrixClipping": [],
+        "svgOutside": [],
+        "arrowErrors": [
+          {
+            "y": 0,
+            "leftGap": 12,
+            "rightGap": 12
+          },
+          {
+            "y": 0,
+            "leftGap": 12,
+            "rightGap": 12
+          }
+        ],
+        "labelColor": "rgb(49, 104, 200)",
+        "titleColor": "rgb(18, 35, 63)",
+        "viewer": {
+          "frame": {
+            "x": 99.5625,
+            "y": 56,
+            "right": 1340.4375,
+            "bottom": 754
+          },
+          "note": {
+            "x": 0,
+            "y": 766,
+            "right": 1440,
+            "bottom": 810
+          },
+          "width": 1440,
+          "height": 810,
+          "documentWidth": 1440
+        }
+      },
+      "fonts": {
+        "elements": 147,
+        "actual_families": {
+          "Pretendard Variable": 454,
+          "STIX Two Math": 193
+        },
+        "fallback": [],
+        "unpainted": [],
+        "bad_spacing": []
+      }
+    },
+    {
+      "kernel": "edge",
+      "focus_numerator": 28,
+      "focus_denominator": 1,
+      "focus_display": "28",
+      "verified_output_cells": 25,
+      "minimum_matrix_text_contrast": 6.072664002971961,
+      "viewport": [
+        1440,
+        810
+      ],
+      "mode": "slides",
+      "geometry": {
+        "slide": {
+          "x": 0,
+          "y": 0,
+          "right": 1440,
+          "bottom": 810,
+          "width": 1440,
+          "height": 810,
+          "cx": 720,
+          "cy": 405
+        },
+        "panel": {
+          "x": 66,
+          "y": 178,
+          "right": 1374,
+          "bottom": 728,
+          "width": 1308,
+          "height": 550,
+          "cx": 720,
+          "cy": 453
+        },
+        "inside": {
+          "x": 87,
+          "y": 199,
+          "right": 1353,
+          "bottom": 707
+        },
+        "footer": {
+          "x": 66,
+          "y": 737,
+          "right": 1374,
+          "bottom": 782,
+          "width": 1308,
+          "height": 45,
+          "cx": 720,
+          "cy": 759.5
+        },
+        "outside": [],
+        "padding": [],
+        "overflow": [],
+        "footerOverlap": [],
+        "textClipping": [],
+        "matrixClipping": [],
+        "svgOutside": [],
+        "arrowErrors": [
+          {
+            "y": 0,
+            "leftGap": 12,
+            "rightGap": 12
+          },
+          {
+            "y": 0,
+            "leftGap": 12,
+            "rightGap": 12
+          }
+        ],
+        "labelColor": "rgb(49, 104, 200)",
+        "titleColor": "rgb(18, 35, 63)",
+        "viewer": {
+          "frame": {
+            "x": 99.5625,
+            "y": 56,
+            "right": 1340.4375,
+            "bottom": 754
+          },
+          "note": {
+            "x": 0,
+            "y": 766,
+            "right": 1440,
+            "bottom": 810
+          },
+          "width": 1440,
+          "height": 810,
+          "documentWidth": 1440
+        }
+      },
+      "fonts": {
+        "elements": 134,
+        "actual_families": {
+          "Pretendard Variable": 456,
+          "STIX Two Math": 148
+        },
+        "fallback": [],
+        "unpainted": [],
+        "bad_spacing": []
+      }
+    },
+    {
+      "kernel": "identity",
+      "focus_numerator": 6,
+      "focus_denominator": 1,
+      "focus_display": "6",
+      "verified_output_cells": 25,
+      "minimum_matrix_text_contrast": 9.039555596643915,
+      "viewport": [
+        1366,
+        768
+      ],
+      "mode": "scroll",
+      "geometry": {
+        "slide": {
+          "x": 0,
+          "y": 0,
+          "right": 1440,
+          "bottom": 810,
+          "width": 1440,
+          "height": 810,
+          "cx": 720,
+          "cy": 405
+        },
+        "panel": {
+          "x": 66,
+          "y": 178,
+          "right": 1374,
+          "bottom": 728,
+          "width": 1308,
+          "height": 550,
+          "cx": 720,
+          "cy": 453
+        },
+        "inside": {
+          "x": 87,
+          "y": 199,
+          "right": 1353,
+          "bottom": 707
+        },
+        "footer": {
+          "x": 66,
+          "y": 737,
+          "right": 1374,
+          "bottom": 782,
+          "width": 1308,
+          "height": 45,
+          "cx": 720,
+          "cy": 759.5
+        },
+        "outside": [],
+        "padding": [],
+        "overflow": [],
+        "footerOverlap": [],
+        "textClipping": [],
+        "matrixClipping": [],
+        "svgOutside": [],
+        "arrowErrors": [
+          {
+            "y": 0,
+            "leftGap": 12,
+            "rightGap": 12
+          },
+          {
+            "y": 0,
+            "leftGap": 12,
+            "rightGap": 12
+          }
+        ],
+        "labelColor": "rgb(49, 104, 200)",
+        "titleColor": "rgb(18, 35, 63)",
+        "viewer": {
+          "frame": {
+            "x": 121.21875,
+            "y": 68,
+            "right": 1244.765625,
+            "bottom": 700
+          },
+          "note": {
+            "x": 0,
+            "y": 724,
+            "right": 1366,
+            "bottom": 768
+          },
+          "width": 1366,
+          "height": 768,
+          "documentWidth": 1366
+        }
+      },
+      "fonts": {
+        "elements": 134,
+        "actual_families": {
+          "Pretendard Variable": 462,
+          "STIX Two Math": 110
+        },
+        "fallback": [],
+        "unpainted": [],
+        "bad_spacing": []
+      }
+    },
+    {
+      "kernel": "mean",
+      "focus_numerator": 51,
+      "focus_denominator": 9,
+      "focus_display": "5.67",
+      "verified_output_cells": 25,
+      "minimum_matrix_text_contrast": 9.039555596643915,
+      "viewport": [
+        1366,
+        768
+      ],
+      "mode": "scroll",
+      "geometry": {
+        "slide": {
+          "x": 0,
+          "y": 0,
+          "right": 1440,
+          "bottom": 810,
+          "width": 1440,
+          "height": 810,
+          "cx": 720,
+          "cy": 405
+        },
+        "panel": {
+          "x": 66,
+          "y": 178,
+          "right": 1374,
+          "bottom": 728,
+          "width": 1308,
+          "height": 550,
+          "cx": 720,
+          "cy": 453
+        },
+        "inside": {
+          "x": 87,
+          "y": 199,
+          "right": 1353,
+          "bottom": 707
+        },
+        "footer": {
+          "x": 66,
+          "y": 737,
+          "right": 1374,
+          "bottom": 782,
+          "width": 1308,
+          "height": 45,
+          "cx": 720,
+          "cy": 759.5
+        },
+        "outside": [],
+        "padding": [],
+        "overflow": [],
+        "footerOverlap": [],
+        "textClipping": [],
+        "matrixClipping": [],
+        "svgOutside": [],
+        "arrowErrors": [
+          {
+            "y": 0,
+            "leftGap": 12,
+            "rightGap": 12
+          },
+          {
+            "y": 0,
+            "leftGap": 12,
+            "rightGap": 12
+          }
+        ],
+        "labelColor": "rgb(49, 104, 200)",
+        "titleColor": "rgb(18, 35, 63)",
+        "viewer": {
+          "frame": {
+            "x": 121.21875,
+            "y": 68,
+            "right": 1244.765625,
+            "bottom": 700
+          },
+          "note": {
+            "x": 0,
+            "y": 724,
+            "right": 1366,
+            "bottom": 768
+          },
+          "width": 1366,
+          "height": 768,
+          "documentWidth": 1366
+        }
+      },
+      "fonts": {
+        "elements": 147,
+        "actual_families": {
+          "Pretendard Variable": 454,
+          "STIX Two Math": 193
+        },
+        "fallback": [],
+        "unpainted": [],
+        "bad_spacing": []
+      }
+    },
+    {
+      "kernel": "edge",
+      "focus_numerator": 28,
+      "focus_denominator": 1,
+      "focus_display": "28",
+      "verified_output_cells": 25,
+      "minimum_matrix_text_contrast": 6.072664002971961,
+      "viewport": [
+        1366,
+        768
+      ],
+      "mode": "scroll",
+      "geometry": {
+        "slide": {
+          "x": 0,
+          "y": 0,
+          "right": 1440,
+          "bottom": 810,
+          "width": 1440,
+          "height": 810,
+          "cx": 720,
+          "cy": 405
+        },
+        "panel": {
+          "x": 66,
+          "y": 178,
+          "right": 1374,
+          "bottom": 728,
+          "width": 1308,
+          "height": 550,
+          "cx": 720,
+          "cy": 453
+        },
+        "inside": {
+          "x": 87,
+          "y": 199,
+          "right": 1353,
+          "bottom": 707
+        },
+        "footer": {
+          "x": 66,
+          "y": 737,
+          "right": 1374,
+          "bottom": 782,
+          "width": 1308,
+          "height": 45,
+          "cx": 720,
+          "cy": 759.5
+        },
+        "outside": [],
+        "padding": [],
+        "overflow": [],
+        "footerOverlap": [],
+        "textClipping": [],
+        "matrixClipping": [],
+        "svgOutside": [],
+        "arrowErrors": [
+          {
+            "y": 0,
+            "leftGap": 12,
+            "rightGap": 12
+          },
+          {
+            "y": 0,
+            "leftGap": 12,
+            "rightGap": 12
+          }
+        ],
+        "labelColor": "rgb(49, 104, 200)",
+        "titleColor": "rgb(18, 35, 63)",
+        "viewer": {
+          "frame": {
+            "x": 121.21875,
+            "y": 68,
+            "right": 1244.765625,
+            "bottom": 700
+          },
+          "note": {
+            "x": 0,
+            "y": 724,
+            "right": 1366,
+            "bottom": 768
+          },
+          "width": 1366,
+          "height": 768,
+          "documentWidth": 1366
+        }
+      },
+      "fonts": {
+        "elements": 134,
+        "actual_families": {
+          "Pretendard Variable": 456,
+          "STIX Two Math": 148
+        },
+        "fallback": [],
+        "unpainted": [],
+        "bad_spacing": []
+      }
+    },
+    {
+      "kernel": "identity",
+      "focus_numerator": 6,
+      "focus_denominator": 1,
+      "focus_display": "6",
+      "verified_output_cells": 25,
+      "minimum_matrix_text_contrast": 9.039555596643915,
+      "viewport": [
+        1366,
+        768
+      ],
+      "mode": "slides",
+      "geometry": {
+        "slide": {
+          "x": 0,
+          "y": 0,
+          "right": 1440,
+          "bottom": 810,
+          "width": 1440,
+          "height": 810,
+          "cx": 720,
+          "cy": 405
+        },
+        "panel": {
+          "x": 66,
+          "y": 178,
+          "right": 1374,
+          "bottom": 728,
+          "width": 1308,
+          "height": 550,
+          "cx": 720,
+          "cy": 453
+        },
+        "inside": {
+          "x": 87,
+          "y": 199,
+          "right": 1353,
+          "bottom": 707
+        },
+        "footer": {
+          "x": 66,
+          "y": 737,
+          "right": 1374,
+          "bottom": 782,
+          "width": 1308,
+          "height": 45,
+          "cx": 720,
+          "cy": 759.5
+        },
+        "outside": [],
+        "padding": [],
+        "overflow": [],
+        "footerOverlap": [],
+        "textClipping": [],
+        "matrixClipping": [],
+        "svgOutside": [],
+        "arrowErrors": [
+          {
+            "y": 0,
+            "leftGap": 12,
+            "rightGap": 12
+          },
+          {
+            "y": 0,
+            "leftGap": 12,
+            "rightGap": 12
+          }
+        ],
+        "labelColor": "rgb(49, 104, 200)",
+        "titleColor": "rgb(18, 35, 63)",
+        "viewer": {
+          "frame": {
+            "x": 99.890625,
+            "y": 56,
+            "right": 1266.109375,
+            "bottom": 712
+          },
+          "note": {
+            "x": 0,
+            "y": 724,
+            "right": 1366,
+            "bottom": 768
+          },
+          "width": 1366,
+          "height": 768,
+          "documentWidth": 1366
+        }
+      },
+      "fonts": {
+        "elements": 134,
+        "actual_families": {
+          "Pretendard Variable": 462,
+          "STIX Two Math": 110
+        },
+        "fallback": [],
+        "unpainted": [],
+        "bad_spacing": []
+      }
+    },
+    {
+      "kernel": "mean",
+      "focus_numerator": 51,
+      "focus_denominator": 9,
+      "focus_display": "5.67",
+      "verified_output_cells": 25,
+      "minimum_matrix_text_contrast": 9.039555596643915,
+      "viewport": [
+        1366,
+        768
+      ],
+      "mode": "slides",
+      "geometry": {
+        "slide": {
+          "x": 0,
+          "y": 0,
+          "right": 1440,
+          "bottom": 810,
+          "width": 1440,
+          "height": 810,
+          "cx": 720,
+          "cy": 405
+        },
+        "panel": {
+          "x": 66,
+          "y": 178,
+          "right": 1374,
+          "bottom": 728,
+          "width": 1308,
+          "height": 550,
+          "cx": 720,
+          "cy": 453
+        },
+        "inside": {
+          "x": 87,
+          "y": 199,
+          "right": 1353,
+          "bottom": 707
+        },
+        "footer": {
+          "x": 66,
+          "y": 737,
+          "right": 1374,
+          "bottom": 782,
+          "width": 1308,
+          "height": 45,
+          "cx": 720,
+          "cy": 759.5
+        },
+        "outside": [],
+        "padding": [],
+        "overflow": [],
+        "footerOverlap": [],
+        "textClipping": [],
+        "matrixClipping": [],
+        "svgOutside": [],
+        "arrowErrors": [
+          {
+            "y": 0,
+            "leftGap": 12,
+            "rightGap": 12
+          },
+          {
+            "y": 0,
+            "leftGap": 12,
+            "rightGap": 12
+          }
+        ],
+        "labelColor": "rgb(49, 104, 200)",
+        "titleColor": "rgb(18, 35, 63)",
+        "viewer": {
+          "frame": {
+            "x": 99.890625,
+            "y": 56,
+            "right": 1266.109375,
+            "bottom": 712
+          },
+          "note": {
+            "x": 0,
+            "y": 724,
+            "right": 1366,
+            "bottom": 768
+          },
+          "width": 1366,
+          "height": 768,
+          "documentWidth": 1366
+        }
+      },
+      "fonts": {
+        "elements": 147,
+        "actual_families": {
+          "Pretendard Variable": 454,
+          "STIX Two Math": 193
+        },
+        "fallback": [],
+        "unpainted": [],
+        "bad_spacing": []
+      }
+    },
+    {
+      "kernel": "edge",
+      "focus_numerator": 28,
+      "focus_denominator": 1,
+      "focus_display": "28",
+      "verified_output_cells": 25,
+      "minimum_matrix_text_contrast": 6.072664002971961,
+      "viewport": [
+        1366,
+        768
+      ],
+      "mode": "slides",
+      "geometry": {
+        "slide": {
+          "x": 0,
+          "y": 0,
+          "right": 1440,
+          "bottom": 810,
+          "width": 1440,
+          "height": 810,
+          "cx": 720,
+          "cy": 405
+        },
+        "panel": {
+          "x": 66,
+          "y": 178,
+          "right": 1374,
+          "bottom": 728,
+          "width": 1308,
+          "height": 550,
+          "cx": 720,
+          "cy": 453
+        },
+        "inside": {
+          "x": 87,
+          "y": 199,
+          "right": 1353,
+          "bottom": 707
+        },
+        "footer": {
+          "x": 66,
+          "y": 737,
+          "right": 1374,
+          "bottom": 782,
+          "width": 1308,
+          "height": 45,
+          "cx": 720,
+          "cy": 759.5
+        },
+        "outside": [],
+        "padding": [],
+        "overflow": [],
+        "footerOverlap": [],
+        "textClipping": [],
+        "matrixClipping": [],
+        "svgOutside": [],
+        "arrowErrors": [
+          {
+            "y": 0,
+            "leftGap": 12,
+            "rightGap": 12
+          },
+          {
+            "y": 0,
+            "leftGap": 12,
+            "rightGap": 12
+          }
+        ],
+        "labelColor": "rgb(49, 104, 200)",
+        "titleColor": "rgb(18, 35, 63)",
+        "viewer": {
+          "frame": {
+            "x": 99.890625,
+            "y": 56,
+            "right": 1266.109375,
+            "bottom": 712
+          },
+          "note": {
+            "x": 0,
+            "y": 724,
+            "right": 1366,
+            "bottom": 768
+          },
+          "width": 1366,
+          "height": 768,
+          "documentWidth": 1366
+        }
+      },
+      "fonts": {
+        "elements": 134,
+        "actual_families": {
+          "Pretendard Variable": 456,
+          "STIX Two Math": 148
+        },
+        "fallback": [],
+        "unpainted": [],
+        "bad_spacing": []
+      }
+    },
+    {
+      "kernel": "identity",
+      "focus_numerator": 6,
+      "focus_denominator": 1,
+      "focus_display": "6",
+      "verified_output_cells": 25,
+      "minimum_matrix_text_contrast": 9.039555596643915,
+      "viewport": [
+        1280,
+        720
+      ],
+      "mode": "scroll",
+      "geometry": {
+        "slide": {
+          "x": 0,
+          "y": 0,
+          "right": 1440,
+          "bottom": 810,
+          "width": 1440,
+          "height": 810,
+          "cx": 720,
+          "cy": 405
+        },
+        "panel": {
+          "x": 66,
+          "y": 178,
+          "right": 1374,
+          "bottom": 728,
+          "width": 1308,
+          "height": 550,
+          "cx": 720,
+          "cy": 453
+        },
+        "inside": {
+          "x": 87,
+          "y": 199,
+          "right": 1353,
+          "bottom": 707
+        },
+        "footer": {
+          "x": 66,
+          "y": 737,
+          "right": 1374,
+          "bottom": 782,
+          "width": 1308,
+          "height": 45,
+          "cx": 720,
+          "cy": 759.5
+        },
+        "outside": [],
+        "padding": [],
+        "overflow": [],
+        "footerOverlap": [],
+        "textClipping": [],
+        "matrixClipping": [],
+        "svgOutside": [],
+        "arrowErrors": [
+          {
+            "y": 0,
+            "leftGap": 12,
+            "rightGap": 12
+          },
+          {
+            "y": 0,
+            "leftGap": 12,
+            "rightGap": 12
+          }
+        ],
+        "labelColor": "rgb(49, 104, 200)",
+        "titleColor": "rgb(18, 35, 63)",
+        "viewer": {
+          "frame": {
+            "x": 120.890625,
+            "y": 68,
+            "right": 1159.109375,
+            "bottom": 652
+          },
+          "note": {
+            "x": 0,
+            "y": 676,
+            "right": 1280,
+            "bottom": 720
+          },
+          "width": 1280,
+          "height": 720,
+          "documentWidth": 1280
+        }
+      },
+      "fonts": {
+        "elements": 134,
+        "actual_families": {
+          "Pretendard Variable": 462,
+          "STIX Two Math": 110
+        },
+        "fallback": [],
+        "unpainted": [],
+        "bad_spacing": []
+      }
+    },
+    {
+      "kernel": "mean",
+      "focus_numerator": 51,
+      "focus_denominator": 9,
+      "focus_display": "5.67",
+      "verified_output_cells": 25,
+      "minimum_matrix_text_contrast": 9.039555596643915,
+      "viewport": [
+        1280,
+        720
+      ],
+      "mode": "scroll",
+      "geometry": {
+        "slide": {
+          "x": 0,
+          "y": 0,
+          "right": 1440,
+          "bottom": 810,
+          "width": 1440,
+          "height": 810,
+          "cx": 720,
+          "cy": 405
+        },
+        "panel": {
+          "x": 66,
+          "y": 178,
+          "right": 1374,
+          "bottom": 728,
+          "width": 1308,
+          "height": 550,
+          "cx": 720,
+          "cy": 453
+        },
+        "inside": {
+          "x": 87,
+          "y": 199,
+          "right": 1353,
+          "bottom": 707
+        },
+        "footer": {
+          "x": 66,
+          "y": 737,
+          "right": 1374,
+          "bottom": 782,
+          "width": 1308,
+          "height": 45,
+          "cx": 720,
+          "cy": 759.5
+        },
+        "outside": [],
+        "padding": [],
+        "overflow": [],
+        "footerOverlap": [],
+        "textClipping": [],
+        "matrixClipping": [],
+        "svgOutside": [],
+        "arrowErrors": [
+          {
+            "y": 0,
+            "leftGap": 12,
+            "rightGap": 12
+          },
+          {
+            "y": 0,
+            "leftGap": 12,
+            "rightGap": 12
+          }
+        ],
+        "labelColor": "rgb(49, 104, 200)",
+        "titleColor": "rgb(18, 35, 63)",
+        "viewer": {
+          "frame": {
+            "x": 120.890625,
+            "y": 68,
+            "right": 1159.109375,
+            "bottom": 652
+          },
+          "note": {
+            "x": 0,
+            "y": 676,
+            "right": 1280,
+            "bottom": 720
+          },
+          "width": 1280,
+          "height": 720,
+          "documentWidth": 1280
+        }
+      },
+      "fonts": {
+        "elements": 147,
+        "actual_families": {
+          "Pretendard Variable": 454,
+          "STIX Two Math": 193
+        },
+        "fallback": [],
+        "unpainted": [],
+        "bad_spacing": []
+      }
+    },
+    {
+      "kernel": "edge",
+      "focus_numerator": 28,
+      "focus_denominator": 1,
+      "focus_display": "28",
+      "verified_output_cells": 25,
+      "minimum_matrix_text_contrast": 6.072664002971961,
+      "viewport": [
+        1280,
+        720
+      ],
+      "mode": "scroll",
+      "geometry": {
+        "slide": {
+          "x": 0,
+          "y": 0,
+          "right": 1440,
+          "bottom": 810,
+          "width": 1440,
+          "height": 810,
+          "cx": 720,
+          "cy": 405
+        },
+        "panel": {
+          "x": 66,
+          "y": 178,
+          "right": 1374,
+          "bottom": 728,
+          "width": 1308,
+          "height": 550,
+          "cx": 720,
+          "cy": 453
+        },
+        "inside": {
+          "x": 87,
+          "y": 199,
+          "right": 1353,
+          "bottom": 707
+        },
+        "footer": {
+          "x": 66,
+          "y": 737,
+          "right": 1374,
+          "bottom": 782,
+          "width": 1308,
+          "height": 45,
+          "cx": 720,
+          "cy": 759.5
+        },
+        "outside": [],
+        "padding": [],
+        "overflow": [],
+        "footerOverlap": [],
+        "textClipping": [],
+        "matrixClipping": [],
+        "svgOutside": [],
+        "arrowErrors": [
+          {
+            "y": 0,
+            "leftGap": 12,
+            "rightGap": 12
+          },
+          {
+            "y": 0,
+            "leftGap": 12,
+            "rightGap": 12
+          }
+        ],
+        "labelColor": "rgb(49, 104, 200)",
+        "titleColor": "rgb(18, 35, 63)",
+        "viewer": {
+          "frame": {
+            "x": 120.890625,
+            "y": 68,
+            "right": 1159.109375,
+            "bottom": 652
+          },
+          "note": {
+            "x": 0,
+            "y": 676,
+            "right": 1280,
+            "bottom": 720
+          },
+          "width": 1280,
+          "height": 720,
+          "documentWidth": 1280
+        }
+      },
+      "fonts": {
+        "elements": 134,
+        "actual_families": {
+          "Pretendard Variable": 456,
+          "STIX Two Math": 148
+        },
+        "fallback": [],
+        "unpainted": [],
+        "bad_spacing": []
+      }
+    },
+    {
+      "kernel": "identity",
+      "focus_numerator": 6,
+      "focus_denominator": 1,
+      "focus_display": "6",
+      "verified_output_cells": 25,
+      "minimum_matrix_text_contrast": 9.039555596643915,
+      "viewport": [
+        1280,
+        720
+      ],
+      "mode": "slides",
+      "geometry": {
+        "slide": {
+          "x": 0,
+          "y": 0,
+          "right": 1440,
+          "bottom": 810,
+          "width": 1440,
+          "height": 810,
+          "cx": 720,
+          "cy": 405
+        },
+        "panel": {
+          "x": 66,
+          "y": 178,
+          "right": 1374,
+          "bottom": 728,
+          "width": 1308,
+          "height": 550,
+          "cx": 720,
+          "cy": 453
+        },
+        "inside": {
+          "x": 87,
+          "y": 199,
+          "right": 1353,
+          "bottom": 707
+        },
+        "footer": {
+          "x": 66,
+          "y": 737,
+          "right": 1374,
+          "bottom": 782,
+          "width": 1308,
+          "height": 45,
+          "cx": 720,
+          "cy": 759.5
+        },
+        "outside": [],
+        "padding": [],
+        "overflow": [],
+        "footerOverlap": [],
+        "textClipping": [],
+        "matrixClipping": [],
+        "svgOutside": [],
+        "arrowErrors": [
+          {
+            "y": 0,
+            "leftGap": 12,
+            "rightGap": 12
+          },
+          {
+            "y": 0,
+            "leftGap": 12,
+            "rightGap": 12
+          }
+        ],
+        "labelColor": "rgb(49, 104, 200)",
+        "titleColor": "rgb(18, 35, 63)",
+        "viewer": {
+          "frame": {
+            "x": 99.5625,
+            "y": 56,
+            "right": 1180.4375,
+            "bottom": 664
+          },
+          "note": {
+            "x": 0,
+            "y": 676,
+            "right": 1280,
+            "bottom": 720
+          },
+          "width": 1280,
+          "height": 720,
+          "documentWidth": 1280
+        }
+      },
+      "fonts": {
+        "elements": 134,
+        "actual_families": {
+          "Pretendard Variable": 462,
+          "STIX Two Math": 110
+        },
+        "fallback": [],
+        "unpainted": [],
+        "bad_spacing": []
+      }
+    },
+    {
+      "kernel": "mean",
+      "focus_numerator": 51,
+      "focus_denominator": 9,
+      "focus_display": "5.67",
+      "verified_output_cells": 25,
+      "minimum_matrix_text_contrast": 9.039555596643915,
+      "viewport": [
+        1280,
+        720
+      ],
+      "mode": "slides",
+      "geometry": {
+        "slide": {
+          "x": 0,
+          "y": 0,
+          "right": 1440,
+          "bottom": 810,
+          "width": 1440,
+          "height": 810,
+          "cx": 720,
+          "cy": 405
+        },
+        "panel": {
+          "x": 66,
+          "y": 178,
+          "right": 1374,
+          "bottom": 728,
+          "width": 1308,
+          "height": 550,
+          "cx": 720,
+          "cy": 453
+        },
+        "inside": {
+          "x": 87,
+          "y": 199,
+          "right": 1353,
+          "bottom": 707
+        },
+        "footer": {
+          "x": 66,
+          "y": 737,
+          "right": 1374,
+          "bottom": 782,
+          "width": 1308,
+          "height": 45,
+          "cx": 720,
+          "cy": 759.5
+        },
+        "outside": [],
+        "padding": [],
+        "overflow": [],
+        "footerOverlap": [],
+        "textClipping": [],
+        "matrixClipping": [],
+        "svgOutside": [],
+        "arrowErrors": [
+          {
+            "y": 0,
+            "leftGap": 12,
+            "rightGap": 12
+          },
+          {
+            "y": 0,
+            "leftGap": 12,
+            "rightGap": 12
+          }
+        ],
+        "labelColor": "rgb(49, 104, 200)",
+        "titleColor": "rgb(18, 35, 63)",
+        "viewer": {
+          "frame": {
+            "x": 99.5625,
+            "y": 56,
+            "right": 1180.4375,
+            "bottom": 664
+          },
+          "note": {
+            "x": 0,
+            "y": 676,
+            "right": 1280,
+            "bottom": 720
+          },
+          "width": 1280,
+          "height": 720,
+          "documentWidth": 1280
+        }
+      },
+      "fonts": {
+        "elements": 147,
+        "actual_families": {
+          "Pretendard Variable": 454,
+          "STIX Two Math": 193
+        },
+        "fallback": [],
+        "unpainted": [],
+        "bad_spacing": []
+      }
+    },
+    {
+      "kernel": "edge",
+      "focus_numerator": 28,
+      "focus_denominator": 1,
+      "focus_display": "28",
+      "verified_output_cells": 25,
+      "minimum_matrix_text_contrast": 6.072664002971961,
+      "viewport": [
+        1280,
+        720
+      ],
+      "mode": "slides",
+      "geometry": {
+        "slide": {
+          "x": 0,
+          "y": 0,
+          "right": 1440,
+          "bottom": 810,
+          "width": 1440,
+          "height": 810,
+          "cx": 720,
+          "cy": 405
+        },
+        "panel": {
+          "x": 66,
+          "y": 178,
+          "right": 1374,
+          "bottom": 728,
+          "width": 1308,
+          "height": 550,
+          "cx": 720,
+          "cy": 453
+        },
+        "inside": {
+          "x": 87,
+          "y": 199,
+          "right": 1353,
+          "bottom": 707
+        },
+        "footer": {
+          "x": 66,
+          "y": 737,
+          "right": 1374,
+          "bottom": 782,
+          "width": 1308,
+          "height": 45,
+          "cx": 720,
+          "cy": 759.5
+        },
+        "outside": [],
+        "padding": [],
+        "overflow": [],
+        "footerOverlap": [],
+        "textClipping": [],
+        "matrixClipping": [],
+        "svgOutside": [],
+        "arrowErrors": [
+          {
+            "y": 0,
+            "leftGap": 12,
+            "rightGap": 12
+          },
+          {
+            "y": 0,
+            "leftGap": 12,
+            "rightGap": 12
+          }
+        ],
+        "labelColor": "rgb(49, 104, 200)",
+        "titleColor": "rgb(18, 35, 63)",
+        "viewer": {
+          "frame": {
+            "x": 99.5625,
+            "y": 56,
+            "right": 1180.4375,
+            "bottom": 664
+          },
+          "note": {
+            "x": 0,
+            "y": 676,
+            "right": 1280,
+            "bottom": 720
+          },
+          "width": 1280,
+          "height": 720,
+          "documentWidth": 1280
+        }
+      },
+      "fonts": {
+        "elements": 134,
+        "actual_families": {
+          "Pretendard Variable": 456,
+          "STIX Two Math": 148
+        },
+        "fallback": [],
+        "unpainted": [],
+        "bad_spacing": []
+      }
+    }
+  ],
+  "screen_cases_are_not_scenarios": true,
+  "runtime_sha256_at_start": {
+    "examples/interactive-kernel/scroll.html": "fddcd659bef5796a25a6ea823d264df87d5f9f22244da4e7800b60530c1a1fa9",
+    "examples/interactive-kernel/slides.html": "fa7c6d8a7f1b5c67b033952efaeed870348ced13b85ce7cff41e6cf92a5b2f1c",
+    "examples/interactive-kernel/content.html": "b12098643a369891bd18d8545fa18346115d72c8c1d0e3a4092f5c4005a75b5c",
+    "examples/interactive-kernel/lesson.css": "5e422aa32769325c4d5de59c294423e709c62ca5019dc8104ec689b0d2adbc4c",
+    "examples/interactive-kernel/viewer.css": "2cc85a2205d1eb5613e0c2d1e8beab2dababc9a0d8d281a8cc10296f931d1a44",
+    "examples/interactive-kernel/model.js": "8b4a33c3a10efbc077ccd83c00a741102a7055b239be2914183d5b03bf04621a",
+    "examples/interactive-kernel/app.js": "f068f5623a62933742d5db62ff5e1e2ada5ceab94a11373079a0c5d44b8587fd",
+    "examples/interactive-kernel/viewer.js": "f5c731d291503340151a580d03402cb6f865d36b6dfae2b29a9d3c462c23c705",
+    "examples/interactive-kernel/data.json": "2fc8d1c4222216f9d95eec18812c846d73b4fb848bbc93a0a9ad516a4db30292"
+  },
+  "chromium": "154.0.8037.57",
+  "mode_comparison": [
+    {
+      "kernel": "identity",
+      "source_geometry_and_actual_fonts_equal": true
+    },
+    {
+      "kernel": "mean",
+      "source_geometry_and_actual_fonts_equal": true
+    },
+    {
+      "kernel": "edge",
+      "source_geometry_and_actual_fonts_equal": true
+    }
+  ],
+  "interactions": {
+    "native_select_home_end_arrows_tab_enter": true,
+    "focus_preserved": true,
+    "reset": true,
+    "reload_and_mode_round_trip": true,
+    "getState_deep_copy": true,
+    "invalid_api_atomic_cases": 4,
+    "invalid_url_cases": [
+      "v=2&kernel=mean#kernel",
+      "v=1&kernel=missing#kernel",
+      "v=1&kernel=mean#other"
+    ]
+  },
+  "custom_data_states": [
+    {
+      "data": "zero",
+      "kernel": "identity",
+      "focus_numerator": 0,
+      "focus_denominator": 1,
+      "focus_display": "0",
+      "verified_output_cells": 25,
+      "minimum_matrix_text_contrast": 21.0
+    },
+    {
+      "data": "zero",
+      "kernel": "mean",
+      "focus_numerator": 0,
+      "focus_denominator": 9,
+      "focus_display": "0",
+      "verified_output_cells": 25,
+      "minimum_matrix_text_contrast": 21.0
+    },
+    {
+      "data": "zero",
+      "kernel": "edge",
+      "focus_numerator": 0,
+      "focus_denominator": 1,
+      "focus_display": "0",
+      "verified_output_cells": 25,
+      "minimum_matrix_text_contrast": 21.0
+    },
+    {
+      "data": "nine",
+      "kernel": "identity",
+      "focus_numerator": 9,
+      "focus_denominator": 1,
+      "focus_display": "9",
+      "verified_output_cells": 25,
+      "minimum_matrix_text_contrast": 14.762790259439548
+    },
+    {
+      "data": "nine",
+      "kernel": "mean",
+      "focus_numerator": 81,
+      "focus_denominator": 9,
+      "focus_display": "9",
+      "verified_output_cells": 25,
+      "minimum_matrix_text_contrast": 14.762790259439548
+    },
+    {
+      "data": "nine",
+      "kernel": "edge",
+      "focus_numerator": 0,
+      "focus_denominator": 1,
+      "focus_display": "0",
+      "verified_output_cells": 25,
+      "minimum_matrix_text_contrast": 21.0
+    },
+    {
+      "data": "ramp",
+      "kernel": "identity",
+      "focus_numerator": 7,
+      "focus_denominator": 1,
+      "focus_display": "7",
+      "verified_output_cells": 25,
+      "minimum_matrix_text_contrast": 4.8807199797883385
+    },
+    {
+      "data": "ramp",
+      "kernel": "mean",
+      "focus_numerator": 53,
+      "focus_denominator": 9,
+      "focus_display": "5.89",
+      "verified_output_cells": 25,
+      "minimum_matrix_text_contrast": 4.8807199797883385
+    },
+    {
+      "data": "ramp",
+      "kernel": "edge",
+      "focus_numerator": 6,
+      "focus_denominator": 1,
+      "focus_display": "6",
+      "verified_output_cells": 25,
+      "minimum_matrix_text_contrast": 4.8807199797883385
+    },
+    {
+      "data": "impulse",
+      "kernel": "identity",
+      "focus_numerator": 0,
+      "focus_denominator": 1,
+      "focus_display": "0",
+      "verified_output_cells": 25,
+      "minimum_matrix_text_contrast": 14.762790259439548
+    },
+    {
+      "data": "impulse",
+      "kernel": "mean",
+      "focus_numerator": 9,
+      "focus_denominator": 9,
+      "focus_display": "1",
+      "verified_output_cells": 25,
+      "minimum_matrix_text_contrast": 20.245189278753013
+    },
+    {
+      "data": "impulse",
+      "kernel": "edge",
+      "focus_numerator": 18,
+      "focus_denominator": 1,
+      "focus_display": "18",
+      "verified_output_cells": 25,
+      "minimum_matrix_text_contrast": 9.98387056809642
+    }
+  ],
+  "exception_scenarios": [
+    {
+      "failure": "data.json",
+      "visible_retry_and_recovery": true
+    },
+    {
+      "failure": "content.html",
+      "visible_retry_and_recovery": true
+    },
+    {
+      "failure": "model.js",
+      "visible_retry_and_recovery": true
+    },
+    {
+      "failure": "app.js",
+      "visible_retry_and_recovery": true
+    },
+    {
+      "font_failure": "visible fallback notice and usable calculation/layout; separate from actual-font success"
+    },
+    {
+      "reduced_motion": true
+    },
+    {
+      "no_javascript_notice": true
+    }
+  ],
+  "console_errors": [],
+  "failed_requests": [],
+  "http_errors": [],
+  "initial_navigation_cancellations": [],
+  "source_sha256": {
+    "examples/interactive-kernel/scroll.html": "fddcd659bef5796a25a6ea823d264df87d5f9f22244da4e7800b60530c1a1fa9",
+    "examples/interactive-kernel/slides.html": "fa7c6d8a7f1b5c67b033952efaeed870348ced13b85ce7cff41e6cf92a5b2f1c",
+    "examples/interactive-kernel/content.html": "b12098643a369891bd18d8545fa18346115d72c8c1d0e3a4092f5c4005a75b5c",
+    "examples/interactive-kernel/lesson.css": "5e422aa32769325c4d5de59c294423e709c62ca5019dc8104ec689b0d2adbc4c",
+    "examples/interactive-kernel/viewer.css": "2cc85a2205d1eb5613e0c2d1e8beab2dababc9a0d8d281a8cc10296f931d1a44",
+    "examples/interactive-kernel/model.js": "8b4a33c3a10efbc077ccd83c00a741102a7055b239be2914183d5b03bf04621a",
+    "examples/interactive-kernel/app.js": "f068f5623a62933742d5db62ff5e1e2ada5ceab94a11373079a0c5d44b8587fd",
+    "examples/interactive-kernel/viewer.js": "f5c731d291503340151a580d03402cb6f865d36b6dfae2b29a9d3c462c23c705",
+    "examples/interactive-kernel/data.json": "2fc8d1c4222216f9d95eec18812c846d73b4fb848bbc93a0a9ad516a4db30292",
+    "examples/interactive-kernel/verify_kernel.py": "26419532ceb48b2665261aa739bdfee9fdc5a11649cb39a62e406e9a598a4885",
+    "examples/interactive-kernel/verify_runtime.py": "19915458ae59e8213669d6b992acb3b8dde5606b229546828474d04ed6eff183"
+  },
+  "preview_sha256": {
+    "examples/interactive-kernel/previews/scroll.png": "7499924b4a994203b507967cb4b8e3d14a1f4fc889e965f74a003991ebd2c5b5",
+    "examples/interactive-kernel/previews/slides.png": "b949ad0d3400d264e707d344488ea19299e6f48be48aea5d4264ed00a1ceff91"
+  },
+  "unverified": [
+    "actual screen-reader listening",
+    "reader comprehension",
+    "mobile/tablet/other browsers",
+    "learned model performance",
+    "all exception x viewport combinations"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "scope": "Supplemental Builder screenshots of two already tested filter states; not new viewport cases.",
+  "viewport": [
+    1440,
+    810
+  ],
+  "mode": "slides",
+  "states": [
+    {
+      "filter": "mean",
+      "path": "previews/slides-mean.png",
+      "sha256": "ffd8ce0746d614f390a2a35f4e4115e879dfed29ba262b4f24583c1c42094eb5",
+      "focus": "=\n51\n9\n≈\n5.67"
+    },
+    {
+      "filter": "edge",
+      "path": "previews/slides-edge.png",
+      "sha256": "16cf97cc4ca07e21da7774fa4cf49c17b1e4403961177c044f3ba5b55f37a3ec",
+      "focus": "=\n28"
+    }
+  ],
+  "status": "passed"
+}

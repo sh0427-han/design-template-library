@@ -1,0 +1,270 @@
+[
+  {
+    "mode": "scroll",
+    "size": [
+      1600,
+      950
+    ],
+    "invalid_url": false,
+    "layout": {
+      "frameBottom": 878,
+      "noteBottom": 950,
+      "scrollHeight": 950,
+      "height": 950,
+      "scrollWidth": 1600,
+      "width": 1600
+    }
+  },
+  {
+    "mode": "scroll",
+    "size": [
+      1600,
+      950
+    ],
+    "invalid_url": true,
+    "layout": {
+      "frameBottom": 882,
+      "noteBottom": 950,
+      "scrollHeight": 950,
+      "height": 950,
+      "scrollWidth": 1600,
+      "width": 1600
+    }
+  },
+  {
+    "mode": "scroll",
+    "size": [
+      1440,
+      810
+    ],
+    "invalid_url": false,
+    "layout": {
+      "frameBottom": 742,
+      "noteBottom": 810,
+      "scrollHeight": 810,
+      "height": 810,
+      "scrollWidth": 1440,
+      "width": 1440
+    }
+  },
+  {
+    "mode": "scroll",
+    "size": [
+      1440,
+      810
+    ],
+    "invalid_url": true,
+    "layout": {
+      "frameBottom": 742,
+      "noteBottom": 810,
+      "scrollHeight": 810,
+      "height": 810,
+      "scrollWidth": 1440,
+      "width": 1440
+    }
+  },
+  {
+    "mode": "scroll",
+    "size": [
+      1366,
+      768
+    ],
+    "invalid_url": false,
+    "layout": {
+      "frameBottom": 700,
+      "noteBottom": 768,
+      "scrollHeight": 768,
+      "height": 768,
+      "scrollWidth": 1366,
+      "width": 1366
+    }
+  },
+  {
+    "mode": "scroll",
+    "size": [
+      1366,
+      768
+    ],
+    "invalid_url": true,
+    "layout": {
+      "frameBottom": 700,
+      "noteBottom": 768,
+      "scrollHeight": 768,
+      "height": 768,
+      "scrollWidth": 1366,
+      "width": 1366
+    }
+  },
+  {
+    "mode": "scroll",
+    "size": [
+      1280,
+      720
+    ],
+    "invalid_url": false,
+    "layout": {
+      "frameBottom": 652,
+      "noteBottom": 720,
+      "scrollHeight": 720,
+      "height": 720,
+      "scrollWidth": 1280,
+      "width": 1280
+    }
+  },
+  {
+    "mode": "scroll",
+    "size": [
+      1280,
+      720
+    ],
+    "invalid_url": true,
+    "layout": {
+      "frameBottom": 652,
+      "noteBottom": 720,
+      "scrollHeight": 720,
+      "height": 720,
+      "scrollWidth": 1280,
+      "width": 1280
+    }
+  },
+  {
+    "mode": "slides",
+    "size": [
+      1600,
+      950
+    ],
+    "invalid_url": false,
+    "layout": {
+      "frameBottom": 880,
+      "noteBottom": 950,
+      "scrollHeight": 950,
+      "height": 950,
+      "scrollWidth": 1600,
+      "width": 1600
+    }
+  },
+  {
+    "mode": "slides",
+    "size": [
+      1600,
+      950
+    ],
+    "invalid_url": true,
+    "layout": {
+      "frameBottom": 894,
+      "noteBottom": 950,
+      "scrollHeight": 950,
+      "height": 950,
+      "scrollWidth": 1600,
+      "width": 1600
+    }
+  },
+  {
+    "mode": "slides",
+    "size": [
+      1440,
+      810
+    ],
+    "invalid_url": false,
+    "layout": {
+      "frameBottom": 754,
+      "noteBottom": 810,
+      "scrollHeight": 810,
+      "height": 810,
+      "scrollWidth": 1440,
+      "width": 1440
+    }
+  },
+  {
+    "mode": "slides",
+    "size": [
+      1440,
+      810
+    ],
+    "invalid_url": true,
+    "layout": {
+      "frameBottom": 754,
+      "noteBottom": 810,
+      "scrollHeight": 810,
+      "height": 810,
+      "scrollWidth": 1440,
+      "width": 1440
+    }
+  },
+  {
+    "mode": "slides",
+    "size": [
+      1366,
+      768
+    ],
+    "invalid_url": false,
+    "layout": {
+      "frameBottom": 712,
+      "noteBottom": 768,
+      "scrollHeight": 768,
+      "height": 768,
+      "scrollWidth": 1366,
+      "width": 1366
+    }
+  },
+  {
+    "mode": "slides",
+    "size": [
+      1366,
+      768
+    ],
+    "invalid_url": true,
+    "layout": {
+      "frameBottom": 712,
+      "noteBottom": 768,
+      "scrollHeight": 768,
+      "height": 768,
+      "scrollWidth": 1366,
+      "width": 1366
+    }
+  },
+  {
+    "mode": "slides",
+    "size": [
+      1280,
+      720
+    ],
+    "invalid_url": false,
+    "layout": {
+      "frameBottom": 664,
+      "noteBottom": 720,
+      "scrollHeight": 720,
+      "height": 720,
+      "scrollWidth": 1280,
+      "width": 1280
+    }
+  },
+  {
+    "mode": "slides",
+    "size": [
+      1280,
+      720
+    ],
+    "invalid_url": true,
+    "layout": {
+      "frameBottom": 664,
+      "noteBottom": 720,
+      "scrollHeight": 720,
+      "height": 720,
+      "scrollWidth": 1280,
+      "width": 1280
+    }
+  },
+  {
+    "failure": "abort",
+    "error_and_retry": "passed"
+  },
+  {
+    "failure": "503",
+    "error_and_retry": "passed"
+  },
+  {
+    "failure": "wrongmime",
+    "error_and_retry": "passed"
+  }
+]

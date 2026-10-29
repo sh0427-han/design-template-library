@@ -1,0 +1,134 @@
+{
+  "role": "Independent Reviewer /root/kernel_resume_reviewer (separate from Planner and all Builders)",
+  "round": 1,
+  "source_sha": "ab713e75ab92d5ad8a969d01e4b66a66a0a6691a",
+  "baseline_main": "b4fdef24b1c6567fd81e9ab4e9b20ad1295d8442",
+  "D0": "286bee0f719483dc02f831aa6638a734c2de4386",
+  "source_frozen_during_review": true,
+  "verdict": "CHANGES_REQUIRED; no independent PASS or v1.0 readiness claim",
+  "findings": [
+    {
+      "id": "R1-01",
+      "severity": "P1",
+      "category": "E implementation / initial content failure",
+      "source": "examples/interactive-kernel/viewer.js:30-37; slides.html/scroll.html",
+      "finding": "Aborted actual content.html request leaves parent in 자료를 불러오는 중 with no error state and no explicit retry. The iframe has chrome-error://chromewebdata/ and zero visible retry controls.",
+      "evidence": {
+        "parentReady": null,
+        "loadVisible": true,
+        "parentText": "자료를 불러오는 중",
+        "visibleRetry": 0,
+        "frameURL": "chrome-error://chromewebdata/",
+        "bodyText": "The webpage at http://127.0.0.1:43801/examples/interactive-kernel/content.html?v=1&kernel=identity#kernel might be temporarily down or it may have moved permanently to a new web address."
+      },
+      "requirement": "D0 DESIGN.md:106 requires explicit retry for initial script/content failure. Handle inaccessible iframe contentWindow and load failure/time limit with actionable retry."
+    },
+    {
+      "id": "R1-02",
+      "severity": "P2",
+      "category": "E implementation / visible technical contract",
+      "source": "examples/interactive-kernel/content.html:39-45; app.js:86-89",
+      "finding": "Visible output legend gives signs only, omitting fixed −36..+36 scale and distinction between raw values and display colors. Visible conditions omit no kernel flip and single channel. [2][1] is not explained as zero-based / output 3행2열. General cross-correlation relation and kernel definition planned in D0 are absent. CNN/ReLU/Stride/Padding/Dilation/Bias appear without first-use meaning.",
+      "requirement": "D0 DESIGN.md:67,71,91,93,95,118 plus DESIGN_SYSTEM first-use terms. Keep one-slide scope while making essential meanings visible; do not rewrite D0 to pretend omissions were planned.",
+      "evidence": "Confirmed actual visible body text in real HTTP browser and direct content.html. Arithmetic itself is correct and preserves signed values."
+    },
+    {
+      "id": "R1-03",
+      "severity": "P2",
+      "category": "E implementation / arrow alignment",
+      "source": "examples/interactive-kernel/lesson.css:44",
+      "finding": "Flow arrows center at y454.5 while all three matrix-slot centers are y440: 14.5 design-px error in all 8 actual screens. padding-top31 centers the whole figure track incorrectly.",
+      "requirement": "D0 DESIGN.md:117 and FIGURE standard §6 require matrix center alignment; align through the same title/matrix/caption grid track.",
+      "evidence": {
+        "matrix_center_y": 440,
+        "arrow_center_y": 454.5,
+        "error_design_px": 14.5,
+        "screens": 8
+      }
+    },
+    {
+      "id": "R1-04",
+      "severity": "P2",
+      "category": "E implementation / invalid-URL layout",
+      "source": "examples/interactive-kernel/viewer.css:8; viewer.js:20-26",
+      "finding": "Invalid-URL notice adds height but Slide stage still uses calc(100vh - 88px), so the Slide outer footer extends beyond viewport. At 1280×720 document height is755 although frame itself remains inside viewport.",
+      "requirement": "D0 DESIGN.md:120 requires viewer/notice actual height deduction.",
+      "evidence": {
+        "url": "http://127.0.0.1:37953/examples/interactive-kernel/slides.html?v=1&kernel=identity#kernel",
+        "height": 755,
+        "viewport": 720,
+        "note": "잘못된 주소 값을 기본값으로 복원했습니다."
+      }
+    },
+    {
+      "id": "R1-05",
+      "severity": "P2",
+      "category": "E implementation / math typography",
+      "source": "examples/interactive-kernel/app.js:71-73,88-90; lesson.css:35-36,52-54; content.html:45",
+      "finding": "Mean weights and focus exact fraction are plain slash text (1/9 and 51/9) rather than Native MathML fractions. D0 explicitly selects STIX MathML and global math typography requires mfrac for fractions. focus-result strong also uses synthetic bold unless font-synthesis is suppressed. Actual CDP family success does not validate mathematical layout or absence of synthetic bold.",
+      "requirement": "DESIGN_SYSTEM.md §본문과 수식의 서체 분리; D0 DESIGN.md:118,130. Use actual fraction layout or explicitly record and justify a scoped deviation rather than claiming full rule compliance."
+    },
+    {
+      "id": "R1-06",
+      "severity": "P2",
+      "category": "E implementation / font failure contract",
+      "source": "examples/interactive-kernel/viewer.js:30-37; app.js:88-91; content.html",
+      "finding": "When both WOFF2 requests are aborted, both FontFace statuses are error but parent reports ready=true with no visible font warning. Fallback is available, but the D0 promised guidance and distinction from actual font success are missing. Viewer also reveals content before document.fonts.ready.",
+      "requirement": "D0 DESIGN.md:106; default runtime must communicate font fallback; final preview/actual-font proof remain separate.",
+      "evidence": {
+        "parentReady": "true",
+        "loadVisible": false,
+        "parentText": "자료를 불러오는 중",
+        "visibleRetry": 0,
+        "frameURL": "http://127.0.0.1:43801/examples/interactive-kernel/content.html?v=1&kernel=identity#kernel",
+        "bodyText": "VISION AI · FILTER PRACTICE\n필터를 바꾸면 달라지는 출력\n\n같은 입력에 다른 가중치를 적용해 공간 특징의 변화를 확인\n\nFILTER → OUTPUT\n같은 입력, 달라지는 필터 반응\n필터 선택\nIdentity · 항등\nMean · 평균 블러\nSobel-x · 세로 에지\n초기화\n01 · 입력 7×7\n0\n0\n1\n1\n1\n0\n0\n0\n1\n2\n6\n2\n1\n0\n1\n2\n6\n9\n6\n2\n1\n1\n2\n6\n9\n6\n2\n1\n1\n2\n6\n9\n6\n2\n1\n0\n",
+        "faces": [
+          {
+            "family": "Pretendard Variable",
+            "status": "error"
+          },
+          {
+            "family": "STIX Two Math",
+            "status": "error"
+          }
+        ]
+      }
+    },
+    {
+      "id": "R1-07",
+      "severity": "P2",
+      "category": "verification coverage / finalization gate",
+      "source": "examples/interactive-kernel/verify_kernel.py; verify_runtime.py:88-105,135-144",
+      "finding": "Current committed verifier only checks document.fonts loaded faces and root letter spacing, canvas overflow and outer frame bounds. It does not verify actual glyph role via CDP, per-node spacing, arrow alignment, internal padding, all result colors, malformed/alternative datasets, script/content/font fault behavior, or reduced-motion. Its passed status therefore cannot establish all D0 requirements.",
+      "requirement": "Add checks tied to actual identified defects and meaningful D0 scenarios; preserve previous partial evidence instead of inflating 8 viewport count by filters.",
+      "evidence": "Our independent broader review found R1-01..06 despite existing real-URL CI pass."
+    }
+  ],
+  "independent_verified": {
+    "math_oracle": "Hardcoded 7×7 input and identity/mean/Sobel-x coefficients in independent Python Fraction loops, not production expected/helper. Compared JS correlate for default/constant0/constant9/ramp:12 fixtures×25 outputs=300 plus independent 4×4/asymmetric kernel÷3 fixture4 outputs. Actual browser all3 filters per8 viewport/mode screens compared to same independent oracle (75 outputs per screen).",
+    "focus": "patch [[2,6,9]]×3; products/numerator/divisor/raw checked; identity6, mean51/9=17/3≈5.67, edge28. Nine addends present. Nonflipped asymmetric fixture passed.",
+    "actual_screens": "Local HTTP source, Chromium via scripts/reference_validation.browser_options(): 1600×950,1440×810,1366×768,1280×720 each Scroll/Slide=8 unique screens; filter states separate. Opened 8-screen montage and individual1280×720 Slide screenshot.",
+    "fonts": "CDP CSS.getPlatformFontsForNode for every painted direct-text node in source and viewer including form/nav, with role expectation STIX for cells/math-values and Pretendard for other body text: no unexpected families. All audited nodes spacing -1.33333px. Mean-state actual fraction text remains typography finding.",
+    "layout": "Text Range bounds inside panel actual21px border+padding; zero escapes in8 mean-state screens. Actual arrow centers measured and defect retained.",
+    "interaction": "Native End,Home,ArrowDown and focus retention; mean reload and Scroll→Slide roundtrip; invalid URL normalization/visible notice. Initial data/model/app failure and retry recover after requests restored. Content/font faults fail stated contracts.",
+    "source_preservation": "git diff baseline shows no edits to templates/, previous examples, or prior review records. D0 DESIGN SHA256 unchanged57345e3fc74a0e3cc61c3030cb89d958a6dd819427062923957a90e162405f55.",
+    "D01": "One upfront D-class role-scope gap is a reasonable claim: three edited common MD clarify general behavior vs threshold-specific example and avoid claiming domain-independent JS engine. Original threshold meaning preserved; new7×7/kernel/coordinates not promoted to common rules.",
+    "reuse": "Design and behavioral contracts demonstrably applied to different arithmetic. Literal shared calculation engine/Select component reuse is not established or claimed. No threshold/GT/confusion-matrix residue in new runtime."
+  },
+  "not_verified_in_this_round": [
+    "Remote Actions artifacts and remote PR/head status were not independently fetched by this Reviewer; local source ab713e75 was reviewed.",
+    "Whole existing8-reference/previous-example regression was not re-executed by this Reviewer; baseline source preservation confirmed only. Root is performing regression separately.",
+    "No actual screenreader listening, learner comprehension study, mobile/tablet, non-Chromium, learned CNN accuracy, fresh author reconstruction, or new Toggle/Slider domain.",
+    "Actual painted native popup option list platform fonts were not audited separately.",
+    "All-filter visual screenshots were not individually inspected; numbers were compared in each of3 states, screenshots/montage are mean state.",
+    "Full reduced-motion and data-schema failure matrix pending broader verifier."
+  ],
+  "evidence_files_local": [
+    "/tmp/kernel_independent_review.py",
+    "/tmp/kernel_fault_review.py",
+    "/tmp/kernel-independent-review/results.json",
+    "/tmp/kernel-independent-review/faults.json",
+    "/tmp/kernel-independent-review/montage.jpg"
+  ],
+  "recheck_plan": "Builder fixes after this record, then independent review under same criteria, maximum3 modification/review cycles; preserve round1 findings. No main merge."
+}

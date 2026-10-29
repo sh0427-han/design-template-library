@@ -48,9 +48,31 @@ def main():
     assert scope['markdown_finalized'] and scope['documentation_approval']['user_approved']
     baseline=scope['documentation_approval']['baseline']
     assert baseline=='ce840a68b423ae7508381dc2745e3e7e12ebd41a'
+    delta_path=ROOT/'examples/interactive-kernel/review/documentation-delta.json'
+    delta=json.loads(delta_path.read_text()) if delta_path.exists() else {}
+    updated=delta.get('updated_document_git_blob_sha1',{})
+    if delta:
+        assert delta['baseline_main']=='b4fdef24b1c6567fd81e9ab4e9b20ad1295d8442'
+        assert set(updated)=={'TEMPLATE_CATALOG.md','docs/INTERACTIVE_PATTERN.md','docs/REFERENCE_REUSE_WORKFLOW.md'}
+        prior_scope=subprocess.check_output(['git','show',f"{delta['baseline_main']}:previews/heading-review/change-scope.json"],cwd=ROOT)
+        assert (ROOT/'previews/heading-review/change-scope.json').read_bytes()==prior_scope,'historical approval record changed'
+        for path,blob_sha in updated.items():
+            prior=subprocess.check_output(['git','show',f"{delta['baseline_main']}:{path}"],cwd=ROOT)
+            assert hashlib.sha256(prior).hexdigest()==delta['before_document_sha256'][path],('revision baseline hash',path)
+            current=(ROOT/path).read_bytes()
+            git_blob=b'blob '+str(len(current)).encode()+b'\0'+current
+            assert hashlib.sha1(git_blob).hexdigest()==blob_sha,('declared revision hash',path)
     for path,expected in scope['documentation_changes'].items():
         assert path.endswith('.md')
-        assert hashlib.sha256((ROOT/path).read_bytes()).hexdigest()==expected['after_sha256'],('document changed',path)
+        data=(ROOT/path).read_bytes()
+        if path in updated:
+            assert delta['baseline_main']=='b4fdef24b1c6567fd81e9ab4e9b20ad1295d8442'
+            old=subprocess.run(['git','show',f"{delta['baseline_main']}:{path}"],cwd=ROOT,capture_output=True)
+            assert old.returncode==0 and hashlib.sha256(old.stdout).hexdigest()==expected['after_sha256'],('approved document preserved',path)
+            git_blob=b'blob '+str(len(data)).encode()+b'\0'+data
+            assert hashlib.sha1(git_blob).hexdigest()==updated[path],('current document version changed',path)
+        else:
+            assert hashlib.sha256(data).hexdigest()==expected['after_sha256'],('document changed',path)
         before=subprocess.run(['git','show',f'{baseline}:{path}'],cwd=ROOT,capture_output=True)
         assert (hashlib.sha256(before.stdout).hexdigest() if before.returncode==0 else None)==expected['before_sha256'],('document baseline',path)
     history=(ROOT/'examples/overfitting-generalization/review/design-history.md').read_text()

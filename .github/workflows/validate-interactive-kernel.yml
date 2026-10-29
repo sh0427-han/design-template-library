@@ -1,0 +1,56 @@
+name: Validate Interactive Kernel Real-URL
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'examples/interactive-kernel/**'
+      - '.github/workflows/validate-interactive-kernel.yml'
+permissions:
+  contents: read
+jobs:
+  kernel:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: python -m pip install playwright Pillow
+      - run: python -m playwright install --with-deps chromium
+      - name: Independent exact arithmetic, signed color and input-boundary checks
+        run: python examples/interactive-kernel/verify_kernel.py
+      - name: Real HTTP iframe, 8 screens, 24 filter states, actual glyphs and failures
+        run: python examples/interactive-kernel/verify_runtime.py
+      - name: Fourth threshold lesson regression
+        if: always()
+        run: python scripts/verify_threshold_metrics.py
+      - name: Previous overfitting lesson regression
+        if: always()
+        run: python scripts/verify_overfitting.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cnn-interactive-kernel-real-url-browser-evidence
+          path: |
+            examples/interactive-kernel/review/browser-evidence
+            examples/interactive-kernel/previews
+            examples/interactive-kernel/review/runtime-validation.json
+            examples/interactive-kernel/review/arithmetic-validation.json
+            examples/interactive-kernel/review/initial-resume-verifier-failure.json
+            examples/threshold-metrics/previews/validation.json
+            examples/overfitting-generalization/previews/validation.json
+      - name: Compact verification report transfer
+        if: always()
+        run: |
+          python - <<'PYTHON'
+          from pathlib import Path
+          import base64,gzip
+          reports=[Path('examples/interactive-kernel/review/runtime-validation.json'),Path('examples/interactive-kernel/review/arithmetic-validation.json'),Path('examples/threshold-metrics/previews/validation.json'),Path('examples/overfitting-generalization/previews/validation.json')]
+          for path in reports:
+              if path.exists():print('KERNEL_REPORT '+str(path)+' '+base64.b64encode(gzip.compress(path.read_bytes(),mtime=0)).decode())
+          PYTHON
