@@ -1,5 +1,10 @@
 # 기술 Figure 제작 표준 · HTML / SVG
 
+<!-- documentation-role:start -->
+> **문서 역할:** Figure 설계·기하·표현 정확성의 정본. 색상·서체는 DESIGN_SYSTEM, 검증 실행은 REFERENCE_REVIEW_GUIDE를 참조합니다. §13의 다중 DOM·가시 요소·Scroll 끝단 검사는 고유 보충 항목입니다.
+> [정본 위치·규칙 강도·현행/이력 구분](DOCUMENTATION_MAP.md)
+<!-- documentation-role:end -->
+
 이 문서는 PC에서 보는 HTML 웹페이지를 위한 제작 절차이며, 새로운 개념에서도 **정확성·구조·정렬·가독성·재현성**을 같은 수준으로 구현하는 기준입니다. PR #10의 도식 기준을 통합하고 일반화했습니다. #6 CNN은 구체적인 예시이며 모든 자료에 사진·두 Conv Block·3분류를 강제하지 않습니다.
 
 [디자인 시스템](../DESIGN_SYSTEM.md) · [페이지 상세 명세](REFERENCE_PAGE_SPECS.md) · [재사용 워크플로](REFERENCE_REUSE_WORKFLOW.md)

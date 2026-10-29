@@ -1,5 +1,10 @@
 # 8개 레퍼런스 상세 명세
 
+<!-- documentation-role:start -->
+> **문서 역할:** 8종 원본을 재구현하는 개별 상세 명세. 예제의 데이터·수식·좌표를 기록하며 새 주제 전체에 같은 값을 강제하지 않습니다.
+> [정본 위치·규칙 강도·현행/이력 구분](DOCUMENTATION_MAP.md)
+<!-- documentation-role:end -->
+
 **현재 HTML 원본의 재구현 명세**입니다. 어떤 페이지를 선택할지는 [카탈로그](../TEMPLATE_CATALOG.md), 시각 토큰은 [디자인 시스템](../DESIGN_SYSTEM.md), 그림 제작 절차는 [Figure 표준](FIGURE_PRODUCTION_STANDARD.md)을 봅니다. #1–#8의 실제 패널·Typography·도식·반응형 수치와 다른 개념에 적용할 기록표는 [컴포넌트 설계 규격](DESIGN_COMPONENT_RECIPES.md)에 있습니다. 공통 규칙을 여기에 반복 정의하지 않습니다.
 
 ## 공통 구현 계약

@@ -1,5 +1,10 @@
 # Design System · HTML Scroll / Slide
 
+<!-- documentation-role:start -->
+> **문서 역할:** 공통 디자인 규칙의 정본. 색상·서체·자간·행간·정보 위계와 새 개념의 설명 순서를 정의합니다.
+> [정본 위치·규칙 강도·현행/이력 구분](docs/DOCUMENTATION_MAP.md)
+<!-- documentation-role:end -->
+
 이 문서는 현재 구현의 **공통 시각 규격**입니다. 계산·데이터와 페이지별 배치는 [상세 명세](docs/REFERENCE_PAGE_SPECS.md), 재사용할 컴포넌트의 수치와 선택 기준은 [컴포넌트 설계 규격](docs/DESIGN_COMPONENT_RECIPES.md), 제작 절차와 SVG 기하는 [Figure 표준](docs/FIGURE_PRODUCTION_STANDARD.md)을 따릅니다. 결과물은 편집 가능한 HTML/CSS/SVG/JavaScript이며 PPTX를 만들지 않습니다.
 
 **제작 대상은 PC에서 보는 웹페이지입니다.** 새 Scroll/Slide 자료는 PC 브라우저의 화면 크기·창 크기·키보드/포인터 사용을 기준으로 설계합니다. 모바일·태블릿 전용 배치와 터치 대응은 필수 제작·검수 대상에서 제외합니다. 기존 예제의 작은 화면 호환 CSS와 과거 검증 기록은 구현 참고 자료입니다.

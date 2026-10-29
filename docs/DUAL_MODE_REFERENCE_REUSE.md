@@ -1,5 +1,10 @@
 # 기존 8개 원본을 Scroll / Slide 두 보기로 연결
 
+<!-- documentation-role:start -->
+> **문서 역할:** 8종을 두 모드에 연결한 구현·재사용 기록. 모드 계약은 dual-mode-learning/MODES.md, 제작 절차는 REFERENCE_REUSE_WORKFLOW를 따릅니다.
+> [정본 위치·규칙 강도·현행/이력 구분](DOCUMENTATION_MAP.md)
+<!-- documentation-role:end -->
+
 ## 역할과 최종 출력
 
 디자인은 기존 `templates/html/`의 8개 레퍼런스가 담당하고, `templates/dual-mode-learning/`은 보기와 탐색만 담당합니다. 출력은 **Scroll과 Slide 두 개**입니다. 실습은 #5의 내용이며 세 번째 형식이 아닙니다.
