@@ -1,5 +1,10 @@
 # #5 Interactive · 임계값과 분류 결과
 
+<!-- documentation-role:start -->
+> **문서 역할:** 승인된 #5 임계값 분류 예제의 상세 계약·검토 이력. 고정 GT·혼동행렬·Pretendard 수식 표기는 해당 원본의 범위이며 모든 새 Interactive 주제의 필수 구성은 아닙니다. 새 수식의 서체는 DESIGN_SYSTEM을 따릅니다. PR #24의 범용 계약 보완은 아직 미병합입니다.
+> [정본 위치·규칙 강도·현행/이력 구분](DOCUMENTATION_MAP.md)
+<!-- documentation-role:end -->
+
 새 자료의 제작 대상은 PC 웹페이지이며 [검토 가이드](REFERENCE_REVIEW_GUIDE.md)의 PC 4개 크기를 사용합니다. 이 문서의 기존 작은 화면 CSS와 126/42개 상태 등은 현재 구현·검증 스크립트의 기록이며 새 자료에 모바일 제작 의무를 부여하지 않습니다.
 
 

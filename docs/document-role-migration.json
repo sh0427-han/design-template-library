@@ -1,0 +1,65 @@
+{
+  "baseline": "bfeb7c6cb19a0373f6d4d1a8d54647988c79eebc",
+  "entries": [
+    {
+      "path": "README.md",
+      "inserted": "<!-- documentation-role:start -->\n> **문서 역할:** 저장소 입구와 실행 안내. 규칙을 찾는 순서는 문서 지도, 구체적인 규칙은 역할별 정본을 따릅니다.\n> [정본 위치·규칙 강도·현행/이력 구분](docs/DOCUMENTATION_MAP.md)\n<!-- documentation-role:end -->\n\n"
+    },
+    {
+      "path": "DESIGN_SYSTEM.md",
+      "inserted": "<!-- documentation-role:start -->\n> **문서 역할:** 공통 디자인 규칙의 정본. 색상·서체·자간·행간·정보 위계와 새 개념의 설명 순서를 정의합니다.\n> [정본 위치·규칙 강도·현행/이력 구분](docs/DOCUMENTATION_MAP.md)\n<!-- documentation-role:end -->\n\n"
+    },
+    {
+      "path": "TEMPLATE_CATALOG.md",
+      "inserted": "<!-- documentation-role:start -->\n> **문서 역할:** 패턴 선택 안내. 아래 수치·레이아웃은 현재 원본의 요약이며 새 주제의 고정값이 아닙니다.\n> [정본 위치·규칙 강도·현행/이력 구분](docs/DOCUMENTATION_MAP.md)\n<!-- documentation-role:end -->\n\n"
+    },
+    {
+      "path": "docs/DESIGN_COMPONENT_RECIPES.md",
+      "inserted": "<!-- documentation-role:start -->\n> **문서 역할:** 패턴별 재사용 계약과 권장 시작값. 실제 측정값 표는 원본 구현의 근거이며 공통 강제값이 아닙니다.\n> [정본 위치·규칙 강도·현행/이력 구분](DOCUMENTATION_MAP.md)\n<!-- documentation-role:end -->\n\n"
+    },
+    {
+      "path": "docs/FIGURE_PRODUCTION_STANDARD.md",
+      "inserted": "<!-- documentation-role:start -->\n> **문서 역할:** Figure 설계·기하·표현 정확성의 정본. 색상·서체는 DESIGN_SYSTEM, 검증 실행은 REFERENCE_REVIEW_GUIDE를 참조합니다. §13의 다중 DOM·가시 요소·Scroll 끝단 검사는 고유 보충 항목입니다.\n> [정본 위치·규칙 강도·현행/이력 구분](DOCUMENTATION_MAP.md)\n<!-- documentation-role:end -->\n\n"
+    },
+    {
+      "path": "docs/REFERENCE_PAGE_SPECS.md",
+      "inserted": "<!-- documentation-role:start -->\n> **문서 역할:** 8종 원본을 재구현하는 개별 상세 명세. 예제의 데이터·수식·좌표를 기록하며 새 주제 전체에 같은 값을 강제하지 않습니다.\n> [정본 위치·규칙 강도·현행/이력 구분](DOCUMENTATION_MAP.md)\n<!-- documentation-role:end -->\n\n"
+    },
+    {
+      "path": "docs/REFERENCE_REUSE_WORKFLOW.md",
+      "inserted": "<!-- documentation-role:start -->\n> **문서 역할:** 제작 순서의 정본. 반복되는 디자인·검토 요약은 각 정본을 적용하는 단계 안내입니다.\n> [정본 위치·규칙 강도·현행/이력 구분](DOCUMENTATION_MAP.md)\n<!-- documentation-role:end -->\n\n"
+    },
+    {
+      "path": "docs/REFERENCE_REVIEW_GUIDE.md",
+      "inserted": "<!-- documentation-role:start -->\n> **문서 역할:** 검토 순서·PC 화면·공통 검사 명령·결과 보고의 정본. 체크리스트는 디자인 규칙의 재정의가 아니라 확인 항목입니다.\n> [정본 위치·규칙 강도·현행/이력 구분](DOCUMENTATION_MAP.md)\n<!-- documentation-role:end -->\n\n"
+    },
+    {
+      "path": "docs/TEMPLATE_REUSE_VALIDATION.md",
+      "inserted": "<!-- documentation-role:start -->\n> **문서 역할:** D0/D1 비교·문제 분류·증거 판정의 정본. 사례별 교훈 절은 당시 이력이며 현행 규칙은 연결된 역할별 정본을 따릅니다.\n> [정본 위치·규칙 강도·현행/이력 구분](DOCUMENTATION_MAP.md)\n<!-- documentation-role:end -->\n\n"
+    },
+    {
+      "path": "docs/CONCEPT_REUSE_PROMPT.md",
+      "inserted": "<!-- documentation-role:start -->\n> **문서 역할:** 제작 요청용 실행 프롬프트. 절차와 규칙을 호출하며 독립적인 새 디자인 규칙을 정의하지 않습니다.\n> [정본 위치·규칙 강도·현행/이력 구분](DOCUMENTATION_MAP.md)\n<!-- documentation-role:end -->\n\n"
+    },
+    {
+      "path": "docs/REFERENCE_RELEASE_STATUS.md",
+      "inserted": "<!-- documentation-role:start -->\n> **문서 역할:** 시점별 배포·검토 상태 기록. 과거 승인·실행 결과는 현재 checkout의 신규 검증이나 새 변경의 승인으로 승계되지 않습니다.\n> [정본 위치·규칙 강도·현행/이력 구분](DOCUMENTATION_MAP.md)\n<!-- documentation-role:end -->\n\n"
+    },
+    {
+      "path": "docs/INTERACTIVE_PATTERN.md",
+      "inserted": "<!-- documentation-role:start -->\n> **문서 역할:** 승인된 #5 임계값 분류 예제의 상세 계약·검토 이력. 고정 GT·혼동행렬·Pretendard 수식 표기는 해당 원본의 범위이며 모든 새 Interactive 주제의 필수 구성은 아닙니다. 새 수식의 서체는 DESIGN_SYSTEM을 따릅니다. PR #24의 범용 계약 보완은 아직 미병합입니다.\n> [정본 위치·규칙 강도·현행/이력 구분](DOCUMENTATION_MAP.md)\n<!-- documentation-role:end -->\n\n"
+    },
+    {
+      "path": "docs/EXPERIMENT_PATTERN.md",
+      "inserted": "<!-- documentation-role:start -->\n> **문서 역할:** 승인된 #7 분류 평가 예제의 상세 계약. TP/FP/FN/TN 배치·12개 샘플·서체 기록은 해당 원본에 적용합니다. 새 수식의 서체는 DESIGN_SYSTEM을 따르며 새 데이터는 개별 DESIGN.md에 명세합니다.\n> [정본 위치·규칙 강도·현행/이력 구분](DOCUMENTATION_MAP.md)\n<!-- documentation-role:end -->\n\n"
+    },
+    {
+      "path": "docs/DUAL_MODE_REFERENCE_REUSE.md",
+      "inserted": "<!-- documentation-role:start -->\n> **문서 역할:** 8종을 두 모드에 연결한 구현·재사용 기록. 모드 계약은 dual-mode-learning/MODES.md, 제작 절차는 REFERENCE_REUSE_WORKFLOW를 따릅니다.\n> [정본 위치·규칙 강도·현행/이력 구분](DOCUMENTATION_MAP.md)\n<!-- documentation-role:end -->\n\n"
+    },
+    {
+      "path": "docs/USAGE.md",
+      "inserted": "<!-- documentation-role:start -->\n> **문서 역할:** 로컬 실행·편집의 빠른 시작. 디자인 규칙과 검증 명령은 연결된 정본에서 확인합니다.\n> [정본 위치·규칙 강도·현행/이력 구분](DOCUMENTATION_MAP.md)\n<!-- documentation-role:end -->\n\n"
+    }
+  ]
+}

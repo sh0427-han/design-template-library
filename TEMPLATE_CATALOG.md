@@ -1,5 +1,10 @@
 # Template Catalog · 8 HTML Reference Patterns
 
+<!-- documentation-role:start -->
+> **문서 역할:** 패턴 선택 안내. 아래 수치·레이아웃은 현재 원본의 요약이며 새 주제의 고정값이 아닙니다.
+> [정본 위치·규칙 강도·현행/이력 구분](docs/DOCUMENTATION_MAP.md)
+<!-- documentation-role:end -->
+
 이 카탈로그는 **내용에 맞는 시각 패턴을 선택하는 지도**입니다. 정확한 데이터·수식·기하 조건은 [REFERENCE_PAGE_SPECS.md](docs/REFERENCE_PAGE_SPECS.md), 공통 토큰은 [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md)를 따릅니다. 아래 설명은 현재 checkout의 HTML 원본을 기준으로 합니다. 초기 8종 통합의 출처·GitHub 이력은 [통합 보고서](docs/INTEGRATION_REPORT_2026-10-22.md)에 보존합니다.
 
 | 번호 | 이름 | 선택할 때 | 실제 레이아웃 | 원본 · 최신 대표 프리뷰 |

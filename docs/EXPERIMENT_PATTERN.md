@@ -1,5 +1,10 @@
 # Experiment 패턴 — 혼동행렬과 평가 지표 작성 규약
 
+<!-- documentation-role:start -->
+> **문서 역할:** 승인된 #7 분류 평가 예제의 상세 계약. TP/FP/FN/TN 배치·12개 샘플·서체 기록은 해당 원본에 적용합니다. 새 수식의 서체는 DESIGN_SYSTEM을 따르며 새 데이터는 개별 DESIGN.md에 명세합니다.
+> [정본 위치·규칙 강도·현행/이력 구분](DOCUMENTATION_MAP.md)
+<!-- documentation-role:end -->
+
 새 자료는 PC 웹페이지를 대상으로 [검토 가이드](REFERENCE_REVIEW_GUIDE.md)의 PC 4개 크기를 확인합니다. 아래 작은 화면 배치와 6개 크기 실행 설명은 기존 구현·호환성 회귀 기록이며 새 자료의 필수 제작 조건과 구분합니다.
 
 
