@@ -25,3 +25,9 @@ Shared canvas styling from ../../templates/html/styles.css and reference-layout.
 ## Verification
 
 Real Playwright Chromium, PC1600×950/1440×810/1366×768/1280×720 × both modes. Await local WOFF2; inspect CDP platform fonts, all text tracking, DOM text ranges and SVG bounds, panel padding, footer clearance, connector endpoints, console/network failures, mode roundtrip/reload, keyboard focus. Open all screenshots. Verify immutable inputs via hashes and record source digests. Technical claims reviewed independently against TASK requirements; no quantitative claims to calculate. External research only if technical uncertainty requires it; provenance separate.
+
+## Final implementation addendum (before first-result preservation)
+
+Measured implementation uses SVG viewBox1258×292 inside a panel with padding16px24px12px, title25/1.2, label16/1.25, title gaps8/12. This supersedes provisional height estimates above. Canvas remains1440×810, top40/side66/bottom30, title49, subtitle21 over two explicit introduction lines. SVG graph nodes: preparation y0,h74 and response y148,h80; external stage gap44px; connectors stop3.5px before node bounds. Storage-to-search uses y108; original-question branch uses y270. Nine functional nodes total; node titles21, secondary18, phase19, branch17. The branch paths are longer because they represent nonadjacent dependencies, not decorative process arrows. Flow text is semantic HTML/SVG, not an image.
+
+Notes are two equal columns with24px gap; body18/1.4, label19, gap4. Content gap12; final caption20/1.45 with11px17px padding; footer gap12 and padding-top11. All colors are shared tokens. `.rag-slide` uses overflow:visible; measured bounds rather than clipping enforce fit. Slide scale min(1,(width−40)/1440,(height−88)/810), Scroll min(1,(width−48)/1440). Native anchor provides accessible mode switching; one-page navigation has no inert arrows. JavaScript-disabled fallback is visible. No motion exists.
