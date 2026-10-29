@@ -257,6 +257,16 @@
       "path": "previews/html-step-by-step.jpg",
       "source_sha256": "b48a137f8226ad5eba17ff335b0b5eba84aa8ebd3655859fd7bab839aaa001e7",
       "provided_sha256": "b48a137f8226ad5eba17ff335b0b5eba84aa8ebd3655859fd7bab839aaa001e7"
+    },
+    {
+      "path": "templates/dual-mode-learning/DESIGN.md",
+      "source_sha256": "5aeb8ed9a6e457eb065e4c58a1cc006fb136793cdcac7b47ca5fc27ea0809270",
+      "provided_sha256": "5aeb8ed9a6e457eb065e4c58a1cc006fb136793cdcac7b47ca5fc27ea0809270"
+    },
+    {
+      "path": "templates/dual-mode-learning/MODES.md",
+      "source_sha256": "0e9c7d8e1eae59be5de0b313d1c64ae8ff82dac48e42faf66e8db8883bb835d7",
+      "provided_sha256": "0e9c7d8e1eae59be5de0b313d1c64ae8ff82dac48e42faf66e8db8883bb835d7"
     }
   ]
 }

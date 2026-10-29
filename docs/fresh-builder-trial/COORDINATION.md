@@ -33,3 +33,9 @@ Builder가 DESIGN/D0 선행 커밋, 구현·자체 검사·실제 화면 첫 결
 5. 최초 무교정 결과와 수정 후 결과를 분리한다. 한 과제 성공을 8종 전체·무제한 주제·학습자 이해 실험으로 확대하지 않는다.
 
 최종 결과와 Reviewer 인계·수정 시점은 후속 기록으로 추가한다.
+
+## 한도 중단과 재시작 · 2026-10-30
+
+첫 Builder 세션은 D0 설계 커밋 `170b4ef`만 남기고 종료됐다. 구현·Chromium·첫 결과 없음. 중단된 설계는 interrupted-attempt 및 Git bundle에 보존하며 재현 성공/실패로 판정하지 않는다. 이전 Agent context를 복구할 수 없어 새 Builder에 동일한 48개 입력 파일·TASK·PROTOCOL만 제공하여 처음부터 재시작한다. 이전 Builder DESIGN/D0는 제공하지 않는다. 새 경로는 `/workspace/fresh-builder-rag-rerun`이다. Reviewer도 새 context로 재생성한다. 외부 디자인 피드백은 어느 Builder에도 아직 제공하지 않았다.
+
+재시작 입력 패키지 정정: AGENTS가 필수로 지시한 공통 모드 계약 `templates/dual-mode-learning/DESIGN.md`와 `MODES.md`가 첫 입력 사본에서 빠져 있었음을 Coordinator가 확인했다. 같은 고정 SHA의 두 Markdown을 재시작 구현 전에 추가하여 입력 50개로 정정했다. 이는 라이브러리 문서 누락이나 새 디자인 규칙이 아닌 Coordinator의 자료 포장 오류다. 중단된 시도의 48개 manifest도 별도 보존한다. 이전 Builder의 설계·판단은 재시작 Builder에게 전달하지 않는다.
