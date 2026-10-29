@@ -39,3 +39,13 @@ Builder가 DESIGN/D0 선행 커밋, 구현·자체 검사·실제 화면 첫 결
 첫 Builder 세션은 D0 설계 커밋 `170b4ef`만 남기고 종료됐다. 구현·Chromium·첫 결과 없음. 중단된 설계는 interrupted-attempt 및 Git bundle에 보존하며 재현 성공/실패로 판정하지 않는다. 이전 Agent context를 복구할 수 없어 새 Builder에 동일한 48개 입력 파일·TASK·PROTOCOL만 제공하여 처음부터 재시작한다. 이전 Builder DESIGN/D0는 제공하지 않는다. 새 경로는 `/workspace/fresh-builder-rag-rerun`이다. Reviewer도 새 context로 재생성한다. 외부 디자인 피드백은 어느 Builder에도 아직 제공하지 않았다.
 
 재시작 입력 패키지 정정: AGENTS가 필수로 지시한 공통 모드 계약 `templates/dual-mode-learning/DESIGN.md`와 `MODES.md`가 첫 입력 사본에서 빠져 있었음을 Coordinator가 확인했다. 같은 고정 SHA의 두 Markdown을 재시작 구현 전에 추가하여 입력 50개로 정정했다. 이는 라이브러리 문서 누락이나 새 디자인 규칙이 아닌 Coordinator의 자료 포장 오류다. 중단된 시도의 48개 manifest도 별도 보존한다. 이전 Builder의 설계·판단은 재시작 Builder에게 전달하지 않는다.
+
+## 재시작 첫 결과와 첫 독립 리뷰
+
+- 새 Fresh Builder: `/root/fresh_builder_rag_run2`, `fork_turns="none"`; Independent Reviewer: `/root/rag_reviewer_run2`, 별도 `fork_turns="none"` context.
+- 설계/D0 원본 `c0410a6e6f76edfbc61276d381a096b30ca414dc` → 작업 브랜치 `c396c6b1ca7d4778c30e44461cb7231d81cdc54b`.
+- 외부 피드백 전 첫 결과 원본 `93ec54e5a4e9e71e53233aa9296e37cc68de3581` → 작업 브랜치 `09e824a6fe00abc98e70f00c26af9979d5487534`. 원본 코드·화면을 변경하지 않고 cherry-pick했다. 첫 화면8개와 소스 해시는 FIRST_SNAPSHOT.json, 원래 Git 이력은 builder-output.bundle에 보존한다.
+- Builder의 인계 기록 원본 `1b23b935453f92dd870a2b1c7e206994a9075871` → 작업 브랜치 `634669422253b24637e1929b98bbc092c1bd79eb`.
+- 첫 결과 보존 후 Reviewer에게 고정 SHA를 전달했다. Reviewer가 직접 화면8개를 확인하고 별도 Chromium8조건을 실행하여 PASS/차단0으로 판정했다. 구체적인 결과는 review-first/REVIEW.md와 audit.json에 있다.
+- **이 시점까지 디자인 교정 피드백 0회**. 환경/패키징 정정과 진행 상태 질문만 있었다. Builder 자체 높이 조정과 브라우저 경로 수정은 첫 결과 이전 자체 검사이며 외부 교정이 아니다.
+- 이후 첫 외부 피드백: RAG 전체가 의미 기반 검색만 한다고 읽히지 않도록 '의미 기반 검색의 예'라는 범위를 화면에 드러내는 선택적 보완 권고. 첫 결과는 PASS 그대로 유지하며, 새 공통 규칙 또는 소급 D0 실패로 집계하지 않는다. Builder에게 현재 시험의 Reviewer 보고서만 전달하고 문구 보완/8화면 재검증을 요청했다. 수정 후 독립 재검토는 별도 폴더에 보존한다.
