@@ -1,0 +1,272 @@
+{
+  "role": "Independent Reviewer /root/kernel_final_reviewer; new session, separate from all Planner/Builder/verifier authors",
+  "round": 2,
+  "source_sha": "cbf2ec93ac4921c484e56c5900cb013300b7c7c8",
+  "baseline_main": "b4fdef24b1c6567fd81e9ab4e9b20ad1295d8442",
+  "D0": "286bee0f719483dc02f831aa6638a734c2de4386",
+  "verdict": "PASS within the requested desktop Chromium Select-filter and documented reuse-validation scope; no main merge or user design/v1.0 approval inferred",
+  "unresolved_findings": [],
+  "resolved_findings": [
+    {
+      "id": "R1-01",
+      "original_severity": "P1",
+      "status": "RESOLVED",
+      "evidence": "Direct independent aborted content request, HTTP503, wrong MIME and no response >8seconds all produce visible parent retry and error API; restoring route and clicking retry reaches valid identity result."
+    },
+    {
+      "id": "R1-02",
+      "original_severity": "P2",
+      "status": "RESOLVED",
+      "evidence": "Visible fixed signed color scale −36/0/+36 and number/color distinction, no kernel flip, single channel, cross-correlation sum over stated3×3 neighborhood, K definition and human-readable output3행2열 now present. CNN is expanded. Technical settings remain compact numeric conditions, with full precise mathematical definitions in DESIGN."
+    },
+    {
+      "id": "R1-03",
+      "original_severity": "P2",
+      "status": "RESOLVED",
+      "evidence": "Independent actual arrow and matrix-slot bounding-center comparisons are exactly0px in all8 viewport/mode screens and3 filter states."
+    },
+    {
+      "id": "R1-04",
+      "original_severity": "P2",
+      "status": "RESOLVED",
+      "evidence": "Invalid v/kernel/hash address at1280×720 Slide gives visible normalization notice, identity state and document height720, rather than prior755. Viewer subtracts actual notice/navigation/footer/feedback dimensions."
+    },
+    {
+      "id": "R1-05",
+      "original_severity": "P2",
+      "status": "RESOLVED",
+      "evidence": "Independent Mean UI asserts9 native mfrac weights and focus exact mfrac with approximate display. Actual CDP confirms STIX in kernel fraction/output/focus and Pretendard in title/Select/description. Computed font-synthesis is none for focus result."
+    },
+    {
+      "id": "R1-06",
+      "original_severity": "P2",
+      "status": "RESOLVED",
+      "evidence": "Independent aborted WOFF2 case reaches usable fallback with visible font notice. Normal checkFonts is awaited before data readiness, and parent also awaits document.fonts.ready. Font failure proof is separate from actual successful custom-font glyph proof."
+    },
+    {
+      "id": "R1-07",
+      "original_severity": "P2",
+      "status": "RESOLVED",
+      "evidence": "Audited expanded verifiers and matching source fingerprints: independent Python Fraction5inputs×3filters/375cells; actual CDP roles/per-node spacing; internal padding, text ranges, SVG/arrow, raw/color/contrast, stableDOM, alternate inputs, keyboard and failures. This review additionally ran its own separate hardcoded Fraction/browser/fault/CDP probes, rather than calling existing passed JSON an independent review."
+    }
+  ],
+  "independently_executed": {
+    "math": "Hardcoded input and three coefficient matrices in separate /tmp/kernel_round2_review.py; independent Python Fraction loops compared all25 raw outputs for all3filters in each8viewport/mode cases. No production arithmetic imported for expected values.",
+    "browser_results": {
+      "screens": [
+        {
+          "viewport": [
+            1600,
+            950
+          ],
+          "mode": "scroll",
+          "filters": 3,
+          "arrow_max_error": 0,
+          "console_errors": []
+        },
+        {
+          "viewport": [
+            1600,
+            950
+          ],
+          "mode": "slides",
+          "filters": 3,
+          "arrow_max_error": 0,
+          "console_errors": []
+        },
+        {
+          "viewport": [
+            1440,
+            810
+          ],
+          "mode": "scroll",
+          "filters": 3,
+          "arrow_max_error": 0,
+          "console_errors": []
+        },
+        {
+          "viewport": [
+            1440,
+            810
+          ],
+          "mode": "slides",
+          "filters": 3,
+          "arrow_max_error": 0,
+          "console_errors": []
+        },
+        {
+          "viewport": [
+            1366,
+            768
+          ],
+          "mode": "scroll",
+          "filters": 3,
+          "arrow_max_error": 0,
+          "console_errors": []
+        },
+        {
+          "viewport": [
+            1366,
+            768
+          ],
+          "mode": "slides",
+          "filters": 3,
+          "arrow_max_error": 0,
+          "console_errors": []
+        },
+        {
+          "viewport": [
+            1280,
+            720
+          ],
+          "mode": "scroll",
+          "filters": 3,
+          "arrow_max_error": 0,
+          "console_errors": []
+        },
+        {
+          "viewport": [
+            1280,
+            720
+          ],
+          "mode": "slides",
+          "filters": 3,
+          "arrow_max_error": 0,
+          "console_errors": []
+        }
+      ],
+      "faults": [
+        {
+          "case": "abort",
+          "passed": true
+        },
+        {
+          "case": "503",
+          "passed": true
+        },
+        {
+          "case": "wrongmime",
+          "passed": true
+        },
+        {
+          "case": "timeout",
+          "passed": true
+        },
+        {
+          "case": "font",
+          "passed": true
+        }
+      ],
+      "invalid_url_height": 720,
+      "keyboard_reload_mode": true
+    },
+    "actual_glyph_CDP": [
+      {
+        "selector": "h1",
+        "fonts": [
+          {
+            "familyName": "Pretendard Variable",
+            "postScriptName": "PretendardVariable-Regular",
+            "isCustomFont": true,
+            "glyphCount": 15
+          }
+        ],
+        "spacing": "-1.33333px"
+      },
+      {
+        "selector": "#kernel-select",
+        "fonts": [
+          {
+            "familyName": "Pretendard Variable",
+            "postScriptName": "PretendardVariable-Regular",
+            "isCustomFont": true,
+            "glyphCount": 12
+          }
+        ],
+        "spacing": "-1.33333px"
+      },
+      {
+        "selector": "#role-description",
+        "fonts": [
+          {
+            "familyName": "Pretendard Variable",
+            "postScriptName": "PretendardVariable-Regular",
+            "isCustomFont": true,
+            "glyphCount": 34
+          }
+        ],
+        "spacing": "-1.33333px"
+      },
+      {
+        "selector": "#output-matrix .cell",
+        "fonts": [
+          {
+            "familyName": "STIX Two Math",
+            "postScriptName": "STIXTwoMath-Regular",
+            "isCustomFont": true,
+            "glyphCount": 4
+          }
+        ],
+        "spacing": "-1.33333px"
+      },
+      {
+        "selector": "#kernel-matrix mfrac mn",
+        "fonts": [
+          {
+            "familyName": "STIX Two Math",
+            "postScriptName": "STIXTwoMath-Regular",
+            "isCustomFont": true,
+            "glyphCount": 1
+          }
+        ],
+        "spacing": "-1.33333px"
+      },
+      {
+        "selector": "#focus-result mfrac mn",
+        "fonts": [
+          {
+            "familyName": "STIX Two Math",
+            "postScriptName": "STIXTwoMath-Regular",
+            "isCustomFont": true,
+            "glyphCount": 2
+          }
+        ],
+        "spacing": "-1.33333px"
+      }
+    ],
+    "visual_inspection": "Opened and inspected actual1280×720 Slide Sobel-x and Mean PNGs. Matrix focus correspondence, arrows, signed numbers, native fractions, conditions, legend, role explanation and footers are visible without overlap in those captures.",
+    "preservation": "git diff baseline -- templates/ and all4prior-example directories is empty. D0 DESIGN.md and VALIDATION.md original bytes remain exact prefixes. Actual runtime report source SHA256 entries match current files.",
+    "state": "All3 Select states retain cell node identities and agree among current Select/name/fulloutput. End keyboard selectsedge while preserving focus; selectededge survives reload and Slide→Scroll mode switch.",
+    "probe_correction": "The independent timeout probe initially waited for full iframe load, so Playwright goto timed out on the deliberately unanswered route. The probe was corrected to wait for DOMContentLoaded before asserting the product8second timeout. On context cleanup Playwright emitted CancelledError for that deliberately unanswered route; this is harness cleanup of the injected fault, not a normal product console error. Normal8screens had zero pageerrors."
+  },
+  "documentation_assessment": {
+    "D01": "One shared role-scope omission, zero contradictions, three common MD changes is supported. The original generic Interactive name and threshold-specific contract lacked an explicit boundary. Current MD separates generic design/behavior from threshold-only source and disclaims a reusable engine/component package.",
+    "A_E": "MathML, alignment, font/failure and boundary mistakes are existing rule application/verification errors, not additional shared-document gaps. Their earlier failure records remain preserved.",
+    "C": "7×7input,3fixedkernels,focuscoordinates,fixed±36mapping,renderdetails are topic-specific and not promoted to universal tokens.",
+    "reuse": "The new arithmetic is not classification threshold logic with renamed labels. Palette/fonts/panel/figure/nativeUI and single-state/stableDOM/status contracts are reapplied. Literal reuse of an independent threshold calculation/render module was neither demonstrated nor claimed. A new generic interaction engine is not justified by the two domains.",
+    "finalization": "README/VALIDATION/reviewer-status are being finalized separately by root after this review; historical PENDING/source-specific CI statements must be retained as dated history and the final current verdict appended. Review approval covers frozen cbf runtime, not hypothetical later runtime edits."
+  },
+  "audited_evidence_not_personally_rerun": [
+    "review/arithmetic-validation.json broader alternate/invalid/asymmetric fixtures",
+    "review/runtime-validation.json full24filter/12alternate/7exception checks and its matching current source hashes",
+    "Existing-case regression reports and final CI records; root fetched remote workflow/job results, this Reviewer did not independently fetch GitHub"
+  ],
+  "limitations": [
+    "Actual screen-reader listening and learner comprehension not tested",
+    "Mobile/tablet/non-Chromium not tested",
+    "No trained CNN/model-performance claims",
+    "No new Toggle-domain transfer, all8patterns reuse, or fresh unaided-author reconstruction",
+    "Font CDP in this independent round sampled six concrete role nodes in Mean1280Slide; existing verifier broader all-visible-node audit was inspected rather than independently duplicated",
+    "Only two specific actual screenshots visually opened; all8screens×3states had independent programmatic arithmetic/alignment checks",
+    "No allfault×allviewport combinations",
+    "No main merge or user visual approval"
+  ],
+  "evidence_local": [
+    "/tmp/kernel_round2_review.py",
+    "/tmp/kernel-round2-independent-results.json",
+    "/tmp/kernel_r2_font.py",
+    "/tmp/kernel-r2-font.json",
+    "/tmp/kernel-r2-slides-1280.png",
+    "/tmp/kernel-r2-mean.png"
+  ]
+}

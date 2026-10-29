@@ -1,0 +1,180 @@
+{
+  "functional_commit": "cbf2ec93ac4921c484e56c5900cb013300b7c7c8",
+  "checked_on": "2026-10-29",
+  "runs": [
+    {
+      "id": 40662049459,
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "cbf2ec93ac4921c484e56c5900cb013300b7c7c8",
+      "url": "https://github.com/sh0427-han/design-template-library/actions/runs/40662049459",
+      "jobs": [
+        {
+          "name": "validate",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-node@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m pip install playwright Pillow",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m playwright install --with-deps chromium",
+              "conclusion": "success"
+            },
+            {
+              "name": "Syntax and shared token checks",
+              "conclusion": "success"
+            },
+            {
+              "name": "Eight references, real fonts and six viewports",
+              "conclusion": "success"
+            },
+            {
+              "name": "Interactive boundary states and reuse",
+              "conclusion": "success"
+            },
+            {
+              "name": "Gallery and Scroll / Slide regression",
+              "conclusion": "success"
+            },
+            {
+              "name": "Logistic regression Markdown reuse pilot",
+              "conclusion": "success"
+            },
+            {
+              "name": "Gradient descent D0/D1 reuse validation",
+              "conclusion": "success"
+            },
+            {
+              "name": "Markdown links and final design contracts",
+              "conclusion": "success"
+            },
+            {
+              "name": "Heading hierarchy preview, nine sources and both modes",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/upload-artifact@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Transfer heading preview evidence",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-node@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40662049712,
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "cbf2ec93ac4921c484e56c5900cb013300b7c7c8",
+      "url": "https://github.com/sh0427-han/design-template-library/actions/runs/40662049712",
+      "jobs": [
+        {
+          "name": "kernel",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-node@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m pip install playwright Pillow",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m playwright install --with-deps chromium",
+              "conclusion": "success"
+            },
+            {
+              "name": "Independent exact arithmetic, signed color and input-boundary checks",
+              "conclusion": "success"
+            },
+            {
+              "name": "Real HTTP iframe, 8 screens, 24 filter states, actual glyphs and failures",
+              "conclusion": "success"
+            },
+            {
+              "name": "Fourth threshold lesson regression",
+              "conclusion": "success"
+            },
+            {
+              "name": "Previous overfitting lesson regression",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/upload-artifact@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Compact verification report transfer",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-node@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
