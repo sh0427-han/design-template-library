@@ -10,6 +10,8 @@ body[data-mode=slide] .rag-deck {height:calc(100vh - 44px);align-content:center;
 .rag-slide .subtitle b {font-weight:600;color:var(--deep);}
 .rag-content {margin-top:16px;flex:1;display:flex;flex-direction:column;gap:12px;}
 .diagram-panel {background:var(--white);border:1px solid var(--border);border-radius:17px;padding:16px 24px 12px;}
+.panel-overline {display:flex;align-items:baseline;justify-content:space-between;gap:24px;}
+.scope-note {font-size:17px;line-height:1.25;color:var(--muted);}
 .panel-label {font-size:16px;font-weight:800;line-height:1.25;color:var(--blue);}
 .diagram-panel h2 {font-size:25px;line-height:1.2;margin:8px 0 12px;color:var(--navy);}
 .pipeline {width:100%;height:292px;display:block;overflow:visible;}

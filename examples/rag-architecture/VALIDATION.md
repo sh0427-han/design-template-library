@@ -42,3 +42,11 @@ All50 manifest input hashes match. Source hashes are in verification.json. Share
 ## Limits
 
 This validates selected flow/phase/structure relationships, not all eight patterns. No tensor/matrix/math/metrics, interactive parameter boundaries, mobile layout, actual RAG backend, real user comprehension, screen-reader listening, or user design approval tested. No external feedback received before preservation. No push, PR, merge, or deployment.
+
+## Post-review revision — 2026-10-30
+
+First-result evaluation above and commits c0410a6 / 93ec54e / 1b23b93 remain preserved. Independent REVIEW_FEEDBACK.md reported PASS with scope limits and no blocking defect. Its optional topic clarification was authorized after first-result preservation. Added visible `의미 기반 검색의 예` to the panel label and a short note that word-based or combined retrieval is also possible. Class C topic-specific wording; no new common rule, documentation gap, or retrospective D0 failure.
+
+Reran `python examples/rag-architecture/verify.py` for all8 actual Chromium PC4×2 cases after the wording change. Updated verification.json and all8 screenshots now represent this post-review revision; the first versions remain in commit93ec54e5a4e9e71e53233aa9296e37cc68de3581. Same font/CDP, tracking, DOM/SVG/text bounds, padding, footer, runtime and mode-switch checks pass. All50 immutable input hashes remain unchanged. Opened the revised slides-1280x720.png: both scope phrases fit on one row, without collision or clipping; no redesign needed. Review limitations above still apply.
+
+Separate post-review verifier portability issue (E), reported by Coordinator: the integrated repository archives its manifest at docs/fresh-builder-trial/input-manifest.json and retains original common Markdown. verify.py now explicitly prefers root INPUT_MANIFEST.json with provided_sha256 for isolated supplied inputs; if absent, it uses the archived path with source_sha256. Report records selected path/hash field; missing or mismatching inputs fail. No integrated repository was read. Local eight-case run still passes with provided_sha256. Integrated fallback execution remains for Coordinator/Reviewer to verify; the first local Chromium PASS is unchanged.

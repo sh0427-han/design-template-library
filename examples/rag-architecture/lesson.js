@@ -2,7 +2,7 @@ const mode=document.body.dataset.mode;
 document.querySelector('#lesson').innerHTML=`
 <header><div class="kicker">생성형 AI · 개념</div><h1>검색 증강 생성의 흐름</h1><p class="subtitle"><b>검색 증강 생성(Retrieval-Augmented Generation, RAG)</b><br>질문과 관련된 외부 문서를 찾아, 생성 모델이 답변을 만드는 데 활용하는 방식</p></header>
 <div class="rag-content">
-<section class="diagram-panel" aria-labelledby="diagram-title"><div class="panel-label">준비와 사용</div><h2 id="diagram-title">저장한 문서를 질문할 때 찾아 사용</h2>
+<section class="diagram-panel" aria-labelledby="diagram-title"><div class="panel-overline"><div class="panel-label">준비와 사용 · 의미 기반 검색의 예</div><span class="scope-note">단어 검색 또는 두 방식을 섞은 검색도 가능</span></div><h2 id="diagram-title">저장한 문서를 질문할 때 찾아 사용</h2>
 <svg class="pipeline" viewBox="0 0 1258 292" role="img" aria-labelledby="flow-title flow-desc"><title id="flow-title">문서 준비와 질문 응답 흐름</title><desc id="flow-desc">문서를 나누고 의미를 숫자로 표현하여 원문 조각과 함께 저장한다. 질문으로 저장소를 검색하고, 찾은 문서와 원래 질문을 생성 모델에 함께 제공하여 답변을 생성한다.</desc>
 <g class="phase"><text x="0" y="23">01 문서 준비</text><text x="0" y="171">02 질문 응답</text></g>
 <g class="box" data-node="documents"><rect x="160" y="0" width="190" height="74" rx="10"/><text x="255" y="30">외부 문서</text><text class="sub" x="255" y="56">답변에 참고할 자료</text></g>

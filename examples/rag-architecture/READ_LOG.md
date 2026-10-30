@@ -15,3 +15,9 @@ Environment-only: cloud-environment-runtime skill, managed environment status to
 Technical basis: TASK.md required facts plus Builder's domain reasoning, recorded separately in VALIDATION. This is a schematic explanation, not measured retrieval or model performance. No mathematical dataset needed.
 
 Own outputs: DESIGN.md/D0.md before implementation; own HTML/CSS/JS/verifier/JSON and all eight rendered screenshots subsequently read. All final input hashes match provided_sha256. No input edits.
+
+## Authorized post-first-result read — 2026-10-30
+
+Read the Coordinator-supplied REVIEW_FEEDBACK.md only after first result was committed and preserved. It is external feedback for this current trial, not an original D0 input. Applied only its optional semantic/keyword/hybrid retrieval scope clarification. Reread own modified source, actual verification result and smallest Slide screenshot; reran the eight Chromium cases. No additional prior examples, remote sources, or common input edits.
+
+Coordinator additionally reported the integrated manifest path and requested verifier portability fallback. Implemented from that explicit path contract without reading another directory/repository. Classified E tooling portability independently of optional C wording feedback. Local validation uses the original provided input hashes; integrated source-hash fallback is unexecuted here.

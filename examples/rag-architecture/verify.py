@@ -53,9 +53,16 @@ with sync_playwright() as p:
    reports.append({'mode':mode,'viewport':[w,h],'pass':ok,'errors':errors,'fonts':fonts,'roundtrip':roundtrip,'keyboardFocus':focus,**measurements})
    page.close()
  browser.close()
-manifest=json.loads((ROOT/'INPUT_MANIFEST.json').read_text())
-input_changes=[f['path'] for f in manifest['files'] if hashlib.sha256((ROOT/f['path']).read_bytes()).hexdigest()!=f['provided_sha256']]
-result={'browser':'real Playwright Chromium','cases':reports,'input_changes':input_changes,'source_sha256':{n:hashlib.sha256((OUT/n).read_bytes()).hexdigest() for n in ['lesson.js','lesson.css','scroll.html','slides.html']},'pass':all(r['pass'] for r in reports) and not input_changes}
+# Isolated trial uses provided (history-redacted) inputs. Integrated repository
+# uses original common documents and the archived manifest's source hashes.
+manifest_path=ROOT/'INPUT_MANIFEST.json'
+hash_field='provided_sha256'
+if not manifest_path.is_file():
+ manifest_path=ROOT/'docs/fresh-builder-trial/input-manifest.json'
+ hash_field='source_sha256'
+manifest=json.loads(manifest_path.read_text())
+input_changes=[f['path'] for f in manifest['files'] if not (ROOT/f['path']).is_file() or hashlib.sha256((ROOT/f['path']).read_bytes()).hexdigest()!=f[hash_field]]
+result={'input_manifest':str(manifest_path.relative_to(ROOT)),'input_hash_field':hash_field,'browser':'real Playwright Chromium','cases':reports,'input_changes':input_changes,'source_sha256':{n:hashlib.sha256((OUT/n).read_bytes()).hexdigest() for n in ['lesson.js','lesson.css','scroll.html','slides.html']},'pass':all(r['pass'] for r in reports) and not input_changes}
 (OUT/'verification.json').write_text(json.dumps(result,ensure_ascii=False,indent=2))
 print(json.dumps({'pass':result['pass'],'cases':[{k:r[k] for k in ['mode','viewport','pass','bounds','nodeOverflow','footerGap','errors']} for r in reports],'input_changes':input_changes},ensure_ascii=False,indent=2))
 server.shutdown()
