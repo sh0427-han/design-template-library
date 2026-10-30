@@ -49,3 +49,11 @@ Builder가 DESIGN/D0 선행 커밋, 구현·자체 검사·실제 화면 첫 결
 - 첫 결과 보존 후 Reviewer에게 고정 SHA를 전달했다. Reviewer가 직접 화면8개를 확인하고 별도 Chromium8조건을 실행하여 PASS/차단0으로 판정했다. 구체적인 결과는 review-first/REVIEW.md와 audit.json에 있다.
 - **이 시점까지 디자인 교정 피드백 0회**. 환경/패키징 정정과 진행 상태 질문만 있었다. Builder 자체 높이 조정과 브라우저 경로 수정은 첫 결과 이전 자체 검사이며 외부 교정이 아니다.
 - 이후 첫 외부 피드백: RAG 전체가 의미 기반 검색만 한다고 읽히지 않도록 '의미 기반 검색의 예'라는 범위를 화면에 드러내는 선택적 보완 권고. 첫 결과는 PASS 그대로 유지하며, 새 공통 규칙 또는 소급 D0 실패로 집계하지 않는다. Builder에게 현재 시험의 Reviewer 보고서만 전달하고 문구 보완/8화면 재검증을 요청했다. 수정 후 독립 재검토는 별도 폴더에 보존한다.
+
+## 후속 보완·최종 재검토 · 2026-10-30
+
+후속 Builder 작업이 한도로 다시 중단됐으나 이번에는 같은 Agent context를 재개하여 남아 있던 수정만 마감했다. 새로운 무맥락 시험으로 재집계하지 않는다. 원본 `01d9995866124894103aabe1d5dfa6ce4584c845`를 작업 브랜치 `9b0cd05c5ec5b0ad15fb7b9f934048e9e20425cf`로 반영했다.
+
+화면에는 의미 기반 검색 예시 조건과 단어/혼합 검색 가능성을 추가했다. Coordinator는 통합 저장소에서 verify.py가 격리 입력 manifest 위치만 가정하는 E 이식성 문제를 확인했고, Builder가 두 환경의 경로/해시 필드 선택을 명시적으로 고쳤다. Coordinator가 실제 통합 환경에서 verify.py를 실행하여 8/8 PASS와 source_sha256 입력50개 불변을 확인했다. verification.json은 이 통합 실행 결과이며 Builder 격리 실행 결과는 앞 커밋에 보존된다.
+
+Independent Reviewer는 review-first를 수정하지 않고 review-final에 별도 Chromium8/8·직접 화면8개·새 문구 실제폰트/경계·manifest 해시50개 검사와 PASS 보고서를 남겼다. 공통 규칙 변경0·추가 문서 누락0·첫 PASS 유지. 최종 결론과 재사용 범위는 RESULTS.md를 따른다.

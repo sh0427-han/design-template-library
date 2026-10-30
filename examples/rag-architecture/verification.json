@@ -1,6 +1,6 @@
 {
-  "input_manifest": "INPUT_MANIFEST.json",
-  "input_hash_field": "provided_sha256",
+  "input_manifest": "docs/fresh-builder-trial/input-manifest.json",
+  "input_hash_field": "source_sha256",
   "browser": "real Playwright Chromium",
   "cases": [
     {
