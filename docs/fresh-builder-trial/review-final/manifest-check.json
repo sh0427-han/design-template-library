@@ -1,0 +1,8 @@
+{
+  "manifest": "docs/fresh-builder-trial/input-manifest.json",
+  "hash_field": "source_sha256",
+  "file_count": 50,
+  "input_changes": [],
+  "reviewed_commit": "9b0cd05c5ec5b0ad15fb7b9f934048e9e20425cf",
+  "example_source_diff": ""
+}

@@ -1,0 +1,33 @@
+{
+  "baseline": "ff689f9a63b0aa350036b12a01695c8c52c7bda8",
+  "builder_design_commit": "c0410a6e6f76edfbc61276d381a096b30ca414dc",
+  "design_commit": "c396c6b",
+  "builder_first_commit": "93ec54e5a4e9e71e53233aa9296e37cc68de3581",
+  "first_result_commit": "09e824a6fe00abc98e70f00c26af9979d5487534",
+  "builder_handoff_commit": "1b23b935453f92dd870a2b1c7e206994a9075871",
+  "handoff_commit": "6346694",
+  "first_result_source_sha256": {
+    "examples/rag-architecture/D0.md": "b6b917c5c25c40c8506840081c29cdac34cebab29aa3e5ce1ee3972b7148f6b9",
+    "examples/rag-architecture/DESIGN.md": "0123864c97340c95b81c8517e69a2ba13add7047c26ab6e15655ca4b8f0907d7",
+    "examples/rag-architecture/README.md": "4643955c6c09ac937ab37273c8752eed067fa73250bf0ba1191c1faeb16f0a76",
+    "examples/rag-architecture/READ_LOG.md": "5eb439d4910857abe7109f68515472c7f43ccddf431ad8d2be49f568d9f82ba9",
+    "examples/rag-architecture/VALIDATION.md": "1ee360432f3392cbe35f8dab44c2f5d6306142dd8fa7cd0414582aed0d3f5ffd",
+    "examples/rag-architecture/lesson.css": "450562be6444216df2bcc6758131b970a511ffb058659c99af7ad3e888e3fe52",
+    "examples/rag-architecture/lesson.js": "e5b8dea40fa33cad9d756dd5fbdaf3f674c83b630d49af74fcca0aee3adb7eb9",
+    "examples/rag-architecture/scroll-1280x720.png": "dd68b8cc50e6f55b96b2ba49e3bfbd3274c3a5b9b3c3552ebf5d39ec1e2cfd2d",
+    "examples/rag-architecture/scroll-1366x768.png": "dfeaee94c709a0f4817a880a0681f3dfe1260492ee54e9c75cf338f26be28a3c",
+    "examples/rag-architecture/scroll-1440x810.png": "60178afc07ceb4c599d020e6166b4256bdcb294cc86fa3be40e6f816b7095472",
+    "examples/rag-architecture/scroll-1600x950.png": "132fee13c0c2440ca4d3a9f8fb7aa364ecb1642d1f172382ebc3ca14e80b251b",
+    "examples/rag-architecture/scroll.html": "1f0bfc48da9e799e0784244cd1f07f18057c8688a0574f1398307d3cdbac6d87",
+    "examples/rag-architecture/slides-1280x720.png": "77f033b98e5cf1673575ac487fef3efc659ee0277b6569011db32d2a84461e17",
+    "examples/rag-architecture/slides-1366x768.png": "6641e7e3e2e051b1af70fcec1d785c4fe5c72e8acf53c1dde90dec9794f446c9",
+    "examples/rag-architecture/slides-1440x810.png": "00f8491fb32cf86f683ac715d0d261c88fe813b33d63a175d903ca0071836048",
+    "examples/rag-architecture/slides-1600x950.png": "0d50ec0172f212563391c27cf4bde012e25463a9568c9af9b9e474e8a17921fe",
+    "examples/rag-architecture/slides.html": "5d3964f71da523e26eb788fd31771db13b5957a369a58db69e60a83b1523728e",
+    "examples/rag-architecture/verification.json": "0a4086fa45db40473fe9860e33fb6e1720b0826348cb4b9e1cd73c9bc4ad3008",
+    "examples/rag-architecture/verify.py": "f30b43d43fe164e162432baae1ac105c85a0f1c39fb2ab4e97692eb4ad1ad453"
+  },
+  "original_builder_history_bundle": "builder-output.bundle",
+  "bundle_sha256": "c3ff4671cff2e35434c63f81f70a0a3ba2a10dbb6945efe403586645c9ffe538",
+  "external_design_feedback_before_first_result": false
+}

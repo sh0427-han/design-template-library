@@ -1,0 +1,2767 @@
+{
+  "input_manifest": "docs/fresh-builder-trial/input-manifest.json",
+  "input_hash_field": "source_sha256",
+  "browser": "real Playwright Chromium",
+  "cases": [
+    {
+      "mode": "scroll",
+      "viewport": [
+        1600,
+        950
+      ],
+      "pass": true,
+      "errors": [],
+      "fonts": [
+        {
+          "selector": "h1",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 12
+            }
+          ]
+        },
+        {
+          "selector": ".subtitle",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 88
+            }
+          ]
+        },
+        {
+          "selector": ".phase text",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 8
+            }
+          ]
+        },
+        {
+          "selector": ".box text",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 5
+            }
+          ]
+        },
+        {
+          "selector": ".notes p",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 63
+            }
+          ]
+        },
+        {
+          "selector": "footer span",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 13
+            }
+          ]
+        },
+        {
+          "selector": ".modebar a",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 8
+            }
+          ]
+        }
+      ],
+      "roundtrip": true,
+      "keyboardFocus": "solid",
+      "textOverflow": [],
+      "panelPadding": {
+        "left": 25,
+        "right": 25,
+        "bottom": 13
+      },
+      "arrowChecks": [
+        {
+          "d": "M353.5 37 H390.5 M384.5 32 L390.5 37 L384.5 42",
+          "bbox": "{}"
+        },
+        {
+          "d": "M587.5 37 H624.5 M618.5 32 L624.5 37 L618.5 42",
+          "bbox": "{}"
+        },
+        {
+          "d": "M841.5 37 H878.5 M872.5 32 L878.5 37 L872.5 42",
+          "bbox": "{}"
+        },
+        {
+          "d": "M303.5 188 H340.5 M334.5 183 L340.5 188 L334.5 193",
+          "bbox": "{}"
+        },
+        {
+          "d": "M509.5 188 H546.5 M540.5 183 L546.5 188 L540.5 193",
+          "bbox": "{}"
+        },
+        {
+          "d": "M783.5 188 H820.5 M814.5 183 L820.5 188 L814.5 193",
+          "bbox": "{}"
+        },
+        {
+          "d": "M1007.5 188 H1044.5 M1038.5 183 L1044.5 188 L1038.5 193",
+          "bbox": "{}"
+        },
+        {
+          "d": "M230 231.5 V270 H665 V231.5 M660 237.5 L665 231.5 L670 237.5",
+          "bbox": "{}"
+        }
+      ],
+      "scale": 1,
+      "slide": {
+        "x": 80,
+        "y": 64,
+        "width": 1440,
+        "height": 810,
+        "bottom": 874
+      },
+      "bounds": [],
+      "spacing": [],
+      "nodeOverflow": [],
+      "texts": [
+        {
+          "text": "01 문서 준비",
+          "bbox": {
+            "x": 0,
+            "y": 5,
+            "width": 85.625,
+            "height": 23
+          }
+        },
+        {
+          "text": "02 질문 응답",
+          "bbox": {
+            "x": 0,
+            "y": 153,
+            "width": 90.17939758300781,
+            "height": 23
+          }
+        },
+        {
+          "text": "외부 문서",
+          "bbox": {
+            "x": 219.640625,
+            "y": 10,
+            "width": 70.89324951171875,
+            "height": 25
+          }
+        },
+        {
+          "text": "답변에 참고할 자료",
+          "bbox": {
+            "x": 195.0390625,
+            "y": 39,
+            "width": 120.68560791015625,
+            "height": 21
+          }
+        },
+        {
+          "text": "문서 나누기",
+          "bbox": {
+            "x": 445.234375,
+            "y": 10,
+            "width": 87.7093505859375,
+            "height": 25
+          }
+        },
+        {
+          "text": "찾기 좋은 크기의 조각",
+          "bbox": {
+            "x": 420.3984375,
+            "y": 39,
+            "width": 138.9700927734375,
+            "height": 21
+          }
+        },
+        {
+          "text": "검색할 표현 만들기",
+          "bbox": {
+            "x": 662.2890625,
+            "y": 10,
+            "width": 141.60260009765625,
+            "height": 25
+          }
+        },
+        {
+          "text": "의미를 숫자로 표현",
+          "bbox": {
+            "x": 673.0390625,
+            "y": 39,
+            "width": 120.68560791015625,
+            "height": 21
+          }
+        },
+        {
+          "text": "문서 저장소",
+          "bbox": {
+            "x": 948.234375,
+            "y": 10,
+            "width": 88.7093505859375,
+            "height": 25
+          }
+        },
+        {
+          "text": "원문 조각 + 검색 표현",
+          "bbox": {
+            "x": 923.921875,
+            "y": 39,
+            "width": 136.91796875,
+            "height": 21
+          }
+        },
+        {
+          "text": "저장한 문서에서 찾기",
+          "bbox": {
+            "x": 627.0625,
+            "y": 85,
+            "width": 125.875,
+            "height": 20
+          }
+        },
+        {
+          "text": "질문",
+          "bbox": {
+            "x": 213.1796875,
+            "y": 163,
+            "width": 34.81608581542969,
+            "height": 25
+          }
+        },
+        {
+          "text": "알고 싶은 내용",
+          "bbox": {
+            "x": 184.265625,
+            "y": 191,
+            "width": 93.23895263671875,
+            "height": 21
+          }
+        },
+        {
+          "text": "관련 문서 검색",
+          "bbox": {
+            "x": 371.1015625,
+            "y": 163,
+            "width": 107.97039794921875,
+            "height": 25
+          }
+        },
+        {
+          "text": "질문을 검색에 사용",
+          "bbox": {
+            "x": 365.0390625,
+            "y": 191,
+            "width": 121.68560791015625,
+            "height": 21
+          }
+        },
+        {
+          "text": "원래 질문 + 찾은 문서",
+          "bbox": {
+            "x": 584.6015625,
+            "y": 163,
+            "width": 160.97125244140625,
+            "height": 25
+          }
+        },
+        {
+          "text": "생성 모델에 함께 제공",
+          "bbox": {
+            "x": 596.3984375,
+            "y": 191,
+            "width": 137.9700927734375,
+            "height": 21
+          }
+        },
+        {
+          "text": "생성 모델",
+          "bbox": {
+            "x": 878.640625,
+            "y": 163,
+            "width": 71.89324951171875,
+            "height": 25
+          }
+        },
+        {
+          "text": "자료를 참고해 작성",
+          "bbox": {
+            "x": 854.0390625,
+            "y": 191,
+            "width": 119.921875,
+            "height": 21
+          }
+        },
+        {
+          "text": "답변",
+          "bbox": {
+            "x": 1111.1796875,
+            "y": 163,
+            "width": 33.8160400390625,
+            "height": 25
+          }
+        },
+        {
+          "text": "생성된 설명",
+          "bbox": {
+            "x": 1090.90625,
+            "y": 191,
+            "width": 74.1875,
+            "height": 21
+          }
+        },
+        {
+          "text": "원래 질문도 전달",
+          "bbox": {
+            "x": 390.421875,
+            "y": 245,
+            "width": 100.7884521484375,
+            "height": 20
+          }
+        }
+      ],
+      "footerGap": 12,
+      "horizontalOverflow": false,
+      "bodyText": "생성형 AI · 개념\n검색 증강 생성의 흐름\n\n검색 증강 생성(Retrieval-Augmented Generation, RAG)\n질문과 관련된 외부 문서를 찾아, 생성 모델이 답변을 만드는 데 활용하는 방식\n\n준비와 사용 · 의미 기반 검색의 예\n단어 검색 또는 두 방식을 섞은 검색도 가능\n저장한 문서를 질문할 때 찾아 사용\n01 문서 준비\n02 질문 응답\n외부 문서\n답변에 참고할 자료\n문서 나누기\n찾기 좋은 크기의 조각\n검색할 표현 만들기\n의미를 숫자로 표현\n문서 저장소\n원문 조각 + 검색 표현\n저장한 문서에서 찾기\n질문\n알고 싶은 내용\n관련 문서 검색\n질문을 검색에 사용\n원래 질문 + 찾은 문서\n생성 모델에 함께 제공\n생성 모델\n자료를 참고해 작성\n답변\n생성된 설명\n원래 질문도 전달\n\n재학습과의 차이\n재학습은 모델의 학습된 내부 값을 바꿈.\n이 흐름은 모델을 재학습하지 않고 외부 문서를 검색해 사용.\n\n정확성의 한계\n검색이 관련 자료를 놓치거나 모델이 잘못 해석할 수 있음.\n검색을 사용해도 답변의 정확성이 자동 보장되지는 않음.\n\n핵심 연결\n문서를 미리 준비하고, 질문할 때 찾은 내용을 답변의 참고 자료로 제공\n검색 증강 생성 · 개념\n01 / 01"
+    },
+    {
+      "mode": "scroll",
+      "viewport": [
+        1440,
+        810
+      ],
+      "pass": true,
+      "errors": [],
+      "fonts": [
+        {
+          "selector": "h1",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 12
+            }
+          ]
+        },
+        {
+          "selector": ".subtitle",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 88
+            }
+          ]
+        },
+        {
+          "selector": ".phase text",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 8
+            }
+          ]
+        },
+        {
+          "selector": ".box text",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 5
+            }
+          ]
+        },
+        {
+          "selector": ".notes p",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 63
+            }
+          ]
+        },
+        {
+          "selector": "footer span",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 13
+            }
+          ]
+        },
+        {
+          "selector": ".modebar a",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 8
+            }
+          ]
+        }
+      ],
+      "roundtrip": true,
+      "keyboardFocus": "solid",
+      "textOverflow": [],
+      "panelPadding": {
+        "left": 25.021551724137932,
+        "right": 25.021551724137932,
+        "bottom": 13.02801724137931
+      },
+      "arrowChecks": [
+        {
+          "d": "M353.5 37 H390.5 M384.5 32 L390.5 37 L384.5 42",
+          "bbox": "{}"
+        },
+        {
+          "d": "M587.5 37 H624.5 M618.5 32 L624.5 37 L618.5 42",
+          "bbox": "{}"
+        },
+        {
+          "d": "M841.5 37 H878.5 M872.5 32 L878.5 37 L872.5 42",
+          "bbox": "{}"
+        },
+        {
+          "d": "M303.5 188 H340.5 M334.5 183 L340.5 188 L334.5 193",
+          "bbox": "{}"
+        },
+        {
+          "d": "M509.5 188 H546.5 M540.5 183 L546.5 188 L540.5 193",
+          "bbox": "{}"
+        },
+        {
+          "d": "M783.5 188 H820.5 M814.5 183 L820.5 188 L814.5 193",
+          "bbox": "{}"
+        },
+        {
+          "d": "M1007.5 188 H1044.5 M1038.5 183 L1044.5 188 L1038.5 193",
+          "bbox": "{}"
+        },
+        {
+          "d": "M230 231.5 V270 H665 V231.5 M660 237.5 L665 231.5 L670 237.5",
+          "bbox": "{}"
+        }
+      ],
+      "scale": 0.9666666666666667,
+      "slide": {
+        "x": 24,
+        "y": 64,
+        "width": 1392,
+        "height": 783,
+        "bottom": 847
+      },
+      "bounds": [],
+      "spacing": [],
+      "nodeOverflow": [],
+      "texts": [
+        {
+          "text": "01 문서 준비",
+          "bbox": {
+            "x": 0,
+            "y": 5.413280010223389,
+            "width": 86.01438903808594,
+            "height": 21.724769592285156
+          }
+        },
+        {
+          "text": "02 질문 응답",
+          "bbox": {
+            "x": 0,
+            "y": 153.41326904296875,
+            "width": 89.70124816894531,
+            "height": 21.724769592285156
+          }
+        },
+        {
+          "text": "외부 문서",
+          "bbox": {
+            "x": 219.67300415039062,
+            "y": 10.344254493713379,
+            "width": 70.65399932861328,
+            "height": 24.828306198120117
+          }
+        },
+        {
+          "text": "답변에 참고할 자료",
+          "bbox": {
+            "x": 195.13565063476562,
+            "y": 38.41328048706055,
+            "width": 121.03759765625,
+            "height": 21.724769592285156
+          }
+        },
+        {
+          "text": "문서 나누기",
+          "bbox": {
+            "x": 445.275634765625,
+            "y": 10.344254493713379,
+            "width": 87.44866943359375,
+            "height": 24.828306198120117
+          }
+        },
+        {
+          "text": "찾기 좋은 크기의 조각",
+          "bbox": {
+            "x": 420.50390625,
+            "y": 38.41328048706055,
+            "width": 138.29405212402344,
+            "height": 21.724769592285156
+          }
+        },
+        {
+          "text": "검색할 표현 만들기",
+          "bbox": {
+            "x": 662.3540649414062,
+            "y": 10.344254493713379,
+            "width": 141.2918243408203,
+            "height": 24.828306198120117
+          }
+        },
+        {
+          "text": "의미를 숫자로 표현",
+          "bbox": {
+            "x": 673.1356201171875,
+            "y": 38.41328048706055,
+            "width": 120.00311279296875,
+            "height": 21.724769592285156
+          }
+        },
+        {
+          "text": "문서 저장소",
+          "bbox": {
+            "x": 948.275634765625,
+            "y": 10.344254493713379,
+            "width": 89.26133728027344,
+            "height": 24.828306198120117
+          }
+        },
+        {
+          "text": "원문 조각 + 검색 표현",
+          "bbox": {
+            "x": 924.037353515625,
+            "y": 38.41328048706055,
+            "width": 136.20703125,
+            "height": 21.724769592285156
+          }
+        },
+        {
+          "text": "저장한 문서에서 찾기",
+          "bbox": {
+            "x": 627.1129150390625,
+            "y": 84.44779205322266,
+            "width": 125.87112426757812,
+            "height": 20.690258026123047
+          }
+        },
+        {
+          "text": "질문",
+          "bbox": {
+            "x": 213.19725036621094,
+            "y": 163.34425354003906,
+            "width": 34.386566162109375,
+            "height": 24.82830810546875
+          }
+        },
+        {
+          "text": "알고 싶은 내용",
+          "bbox": {
+            "x": 184.33596801757812,
+            "y": 190.41326904296875,
+            "width": 92.63477325439453,
+            "height": 21.724769592285156
+          }
+        },
+        {
+          "text": "관련 문서 검색",
+          "bbox": {
+            "x": 371.1568298339844,
+            "y": 163.34425354003906,
+            "width": 108.4673843383789,
+            "height": 24.82830810546875
+          }
+        },
+        {
+          "text": "질문을 검색에 사용",
+          "bbox": {
+            "x": 365.1356201171875,
+            "y": 190.41326904296875,
+            "width": 121.03759765625,
+            "height": 21.724769592285156
+          }
+        },
+        {
+          "text": "원래 질문 + 찾은 문서",
+          "bbox": {
+            "x": 584.6798095703125,
+            "y": 163.34425354003906,
+            "width": 160.6404571533203,
+            "height": 24.82830810546875
+          }
+        },
+        {
+          "text": "생성 모델에 함께 제공",
+          "bbox": {
+            "x": 596.5039672851562,
+            "y": 190.41326904296875,
+            "width": 138.29405212402344,
+            "height": 21.724769592285156
+          }
+        },
+        {
+          "text": "생성 모델",
+          "bbox": {
+            "x": 878.6729736328125,
+            "y": 163.34425354003906,
+            "width": 71.4269790649414,
+            "height": 24.82830810546875
+          }
+        },
+        {
+          "text": "자료를 참고해 작성",
+          "bbox": {
+            "x": 854.1356201171875,
+            "y": 190.41326904296875,
+            "width": 120.00311279296875,
+            "height": 21.724769592285156
+          }
+        },
+        {
+          "text": "답변",
+          "bbox": {
+            "x": 1111.197265625,
+            "y": 163.34425354003906,
+            "width": 34.386566162109375,
+            "height": 24.82830810546875
+          }
+        },
+        {
+          "text": "생성된 설명",
+          "bbox": {
+            "x": 1090.9676513671875,
+            "y": 190.41326904296875,
+            "width": 74.3438720703125,
+            "height": 21.724769592285156
+          }
+        },
+        {
+          "text": "원래 질문도 전달",
+          "bbox": {
+            "x": 390.4565734863281,
+            "y": 244.44778442382812,
+            "width": 100.20716094970703,
+            "height": 20.69027328491211
+          }
+        }
+      ],
+      "footerGap": 11.993534482758621,
+      "horizontalOverflow": false,
+      "bodyText": "생성형 AI · 개념\n검색 증강 생성의 흐름\n\n검색 증강 생성(Retrieval-Augmented Generation, RAG)\n질문과 관련된 외부 문서를 찾아, 생성 모델이 답변을 만드는 데 활용하는 방식\n\n준비와 사용 · 의미 기반 검색의 예\n단어 검색 또는 두 방식을 섞은 검색도 가능\n저장한 문서를 질문할 때 찾아 사용\n01 문서 준비\n02 질문 응답\n외부 문서\n답변에 참고할 자료\n문서 나누기\n찾기 좋은 크기의 조각\n검색할 표현 만들기\n의미를 숫자로 표현\n문서 저장소\n원문 조각 + 검색 표현\n저장한 문서에서 찾기\n질문\n알고 싶은 내용\n관련 문서 검색\n질문을 검색에 사용\n원래 질문 + 찾은 문서\n생성 모델에 함께 제공\n생성 모델\n자료를 참고해 작성\n답변\n생성된 설명\n원래 질문도 전달\n\n재학습과의 차이\n재학습은 모델의 학습된 내부 값을 바꿈.\n이 흐름은 모델을 재학습하지 않고 외부 문서를 검색해 사용.\n\n정확성의 한계\n검색이 관련 자료를 놓치거나 모델이 잘못 해석할 수 있음.\n검색을 사용해도 답변의 정확성이 자동 보장되지는 않음.\n\n핵심 연결\n문서를 미리 준비하고, 질문할 때 찾은 내용을 답변의 참고 자료로 제공\n검색 증강 생성 · 개념\n01 / 01"
+    },
+    {
+      "mode": "scroll",
+      "viewport": [
+        1366,
+        768
+      ],
+      "pass": true,
+      "errors": [],
+      "fonts": [
+        {
+          "selector": "h1",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 12
+            }
+          ]
+        },
+        {
+          "selector": ".subtitle",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 88
+            }
+          ]
+        },
+        {
+          "selector": ".phase text",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 8
+            }
+          ]
+        },
+        {
+          "selector": ".box text",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 5
+            }
+          ]
+        },
+        {
+          "selector": ".notes p",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 63
+            }
+          ]
+        },
+        {
+          "selector": "footer span",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 13
+            }
+          ]
+        },
+        {
+          "selector": ".modebar a",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 8
+            }
+          ]
+        }
+      ],
+      "roundtrip": true,
+      "keyboardFocus": "solid",
+      "textOverflow": [],
+      "panelPadding": {
+        "left": 25.077769347496208,
+        "right": 25.077769347496208,
+        "bottom": 13.076631259484067
+      },
+      "arrowChecks": [
+        {
+          "d": "M353.5 37 H390.5 M384.5 32 L390.5 37 L384.5 42",
+          "bbox": "{}"
+        },
+        {
+          "d": "M587.5 37 H624.5 M618.5 32 L624.5 37 L618.5 42",
+          "bbox": "{}"
+        },
+        {
+          "d": "M841.5 37 H878.5 M872.5 32 L878.5 37 L872.5 42",
+          "bbox": "{}"
+        },
+        {
+          "d": "M303.5 188 H340.5 M334.5 183 L340.5 188 L334.5 193",
+          "bbox": "{}"
+        },
+        {
+          "d": "M509.5 188 H546.5 M540.5 183 L546.5 188 L540.5 193",
+          "bbox": "{}"
+        },
+        {
+          "d": "M783.5 188 H820.5 M814.5 183 L820.5 188 L814.5 193",
+          "bbox": "{}"
+        },
+        {
+          "d": "M1007.5 188 H1044.5 M1038.5 183 L1044.5 188 L1038.5 193",
+          "bbox": "{}"
+        },
+        {
+          "d": "M230 231.5 V270 H665 V231.5 M660 237.5 L665 231.5 L670 237.5",
+          "bbox": "{}"
+        }
+      ],
+      "scale": 0.9152777777777777,
+      "slide": {
+        "x": 24,
+        "y": 64,
+        "width": 1318,
+        "height": 741.375,
+        "bottom": 805.375
+      },
+      "bounds": [],
+      "spacing": [],
+      "nodeOverflow": [],
+      "texts": [
+        {
+          "text": "01 문서 준비",
+          "bbox": {
+            "x": 0,
+            "y": 4.4241743087768555,
+            "width": 85.76326751708984,
+            "height": 22.94660758972168
+          }
+        },
+        {
+          "text": "02 질문 응답",
+          "bbox": {
+            "x": 0,
+            "y": 152.42416381835938,
+            "width": 89.50727081298828,
+            "height": 22.94660758972168
+          }
+        },
+        {
+          "text": "외부 문서",
+          "bbox": {
+            "x": 219.67520141601562,
+            "y": 10.331478118896484,
+            "width": 71.32893371582031,
+            "height": 25.131999969482422
+          }
+        },
+        {
+          "text": "답변에 참고할 자료",
+          "bbox": {
+            "x": 195.05540466308594,
+            "y": 38.516868591308594,
+            "width": 120.95284271240234,
+            "height": 21.853912353515625
+          }
+        },
+        {
+          "text": "문서 나누기",
+          "bbox": {
+            "x": 445.2751159667969,
+            "y": 10.331478118896484,
+            "width": 87.44979095458984,
+            "height": 25.131999969482422
+          }
+        },
+        {
+          "text": "찾기 좋은 크기의 조각",
+          "bbox": {
+            "x": 420.4162902832031,
+            "y": 38.516868591308594,
+            "width": 138.23219299316406,
+            "height": 21.853912353515625
+          }
+        },
+        {
+          "text": "검색할 표현 만들기",
+          "bbox": {
+            "x": 662.3504028320312,
+            "y": 10.331478118896484,
+            "width": 141.2991943359375,
+            "height": 25.131999969482422
+          }
+        },
+        {
+          "text": "의미를 숫자로 표현",
+          "bbox": {
+            "x": 673.055419921875,
+            "y": 38.516868591308594,
+            "width": 119.88919830322266,
+            "height": 21.853912353515625
+          }
+        },
+        {
+          "text": "문서 저장소",
+          "bbox": {
+            "x": 948.2750244140625,
+            "y": 10.331478118896484,
+            "width": 89.22315979003906,
+            "height": 25.131999969482422
+          }
+        },
+        {
+          "text": "원문 조각 + 검색 표현",
+          "bbox": {
+            "x": 923.9454956054688,
+            "y": 38.516868591308594,
+            "width": 136.10890197753906,
+            "height": 21.853912353515625
+          }
+        },
+        {
+          "text": "저장한 문서에서 찾기",
+          "bbox": {
+            "x": 627.1102294921875,
+            "y": 84.60956573486328,
+            "width": 125.77951049804688,
+            "height": 20.76121711730957
+          }
+        },
+        {
+          "text": "질문",
+          "bbox": {
+            "x": 213.19125366210938,
+            "y": 163.3314666748047,
+            "width": 35.37736892700195,
+            "height": 25.13199806213379
+          }
+        },
+        {
+          "text": "알고 싶은 내용",
+          "bbox": {
+            "x": 184.27749633789062,
+            "y": 190.51687622070312,
+            "width": 92.5142822265625,
+            "height": 21.853912353515625
+          }
+        },
+        {
+          "text": "관련 문서 검색",
+          "bbox": {
+            "x": 371.1506042480469,
+            "y": 163.3314666748047,
+            "width": 108.37317657470703,
+            "height": 25.13199806213379
+          }
+        },
+        {
+          "text": "질문을 검색에 사용",
+          "bbox": {
+            "x": 365.0553894042969,
+            "y": 190.51687622070312,
+            "width": 120.95284271240234,
+            "height": 21.853912353515625
+          }
+        },
+        {
+          "text": "원래 질문 + 찾은 문서",
+          "bbox": {
+            "x": 584.6697998046875,
+            "y": 163.3314666748047,
+            "width": 161.32626342773438,
+            "height": 25.13199806213379
+          }
+        },
+        {
+          "text": "생성 모델에 함께 제공",
+          "bbox": {
+            "x": 596.416259765625,
+            "y": 190.51687622070312,
+            "width": 138.23219299316406,
+            "height": 21.853912353515625
+          }
+        },
+        {
+          "text": "생성 모델",
+          "bbox": {
+            "x": 878.6751708984375,
+            "y": 163.3314666748047,
+            "width": 71.32893371582031,
+            "height": 25.13199806213379
+          }
+        },
+        {
+          "text": "자료를 참고해 작성",
+          "bbox": {
+            "x": 854.0553588867188,
+            "y": 190.51687622070312,
+            "width": 119.88919830322266,
+            "height": 21.853912353515625
+          }
+        },
+        {
+          "text": "답변",
+          "bbox": {
+            "x": 1111.1912841796875,
+            "y": 163.3314666748047,
+            "width": 34.2846565246582,
+            "height": 25.13199806213379
+          }
+        },
+        {
+          "text": "생성된 설명",
+          "bbox": {
+            "x": 1090.9166259765625,
+            "y": 190.51687622070312,
+            "width": 74.16670989990234,
+            "height": 21.853912353515625
+          }
+        },
+        {
+          "text": "원래 질문도 전달",
+          "bbox": {
+            "x": 390.46160888671875,
+            "y": 244.60955810546875,
+            "width": 101.01815032958984,
+            "height": 20.76121711730957
+          }
+        }
+      ],
+      "footerGap": 11.984066767830045,
+      "horizontalOverflow": false,
+      "bodyText": "생성형 AI · 개념\n검색 증강 생성의 흐름\n\n검색 증강 생성(Retrieval-Augmented Generation, RAG)\n질문과 관련된 외부 문서를 찾아, 생성 모델이 답변을 만드는 데 활용하는 방식\n\n준비와 사용 · 의미 기반 검색의 예\n단어 검색 또는 두 방식을 섞은 검색도 가능\n저장한 문서를 질문할 때 찾아 사용\n01 문서 준비\n02 질문 응답\n외부 문서\n답변에 참고할 자료\n문서 나누기\n찾기 좋은 크기의 조각\n검색할 표현 만들기\n의미를 숫자로 표현\n문서 저장소\n원문 조각 + 검색 표현\n저장한 문서에서 찾기\n질문\n알고 싶은 내용\n관련 문서 검색\n질문을 검색에 사용\n원래 질문 + 찾은 문서\n생성 모델에 함께 제공\n생성 모델\n자료를 참고해 작성\n답변\n생성된 설명\n원래 질문도 전달\n\n재학습과의 차이\n재학습은 모델의 학습된 내부 값을 바꿈.\n이 흐름은 모델을 재학습하지 않고 외부 문서를 검색해 사용.\n\n정확성의 한계\n검색이 관련 자료를 놓치거나 모델이 잘못 해석할 수 있음.\n검색을 사용해도 답변의 정확성이 자동 보장되지는 않음.\n\n핵심 연결\n문서를 미리 준비하고, 질문할 때 찾은 내용을 답변의 참고 자료로 제공\n검색 증강 생성 · 개념\n01 / 01"
+    },
+    {
+      "mode": "scroll",
+      "viewport": [
+        1280,
+        720
+      ],
+      "pass": true,
+      "errors": [],
+      "fonts": [
+        {
+          "selector": "h1",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 12
+            }
+          ]
+        },
+        {
+          "selector": ".subtitle",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 88
+            }
+          ]
+        },
+        {
+          "selector": ".phase text",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 8
+            }
+          ]
+        },
+        {
+          "selector": ".box text",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 5
+            }
+          ]
+        },
+        {
+          "selector": ".notes p",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 63
+            }
+          ]
+        },
+        {
+          "selector": "footer span",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 13
+            }
+          ]
+        },
+        {
+          "selector": ".modebar a",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 8
+            }
+          ]
+        }
+      ],
+      "roundtrip": true,
+      "keyboardFocus": "solid",
+      "textOverflow": [],
+      "panelPadding": {
+        "left": 25.166396103896105,
+        "right": 25.166396103896105,
+        "bottom": 13.167613636363637
+      },
+      "arrowChecks": [
+        {
+          "d": "M353.5 37 H390.5 M384.5 32 L390.5 37 L384.5 42",
+          "bbox": "{}"
+        },
+        {
+          "d": "M587.5 37 H624.5 M618.5 32 L624.5 37 L618.5 42",
+          "bbox": "{}"
+        },
+        {
+          "d": "M841.5 37 H878.5 M872.5 32 L878.5 37 L872.5 42",
+          "bbox": "{}"
+        },
+        {
+          "d": "M303.5 188 H340.5 M334.5 183 L340.5 188 L334.5 193",
+          "bbox": "{}"
+        },
+        {
+          "d": "M509.5 188 H546.5 M540.5 183 L546.5 188 L540.5 193",
+          "bbox": "{}"
+        },
+        {
+          "d": "M783.5 188 H820.5 M814.5 183 L820.5 188 L814.5 193",
+          "bbox": "{}"
+        },
+        {
+          "d": "M1007.5 188 H1044.5 M1038.5 183 L1044.5 188 L1038.5 193",
+          "bbox": "{}"
+        },
+        {
+          "d": "M230 231.5 V270 H665 V231.5 M660 237.5 L665 231.5 L670 237.5",
+          "bbox": "{}"
+        }
+      ],
+      "scale": 0.8555555555555555,
+      "slide": {
+        "x": 24,
+        "y": 64,
+        "width": 1232,
+        "height": 693,
+        "bottom": 757
+      },
+      "bounds": [],
+      "spacing": [],
+      "nodeOverflow": [],
+      "texts": [
+        {
+          "text": "01 문서 준비",
+          "bbox": {
+            "x": 0,
+            "y": 5.463334083557129,
+            "width": 85.71639251708984,
+            "height": 22.213109970092773
+          }
+        },
+        {
+          "text": "02 질문 응답",
+          "bbox": {
+            "x": 0,
+            "y": 153.46331787109375,
+            "width": 89.5385513305664,
+            "height": 22.213109970092773
+          }
+        },
+        {
+          "text": "외부 문서",
+          "bbox": {
+            "x": 219.6617889404297,
+            "y": 10.125112533569336,
+            "width": 71.39947509765625,
+            "height": 24.55133056640625
+          }
+        },
+        {
+          "text": "답변에 참고할 자료",
+          "bbox": {
+            "x": 195.12872314453125,
+            "y": 38.46333312988281,
+            "width": 120.72119903564453,
+            "height": 22.213109970092773
+          }
+        },
+        {
+          "text": "문서 나누기",
+          "bbox": {
+            "x": 445.2587890625,
+            "y": 10.125112533569336,
+            "width": 87.48238372802734,
+            "height": 24.55133056640625
+          }
+        },
+        {
+          "text": "찾기 좋은 크기의 조각",
+          "bbox": {
+            "x": 420.5065612792969,
+            "y": 38.46333312988281,
+            "width": 139.14718627929688,
+            "height": 22.213109970092773
+          }
+        },
+        {
+          "text": "검색할 표현 만들기",
+          "bbox": {
+            "x": 662.3236083984375,
+            "y": 10.125112533569336,
+            "width": 141.3528289794922,
+            "height": 24.55133056640625
+          }
+        },
+        {
+          "text": "의미를 숫자로 표현",
+          "bbox": {
+            "x": 673.1287231445312,
+            "y": 38.46333312988281,
+            "width": 119.74253845214844,
+            "height": 22.213109970092773
+          }
+        },
+        {
+          "text": "문서 저장소",
+          "bbox": {
+            "x": 948.2587890625,
+            "y": 10.125112533569336,
+            "width": 89.3753433227539,
+            "height": 24.55133056640625
+          }
+        },
+        {
+          "text": "원문 조각 + 검색 표현",
+          "bbox": {
+            "x": 924.027099609375,
+            "y": 38.46333312988281,
+            "width": 135.94569396972656,
+            "height": 22.213109970092773
+          }
+        },
+        {
+          "text": "저장한 문서에서 찾기",
+          "bbox": {
+            "x": 627.10546875,
+            "y": 84.6324462890625,
+            "width": 126.45194244384766,
+            "height": 21.04399871826172
+          }
+        },
+        {
+          "text": "질문",
+          "bbox": {
+            "x": 213.1848907470703,
+            "y": 163.12510681152344,
+            "width": 35.51253128051758,
+            "height": 24.55133056640625
+          }
+        },
+        {
+          "text": "알고 싶은 내용",
+          "bbox": {
+            "x": 184.33160400390625,
+            "y": 190.46331787109375,
+            "width": 92.31761932373047,
+            "height": 22.213109970092773
+          }
+        },
+        {
+          "text": "관련 문서 검색",
+          "bbox": {
+            "x": 371.1295166015625,
+            "y": 163.12510681152344,
+            "width": 108.45552825927734,
+            "height": 24.55133056640625
+          }
+        },
+        {
+          "text": "질문을 검색에 사용",
+          "bbox": {
+            "x": 365.1286926269531,
+            "y": 190.46331787109375,
+            "width": 120.72119903564453,
+            "height": 22.213109970092773
+          }
+        },
+        {
+          "text": "원래 질문 + 찾은 문서",
+          "bbox": {
+            "x": 584.6510009765625,
+            "y": 163.12510681152344,
+            "width": 161.4257354736328,
+            "height": 24.55133056640625
+          }
+        },
+        {
+          "text": "생성 모델에 함께 제공",
+          "bbox": {
+            "x": 596.5064697265625,
+            "y": 190.46331787109375,
+            "width": 137.9780731201172,
+            "height": 22.213109970092773
+          }
+        },
+        {
+          "text": "생성 모델",
+          "bbox": {
+            "x": 878.6618041992188,
+            "y": 163.12510681152344,
+            "width": 71.39947509765625,
+            "height": 24.55133056640625
+          }
+        },
+        {
+          "text": "자료를 참고해 작성",
+          "bbox": {
+            "x": 854.1287231445312,
+            "y": 190.46331787109375,
+            "width": 119.74253845214844,
+            "height": 22.213109970092773
+          }
+        },
+        {
+          "text": "답변",
+          "bbox": {
+            "x": 1111.184814453125,
+            "y": 163.12510681152344,
+            "width": 34.343421936035156,
+            "height": 24.55133056640625
+          }
+        },
+        {
+          "text": "생성된 설명",
+          "bbox": {
+            "x": 1090.9627685546875,
+            "y": 190.46331787109375,
+            "width": 74.07414245605469,
+            "height": 22.213109970092773
+          }
+        },
+        {
+          "text": "원래 질문도 전달",
+          "bbox": {
+            "x": 390.4588928222656,
+            "y": 244.63243103027344,
+            "width": 100.92252349853516,
+            "height": 21.04399871826172
+          }
+        }
+      ],
+      "footerGap": 11.998782467532468,
+      "horizontalOverflow": false,
+      "bodyText": "생성형 AI · 개념\n검색 증강 생성의 흐름\n\n검색 증강 생성(Retrieval-Augmented Generation, RAG)\n질문과 관련된 외부 문서를 찾아, 생성 모델이 답변을 만드는 데 활용하는 방식\n\n준비와 사용 · 의미 기반 검색의 예\n단어 검색 또는 두 방식을 섞은 검색도 가능\n저장한 문서를 질문할 때 찾아 사용\n01 문서 준비\n02 질문 응답\n외부 문서\n답변에 참고할 자료\n문서 나누기\n찾기 좋은 크기의 조각\n검색할 표현 만들기\n의미를 숫자로 표현\n문서 저장소\n원문 조각 + 검색 표현\n저장한 문서에서 찾기\n질문\n알고 싶은 내용\n관련 문서 검색\n질문을 검색에 사용\n원래 질문 + 찾은 문서\n생성 모델에 함께 제공\n생성 모델\n자료를 참고해 작성\n답변\n생성된 설명\n원래 질문도 전달\n\n재학습과의 차이\n재학습은 모델의 학습된 내부 값을 바꿈.\n이 흐름은 모델을 재학습하지 않고 외부 문서를 검색해 사용.\n\n정확성의 한계\n검색이 관련 자료를 놓치거나 모델이 잘못 해석할 수 있음.\n검색을 사용해도 답변의 정확성이 자동 보장되지는 않음.\n\n핵심 연결\n문서를 미리 준비하고, 질문할 때 찾은 내용을 답변의 참고 자료로 제공\n검색 증강 생성 · 개념\n01 / 01"
+    },
+    {
+      "mode": "slides",
+      "viewport": [
+        1600,
+        950
+      ],
+      "pass": true,
+      "errors": [],
+      "fonts": [
+        {
+          "selector": "h1",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 12
+            }
+          ]
+        },
+        {
+          "selector": ".subtitle",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 88
+            }
+          ]
+        },
+        {
+          "selector": ".phase text",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 8
+            }
+          ]
+        },
+        {
+          "selector": ".box text",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 5
+            }
+          ]
+        },
+        {
+          "selector": ".notes p",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 63
+            }
+          ]
+        },
+        {
+          "selector": "footer span",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 13
+            }
+          ]
+        },
+        {
+          "selector": ".modebar a",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 9
+            }
+          ]
+        }
+      ],
+      "roundtrip": true,
+      "keyboardFocus": "solid",
+      "textOverflow": [],
+      "panelPadding": {
+        "left": 25,
+        "right": 25,
+        "bottom": 13
+      },
+      "arrowChecks": [
+        {
+          "d": "M353.5 37 H390.5 M384.5 32 L390.5 37 L384.5 42",
+          "bbox": "{}"
+        },
+        {
+          "d": "M587.5 37 H624.5 M618.5 32 L624.5 37 L618.5 42",
+          "bbox": "{}"
+        },
+        {
+          "d": "M841.5 37 H878.5 M872.5 32 L878.5 37 L872.5 42",
+          "bbox": "{}"
+        },
+        {
+          "d": "M303.5 188 H340.5 M334.5 183 L340.5 188 L334.5 193",
+          "bbox": "{}"
+        },
+        {
+          "d": "M509.5 188 H546.5 M540.5 183 L546.5 188 L540.5 193",
+          "bbox": "{}"
+        },
+        {
+          "d": "M783.5 188 H820.5 M814.5 183 L820.5 188 L814.5 193",
+          "bbox": "{}"
+        },
+        {
+          "d": "M1007.5 188 H1044.5 M1038.5 183 L1044.5 188 L1038.5 193",
+          "bbox": "{}"
+        },
+        {
+          "d": "M230 231.5 V270 H665 V231.5 M660 237.5 L665 231.5 L670 237.5",
+          "bbox": "{}"
+        }
+      ],
+      "scale": 1,
+      "slide": {
+        "x": 80,
+        "y": 92,
+        "width": 1440,
+        "height": 810,
+        "bottom": 902
+      },
+      "bounds": [],
+      "spacing": [],
+      "nodeOverflow": [],
+      "texts": [
+        {
+          "text": "01 문서 준비",
+          "bbox": {
+            "x": 0,
+            "y": 5,
+            "width": 85.625,
+            "height": 23
+          }
+        },
+        {
+          "text": "02 질문 응답",
+          "bbox": {
+            "x": 0,
+            "y": 153,
+            "width": 90.17939758300781,
+            "height": 23
+          }
+        },
+        {
+          "text": "외부 문서",
+          "bbox": {
+            "x": 219.640625,
+            "y": 10,
+            "width": 70.89324951171875,
+            "height": 25
+          }
+        },
+        {
+          "text": "답변에 참고할 자료",
+          "bbox": {
+            "x": 195.0390625,
+            "y": 39,
+            "width": 120.68560791015625,
+            "height": 21
+          }
+        },
+        {
+          "text": "문서 나누기",
+          "bbox": {
+            "x": 445.234375,
+            "y": 10,
+            "width": 87.7093505859375,
+            "height": 25
+          }
+        },
+        {
+          "text": "찾기 좋은 크기의 조각",
+          "bbox": {
+            "x": 420.3984375,
+            "y": 39,
+            "width": 138.9700927734375,
+            "height": 21
+          }
+        },
+        {
+          "text": "검색할 표현 만들기",
+          "bbox": {
+            "x": 662.2890625,
+            "y": 10,
+            "width": 141.60260009765625,
+            "height": 25
+          }
+        },
+        {
+          "text": "의미를 숫자로 표현",
+          "bbox": {
+            "x": 673.0390625,
+            "y": 39,
+            "width": 120.68560791015625,
+            "height": 21
+          }
+        },
+        {
+          "text": "문서 저장소",
+          "bbox": {
+            "x": 948.234375,
+            "y": 10,
+            "width": 88.7093505859375,
+            "height": 25
+          }
+        },
+        {
+          "text": "원문 조각 + 검색 표현",
+          "bbox": {
+            "x": 923.921875,
+            "y": 39,
+            "width": 136.91796875,
+            "height": 21
+          }
+        },
+        {
+          "text": "저장한 문서에서 찾기",
+          "bbox": {
+            "x": 627.0625,
+            "y": 85,
+            "width": 125.875,
+            "height": 20
+          }
+        },
+        {
+          "text": "질문",
+          "bbox": {
+            "x": 213.1796875,
+            "y": 163,
+            "width": 34.81608581542969,
+            "height": 25
+          }
+        },
+        {
+          "text": "알고 싶은 내용",
+          "bbox": {
+            "x": 184.265625,
+            "y": 191,
+            "width": 93.23895263671875,
+            "height": 21
+          }
+        },
+        {
+          "text": "관련 문서 검색",
+          "bbox": {
+            "x": 371.1015625,
+            "y": 163,
+            "width": 107.97039794921875,
+            "height": 25
+          }
+        },
+        {
+          "text": "질문을 검색에 사용",
+          "bbox": {
+            "x": 365.0390625,
+            "y": 191,
+            "width": 121.68560791015625,
+            "height": 21
+          }
+        },
+        {
+          "text": "원래 질문 + 찾은 문서",
+          "bbox": {
+            "x": 584.6015625,
+            "y": 163,
+            "width": 160.97125244140625,
+            "height": 25
+          }
+        },
+        {
+          "text": "생성 모델에 함께 제공",
+          "bbox": {
+            "x": 596.3984375,
+            "y": 191,
+            "width": 137.9700927734375,
+            "height": 21
+          }
+        },
+        {
+          "text": "생성 모델",
+          "bbox": {
+            "x": 878.640625,
+            "y": 163,
+            "width": 71.89324951171875,
+            "height": 25
+          }
+        },
+        {
+          "text": "자료를 참고해 작성",
+          "bbox": {
+            "x": 854.0390625,
+            "y": 191,
+            "width": 119.921875,
+            "height": 21
+          }
+        },
+        {
+          "text": "답변",
+          "bbox": {
+            "x": 1111.1796875,
+            "y": 163,
+            "width": 33.8160400390625,
+            "height": 25
+          }
+        },
+        {
+          "text": "생성된 설명",
+          "bbox": {
+            "x": 1090.90625,
+            "y": 191,
+            "width": 74.1875,
+            "height": 21
+          }
+        },
+        {
+          "text": "원래 질문도 전달",
+          "bbox": {
+            "x": 390.421875,
+            "y": 245,
+            "width": 100.7884521484375,
+            "height": 20
+          }
+        }
+      ],
+      "footerGap": 12,
+      "horizontalOverflow": false,
+      "bodyText": "생성형 AI · 개념\n검색 증강 생성의 흐름\n\n검색 증강 생성(Retrieval-Augmented Generation, RAG)\n질문과 관련된 외부 문서를 찾아, 생성 모델이 답변을 만드는 데 활용하는 방식\n\n준비와 사용 · 의미 기반 검색의 예\n단어 검색 또는 두 방식을 섞은 검색도 가능\n저장한 문서를 질문할 때 찾아 사용\n01 문서 준비\n02 질문 응답\n외부 문서\n답변에 참고할 자료\n문서 나누기\n찾기 좋은 크기의 조각\n검색할 표현 만들기\n의미를 숫자로 표현\n문서 저장소\n원문 조각 + 검색 표현\n저장한 문서에서 찾기\n질문\n알고 싶은 내용\n관련 문서 검색\n질문을 검색에 사용\n원래 질문 + 찾은 문서\n생성 모델에 함께 제공\n생성 모델\n자료를 참고해 작성\n답변\n생성된 설명\n원래 질문도 전달\n\n재학습과의 차이\n재학습은 모델의 학습된 내부 값을 바꿈.\n이 흐름은 모델을 재학습하지 않고 외부 문서를 검색해 사용.\n\n정확성의 한계\n검색이 관련 자료를 놓치거나 모델이 잘못 해석할 수 있음.\n검색을 사용해도 답변의 정확성이 자동 보장되지는 않음.\n\n핵심 연결\n문서를 미리 준비하고, 질문할 때 찾은 내용을 답변의 참고 자료로 제공\n검색 증강 생성 · 개념\n01 / 01"
+    },
+    {
+      "mode": "slides",
+      "viewport": [
+        1440,
+        810
+      ],
+      "pass": true,
+      "errors": [],
+      "fonts": [
+        {
+          "selector": "h1",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 12
+            }
+          ]
+        },
+        {
+          "selector": ".subtitle",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 88
+            }
+          ]
+        },
+        {
+          "selector": ".phase text",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 8
+            }
+          ]
+        },
+        {
+          "selector": ".box text",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 5
+            }
+          ]
+        },
+        {
+          "selector": ".notes p",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 63
+            }
+          ]
+        },
+        {
+          "selector": "footer span",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 13
+            }
+          ]
+        },
+        {
+          "selector": ".modebar a",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 9
+            }
+          ]
+        }
+      ],
+      "roundtrip": true,
+      "keyboardFocus": "solid",
+      "textOverflow": [],
+      "panelPadding": {
+        "left": 25.119846129499557,
+        "right": 25.119846129499557,
+        "bottom": 13.112103911280997
+      },
+      "arrowChecks": [
+        {
+          "d": "M353.5 37 H390.5 M384.5 32 L390.5 37 L384.5 42",
+          "bbox": "{}"
+        },
+        {
+          "d": "M587.5 37 H624.5 M618.5 32 L624.5 37 L618.5 42",
+          "bbox": "{}"
+        },
+        {
+          "d": "M841.5 37 H878.5 M872.5 32 L878.5 37 L872.5 42",
+          "bbox": "{}"
+        },
+        {
+          "d": "M303.5 188 H340.5 M334.5 183 L340.5 188 L334.5 193",
+          "bbox": "{}"
+        },
+        {
+          "d": "M509.5 188 H546.5 M540.5 183 L546.5 188 L540.5 193",
+          "bbox": "{}"
+        },
+        {
+          "d": "M783.5 188 H820.5 M814.5 183 L820.5 188 L814.5 193",
+          "bbox": "{}"
+        },
+        {
+          "d": "M1007.5 188 H1044.5 M1038.5 183 L1044.5 188 L1038.5 193",
+          "bbox": "{}"
+        },
+        {
+          "d": "M230 231.5 V270 H665 V231.5 M660 237.5 L665 231.5 L670 237.5",
+          "bbox": "{}"
+        }
+      ],
+      "scale": 0.8913519965277777,
+      "slide": {
+        "x": 78.21875,
+        "y": 66,
+        "width": 1283.546875,
+        "height": 722,
+        "bottom": 788
+      },
+      "bounds": [],
+      "spacing": [],
+      "nodeOverflow": [],
+      "texts": [
+        {
+          "text": "01 문서 준비",
+          "bbox": {
+            "x": 0,
+            "y": 5.046355247497559,
+            "width": 86.18551635742188,
+            "height": 22.44205665588379
+          }
+        },
+        {
+          "text": "02 질문 응답",
+          "bbox": {
+            "x": 0,
+            "y": 153.04637145996094,
+            "width": 89.95927429199219,
+            "height": 22.44205665588379
+          }
+        },
+        {
+          "text": "외부 문서",
+          "bbox": {
+            "x": 219.6625213623047,
+            "y": 9.802148818969727,
+            "width": 70.68768310546875,
+            "height": 25.808364868164062
+          }
+        },
+        {
+          "text": "답변에 참고할 자료",
+          "bbox": {
+            "x": 195.08145141601562,
+            "y": 39.16845703125,
+            "width": 121.3213119506836,
+            "height": 21.31995391845703
+          }
+        },
+        {
+          "text": "문서 나누기",
+          "bbox": {
+            "x": 445.2643127441406,
+            "y": 9.802148818969727,
+            "width": 87.49237823486328,
+            "height": 25.808364868164062
+          }
+        },
+        {
+          "text": "찾기 좋은 크기의 조각",
+          "bbox": {
+            "x": 420.446533203125,
+            "y": 39.16845703125,
+            "width": 138.5933380126953,
+            "height": 21.31995391845703
+          }
+        },
+        {
+          "text": "검색할 표현 만들기",
+          "bbox": {
+            "x": 662.3338012695312,
+            "y": 9.802148818969727,
+            "width": 141.34852600097656,
+            "height": 25.808364868164062
+          }
+        },
+        {
+          "text": "의미를 숫자로 표현",
+          "bbox": {
+            "x": 673.0814819335938,
+            "y": 39.16845703125,
+            "width": 120.1992416381836,
+            "height": 21.31995391845703
+          }
+        },
+        {
+          "text": "문서 저장소",
+          "bbox": {
+            "x": 948.2642822265625,
+            "y": 9.802148818969727,
+            "width": 88.61448669433594,
+            "height": 25.808364868164062
+          }
+        },
+        {
+          "text": "원문 조각 + 검색 표현",
+          "bbox": {
+            "x": 923.9725341796875,
+            "y": 39.16845703125,
+            "width": 136.4189910888672,
+            "height": 21.31995391845703
+          }
+        },
+        {
+          "text": "저장한 문서에서 찾기",
+          "bbox": {
+            "x": 627.109619140625,
+            "y": 85.29055786132812,
+            "width": 125.8929672241211,
+            "height": 20.197851181030273
+          }
+        },
+        {
+          "text": "질문",
+          "bbox": {
+            "x": 213.19476318359375,
+            "y": 162.80215454101562,
+            "width": 34.758358001708984,
+            "height": 25.808364868164062
+          }
+        },
+        {
+          "text": "알고 싶은 내용",
+          "bbox": {
+            "x": 184.30062866210938,
+            "y": 191.16845703125,
+            "width": 92.89418029785156,
+            "height": 21.31995391845703
+          }
+        },
+        {
+          "text": "관련 문서 검색",
+          "bbox": {
+            "x": 370.0169677734375,
+            "y": 162.80215454101562,
+            "width": 108.86123657226562,
+            "height": 25.808364868164062
+          }
+        },
+        {
+          "text": "질문을 검색에 사용",
+          "bbox": {
+            "x": 365.08148193359375,
+            "y": 191.16845703125,
+            "width": 121.3213119506836,
+            "height": 21.31995391845703
+          }
+        },
+        {
+          "text": "원래 질문 + 찾은 문서",
+          "bbox": {
+            "x": 584.6557006835938,
+            "y": 162.80215454101562,
+            "width": 160.70260620117188,
+            "height": 25.808364868164062
+          }
+        },
+        {
+          "text": "생성 모델에 함께 제공",
+          "bbox": {
+            "x": 596.4465942382812,
+            "y": 191.16845703125,
+            "width": 138.5933380126953,
+            "height": 21.31995391845703
+          }
+        },
+        {
+          "text": "생성 모델",
+          "bbox": {
+            "x": 878.6625366210938,
+            "y": 162.80215454101562,
+            "width": 71.8097915649414,
+            "height": 25.808364868164062
+          }
+        },
+        {
+          "text": "자료를 참고해 작성",
+          "bbox": {
+            "x": 854.0814819335938,
+            "y": 191.16845703125,
+            "width": 120.1992416381836,
+            "height": 21.31995391845703
+          }
+        },
+        {
+          "text": "답변",
+          "bbox": {
+            "x": 1111.19482421875,
+            "y": 162.80215454101562,
+            "width": 33.63623809814453,
+            "height": 25.808364868164062
+          }
+        },
+        {
+          "text": "생성된 설명",
+          "bbox": {
+            "x": 1090.935546875,
+            "y": 191.16845703125,
+            "width": 74.49998474121094,
+            "height": 21.31995391845703
+          }
+        },
+        {
+          "text": "원래 질문도 전달",
+          "bbox": {
+            "x": 390.4609069824219,
+            "y": 245.29055786132812,
+            "width": 100.31536865234375,
+            "height": 20.197851181030273
+          }
+        }
+      ],
+      "footerGap": 11.99021266753503,
+      "horizontalOverflow": false,
+      "bodyText": "생성형 AI · 개념\n검색 증강 생성의 흐름\n\n검색 증강 생성(Retrieval-Augmented Generation, RAG)\n질문과 관련된 외부 문서를 찾아, 생성 모델이 답변을 만드는 데 활용하는 방식\n\n준비와 사용 · 의미 기반 검색의 예\n단어 검색 또는 두 방식을 섞은 검색도 가능\n저장한 문서를 질문할 때 찾아 사용\n01 문서 준비\n02 질문 응답\n외부 문서\n답변에 참고할 자료\n문서 나누기\n찾기 좋은 크기의 조각\n검색할 표현 만들기\n의미를 숫자로 표현\n문서 저장소\n원문 조각 + 검색 표현\n저장한 문서에서 찾기\n질문\n알고 싶은 내용\n관련 문서 검색\n질문을 검색에 사용\n원래 질문 + 찾은 문서\n생성 모델에 함께 제공\n생성 모델\n자료를 참고해 작성\n답변\n생성된 설명\n원래 질문도 전달\n\n재학습과의 차이\n재학습은 모델의 학습된 내부 값을 바꿈.\n이 흐름은 모델을 재학습하지 않고 외부 문서를 검색해 사용.\n\n정확성의 한계\n검색이 관련 자료를 놓치거나 모델이 잘못 해석할 수 있음.\n검색을 사용해도 답변의 정확성이 자동 보장되지는 않음.\n\n핵심 연결\n문서를 미리 준비하고, 질문할 때 찾은 내용을 답변의 참고 자료로 제공\n검색 증강 생성 · 개념\n01 / 01"
+    },
+    {
+      "mode": "slides",
+      "viewport": [
+        1366,
+        768
+      ],
+      "pass": true,
+      "errors": [],
+      "fonts": [
+        {
+          "selector": "h1",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 12
+            }
+          ]
+        },
+        {
+          "selector": ".subtitle",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 88
+            }
+          ]
+        },
+        {
+          "selector": ".phase text",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 8
+            }
+          ]
+        },
+        {
+          "selector": ".box text",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 5
+            }
+          ]
+        },
+        {
+          "selector": ".notes p",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 63
+            }
+          ]
+        },
+        {
+          "selector": "footer span",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 13
+            }
+          ]
+        },
+        {
+          "selector": ".modebar a",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 9
+            }
+          ]
+        }
+      ],
+      "roundtrip": true,
+      "keyboardFocus": "solid",
+      "textOverflow": [],
+      "panelPadding": {
+        "left": 25.18250439458174,
+        "right": 25.18250439458174,
+        "bottom": 13.177541102264502
+      },
+      "arrowChecks": [
+        {
+          "d": "M353.5 37 H390.5 M384.5 32 L390.5 37 L384.5 42",
+          "bbox": "{}"
+        },
+        {
+          "d": "M587.5 37 H624.5 M618.5 32 L624.5 37 L618.5 42",
+          "bbox": "{}"
+        },
+        {
+          "d": "M841.5 37 H878.5 M872.5 32 L878.5 37 L872.5 42",
+          "bbox": "{}"
+        },
+        {
+          "d": "M303.5 188 H340.5 M334.5 183 L340.5 188 L334.5 193",
+          "bbox": "{}"
+        },
+        {
+          "d": "M509.5 188 H546.5 M540.5 183 L546.5 188 L540.5 193",
+          "bbox": "{}"
+        },
+        {
+          "d": "M783.5 188 H820.5 M814.5 183 L820.5 188 L814.5 193",
+          "bbox": "{}"
+        },
+        {
+          "d": "M1007.5 188 H1044.5 M1038.5 183 L1044.5 188 L1038.5 193",
+          "bbox": "{}"
+        },
+        {
+          "d": "M230 231.5 V270 H665 V231.5 M660 237.5 L665 231.5 L670 237.5",
+          "bbox": "{}"
+        }
+      ],
+      "scale": 0.8394965277777777,
+      "slide": {
+        "x": 78.5625,
+        "y": 66,
+        "width": 1208.875,
+        "height": 680,
+        "bottom": 746
+      },
+      "bounds": [],
+      "spacing": [],
+      "nodeOverflow": [],
+      "texts": [
+        {
+          "text": "01 문서 준비",
+          "bbox": {
+            "x": 0,
+            "y": 5.126979827880859,
+            "width": 85.97432708740234,
+            "height": 22.639158248901367
+          }
+        },
+        {
+          "text": "02 질문 응답",
+          "bbox": {
+            "x": 0,
+            "y": 153.12696838378906,
+            "width": 89.81779479980469,
+            "height": 22.639158248901367
+          }
+        },
+        {
+          "text": "외부 문서",
+          "bbox": {
+            "x": 219.67286682128906,
+            "y": 9.743910789489746,
+            "width": 70.65428161621094,
+            "height": 25.022228240966797
+          }
+        },
+        {
+          "text": "답변에 참고할 자료",
+          "bbox": {
+            "x": 195.09747314453125,
+            "y": 39.318511962890625,
+            "width": 121.07563781738281,
+            "height": 21.44762420654297
+          }
+        },
+        {
+          "text": "문서 나누기",
+          "bbox": {
+            "x": 445.2762451171875,
+            "y": 9.743910789489746,
+            "width": 87.44747161865234,
+            "height": 25.022228240966797
+          }
+        },
+        {
+          "text": "찾기 좋은 크기의 조각",
+          "bbox": {
+            "x": 420.4681091308594,
+            "y": 39.318511962890625,
+            "width": 138.34324645996094,
+            "height": 21.44762420654297
+          }
+        },
+        {
+          "text": "검색할 표현 만들기",
+          "bbox": {
+            "x": 662.35498046875,
+            "y": 9.743910789489746,
+            "width": 141.28994750976562,
+            "height": 25.022228240966797
+          }
+        },
+        {
+          "text": "의미를 숫자로 표현",
+          "bbox": {
+            "x": 673.097412109375,
+            "y": 39.318511962890625,
+            "width": 119.88414001464844,
+            "height": 21.44762420654297
+          }
+        },
+        {
+          "text": "문서 저장소",
+          "bbox": {
+            "x": 948.2761840820312,
+            "y": 9.743910789489746,
+            "width": 89.70821380615234,
+            "height": 25.022228240966797
+          }
+        },
+        {
+          "text": "원문 조각 + 검색 표현",
+          "bbox": {
+            "x": 923.9893798828125,
+            "y": 39.318511962890625,
+            "width": 136.09938049316406,
+            "height": 21.44762420654297
+          }
+        },
+        {
+          "text": "저장한 문서에서 찾기",
+          "bbox": {
+            "x": 627.146484375,
+            "y": 84.31851196289062,
+            "width": 126.65219116210938,
+            "height": 20.256088256835938
+          }
+        },
+        {
+          "text": "질문",
+          "bbox": {
+            "x": 213.19747924804688,
+            "y": 162.743896484375,
+            "width": 34.673702239990234,
+            "height": 25.022228240966797
+          }
+        },
+        {
+          "text": "알고 싶은 내용",
+          "bbox": {
+            "x": 184.3120574951172,
+            "y": 191.31851196289062,
+            "width": 92.65543365478516,
+            "height": 21.44762420654297
+          }
+        },
+        {
+          "text": "관련 문서 검색",
+          "bbox": {
+            "x": 371.148193359375,
+            "y": 162.743896484375,
+            "width": 108.75830078125,
+            "height": 25.022228240966797
+          }
+        },
+        {
+          "text": "질문을 검색에 사용",
+          "bbox": {
+            "x": 365.0974426269531,
+            "y": 191.31851196289062,
+            "width": 121.07566833496094,
+            "height": 21.44762420654297
+          }
+        },
+        {
+          "text": "원래 질문 + 찾은 문서",
+          "bbox": {
+            "x": 584.6737670898438,
+            "y": 162.743896484375,
+            "width": 160.65237426757812,
+            "height": 25.022228240966797
+          }
+        },
+        {
+          "text": "생성 모델에 함께 제공",
+          "bbox": {
+            "x": 596.4680786132812,
+            "y": 191.31851196289062,
+            "width": 138.34324645996094,
+            "height": 21.44762420654297
+          }
+        },
+        {
+          "text": "생성 모델",
+          "bbox": {
+            "x": 878.6727905273438,
+            "y": 162.743896484375,
+            "width": 71.71600341796875,
+            "height": 25.022228240966797
+          }
+        },
+        {
+          "text": "자료를 참고해 작성",
+          "bbox": {
+            "x": 854.097412109375,
+            "y": 191.31851196289062,
+            "width": 119.88414001464844,
+            "height": 21.44762420654297
+          }
+        },
+        {
+          "text": "답변",
+          "bbox": {
+            "x": 1111.197509765625,
+            "y": 162.743896484375,
+            "width": 33.60499954223633,
+            "height": 25.022228240966797
+          }
+        },
+        {
+          "text": "생성된 설명",
+          "bbox": {
+            "x": 1090.94140625,
+            "y": 191.31851196289062,
+            "width": 74.19630432128906,
+            "height": 21.44762420654297
+          }
+        },
+        {
+          "text": "원래 질문도 전달",
+          "bbox": {
+            "x": 390.48614501953125,
+            "y": 244.31851196289062,
+            "width": 101.16132354736328,
+            "height": 20.256088256835938
+          }
+        }
+      ],
+      "footerGap": 11.9863509461276,
+      "horizontalOverflow": false,
+      "bodyText": "생성형 AI · 개념\n검색 증강 생성의 흐름\n\n검색 증강 생성(Retrieval-Augmented Generation, RAG)\n질문과 관련된 외부 문서를 찾아, 생성 모델이 답변을 만드는 데 활용하는 방식\n\n준비와 사용 · 의미 기반 검색의 예\n단어 검색 또는 두 방식을 섞은 검색도 가능\n저장한 문서를 질문할 때 찾아 사용\n01 문서 준비\n02 질문 응답\n외부 문서\n답변에 참고할 자료\n문서 나누기\n찾기 좋은 크기의 조각\n검색할 표현 만들기\n의미를 숫자로 표현\n문서 저장소\n원문 조각 + 검색 표현\n저장한 문서에서 찾기\n질문\n알고 싶은 내용\n관련 문서 검색\n질문을 검색에 사용\n원래 질문 + 찾은 문서\n생성 모델에 함께 제공\n생성 모델\n자료를 참고해 작성\n답변\n생성된 설명\n원래 질문도 전달\n\n재학습과의 차이\n재학습은 모델의 학습된 내부 값을 바꿈.\n이 흐름은 모델을 재학습하지 않고 외부 문서를 검색해 사용.\n\n정확성의 한계\n검색이 관련 자료를 놓치거나 모델이 잘못 해석할 수 있음.\n검색을 사용해도 답변의 정확성이 자동 보장되지는 않음.\n\n핵심 연결\n문서를 미리 준비하고, 질문할 때 찾은 내용을 답변의 참고 자료로 제공\n검색 증강 생성 · 개념\n01 / 01"
+    },
+    {
+      "mode": "slides",
+      "viewport": [
+        1280,
+        720
+      ],
+      "pass": true,
+      "errors": [],
+      "fonts": [
+        {
+          "selector": "h1",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 12
+            }
+          ]
+        },
+        {
+          "selector": ".subtitle",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 88
+            }
+          ]
+        },
+        {
+          "selector": ".phase text",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 8
+            }
+          ]
+        },
+        {
+          "selector": ".box text",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 5
+            }
+          ]
+        },
+        {
+          "selector": ".notes p",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 63
+            }
+          ]
+        },
+        {
+          "selector": "footer span",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 13
+            }
+          ]
+        },
+        {
+          "selector": ".modebar a",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 9
+            }
+          ]
+        }
+      ],
+      "roundtrip": true,
+      "keyboardFocus": "solid",
+      "textOverflow": [],
+      "panelPadding": {
+        "left": 25.272643831615838,
+        "right": 25.272643831615838,
+        "bottom": 13.277149651633358
+      },
+      "arrowChecks": [
+        {
+          "d": "M353.5 37 H390.5 M384.5 32 L390.5 37 L384.5 42",
+          "bbox": "{}"
+        },
+        {
+          "d": "M587.5 37 H624.5 M618.5 32 L624.5 37 L618.5 42",
+          "bbox": "{}"
+        },
+        {
+          "d": "M841.5 37 H878.5 M872.5 32 L878.5 37 L872.5 42",
+          "bbox": "{}"
+        },
+        {
+          "d": "M303.5 188 H340.5 M334.5 183 L340.5 188 L334.5 193",
+          "bbox": "{}"
+        },
+        {
+          "d": "M509.5 188 H546.5 M540.5 183 L546.5 188 L540.5 193",
+          "bbox": "{}"
+        },
+        {
+          "d": "M783.5 188 H820.5 M814.5 183 L820.5 188 L814.5 193",
+          "bbox": "{}"
+        },
+        {
+          "d": "M1007.5 188 H1044.5 M1038.5 183 L1044.5 188 L1038.5 193",
+          "bbox": "{}"
+        },
+        {
+          "d": "M230 231.5 V270 H665 V231.5 M660 237.5 L665 231.5 L670 237.5",
+          "bbox": "{}"
+        }
+      ],
+      "scale": 0.7802408854166667,
+      "slide": {
+        "x": 78.21875,
+        "y": 66,
+        "width": 1123.546875,
+        "height": 632,
+        "bottom": 698
+      },
+      "bounds": [],
+      "spacing": [],
+      "nodeOverflow": [],
+      "texts": [
+        {
+          "text": "01 문서 준비",
+          "bbox": {
+            "x": 0,
+            "y": 5.049463748931885,
+            "width": 85.7957763671875,
+            "height": 23.079259872436523
+          }
+        },
+        {
+          "text": "02 질문 응답",
+          "bbox": {
+            "x": 0,
+            "y": 153.04945373535156,
+            "width": 89.72740173339844,
+            "height": 23.079259872436523
+          }
+        },
+        {
+          "text": "외부 문서",
+          "bbox": {
+            "x": 219.68992614746094,
+            "y": 9.485102653503418,
+            "width": 70.62013244628906,
+            "height": 25.64362335205078
+          }
+        },
+        {
+          "text": "답변에 참고할 자료",
+          "bbox": {
+            "x": 195.14817810058594,
+            "y": 39.33164596557617,
+            "width": 120.87940216064453,
+            "height": 20.5148983001709
+          }
+        },
+        {
+          "text": "문서 나누기",
+          "bbox": {
+            "x": 445.28564453125,
+            "y": 9.485102653503418,
+            "width": 87.42872619628906,
+            "height": 25.64362335205078
+          }
+        },
+        {
+          "text": "찾기 좋은 크기의 조각",
+          "bbox": {
+            "x": 420.5235290527344,
+            "y": 39.33164596557617,
+            "width": 138.1313018798828,
+            "height": 20.5148983001709
+          }
+        },
+        {
+          "text": "검색할 표현 만들기",
+          "bbox": {
+            "x": 662.3798217773438,
+            "y": 9.485102653503418,
+            "width": 141.24026489257812,
+            "height": 25.64362335205078
+          }
+        },
+        {
+          "text": "의미를 숫자로 표현",
+          "bbox": {
+            "x": 673.1481323242188,
+            "y": 39.33164596557617,
+            "width": 119.70362854003906,
+            "height": 20.5148983001709
+          }
+        },
+        {
+          "text": "문서 저장소",
+          "bbox": {
+            "x": 948.28564453125,
+            "y": 9.485102653503418,
+            "width": 88.57027435302734,
+            "height": 25.64362335205078
+          }
+        },
+        {
+          "text": "원문 조각 + 검색 표현",
+          "bbox": {
+            "x": 924.054443359375,
+            "y": 39.33164596557617,
+            "width": 135.89117431640625,
+            "height": 20.5148983001709
+          }
+        },
+        {
+          "text": "저장한 문서에서 찾기",
+          "bbox": {
+            "x": 627.113037109375,
+            "y": 84.3316421508789,
+            "width": 126.5284423828125,
+            "height": 20.5148983001709
+          }
+        },
+        {
+          "text": "질문",
+          "bbox": {
+            "x": 213.20143127441406,
+            "y": 162.48509216308594,
+            "width": 34.745609283447266,
+            "height": 25.64362335205078
+          }
+        },
+        {
+          "text": "알고 싶은 내용",
+          "bbox": {
+            "x": 184.3423309326172,
+            "y": 191.33164978027344,
+            "width": 92.48363494873047,
+            "height": 20.5148983001709
+          }
+        },
+        {
+          "text": "관련 문서 검색",
+          "bbox": {
+            "x": 369.8862609863281,
+            "y": 162.48509216308594,
+            "width": 110.0870361328125,
+            "height": 25.64362335205078
+          }
+        },
+        {
+          "text": "질문을 검색에 사용",
+          "bbox": {
+            "x": 365.148193359375,
+            "y": 191.33164978027344,
+            "width": 120.87937927246094,
+            "height": 20.5148983001709
+          }
+        },
+        {
+          "text": "원래 질문 + 찾은 문서",
+          "bbox": {
+            "x": 584.7034301757812,
+            "y": 162.48509216308594,
+            "width": 160.5931854248047,
+            "height": 25.64362335205078
+          }
+        },
+        {
+          "text": "생성 모델에 함께 제공",
+          "bbox": {
+            "x": 596.5234985351562,
+            "y": 191.33164978027344,
+            "width": 138.1313018798828,
+            "height": 20.5148983001709
+          }
+        },
+        {
+          "text": "생성 모델",
+          "bbox": {
+            "x": 878.68994140625,
+            "y": 162.48509216308594,
+            "width": 71.77522277832031,
+            "height": 25.64362335205078
+          }
+        },
+        {
+          "text": "자료를 참고해 작성",
+          "bbox": {
+            "x": 854.148193359375,
+            "y": 191.33164978027344,
+            "width": 119.70362854003906,
+            "height": 20.5148983001709
+          }
+        },
+        {
+          "text": "답변",
+          "bbox": {
+            "x": 1111.201416015625,
+            "y": 162.48509216308594,
+            "width": 33.59715270996094,
+            "height": 25.64362335205078
+          }
+        },
+        {
+          "text": "생성된 설명",
+          "bbox": {
+            "x": 1090.9769287109375,
+            "y": 191.33164978027344,
+            "width": 74.04595947265625,
+            "height": 20.5148983001709
+          }
+        },
+        {
+          "text": "원래 질문도 전달",
+          "bbox": {
+            "x": 390.45574951171875,
+            "y": 244.33164978027344,
+            "width": 99.82950592041016,
+            "height": 20.5148983001709
+          }
+        }
+      ],
+      "footerGap": 11.995494179982478,
+      "horizontalOverflow": false,
+      "bodyText": "생성형 AI · 개념\n검색 증강 생성의 흐름\n\n검색 증강 생성(Retrieval-Augmented Generation, RAG)\n질문과 관련된 외부 문서를 찾아, 생성 모델이 답변을 만드는 데 활용하는 방식\n\n준비와 사용 · 의미 기반 검색의 예\n단어 검색 또는 두 방식을 섞은 검색도 가능\n저장한 문서를 질문할 때 찾아 사용\n01 문서 준비\n02 질문 응답\n외부 문서\n답변에 참고할 자료\n문서 나누기\n찾기 좋은 크기의 조각\n검색할 표현 만들기\n의미를 숫자로 표현\n문서 저장소\n원문 조각 + 검색 표현\n저장한 문서에서 찾기\n질문\n알고 싶은 내용\n관련 문서 검색\n질문을 검색에 사용\n원래 질문 + 찾은 문서\n생성 모델에 함께 제공\n생성 모델\n자료를 참고해 작성\n답변\n생성된 설명\n원래 질문도 전달\n\n재학습과의 차이\n재학습은 모델의 학습된 내부 값을 바꿈.\n이 흐름은 모델을 재학습하지 않고 외부 문서를 검색해 사용.\n\n정확성의 한계\n검색이 관련 자료를 놓치거나 모델이 잘못 해석할 수 있음.\n검색을 사용해도 답변의 정확성이 자동 보장되지는 않음.\n\n핵심 연결\n문서를 미리 준비하고, 질문할 때 찾은 내용을 답변의 참고 자료로 제공\n검색 증강 생성 · 개념\n01 / 01"
+    }
+  ],
+  "input_changes": [],
+  "source_sha256": {
+    "lesson.js": "ec96a75ccba77900f63c4181ee11042348276840b30c4cea38c463e0109a0740",
+    "lesson.css": "2257e6819eb7005e974f18e4c1e95b71b12c5a75837d97ed101a365327c750d6",
+    "scroll.html": "1f0bfc48da9e799e0784244cd1f07f18057c8688a0574f1398307d3cdbac6d87",
+    "slides.html": "5d3964f71da523e26eb788fd31771db13b5957a369a58db69e60a83b1523728e"
+  },
+  "pass": true
+}
