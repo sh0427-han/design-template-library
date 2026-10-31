@@ -1,0 +1,135 @@
+{
+  "passed": false,
+  "source_hashes": {
+    "content.html": "7bdc6f2b5f3ae53766bb527d7bcf6276ddc69551191c742e6d4b62938d563ed6",
+    "report.css": "37ce5e50dcd571dc655a2e45e68697a08bf4dc6c83a73204100921560d522dd5",
+    "report.js": "2841762ed60babebd9f3e4529624884dfffc634d89ec8858b7c85ca6b8e7ccdd",
+    "scroll.html": "b522741eafc9422b95bbbd11ccbef95d4e6a3f6483c69bafa67bee74149e6d1e",
+    "slides.html": "e1bdccb8bde36613e097696cab3a5a857c7892da475b6ed47326f3f529f4ff17",
+    "verify.py": "22d8c0487628e8adddebcdf39868cd2326da031c21bda3416f91f834f7682166",
+    "viewer.css": "d4b0dbb5fd3ccd090083140d3b971e56ac4b9dfe7b450f7ecc21dc9153980c78",
+    "viewer.js": "3cb7624e4c47a98c2920ec5ebeca12b4d6fa67086f79fba9d402e9c9e1eb67f5"
+  },
+  "failed_checks": [
+    {
+      "name": "scroll-1600x950 text inside panel padding/canvas",
+      "pass": false,
+      "detail": [
+        {
+          "outside": true,
+          "text": "응답시간 95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.지수는 각 지표의 변화 크기이며, 지표 간 중요도나 종합 점수는 아님."
+        }
+      ]
+    },
+    {
+      "name": "scroll-1600x950 panel/footer clearance",
+      "pass": false,
+      "detail": null
+    },
+    {
+      "name": "slides-1600x950 text inside panel padding/canvas",
+      "pass": false,
+      "detail": [
+        {
+          "outside": true,
+          "text": "응답시간 95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.지수는 각 지표의 변화 크기이며, 지표 간 중요도나 종합 점수는 아님."
+        }
+      ]
+    },
+    {
+      "name": "slides-1600x950 panel/footer clearance",
+      "pass": false,
+      "detail": null
+    },
+    {
+      "name": "scroll-1440x810 text inside panel padding/canvas",
+      "pass": false,
+      "detail": [
+        {
+          "outside": true,
+          "text": "응답시간 95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.지수는 각 지표의 변화 크기이며, 지표 간 중요도나 종합 점수는 아님."
+        }
+      ]
+    },
+    {
+      "name": "scroll-1440x810 panel/footer clearance",
+      "pass": false,
+      "detail": null
+    },
+    {
+      "name": "slides-1440x810 text inside panel padding/canvas",
+      "pass": false,
+      "detail": [
+        {
+          "outside": true,
+          "text": "응답시간 95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.지수는 각 지표의 변화 크기이며, 지표 간 중요도나 종합 점수는 아님."
+        }
+      ]
+    },
+    {
+      "name": "slides-1440x810 panel/footer clearance",
+      "pass": false,
+      "detail": null
+    },
+    {
+      "name": "scroll-1366x768 text inside panel padding/canvas",
+      "pass": false,
+      "detail": [
+        {
+          "outside": true,
+          "text": "응답시간 95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.지수는 각 지표의 변화 크기이며, 지표 간 중요도나 종합 점수는 아님."
+        }
+      ]
+    },
+    {
+      "name": "scroll-1366x768 panel/footer clearance",
+      "pass": false,
+      "detail": null
+    },
+    {
+      "name": "slides-1366x768 text inside panel padding/canvas",
+      "pass": false,
+      "detail": [
+        {
+          "outside": true,
+          "text": "응답시간 95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.지수는 각 지표의 변화 크기이며, 지표 간 중요도나 종합 점수는 아님."
+        }
+      ]
+    },
+    {
+      "name": "slides-1366x768 panel/footer clearance",
+      "pass": false,
+      "detail": null
+    },
+    {
+      "name": "scroll-1280x720 text inside panel padding/canvas",
+      "pass": false,
+      "detail": [
+        {
+          "outside": true,
+          "text": "응답시간 95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.지수는 각 지표의 변화 크기이며, 지표 간 중요도나 종합 점수는 아님."
+        }
+      ]
+    },
+    {
+      "name": "scroll-1280x720 panel/footer clearance",
+      "pass": false,
+      "detail": null
+    },
+    {
+      "name": "slides-1280x720 text inside panel padding/canvas",
+      "pass": false,
+      "detail": [
+        {
+          "outside": true,
+          "text": "응답시간 95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.지수는 각 지표의 변화 크기이며, 지표 간 중요도나 종합 점수는 아님."
+        }
+      ]
+    },
+    {
+      "name": "slides-1280x720 panel/footer clearance",
+      "pass": false,
+      "detail": null
+    }
+  ]
+}
