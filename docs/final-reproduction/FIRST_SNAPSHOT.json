@@ -1,0 +1,33 @@
+{
+  "baseline": "64cc5d3accbc78411a332a2b72d8248844014fa0",
+  "builder_design_commit": "3f41256cbcc64d8f3112029196444664791fcb79",
+  "builder_first_commit": "f0f31542a48b560fd2e226439c0e0230f9b2f486",
+  "first_commit": "f7bba0f59b6242213c19cda52d5466607e051402",
+  "first_source_sha256": {
+    "examples/service-summary/D0.md": "3fb572819d1ae3f7f7b8c9d42dc696bf8a71684fb250d194ccd79e1a32adf221",
+    "examples/service-summary/DESIGN.md": "d56fcfa7be34d29779bd7317428682c262fb90737eb67bf6a8d910d69ae95581",
+    "examples/service-summary/README.md": "5900678be0c458f4d952525d51135dff50497e39aa07433dc4a2039213596dc2",
+    "examples/service-summary/READ_LOG.md": "9854ae331361704d69e45c60665c7a77f600cfa83a9f106f3fa4847162c7ba0f",
+    "examples/service-summary/VALIDATION.md": "8fa154a53386eea987a2d2d4e4089eb3cde41510796c168870b92cc3c0587f1d",
+    "examples/service-summary/content.html": "d394b1d6c7a73d649283e600094bd7789ad021cbe1f79945ca544c1ae1df0212",
+    "examples/service-summary/previews/scroll-1280x720.png": "3c113d6102fb6f0a244192ea3a2f5861825a1af84d8034539dc28237187e3d3e",
+    "examples/service-summary/previews/scroll-1366x768.png": "46b99e4491f320238c3534330e1841de364212715ab40cdfd5b9dadd7f5b0a1b",
+    "examples/service-summary/previews/scroll-1440x810.png": "083bc32178d8005f419008a03c6ce56b3407a748a5ff5a927e7233bf0914d5c5",
+    "examples/service-summary/previews/scroll-1600x950.png": "5150820f0405aff65c0b2ac9319e7edf7f87759aa5e6d15adf78d87d72a5ff1e",
+    "examples/service-summary/previews/self-correction-initial.json": "9d1c32c838ef5252ec6dfea21b0b0b3b1d45aecd9a4e2deefc7e88f9715b0b8b",
+    "examples/service-summary/previews/slides-1280x720.png": "fa49e9a2862c7884a057a9528509601a48a196a3ca84943a97ea52bc17e2f97f",
+    "examples/service-summary/previews/slides-1366x768.png": "2d3baf674b6e59057e5daaa9522221a20d81d9c52ea3cea29a4ef04d86dd3c83",
+    "examples/service-summary/previews/slides-1440x810.png": "27a2cb09e71e0aec0c005559fd302006753d9a2b8f75640162deb8ea166323ac",
+    "examples/service-summary/previews/slides-1600x950.png": "a9d1b999950ae204eaeba08d5197bd8e985b5b511d3868b6d233ec660cd0529f",
+    "examples/service-summary/previews/validation.json": "8a7d35d408820eb077acf56deb5a304f68097ec5218184216058cda33f60a2ae",
+    "examples/service-summary/report.css": "da72068225309e818a6bd27147b5e0844456983a772faa82d3725e467d659ac1",
+    "examples/service-summary/report.js": "92908c11bf535dc43ca6ba2470d2a58676e573eacab0fd8b6b28e3259329d9e1",
+    "examples/service-summary/scroll.html": "b522741eafc9422b95bbbd11ccbef95d4e6a3f6483c69bafa67bee74149e6d1e",
+    "examples/service-summary/slides.html": "e1bdccb8bde36613e097696cab3a5a857c7892da475b6ed47326f3f529f4ff17",
+    "examples/service-summary/verify.py": "076ac05e44ef4a8c37922efbb9fca2e8173bce677fb9df8fa90e6d182c78dbd2",
+    "examples/service-summary/viewer.css": "d4b0dbb5fd3ccd090083140d3b971e56ac4b9dfe7b450f7ecc21dc9153980c78",
+    "examples/service-summary/viewer.js": "594735900f2a3a9fd0fd99b6c10158dc66c12573f41e9ac452cda6c0de4904a0"
+  },
+  "bundle_sha256": "57c0377d8244bb3c60aa79c7a3363f131952ff5a3c86c0bb60c193bb1f98be91",
+  "feedback_before_first_result": false
+}
