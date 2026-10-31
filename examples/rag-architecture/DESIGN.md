@@ -35,3 +35,21 @@ Notes are two equal columns with24px gap; body18/1.4, label19, gap4. Content gap
 ## Post-review optional scope clarification — 2026-10-30
 
 After first-result preservation and independent PASS with limits, REVIEW_FEEDBACK.md suggested making the semantic-retrieval scope visible. The panel's existing Blue label now reads `준비와 사용 · 의미 기반 검색의 예`; an adjacent Muted17px/1.25 note says `단어 검색 또는 두 방식을 섞은 검색도 가능`. A baseline-aligned flex row with24px gap preserves the existing hierarchy. This makes explicit that semantic numeric representations describe this example, while RAG can use keyword or hybrid retrieval. No new page, graph node, or common design rule was added. This is a topic-specific optional clarification following external review, not a retrospective D0 failure.
+
+## Stage 4 · authored variation plan
+
+Long-title fixture: use a local `.title-two-column` class to place the title and definition in parallel tracks below their shared kicker. Keep the existing 49px title and 21px definition; use 1.1fr/1fr columns and 24px gap. No content-dependent zoom reduction. This is an authored alternative, not automatic layout selection or a common library token.
+
+Two-line node description fixture: increase all four preparation nodes to 90px height (chunk width190, center x489), keep chunk title baseline30 and description baselines54/76 with 18px text. Move the other preparation text and horizontal arrows down8px; store transfer starts y93.5, routes at y124, label baseline117. Response nodes remain at y148. This reallocates the inter-phase gap rather than shrinking glyphs. It applies only to the tested short two-line description; longer lines require a wider/taller node and rerouted connectors or a separate detail page.
+
+Test original layouts before these local adaptations. Keep an intentionally overfull explanation fixture as a rejected boundary. A title needing more than two lines in the alternate track, or notes that cross the last caption/footer/canvas, requires shorter wording, another layout, or requested scope division. Do not silently add pages to the one-page task. Exact supported strings and measured outcomes belong to the stage4 fixture/report; these are not universal character-count limits.
+
+### Stage 4 tested content and observed limits
+
+Exact long title: `외부 문서를 찾아 활용하는 검색 증강 생성의 질문 응답 흐름`. It fits the original full-width title track as one line. The optional two-column title/definition layout renders it as two lines; that alternative is not required to fix this title. Do not report the original layout as a failure.
+
+Exact chunk description: first line `문서를 의미가 이어지는`, second `짧은 조각으로 나누기`. Directly appending a second line at the original secondary baseline56 plus20 overflows the original node. The authored taller preparation row described above passes without changing font sizes. The stored-document transfer and its label must move with the row; changing only the text baselines was not sufficient.
+
+Overload fixture: append ` 문서의 출처와 검색 품질, 최신성 및 응답 근거를 추가로 자세히 설명합니다.` 30 times to the first note. It intentionally exceeds the one-page capacity and is rejected; the script does not reduce the zoom or font size in response. Shorten to the learning objective, use a wider/taller authored structure if it fits, or request a separate detail page within authorized scope. This is one tested rejection point, not a discovered exact maximum text length.
+
+No stage count, comparison cardinality, negative numerical data or axis-name variations were tested: this selected one-page composition has none of those numeric/axis contracts. Combined long-title plus long-description conditions were not tested either; passing them separately does not imply their combination passes.

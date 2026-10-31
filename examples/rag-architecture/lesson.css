@@ -29,3 +29,8 @@ body[data-mode=slide] .rag-deck {height:calc(100vh - 44px);align-content:center;
 .notes b {display:block;color:var(--navy);font-size:19px;margin-bottom:4px;}
 .rag-slide .ref-takeaway {margin:0;font-size:20px;padding:11px 17px;}
 .rag-slide .footer {margin-top:12px;padding-top:11px;font-size:15px;}
+/* Authored long-title alternative; preserve font sizes and the diagram geometry. */
+.rag-slide.title-two-column header {display:grid;grid-template-columns:1.1fr 1fr;column-gap:24px;row-gap:8px;align-items:center;}
+.rag-slide.title-two-column header .kicker {grid-column:1 / -1;}
+.rag-slide.title-two-column h1 {margin:0;word-break:keep-all;}
+.rag-slide.title-two-column .subtitle {margin:0;word-break:keep-all;}
