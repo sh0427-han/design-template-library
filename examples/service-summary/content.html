@@ -3,9 +3,9 @@
 <body><main class="report" id="summary">
 <header><div class="kicker">서비스 변경 · 관측 요약</div><h1>응답·비용 개선, 실패율 상승</h1><p class="subtitle">동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교</p></header>
 <div class="report-body">
-<section class="panel impact" aria-labelledby="impact-title"><div class="panel-label">지표 비교</div><h2 id="impact-title">효율 이점과 품질 손실</h2><p class="chart-note">지표별 기존값 = 100 · 막대는 기존 대비 지수 · 세 지표 모두 낮을수록 유리</p>
-<div class="chart"><div class="axis" aria-label="기존 대비 지수"><span style="bottom:120px">200</span><span style="bottom:60px">100</span><span style="bottom:0">0</span></div><div class="groups"><div class="gridlines" aria-hidden="true"><i></i></div><div id="metrics"></div></div></div>
-<p class="definition"><b>응답시간 95백분위수</b>: 관측 요청의 약 95%가 이 시간 이내 응답.<br>지수는 각 지표의 변화 크기이며, 지표 간 중요도나 종합 점수는 아님.</p>
+<section class="panel impact" aria-labelledby="impact-title"><div class="panel-label">지표 비교</div><h2 id="impact-title">효율 이점과 품질 손실</h2><p class="chart-note">각 지표의 큰 값을 같은 높이로 표시 · 두 막대는 실제 값의 비율 · 낮을수록 유리</p>
+<div class="chart"><div class="groups"><div class="gridlines" aria-hidden="true"></div><div id="metrics"></div></div></div>
+<p class="definition"><b>응답시간 95백분위수</b>: 관측 요청의 약 95%가 이 시간 이내 응답.<br>막대 높이는 각 지표 안에서 비교하며, 서로 다른 지표의 절대 크기를 뜻하지 않음.</p>
 </section>
 <section class="panel action" aria-labelledby="action-title"><div class="panel-label">판단과 후속 조치</div><h2 id="action-title">전면 확대 전, 실패 원인 확인</h2><div class="actions">
 <div class="action-item"><span class="number">1</span><div><h3>관측된 이점과 손실</h3><p>응답시간 280ms 단축, 하루 $18 절감.<br>같은 10,000건당 실패는 30건 증가.</p></div></div>

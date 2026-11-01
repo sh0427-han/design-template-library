@@ -111,52 +111,13 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "지표별 기존값 = 100 · 막대는 기존 대비 지수 · 세 지표 모두 낮을수록 유리",
+          "text": "각 지표의 큰 값을 같은 높이로 표시 · 두 막대는 실제 값의 비율 · 낮을수록 유리",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 46
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "200",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 3
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "100",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 3
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "0",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 1
+              "glyphCount": 47
             }
           ]
         },
@@ -579,13 +540,13 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "지수는 각 지표의 변화 크기이며, 지표 간 중요도나 종합 점수는 아님.",
+          "text": "막대 높이는 각 지표 안에서 비교하며, 서로 다른 지표의 절대 크기를 뜻하지 않음.",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 39
+              "glyphCount": 46
             }
           ]
         },
@@ -796,50 +757,36 @@
       "pass": true,
       "detail": [
         {
-          "url": "http://127.0.0.1:39353/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:39353/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:39353/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:39353/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:39353/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         }
       ]
     },
     {
-      "name": "scroll-1600x950 direction and red deterioration",
+      "name": "scroll-1600x950 no direction arrows or numeric y-axis",
       "pass": true,
-      "detail": [
-        {
-          "worse": false,
-          "path": "M5 97 L57 118",
-          "color": "rgb(38, 166, 161)",
-          "arrow": true
-        },
-        {
-          "worse": false,
-          "path": "M5 97 L57 106",
-          "color": "rgb(38, 166, 161)",
-          "arrow": true
-        },
-        {
-          "worse": true,
-          "path": "M5 97 L57 61",
-          "color": "rgb(200, 68, 68)",
-          "arrow": true
-        }
-      ]
+      "detail": null
+    },
+    {
+      "name": "scroll-1600x950 red deterioration",
+      "pass": true,
+      "detail": null
     },
     {
       "name": "scroll-1600x950 no authoring meta visible",
@@ -871,51 +818,51 @@
       "pass": true,
       "detail": [
         {
-          "x": 178.984375,
-          "y": 418.96875,
+          "x": 143.984375,
+          "y": 358.96875,
           "width": 36,
-          "height": 60,
-          "right": 214.984375,
+          "height": 120,
+          "right": 179.984375,
           "bottom": 478.96875
         },
         {
-          "x": 276.984375,
-          "y": 439.96875,
+          "x": 241.984375,
+          "y": 400.96875,
           "width": 36,
-          "height": 39,
-          "right": 312.984375,
+          "height": 78,
+          "right": 277.984375,
           "bottom": 478.96875
         },
         {
-          "x": 420.96875,
-          "y": 418.96875,
+          "x": 399.96875,
+          "y": 358.96875,
           "width": 36,
-          "height": 60,
-          "right": 456.96875,
+          "height": 120,
+          "right": 435.96875,
           "bottom": 478.96875
         },
         {
-          "x": 518.96875,
-          "y": 427.96875,
+          "x": 497.96875,
+          "y": 376.96875,
           "width": 36,
-          "height": 51,
-          "right": 554.96875,
+          "height": 102,
+          "right": 533.96875,
           "bottom": 478.96875
         },
         {
-          "x": 662.953125,
-          "y": 418.96875,
+          "x": 655.953125,
+          "y": 403.96875,
           "width": 36,
-          "height": 60,
-          "right": 698.953125,
+          "height": 75,
+          "right": 691.953125,
           "bottom": 478.96875
         },
         {
-          "x": 760.953125,
-          "y": 382.96875,
+          "x": 753.953125,
+          "y": 358.96875,
           "width": 36,
-          "height": 96,
-          "right": 796.953125,
+          "height": 120,
+          "right": 789.953125,
           "bottom": 478.96875
         }
       ]
@@ -1094,52 +1041,13 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "지표별 기존값 = 100 · 막대는 기존 대비 지수 · 세 지표 모두 낮을수록 유리",
+          "text": "각 지표의 큰 값을 같은 높이로 표시 · 두 막대는 실제 값의 비율 · 낮을수록 유리",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 46
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "200",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 3
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "100",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 3
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "0",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 1
+              "glyphCount": 47
             }
           ]
         },
@@ -1562,13 +1470,13 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "지수는 각 지표의 변화 크기이며, 지표 간 중요도나 종합 점수는 아님.",
+          "text": "막대 높이는 각 지표 안에서 비교하며, 서로 다른 지표의 절대 크기를 뜻하지 않음.",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 39
+              "glyphCount": 46
             }
           ]
         },
@@ -1818,50 +1726,36 @@
       "pass": true,
       "detail": [
         {
-          "url": "http://127.0.0.1:39353/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:39353/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:39353/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:39353/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:39353/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         }
       ]
     },
     {
-      "name": "slides-1600x950 direction and red deterioration",
+      "name": "slides-1600x950 no direction arrows or numeric y-axis",
       "pass": true,
-      "detail": [
-        {
-          "worse": false,
-          "path": "M5 97 L57 118",
-          "color": "rgb(38, 166, 161)",
-          "arrow": true
-        },
-        {
-          "worse": false,
-          "path": "M5 97 L57 106",
-          "color": "rgb(38, 166, 161)",
-          "arrow": true
-        },
-        {
-          "worse": true,
-          "path": "M5 97 L57 61",
-          "color": "rgb(200, 68, 68)",
-          "arrow": true
-        }
-      ]
+      "detail": null
+    },
+    {
+      "name": "slides-1600x950 red deterioration",
+      "pass": true,
+      "detail": null
     },
     {
       "name": "slides-1600x950 no authoring meta visible",
@@ -1893,51 +1787,51 @@
       "pass": true,
       "detail": [
         {
-          "x": 178.984375,
-          "y": 418.96875,
+          "x": 143.984375,
+          "y": 358.96875,
           "width": 36,
-          "height": 60,
-          "right": 214.984375,
+          "height": 120,
+          "right": 179.984375,
           "bottom": 478.96875
         },
         {
-          "x": 276.984375,
-          "y": 439.96875,
+          "x": 241.984375,
+          "y": 400.96875,
           "width": 36,
-          "height": 39,
-          "right": 312.984375,
+          "height": 78,
+          "right": 277.984375,
           "bottom": 478.96875
         },
         {
-          "x": 420.96875,
-          "y": 418.96875,
+          "x": 399.96875,
+          "y": 358.96875,
           "width": 36,
-          "height": 60,
-          "right": 456.96875,
+          "height": 120,
+          "right": 435.96875,
           "bottom": 478.96875
         },
         {
-          "x": 518.96875,
-          "y": 427.96875,
+          "x": 497.96875,
+          "y": 376.96875,
           "width": 36,
-          "height": 51,
-          "right": 554.96875,
+          "height": 102,
+          "right": 533.96875,
           "bottom": 478.96875
         },
         {
-          "x": 662.953125,
-          "y": 418.96875,
+          "x": 655.953125,
+          "y": 403.96875,
           "width": 36,
-          "height": 60,
-          "right": 698.953125,
+          "height": 75,
+          "right": 691.953125,
           "bottom": 478.96875
         },
         {
-          "x": 760.953125,
-          "y": 382.96875,
+          "x": 753.953125,
+          "y": 358.96875,
           "width": 36,
-          "height": 96,
-          "right": 796.953125,
+          "height": 120,
+          "right": 789.953125,
           "bottom": 478.96875
         }
       ]
@@ -2119,52 +2013,13 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "지표별 기존값 = 100 · 막대는 기존 대비 지수 · 세 지표 모두 낮을수록 유리",
+          "text": "각 지표의 큰 값을 같은 높이로 표시 · 두 막대는 실제 값의 비율 · 낮을수록 유리",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 46
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "200",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 3
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "100",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 3
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "0",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 1
+              "glyphCount": 47
             }
           ]
         },
@@ -2587,13 +2442,13 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "지수는 각 지표의 변화 크기이며, 지표 간 중요도나 종합 점수는 아님.",
+          "text": "막대 높이는 각 지표 안에서 비교하며, 서로 다른 지표의 절대 크기를 뜻하지 않음.",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 39
+              "glyphCount": 46
             }
           ]
         },
@@ -2804,50 +2659,36 @@
       "pass": true,
       "detail": [
         {
-          "url": "http://127.0.0.1:39353/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:39353/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:39353/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:39353/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:39353/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         }
       ]
     },
     {
-      "name": "scroll-1440x810 direction and red deterioration",
+      "name": "scroll-1440x810 no direction arrows or numeric y-axis",
       "pass": true,
-      "detail": [
-        {
-          "worse": false,
-          "path": "M5 97 L57 118",
-          "color": "rgb(38, 166, 161)",
-          "arrow": true
-        },
-        {
-          "worse": false,
-          "path": "M5 97 L57 106",
-          "color": "rgb(38, 166, 161)",
-          "arrow": true
-        },
-        {
-          "worse": true,
-          "path": "M5 97 L57 61",
-          "color": "rgb(200, 68, 68)",
-          "arrow": true
-        }
-      ]
+      "detail": null
+    },
+    {
+      "name": "scroll-1440x810 red deterioration",
+      "pass": true,
+      "detail": null
     },
     {
       "name": "scroll-1440x810 no authoring meta visible",
@@ -2879,51 +2720,51 @@
       "pass": true,
       "detail": [
         {
-          "x": 178.984375,
-          "y": 418.96875,
+          "x": 143.984375,
+          "y": 358.96875,
           "width": 36,
-          "height": 60,
-          "right": 214.984375,
+          "height": 120,
+          "right": 179.984375,
           "bottom": 478.96875
         },
         {
-          "x": 276.984375,
-          "y": 439.96875,
+          "x": 241.984375,
+          "y": 400.96875,
           "width": 36,
-          "height": 39,
-          "right": 312.984375,
+          "height": 78,
+          "right": 277.984375,
           "bottom": 478.96875
         },
         {
-          "x": 420.96875,
-          "y": 418.96875,
+          "x": 399.96875,
+          "y": 358.96875,
           "width": 36,
-          "height": 60,
-          "right": 456.96875,
+          "height": 120,
+          "right": 435.96875,
           "bottom": 478.96875
         },
         {
-          "x": 518.96875,
-          "y": 427.96875,
+          "x": 497.96875,
+          "y": 376.96875,
           "width": 36,
-          "height": 51,
-          "right": 554.96875,
+          "height": 102,
+          "right": 533.96875,
           "bottom": 478.96875
         },
         {
-          "x": 662.953125,
-          "y": 418.96875,
+          "x": 655.953125,
+          "y": 403.96875,
           "width": 36,
-          "height": 60,
-          "right": 698.953125,
+          "height": 75,
+          "right": 691.953125,
           "bottom": 478.96875
         },
         {
-          "x": 760.953125,
-          "y": 382.96875,
+          "x": 753.953125,
+          "y": 358.96875,
           "width": 36,
-          "height": 96,
-          "right": 796.953125,
+          "height": 120,
+          "right": 789.953125,
           "bottom": 478.96875
         }
       ]
@@ -3102,52 +2943,13 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "지표별 기존값 = 100 · 막대는 기존 대비 지수 · 세 지표 모두 낮을수록 유리",
+          "text": "각 지표의 큰 값을 같은 높이로 표시 · 두 막대는 실제 값의 비율 · 낮을수록 유리",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 46
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "200",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 3
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "100",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 3
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "0",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 1
+              "glyphCount": 47
             }
           ]
         },
@@ -3570,13 +3372,13 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "지수는 각 지표의 변화 크기이며, 지표 간 중요도나 종합 점수는 아님.",
+          "text": "막대 높이는 각 지표 안에서 비교하며, 서로 다른 지표의 절대 크기를 뜻하지 않음.",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 39
+              "glyphCount": 46
             }
           ]
         },
@@ -3826,50 +3628,36 @@
       "pass": true,
       "detail": [
         {
-          "url": "http://127.0.0.1:39353/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:39353/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:39353/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:39353/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:39353/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         }
       ]
     },
     {
-      "name": "slides-1440x810 direction and red deterioration",
+      "name": "slides-1440x810 no direction arrows or numeric y-axis",
       "pass": true,
-      "detail": [
-        {
-          "worse": false,
-          "path": "M5 97 L57 118",
-          "color": "rgb(38, 166, 161)",
-          "arrow": true
-        },
-        {
-          "worse": false,
-          "path": "M5 97 L57 106",
-          "color": "rgb(38, 166, 161)",
-          "arrow": true
-        },
-        {
-          "worse": true,
-          "path": "M5 97 L57 61",
-          "color": "rgb(200, 68, 68)",
-          "arrow": true
-        }
-      ]
+      "detail": null
+    },
+    {
+      "name": "slides-1440x810 red deterioration",
+      "pass": true,
+      "detail": null
     },
     {
       "name": "slides-1440x810 no authoring meta visible",
@@ -3901,51 +3689,51 @@
       "pass": true,
       "detail": [
         {
-          "x": 178.984375,
-          "y": 418.96875,
+          "x": 143.984375,
+          "y": 358.96875,
           "width": 36,
-          "height": 60,
-          "right": 214.984375,
+          "height": 120,
+          "right": 179.984375,
           "bottom": 478.96875
         },
         {
-          "x": 276.984375,
-          "y": 439.96875,
+          "x": 241.984375,
+          "y": 400.96875,
           "width": 36,
-          "height": 39,
-          "right": 312.984375,
+          "height": 78,
+          "right": 277.984375,
           "bottom": 478.96875
         },
         {
-          "x": 420.96875,
-          "y": 418.96875,
+          "x": 399.96875,
+          "y": 358.96875,
           "width": 36,
-          "height": 60,
-          "right": 456.96875,
+          "height": 120,
+          "right": 435.96875,
           "bottom": 478.96875
         },
         {
-          "x": 518.96875,
-          "y": 427.96875,
+          "x": 497.96875,
+          "y": 376.96875,
           "width": 36,
-          "height": 51,
-          "right": 554.96875,
+          "height": 102,
+          "right": 533.96875,
           "bottom": 478.96875
         },
         {
-          "x": 662.953125,
-          "y": 418.96875,
+          "x": 655.953125,
+          "y": 403.96875,
           "width": 36,
-          "height": 60,
-          "right": 698.953125,
+          "height": 75,
+          "right": 691.953125,
           "bottom": 478.96875
         },
         {
-          "x": 760.953125,
-          "y": 382.96875,
+          "x": 753.953125,
+          "y": 358.96875,
           "width": 36,
-          "height": 96,
-          "right": 796.953125,
+          "height": 120,
+          "right": 789.953125,
           "bottom": 478.96875
         }
       ]
@@ -4127,52 +3915,13 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "지표별 기존값 = 100 · 막대는 기존 대비 지수 · 세 지표 모두 낮을수록 유리",
+          "text": "각 지표의 큰 값을 같은 높이로 표시 · 두 막대는 실제 값의 비율 · 낮을수록 유리",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 46
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "200",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 3
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "100",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 3
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "0",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 1
+              "glyphCount": 47
             }
           ]
         },
@@ -4595,13 +4344,13 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "지수는 각 지표의 변화 크기이며, 지표 간 중요도나 종합 점수는 아님.",
+          "text": "막대 높이는 각 지표 안에서 비교하며, 서로 다른 지표의 절대 크기를 뜻하지 않음.",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 39
+              "glyphCount": 46
             }
           ]
         },
@@ -4812,50 +4561,36 @@
       "pass": true,
       "detail": [
         {
-          "url": "http://127.0.0.1:39353/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:39353/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:39353/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:39353/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:39353/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         }
       ]
     },
     {
-      "name": "scroll-1366x768 direction and red deterioration",
+      "name": "scroll-1366x768 no direction arrows or numeric y-axis",
       "pass": true,
-      "detail": [
-        {
-          "worse": false,
-          "path": "M5 97 L57 118",
-          "color": "rgb(38, 166, 161)",
-          "arrow": true
-        },
-        {
-          "worse": false,
-          "path": "M5 97 L57 106",
-          "color": "rgb(38, 166, 161)",
-          "arrow": true
-        },
-        {
-          "worse": true,
-          "path": "M5 97 L57 61",
-          "color": "rgb(200, 68, 68)",
-          "arrow": true
-        }
-      ]
+      "detail": null
+    },
+    {
+      "name": "scroll-1366x768 red deterioration",
+      "pass": true,
+      "detail": null
     },
     {
       "name": "scroll-1366x768 no authoring meta visible",
@@ -4887,51 +4622,51 @@
       "pass": true,
       "detail": [
         {
-          "x": 178.984375,
-          "y": 418.96875,
+          "x": 143.984375,
+          "y": 358.96875,
           "width": 36,
-          "height": 60,
-          "right": 214.984375,
+          "height": 120,
+          "right": 179.984375,
           "bottom": 478.96875
         },
         {
-          "x": 276.984375,
-          "y": 439.96875,
+          "x": 241.984375,
+          "y": 400.96875,
           "width": 36,
-          "height": 39,
-          "right": 312.984375,
+          "height": 78,
+          "right": 277.984375,
           "bottom": 478.96875
         },
         {
-          "x": 420.96875,
-          "y": 418.96875,
+          "x": 399.96875,
+          "y": 358.96875,
           "width": 36,
-          "height": 60,
-          "right": 456.96875,
+          "height": 120,
+          "right": 435.96875,
           "bottom": 478.96875
         },
         {
-          "x": 518.96875,
-          "y": 427.96875,
+          "x": 497.96875,
+          "y": 376.96875,
           "width": 36,
-          "height": 51,
-          "right": 554.96875,
+          "height": 102,
+          "right": 533.96875,
           "bottom": 478.96875
         },
         {
-          "x": 662.953125,
-          "y": 418.96875,
+          "x": 655.953125,
+          "y": 403.96875,
           "width": 36,
-          "height": 60,
-          "right": 698.953125,
+          "height": 75,
+          "right": 691.953125,
           "bottom": 478.96875
         },
         {
-          "x": 760.953125,
-          "y": 382.96875,
+          "x": 753.953125,
+          "y": 358.96875,
           "width": 36,
-          "height": 96,
-          "right": 796.953125,
+          "height": 120,
+          "right": 789.953125,
           "bottom": 478.96875
         }
       ]
@@ -5110,52 +4845,13 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "지표별 기존값 = 100 · 막대는 기존 대비 지수 · 세 지표 모두 낮을수록 유리",
+          "text": "각 지표의 큰 값을 같은 높이로 표시 · 두 막대는 실제 값의 비율 · 낮을수록 유리",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 46
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "200",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 3
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "100",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 3
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "0",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 1
+              "glyphCount": 47
             }
           ]
         },
@@ -5578,13 +5274,13 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "지수는 각 지표의 변화 크기이며, 지표 간 중요도나 종합 점수는 아님.",
+          "text": "막대 높이는 각 지표 안에서 비교하며, 서로 다른 지표의 절대 크기를 뜻하지 않음.",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 39
+              "glyphCount": 46
             }
           ]
         },
@@ -5834,50 +5530,36 @@
       "pass": true,
       "detail": [
         {
-          "url": "http://127.0.0.1:39353/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:39353/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:39353/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:39353/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:39353/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         }
       ]
     },
     {
-      "name": "slides-1366x768 direction and red deterioration",
+      "name": "slides-1366x768 no direction arrows or numeric y-axis",
       "pass": true,
-      "detail": [
-        {
-          "worse": false,
-          "path": "M5 97 L57 118",
-          "color": "rgb(38, 166, 161)",
-          "arrow": true
-        },
-        {
-          "worse": false,
-          "path": "M5 97 L57 106",
-          "color": "rgb(38, 166, 161)",
-          "arrow": true
-        },
-        {
-          "worse": true,
-          "path": "M5 97 L57 61",
-          "color": "rgb(200, 68, 68)",
-          "arrow": true
-        }
-      ]
+      "detail": null
+    },
+    {
+      "name": "slides-1366x768 red deterioration",
+      "pass": true,
+      "detail": null
     },
     {
       "name": "slides-1366x768 no authoring meta visible",
@@ -5909,51 +5591,51 @@
       "pass": true,
       "detail": [
         {
-          "x": 178.984375,
-          "y": 418.96875,
+          "x": 143.984375,
+          "y": 358.96875,
           "width": 36,
-          "height": 60,
-          "right": 214.984375,
+          "height": 120,
+          "right": 179.984375,
           "bottom": 478.96875
         },
         {
-          "x": 276.984375,
-          "y": 439.96875,
+          "x": 241.984375,
+          "y": 400.96875,
           "width": 36,
-          "height": 39,
-          "right": 312.984375,
+          "height": 78,
+          "right": 277.984375,
           "bottom": 478.96875
         },
         {
-          "x": 420.96875,
-          "y": 418.96875,
+          "x": 399.96875,
+          "y": 358.96875,
           "width": 36,
-          "height": 60,
-          "right": 456.96875,
+          "height": 120,
+          "right": 435.96875,
           "bottom": 478.96875
         },
         {
-          "x": 518.96875,
-          "y": 427.96875,
+          "x": 497.96875,
+          "y": 376.96875,
           "width": 36,
-          "height": 51,
-          "right": 554.96875,
+          "height": 102,
+          "right": 533.96875,
           "bottom": 478.96875
         },
         {
-          "x": 662.953125,
-          "y": 418.96875,
+          "x": 655.953125,
+          "y": 403.96875,
           "width": 36,
-          "height": 60,
-          "right": 698.953125,
+          "height": 75,
+          "right": 691.953125,
           "bottom": 478.96875
         },
         {
-          "x": 760.953125,
-          "y": 382.96875,
+          "x": 753.953125,
+          "y": 358.96875,
           "width": 36,
-          "height": 96,
-          "right": 796.953125,
+          "height": 120,
+          "right": 789.953125,
           "bottom": 478.96875
         }
       ]
@@ -6135,52 +5817,13 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "지표별 기존값 = 100 · 막대는 기존 대비 지수 · 세 지표 모두 낮을수록 유리",
+          "text": "각 지표의 큰 값을 같은 높이로 표시 · 두 막대는 실제 값의 비율 · 낮을수록 유리",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 46
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "200",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 3
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "100",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 3
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "0",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 1
+              "glyphCount": 47
             }
           ]
         },
@@ -6603,13 +6246,13 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "지수는 각 지표의 변화 크기이며, 지표 간 중요도나 종합 점수는 아님.",
+          "text": "막대 높이는 각 지표 안에서 비교하며, 서로 다른 지표의 절대 크기를 뜻하지 않음.",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 39
+              "glyphCount": 46
             }
           ]
         },
@@ -6820,50 +6463,36 @@
       "pass": true,
       "detail": [
         {
-          "url": "http://127.0.0.1:39353/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:39353/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:39353/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:39353/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:39353/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         }
       ]
     },
     {
-      "name": "scroll-1280x720 direction and red deterioration",
+      "name": "scroll-1280x720 no direction arrows or numeric y-axis",
       "pass": true,
-      "detail": [
-        {
-          "worse": false,
-          "path": "M5 97 L57 118",
-          "color": "rgb(38, 166, 161)",
-          "arrow": true
-        },
-        {
-          "worse": false,
-          "path": "M5 97 L57 106",
-          "color": "rgb(38, 166, 161)",
-          "arrow": true
-        },
-        {
-          "worse": true,
-          "path": "M5 97 L57 61",
-          "color": "rgb(200, 68, 68)",
-          "arrow": true
-        }
-      ]
+      "detail": null
+    },
+    {
+      "name": "scroll-1280x720 red deterioration",
+      "pass": true,
+      "detail": null
     },
     {
       "name": "scroll-1280x720 no authoring meta visible",
@@ -6895,51 +6524,51 @@
       "pass": true,
       "detail": [
         {
-          "x": 178.984375,
-          "y": 418.96875,
+          "x": 143.984375,
+          "y": 358.96875,
           "width": 36,
-          "height": 60,
-          "right": 214.984375,
+          "height": 120,
+          "right": 179.984375,
           "bottom": 478.96875
         },
         {
-          "x": 276.984375,
-          "y": 439.96875,
+          "x": 241.984375,
+          "y": 400.96875,
           "width": 36,
-          "height": 39,
-          "right": 312.984375,
+          "height": 78,
+          "right": 277.984375,
           "bottom": 478.96875
         },
         {
-          "x": 420.96875,
-          "y": 418.96875,
+          "x": 399.96875,
+          "y": 358.96875,
           "width": 36,
-          "height": 60,
-          "right": 456.96875,
+          "height": 120,
+          "right": 435.96875,
           "bottom": 478.96875
         },
         {
-          "x": 518.96875,
-          "y": 427.96875,
+          "x": 497.96875,
+          "y": 376.96875,
           "width": 36,
-          "height": 51,
-          "right": 554.96875,
+          "height": 102,
+          "right": 533.96875,
           "bottom": 478.96875
         },
         {
-          "x": 662.953125,
-          "y": 418.96875,
+          "x": 655.953125,
+          "y": 403.96875,
           "width": 36,
-          "height": 60,
-          "right": 698.953125,
+          "height": 75,
+          "right": 691.953125,
           "bottom": 478.96875
         },
         {
-          "x": 760.953125,
-          "y": 382.96875,
+          "x": 753.953125,
+          "y": 358.96875,
           "width": 36,
-          "height": 96,
-          "right": 796.953125,
+          "height": 120,
+          "right": 789.953125,
           "bottom": 478.96875
         }
       ]
@@ -7118,52 +6747,13 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "지표별 기존값 = 100 · 막대는 기존 대비 지수 · 세 지표 모두 낮을수록 유리",
+          "text": "각 지표의 큰 값을 같은 높이로 표시 · 두 막대는 실제 값의 비율 · 낮을수록 유리",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 46
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "200",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 3
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "100",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 3
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "0",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 1
+              "glyphCount": 47
             }
           ]
         },
@@ -7586,13 +7176,13 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "지수는 각 지표의 변화 크기이며, 지표 간 중요도나 종합 점수는 아님.",
+          "text": "막대 높이는 각 지표 안에서 비교하며, 서로 다른 지표의 절대 크기를 뜻하지 않음.",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 39
+              "glyphCount": 46
             }
           ]
         },
@@ -7842,50 +7432,36 @@
       "pass": true,
       "detail": [
         {
-          "url": "http://127.0.0.1:39353/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:39353/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:39353/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:39353/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:39353/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         }
       ]
     },
     {
-      "name": "slides-1280x720 direction and red deterioration",
+      "name": "slides-1280x720 no direction arrows or numeric y-axis",
       "pass": true,
-      "detail": [
-        {
-          "worse": false,
-          "path": "M5 97 L57 118",
-          "color": "rgb(38, 166, 161)",
-          "arrow": true
-        },
-        {
-          "worse": false,
-          "path": "M5 97 L57 106",
-          "color": "rgb(38, 166, 161)",
-          "arrow": true
-        },
-        {
-          "worse": true,
-          "path": "M5 97 L57 61",
-          "color": "rgb(200, 68, 68)",
-          "arrow": true
-        }
-      ]
+      "detail": null
+    },
+    {
+      "name": "slides-1280x720 red deterioration",
+      "pass": true,
+      "detail": null
     },
     {
       "name": "slides-1280x720 no authoring meta visible",
@@ -7917,51 +7493,51 @@
       "pass": true,
       "detail": [
         {
-          "x": 178.984375,
-          "y": 418.96875,
+          "x": 143.984375,
+          "y": 358.96875,
           "width": 36,
-          "height": 60,
-          "right": 214.984375,
+          "height": 120,
+          "right": 179.984375,
           "bottom": 478.96875
         },
         {
-          "x": 276.984375,
-          "y": 439.96875,
+          "x": 241.984375,
+          "y": 400.96875,
           "width": 36,
-          "height": 39,
-          "right": 312.984375,
+          "height": 78,
+          "right": 277.984375,
           "bottom": 478.96875
         },
         {
-          "x": 420.96875,
-          "y": 418.96875,
+          "x": 399.96875,
+          "y": 358.96875,
           "width": 36,
-          "height": 60,
-          "right": 456.96875,
+          "height": 120,
+          "right": 435.96875,
           "bottom": 478.96875
         },
         {
-          "x": 518.96875,
-          "y": 427.96875,
+          "x": 497.96875,
+          "y": 376.96875,
           "width": 36,
-          "height": 51,
-          "right": 554.96875,
+          "height": 102,
+          "right": 533.96875,
           "bottom": 478.96875
         },
         {
-          "x": 662.953125,
-          "y": 418.96875,
+          "x": 655.953125,
+          "y": 403.96875,
           "width": 36,
-          "height": 60,
-          "right": 698.953125,
+          "height": 75,
+          "right": 691.953125,
           "bottom": 478.96875
         },
         {
-          "x": 760.953125,
-          "y": 382.96875,
+          "x": 753.953125,
+          "y": 358.96875,
           "width": 36,
-          "height": 96,
-          "right": 796.953125,
+          "height": 120,
+          "right": 789.953125,
           "bottom": 478.96875
         }
       ]
@@ -8104,51 +7680,51 @@
         ],
         "bars": [
           {
-            "x": 178.984375,
-            "y": 418.96875,
+            "x": 143.984375,
+            "y": 358.96875,
             "width": 36,
-            "height": 60,
-            "right": 214.984375,
+            "height": 120,
+            "right": 179.984375,
             "bottom": 478.96875
           },
           {
-            "x": 276.984375,
-            "y": 439.96875,
+            "x": 241.984375,
+            "y": 400.96875,
             "width": 36,
-            "height": 39,
-            "right": 312.984375,
+            "height": 78,
+            "right": 277.984375,
             "bottom": 478.96875
           },
           {
-            "x": 420.96875,
-            "y": 418.96875,
+            "x": 399.96875,
+            "y": 358.96875,
             "width": 36,
-            "height": 60,
-            "right": 456.96875,
+            "height": 120,
+            "right": 435.96875,
             "bottom": 478.96875
           },
           {
-            "x": 518.96875,
-            "y": 427.96875,
+            "x": 497.96875,
+            "y": 376.96875,
             "width": 36,
-            "height": 51,
-            "right": 554.96875,
+            "height": 102,
+            "right": 533.96875,
             "bottom": 478.96875
           },
           {
-            "x": 662.953125,
-            "y": 418.96875,
+            "x": 655.953125,
+            "y": 403.96875,
             "width": 36,
-            "height": 60,
-            "right": 698.953125,
+            "height": 75,
+            "right": 691.953125,
             "bottom": 478.96875
           },
           {
-            "x": 760.953125,
-            "y": 382.96875,
+            "x": 753.953125,
+            "y": 358.96875,
             "width": 36,
-            "height": 96,
-            "right": 796.953125,
+            "height": 120,
+            "right": 789.953125,
             "bottom": 478.96875
           }
         ],
@@ -8194,7 +7770,7 @@
             "labelCount": 1
           }
         ],
-        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n지표별 기존값 = 100 · 막대는 기존 대비 지수 · 세 지표 모두 낮을수록 유리\n\n200\n100\n0\n800ms\n기존\n520ms\n변경\n응답시간 95백분위수\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n악화+0.3 퍼센트포인트\n\n상대 변화 +60.0%\n실패 50 → 80건 / 10,000건\n\n응답시간 95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n지수는 각 지표의 변화 크기이며, 지표 간 중요도나 종합 점수는 아님.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n관측값의 차이는 비교 가능.\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
+        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n각 지표의 큰 값을 같은 높이로 표시 · 두 막대는 실제 값의 비율 · 낮을수록 유리\n\n800ms\n기존\n520ms\n변경\n응답시간 95백분위수\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n악화+0.3 퍼센트포인트\n\n상대 변화 +60.0%\n실패 50 → 80건 / 10,000건\n\n응답시간 95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n막대 높이는 각 지표 안에서 비교하며, 서로 다른 지표의 절대 크기를 뜻하지 않음.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n관측값의 차이는 비교 가능.\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
       },
       "outer": {
         "width": 1600,
@@ -8255,51 +7831,51 @@
         ],
         "bars": [
           {
-            "x": 178.984375,
-            "y": 418.96875,
+            "x": 143.984375,
+            "y": 358.96875,
             "width": 36,
-            "height": 60,
-            "right": 214.984375,
+            "height": 120,
+            "right": 179.984375,
             "bottom": 478.96875
           },
           {
-            "x": 276.984375,
-            "y": 439.96875,
+            "x": 241.984375,
+            "y": 400.96875,
             "width": 36,
-            "height": 39,
-            "right": 312.984375,
+            "height": 78,
+            "right": 277.984375,
             "bottom": 478.96875
           },
           {
-            "x": 420.96875,
-            "y": 418.96875,
+            "x": 399.96875,
+            "y": 358.96875,
             "width": 36,
-            "height": 60,
-            "right": 456.96875,
+            "height": 120,
+            "right": 435.96875,
             "bottom": 478.96875
           },
           {
-            "x": 518.96875,
-            "y": 427.96875,
+            "x": 497.96875,
+            "y": 376.96875,
             "width": 36,
-            "height": 51,
-            "right": 554.96875,
+            "height": 102,
+            "right": 533.96875,
             "bottom": 478.96875
           },
           {
-            "x": 662.953125,
-            "y": 418.96875,
+            "x": 655.953125,
+            "y": 403.96875,
             "width": 36,
-            "height": 60,
-            "right": 698.953125,
+            "height": 75,
+            "right": 691.953125,
             "bottom": 478.96875
           },
           {
-            "x": 760.953125,
-            "y": 382.96875,
+            "x": 753.953125,
+            "y": 358.96875,
             "width": 36,
-            "height": 96,
-            "right": 796.953125,
+            "height": 120,
+            "right": 789.953125,
             "bottom": 478.96875
           }
         ],
@@ -8345,7 +7921,7 @@
             "labelCount": 1
           }
         ],
-        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n지표별 기존값 = 100 · 막대는 기존 대비 지수 · 세 지표 모두 낮을수록 유리\n\n200\n100\n0\n800ms\n기존\n520ms\n변경\n응답시간 95백분위수\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n악화+0.3 퍼센트포인트\n\n상대 변화 +60.0%\n실패 50 → 80건 / 10,000건\n\n응답시간 95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n지수는 각 지표의 변화 크기이며, 지표 간 중요도나 종합 점수는 아님.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n관측값의 차이는 비교 가능.\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
+        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n각 지표의 큰 값을 같은 높이로 표시 · 두 막대는 실제 값의 비율 · 낮을수록 유리\n\n800ms\n기존\n520ms\n변경\n응답시간 95백분위수\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n악화+0.3 퍼센트포인트\n\n상대 변화 +60.0%\n실패 50 → 80건 / 10,000건\n\n응답시간 95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n막대 높이는 각 지표 안에서 비교하며, 서로 다른 지표의 절대 크기를 뜻하지 않음.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n관측값의 차이는 비교 가능.\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
       },
       "outer": {
         "width": 1600,
@@ -8409,51 +7985,51 @@
         ],
         "bars": [
           {
-            "x": 178.984375,
-            "y": 418.96875,
+            "x": 143.984375,
+            "y": 358.96875,
             "width": 36,
-            "height": 60,
-            "right": 214.984375,
+            "height": 120,
+            "right": 179.984375,
             "bottom": 478.96875
           },
           {
-            "x": 276.984375,
-            "y": 439.96875,
+            "x": 241.984375,
+            "y": 400.96875,
             "width": 36,
-            "height": 39,
-            "right": 312.984375,
+            "height": 78,
+            "right": 277.984375,
             "bottom": 478.96875
           },
           {
-            "x": 420.96875,
-            "y": 418.96875,
+            "x": 399.96875,
+            "y": 358.96875,
             "width": 36,
-            "height": 60,
-            "right": 456.96875,
+            "height": 120,
+            "right": 435.96875,
             "bottom": 478.96875
           },
           {
-            "x": 518.96875,
-            "y": 427.96875,
+            "x": 497.96875,
+            "y": 376.96875,
             "width": 36,
-            "height": 51,
-            "right": 554.96875,
+            "height": 102,
+            "right": 533.96875,
             "bottom": 478.96875
           },
           {
-            "x": 662.953125,
-            "y": 418.96875,
+            "x": 655.953125,
+            "y": 403.96875,
             "width": 36,
-            "height": 60,
-            "right": 698.953125,
+            "height": 75,
+            "right": 691.953125,
             "bottom": 478.96875
           },
           {
-            "x": 760.953125,
-            "y": 382.96875,
+            "x": 753.953125,
+            "y": 358.96875,
             "width": 36,
-            "height": 96,
-            "right": 796.953125,
+            "height": 120,
+            "right": 789.953125,
             "bottom": 478.96875
           }
         ],
@@ -8499,7 +8075,7 @@
             "labelCount": 1
           }
         ],
-        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n지표별 기존값 = 100 · 막대는 기존 대비 지수 · 세 지표 모두 낮을수록 유리\n\n200\n100\n0\n800ms\n기존\n520ms\n변경\n응답시간 95백분위수\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n악화+0.3 퍼센트포인트\n\n상대 변화 +60.0%\n실패 50 → 80건 / 10,000건\n\n응답시간 95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n지수는 각 지표의 변화 크기이며, 지표 간 중요도나 종합 점수는 아님.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n관측값의 차이는 비교 가능.\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
+        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n각 지표의 큰 값을 같은 높이로 표시 · 두 막대는 실제 값의 비율 · 낮을수록 유리\n\n800ms\n기존\n520ms\n변경\n응답시간 95백분위수\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n악화+0.3 퍼센트포인트\n\n상대 변화 +60.0%\n실패 50 → 80건 / 10,000건\n\n응답시간 95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n막대 높이는 각 지표 안에서 비교하며, 서로 다른 지표의 절대 크기를 뜻하지 않음.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n관측값의 차이는 비교 가능.\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
       },
       "outer": {
         "width": 1440,
@@ -8560,51 +8136,51 @@
         ],
         "bars": [
           {
-            "x": 178.984375,
-            "y": 418.96875,
+            "x": 143.984375,
+            "y": 358.96875,
             "width": 36,
-            "height": 60,
-            "right": 214.984375,
+            "height": 120,
+            "right": 179.984375,
             "bottom": 478.96875
           },
           {
-            "x": 276.984375,
-            "y": 439.96875,
+            "x": 241.984375,
+            "y": 400.96875,
             "width": 36,
-            "height": 39,
-            "right": 312.984375,
+            "height": 78,
+            "right": 277.984375,
             "bottom": 478.96875
           },
           {
-            "x": 420.96875,
-            "y": 418.96875,
+            "x": 399.96875,
+            "y": 358.96875,
             "width": 36,
-            "height": 60,
-            "right": 456.96875,
+            "height": 120,
+            "right": 435.96875,
             "bottom": 478.96875
           },
           {
-            "x": 518.96875,
-            "y": 427.96875,
+            "x": 497.96875,
+            "y": 376.96875,
             "width": 36,
-            "height": 51,
-            "right": 554.96875,
+            "height": 102,
+            "right": 533.96875,
             "bottom": 478.96875
           },
           {
-            "x": 662.953125,
-            "y": 418.96875,
+            "x": 655.953125,
+            "y": 403.96875,
             "width": 36,
-            "height": 60,
-            "right": 698.953125,
+            "height": 75,
+            "right": 691.953125,
             "bottom": 478.96875
           },
           {
-            "x": 760.953125,
-            "y": 382.96875,
+            "x": 753.953125,
+            "y": 358.96875,
             "width": 36,
-            "height": 96,
-            "right": 796.953125,
+            "height": 120,
+            "right": 789.953125,
             "bottom": 478.96875
           }
         ],
@@ -8650,7 +8226,7 @@
             "labelCount": 1
           }
         ],
-        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n지표별 기존값 = 100 · 막대는 기존 대비 지수 · 세 지표 모두 낮을수록 유리\n\n200\n100\n0\n800ms\n기존\n520ms\n변경\n응답시간 95백분위수\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n악화+0.3 퍼센트포인트\n\n상대 변화 +60.0%\n실패 50 → 80건 / 10,000건\n\n응답시간 95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n지수는 각 지표의 변화 크기이며, 지표 간 중요도나 종합 점수는 아님.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n관측값의 차이는 비교 가능.\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
+        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n각 지표의 큰 값을 같은 높이로 표시 · 두 막대는 실제 값의 비율 · 낮을수록 유리\n\n800ms\n기존\n520ms\n변경\n응답시간 95백분위수\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n악화+0.3 퍼센트포인트\n\n상대 변화 +60.0%\n실패 50 → 80건 / 10,000건\n\n응답시간 95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n막대 높이는 각 지표 안에서 비교하며, 서로 다른 지표의 절대 크기를 뜻하지 않음.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n관측값의 차이는 비교 가능.\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
       },
       "outer": {
         "width": 1440,
@@ -8714,51 +8290,51 @@
         ],
         "bars": [
           {
-            "x": 178.984375,
-            "y": 418.96875,
+            "x": 143.984375,
+            "y": 358.96875,
             "width": 36,
-            "height": 60,
-            "right": 214.984375,
+            "height": 120,
+            "right": 179.984375,
             "bottom": 478.96875
           },
           {
-            "x": 276.984375,
-            "y": 439.96875,
+            "x": 241.984375,
+            "y": 400.96875,
             "width": 36,
-            "height": 39,
-            "right": 312.984375,
+            "height": 78,
+            "right": 277.984375,
             "bottom": 478.96875
           },
           {
-            "x": 420.96875,
-            "y": 418.96875,
+            "x": 399.96875,
+            "y": 358.96875,
             "width": 36,
-            "height": 60,
-            "right": 456.96875,
+            "height": 120,
+            "right": 435.96875,
             "bottom": 478.96875
           },
           {
-            "x": 518.96875,
-            "y": 427.96875,
+            "x": 497.96875,
+            "y": 376.96875,
             "width": 36,
-            "height": 51,
-            "right": 554.96875,
+            "height": 102,
+            "right": 533.96875,
             "bottom": 478.96875
           },
           {
-            "x": 662.953125,
-            "y": 418.96875,
+            "x": 655.953125,
+            "y": 403.96875,
             "width": 36,
-            "height": 60,
-            "right": 698.953125,
+            "height": 75,
+            "right": 691.953125,
             "bottom": 478.96875
           },
           {
-            "x": 760.953125,
-            "y": 382.96875,
+            "x": 753.953125,
+            "y": 358.96875,
             "width": 36,
-            "height": 96,
-            "right": 796.953125,
+            "height": 120,
+            "right": 789.953125,
             "bottom": 478.96875
           }
         ],
@@ -8804,7 +8380,7 @@
             "labelCount": 1
           }
         ],
-        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n지표별 기존값 = 100 · 막대는 기존 대비 지수 · 세 지표 모두 낮을수록 유리\n\n200\n100\n0\n800ms\n기존\n520ms\n변경\n응답시간 95백분위수\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n악화+0.3 퍼센트포인트\n\n상대 변화 +60.0%\n실패 50 → 80건 / 10,000건\n\n응답시간 95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n지수는 각 지표의 변화 크기이며, 지표 간 중요도나 종합 점수는 아님.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n관측값의 차이는 비교 가능.\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
+        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n각 지표의 큰 값을 같은 높이로 표시 · 두 막대는 실제 값의 비율 · 낮을수록 유리\n\n800ms\n기존\n520ms\n변경\n응답시간 95백분위수\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n악화+0.3 퍼센트포인트\n\n상대 변화 +60.0%\n실패 50 → 80건 / 10,000건\n\n응답시간 95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n막대 높이는 각 지표 안에서 비교하며, 서로 다른 지표의 절대 크기를 뜻하지 않음.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n관측값의 차이는 비교 가능.\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
       },
       "outer": {
         "width": 1366,
@@ -8865,51 +8441,51 @@
         ],
         "bars": [
           {
-            "x": 178.984375,
-            "y": 418.96875,
+            "x": 143.984375,
+            "y": 358.96875,
             "width": 36,
-            "height": 60,
-            "right": 214.984375,
+            "height": 120,
+            "right": 179.984375,
             "bottom": 478.96875
           },
           {
-            "x": 276.984375,
-            "y": 439.96875,
+            "x": 241.984375,
+            "y": 400.96875,
             "width": 36,
-            "height": 39,
-            "right": 312.984375,
+            "height": 78,
+            "right": 277.984375,
             "bottom": 478.96875
           },
           {
-            "x": 420.96875,
-            "y": 418.96875,
+            "x": 399.96875,
+            "y": 358.96875,
             "width": 36,
-            "height": 60,
-            "right": 456.96875,
+            "height": 120,
+            "right": 435.96875,
             "bottom": 478.96875
           },
           {
-            "x": 518.96875,
-            "y": 427.96875,
+            "x": 497.96875,
+            "y": 376.96875,
             "width": 36,
-            "height": 51,
-            "right": 554.96875,
+            "height": 102,
+            "right": 533.96875,
             "bottom": 478.96875
           },
           {
-            "x": 662.953125,
-            "y": 418.96875,
+            "x": 655.953125,
+            "y": 403.96875,
             "width": 36,
-            "height": 60,
-            "right": 698.953125,
+            "height": 75,
+            "right": 691.953125,
             "bottom": 478.96875
           },
           {
-            "x": 760.953125,
-            "y": 382.96875,
+            "x": 753.953125,
+            "y": 358.96875,
             "width": 36,
-            "height": 96,
-            "right": 796.953125,
+            "height": 120,
+            "right": 789.953125,
             "bottom": 478.96875
           }
         ],
@@ -8955,7 +8531,7 @@
             "labelCount": 1
           }
         ],
-        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n지표별 기존값 = 100 · 막대는 기존 대비 지수 · 세 지표 모두 낮을수록 유리\n\n200\n100\n0\n800ms\n기존\n520ms\n변경\n응답시간 95백분위수\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n악화+0.3 퍼센트포인트\n\n상대 변화 +60.0%\n실패 50 → 80건 / 10,000건\n\n응답시간 95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n지수는 각 지표의 변화 크기이며, 지표 간 중요도나 종합 점수는 아님.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n관측값의 차이는 비교 가능.\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
+        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n각 지표의 큰 값을 같은 높이로 표시 · 두 막대는 실제 값의 비율 · 낮을수록 유리\n\n800ms\n기존\n520ms\n변경\n응답시간 95백분위수\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n악화+0.3 퍼센트포인트\n\n상대 변화 +60.0%\n실패 50 → 80건 / 10,000건\n\n응답시간 95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n막대 높이는 각 지표 안에서 비교하며, 서로 다른 지표의 절대 크기를 뜻하지 않음.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n관측값의 차이는 비교 가능.\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
       },
       "outer": {
         "width": 1366,
@@ -9019,51 +8595,51 @@
         ],
         "bars": [
           {
-            "x": 178.984375,
-            "y": 418.96875,
+            "x": 143.984375,
+            "y": 358.96875,
             "width": 36,
-            "height": 60,
-            "right": 214.984375,
+            "height": 120,
+            "right": 179.984375,
             "bottom": 478.96875
           },
           {
-            "x": 276.984375,
-            "y": 439.96875,
+            "x": 241.984375,
+            "y": 400.96875,
             "width": 36,
-            "height": 39,
-            "right": 312.984375,
+            "height": 78,
+            "right": 277.984375,
             "bottom": 478.96875
           },
           {
-            "x": 420.96875,
-            "y": 418.96875,
+            "x": 399.96875,
+            "y": 358.96875,
             "width": 36,
-            "height": 60,
-            "right": 456.96875,
+            "height": 120,
+            "right": 435.96875,
             "bottom": 478.96875
           },
           {
-            "x": 518.96875,
-            "y": 427.96875,
+            "x": 497.96875,
+            "y": 376.96875,
             "width": 36,
-            "height": 51,
-            "right": 554.96875,
+            "height": 102,
+            "right": 533.96875,
             "bottom": 478.96875
           },
           {
-            "x": 662.953125,
-            "y": 418.96875,
+            "x": 655.953125,
+            "y": 403.96875,
             "width": 36,
-            "height": 60,
-            "right": 698.953125,
+            "height": 75,
+            "right": 691.953125,
             "bottom": 478.96875
           },
           {
-            "x": 760.953125,
-            "y": 382.96875,
+            "x": 753.953125,
+            "y": 358.96875,
             "width": 36,
-            "height": 96,
-            "right": 796.953125,
+            "height": 120,
+            "right": 789.953125,
             "bottom": 478.96875
           }
         ],
@@ -9109,7 +8685,7 @@
             "labelCount": 1
           }
         ],
-        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n지표별 기존값 = 100 · 막대는 기존 대비 지수 · 세 지표 모두 낮을수록 유리\n\n200\n100\n0\n800ms\n기존\n520ms\n변경\n응답시간 95백분위수\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n악화+0.3 퍼센트포인트\n\n상대 변화 +60.0%\n실패 50 → 80건 / 10,000건\n\n응답시간 95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n지수는 각 지표의 변화 크기이며, 지표 간 중요도나 종합 점수는 아님.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n관측값의 차이는 비교 가능.\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
+        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n각 지표의 큰 값을 같은 높이로 표시 · 두 막대는 실제 값의 비율 · 낮을수록 유리\n\n800ms\n기존\n520ms\n변경\n응답시간 95백분위수\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n악화+0.3 퍼센트포인트\n\n상대 변화 +60.0%\n실패 50 → 80건 / 10,000건\n\n응답시간 95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n막대 높이는 각 지표 안에서 비교하며, 서로 다른 지표의 절대 크기를 뜻하지 않음.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n관측값의 차이는 비교 가능.\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
       },
       "outer": {
         "width": 1280,
@@ -9170,51 +8746,51 @@
         ],
         "bars": [
           {
-            "x": 178.984375,
-            "y": 418.96875,
+            "x": 143.984375,
+            "y": 358.96875,
             "width": 36,
-            "height": 60,
-            "right": 214.984375,
+            "height": 120,
+            "right": 179.984375,
             "bottom": 478.96875
           },
           {
-            "x": 276.984375,
-            "y": 439.96875,
+            "x": 241.984375,
+            "y": 400.96875,
             "width": 36,
-            "height": 39,
-            "right": 312.984375,
+            "height": 78,
+            "right": 277.984375,
             "bottom": 478.96875
           },
           {
-            "x": 420.96875,
-            "y": 418.96875,
+            "x": 399.96875,
+            "y": 358.96875,
             "width": 36,
-            "height": 60,
-            "right": 456.96875,
+            "height": 120,
+            "right": 435.96875,
             "bottom": 478.96875
           },
           {
-            "x": 518.96875,
-            "y": 427.96875,
+            "x": 497.96875,
+            "y": 376.96875,
             "width": 36,
-            "height": 51,
-            "right": 554.96875,
+            "height": 102,
+            "right": 533.96875,
             "bottom": 478.96875
           },
           {
-            "x": 662.953125,
-            "y": 418.96875,
+            "x": 655.953125,
+            "y": 403.96875,
             "width": 36,
-            "height": 60,
-            "right": 698.953125,
+            "height": 75,
+            "right": 691.953125,
             "bottom": 478.96875
           },
           {
-            "x": 760.953125,
-            "y": 382.96875,
+            "x": 753.953125,
+            "y": 358.96875,
             "width": 36,
-            "height": 96,
-            "right": 796.953125,
+            "height": 120,
+            "right": 789.953125,
             "bottom": 478.96875
           }
         ],
@@ -9260,7 +8836,7 @@
             "labelCount": 1
           }
         ],
-        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n지표별 기존값 = 100 · 막대는 기존 대비 지수 · 세 지표 모두 낮을수록 유리\n\n200\n100\n0\n800ms\n기존\n520ms\n변경\n응답시간 95백분위수\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n악화+0.3 퍼센트포인트\n\n상대 변화 +60.0%\n실패 50 → 80건 / 10,000건\n\n응답시간 95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n지수는 각 지표의 변화 크기이며, 지표 간 중요도나 종합 점수는 아님.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n관측값의 차이는 비교 가능.\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
+        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n각 지표의 큰 값을 같은 높이로 표시 · 두 막대는 실제 값의 비율 · 낮을수록 유리\n\n800ms\n기존\n520ms\n변경\n응답시간 95백분위수\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n악화+0.3 퍼센트포인트\n\n상대 변화 +60.0%\n실패 50 → 80건 / 10,000건\n\n응답시간 95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n막대 높이는 각 지표 안에서 비교하며, 서로 다른 지표의 절대 크기를 뜻하지 않음.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n관측값의 차이는 비교 가능.\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
       },
       "outer": {
         "width": 1280,
@@ -9309,12 +8885,12 @@
     "method": "Python fractions, independently from implementation JS"
   },
   "source_hashes": {
-    "content.html": "08a4c6bed6cf774be64c3a3f60b0ac922b6259fdbaa8341a8e3ec08724f0a170",
-    "report.css": "4be0ba02e782c00694c95e53006bd33733b30670ae1c507f5c503a9f4e93749e",
-    "report.js": "6d86d2c30444b7840554574308b25e7e0b09d008f22751f7ce8910189197af3f",
+    "content.html": "20eaa39a3078fa13fc07e53b7b41ecd080b7a9bd626607ee182b910c8e70af57",
+    "report.css": "c9dda87d1a84df9a79758ac769b230dc73598673b1623a568c106d6b679b9051",
+    "report.js": "41dc54ffcb18b75b84d8e8d01ad9f0cae08beaea617a3dca3e30fdce43b47efd",
     "scroll.html": "b522741eafc9422b95bbbd11ccbef95d4e6a3f6483c69bafa67bee74149e6d1e",
     "slides.html": "e1bdccb8bde36613e097696cab3a5a857c7892da475b6ed47326f3f529f4ff17",
-    "verify.py": "0fd9b031178f02f3ab332c1622750f1ab6382bbd68b3f29c9a6c4c4917c9c518",
+    "verify.py": "c6df450dd35de2fbe0605ddcf0a2dfb2aa5b9f2b611e5fabbf026f0d1c6127bc",
     "viewer.css": "d4b0dbb5fd3ccd090083140d3b971e56ac4b9dfe7b450f7ecc21dc9153980c78",
     "viewer.js": "594735900f2a3a9fd0fd99b6c10158dc66c12573f41e9ac452cda6c0de4904a0"
   },

@@ -9,16 +9,13 @@ h1{margin:7px 0 6px;font-size:49px;line-height:var(--line-height-display);font-w
 h2{margin:8px 0 0;font-size:25px;line-height:var(--line-height-title);color:var(--navy);font-weight:800}
 p{margin:0}
 .chart-note{font-size:16px;line-height:var(--line-height-note);color:var(--muted);margin-top:12px}
-.chart{display:grid;grid-template-columns:34px minmax(0,1fr);gap:8px;margin-top:14px}
-.axis{height:154px;position:relative;font-size:14px;line-height:20px;color:var(--muted)}
-.axis span{position:absolute;right:0;transform:translateY(50%)}
-.groups{position:relative}.gridlines{position:absolute;top:34px;left:0;right:0;height:120px;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-.gridlines i{position:absolute;top:50%;left:0;right:0;border-top:1px dashed var(--border)}
+.chart{display:block;margin-top:14px}
+.groups{position:relative}.gridlines{position:absolute;top:34px;left:0;right:0;height:120px;border-bottom:1px solid var(--border)}
 #metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;position:relative}
 .metric{text-align:center;min-width:0}.bars{display:flex;justify-content:center;gap:20px}.bar-column{width:78px;display:flex;align-items:center;flex-direction:column}
 .bar-space{height:154px;display:flex;align-items:center;justify-content:flex-end;flex-direction:column;width:100%}
 .value{font-size:24px;font-weight:800;color:var(--navy);line-height:28px;margin-bottom:6px;white-space:nowrap}.unit{font-size:16px;font-weight:600;margin-left:3px}
-.fill{width:36px;height:calc(var(--index)*.6px);background:var(--blue);flex:none;border-radius:4px 4px 0 0}.fill.after{background:var(--teal)}.worse .fill.after{background:#C84444}
+.fill{width:36px;height:calc(var(--ratio)*120px);background:var(--blue);flex:none;border-radius:4px 4px 0 0}.fill.after{background:var(--teal)}.worse .fill.after{background:#C84444}
 .series{margin-top:8px;font-size:16px;line-height:20px;color:var(--deep)}
 .metric h3{font-size:21px;line-height:var(--line-height-compact);color:var(--navy);margin:12px 0 8px;font-weight:800}
 .delta{font-size:25px;line-height:30px;color:var(--navy);font-weight:800;white-space:nowrap}.status{font-size:16px;margin-right:5px}
@@ -30,5 +27,4 @@ p{margin:0}
 h3{font-size:21px;line-height:var(--line-height-title);color:var(--navy);margin:0 0 8px;font-weight:800}.action-item p{font-size:20px;line-height:var(--line-height-body);color:var(--ink)}
 footer{display:flex;justify-content:space-between;margin-top:15px;padding-top:11px;border-top:1px solid var(--border);font-size:15px;line-height:21px;color:var(--muted)}
 
-/* Numeric direction is separate from whether the change is beneficial. */
-.bars{position:relative}.trend-arrow{position:absolute;left:50%;transform:translateX(-50%);top:0;width:62px;height:154px;color:var(--teal);overflow:visible;pointer-events:none}.trend-line{fill:none;stroke:currentColor;stroke-width:2.5;stroke-linecap:round}.worse .trend-arrow,.worse .delta,.worse .bar-column:last-child .value{color:#C84444}
+.worse .delta,.worse .bar-column:last-child .value{color:#C84444}
