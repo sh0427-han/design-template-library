@@ -10,6 +10,15 @@ BASELINE = 'bfeb7c6cb19a0373f6d4d1a8d54647988c79eebc'
 
 
 def preserved_body(path, content):
+    # Preserve historical approval while checking the exact user-authorized revision.
+    amendment = json.loads((ROOT / 'docs/user-design-amendment.json').read_text())
+    if path in amendment['files']:
+        import hashlib
+        expected = amendment['files'][path]
+        assert hashlib.sha256(content).hexdigest() == expected['after'], ('user amendment changed', path)
+        content = subprocess.check_output(['git','show',f"{amendment['baseline']}:{path}"],cwd=ROOT)
+        assert hashlib.sha256(content).hexdigest() == expected['before']
+
     manifest = json.loads((ROOT / 'docs/document-role-migration.json').read_text())
     assert manifest['baseline'] == BASELINE
     entries = {entry['path']: entry['inserted'] for entry in manifest['entries']}

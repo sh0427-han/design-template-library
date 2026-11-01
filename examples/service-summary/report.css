@@ -18,7 +18,7 @@ p{margin:0}
 .metric{text-align:center;min-width:0}.bars{display:flex;justify-content:center;gap:20px}.bar-column{width:78px;display:flex;align-items:center;flex-direction:column}
 .bar-space{height:154px;display:flex;align-items:center;justify-content:flex-end;flex-direction:column;width:100%}
 .value{font-size:24px;font-weight:800;color:var(--navy);line-height:28px;margin-bottom:6px;white-space:nowrap}.unit{font-size:16px;font-weight:600;margin-left:3px}
-.fill{width:36px;height:calc(var(--index)*.6px);background:var(--blue);flex:none;border-radius:4px 4px 0 0}.fill.after{background:var(--teal)}.worse .fill.after{background:var(--amber)}
+.fill{width:36px;height:calc(var(--index)*.6px);background:var(--blue);flex:none;border-radius:4px 4px 0 0}.fill.after{background:var(--teal)}.worse .fill.after{background:#C84444}
 .series{margin-top:8px;font-size:16px;line-height:20px;color:var(--deep)}
 .metric h3{font-size:21px;line-height:var(--line-height-compact);color:var(--navy);margin:12px 0 8px;font-weight:800}
 .delta{font-size:25px;line-height:30px;color:var(--navy);font-weight:800;white-space:nowrap}.status{font-size:16px;margin-right:5px}
@@ -29,3 +29,6 @@ p{margin:0}
 .number{color:var(--navy);font-size:20px;font-weight:800;line-height:29px}
 h3{font-size:21px;line-height:var(--line-height-title);color:var(--navy);margin:0 0 8px;font-weight:800}.action-item p{font-size:20px;line-height:var(--line-height-body);color:var(--ink)}
 footer{display:flex;justify-content:space-between;margin-top:15px;padding-top:11px;border-top:1px solid var(--border);font-size:15px;line-height:21px;color:var(--muted)}
+
+/* Numeric direction is separate from whether the change is beneficial. */
+.bars{position:relative}.trend-arrow{position:absolute;left:50%;transform:translateX(-50%);top:0;width:62px;height:154px;color:var(--teal);overflow:visible;pointer-events:none}.trend-line{fill:none;stroke:currentColor;stroke-width:2.5;stroke-linecap:round}.worse .trend-arrow,.worse .delta,.worse .bar-column:last-child .value{color:#C84444}

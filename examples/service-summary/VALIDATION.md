@@ -73,3 +73,7 @@ Chromium 154.0.8037.57에서 PC4×2 재렌더 및 **139검사 통과**, 실패0.
 
 ## Coordinator 통합 확인
 위 139검사는 Builder 입력 폴더의 후속 실행 기록이다. 통합 저장소에서는 root INPUT_MANIFEST가 없어 제공입력 항목1개를 명시적으로 생략한 138검사가 통과했고, Coordinator가 별도 check_inputs.py로 고정50개를 검사했다. 통합 실행은 현재 previews/validation.json에 기록한다. 독립 최종176검사 및 Coordinator의 원본8종48화면 회귀는 [최종 보고서](../../docs/final-reproduction/REPORT.md)에 연결한다. 위 Builder가 원본8종 회귀를 실행하지 않았다는 기록과 주체를 구분한다. 최초 불합격과 사용자의 승인/이해도 미확인은 유지한다.
+
+
+## 최신 사용자 서식 결정
+위의 STIX 숫자 판정은 당시 규칙에 대한 보존 기록이다. 이후 사용자가 일반 숫자를 Pretendard로, 수식만 별도 서체로 명시했다. [현재 적용·검증](../../docs/user-screen-review/README.md)이 최신이며 과거 첫 실패/수정 검증을 현재 숫자에 소급 적용하지 않는다.

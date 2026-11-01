@@ -8,7 +8,7 @@ import os,json,hashlib,threading,http.server,functools,shutil
 from playwright.sync_api import sync_playwright
 HERE=Path(__file__).resolve().parent
 ROOT=HERE.parents[1]
-OUT=HERE/'previews'; OUT.mkdir(exist_ok=True)
+OUT=ROOT/'docs/user-screen-review/evidence'; OUT.mkdir(parents=True,exist_ok=True)
 class Quiet(http.server.SimpleHTTPRequestHandler):
  def log_message(self,*args):pass
 server=http.server.ThreadingHTTPServer(('127.0.0.1',0),functools.partial(Quiet,directory=str(ROOT)))
@@ -72,8 +72,11 @@ with sync_playwright() as p:
    f.evaluate(cleanup);page.evaluate(cleanup)
    key=f'{mode}-{w}x{h}'
    check(key+' actual role-specific fonts',len(fonts)>20 and all(v['role'] in ['math','prose'] and all(('STIX Two Math' if v['role']=='math' else 'Pretendard') in ff['familyName'] and ff['isCustomFont'] for ff in v['fonts']) for v in fonts),fonts)
-   check(key+' math coverage and regular glyphs',all(t in [m['text'] for m in math_roles] for t in ['−35.0%','−15.0%','+0.3','+60.0%','0.5%','0.8%']) and all(m['weight']=='400' and m['synthesis']=='none' for m in math_roles),math_roles)
-   check(key+' local WOFF2',all(any(font in r['url'] and r['status']==200 for r in requests) for font in ['PretendardVariable.woff2','STIXTwoMath-Regular.woff2']),requests)
+   check(key+' math coverage and regular glyphs',not math_roles,math_roles)
+   check(key+' local WOFF2',all(any(font in r['url'] and r['status']==200 for r in requests) for font in ['PretendardVariable.woff2']),requests)
+   cues=f.evaluate('''()=>[...document.querySelectorAll('.metric')].map(m=>({worse:m.classList.contains('worse'),path:m.querySelector('.trend-line').getAttribute('d'),color:getComputedStyle(m.querySelector('.fill.after')).backgroundColor,arrow:!!m.querySelector('[marker-end]')}))''')
+   check(key+' direction and red deterioration',len(cues)==3 and all(c['arrow'] for c in cues) and cues[2]['color']=='rgb(200, 68, 68)' and float(cues[0]['path'].split()[-1])>97 and float(cues[1]['path'].split()[-1])>97 and float(cues[2]['path'].split()[-1])<97,cues)
+   check(key+' no authoring meta visible',not any(t in data['text'] for t in ['가상','실제 자료 아님','실측 성과','관측한 예시']))
    check(key+' no errors',not errors and all(r['status']<400 for r in requests),errors)
    check(key+' spacing',not data['spacing'],data['spacing'])
    check(key+' text inside panel padding/canvas',not data['clipping'],data['clipping'])
