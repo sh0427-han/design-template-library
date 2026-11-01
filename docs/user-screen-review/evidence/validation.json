@@ -111,13 +111,13 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "각 지표의 큰 값을 같은 높이로 표시 · 두 막대는 실제 값의 비율 · 낮을수록 유리",
+          "text": "지표별 큰 값을 같은 높이로 표시 · 변화율은 모두 기존값 대비(%) · 낮을수록 유리",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 47
+              "glyphCount": 48
             }
           ]
         },
@@ -462,52 +462,26 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "+0.3",
+          "text": "+60.0%",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 4
+              "glyphCount": 6
             }
           ]
         },
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": " 퍼센트포인트",
+          "text": "10,000건당 실패 30건 증가",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 7
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "상대 변화 +60.0%",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 12
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "실패 50 → 80건 / 10,000건",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 21
+              "glyphCount": 18
             }
           ]
         },
@@ -757,23 +731,23 @@
       "pass": true,
       "detail": [
         {
-          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:44501/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:44501/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:44501/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:44501/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:44501/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         }
       ]
@@ -879,6 +853,11 @@
     },
     {
       "name": "scroll-1600x950 role colors",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "scroll-1600x950 consistent relative change units",
       "pass": true,
       "detail": null
     },
@@ -1041,13 +1020,13 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "각 지표의 큰 값을 같은 높이로 표시 · 두 막대는 실제 값의 비율 · 낮을수록 유리",
+          "text": "지표별 큰 값을 같은 높이로 표시 · 변화율은 모두 기존값 대비(%) · 낮을수록 유리",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 47
+              "glyphCount": 48
             }
           ]
         },
@@ -1392,52 +1371,26 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "+0.3",
+          "text": "+60.0%",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 4
+              "glyphCount": 6
             }
           ]
         },
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": " 퍼센트포인트",
+          "text": "10,000건당 실패 30건 증가",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 7
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "상대 변화 +60.0%",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 12
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "실패 50 → 80건 / 10,000건",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 21
+              "glyphCount": 18
             }
           ]
         },
@@ -1726,23 +1679,23 @@
       "pass": true,
       "detail": [
         {
-          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:44501/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:44501/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:44501/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:44501/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:44501/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         }
       ]
@@ -1848,6 +1801,11 @@
     },
     {
       "name": "slides-1600x950 role colors",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "slides-1600x950 consistent relative change units",
       "pass": true,
       "detail": null
     },
@@ -2013,13 +1971,13 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "각 지표의 큰 값을 같은 높이로 표시 · 두 막대는 실제 값의 비율 · 낮을수록 유리",
+          "text": "지표별 큰 값을 같은 높이로 표시 · 변화율은 모두 기존값 대비(%) · 낮을수록 유리",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 47
+              "glyphCount": 48
             }
           ]
         },
@@ -2364,52 +2322,26 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "+0.3",
+          "text": "+60.0%",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 4
+              "glyphCount": 6
             }
           ]
         },
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": " 퍼센트포인트",
+          "text": "10,000건당 실패 30건 증가",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 7
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "상대 변화 +60.0%",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 12
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "실패 50 → 80건 / 10,000건",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 21
+              "glyphCount": 18
             }
           ]
         },
@@ -2659,23 +2591,23 @@
       "pass": true,
       "detail": [
         {
-          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:44501/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:44501/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:44501/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:44501/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:44501/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         }
       ]
@@ -2781,6 +2713,11 @@
     },
     {
       "name": "scroll-1440x810 role colors",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "scroll-1440x810 consistent relative change units",
       "pass": true,
       "detail": null
     },
@@ -2943,13 +2880,13 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "각 지표의 큰 값을 같은 높이로 표시 · 두 막대는 실제 값의 비율 · 낮을수록 유리",
+          "text": "지표별 큰 값을 같은 높이로 표시 · 변화율은 모두 기존값 대비(%) · 낮을수록 유리",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 47
+              "glyphCount": 48
             }
           ]
         },
@@ -3294,52 +3231,26 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "+0.3",
+          "text": "+60.0%",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 4
+              "glyphCount": 6
             }
           ]
         },
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": " 퍼센트포인트",
+          "text": "10,000건당 실패 30건 증가",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 7
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "상대 변화 +60.0%",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 12
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "실패 50 → 80건 / 10,000건",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 21
+              "glyphCount": 18
             }
           ]
         },
@@ -3628,23 +3539,27 @@
       "pass": true,
       "detail": [
         {
-          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:44501/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:44501/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:44501/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:44501/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:44501/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:44501/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         }
       ]
@@ -3750,6 +3665,11 @@
     },
     {
       "name": "slides-1440x810 role colors",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "slides-1440x810 consistent relative change units",
       "pass": true,
       "detail": null
     },
@@ -3915,13 +3835,13 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "각 지표의 큰 값을 같은 높이로 표시 · 두 막대는 실제 값의 비율 · 낮을수록 유리",
+          "text": "지표별 큰 값을 같은 높이로 표시 · 변화율은 모두 기존값 대비(%) · 낮을수록 유리",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 47
+              "glyphCount": 48
             }
           ]
         },
@@ -4266,52 +4186,26 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "+0.3",
+          "text": "+60.0%",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 4
+              "glyphCount": 6
             }
           ]
         },
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": " 퍼센트포인트",
+          "text": "10,000건당 실패 30건 증가",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 7
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "상대 변화 +60.0%",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 12
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "실패 50 → 80건 / 10,000건",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 21
+              "glyphCount": 18
             }
           ]
         },
@@ -4561,23 +4455,23 @@
       "pass": true,
       "detail": [
         {
-          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:44501/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:44501/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:44501/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:44501/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:44501/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         }
       ]
@@ -4683,6 +4577,11 @@
     },
     {
       "name": "scroll-1366x768 role colors",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "scroll-1366x768 consistent relative change units",
       "pass": true,
       "detail": null
     },
@@ -4845,13 +4744,13 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "각 지표의 큰 값을 같은 높이로 표시 · 두 막대는 실제 값의 비율 · 낮을수록 유리",
+          "text": "지표별 큰 값을 같은 높이로 표시 · 변화율은 모두 기존값 대비(%) · 낮을수록 유리",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 47
+              "glyphCount": 48
             }
           ]
         },
@@ -5196,52 +5095,26 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "+0.3",
+          "text": "+60.0%",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 4
+              "glyphCount": 6
             }
           ]
         },
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": " 퍼센트포인트",
+          "text": "10,000건당 실패 30건 증가",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 7
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "상대 변화 +60.0%",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 12
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "실패 50 → 80건 / 10,000건",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 21
+              "glyphCount": 18
             }
           ]
         },
@@ -5530,23 +5403,23 @@
       "pass": true,
       "detail": [
         {
-          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:44501/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:44501/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:44501/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:44501/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:44501/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         }
       ]
@@ -5652,6 +5525,11 @@
     },
     {
       "name": "slides-1366x768 role colors",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "slides-1366x768 consistent relative change units",
       "pass": true,
       "detail": null
     },
@@ -5817,13 +5695,13 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "각 지표의 큰 값을 같은 높이로 표시 · 두 막대는 실제 값의 비율 · 낮을수록 유리",
+          "text": "지표별 큰 값을 같은 높이로 표시 · 변화율은 모두 기존값 대비(%) · 낮을수록 유리",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 47
+              "glyphCount": 48
             }
           ]
         },
@@ -6168,52 +6046,26 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "+0.3",
+          "text": "+60.0%",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 4
+              "glyphCount": 6
             }
           ]
         },
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": " 퍼센트포인트",
+          "text": "10,000건당 실패 30건 증가",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 7
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "상대 변화 +60.0%",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 12
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "실패 50 → 80건 / 10,000건",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 21
+              "glyphCount": 18
             }
           ]
         },
@@ -6463,23 +6315,23 @@
       "pass": true,
       "detail": [
         {
-          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:44501/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:44501/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:44501/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:44501/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:44501/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         }
       ]
@@ -6585,6 +6437,11 @@
     },
     {
       "name": "scroll-1280x720 role colors",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "scroll-1280x720 consistent relative change units",
       "pass": true,
       "detail": null
     },
@@ -6747,13 +6604,13 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "각 지표의 큰 값을 같은 높이로 표시 · 두 막대는 실제 값의 비율 · 낮을수록 유리",
+          "text": "지표별 큰 값을 같은 높이로 표시 · 변화율은 모두 기존값 대비(%) · 낮을수록 유리",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 47
+              "glyphCount": 48
             }
           ]
         },
@@ -7098,52 +6955,26 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "+0.3",
+          "text": "+60.0%",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 4
+              "glyphCount": 6
             }
           ]
         },
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": " 퍼센트포인트",
+          "text": "10,000건당 실패 30건 증가",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 7
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "상대 변화 +60.0%",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 12
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "실패 50 → 80건 / 10,000건",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 21
+              "glyphCount": 18
             }
           ]
         },
@@ -7432,23 +7263,23 @@
       "pass": true,
       "detail": [
         {
-          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:44501/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:44501/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:44501/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:44501/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:36011/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:44501/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         }
       ]
@@ -7554,6 +7385,11 @@
     },
     {
       "name": "slides-1280x720 role colors",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "slides-1280x720 consistent relative change units",
       "pass": true,
       "detail": null
     },
@@ -7671,7 +7507,7 @@
             "before": 0.5,
             "after": 0.8,
             "unit": "%",
-            "detail": "실패 50 → 80건 / 10,000건",
+            "detail": "10,000건당 실패 30건 증가",
             "failure": true,
             "index": 160,
             "change": 60.00000000000001,
@@ -7770,7 +7606,7 @@
             "labelCount": 1
           }
         ],
-        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n각 지표의 큰 값을 같은 높이로 표시 · 두 막대는 실제 값의 비율 · 낮을수록 유리\n\n800ms\n기존\n520ms\n변경\n응답시간 95백분위수\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n악화+0.3 퍼센트포인트\n\n상대 변화 +60.0%\n실패 50 → 80건 / 10,000건\n\n응답시간 95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n막대 높이는 각 지표 안에서 비교하며, 서로 다른 지표의 절대 크기를 뜻하지 않음.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n관측값의 차이는 비교 가능.\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
+        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n지표별 큰 값을 같은 높이로 표시 · 변화율은 모두 기존값 대비(%) · 낮을수록 유리\n\n800ms\n기존\n520ms\n변경\n응답시간 95백분위수\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n악화+60.0%\n\n10,000건당 실패 30건 증가\n\n응답시간 95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n막대 높이는 각 지표 안에서 비교하며, 서로 다른 지표의 절대 크기를 뜻하지 않음.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n관측값의 차이는 비교 가능.\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
       },
       "outer": {
         "width": 1600,
@@ -7822,7 +7658,7 @@
             "before": 0.5,
             "after": 0.8,
             "unit": "%",
-            "detail": "실패 50 → 80건 / 10,000건",
+            "detail": "10,000건당 실패 30건 증가",
             "failure": true,
             "index": 160,
             "change": 60.00000000000001,
@@ -7921,7 +7757,7 @@
             "labelCount": 1
           }
         ],
-        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n각 지표의 큰 값을 같은 높이로 표시 · 두 막대는 실제 값의 비율 · 낮을수록 유리\n\n800ms\n기존\n520ms\n변경\n응답시간 95백분위수\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n악화+0.3 퍼센트포인트\n\n상대 변화 +60.0%\n실패 50 → 80건 / 10,000건\n\n응답시간 95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n막대 높이는 각 지표 안에서 비교하며, 서로 다른 지표의 절대 크기를 뜻하지 않음.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n관측값의 차이는 비교 가능.\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
+        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n지표별 큰 값을 같은 높이로 표시 · 변화율은 모두 기존값 대비(%) · 낮을수록 유리\n\n800ms\n기존\n520ms\n변경\n응답시간 95백분위수\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n악화+60.0%\n\n10,000건당 실패 30건 증가\n\n응답시간 95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n막대 높이는 각 지표 안에서 비교하며, 서로 다른 지표의 절대 크기를 뜻하지 않음.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n관측값의 차이는 비교 가능.\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
       },
       "outer": {
         "width": 1600,
@@ -7976,7 +7812,7 @@
             "before": 0.5,
             "after": 0.8,
             "unit": "%",
-            "detail": "실패 50 → 80건 / 10,000건",
+            "detail": "10,000건당 실패 30건 증가",
             "failure": true,
             "index": 160,
             "change": 60.00000000000001,
@@ -8075,7 +7911,7 @@
             "labelCount": 1
           }
         ],
-        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n각 지표의 큰 값을 같은 높이로 표시 · 두 막대는 실제 값의 비율 · 낮을수록 유리\n\n800ms\n기존\n520ms\n변경\n응답시간 95백분위수\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n악화+0.3 퍼센트포인트\n\n상대 변화 +60.0%\n실패 50 → 80건 / 10,000건\n\n응답시간 95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n막대 높이는 각 지표 안에서 비교하며, 서로 다른 지표의 절대 크기를 뜻하지 않음.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n관측값의 차이는 비교 가능.\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
+        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n지표별 큰 값을 같은 높이로 표시 · 변화율은 모두 기존값 대비(%) · 낮을수록 유리\n\n800ms\n기존\n520ms\n변경\n응답시간 95백분위수\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n악화+60.0%\n\n10,000건당 실패 30건 증가\n\n응답시간 95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n막대 높이는 각 지표 안에서 비교하며, 서로 다른 지표의 절대 크기를 뜻하지 않음.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n관측값의 차이는 비교 가능.\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
       },
       "outer": {
         "width": 1440,
@@ -8127,7 +7963,7 @@
             "before": 0.5,
             "after": 0.8,
             "unit": "%",
-            "detail": "실패 50 → 80건 / 10,000건",
+            "detail": "10,000건당 실패 30건 증가",
             "failure": true,
             "index": 160,
             "change": 60.00000000000001,
@@ -8226,7 +8062,7 @@
             "labelCount": 1
           }
         ],
-        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n각 지표의 큰 값을 같은 높이로 표시 · 두 막대는 실제 값의 비율 · 낮을수록 유리\n\n800ms\n기존\n520ms\n변경\n응답시간 95백분위수\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n악화+0.3 퍼센트포인트\n\n상대 변화 +60.0%\n실패 50 → 80건 / 10,000건\n\n응답시간 95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n막대 높이는 각 지표 안에서 비교하며, 서로 다른 지표의 절대 크기를 뜻하지 않음.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n관측값의 차이는 비교 가능.\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
+        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n지표별 큰 값을 같은 높이로 표시 · 변화율은 모두 기존값 대비(%) · 낮을수록 유리\n\n800ms\n기존\n520ms\n변경\n응답시간 95백분위수\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n악화+60.0%\n\n10,000건당 실패 30건 증가\n\n응답시간 95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n막대 높이는 각 지표 안에서 비교하며, 서로 다른 지표의 절대 크기를 뜻하지 않음.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n관측값의 차이는 비교 가능.\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
       },
       "outer": {
         "width": 1440,
@@ -8281,7 +8117,7 @@
             "before": 0.5,
             "after": 0.8,
             "unit": "%",
-            "detail": "실패 50 → 80건 / 10,000건",
+            "detail": "10,000건당 실패 30건 증가",
             "failure": true,
             "index": 160,
             "change": 60.00000000000001,
@@ -8380,7 +8216,7 @@
             "labelCount": 1
           }
         ],
-        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n각 지표의 큰 값을 같은 높이로 표시 · 두 막대는 실제 값의 비율 · 낮을수록 유리\n\n800ms\n기존\n520ms\n변경\n응답시간 95백분위수\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n악화+0.3 퍼센트포인트\n\n상대 변화 +60.0%\n실패 50 → 80건 / 10,000건\n\n응답시간 95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n막대 높이는 각 지표 안에서 비교하며, 서로 다른 지표의 절대 크기를 뜻하지 않음.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n관측값의 차이는 비교 가능.\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
+        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n지표별 큰 값을 같은 높이로 표시 · 변화율은 모두 기존값 대비(%) · 낮을수록 유리\n\n800ms\n기존\n520ms\n변경\n응답시간 95백분위수\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n악화+60.0%\n\n10,000건당 실패 30건 증가\n\n응답시간 95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n막대 높이는 각 지표 안에서 비교하며, 서로 다른 지표의 절대 크기를 뜻하지 않음.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n관측값의 차이는 비교 가능.\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
       },
       "outer": {
         "width": 1366,
@@ -8432,7 +8268,7 @@
             "before": 0.5,
             "after": 0.8,
             "unit": "%",
-            "detail": "실패 50 → 80건 / 10,000건",
+            "detail": "10,000건당 실패 30건 증가",
             "failure": true,
             "index": 160,
             "change": 60.00000000000001,
@@ -8531,7 +8367,7 @@
             "labelCount": 1
           }
         ],
-        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n각 지표의 큰 값을 같은 높이로 표시 · 두 막대는 실제 값의 비율 · 낮을수록 유리\n\n800ms\n기존\n520ms\n변경\n응답시간 95백분위수\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n악화+0.3 퍼센트포인트\n\n상대 변화 +60.0%\n실패 50 → 80건 / 10,000건\n\n응답시간 95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n막대 높이는 각 지표 안에서 비교하며, 서로 다른 지표의 절대 크기를 뜻하지 않음.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n관측값의 차이는 비교 가능.\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
+        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n지표별 큰 값을 같은 높이로 표시 · 변화율은 모두 기존값 대비(%) · 낮을수록 유리\n\n800ms\n기존\n520ms\n변경\n응답시간 95백분위수\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n악화+60.0%\n\n10,000건당 실패 30건 증가\n\n응답시간 95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n막대 높이는 각 지표 안에서 비교하며, 서로 다른 지표의 절대 크기를 뜻하지 않음.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n관측값의 차이는 비교 가능.\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
       },
       "outer": {
         "width": 1366,
@@ -8586,7 +8422,7 @@
             "before": 0.5,
             "after": 0.8,
             "unit": "%",
-            "detail": "실패 50 → 80건 / 10,000건",
+            "detail": "10,000건당 실패 30건 증가",
             "failure": true,
             "index": 160,
             "change": 60.00000000000001,
@@ -8685,7 +8521,7 @@
             "labelCount": 1
           }
         ],
-        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n각 지표의 큰 값을 같은 높이로 표시 · 두 막대는 실제 값의 비율 · 낮을수록 유리\n\n800ms\n기존\n520ms\n변경\n응답시간 95백분위수\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n악화+0.3 퍼센트포인트\n\n상대 변화 +60.0%\n실패 50 → 80건 / 10,000건\n\n응답시간 95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n막대 높이는 각 지표 안에서 비교하며, 서로 다른 지표의 절대 크기를 뜻하지 않음.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n관측값의 차이는 비교 가능.\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
+        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n지표별 큰 값을 같은 높이로 표시 · 변화율은 모두 기존값 대비(%) · 낮을수록 유리\n\n800ms\n기존\n520ms\n변경\n응답시간 95백분위수\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n악화+60.0%\n\n10,000건당 실패 30건 증가\n\n응답시간 95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n막대 높이는 각 지표 안에서 비교하며, 서로 다른 지표의 절대 크기를 뜻하지 않음.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n관측값의 차이는 비교 가능.\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
       },
       "outer": {
         "width": 1280,
@@ -8737,7 +8573,7 @@
             "before": 0.5,
             "after": 0.8,
             "unit": "%",
-            "detail": "실패 50 → 80건 / 10,000건",
+            "detail": "10,000건당 실패 30건 증가",
             "failure": true,
             "index": 160,
             "change": 60.00000000000001,
@@ -8836,7 +8672,7 @@
             "labelCount": 1
           }
         ],
-        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n각 지표의 큰 값을 같은 높이로 표시 · 두 막대는 실제 값의 비율 · 낮을수록 유리\n\n800ms\n기존\n520ms\n변경\n응답시간 95백분위수\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n악화+0.3 퍼센트포인트\n\n상대 변화 +60.0%\n실패 50 → 80건 / 10,000건\n\n응답시간 95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n막대 높이는 각 지표 안에서 비교하며, 서로 다른 지표의 절대 크기를 뜻하지 않음.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n관측값의 차이는 비교 가능.\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
+        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n지표별 큰 값을 같은 높이로 표시 · 변화율은 모두 기존값 대비(%) · 낮을수록 유리\n\n800ms\n기존\n520ms\n변경\n응답시간 95백분위수\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n악화+60.0%\n\n10,000건당 실패 30건 증가\n\n응답시간 95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n막대 높이는 각 지표 안에서 비교하며, 서로 다른 지표의 절대 크기를 뜻하지 않음.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n관측값의 차이는 비교 가능.\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
       },
       "outer": {
         "width": 1280,
@@ -8885,12 +8721,12 @@
     "method": "Python fractions, independently from implementation JS"
   },
   "source_hashes": {
-    "content.html": "20eaa39a3078fa13fc07e53b7b41ecd080b7a9bd626607ee182b910c8e70af57",
+    "content.html": "f575035a946267e328f58105994ae5b58aaf356f3d56442312a99d90defc1237",
     "report.css": "c9dda87d1a84df9a79758ac769b230dc73598673b1623a568c106d6b679b9051",
-    "report.js": "41dc54ffcb18b75b84d8e8d01ad9f0cae08beaea617a3dca3e30fdce43b47efd",
+    "report.js": "9ec4fc5bed33e27196ebc67965c8539defcf0db83acae318b4722f4aa312a503",
     "scroll.html": "b522741eafc9422b95bbbd11ccbef95d4e6a3f6483c69bafa67bee74149e6d1e",
     "slides.html": "e1bdccb8bde36613e097696cab3a5a857c7892da475b6ed47326f3f529f4ff17",
-    "verify.py": "c6df450dd35de2fbe0605ddcf0a2dfb2aa5b9f2b611e5fabbf026f0d1c6127bc",
+    "verify.py": "bbf51ecf5c7803b56af5499a73f1c7c1305504acee1bd8b1f02284218315260b",
     "viewer.css": "d4b0dbb5fd3ccd090083140d3b971e56ac4b9dfe7b450f7ecc21dc9153980c78",
     "viewer.js": "594735900f2a3a9fd0fd99b6c10158dc66c12573f41e9ac452cda6c0de4904a0"
   },
