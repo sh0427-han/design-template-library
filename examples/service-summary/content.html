@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>서비스 변경 실험 요약</title><link rel="icon" href="data:,"><link rel="stylesheet" href="../../templates/html/styles.css"><link rel="stylesheet" href="report.css"><script defer src="report.js"></script></head>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>서비스 변경 실험 요약</title><link rel="icon" href="data:,"><link rel="stylesheet" href="../../templates/html/styles.css"><link rel="stylesheet" href="../../templates/html/math-typography.css"><link rel="stylesheet" href="report.css"><script defer src="report.js"></script></head>
 <body><main class="report" id="summary">
 <header><div class="kicker">서비스 변경 · 가상 관측 요약</div><h1>응답·비용 개선, 실패율 상승</h1><p class="subtitle">동일 요청 혼합·부하 가정 · 각 설정을 별도로 하루씩, 10,000건 관측한 예시</p></header>
 <div class="report-body">
@@ -8,7 +8,7 @@
 <p class="definition"><b>응답시간 95백분위수</b>: 관측 요청의 약 95%가 이 시간 이내 응답.<br>지수는 각 지표의 변화 크기이며, 지표 간 중요도나 종합 점수는 아님.</p>
 </section>
 <section class="panel action" aria-labelledby="action-title"><div class="panel-label">판단과 후속 조치</div><h2 id="action-title">전면 확대 전, 실패 원인 확인</h2><div class="actions">
-<div class="action-item"><span class="number">1</span><div><h3>관측된 이점과 손실</h3><p>응답시간 280ms 단축, 하루 $18 절감.<br>같은 10,000건당 실패는 30건 증가.</p></div></div>
+<div class="action-item"><span class="number">1</span><div><h3>관측된 이점과 손실</h3><p>응답시간 <span class="math-number">280</span>ms 단축, 하루 $<span class="math-number">18</span> 절감.<br>같은 10,000건당 실패는 <span class="math-number">30</span>건 증가.</p></div></div>
 <div class="action-item"><span class="number">2</span><div><h3>이 자료의 판단 범위</h3><p>예시 관측값의 차이는 비교 가능.<br>변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.</p></div></div>
 <div class="action-item"><span class="number">3</span><div><h3>추가 확인 후 확대 판단</h3><p>실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.</p></div></div>
 </div></section>

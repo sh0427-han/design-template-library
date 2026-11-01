@@ -27,7 +27,7 @@ if manifest.exists():
  check('All supplied inputs unchanged',all(x['unchanged'] for x in report['input_integrity']))
 else:
  report['input_integrity_note']='Input manifest absent in this host repository; original supplied-input integrity not checked.'
-report['shared_hashes']={str(f.relative_to(ROOT)):hashlib.sha256(f.read_bytes()).hexdigest() for f in [ROOT/'templates/html/styles.css',ROOT/'templates/html/assets/fonts/pretendard/PretendardVariable.woff2']}
+report['shared_hashes']={str(f.relative_to(ROOT)):hashlib.sha256(f.read_bytes()).hexdigest() for f in [ROOT/'templates/html/styles.css',ROOT/'templates/html/math-typography.css',ROOT/'templates/html/assets/fonts/stix-two-math/STIXTwoMath-Regular.woff2',ROOT/'templates/html/assets/fonts/pretendard/PretendardVariable.woff2']}
 indices=[Fraction(520,800)*100,Fraction(102,120)*100,Fraction(80,50)*100]
 changes=[x-100 for x in indices]
 report['math']={'indices':list(map(float,indices)),'relative_changes':list(map(float,changes)),'failure_rates_percent':[float(Fraction(50,10000)*100),float(Fraction(80,10000)*100)],'percentage_point_difference':float((Fraction(80,10000)-Fraction(50,10000))*100),'extra_failures':80-50,'latency_ms_difference':520-800,'daily_cost_difference':102-120,'method':'Python fractions, independently from implementation JS'}
@@ -51,6 +51,10 @@ with sync_playwright() as p:
     for(const e of leaves){const s=getComputedStyle(e);if(Math.abs(parseFloat(s.letterSpacing)+4/3)>.001)spacing.push(e.outerHTML);const range=document.createRange();range.selectNodeContents(e);const t=range.getBoundingClientRect();const panel=e.closest('.panel');if(panel){const r=panel.getBoundingClientRect();if(t.left<r.left+24-.5||t.right>r.right-24+.5||t.top<r.top+20-.5||t.bottom>r.bottom-20+.5)clipping.push({tag:e.tagName,text:e.textContent,box:rect(e),panel:rect(panel)})}if(t.right>1440+.5||t.bottom>810+.5||t.left<0||t.top<0)clipping.push({outside:true,text:e.textContent});}
     return {metrics:window.reportMetrics,bars:[...document.querySelectorAll('.fill')].map(rect),panels:[...document.querySelectorAll('.panel')].map(rect),footer:rect(document.querySelector('footer')),clipping,spacing,scrollWidth:document.documentElement.scrollWidth,scrollHeight:document.documentElement.scrollHeight,labels:[...document.querySelectorAll('.panel')].map(e=>({label:getComputedStyle(e.querySelector('.panel-label')).color,title:getComputedStyle(e.querySelector('h2')).color,labelCount:e.querySelectorAll('.panel-label').length})),text:document.body.innerText};
    }''')
+   math_roles=f.evaluate("[...document.querySelectorAll('.math-number')].map(e=>({text:e.textContent,weight:getComputedStyle(e).fontWeight,synthesis:getComputedStyle(e).fontSynthesis,tracking:getComputedStyle(e).letterSpacing}))")
+   # Audit each direct text run separately, so mixed prose/math parents cannot hide wrong-role fonts.
+   audit="""() => {const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);const texts=[];let n;while(n=w.nextNode())if(n.textContent.trim()&&!['SCRIPT','STYLE'].includes(n.parentElement.tagName))texts.push(n);for(const t of texts){const span=document.createElement('span');span.dataset.fontRole=t.parentElement.closest('.math-number')?'math':'prose';t.replaceWith(span);span.append(t);}}"""
+   f.evaluate(audit);page.evaluate(audit)
    cdp=page.context.new_cdp_session(page);cdp.send('DOM.enable');cdp.send('CSS.enable')
    root=cdp.send('DOM.getDocument',{'depth':-1,'pierce':True})['root']
    nodes=[]
@@ -62,10 +66,14 @@ with sync_playwright() as p:
    fonts=[]
    for n in nodes:
     a=cdp.send('CSS.getPlatformFontsForNode',{'nodeId':n['nodeId']})['fonts']
-    if a:fonts.append({'tag':n['nodeName'],'fonts':a})
+    if a:
+     attrs=dict(zip(n.get('attributes',[])[::2],n.get('attributes',[])[1::2]));fonts.append({'tag':n['nodeName'],'role':attrs.get('data-font-role','unclassified'),'text':''.join(c.get('nodeValue','') for c in n.get('children',[]) if c.get('nodeType')==3),'fonts':a})
+   cleanup="document.querySelectorAll('[data-font-role]').forEach(e=>e.replaceWith(...e.childNodes))"
+   f.evaluate(cleanup);page.evaluate(cleanup)
    key=f'{mode}-{w}x{h}'
-   check(key+' actual fonts',len(fonts)>20 and all('Pretendard' in ff['familyName'] and ff['isCustomFont'] for v in fonts for ff in v['fonts']),fonts)
-   check(key+' local WOFF2',any('.woff2' in r['url'] and r['status']==200 for r in requests),requests)
+   check(key+' actual role-specific fonts',len(fonts)>20 and all(v['role'] in ['math','prose'] and all(('STIX Two Math' if v['role']=='math' else 'Pretendard') in ff['familyName'] and ff['isCustomFont'] for ff in v['fonts']) for v in fonts),fonts)
+   check(key+' math coverage and regular glyphs',all(t in [m['text'] for m in math_roles] for t in ['−35.0%','−15.0%','+0.3','+60.0%','0.5%','0.8%']) and all(m['weight']=='400' and m['synthesis']=='none' for m in math_roles),math_roles)
+   check(key+' local WOFF2',all(any(font in r['url'] and r['status']==200 for r in requests) for font in ['PretendardVariable.woff2','STIXTwoMath-Regular.woff2']),requests)
    check(key+' no errors',not errors and all(r['status']<400 for r in requests),errors)
    check(key+' spacing',not data['spacing'],data['spacing'])
    check(key+' text inside panel padding/canvas',not data['clipping'],data['clipping'])
