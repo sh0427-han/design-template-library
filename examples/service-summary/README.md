@@ -8,4 +8,4 @@
 
 [설계](DESIGN.md) · [사전판정](D0.md) · [읽기 기록](READ_LOG.md) · [검증](VALIDATION.md) · [검증 JSON](previews/validation.json) · [대표 Slide](previews/slides-1600x950.png).
 
-이 산출물은 사용자 시각 승인이나 실제 독자 이해도 평가를 받지 않았다. Push/PR/배포 없음.
+이 산출물은 사용자 시각 승인이나 실제 독자 이해도 평가를 받지 않았다. Coordinator의 통합 검증·GitHub 처리 상태는 [최종 재현 보고서](../../docs/final-reproduction/REPORT.md)를 따른다.
