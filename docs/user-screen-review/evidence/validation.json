@@ -202,13 +202,26 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "응답시간 95백분위수",
+          "text": "응답시간",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 11
+              "glyphCount": 4
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "95백분위수",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 6
             }
           ]
         },
@@ -488,13 +501,13 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "응답시간 95백분위수",
+          "text": "95백분위수",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 11
+              "glyphCount": 6
             }
           ]
         },
@@ -705,23 +718,23 @@
       "pass": true,
       "detail": [
         {
-          "url": "http://127.0.0.1:33071/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33071/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33071/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33071/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33071/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         }
       ]
@@ -832,6 +845,11 @@
     },
     {
       "name": "scroll-1600x950 consistent relative change units",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "scroll-1600x950 primary metric and qualifier hierarchy",
       "pass": true,
       "detail": null
     },
@@ -1085,13 +1103,26 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "응답시간 95백분위수",
+          "text": "응답시간",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 11
+              "glyphCount": 4
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "95백분위수",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 6
             }
           ]
         },
@@ -1371,13 +1402,13 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "응답시간 95백분위수",
+          "text": "95백분위수",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 11
+              "glyphCount": 6
             }
           ]
         },
@@ -1627,23 +1658,23 @@
       "pass": true,
       "detail": [
         {
-          "url": "http://127.0.0.1:33071/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33071/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33071/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33071/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33071/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         }
       ]
@@ -1754,6 +1785,11 @@
     },
     {
       "name": "slides-1600x950 consistent relative change units",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "slides-1600x950 primary metric and qualifier hierarchy",
       "pass": true,
       "detail": null
     },
@@ -2010,13 +2046,26 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "응답시간 95백분위수",
+          "text": "응답시간",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 11
+              "glyphCount": 4
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "95백분위수",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 6
             }
           ]
         },
@@ -2296,13 +2345,13 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "응답시간 95백분위수",
+          "text": "95백분위수",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 11
+              "glyphCount": 6
             }
           ]
         },
@@ -2513,23 +2562,23 @@
       "pass": true,
       "detail": [
         {
-          "url": "http://127.0.0.1:33071/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33071/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33071/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33071/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33071/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         }
       ]
@@ -2640,6 +2689,11 @@
     },
     {
       "name": "scroll-1440x810 consistent relative change units",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "scroll-1440x810 primary metric and qualifier hierarchy",
       "pass": true,
       "detail": null
     },
@@ -2893,13 +2947,26 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "응답시간 95백분위수",
+          "text": "응답시간",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 11
+              "glyphCount": 4
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "95백분위수",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 6
             }
           ]
         },
@@ -3179,13 +3246,13 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "응답시간 95백분위수",
+          "text": "95백분위수",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 11
+              "glyphCount": 6
             }
           ]
         },
@@ -3435,23 +3502,23 @@
       "pass": true,
       "detail": [
         {
-          "url": "http://127.0.0.1:33071/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33071/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33071/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33071/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33071/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         }
       ]
@@ -3562,6 +3629,11 @@
     },
     {
       "name": "slides-1440x810 consistent relative change units",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "slides-1440x810 primary metric and qualifier hierarchy",
       "pass": true,
       "detail": null
     },
@@ -3818,13 +3890,26 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "응답시간 95백분위수",
+          "text": "응답시간",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 11
+              "glyphCount": 4
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "95백분위수",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 6
             }
           ]
         },
@@ -4104,13 +4189,13 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "응답시간 95백분위수",
+          "text": "95백분위수",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 11
+              "glyphCount": 6
             }
           ]
         },
@@ -4321,23 +4406,27 @@
       "pass": true,
       "detail": [
         {
-          "url": "http://127.0.0.1:33071/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33071/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33071/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33071/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33071/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         }
       ]
@@ -4448,6 +4537,11 @@
     },
     {
       "name": "scroll-1366x768 consistent relative change units",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "scroll-1366x768 primary metric and qualifier hierarchy",
       "pass": true,
       "detail": null
     },
@@ -4701,13 +4795,26 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "응답시간 95백분위수",
+          "text": "응답시간",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 11
+              "glyphCount": 4
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "95백분위수",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 6
             }
           ]
         },
@@ -4987,13 +5094,13 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "응답시간 95백분위수",
+          "text": "95백분위수",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 11
+              "glyphCount": 6
             }
           ]
         },
@@ -5243,23 +5350,23 @@
       "pass": true,
       "detail": [
         {
-          "url": "http://127.0.0.1:33071/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33071/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33071/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33071/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33071/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         }
       ]
@@ -5370,6 +5477,11 @@
     },
     {
       "name": "slides-1366x768 consistent relative change units",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "slides-1366x768 primary metric and qualifier hierarchy",
       "pass": true,
       "detail": null
     },
@@ -5626,13 +5738,26 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "응답시간 95백분위수",
+          "text": "응답시간",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 11
+              "glyphCount": 4
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "95백분위수",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 6
             }
           ]
         },
@@ -5912,13 +6037,13 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "응답시간 95백분위수",
+          "text": "95백분위수",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 11
+              "glyphCount": 6
             }
           ]
         },
@@ -6129,23 +6254,23 @@
       "pass": true,
       "detail": [
         {
-          "url": "http://127.0.0.1:33071/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33071/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33071/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33071/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33071/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         }
       ]
@@ -6256,6 +6381,11 @@
     },
     {
       "name": "scroll-1280x720 consistent relative change units",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "scroll-1280x720 primary metric and qualifier hierarchy",
       "pass": true,
       "detail": null
     },
@@ -6509,13 +6639,26 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "응답시간 95백분위수",
+          "text": "응답시간",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 11
+              "glyphCount": 4
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "95백분위수",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 6
             }
           ]
         },
@@ -6795,13 +6938,13 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "응답시간 95백분위수",
+          "text": "95백분위수",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 11
+              "glyphCount": 6
             }
           ]
         },
@@ -7051,23 +7194,23 @@
       "pass": true,
       "detail": [
         {
-          "url": "http://127.0.0.1:33071/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33071/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33071/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33071/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33071/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         }
       ]
@@ -7182,6 +7325,11 @@
       "detail": null
     },
     {
+      "name": "slides-1280x720 primary metric and qualifier hierarchy",
+      "pass": true,
+      "detail": null
+    },
+    {
       "name": "slides-1280x720 required values",
       "pass": true,
       "detail": null
@@ -7271,7 +7419,8 @@
       "geometry": {
         "metrics": [
           {
-            "name": "응답시간 95백분위수",
+            "name": "응답시간",
+            "qualifier": "95백분위수",
             "before": 800,
             "after": 520,
             "unit": "ms",
@@ -7394,7 +7543,7 @@
             "labelCount": 1
           }
         ],
-        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n변화율: 기존값 대비 (%)\n\n800ms\n기존\n520ms\n변경\n응답시간 95백분위수\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n악화+60.0%\n\n10,000건당 실패 30건 증가\n\n응답시간 95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
+        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n변화율: 기존값 대비 (%)\n\n800ms\n기존\n520ms\n변경\n응답시간\n\n95백분위수\n\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n\n악화+60.0%\n\n10,000건당 실패 30건 증가\n\n95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
       },
       "outer": {
         "width": 1600,
@@ -7422,7 +7571,8 @@
       "geometry": {
         "metrics": [
           {
-            "name": "응답시간 95백분위수",
+            "name": "응답시간",
+            "qualifier": "95백분위수",
             "before": 800,
             "after": 520,
             "unit": "ms",
@@ -7545,7 +7695,7 @@
             "labelCount": 1
           }
         ],
-        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n변화율: 기존값 대비 (%)\n\n800ms\n기존\n520ms\n변경\n응답시간 95백분위수\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n악화+60.0%\n\n10,000건당 실패 30건 증가\n\n응답시간 95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
+        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n변화율: 기존값 대비 (%)\n\n800ms\n기존\n520ms\n변경\n응답시간\n\n95백분위수\n\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n\n악화+60.0%\n\n10,000건당 실패 30건 증가\n\n95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
       },
       "outer": {
         "width": 1600,
@@ -7576,7 +7726,8 @@
       "geometry": {
         "metrics": [
           {
-            "name": "응답시간 95백분위수",
+            "name": "응답시간",
+            "qualifier": "95백분위수",
             "before": 800,
             "after": 520,
             "unit": "ms",
@@ -7699,7 +7850,7 @@
             "labelCount": 1
           }
         ],
-        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n변화율: 기존값 대비 (%)\n\n800ms\n기존\n520ms\n변경\n응답시간 95백분위수\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n악화+60.0%\n\n10,000건당 실패 30건 증가\n\n응답시간 95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
+        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n변화율: 기존값 대비 (%)\n\n800ms\n기존\n520ms\n변경\n응답시간\n\n95백분위수\n\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n\n악화+60.0%\n\n10,000건당 실패 30건 증가\n\n95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
       },
       "outer": {
         "width": 1440,
@@ -7727,7 +7878,8 @@
       "geometry": {
         "metrics": [
           {
-            "name": "응답시간 95백분위수",
+            "name": "응답시간",
+            "qualifier": "95백분위수",
             "before": 800,
             "after": 520,
             "unit": "ms",
@@ -7850,7 +8002,7 @@
             "labelCount": 1
           }
         ],
-        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n변화율: 기존값 대비 (%)\n\n800ms\n기존\n520ms\n변경\n응답시간 95백분위수\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n악화+60.0%\n\n10,000건당 실패 30건 증가\n\n응답시간 95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
+        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n변화율: 기존값 대비 (%)\n\n800ms\n기존\n520ms\n변경\n응답시간\n\n95백분위수\n\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n\n악화+60.0%\n\n10,000건당 실패 30건 증가\n\n95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
       },
       "outer": {
         "width": 1440,
@@ -7881,7 +8033,8 @@
       "geometry": {
         "metrics": [
           {
-            "name": "응답시간 95백분위수",
+            "name": "응답시간",
+            "qualifier": "95백분위수",
             "before": 800,
             "after": 520,
             "unit": "ms",
@@ -8004,7 +8157,7 @@
             "labelCount": 1
           }
         ],
-        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n변화율: 기존값 대비 (%)\n\n800ms\n기존\n520ms\n변경\n응답시간 95백분위수\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n악화+60.0%\n\n10,000건당 실패 30건 증가\n\n응답시간 95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
+        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n변화율: 기존값 대비 (%)\n\n800ms\n기존\n520ms\n변경\n응답시간\n\n95백분위수\n\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n\n악화+60.0%\n\n10,000건당 실패 30건 증가\n\n95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
       },
       "outer": {
         "width": 1366,
@@ -8032,7 +8185,8 @@
       "geometry": {
         "metrics": [
           {
-            "name": "응답시간 95백분위수",
+            "name": "응답시간",
+            "qualifier": "95백분위수",
             "before": 800,
             "after": 520,
             "unit": "ms",
@@ -8155,7 +8309,7 @@
             "labelCount": 1
           }
         ],
-        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n변화율: 기존값 대비 (%)\n\n800ms\n기존\n520ms\n변경\n응답시간 95백분위수\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n악화+60.0%\n\n10,000건당 실패 30건 증가\n\n응답시간 95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
+        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n변화율: 기존값 대비 (%)\n\n800ms\n기존\n520ms\n변경\n응답시간\n\n95백분위수\n\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n\n악화+60.0%\n\n10,000건당 실패 30건 증가\n\n95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
       },
       "outer": {
         "width": 1366,
@@ -8186,7 +8340,8 @@
       "geometry": {
         "metrics": [
           {
-            "name": "응답시간 95백분위수",
+            "name": "응답시간",
+            "qualifier": "95백분위수",
             "before": 800,
             "after": 520,
             "unit": "ms",
@@ -8309,7 +8464,7 @@
             "labelCount": 1
           }
         ],
-        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n변화율: 기존값 대비 (%)\n\n800ms\n기존\n520ms\n변경\n응답시간 95백분위수\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n악화+60.0%\n\n10,000건당 실패 30건 증가\n\n응답시간 95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
+        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n변화율: 기존값 대비 (%)\n\n800ms\n기존\n520ms\n변경\n응답시간\n\n95백분위수\n\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n\n악화+60.0%\n\n10,000건당 실패 30건 증가\n\n95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
       },
       "outer": {
         "width": 1280,
@@ -8337,7 +8492,8 @@
       "geometry": {
         "metrics": [
           {
-            "name": "응답시간 95백분위수",
+            "name": "응답시간",
+            "qualifier": "95백분위수",
             "before": 800,
             "after": 520,
             "unit": "ms",
@@ -8460,7 +8616,7 @@
             "labelCount": 1
           }
         ],
-        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n변화율: 기존값 대비 (%)\n\n800ms\n기존\n520ms\n변경\n응답시간 95백분위수\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n악화+60.0%\n\n10,000건당 실패 30건 증가\n\n응답시간 95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
+        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n변화율: 기존값 대비 (%)\n\n800ms\n기존\n520ms\n변경\n응답시간\n\n95백분위수\n\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n\n악화+60.0%\n\n10,000건당 실패 30건 증가\n\n95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
       },
       "outer": {
         "width": 1280,
@@ -8509,12 +8665,12 @@
     "method": "Python fractions, independently from implementation JS"
   },
   "source_hashes": {
-    "content.html": "7bf112be614825afa5706b67c5efa1c7690f76847835eb15367657512959eeb0",
-    "report.css": "c9dda87d1a84df9a79758ac769b230dc73598673b1623a568c106d6b679b9051",
-    "report.js": "9ec4fc5bed33e27196ebc67965c8539defcf0db83acae318b4722f4aa312a503",
+    "content.html": "2b3fc7db3714670046f5cd833dd6689fd8530fd5a54353a9d08e05e81dc6eb9c",
+    "report.css": "4f33a77a466382e514af581c4d119e98ff3addda44a935fd47849739892f1089",
+    "report.js": "51c7eaafd0b8940ec1366405299e20445c6b790b8889358580ce228c97ba9e94",
     "scroll.html": "b522741eafc9422b95bbbd11ccbef95d4e6a3f6483c69bafa67bee74149e6d1e",
     "slides.html": "e1bdccb8bde36613e097696cab3a5a857c7892da475b6ed47326f3f529f4ff17",
-    "verify.py": "774824fa1b450b42de9e053f9a19167227c741a29dbfb149004c1a1fd84a1712",
+    "verify.py": "1ac6f0bac8e843ee49307aed2f3e3edce04adf945421c84e1603e5291e8e4340",
     "viewer.css": "d4b0dbb5fd3ccd090083140d3b971e56ac4b9dfe7b450f7ecc21dc9153980c78",
     "viewer.js": "594735900f2a3a9fd0fd99b6c10158dc66c12573f41e9ac452cda6c0de4904a0"
   },
