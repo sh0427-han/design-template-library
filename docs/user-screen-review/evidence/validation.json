@@ -111,13 +111,13 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "변화율: 기존값 대비 (%)",
+          "text": "95백분위수",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 15
+              "glyphCount": 6
             }
           ]
         },
@@ -209,19 +209,6 @@
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
               "glyphCount": 4
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "95백분위수",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 6
             }
           ]
         },
@@ -495,32 +482,6 @@
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
               "glyphCount": 18
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "95백분위수",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 6
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": ": 관측 요청의 약 95%가 이 시간 이내 응답.",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 27
             }
           ]
         },
@@ -718,23 +679,23 @@
       "pass": true,
       "detail": [
         {
-          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45691/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45691/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45691/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45691/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45691/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         }
       ]
@@ -780,53 +741,58 @@
       "detail": [
         {
           "x": 143.984375,
-          "y": 358.96875,
+          "y": 350.578125,
           "width": 36,
           "height": 120,
           "right": 179.984375,
-          "bottom": 478.96875
+          "bottom": 470.578125
         },
         {
           "x": 241.984375,
-          "y": 400.96875,
+          "y": 392.578125,
           "width": 36,
           "height": 78,
           "right": 277.984375,
-          "bottom": 478.96875
+          "bottom": 470.578125
         },
         {
           "x": 399.96875,
-          "y": 358.96875,
+          "y": 350.578125,
           "width": 36,
           "height": 120,
           "right": 435.96875,
-          "bottom": 478.96875
+          "bottom": 470.578125
         },
         {
           "x": 497.96875,
-          "y": 376.96875,
+          "y": 368.578125,
           "width": 36,
           "height": 102,
           "right": 533.96875,
-          "bottom": 478.96875
+          "bottom": 470.578125
         },
         {
           "x": 655.953125,
-          "y": 403.96875,
+          "y": 395.578125,
           "width": 36,
           "height": 75,
           "right": 691.953125,
-          "bottom": 478.96875
+          "bottom": 470.578125
         },
         {
           "x": 753.953125,
-          "y": 358.96875,
+          "y": 350.578125,
           "width": 36,
           "height": 120,
           "right": 789.953125,
-          "bottom": 478.96875
+          "bottom": 470.578125
         }
       ]
+    },
+    {
+      "name": "scroll-1600x950 baseline rule follows moved chart",
+      "pass": true,
+      "detail": null
     },
     {
       "name": "scroll-1600x950 bar baseline",
@@ -850,6 +816,11 @@
     },
     {
       "name": "scroll-1600x950 primary metric and qualifier hierarchy",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "scroll-1600x950 no redundant definitions and qualifier above chart",
       "pass": true,
       "detail": null
     },
@@ -1012,13 +983,13 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "변화율: 기존값 대비 (%)",
+          "text": "95백분위수",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 15
+              "glyphCount": 6
             }
           ]
         },
@@ -1110,19 +1081,6 @@
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
               "glyphCount": 4
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "95백분위수",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 6
             }
           ]
         },
@@ -1396,32 +1354,6 @@
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
               "glyphCount": 18
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "95백분위수",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 6
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": ": 관측 요청의 약 95%가 이 시간 이내 응답.",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 27
             }
           ]
         },
@@ -1658,23 +1590,23 @@
       "pass": true,
       "detail": [
         {
-          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45691/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45691/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45691/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45691/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45691/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         }
       ]
@@ -1720,53 +1652,58 @@
       "detail": [
         {
           "x": 143.984375,
-          "y": 358.96875,
+          "y": 350.578125,
           "width": 36,
           "height": 120,
           "right": 179.984375,
-          "bottom": 478.96875
+          "bottom": 470.578125
         },
         {
           "x": 241.984375,
-          "y": 400.96875,
+          "y": 392.578125,
           "width": 36,
           "height": 78,
           "right": 277.984375,
-          "bottom": 478.96875
+          "bottom": 470.578125
         },
         {
           "x": 399.96875,
-          "y": 358.96875,
+          "y": 350.578125,
           "width": 36,
           "height": 120,
           "right": 435.96875,
-          "bottom": 478.96875
+          "bottom": 470.578125
         },
         {
           "x": 497.96875,
-          "y": 376.96875,
+          "y": 368.578125,
           "width": 36,
           "height": 102,
           "right": 533.96875,
-          "bottom": 478.96875
+          "bottom": 470.578125
         },
         {
           "x": 655.953125,
-          "y": 403.96875,
+          "y": 395.578125,
           "width": 36,
           "height": 75,
           "right": 691.953125,
-          "bottom": 478.96875
+          "bottom": 470.578125
         },
         {
           "x": 753.953125,
-          "y": 358.96875,
+          "y": 350.578125,
           "width": 36,
           "height": 120,
           "right": 789.953125,
-          "bottom": 478.96875
+          "bottom": 470.578125
         }
       ]
+    },
+    {
+      "name": "slides-1600x950 baseline rule follows moved chart",
+      "pass": true,
+      "detail": null
     },
     {
       "name": "slides-1600x950 bar baseline",
@@ -1790,6 +1727,11 @@
     },
     {
       "name": "slides-1600x950 primary metric and qualifier hierarchy",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "slides-1600x950 no redundant definitions and qualifier above chart",
       "pass": true,
       "detail": null
     },
@@ -1955,13 +1897,13 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "변화율: 기존값 대비 (%)",
+          "text": "95백분위수",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 15
+              "glyphCount": 6
             }
           ]
         },
@@ -2053,19 +1995,6 @@
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
               "glyphCount": 4
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "95백분위수",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 6
             }
           ]
         },
@@ -2339,32 +2268,6 @@
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
               "glyphCount": 18
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "95백분위수",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 6
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": ": 관측 요청의 약 95%가 이 시간 이내 응답.",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 27
             }
           ]
         },
@@ -2562,23 +2465,23 @@
       "pass": true,
       "detail": [
         {
-          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45691/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45691/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45691/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45691/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45691/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         }
       ]
@@ -2624,53 +2527,58 @@
       "detail": [
         {
           "x": 143.984375,
-          "y": 358.96875,
+          "y": 350.578125,
           "width": 36,
           "height": 120,
           "right": 179.984375,
-          "bottom": 478.96875
+          "bottom": 470.578125
         },
         {
           "x": 241.984375,
-          "y": 400.96875,
+          "y": 392.578125,
           "width": 36,
           "height": 78,
           "right": 277.984375,
-          "bottom": 478.96875
+          "bottom": 470.578125
         },
         {
           "x": 399.96875,
-          "y": 358.96875,
+          "y": 350.578125,
           "width": 36,
           "height": 120,
           "right": 435.96875,
-          "bottom": 478.96875
+          "bottom": 470.578125
         },
         {
           "x": 497.96875,
-          "y": 376.96875,
+          "y": 368.578125,
           "width": 36,
           "height": 102,
           "right": 533.96875,
-          "bottom": 478.96875
+          "bottom": 470.578125
         },
         {
           "x": 655.953125,
-          "y": 403.96875,
+          "y": 395.578125,
           "width": 36,
           "height": 75,
           "right": 691.953125,
-          "bottom": 478.96875
+          "bottom": 470.578125
         },
         {
           "x": 753.953125,
-          "y": 358.96875,
+          "y": 350.578125,
           "width": 36,
           "height": 120,
           "right": 789.953125,
-          "bottom": 478.96875
+          "bottom": 470.578125
         }
       ]
+    },
+    {
+      "name": "scroll-1440x810 baseline rule follows moved chart",
+      "pass": true,
+      "detail": null
     },
     {
       "name": "scroll-1440x810 bar baseline",
@@ -2694,6 +2602,11 @@
     },
     {
       "name": "scroll-1440x810 primary metric and qualifier hierarchy",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "scroll-1440x810 no redundant definitions and qualifier above chart",
       "pass": true,
       "detail": null
     },
@@ -2856,13 +2769,13 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "변화율: 기존값 대비 (%)",
+          "text": "95백분위수",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 15
+              "glyphCount": 6
             }
           ]
         },
@@ -2954,19 +2867,6 @@
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
               "glyphCount": 4
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "95백분위수",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 6
             }
           ]
         },
@@ -3240,32 +3140,6 @@
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
               "glyphCount": 18
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "95백분위수",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 6
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": ": 관측 요청의 약 95%가 이 시간 이내 응답.",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 27
             }
           ]
         },
@@ -3502,23 +3376,23 @@
       "pass": true,
       "detail": [
         {
-          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45691/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45691/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45691/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45691/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45691/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         }
       ]
@@ -3564,53 +3438,58 @@
       "detail": [
         {
           "x": 143.984375,
-          "y": 358.96875,
+          "y": 350.578125,
           "width": 36,
           "height": 120,
           "right": 179.984375,
-          "bottom": 478.96875
+          "bottom": 470.578125
         },
         {
           "x": 241.984375,
-          "y": 400.96875,
+          "y": 392.578125,
           "width": 36,
           "height": 78,
           "right": 277.984375,
-          "bottom": 478.96875
+          "bottom": 470.578125
         },
         {
           "x": 399.96875,
-          "y": 358.96875,
+          "y": 350.578125,
           "width": 36,
           "height": 120,
           "right": 435.96875,
-          "bottom": 478.96875
+          "bottom": 470.578125
         },
         {
           "x": 497.96875,
-          "y": 376.96875,
+          "y": 368.578125,
           "width": 36,
           "height": 102,
           "right": 533.96875,
-          "bottom": 478.96875
+          "bottom": 470.578125
         },
         {
           "x": 655.953125,
-          "y": 403.96875,
+          "y": 395.578125,
           "width": 36,
           "height": 75,
           "right": 691.953125,
-          "bottom": 478.96875
+          "bottom": 470.578125
         },
         {
           "x": 753.953125,
-          "y": 358.96875,
+          "y": 350.578125,
           "width": 36,
           "height": 120,
           "right": 789.953125,
-          "bottom": 478.96875
+          "bottom": 470.578125
         }
       ]
+    },
+    {
+      "name": "slides-1440x810 baseline rule follows moved chart",
+      "pass": true,
+      "detail": null
     },
     {
       "name": "slides-1440x810 bar baseline",
@@ -3634,6 +3513,11 @@
     },
     {
       "name": "slides-1440x810 primary metric and qualifier hierarchy",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "slides-1440x810 no redundant definitions and qualifier above chart",
       "pass": true,
       "detail": null
     },
@@ -3799,13 +3683,13 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "변화율: 기존값 대비 (%)",
+          "text": "95백분위수",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 15
+              "glyphCount": 6
             }
           ]
         },
@@ -3897,19 +3781,6 @@
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
               "glyphCount": 4
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "95백분위수",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 6
             }
           ]
         },
@@ -4183,32 +4054,6 @@
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
               "glyphCount": 18
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "95백분위수",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 6
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": ": 관측 요청의 약 95%가 이 시간 이내 응답.",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 27
             }
           ]
         },
@@ -4406,27 +4251,23 @@
       "pass": true,
       "detail": [
         {
-          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45691/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45691/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45691/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45691/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
-          "status": 200
-        },
-        {
-          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45691/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         }
       ]
@@ -4472,53 +4313,58 @@
       "detail": [
         {
           "x": 143.984375,
-          "y": 358.96875,
+          "y": 350.578125,
           "width": 36,
           "height": 120,
           "right": 179.984375,
-          "bottom": 478.96875
+          "bottom": 470.578125
         },
         {
           "x": 241.984375,
-          "y": 400.96875,
+          "y": 392.578125,
           "width": 36,
           "height": 78,
           "right": 277.984375,
-          "bottom": 478.96875
+          "bottom": 470.578125
         },
         {
           "x": 399.96875,
-          "y": 358.96875,
+          "y": 350.578125,
           "width": 36,
           "height": 120,
           "right": 435.96875,
-          "bottom": 478.96875
+          "bottom": 470.578125
         },
         {
           "x": 497.96875,
-          "y": 376.96875,
+          "y": 368.578125,
           "width": 36,
           "height": 102,
           "right": 533.96875,
-          "bottom": 478.96875
+          "bottom": 470.578125
         },
         {
           "x": 655.953125,
-          "y": 403.96875,
+          "y": 395.578125,
           "width": 36,
           "height": 75,
           "right": 691.953125,
-          "bottom": 478.96875
+          "bottom": 470.578125
         },
         {
           "x": 753.953125,
-          "y": 358.96875,
+          "y": 350.578125,
           "width": 36,
           "height": 120,
           "right": 789.953125,
-          "bottom": 478.96875
+          "bottom": 470.578125
         }
       ]
+    },
+    {
+      "name": "scroll-1366x768 baseline rule follows moved chart",
+      "pass": true,
+      "detail": null
     },
     {
       "name": "scroll-1366x768 bar baseline",
@@ -4542,6 +4388,11 @@
     },
     {
       "name": "scroll-1366x768 primary metric and qualifier hierarchy",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "scroll-1366x768 no redundant definitions and qualifier above chart",
       "pass": true,
       "detail": null
     },
@@ -4704,13 +4555,13 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "변화율: 기존값 대비 (%)",
+          "text": "95백분위수",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 15
+              "glyphCount": 6
             }
           ]
         },
@@ -4802,19 +4653,6 @@
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
               "glyphCount": 4
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "95백분위수",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 6
             }
           ]
         },
@@ -5088,32 +4926,6 @@
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
               "glyphCount": 18
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "95백분위수",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 6
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": ": 관측 요청의 약 95%가 이 시간 이내 응답.",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 27
             }
           ]
         },
@@ -5350,23 +5162,23 @@
       "pass": true,
       "detail": [
         {
-          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45691/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45691/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45691/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45691/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45691/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         }
       ]
@@ -5412,53 +5224,58 @@
       "detail": [
         {
           "x": 143.984375,
-          "y": 358.96875,
+          "y": 350.578125,
           "width": 36,
           "height": 120,
           "right": 179.984375,
-          "bottom": 478.96875
+          "bottom": 470.578125
         },
         {
           "x": 241.984375,
-          "y": 400.96875,
+          "y": 392.578125,
           "width": 36,
           "height": 78,
           "right": 277.984375,
-          "bottom": 478.96875
+          "bottom": 470.578125
         },
         {
           "x": 399.96875,
-          "y": 358.96875,
+          "y": 350.578125,
           "width": 36,
           "height": 120,
           "right": 435.96875,
-          "bottom": 478.96875
+          "bottom": 470.578125
         },
         {
           "x": 497.96875,
-          "y": 376.96875,
+          "y": 368.578125,
           "width": 36,
           "height": 102,
           "right": 533.96875,
-          "bottom": 478.96875
+          "bottom": 470.578125
         },
         {
           "x": 655.953125,
-          "y": 403.96875,
+          "y": 395.578125,
           "width": 36,
           "height": 75,
           "right": 691.953125,
-          "bottom": 478.96875
+          "bottom": 470.578125
         },
         {
           "x": 753.953125,
-          "y": 358.96875,
+          "y": 350.578125,
           "width": 36,
           "height": 120,
           "right": 789.953125,
-          "bottom": 478.96875
+          "bottom": 470.578125
         }
       ]
+    },
+    {
+      "name": "slides-1366x768 baseline rule follows moved chart",
+      "pass": true,
+      "detail": null
     },
     {
       "name": "slides-1366x768 bar baseline",
@@ -5482,6 +5299,11 @@
     },
     {
       "name": "slides-1366x768 primary metric and qualifier hierarchy",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "slides-1366x768 no redundant definitions and qualifier above chart",
       "pass": true,
       "detail": null
     },
@@ -5647,13 +5469,13 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "변화율: 기존값 대비 (%)",
+          "text": "95백분위수",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 15
+              "glyphCount": 6
             }
           ]
         },
@@ -5745,19 +5567,6 @@
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
               "glyphCount": 4
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "95백분위수",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 6
             }
           ]
         },
@@ -6031,32 +5840,6 @@
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
               "glyphCount": 18
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "95백분위수",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 6
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": ": 관측 요청의 약 95%가 이 시간 이내 응답.",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 27
             }
           ]
         },
@@ -6254,23 +6037,23 @@
       "pass": true,
       "detail": [
         {
-          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45691/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45691/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45691/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45691/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45691/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         }
       ]
@@ -6316,53 +6099,58 @@
       "detail": [
         {
           "x": 143.984375,
-          "y": 358.96875,
+          "y": 350.578125,
           "width": 36,
           "height": 120,
           "right": 179.984375,
-          "bottom": 478.96875
+          "bottom": 470.578125
         },
         {
           "x": 241.984375,
-          "y": 400.96875,
+          "y": 392.578125,
           "width": 36,
           "height": 78,
           "right": 277.984375,
-          "bottom": 478.96875
+          "bottom": 470.578125
         },
         {
           "x": 399.96875,
-          "y": 358.96875,
+          "y": 350.578125,
           "width": 36,
           "height": 120,
           "right": 435.96875,
-          "bottom": 478.96875
+          "bottom": 470.578125
         },
         {
           "x": 497.96875,
-          "y": 376.96875,
+          "y": 368.578125,
           "width": 36,
           "height": 102,
           "right": 533.96875,
-          "bottom": 478.96875
+          "bottom": 470.578125
         },
         {
           "x": 655.953125,
-          "y": 403.96875,
+          "y": 395.578125,
           "width": 36,
           "height": 75,
           "right": 691.953125,
-          "bottom": 478.96875
+          "bottom": 470.578125
         },
         {
           "x": 753.953125,
-          "y": 358.96875,
+          "y": 350.578125,
           "width": 36,
           "height": 120,
           "right": 789.953125,
-          "bottom": 478.96875
+          "bottom": 470.578125
         }
       ]
+    },
+    {
+      "name": "scroll-1280x720 baseline rule follows moved chart",
+      "pass": true,
+      "detail": null
     },
     {
       "name": "scroll-1280x720 bar baseline",
@@ -6386,6 +6174,11 @@
     },
     {
       "name": "scroll-1280x720 primary metric and qualifier hierarchy",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "scroll-1280x720 no redundant definitions and qualifier above chart",
       "pass": true,
       "detail": null
     },
@@ -6548,13 +6341,13 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "변화율: 기존값 대비 (%)",
+          "text": "95백분위수",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 15
+              "glyphCount": 6
             }
           ]
         },
@@ -6646,19 +6439,6 @@
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
               "glyphCount": 4
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "95백분위수",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 6
             }
           ]
         },
@@ -6932,32 +6712,6 @@
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
               "glyphCount": 18
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": "95백분위수",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 6
-            }
-          ]
-        },
-        {
-          "tag": "SPAN",
-          "role": "prose",
-          "text": ": 관측 요청의 약 95%가 이 시간 이내 응답.",
-          "fonts": [
-            {
-              "familyName": "Pretendard Variable",
-              "postScriptName": "PretendardVariable-Regular",
-              "isCustomFont": true,
-              "glyphCount": 27
             }
           ]
         },
@@ -7194,23 +6948,23 @@
       "pass": true,
       "detail": [
         {
-          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45691/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45691/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45691/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45691/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:34525/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45691/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         }
       ]
@@ -7256,53 +7010,58 @@
       "detail": [
         {
           "x": 143.984375,
-          "y": 358.96875,
+          "y": 350.578125,
           "width": 36,
           "height": 120,
           "right": 179.984375,
-          "bottom": 478.96875
+          "bottom": 470.578125
         },
         {
           "x": 241.984375,
-          "y": 400.96875,
+          "y": 392.578125,
           "width": 36,
           "height": 78,
           "right": 277.984375,
-          "bottom": 478.96875
+          "bottom": 470.578125
         },
         {
           "x": 399.96875,
-          "y": 358.96875,
+          "y": 350.578125,
           "width": 36,
           "height": 120,
           "right": 435.96875,
-          "bottom": 478.96875
+          "bottom": 470.578125
         },
         {
           "x": 497.96875,
-          "y": 376.96875,
+          "y": 368.578125,
           "width": 36,
           "height": 102,
           "right": 533.96875,
-          "bottom": 478.96875
+          "bottom": 470.578125
         },
         {
           "x": 655.953125,
-          "y": 403.96875,
+          "y": 395.578125,
           "width": 36,
           "height": 75,
           "right": 691.953125,
-          "bottom": 478.96875
+          "bottom": 470.578125
         },
         {
           "x": 753.953125,
-          "y": 358.96875,
+          "y": 350.578125,
           "width": 36,
           "height": 120,
           "right": 789.953125,
-          "bottom": 478.96875
+          "bottom": 470.578125
         }
       ]
+    },
+    {
+      "name": "slides-1280x720 baseline rule follows moved chart",
+      "pass": true,
+      "detail": null
     },
     {
       "name": "slides-1280x720 bar baseline",
@@ -7326,6 +7085,11 @@
     },
     {
       "name": "slides-1280x720 primary metric and qualifier hierarchy",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "slides-1280x720 no redundant definitions and qualifier above chart",
       "pass": true,
       "detail": null
     },
@@ -7454,51 +7218,51 @@
         "bars": [
           {
             "x": 143.984375,
-            "y": 358.96875,
+            "y": 350.578125,
             "width": 36,
             "height": 120,
             "right": 179.984375,
-            "bottom": 478.96875
+            "bottom": 470.578125
           },
           {
             "x": 241.984375,
-            "y": 400.96875,
+            "y": 392.578125,
             "width": 36,
             "height": 78,
             "right": 277.984375,
-            "bottom": 478.96875
+            "bottom": 470.578125
           },
           {
             "x": 399.96875,
-            "y": 358.96875,
+            "y": 350.578125,
             "width": 36,
             "height": 120,
             "right": 435.96875,
-            "bottom": 478.96875
+            "bottom": 470.578125
           },
           {
             "x": 497.96875,
-            "y": 376.96875,
+            "y": 368.578125,
             "width": 36,
             "height": 102,
             "right": 533.96875,
-            "bottom": 478.96875
+            "bottom": 470.578125
           },
           {
             "x": 655.953125,
-            "y": 403.96875,
+            "y": 395.578125,
             "width": 36,
             "height": 75,
             "right": 691.953125,
-            "bottom": 478.96875
+            "bottom": 470.578125
           },
           {
             "x": 753.953125,
-            "y": 358.96875,
+            "y": 350.578125,
             "width": 36,
             "height": 120,
             "right": 789.953125,
-            "bottom": 478.96875
+            "bottom": 470.578125
           }
         ],
         "panels": [
@@ -7543,7 +7307,7 @@
             "labelCount": 1
           }
         ],
-        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n변화율: 기존값 대비 (%)\n\n800ms\n기존\n520ms\n변경\n응답시간\n\n95백분위수\n\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n\n악화+60.0%\n\n10,000건당 실패 30건 증가\n\n95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
+        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n95백분위수\n\n800ms\n기존\n520ms\n변경\n응답시간\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n악화+60.0%\n\n10,000건당 실패 30건 증가\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
       },
       "outer": {
         "width": 1600,
@@ -7606,51 +7370,51 @@
         "bars": [
           {
             "x": 143.984375,
-            "y": 358.96875,
+            "y": 350.578125,
             "width": 36,
             "height": 120,
             "right": 179.984375,
-            "bottom": 478.96875
+            "bottom": 470.578125
           },
           {
             "x": 241.984375,
-            "y": 400.96875,
+            "y": 392.578125,
             "width": 36,
             "height": 78,
             "right": 277.984375,
-            "bottom": 478.96875
+            "bottom": 470.578125
           },
           {
             "x": 399.96875,
-            "y": 358.96875,
+            "y": 350.578125,
             "width": 36,
             "height": 120,
             "right": 435.96875,
-            "bottom": 478.96875
+            "bottom": 470.578125
           },
           {
             "x": 497.96875,
-            "y": 376.96875,
+            "y": 368.578125,
             "width": 36,
             "height": 102,
             "right": 533.96875,
-            "bottom": 478.96875
+            "bottom": 470.578125
           },
           {
             "x": 655.953125,
-            "y": 403.96875,
+            "y": 395.578125,
             "width": 36,
             "height": 75,
             "right": 691.953125,
-            "bottom": 478.96875
+            "bottom": 470.578125
           },
           {
             "x": 753.953125,
-            "y": 358.96875,
+            "y": 350.578125,
             "width": 36,
             "height": 120,
             "right": 789.953125,
-            "bottom": 478.96875
+            "bottom": 470.578125
           }
         ],
         "panels": [
@@ -7695,7 +7459,7 @@
             "labelCount": 1
           }
         ],
-        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n변화율: 기존값 대비 (%)\n\n800ms\n기존\n520ms\n변경\n응답시간\n\n95백분위수\n\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n\n악화+60.0%\n\n10,000건당 실패 30건 증가\n\n95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
+        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n95백분위수\n\n800ms\n기존\n520ms\n변경\n응답시간\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n악화+60.0%\n\n10,000건당 실패 30건 증가\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
       },
       "outer": {
         "width": 1600,
@@ -7761,51 +7525,51 @@
         "bars": [
           {
             "x": 143.984375,
-            "y": 358.96875,
+            "y": 350.578125,
             "width": 36,
             "height": 120,
             "right": 179.984375,
-            "bottom": 478.96875
+            "bottom": 470.578125
           },
           {
             "x": 241.984375,
-            "y": 400.96875,
+            "y": 392.578125,
             "width": 36,
             "height": 78,
             "right": 277.984375,
-            "bottom": 478.96875
+            "bottom": 470.578125
           },
           {
             "x": 399.96875,
-            "y": 358.96875,
+            "y": 350.578125,
             "width": 36,
             "height": 120,
             "right": 435.96875,
-            "bottom": 478.96875
+            "bottom": 470.578125
           },
           {
             "x": 497.96875,
-            "y": 376.96875,
+            "y": 368.578125,
             "width": 36,
             "height": 102,
             "right": 533.96875,
-            "bottom": 478.96875
+            "bottom": 470.578125
           },
           {
             "x": 655.953125,
-            "y": 403.96875,
+            "y": 395.578125,
             "width": 36,
             "height": 75,
             "right": 691.953125,
-            "bottom": 478.96875
+            "bottom": 470.578125
           },
           {
             "x": 753.953125,
-            "y": 358.96875,
+            "y": 350.578125,
             "width": 36,
             "height": 120,
             "right": 789.953125,
-            "bottom": 478.96875
+            "bottom": 470.578125
           }
         ],
         "panels": [
@@ -7850,7 +7614,7 @@
             "labelCount": 1
           }
         ],
-        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n변화율: 기존값 대비 (%)\n\n800ms\n기존\n520ms\n변경\n응답시간\n\n95백분위수\n\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n\n악화+60.0%\n\n10,000건당 실패 30건 증가\n\n95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
+        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n95백분위수\n\n800ms\n기존\n520ms\n변경\n응답시간\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n악화+60.0%\n\n10,000건당 실패 30건 증가\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
       },
       "outer": {
         "width": 1440,
@@ -7913,51 +7677,51 @@
         "bars": [
           {
             "x": 143.984375,
-            "y": 358.96875,
+            "y": 350.578125,
             "width": 36,
             "height": 120,
             "right": 179.984375,
-            "bottom": 478.96875
+            "bottom": 470.578125
           },
           {
             "x": 241.984375,
-            "y": 400.96875,
+            "y": 392.578125,
             "width": 36,
             "height": 78,
             "right": 277.984375,
-            "bottom": 478.96875
+            "bottom": 470.578125
           },
           {
             "x": 399.96875,
-            "y": 358.96875,
+            "y": 350.578125,
             "width": 36,
             "height": 120,
             "right": 435.96875,
-            "bottom": 478.96875
+            "bottom": 470.578125
           },
           {
             "x": 497.96875,
-            "y": 376.96875,
+            "y": 368.578125,
             "width": 36,
             "height": 102,
             "right": 533.96875,
-            "bottom": 478.96875
+            "bottom": 470.578125
           },
           {
             "x": 655.953125,
-            "y": 403.96875,
+            "y": 395.578125,
             "width": 36,
             "height": 75,
             "right": 691.953125,
-            "bottom": 478.96875
+            "bottom": 470.578125
           },
           {
             "x": 753.953125,
-            "y": 358.96875,
+            "y": 350.578125,
             "width": 36,
             "height": 120,
             "right": 789.953125,
-            "bottom": 478.96875
+            "bottom": 470.578125
           }
         ],
         "panels": [
@@ -8002,7 +7766,7 @@
             "labelCount": 1
           }
         ],
-        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n변화율: 기존값 대비 (%)\n\n800ms\n기존\n520ms\n변경\n응답시간\n\n95백분위수\n\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n\n악화+60.0%\n\n10,000건당 실패 30건 증가\n\n95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
+        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n95백분위수\n\n800ms\n기존\n520ms\n변경\n응답시간\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n악화+60.0%\n\n10,000건당 실패 30건 증가\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
       },
       "outer": {
         "width": 1440,
@@ -8068,51 +7832,51 @@
         "bars": [
           {
             "x": 143.984375,
-            "y": 358.96875,
+            "y": 350.578125,
             "width": 36,
             "height": 120,
             "right": 179.984375,
-            "bottom": 478.96875
+            "bottom": 470.578125
           },
           {
             "x": 241.984375,
-            "y": 400.96875,
+            "y": 392.578125,
             "width": 36,
             "height": 78,
             "right": 277.984375,
-            "bottom": 478.96875
+            "bottom": 470.578125
           },
           {
             "x": 399.96875,
-            "y": 358.96875,
+            "y": 350.578125,
             "width": 36,
             "height": 120,
             "right": 435.96875,
-            "bottom": 478.96875
+            "bottom": 470.578125
           },
           {
             "x": 497.96875,
-            "y": 376.96875,
+            "y": 368.578125,
             "width": 36,
             "height": 102,
             "right": 533.96875,
-            "bottom": 478.96875
+            "bottom": 470.578125
           },
           {
             "x": 655.953125,
-            "y": 403.96875,
+            "y": 395.578125,
             "width": 36,
             "height": 75,
             "right": 691.953125,
-            "bottom": 478.96875
+            "bottom": 470.578125
           },
           {
             "x": 753.953125,
-            "y": 358.96875,
+            "y": 350.578125,
             "width": 36,
             "height": 120,
             "right": 789.953125,
-            "bottom": 478.96875
+            "bottom": 470.578125
           }
         ],
         "panels": [
@@ -8157,7 +7921,7 @@
             "labelCount": 1
           }
         ],
-        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n변화율: 기존값 대비 (%)\n\n800ms\n기존\n520ms\n변경\n응답시간\n\n95백분위수\n\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n\n악화+60.0%\n\n10,000건당 실패 30건 증가\n\n95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
+        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n95백분위수\n\n800ms\n기존\n520ms\n변경\n응답시간\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n악화+60.0%\n\n10,000건당 실패 30건 증가\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
       },
       "outer": {
         "width": 1366,
@@ -8220,51 +7984,51 @@
         "bars": [
           {
             "x": 143.984375,
-            "y": 358.96875,
+            "y": 350.578125,
             "width": 36,
             "height": 120,
             "right": 179.984375,
-            "bottom": 478.96875
+            "bottom": 470.578125
           },
           {
             "x": 241.984375,
-            "y": 400.96875,
+            "y": 392.578125,
             "width": 36,
             "height": 78,
             "right": 277.984375,
-            "bottom": 478.96875
+            "bottom": 470.578125
           },
           {
             "x": 399.96875,
-            "y": 358.96875,
+            "y": 350.578125,
             "width": 36,
             "height": 120,
             "right": 435.96875,
-            "bottom": 478.96875
+            "bottom": 470.578125
           },
           {
             "x": 497.96875,
-            "y": 376.96875,
+            "y": 368.578125,
             "width": 36,
             "height": 102,
             "right": 533.96875,
-            "bottom": 478.96875
+            "bottom": 470.578125
           },
           {
             "x": 655.953125,
-            "y": 403.96875,
+            "y": 395.578125,
             "width": 36,
             "height": 75,
             "right": 691.953125,
-            "bottom": 478.96875
+            "bottom": 470.578125
           },
           {
             "x": 753.953125,
-            "y": 358.96875,
+            "y": 350.578125,
             "width": 36,
             "height": 120,
             "right": 789.953125,
-            "bottom": 478.96875
+            "bottom": 470.578125
           }
         ],
         "panels": [
@@ -8309,7 +8073,7 @@
             "labelCount": 1
           }
         ],
-        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n변화율: 기존값 대비 (%)\n\n800ms\n기존\n520ms\n변경\n응답시간\n\n95백분위수\n\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n\n악화+60.0%\n\n10,000건당 실패 30건 증가\n\n95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
+        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n95백분위수\n\n800ms\n기존\n520ms\n변경\n응답시간\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n악화+60.0%\n\n10,000건당 실패 30건 증가\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
       },
       "outer": {
         "width": 1366,
@@ -8375,51 +8139,51 @@
         "bars": [
           {
             "x": 143.984375,
-            "y": 358.96875,
+            "y": 350.578125,
             "width": 36,
             "height": 120,
             "right": 179.984375,
-            "bottom": 478.96875
+            "bottom": 470.578125
           },
           {
             "x": 241.984375,
-            "y": 400.96875,
+            "y": 392.578125,
             "width": 36,
             "height": 78,
             "right": 277.984375,
-            "bottom": 478.96875
+            "bottom": 470.578125
           },
           {
             "x": 399.96875,
-            "y": 358.96875,
+            "y": 350.578125,
             "width": 36,
             "height": 120,
             "right": 435.96875,
-            "bottom": 478.96875
+            "bottom": 470.578125
           },
           {
             "x": 497.96875,
-            "y": 376.96875,
+            "y": 368.578125,
             "width": 36,
             "height": 102,
             "right": 533.96875,
-            "bottom": 478.96875
+            "bottom": 470.578125
           },
           {
             "x": 655.953125,
-            "y": 403.96875,
+            "y": 395.578125,
             "width": 36,
             "height": 75,
             "right": 691.953125,
-            "bottom": 478.96875
+            "bottom": 470.578125
           },
           {
             "x": 753.953125,
-            "y": 358.96875,
+            "y": 350.578125,
             "width": 36,
             "height": 120,
             "right": 789.953125,
-            "bottom": 478.96875
+            "bottom": 470.578125
           }
         ],
         "panels": [
@@ -8464,7 +8228,7 @@
             "labelCount": 1
           }
         ],
-        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n변화율: 기존값 대비 (%)\n\n800ms\n기존\n520ms\n변경\n응답시간\n\n95백분위수\n\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n\n악화+60.0%\n\n10,000건당 실패 30건 증가\n\n95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
+        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n95백분위수\n\n800ms\n기존\n520ms\n변경\n응답시간\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n악화+60.0%\n\n10,000건당 실패 30건 증가\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
       },
       "outer": {
         "width": 1280,
@@ -8527,51 +8291,51 @@
         "bars": [
           {
             "x": 143.984375,
-            "y": 358.96875,
+            "y": 350.578125,
             "width": 36,
             "height": 120,
             "right": 179.984375,
-            "bottom": 478.96875
+            "bottom": 470.578125
           },
           {
             "x": 241.984375,
-            "y": 400.96875,
+            "y": 392.578125,
             "width": 36,
             "height": 78,
             "right": 277.984375,
-            "bottom": 478.96875
+            "bottom": 470.578125
           },
           {
             "x": 399.96875,
-            "y": 358.96875,
+            "y": 350.578125,
             "width": 36,
             "height": 120,
             "right": 435.96875,
-            "bottom": 478.96875
+            "bottom": 470.578125
           },
           {
             "x": 497.96875,
-            "y": 376.96875,
+            "y": 368.578125,
             "width": 36,
             "height": 102,
             "right": 533.96875,
-            "bottom": 478.96875
+            "bottom": 470.578125
           },
           {
             "x": 655.953125,
-            "y": 403.96875,
+            "y": 395.578125,
             "width": 36,
             "height": 75,
             "right": 691.953125,
-            "bottom": 478.96875
+            "bottom": 470.578125
           },
           {
             "x": 753.953125,
-            "y": 358.96875,
+            "y": 350.578125,
             "width": 36,
             "height": 120,
             "right": 789.953125,
-            "bottom": 478.96875
+            "bottom": 470.578125
           }
         ],
         "panels": [
@@ -8616,7 +8380,7 @@
             "labelCount": 1
           }
         ],
-        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n변화율: 기존값 대비 (%)\n\n800ms\n기존\n520ms\n변경\n응답시간\n\n95백분위수\n\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n\n악화+60.0%\n\n10,000건당 실패 30건 증가\n\n95백분위수: 관측 요청의 약 95%가 이 시간 이내 응답.\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
+        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n\n95백분위수\n\n800ms\n기존\n520ms\n변경\n응답시간\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n악화+60.0%\n\n10,000건당 실패 30건 증가\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
       },
       "outer": {
         "width": 1280,
@@ -8665,12 +8429,12 @@
     "method": "Python fractions, independently from implementation JS"
   },
   "source_hashes": {
-    "content.html": "2b3fc7db3714670046f5cd833dd6689fd8530fd5a54353a9d08e05e81dc6eb9c",
-    "report.css": "4f33a77a466382e514af581c4d119e98ff3addda44a935fd47849739892f1089",
-    "report.js": "51c7eaafd0b8940ec1366405299e20445c6b790b8889358580ce228c97ba9e94",
+    "content.html": "b7532e4b44c7529884512ee909516b194f2efdcb5acedb069994b2acab6c1a63",
+    "report.css": "fb3c954b9e9f12e2a8aadcf66153e5bfe0906fc5cc8292c0bcc52646f4085871",
+    "report.js": "5e95c7872f5601b1e9bfa9294bf6ad94858ae4c16dc3d4076ae36b6a3a81b781",
     "scroll.html": "b522741eafc9422b95bbbd11ccbef95d4e6a3f6483c69bafa67bee74149e6d1e",
     "slides.html": "e1bdccb8bde36613e097696cab3a5a857c7892da475b6ed47326f3f529f4ff17",
-    "verify.py": "1ac6f0bac8e843ee49307aed2f3e3edce04adf945421c84e1603e5291e8e4340",
+    "verify.py": "7c5d23a44aafc29158c9f12c70d75a4db6ef00694f13ff37bc06e0209a9d5124",
     "viewer.css": "d4b0dbb5fd3ccd090083140d3b971e56ac4b9dfe7b450f7ecc21dc9153980c78",
     "viewer.js": "594735900f2a3a9fd0fd99b6c10158dc66c12573f41e9ac452cda6c0de4904a0"
   },

@@ -8,9 +8,8 @@ h1{margin:7px 0 6px;font-size:49px;line-height:var(--line-height-display);font-w
 .panel-label{font-size:16px;line-height:var(--line-height-compact);font-weight:800;color:var(--blue)}
 h2{margin:8px 0 0;font-size:25px;line-height:var(--line-height-title);color:var(--navy);font-weight:800}
 p{margin:0}
-.chart-note{font-size:16px;line-height:var(--line-height-note);color:var(--muted);margin-top:12px}
 .chart{display:block;margin-top:14px}
-.groups{position:relative}.gridlines{position:absolute;top:34px;left:0;right:0;height:120px;border-bottom:1px solid var(--border)}
+.groups{position:relative}.gridlines{position:absolute;top:60px;left:0;right:0;height:120px;border-bottom:1px solid var(--border)}
 #metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;position:relative}
 .metric{text-align:center;min-width:0}.bars{display:flex;justify-content:center;gap:20px}.bar-column{width:78px;display:flex;align-items:center;flex-direction:column}
 .bar-space{height:154px;display:flex;align-items:center;justify-content:flex-end;flex-direction:column;width:100%}
@@ -20,7 +19,6 @@ p{margin:0}
 .metric h3{font-size:21px;line-height:var(--line-height-compact);color:var(--navy);margin:0;font-weight:800}
 .delta{font-size:25px;line-height:30px;color:var(--navy);font-weight:800;white-space:nowrap}.status{font-size:16px;margin-right:5px}
 .metric-detail{font-size:17px;line-height:var(--line-height-note);color:var(--deep);margin-top:8px;min-height:48px}
-.definition{font-size:16px;line-height:var(--line-height-note);color:var(--muted);border-top:1px solid var(--border);padding-top:12px;margin-top:8px}.definition b{color:var(--deep)}
 .action{display:flex;flex-direction:column}.actions{display:grid;grid-template-rows:1fr 1.1fr 1.35fr;flex:1;margin-top:16px;min-height:0}
 .action-item{display:grid;grid-template-columns:24px 1fr;gap:12px;align-content:center;padding:12px 0}.action-item+.action-item{border-top:1px solid var(--border)}
 .number{color:var(--navy);font-size:20px;font-weight:800;line-height:29px}
@@ -29,4 +27,4 @@ footer{display:flex;justify-content:space-between;margin-top:15px;padding-top:11
 
 .worse .delta,.worse .bar-column:last-child .value{color:#C84444}
 
-.metric-heading{margin:12px 0 4px}.metric-qualifier{min-height:18px;font-size:14px;line-height:18px;color:var(--muted);font-weight:500}
+.metric-heading{margin:12px 0 4px}.metric-qualifier{margin:0 0 8px;min-height:18px;font-size:14px;line-height:18px;color:var(--muted);font-weight:500}
