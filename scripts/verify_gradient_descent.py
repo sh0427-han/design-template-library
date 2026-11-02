@@ -13,6 +13,7 @@ import subprocess
 import threading
 from playwright.sync_api import sync_playwright
 from reference_validation import browser_options
+from check_document_roles import preserved_body
 
 ROOT = Path(__file__).resolve().parents[1]
 CASE = ROOT / 'examples/gradient-descent'
@@ -282,7 +283,9 @@ def main():
     changed=[];heading_changes=[];documentation_changes=[]
     for path in paths:
         old=subprocess.check_output(['git','show',f'{BASE}:{path}'],cwd=ROOT)
-        if hashlib.sha256(old).hexdigest()!=digest(ROOT/path):
+        # Compare historical approval against exact checked documentation migrations.
+        current_digest = hashlib.sha256(preserved_body(path, (ROOT/path).read_bytes())).hexdigest() if path in documented_paths else digest(ROOT/path)
+        if hashlib.sha256(old).hexdigest()!=current_digest:
             if path in heading_paths:
                 expected=heading_scope['changes'][path]
                 before=subprocess.check_output(['git','show',f"{heading_scope['baseline']}:{path}"],cwd=ROOT)
@@ -295,7 +298,7 @@ def main():
                 expected=heading_scope['documentation_changes'][path]
                 before=subprocess.check_output(['git','show',f"{approval['baseline']}:{path}"],cwd=ROOT)
                 assert hashlib.sha256(before).hexdigest()==expected['before_sha256']==hashlib.sha256(old).hexdigest()
-                assert digest(ROOT/path)==expected['after_sha256']
+                assert current_digest==expected['after_sha256']
                 documentation_changes.append(path)
             else:changed.append(path)
     assert not changed,changed
