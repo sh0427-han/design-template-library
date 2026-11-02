@@ -8,7 +8,7 @@ h1{margin:7px 0 6px;font-size:49px;line-height:var(--line-height-display);font-w
 .panel-label{font-size:16px;line-height:var(--line-height-compact);font-weight:800;color:var(--blue)}
 h2{margin:8px 0 0;font-size:25px;line-height:var(--line-height-title);color:var(--navy);font-weight:800}
 p{margin:0}
-.chart{display:block;margin-top:14px}
+.chart{display:block;margin-top:32px}
 .groups{position:relative}.gridlines{position:absolute;top:34px;left:0;right:0;height:120px;border-bottom:1px solid var(--border)}
 #metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;position:relative}
 .metric{text-align:center;min-width:0}.bars{display:flex;justify-content:center;gap:20px}.bar-column{width:78px;display:flex;align-items:center;flex-direction:column}
