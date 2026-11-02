@@ -644,13 +644,26 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "응답시간·비용 이점만으로 전면 확대하지 않음. 실패율 악화를 먼저 해소.",
+          "text": "응답시간·비용 이점만으로 전면 확대하지 않음.",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 39
+              "glyphCount": 25
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "실패율 악화를 먼저 해소.",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 14
             }
           ]
         },
@@ -770,23 +783,23 @@
       "pass": true,
       "detail": [
         {
-          "url": "http://127.0.0.1:33093/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45783/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33093/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45783/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33093/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45783/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33093/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45783/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33093/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45783/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         }
       ]
@@ -1617,13 +1630,26 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "응답시간·비용 이점만으로 전면 확대하지 않음. 실패율 악화를 먼저 해소.",
+          "text": "응답시간·비용 이점만으로 전면 확대하지 않음.",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 39
+              "glyphCount": 25
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "실패율 악화를 먼저 해소.",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 14
             }
           ]
         },
@@ -1782,23 +1808,23 @@
       "pass": true,
       "detail": [
         {
-          "url": "http://127.0.0.1:33093/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45783/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33093/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45783/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33093/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45783/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33093/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45783/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33093/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45783/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         }
       ]
@@ -2632,13 +2658,26 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "응답시간·비용 이점만으로 전면 확대하지 않음. 실패율 악화를 먼저 해소.",
+          "text": "응답시간·비용 이점만으로 전면 확대하지 않음.",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 39
+              "glyphCount": 25
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "실패율 악화를 먼저 해소.",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 14
             }
           ]
         },
@@ -2758,23 +2797,23 @@
       "pass": true,
       "detail": [
         {
-          "url": "http://127.0.0.1:33093/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45783/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33093/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45783/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33093/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45783/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33093/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45783/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33093/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45783/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         }
       ]
@@ -3605,13 +3644,26 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "응답시간·비용 이점만으로 전면 확대하지 않음. 실패율 악화를 먼저 해소.",
+          "text": "응답시간·비용 이점만으로 전면 확대하지 않음.",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 39
+              "glyphCount": 25
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "실패율 악화를 먼저 해소.",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 14
             }
           ]
         },
@@ -3770,23 +3822,23 @@
       "pass": true,
       "detail": [
         {
-          "url": "http://127.0.0.1:33093/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45783/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33093/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45783/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33093/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45783/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33093/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45783/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33093/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45783/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         }
       ]
@@ -4620,13 +4672,26 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "응답시간·비용 이점만으로 전면 확대하지 않음. 실패율 악화를 먼저 해소.",
+          "text": "응답시간·비용 이점만으로 전면 확대하지 않음.",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 39
+              "glyphCount": 25
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "실패율 악화를 먼저 해소.",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 14
             }
           ]
         },
@@ -4746,27 +4811,23 @@
       "pass": true,
       "detail": [
         {
-          "url": "http://127.0.0.1:33093/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45783/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33093/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45783/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33093/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45783/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33093/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45783/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33093/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
-          "status": 200
-        },
-        {
-          "url": "http://127.0.0.1:33093/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45783/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         }
       ]
@@ -5597,13 +5658,26 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "응답시간·비용 이점만으로 전면 확대하지 않음. 실패율 악화를 먼저 해소.",
+          "text": "응답시간·비용 이점만으로 전면 확대하지 않음.",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 39
+              "glyphCount": 25
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "실패율 악화를 먼저 해소.",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 14
             }
           ]
         },
@@ -5762,23 +5836,23 @@
       "pass": true,
       "detail": [
         {
-          "url": "http://127.0.0.1:33093/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45783/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33093/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45783/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33093/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45783/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33093/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45783/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33093/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45783/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         }
       ]
@@ -6612,13 +6686,26 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "응답시간·비용 이점만으로 전면 확대하지 않음. 실패율 악화를 먼저 해소.",
+          "text": "응답시간·비용 이점만으로 전면 확대하지 않음.",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 39
+              "glyphCount": 25
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "실패율 악화를 먼저 해소.",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 14
             }
           ]
         },
@@ -6738,23 +6825,23 @@
       "pass": true,
       "detail": [
         {
-          "url": "http://127.0.0.1:33093/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45783/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33093/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45783/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33093/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45783/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33093/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45783/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33093/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45783/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         }
       ]
@@ -7585,13 +7672,26 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "응답시간·비용 이점만으로 전면 확대하지 않음. 실패율 악화를 먼저 해소.",
+          "text": "응답시간·비용 이점만으로 전면 확대하지 않음.",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 39
+              "glyphCount": 25
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "실패율 악화를 먼저 해소.",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 14
             }
           ]
         },
@@ -7750,23 +7850,23 @@
       "pass": true,
       "detail": [
         {
-          "url": "http://127.0.0.1:33093/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45783/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33093/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45783/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33093/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45783/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33093/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45783/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:33093/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:45783/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         }
       ]
@@ -8130,7 +8230,7 @@
             "labelCount": 1
           }
         ],
-        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n800ms\n기존\n520ms\n변경\n응답시간\n\n: 95백분위수\n\n개선−35.0%\n280\nms\n\n응답 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n\n: 달러/일\n\n개선−15.0%\n18\n달러\n\n하루 비용 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n\n: 10,000건 기준\n\n악화+60.0%\n30\n건\n\n10,000건당 실패 증가\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n확대 적용 보류\n\n응답시간·비용 이점만으로 전면 확대하지 않음. 실패율 악화를 먼저 해소.\n\n2\n실패 원인 분리\n\n실패 유형별로 변경 전후를 비교하고, 응답시간 집계에 실패 요청을 포함하는 기준을 통일.\n\n3\n재검증 후 확대\n\n허용 실패율을 합의하고 같은 요청 조건에서 반복 관측. 기준 충족과 이점의 재현을 확인한 뒤 단계적으로 확대.\n\n서비스 변경 실험 요약\n01 / 01"
+        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n800ms\n기존\n520ms\n변경\n응답시간\n\n: 95백분위수\n\n개선−35.0%\n280\nms\n\n응답 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n\n: 달러/일\n\n개선−15.0%\n18\n달러\n\n하루 비용 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n\n: 10,000건 기준\n\n악화+60.0%\n30\n건\n\n10,000건당 실패 증가\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n확대 적용 보류\n\n응답시간·비용 이점만으로 전면 확대하지 않음.\n실패율 악화를 먼저 해소.\n\n2\n실패 원인 분리\n\n실패 유형별로 변경 전후를 비교하고, 응답시간 집계에 실패 요청을 포함하는 기준을 통일.\n\n3\n재검증 후 확대\n\n허용 실패율을 합의하고 같은 요청 조건에서 반복 관측. 기준 충족과 이점의 재현을 확인한 뒤 단계적으로 확대.\n\n서비스 변경 실험 요약\n01 / 01"
       },
       "outer": {
         "width": 1600,
@@ -8293,7 +8393,7 @@
             "labelCount": 1
           }
         ],
-        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n800ms\n기존\n520ms\n변경\n응답시간\n\n: 95백분위수\n\n개선−35.0%\n280\nms\n\n응답 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n\n: 달러/일\n\n개선−15.0%\n18\n달러\n\n하루 비용 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n\n: 10,000건 기준\n\n악화+60.0%\n30\n건\n\n10,000건당 실패 증가\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n확대 적용 보류\n\n응답시간·비용 이점만으로 전면 확대하지 않음. 실패율 악화를 먼저 해소.\n\n2\n실패 원인 분리\n\n실패 유형별로 변경 전후를 비교하고, 응답시간 집계에 실패 요청을 포함하는 기준을 통일.\n\n3\n재검증 후 확대\n\n허용 실패율을 합의하고 같은 요청 조건에서 반복 관측. 기준 충족과 이점의 재현을 확인한 뒤 단계적으로 확대.\n\n서비스 변경 실험 요약\n01 / 01"
+        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n800ms\n기존\n520ms\n변경\n응답시간\n\n: 95백분위수\n\n개선−35.0%\n280\nms\n\n응답 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n\n: 달러/일\n\n개선−15.0%\n18\n달러\n\n하루 비용 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n\n: 10,000건 기준\n\n악화+60.0%\n30\n건\n\n10,000건당 실패 증가\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n확대 적용 보류\n\n응답시간·비용 이점만으로 전면 확대하지 않음.\n실패율 악화를 먼저 해소.\n\n2\n실패 원인 분리\n\n실패 유형별로 변경 전후를 비교하고, 응답시간 집계에 실패 요청을 포함하는 기준을 통일.\n\n3\n재검증 후 확대\n\n허용 실패율을 합의하고 같은 요청 조건에서 반복 관측. 기준 충족과 이점의 재현을 확인한 뒤 단계적으로 확대.\n\n서비스 변경 실험 요약\n01 / 01"
       },
       "outer": {
         "width": 1600,
@@ -8459,7 +8559,7 @@
             "labelCount": 1
           }
         ],
-        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n800ms\n기존\n520ms\n변경\n응답시간\n\n: 95백분위수\n\n개선−35.0%\n280\nms\n\n응답 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n\n: 달러/일\n\n개선−15.0%\n18\n달러\n\n하루 비용 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n\n: 10,000건 기준\n\n악화+60.0%\n30\n건\n\n10,000건당 실패 증가\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n확대 적용 보류\n\n응답시간·비용 이점만으로 전면 확대하지 않음. 실패율 악화를 먼저 해소.\n\n2\n실패 원인 분리\n\n실패 유형별로 변경 전후를 비교하고, 응답시간 집계에 실패 요청을 포함하는 기준을 통일.\n\n3\n재검증 후 확대\n\n허용 실패율을 합의하고 같은 요청 조건에서 반복 관측. 기준 충족과 이점의 재현을 확인한 뒤 단계적으로 확대.\n\n서비스 변경 실험 요약\n01 / 01"
+        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n800ms\n기존\n520ms\n변경\n응답시간\n\n: 95백분위수\n\n개선−35.0%\n280\nms\n\n응답 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n\n: 달러/일\n\n개선−15.0%\n18\n달러\n\n하루 비용 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n\n: 10,000건 기준\n\n악화+60.0%\n30\n건\n\n10,000건당 실패 증가\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n확대 적용 보류\n\n응답시간·비용 이점만으로 전면 확대하지 않음.\n실패율 악화를 먼저 해소.\n\n2\n실패 원인 분리\n\n실패 유형별로 변경 전후를 비교하고, 응답시간 집계에 실패 요청을 포함하는 기준을 통일.\n\n3\n재검증 후 확대\n\n허용 실패율을 합의하고 같은 요청 조건에서 반복 관측. 기준 충족과 이점의 재현을 확인한 뒤 단계적으로 확대.\n\n서비스 변경 실험 요약\n01 / 01"
       },
       "outer": {
         "width": 1440,
@@ -8622,7 +8722,7 @@
             "labelCount": 1
           }
         ],
-        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n800ms\n기존\n520ms\n변경\n응답시간\n\n: 95백분위수\n\n개선−35.0%\n280\nms\n\n응답 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n\n: 달러/일\n\n개선−15.0%\n18\n달러\n\n하루 비용 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n\n: 10,000건 기준\n\n악화+60.0%\n30\n건\n\n10,000건당 실패 증가\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n확대 적용 보류\n\n응답시간·비용 이점만으로 전면 확대하지 않음. 실패율 악화를 먼저 해소.\n\n2\n실패 원인 분리\n\n실패 유형별로 변경 전후를 비교하고, 응답시간 집계에 실패 요청을 포함하는 기준을 통일.\n\n3\n재검증 후 확대\n\n허용 실패율을 합의하고 같은 요청 조건에서 반복 관측. 기준 충족과 이점의 재현을 확인한 뒤 단계적으로 확대.\n\n서비스 변경 실험 요약\n01 / 01"
+        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n800ms\n기존\n520ms\n변경\n응답시간\n\n: 95백분위수\n\n개선−35.0%\n280\nms\n\n응답 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n\n: 달러/일\n\n개선−15.0%\n18\n달러\n\n하루 비용 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n\n: 10,000건 기준\n\n악화+60.0%\n30\n건\n\n10,000건당 실패 증가\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n확대 적용 보류\n\n응답시간·비용 이점만으로 전면 확대하지 않음.\n실패율 악화를 먼저 해소.\n\n2\n실패 원인 분리\n\n실패 유형별로 변경 전후를 비교하고, 응답시간 집계에 실패 요청을 포함하는 기준을 통일.\n\n3\n재검증 후 확대\n\n허용 실패율을 합의하고 같은 요청 조건에서 반복 관측. 기준 충족과 이점의 재현을 확인한 뒤 단계적으로 확대.\n\n서비스 변경 실험 요약\n01 / 01"
       },
       "outer": {
         "width": 1440,
@@ -8788,7 +8888,7 @@
             "labelCount": 1
           }
         ],
-        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n800ms\n기존\n520ms\n변경\n응답시간\n\n: 95백분위수\n\n개선−35.0%\n280\nms\n\n응답 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n\n: 달러/일\n\n개선−15.0%\n18\n달러\n\n하루 비용 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n\n: 10,000건 기준\n\n악화+60.0%\n30\n건\n\n10,000건당 실패 증가\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n확대 적용 보류\n\n응답시간·비용 이점만으로 전면 확대하지 않음. 실패율 악화를 먼저 해소.\n\n2\n실패 원인 분리\n\n실패 유형별로 변경 전후를 비교하고, 응답시간 집계에 실패 요청을 포함하는 기준을 통일.\n\n3\n재검증 후 확대\n\n허용 실패율을 합의하고 같은 요청 조건에서 반복 관측. 기준 충족과 이점의 재현을 확인한 뒤 단계적으로 확대.\n\n서비스 변경 실험 요약\n01 / 01"
+        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n800ms\n기존\n520ms\n변경\n응답시간\n\n: 95백분위수\n\n개선−35.0%\n280\nms\n\n응답 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n\n: 달러/일\n\n개선−15.0%\n18\n달러\n\n하루 비용 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n\n: 10,000건 기준\n\n악화+60.0%\n30\n건\n\n10,000건당 실패 증가\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n확대 적용 보류\n\n응답시간·비용 이점만으로 전면 확대하지 않음.\n실패율 악화를 먼저 해소.\n\n2\n실패 원인 분리\n\n실패 유형별로 변경 전후를 비교하고, 응답시간 집계에 실패 요청을 포함하는 기준을 통일.\n\n3\n재검증 후 확대\n\n허용 실패율을 합의하고 같은 요청 조건에서 반복 관측. 기준 충족과 이점의 재현을 확인한 뒤 단계적으로 확대.\n\n서비스 변경 실험 요약\n01 / 01"
       },
       "outer": {
         "width": 1366,
@@ -8951,7 +9051,7 @@
             "labelCount": 1
           }
         ],
-        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n800ms\n기존\n520ms\n변경\n응답시간\n\n: 95백분위수\n\n개선−35.0%\n280\nms\n\n응답 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n\n: 달러/일\n\n개선−15.0%\n18\n달러\n\n하루 비용 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n\n: 10,000건 기준\n\n악화+60.0%\n30\n건\n\n10,000건당 실패 증가\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n확대 적용 보류\n\n응답시간·비용 이점만으로 전면 확대하지 않음. 실패율 악화를 먼저 해소.\n\n2\n실패 원인 분리\n\n실패 유형별로 변경 전후를 비교하고, 응답시간 집계에 실패 요청을 포함하는 기준을 통일.\n\n3\n재검증 후 확대\n\n허용 실패율을 합의하고 같은 요청 조건에서 반복 관측. 기준 충족과 이점의 재현을 확인한 뒤 단계적으로 확대.\n\n서비스 변경 실험 요약\n01 / 01"
+        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n800ms\n기존\n520ms\n변경\n응답시간\n\n: 95백분위수\n\n개선−35.0%\n280\nms\n\n응답 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n\n: 달러/일\n\n개선−15.0%\n18\n달러\n\n하루 비용 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n\n: 10,000건 기준\n\n악화+60.0%\n30\n건\n\n10,000건당 실패 증가\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n확대 적용 보류\n\n응답시간·비용 이점만으로 전면 확대하지 않음.\n실패율 악화를 먼저 해소.\n\n2\n실패 원인 분리\n\n실패 유형별로 변경 전후를 비교하고, 응답시간 집계에 실패 요청을 포함하는 기준을 통일.\n\n3\n재검증 후 확대\n\n허용 실패율을 합의하고 같은 요청 조건에서 반복 관측. 기준 충족과 이점의 재현을 확인한 뒤 단계적으로 확대.\n\n서비스 변경 실험 요약\n01 / 01"
       },
       "outer": {
         "width": 1366,
@@ -9117,7 +9217,7 @@
             "labelCount": 1
           }
         ],
-        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n800ms\n기존\n520ms\n변경\n응답시간\n\n: 95백분위수\n\n개선−35.0%\n280\nms\n\n응답 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n\n: 달러/일\n\n개선−15.0%\n18\n달러\n\n하루 비용 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n\n: 10,000건 기준\n\n악화+60.0%\n30\n건\n\n10,000건당 실패 증가\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n확대 적용 보류\n\n응답시간·비용 이점만으로 전면 확대하지 않음. 실패율 악화를 먼저 해소.\n\n2\n실패 원인 분리\n\n실패 유형별로 변경 전후를 비교하고, 응답시간 집계에 실패 요청을 포함하는 기준을 통일.\n\n3\n재검증 후 확대\n\n허용 실패율을 합의하고 같은 요청 조건에서 반복 관측. 기준 충족과 이점의 재현을 확인한 뒤 단계적으로 확대.\n\n서비스 변경 실험 요약\n01 / 01"
+        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n800ms\n기존\n520ms\n변경\n응답시간\n\n: 95백분위수\n\n개선−35.0%\n280\nms\n\n응답 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n\n: 달러/일\n\n개선−15.0%\n18\n달러\n\n하루 비용 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n\n: 10,000건 기준\n\n악화+60.0%\n30\n건\n\n10,000건당 실패 증가\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n확대 적용 보류\n\n응답시간·비용 이점만으로 전면 확대하지 않음.\n실패율 악화를 먼저 해소.\n\n2\n실패 원인 분리\n\n실패 유형별로 변경 전후를 비교하고, 응답시간 집계에 실패 요청을 포함하는 기준을 통일.\n\n3\n재검증 후 확대\n\n허용 실패율을 합의하고 같은 요청 조건에서 반복 관측. 기준 충족과 이점의 재현을 확인한 뒤 단계적으로 확대.\n\n서비스 변경 실험 요약\n01 / 01"
       },
       "outer": {
         "width": 1280,
@@ -9280,7 +9380,7 @@
             "labelCount": 1
           }
         ],
-        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n800ms\n기존\n520ms\n변경\n응답시간\n\n: 95백분위수\n\n개선−35.0%\n280\nms\n\n응답 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n\n: 달러/일\n\n개선−15.0%\n18\n달러\n\n하루 비용 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n\n: 10,000건 기준\n\n악화+60.0%\n30\n건\n\n10,000건당 실패 증가\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n확대 적용 보류\n\n응답시간·비용 이점만으로 전면 확대하지 않음. 실패율 악화를 먼저 해소.\n\n2\n실패 원인 분리\n\n실패 유형별로 변경 전후를 비교하고, 응답시간 집계에 실패 요청을 포함하는 기준을 통일.\n\n3\n재검증 후 확대\n\n허용 실패율을 합의하고 같은 요청 조건에서 반복 관측. 기준 충족과 이점의 재현을 확인한 뒤 단계적으로 확대.\n\n서비스 변경 실험 요약\n01 / 01"
+        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n800ms\n기존\n520ms\n변경\n응답시간\n\n: 95백분위수\n\n개선−35.0%\n280\nms\n\n응답 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n\n: 달러/일\n\n개선−15.0%\n18\n달러\n\n하루 비용 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n\n: 10,000건 기준\n\n악화+60.0%\n30\n건\n\n10,000건당 실패 증가\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n확대 적용 보류\n\n응답시간·비용 이점만으로 전면 확대하지 않음.\n실패율 악화를 먼저 해소.\n\n2\n실패 원인 분리\n\n실패 유형별로 변경 전후를 비교하고, 응답시간 집계에 실패 요청을 포함하는 기준을 통일.\n\n3\n재검증 후 확대\n\n허용 실패율을 합의하고 같은 요청 조건에서 반복 관측. 기준 충족과 이점의 재현을 확인한 뒤 단계적으로 확대.\n\n서비스 변경 실험 요약\n01 / 01"
       },
       "outer": {
         "width": 1280,
@@ -9329,7 +9429,7 @@
     "method": "Python fractions, independently from implementation JS"
   },
   "source_hashes": {
-    "content.html": "2f64ff6d7a271c8a41f5bc3ce59d2989c873700077c9223b4c7f074b1b643af4",
+    "content.html": "112b32b03a55aa0727bf5a21eaa44a2da90a4cd3ddb17016858e2e2efff9173b",
     "report.css": "6d2ec2e4bb899e98169b0e46f32af56bfca6df10d4b0c2230d8f651f5725884b",
     "report.js": "c6f3c11a82ba1380382414a0682b14e2b14b6ff91c2d61d71cb9af4693d21657",
     "scroll.html": "b522741eafc9422b95bbbd11ccbef95d4e6a3f6483c69bafa67bee74149e6d1e",
