@@ -241,13 +241,39 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "280ms 단축",
+          "text": "280",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 8
+              "glyphCount": 3
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "ms",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 2
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "응답 단축",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 5
             }
           ]
         },
@@ -384,13 +410,39 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "하루 18달러 절감",
+          "text": "18",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 10
+              "glyphCount": 2
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "달러",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 2
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "하루 비용 절감",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 8
             }
           ]
         },
@@ -501,13 +553,39 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "10,000건당 실패 30건 증가",
+          "text": "30",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 18
+              "glyphCount": 2
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "건",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 1
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "10,000건당 실패 증가",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 14
             }
           ]
         },
@@ -705,23 +783,23 @@
       "pass": true,
       "detail": [
         {
-          "url": "http://127.0.0.1:32829/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:40033/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:32829/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:40033/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:32829/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:40033/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:32829/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:40033/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:32829/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:40033/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         }
       ]
@@ -847,6 +925,11 @@
     },
     {
       "name": "scroll-1600x950 no redundant definitions and qualifier under metric name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "scroll-1600x950 operational impact summary",
       "pass": true,
       "detail": null
     },
@@ -1139,13 +1222,39 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "280ms 단축",
+          "text": "280",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 8
+              "glyphCount": 3
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "ms",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 2
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "응답 단축",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 5
             }
           ]
         },
@@ -1282,13 +1391,39 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "하루 18달러 절감",
+          "text": "18",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 10
+              "glyphCount": 2
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "달러",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 2
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "하루 비용 절감",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 8
             }
           ]
         },
@@ -1399,13 +1534,39 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "10,000건당 실패 30건 증가",
+          "text": "30",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 18
+              "glyphCount": 2
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "건",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 1
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "10,000건당 실패 증가",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 14
             }
           ]
         },
@@ -1642,23 +1803,23 @@
       "pass": true,
       "detail": [
         {
-          "url": "http://127.0.0.1:32829/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:40033/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:32829/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:40033/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:32829/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:40033/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:32829/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:40033/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:32829/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:40033/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         }
       ]
@@ -1784,6 +1945,11 @@
     },
     {
       "name": "slides-1600x950 no redundant definitions and qualifier under metric name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "slides-1600x950 operational impact summary",
       "pass": true,
       "detail": null
     },
@@ -2079,13 +2245,39 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "280ms 단축",
+          "text": "280",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 8
+              "glyphCount": 3
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "ms",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 2
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "응답 단축",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 5
             }
           ]
         },
@@ -2222,13 +2414,39 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "하루 18달러 절감",
+          "text": "18",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 10
+              "glyphCount": 2
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "달러",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 2
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "하루 비용 절감",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 8
             }
           ]
         },
@@ -2339,13 +2557,39 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "10,000건당 실패 30건 증가",
+          "text": "30",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 18
+              "glyphCount": 2
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "건",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 1
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "10,000건당 실패 증가",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 14
             }
           ]
         },
@@ -2543,27 +2787,23 @@
       "pass": true,
       "detail": [
         {
-          "url": "http://127.0.0.1:32829/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:40033/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:32829/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:40033/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:32829/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:40033/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:32829/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:40033/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:32829/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
-          "status": 200
-        },
-        {
-          "url": "http://127.0.0.1:32829/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:40033/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         }
       ]
@@ -2689,6 +2929,11 @@
     },
     {
       "name": "scroll-1440x810 no redundant definitions and qualifier under metric name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "scroll-1440x810 operational impact summary",
       "pass": true,
       "detail": null
     },
@@ -2981,13 +3226,39 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "280ms 단축",
+          "text": "280",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 8
+              "glyphCount": 3
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "ms",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 2
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "응답 단축",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 5
             }
           ]
         },
@@ -3124,13 +3395,39 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "하루 18달러 절감",
+          "text": "18",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 10
+              "glyphCount": 2
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "달러",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 2
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "하루 비용 절감",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 8
             }
           ]
         },
@@ -3241,13 +3538,39 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "10,000건당 실패 30건 증가",
+          "text": "30",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 18
+              "glyphCount": 2
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "건",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 1
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "10,000건당 실패 증가",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 14
             }
           ]
         },
@@ -3484,23 +3807,23 @@
       "pass": true,
       "detail": [
         {
-          "url": "http://127.0.0.1:32829/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:40033/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:32829/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:40033/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:32829/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:40033/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:32829/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:40033/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:32829/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:40033/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         }
       ]
@@ -3626,6 +3949,11 @@
     },
     {
       "name": "slides-1440x810 no redundant definitions and qualifier under metric name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "slides-1440x810 operational impact summary",
       "pass": true,
       "detail": null
     },
@@ -3921,13 +4249,39 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "280ms 단축",
+          "text": "280",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 8
+              "glyphCount": 3
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "ms",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 2
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "응답 단축",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 5
             }
           ]
         },
@@ -4064,13 +4418,39 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "하루 18달러 절감",
+          "text": "18",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 10
+              "glyphCount": 2
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "달러",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 2
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "하루 비용 절감",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 8
             }
           ]
         },
@@ -4181,13 +4561,39 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "10,000건당 실패 30건 증가",
+          "text": "30",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 18
+              "glyphCount": 2
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "건",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 1
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "10,000건당 실패 증가",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 14
             }
           ]
         },
@@ -4385,23 +4791,23 @@
       "pass": true,
       "detail": [
         {
-          "url": "http://127.0.0.1:32829/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:40033/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:32829/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:40033/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:32829/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:40033/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:32829/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:40033/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:32829/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:40033/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         }
       ]
@@ -4527,6 +4933,11 @@
     },
     {
       "name": "scroll-1366x768 no redundant definitions and qualifier under metric name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "scroll-1366x768 operational impact summary",
       "pass": true,
       "detail": null
     },
@@ -4819,13 +5230,39 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "280ms 단축",
+          "text": "280",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 8
+              "glyphCount": 3
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "ms",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 2
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "응답 단축",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 5
             }
           ]
         },
@@ -4962,13 +5399,39 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "하루 18달러 절감",
+          "text": "18",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 10
+              "glyphCount": 2
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "달러",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 2
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "하루 비용 절감",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 8
             }
           ]
         },
@@ -5079,13 +5542,39 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "10,000건당 실패 30건 증가",
+          "text": "30",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 18
+              "glyphCount": 2
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "건",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 1
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "10,000건당 실패 증가",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 14
             }
           ]
         },
@@ -5322,23 +5811,23 @@
       "pass": true,
       "detail": [
         {
-          "url": "http://127.0.0.1:32829/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:40033/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:32829/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:40033/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:32829/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:40033/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:32829/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:40033/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:32829/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:40033/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         }
       ]
@@ -5464,6 +5953,11 @@
     },
     {
       "name": "slides-1366x768 no redundant definitions and qualifier under metric name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "slides-1366x768 operational impact summary",
       "pass": true,
       "detail": null
     },
@@ -5759,13 +6253,39 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "280ms 단축",
+          "text": "280",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 8
+              "glyphCount": 3
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "ms",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 2
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "응답 단축",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 5
             }
           ]
         },
@@ -5902,13 +6422,39 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "하루 18달러 절감",
+          "text": "18",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 10
+              "glyphCount": 2
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "달러",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 2
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "하루 비용 절감",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 8
             }
           ]
         },
@@ -6019,13 +6565,39 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "10,000건당 실패 30건 증가",
+          "text": "30",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 18
+              "glyphCount": 2
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "건",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 1
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "10,000건당 실패 증가",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 14
             }
           ]
         },
@@ -6223,23 +6795,23 @@
       "pass": true,
       "detail": [
         {
-          "url": "http://127.0.0.1:32829/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:40033/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:32829/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:40033/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:32829/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:40033/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:32829/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:40033/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:32829/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:40033/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         }
       ]
@@ -6365,6 +6937,11 @@
     },
     {
       "name": "scroll-1280x720 no redundant definitions and qualifier under metric name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "scroll-1280x720 operational impact summary",
       "pass": true,
       "detail": null
     },
@@ -6657,13 +7234,39 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "280ms 단축",
+          "text": "280",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 8
+              "glyphCount": 3
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "ms",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 2
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "응답 단축",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 5
             }
           ]
         },
@@ -6800,13 +7403,39 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "하루 18달러 절감",
+          "text": "18",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 10
+              "glyphCount": 2
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "달러",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 2
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "하루 비용 절감",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 8
             }
           ]
         },
@@ -6917,13 +7546,39 @@
         {
           "tag": "SPAN",
           "role": "prose",
-          "text": "10,000건당 실패 30건 증가",
+          "text": "30",
           "fonts": [
             {
               "familyName": "Pretendard Variable",
               "postScriptName": "PretendardVariable-Regular",
               "isCustomFont": true,
-              "glyphCount": 18
+              "glyphCount": 2
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "건",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 1
+            }
+          ]
+        },
+        {
+          "tag": "SPAN",
+          "role": "prose",
+          "text": "10,000건당 실패 증가",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-Regular",
+              "isCustomFont": true,
+              "glyphCount": 14
             }
           ]
         },
@@ -7160,23 +7815,23 @@
       "pass": true,
       "detail": [
         {
-          "url": "http://127.0.0.1:32829/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:40033/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:32829/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:40033/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:32829/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:40033/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:32829/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:40033/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         },
         {
-          "url": "http://127.0.0.1:32829/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
+          "url": "http://127.0.0.1:40033/templates/html/assets/fonts/pretendard/PretendardVariable.woff2",
           "status": 200
         }
       ]
@@ -7306,6 +7961,11 @@
       "detail": null
     },
     {
+      "name": "slides-1280x720 operational impact summary",
+      "pass": true,
+      "detail": null
+    },
+    {
       "name": "slides-1280x720 required values",
       "pass": true,
       "detail": null
@@ -7401,6 +8061,9 @@
             "after": 520,
             "unit": "ms",
             "detail": "280ms 단축",
+            "impactValue": "280",
+            "impactUnit": "ms",
+            "impactCaption": "응답 단축",
             "index": 65,
             "change": -35,
             "difference": -280
@@ -7412,6 +8075,9 @@
             "after": 102,
             "unit": "달러",
             "detail": "하루 18달러 절감",
+            "impactValue": "18",
+            "impactUnit": "달러",
+            "impactCaption": "하루 비용 절감",
             "index": 85,
             "change": -15,
             "difference": -18
@@ -7423,6 +8089,9 @@
             "after": 0.8,
             "unit": "%",
             "detail": "10,000건당 실패 30건 증가",
+            "impactValue": "30",
+            "impactUnit": "건",
+            "impactCaption": "10,000건당 실패 증가",
             "failure": true,
             "index": 160,
             "change": 60.00000000000001,
@@ -7521,7 +8190,7 @@
             "labelCount": 1
           }
         ],
-        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n800ms\n기존\n520ms\n변경\n응답시간\n\n: 95백분위수\n\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n\n: 달러/일\n\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n\n: 10,000건 기준\n\n악화+60.0%\n\n10,000건당 실패 30건 증가\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
+        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n800ms\n기존\n520ms\n변경\n응답시간\n\n: 95백분위수\n\n개선−35.0%\n280\nms\n\n응답 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n\n: 달러/일\n\n개선−15.0%\n18\n달러\n\n하루 비용 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n\n: 10,000건 기준\n\n악화+60.0%\n30\n건\n\n10,000건당 실패 증가\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
       },
       "outer": {
         "width": 1600,
@@ -7555,6 +8224,9 @@
             "after": 520,
             "unit": "ms",
             "detail": "280ms 단축",
+            "impactValue": "280",
+            "impactUnit": "ms",
+            "impactCaption": "응답 단축",
             "index": 65,
             "change": -35,
             "difference": -280
@@ -7566,6 +8238,9 @@
             "after": 102,
             "unit": "달러",
             "detail": "하루 18달러 절감",
+            "impactValue": "18",
+            "impactUnit": "달러",
+            "impactCaption": "하루 비용 절감",
             "index": 85,
             "change": -15,
             "difference": -18
@@ -7577,6 +8252,9 @@
             "after": 0.8,
             "unit": "%",
             "detail": "10,000건당 실패 30건 증가",
+            "impactValue": "30",
+            "impactUnit": "건",
+            "impactCaption": "10,000건당 실패 증가",
             "failure": true,
             "index": 160,
             "change": 60.00000000000001,
@@ -7675,7 +8353,7 @@
             "labelCount": 1
           }
         ],
-        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n800ms\n기존\n520ms\n변경\n응답시간\n\n: 95백분위수\n\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n\n: 달러/일\n\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n\n: 10,000건 기준\n\n악화+60.0%\n\n10,000건당 실패 30건 증가\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
+        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n800ms\n기존\n520ms\n변경\n응답시간\n\n: 95백분위수\n\n개선−35.0%\n280\nms\n\n응답 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n\n: 달러/일\n\n개선−15.0%\n18\n달러\n\n하루 비용 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n\n: 10,000건 기준\n\n악화+60.0%\n30\n건\n\n10,000건당 실패 증가\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
       },
       "outer": {
         "width": 1600,
@@ -7712,6 +8390,9 @@
             "after": 520,
             "unit": "ms",
             "detail": "280ms 단축",
+            "impactValue": "280",
+            "impactUnit": "ms",
+            "impactCaption": "응답 단축",
             "index": 65,
             "change": -35,
             "difference": -280
@@ -7723,6 +8404,9 @@
             "after": 102,
             "unit": "달러",
             "detail": "하루 18달러 절감",
+            "impactValue": "18",
+            "impactUnit": "달러",
+            "impactCaption": "하루 비용 절감",
             "index": 85,
             "change": -15,
             "difference": -18
@@ -7734,6 +8418,9 @@
             "after": 0.8,
             "unit": "%",
             "detail": "10,000건당 실패 30건 증가",
+            "impactValue": "30",
+            "impactUnit": "건",
+            "impactCaption": "10,000건당 실패 증가",
             "failure": true,
             "index": 160,
             "change": 60.00000000000001,
@@ -7832,7 +8519,7 @@
             "labelCount": 1
           }
         ],
-        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n800ms\n기존\n520ms\n변경\n응답시간\n\n: 95백분위수\n\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n\n: 달러/일\n\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n\n: 10,000건 기준\n\n악화+60.0%\n\n10,000건당 실패 30건 증가\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
+        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n800ms\n기존\n520ms\n변경\n응답시간\n\n: 95백분위수\n\n개선−35.0%\n280\nms\n\n응답 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n\n: 달러/일\n\n개선−15.0%\n18\n달러\n\n하루 비용 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n\n: 10,000건 기준\n\n악화+60.0%\n30\n건\n\n10,000건당 실패 증가\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
       },
       "outer": {
         "width": 1440,
@@ -7866,6 +8553,9 @@
             "after": 520,
             "unit": "ms",
             "detail": "280ms 단축",
+            "impactValue": "280",
+            "impactUnit": "ms",
+            "impactCaption": "응답 단축",
             "index": 65,
             "change": -35,
             "difference": -280
@@ -7877,6 +8567,9 @@
             "after": 102,
             "unit": "달러",
             "detail": "하루 18달러 절감",
+            "impactValue": "18",
+            "impactUnit": "달러",
+            "impactCaption": "하루 비용 절감",
             "index": 85,
             "change": -15,
             "difference": -18
@@ -7888,6 +8581,9 @@
             "after": 0.8,
             "unit": "%",
             "detail": "10,000건당 실패 30건 증가",
+            "impactValue": "30",
+            "impactUnit": "건",
+            "impactCaption": "10,000건당 실패 증가",
             "failure": true,
             "index": 160,
             "change": 60.00000000000001,
@@ -7986,7 +8682,7 @@
             "labelCount": 1
           }
         ],
-        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n800ms\n기존\n520ms\n변경\n응답시간\n\n: 95백분위수\n\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n\n: 달러/일\n\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n\n: 10,000건 기준\n\n악화+60.0%\n\n10,000건당 실패 30건 증가\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
+        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n800ms\n기존\n520ms\n변경\n응답시간\n\n: 95백분위수\n\n개선−35.0%\n280\nms\n\n응답 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n\n: 달러/일\n\n개선−15.0%\n18\n달러\n\n하루 비용 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n\n: 10,000건 기준\n\n악화+60.0%\n30\n건\n\n10,000건당 실패 증가\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
       },
       "outer": {
         "width": 1440,
@@ -8023,6 +8719,9 @@
             "after": 520,
             "unit": "ms",
             "detail": "280ms 단축",
+            "impactValue": "280",
+            "impactUnit": "ms",
+            "impactCaption": "응답 단축",
             "index": 65,
             "change": -35,
             "difference": -280
@@ -8034,6 +8733,9 @@
             "after": 102,
             "unit": "달러",
             "detail": "하루 18달러 절감",
+            "impactValue": "18",
+            "impactUnit": "달러",
+            "impactCaption": "하루 비용 절감",
             "index": 85,
             "change": -15,
             "difference": -18
@@ -8045,6 +8747,9 @@
             "after": 0.8,
             "unit": "%",
             "detail": "10,000건당 실패 30건 증가",
+            "impactValue": "30",
+            "impactUnit": "건",
+            "impactCaption": "10,000건당 실패 증가",
             "failure": true,
             "index": 160,
             "change": 60.00000000000001,
@@ -8143,7 +8848,7 @@
             "labelCount": 1
           }
         ],
-        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n800ms\n기존\n520ms\n변경\n응답시간\n\n: 95백분위수\n\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n\n: 달러/일\n\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n\n: 10,000건 기준\n\n악화+60.0%\n\n10,000건당 실패 30건 증가\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
+        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n800ms\n기존\n520ms\n변경\n응답시간\n\n: 95백분위수\n\n개선−35.0%\n280\nms\n\n응답 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n\n: 달러/일\n\n개선−15.0%\n18\n달러\n\n하루 비용 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n\n: 10,000건 기준\n\n악화+60.0%\n30\n건\n\n10,000건당 실패 증가\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
       },
       "outer": {
         "width": 1366,
@@ -8177,6 +8882,9 @@
             "after": 520,
             "unit": "ms",
             "detail": "280ms 단축",
+            "impactValue": "280",
+            "impactUnit": "ms",
+            "impactCaption": "응답 단축",
             "index": 65,
             "change": -35,
             "difference": -280
@@ -8188,6 +8896,9 @@
             "after": 102,
             "unit": "달러",
             "detail": "하루 18달러 절감",
+            "impactValue": "18",
+            "impactUnit": "달러",
+            "impactCaption": "하루 비용 절감",
             "index": 85,
             "change": -15,
             "difference": -18
@@ -8199,6 +8910,9 @@
             "after": 0.8,
             "unit": "%",
             "detail": "10,000건당 실패 30건 증가",
+            "impactValue": "30",
+            "impactUnit": "건",
+            "impactCaption": "10,000건당 실패 증가",
             "failure": true,
             "index": 160,
             "change": 60.00000000000001,
@@ -8297,7 +9011,7 @@
             "labelCount": 1
           }
         ],
-        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n800ms\n기존\n520ms\n변경\n응답시간\n\n: 95백분위수\n\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n\n: 달러/일\n\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n\n: 10,000건 기준\n\n악화+60.0%\n\n10,000건당 실패 30건 증가\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
+        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n800ms\n기존\n520ms\n변경\n응답시간\n\n: 95백분위수\n\n개선−35.0%\n280\nms\n\n응답 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n\n: 달러/일\n\n개선−15.0%\n18\n달러\n\n하루 비용 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n\n: 10,000건 기준\n\n악화+60.0%\n30\n건\n\n10,000건당 실패 증가\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
       },
       "outer": {
         "width": 1366,
@@ -8334,6 +9048,9 @@
             "after": 520,
             "unit": "ms",
             "detail": "280ms 단축",
+            "impactValue": "280",
+            "impactUnit": "ms",
+            "impactCaption": "응답 단축",
             "index": 65,
             "change": -35,
             "difference": -280
@@ -8345,6 +9062,9 @@
             "after": 102,
             "unit": "달러",
             "detail": "하루 18달러 절감",
+            "impactValue": "18",
+            "impactUnit": "달러",
+            "impactCaption": "하루 비용 절감",
             "index": 85,
             "change": -15,
             "difference": -18
@@ -8356,6 +9076,9 @@
             "after": 0.8,
             "unit": "%",
             "detail": "10,000건당 실패 30건 증가",
+            "impactValue": "30",
+            "impactUnit": "건",
+            "impactCaption": "10,000건당 실패 증가",
             "failure": true,
             "index": 160,
             "change": 60.00000000000001,
@@ -8454,7 +9177,7 @@
             "labelCount": 1
           }
         ],
-        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n800ms\n기존\n520ms\n변경\n응답시간\n\n: 95백분위수\n\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n\n: 달러/일\n\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n\n: 10,000건 기준\n\n악화+60.0%\n\n10,000건당 실패 30건 증가\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
+        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n800ms\n기존\n520ms\n변경\n응답시간\n\n: 95백분위수\n\n개선−35.0%\n280\nms\n\n응답 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n\n: 달러/일\n\n개선−15.0%\n18\n달러\n\n하루 비용 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n\n: 10,000건 기준\n\n악화+60.0%\n30\n건\n\n10,000건당 실패 증가\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
       },
       "outer": {
         "width": 1280,
@@ -8488,6 +9211,9 @@
             "after": 520,
             "unit": "ms",
             "detail": "280ms 단축",
+            "impactValue": "280",
+            "impactUnit": "ms",
+            "impactCaption": "응답 단축",
             "index": 65,
             "change": -35,
             "difference": -280
@@ -8499,6 +9225,9 @@
             "after": 102,
             "unit": "달러",
             "detail": "하루 18달러 절감",
+            "impactValue": "18",
+            "impactUnit": "달러",
+            "impactCaption": "하루 비용 절감",
             "index": 85,
             "change": -15,
             "difference": -18
@@ -8510,6 +9239,9 @@
             "after": 0.8,
             "unit": "%",
             "detail": "10,000건당 실패 30건 증가",
+            "impactValue": "30",
+            "impactUnit": "건",
+            "impactCaption": "10,000건당 실패 증가",
             "failure": true,
             "index": 160,
             "change": 60.00000000000001,
@@ -8608,7 +9340,7 @@
             "labelCount": 1
           }
         ],
-        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n800ms\n기존\n520ms\n변경\n응답시간\n\n: 95백분위수\n\n개선−35.0%\n\n280ms 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n\n: 달러/일\n\n개선−15.0%\n\n하루 18달러 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n\n: 10,000건 기준\n\n악화+60.0%\n\n10,000건당 실패 30건 증가\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
+        "text": "서비스 변경 · 관측 요약\n응답·비용 개선, 실패율 상승\n\n동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교\n\n지표 비교\n효율 이점과 품질 손실\n800ms\n기존\n520ms\n변경\n응답시간\n\n: 95백분위수\n\n개선−35.0%\n280\nms\n\n응답 단축\n\n120달러\n기존\n102달러\n변경\n하루 운영 비용\n\n: 달러/일\n\n개선−15.0%\n18\n달러\n\n하루 비용 절감\n\n0.5%\n기존\n0.8%\n변경\n실패율\n\n: 10,000건 기준\n\n악화+60.0%\n30\n건\n\n10,000건당 실패 증가\n\n판단과 후속 조치\n전면 확대 전, 실패 원인 확인\n1\n관측된 이점과 손실\n\n응답시간 280ms 단축, 하루 $18 절감.\n같은 10,000건당 실패는 30건 증가.\n\n2\n이 자료의 판단 범위\n\n변경의 인과효과·장기 재현성·통계적 유의성은 확인되지 않음.\n\n3\n추가 확인 후 확대 판단\n\n실패 원인을 분석하고 허용 실패율을 합의. 응답시간 집계에 실패 요청을 포함하는지 통일한 뒤, 같은 조건에서 반복 관측.\n\n서비스 변경 실험 요약\n01 / 01"
       },
       "outer": {
         "width": 1280,
@@ -8658,11 +9390,11 @@
   },
   "source_hashes": {
     "content.html": "b7532e4b44c7529884512ee909516b194f2efdcb5acedb069994b2acab6c1a63",
-    "report.css": "3ac584a0eead13014225ded00f70d3bf511baa9a4272e91a4d44459377ad7f47",
-    "report.js": "2e8e24f8c9d72f34f6ba25384e177ce8164a52f6feaaa838cc2ba1b9d10525bd",
+    "report.css": "f4cec23c2714576caf85a481b34dc909dcf763e820bafec66834208ef963c454",
+    "report.js": "c6f3c11a82ba1380382414a0682b14e2b14b6ff91c2d61d71cb9af4693d21657",
     "scroll.html": "b522741eafc9422b95bbbd11ccbef95d4e6a3f6483c69bafa67bee74149e6d1e",
     "slides.html": "e1bdccb8bde36613e097696cab3a5a857c7892da475b6ed47326f3f529f4ff17",
-    "verify.py": "32450a40b964ae39259ebaf3392a49083eab40ddae726305352e2d8e76974a0f",
+    "verify.py": "df3610139d2ec0dc97be81ffceb1de91c0b7ebecaf002d333683b42fd5eec082",
     "viewer.css": "d4b0dbb5fd3ccd090083140d3b971e56ac4b9dfe7b450f7ecc21dc9153980c78",
     "viewer.js": "594735900f2a3a9fd0fd99b6c10158dc66c12573f41e9ac452cda6c0de4904a0"
   },
