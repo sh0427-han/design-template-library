@@ -17,7 +17,7 @@ p{margin:0}
 .fill{width:36px;height:calc(var(--ratio)*120px);background:var(--blue);flex:none;border-radius:4px 4px 0 0}.fill.after{background:var(--teal)}.worse .fill.after{background:#C84444}
 .series{margin-top:8px;font-size:16px;line-height:20px;color:var(--deep)}
 .metric h3{font-size:21px;line-height:var(--line-height-compact);color:var(--navy);margin:0;font-weight:800}
-.delta{font-size:25px;line-height:30px;color:var(--navy);font-weight:800;white-space:nowrap}.status{font-size:16px;margin-right:5px}
+.delta{font-size:28px;line-height:30px;color:var(--navy);font-weight:800;white-space:nowrap}.status{font-size:16px;margin-right:5px}
 .action{display:flex;flex-direction:column}.actions{display:grid;grid-template-rows:1fr 1.1fr 1.35fr;flex:1;margin-top:16px;min-height:0}
 .action-item{display:grid;grid-template-columns:24px 1fr;gap:12px;align-content:center;padding:12px 0}.action-item+.action-item{border-top:1px solid var(--border)}
 .number{color:var(--navy);font-size:20px;font-weight:800;line-height:29px}
@@ -28,4 +28,4 @@ footer{display:flex;justify-content:space-between;margin-top:15px;padding-top:11
 
 .metric-heading{margin:12px 0 24px}.metric-qualifier{margin:5px 0 0;min-height:18px;font-size:14px;line-height:18px;color:var(--muted);font-weight:500}
 
-.metric-impact{margin-top:16px;padding-top:12px;border-top:1px solid var(--border)}.impact-value{display:flex;justify-content:center;align-items:baseline;gap:4px;color:var(--navy);line-height:38px}.impact-value strong{font-size:32px;font-weight:800}.impact-value span{font-size:18px;font-weight:600}.impact-caption{margin-top:3px;font-size:16px;line-height:22px;color:var(--muted)}.worse .impact-value{color:#C84444}
+.metric-impact{margin-top:16px;padding-top:12px;border-top:1px solid var(--border)}.impact-value{display:flex;justify-content:center;align-items:baseline;gap:4px;color:var(--navy);line-height:38px}.impact-value strong{font-size:28px;font-weight:800}.impact-value span{font-size:18px;font-weight:600}.impact-caption{margin-top:3px;font-size:16px;line-height:22px;color:var(--muted)}.worse .impact-value{color:#C84444}
