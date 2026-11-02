@@ -1,5 +1,10 @@
 # 레퍼런스 재사용 워크플로
 
+<!-- documentation-role:start -->
+> **문서 역할:** 제작 순서의 정본. 반복되는 디자인·검토 요약은 각 정본을 적용하는 단계 안내입니다.
+> [정본 위치·규칙 강도·현행/이력 구분](DOCUMENTATION_MAP.md)
+<!-- documentation-role:end -->
+
 이 문서는 PC에서 보는 HTML Scroll/Slide 자료의 **작업 순서와 참고 자료의 역할**을 정합니다. 토큰은 [디자인 시스템](../DESIGN_SYSTEM.md), 도식 제작은 [Figure 표준](FIGURE_PRODUCTION_STANDARD.md), 실제 데이터·수식은 [페이지 상세 명세](REFERENCE_PAGE_SPECS.md)가 기준입니다.
 
 ## 무엇을 먼저 보는가

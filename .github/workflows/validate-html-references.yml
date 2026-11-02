@@ -40,6 +40,8 @@ jobs:
         run: python scripts/verify_logistic_reuse.py
       - name: Gradient descent D0/D1 reuse validation
         run: python scripts/verify_gradient_descent.py
+      - name: Approved service-summary regression
+        run: python examples/service-summary/verify.py
       - name: Markdown links and final design contracts
         run: python scripts/check_documentation.py
       - name: Heading hierarchy preview, nine sources and both modes
@@ -60,16 +62,3 @@ jobs:
             examples/gradient-descent/previews
             /tmp/gradient-descent-review
             previews/heading-review
-      - name: Transfer heading preview evidence
-        if: always()
-        run: |
-          python - <<'PYTHON'
-          from pathlib import Path
-          import base64
-          files=list(Path('previews').glob('html-*.png'))+list(Path('previews').glob('html-*.jpg'))
-          files += [Path('previews')/n for n in ['dual-mode-scroll.jpg','dual-mode-slide.jpg']]
-          files += [Path('previews/review')/n for n in ['reference-validation.json','interactive-validation.json','dual-mode-validation.json']]
-          files += [Path('previews/heading-review')/n for n in ['index.html','overfitting.png','contact.jpg','validation.json']]
-          for f in files:
-              if f.exists():print('HEADING_EVIDENCE '+str(f)+' '+base64.b64encode(f.read_bytes()).decode())
-          PYTHON

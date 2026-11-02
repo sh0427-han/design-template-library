@@ -1,0 +1,3051 @@
+{
+  "pass": true,
+  "cases": [
+    {
+      "case": "long-original",
+      "mode": "scroll",
+      "viewport": [
+        1600,
+        950
+      ],
+      "pass": true,
+      "fit": true,
+      "expectedFit": true,
+      "errors": [],
+      "zoom": 1,
+      "title": {
+        "left": 146,
+        "top": 131,
+        "right": 1454,
+        "bottom": 186.359375,
+        "width": 1308,
+        "height": 55.359375
+      },
+      "subtitle": {
+        "left": 146,
+        "top": 192.359375,
+        "right": 1454,
+        "bottom": 250.296875,
+        "width": 1308,
+        "height": 57.9375
+      },
+      "titleLines": 0.9998081090843417,
+      "fonts": [
+        "49px",
+        "21px",
+        "18px"
+      ],
+      "tracking": "-1.33333px",
+      "columnsSeparate": true,
+      "footerInside": true,
+      "footerInViewport": true,
+      "notesBeforeCaption": true,
+      "captionBeforeFooter": true,
+      "nodeBounds": [
+        {
+          "text": "문서 나누기",
+          "x": 445.234375,
+          "y": 10,
+          "width": 87.7093505859375,
+          "height": 25,
+          "inside": true
+        },
+        {
+          "text": "찾기 좋은 크기의 조각",
+          "x": 420.3984375,
+          "y": 39,
+          "width": 138.9700927734375,
+          "height": 21,
+          "inside": true
+        }
+      ],
+      "nodeTextsSeparate": true,
+      "canvas": {
+        "left": 80,
+        "top": 64,
+        "right": 1520,
+        "bottom": 874,
+        "width": 1440,
+        "height": 810
+      },
+      "foot": {
+        "left": 146,
+        "top": 827.515625,
+        "right": 1454,
+        "bottom": 857.515625,
+        "width": 1308,
+        "height": 30
+      }
+    },
+    {
+      "case": "long-original",
+      "mode": "scroll",
+      "viewport": [
+        1440,
+        810
+      ],
+      "pass": true,
+      "fit": true,
+      "expectedFit": true,
+      "errors": [],
+      "zoom": 0.9666666666666667,
+      "title": {
+        "left": 87.796875,
+        "top": 129.421875,
+        "right": 1352.203125,
+        "bottom": 182.9375,
+        "width": 1264.40625,
+        "height": 53.515625
+      },
+      "subtitle": {
+        "left": 87.796875,
+        "top": 188.734375,
+        "right": 1352.203125,
+        "bottom": 244.734375,
+        "width": 1264.40625,
+        "height": 56
+      },
+      "titleLines": 0.99983730141431,
+      "fonts": [
+        "49px",
+        "21px",
+        "18px"
+      ],
+      "tracking": "-1.33333px",
+      "columnsSeparate": true,
+      "footerInside": true,
+      "footerInViewport": false,
+      "notesBeforeCaption": true,
+      "captionBeforeFooter": true,
+      "nodeBounds": [
+        {
+          "text": "문서 나누기",
+          "x": 445.275634765625,
+          "y": 10.344254493713379,
+          "width": 87.44866943359375,
+          "height": 24.828306198120117,
+          "inside": true
+        },
+        {
+          "text": "찾기 좋은 크기의 조각",
+          "x": 420.50390625,
+          "y": 38.41328048706055,
+          "width": 138.29405212402344,
+          "height": 21.724769592285156,
+          "inside": true
+        }
+      ],
+      "nodeTextsSeparate": true,
+      "canvas": {
+        "left": 24,
+        "top": 64,
+        "right": 1416,
+        "bottom": 847,
+        "width": 1392,
+        "height": 783
+      },
+      "foot": {
+        "left": 87.796875,
+        "top": 802.6875,
+        "right": 1352.203125,
+        "bottom": 831.3125,
+        "width": 1264.40625,
+        "height": 28.625
+      }
+    },
+    {
+      "case": "long-original",
+      "mode": "scroll",
+      "viewport": [
+        1366,
+        768
+      ],
+      "pass": true,
+      "fit": true,
+      "expectedFit": true,
+      "errors": [],
+      "zoom": 0.9152777777777777,
+      "title": {
+        "left": 84.40625,
+        "top": 126.015625,
+        "right": 1281.59375,
+        "bottom": 176.6875,
+        "width": 1197.1875,
+        "height": 50.671875
+      },
+      "subtitle": {
+        "left": 84.40625,
+        "top": 182.171875,
+        "right": 1281.59375,
+        "bottom": 235.203125,
+        "width": 1197.1875,
+        "height": 53.03125
+      },
+      "titleLines": 0.9998607793124636,
+      "fonts": [
+        "49px",
+        "21px",
+        "18px"
+      ],
+      "tracking": "-1.33333px",
+      "columnsSeparate": true,
+      "footerInside": true,
+      "footerInViewport": false,
+      "notesBeforeCaption": true,
+      "captionBeforeFooter": true,
+      "nodeBounds": [
+        {
+          "text": "문서 나누기",
+          "x": 445.2751159667969,
+          "y": 10.331478118896484,
+          "width": 87.44979095458984,
+          "height": 25.131999969482422,
+          "inside": true
+        },
+        {
+          "text": "찾기 좋은 크기의 조각",
+          "x": 420.4162902832031,
+          "y": 38.516868591308594,
+          "width": 138.23219299316406,
+          "height": 21.853912353515625,
+          "inside": true
+        }
+      ],
+      "nodeTextsSeparate": true,
+      "canvas": {
+        "left": 24,
+        "top": 64,
+        "right": 1342,
+        "bottom": 805.375,
+        "width": 1318,
+        "height": 741.375
+      },
+      "foot": {
+        "left": 84.40625,
+        "top": 763.546875,
+        "right": 1281.59375,
+        "bottom": 790.609375,
+        "width": 1197.1875,
+        "height": 27.0625
+      }
+    },
+    {
+      "case": "long-original",
+      "mode": "scroll",
+      "viewport": [
+        1280,
+        720
+      ],
+      "pass": true,
+      "fit": true,
+      "expectedFit": true,
+      "errors": [],
+      "zoom": 0.8555555555555555,
+      "title": {
+        "left": 80.453125,
+        "top": 122.203125,
+        "right": 1199.546875,
+        "bottom": 169.5625,
+        "width": 1119.09375,
+        "height": 47.359375
+      },
+      "subtitle": {
+        "left": 80.453125,
+        "top": 174.6875,
+        "right": 1199.546875,
+        "bottom": 224.28125,
+        "width": 1119.09375,
+        "height": 49.59375
+      },
+      "titleLines": 0.9997311474871526,
+      "fonts": [
+        "49px",
+        "21px",
+        "18px"
+      ],
+      "tracking": "-1.33333px",
+      "columnsSeparate": true,
+      "footerInside": true,
+      "footerInViewport": false,
+      "notesBeforeCaption": true,
+      "captionBeforeFooter": true,
+      "nodeBounds": [
+        {
+          "text": "문서 나누기",
+          "x": 445.2587890625,
+          "y": 10.125112533569336,
+          "width": 87.48238372802734,
+          "height": 24.55133056640625,
+          "inside": true
+        },
+        {
+          "text": "찾기 좋은 크기의 조각",
+          "x": 420.5065612792969,
+          "y": 38.46333312988281,
+          "width": 139.14718627929688,
+          "height": 22.213109970092773,
+          "inside": true
+        }
+      ],
+      "nodeTextsSeparate": true,
+      "canvas": {
+        "left": 24,
+        "top": 64,
+        "right": 1256,
+        "bottom": 757,
+        "width": 1232,
+        "height": 693
+      },
+      "foot": {
+        "left": 80.453125,
+        "top": 718.375,
+        "right": 1199.546875,
+        "bottom": 743.78125,
+        "width": 1119.09375,
+        "height": 25.40625
+      }
+    },
+    {
+      "case": "long-original",
+      "mode": "slides",
+      "viewport": [
+        1600,
+        950
+      ],
+      "pass": true,
+      "fit": true,
+      "expectedFit": true,
+      "errors": [],
+      "zoom": 1,
+      "title": {
+        "left": 146,
+        "top": 159,
+        "right": 1454,
+        "bottom": 214.359375,
+        "width": 1308,
+        "height": 55.359375
+      },
+      "subtitle": {
+        "left": 146,
+        "top": 220.359375,
+        "right": 1454,
+        "bottom": 278.296875,
+        "width": 1308,
+        "height": 57.9375
+      },
+      "titleLines": 0.9998081090843417,
+      "fonts": [
+        "49px",
+        "21px",
+        "18px"
+      ],
+      "tracking": "-1.33333px",
+      "columnsSeparate": true,
+      "footerInside": true,
+      "footerInViewport": true,
+      "notesBeforeCaption": true,
+      "captionBeforeFooter": true,
+      "nodeBounds": [
+        {
+          "text": "문서 나누기",
+          "x": 445.234375,
+          "y": 10,
+          "width": 87.7093505859375,
+          "height": 25,
+          "inside": true
+        },
+        {
+          "text": "찾기 좋은 크기의 조각",
+          "x": 420.3984375,
+          "y": 39,
+          "width": 138.9700927734375,
+          "height": 21,
+          "inside": true
+        }
+      ],
+      "nodeTextsSeparate": true,
+      "canvas": {
+        "left": 80,
+        "top": 92,
+        "right": 1520,
+        "bottom": 902,
+        "width": 1440,
+        "height": 810
+      },
+      "foot": {
+        "left": 146,
+        "top": 855.515625,
+        "right": 1454,
+        "bottom": 885.515625,
+        "width": 1308,
+        "height": 30
+      }
+    },
+    {
+      "case": "long-original",
+      "mode": "slides",
+      "viewport": [
+        1440,
+        810
+      ],
+      "pass": true,
+      "fit": true,
+      "expectedFit": true,
+      "errors": [],
+      "zoom": 0.8913519965277777,
+      "title": {
+        "left": 137.046875,
+        "top": 125.875,
+        "right": 1302.9375,
+        "bottom": 175.21875,
+        "width": 1165.890625,
+        "height": 49.34375
+      },
+      "subtitle": {
+        "left": 137.046875,
+        "top": 180.5625,
+        "right": 1302.9375,
+        "bottom": 232.21875,
+        "width": 1165.890625,
+        "height": 51.65625
+      },
+      "titleLines": 0.9997890745636644,
+      "fonts": [
+        "49px",
+        "21px",
+        "18px"
+      ],
+      "tracking": "-1.33333px",
+      "columnsSeparate": true,
+      "footerInside": true,
+      "footerInViewport": true,
+      "notesBeforeCaption": true,
+      "captionBeforeFooter": true,
+      "nodeBounds": [
+        {
+          "text": "문서 나누기",
+          "x": 445.2643127441406,
+          "y": 9.802148818969727,
+          "width": 87.49237823486328,
+          "height": 25.808364868164062,
+          "inside": true
+        },
+        {
+          "text": "찾기 좋은 크기의 조각",
+          "x": 420.446533203125,
+          "y": 39.16845703125,
+          "width": 138.5933380126953,
+          "height": 21.31995391845703,
+          "inside": true
+        }
+      ],
+      "nodeTextsSeparate": true,
+      "canvas": {
+        "left": 78.21875,
+        "top": 66,
+        "right": 1361.765625,
+        "bottom": 788,
+        "width": 1283.546875,
+        "height": 722
+      },
+      "foot": {
+        "left": 137.046875,
+        "top": 746.828125,
+        "right": 1302.9375,
+        "bottom": 773.625,
+        "width": 1165.890625,
+        "height": 26.796875
+      }
+    },
+    {
+      "case": "long-original",
+      "mode": "slides",
+      "viewport": [
+        1366,
+        768
+      ],
+      "pass": true,
+      "fit": true,
+      "expectedFit": true,
+      "errors": [],
+      "zoom": 0.8394965277777777,
+      "title": {
+        "left": 133.96875,
+        "top": 122.453125,
+        "right": 1232.03125,
+        "bottom": 168.9375,
+        "width": 1098.0625,
+        "height": 46.484375
+      },
+      "subtitle": {
+        "left": 133.96875,
+        "top": 173.96875,
+        "right": 1232.03125,
+        "bottom": 222.59375,
+        "width": 1098.0625,
+        "height": 48.625
+      },
+      "titleLines": 1.000031242806148,
+      "fonts": [
+        "49px",
+        "21px",
+        "18px"
+      ],
+      "tracking": "-1.33333px",
+      "columnsSeparate": true,
+      "footerInside": true,
+      "footerInViewport": true,
+      "notesBeforeCaption": true,
+      "captionBeforeFooter": true,
+      "nodeBounds": [
+        {
+          "text": "문서 나누기",
+          "x": 445.2762451171875,
+          "y": 9.743910789489746,
+          "width": 87.44747161865234,
+          "height": 25.022228240966797,
+          "inside": true
+        },
+        {
+          "text": "찾기 좋은 크기의 조각",
+          "x": 420.4681091308594,
+          "y": 39.318511962890625,
+          "width": 138.34324645996094,
+          "height": 21.44762420654297,
+          "inside": true
+        }
+      ],
+      "nodeTextsSeparate": true,
+      "canvas": {
+        "left": 78.5625,
+        "top": 66,
+        "right": 1287.4375,
+        "bottom": 746,
+        "width": 1208.875,
+        "height": 680
+      },
+      "foot": {
+        "left": 133.96875,
+        "top": 707.34375,
+        "right": 1232.03125,
+        "bottom": 732.578125,
+        "width": 1098.0625,
+        "height": 25.234375
+      }
+    },
+    {
+      "case": "long-original",
+      "mode": "slides",
+      "viewport": [
+        1280,
+        720
+      ],
+      "pass": true,
+      "fit": true,
+      "expectedFit": true,
+      "errors": [],
+      "zoom": 0.7802408854166667,
+      "title": {
+        "left": 129.703125,
+        "top": 118.65625,
+        "right": 1150.28125,
+        "bottom": 161.859375,
+        "width": 1020.578125,
+        "height": 43.203125
+      },
+      "subtitle": {
+        "left": 129.703125,
+        "top": 166.53125,
+        "right": 1150.28125,
+        "bottom": 211.75,
+        "width": 1020.578125,
+        "height": 45.21875
+      },
+      "titleLines": 1.0000274796580644,
+      "fonts": [
+        "49px",
+        "21px",
+        "18px"
+      ],
+      "tracking": "-1.33333px",
+      "columnsSeparate": true,
+      "footerInside": true,
+      "footerInViewport": true,
+      "notesBeforeCaption": true,
+      "captionBeforeFooter": true,
+      "nodeBounds": [
+        {
+          "text": "문서 나누기",
+          "x": 445.28564453125,
+          "y": 9.485102653503418,
+          "width": 87.42872619628906,
+          "height": 25.64362335205078,
+          "inside": true
+        },
+        {
+          "text": "찾기 좋은 크기의 조각",
+          "x": 420.5235290527344,
+          "y": 39.33164596557617,
+          "width": 138.1313018798828,
+          "height": 20.5148983001709,
+          "inside": true
+        }
+      ],
+      "nodeTextsSeparate": true,
+      "canvas": {
+        "left": 78.21875,
+        "top": 66,
+        "right": 1201.765625,
+        "bottom": 698,
+        "width": 1123.546875,
+        "height": 632
+      },
+      "foot": {
+        "left": 129.703125,
+        "top": 662.484375,
+        "right": 1150.28125,
+        "bottom": 686.0625,
+        "width": 1020.578125,
+        "height": 23.578125
+      }
+    },
+    {
+      "case": "long-reflow",
+      "mode": "scroll",
+      "viewport": [
+        1600,
+        950
+      ],
+      "pass": true,
+      "fit": true,
+      "expectedFit": true,
+      "errors": [],
+      "zoom": 1,
+      "title": {
+        "left": 146,
+        "top": 132,
+        "right": 818.5625,
+        "bottom": 242.71875,
+        "width": 672.5625,
+        "height": 110.71875
+      },
+      "subtitle": {
+        "left": 842.5625,
+        "top": 158.390625,
+        "right": 1454,
+        "bottom": 216.328125,
+        "width": 611.4375,
+        "height": 57.9375
+      },
+      "titleLines": 1.9996162181686834,
+      "fonts": [
+        "49px",
+        "21px",
+        "18px"
+      ],
+      "tracking": "-1.33333px",
+      "columnsSeparate": true,
+      "footerInside": true,
+      "footerInViewport": true,
+      "notesBeforeCaption": true,
+      "captionBeforeFooter": true,
+      "nodeBounds": [
+        {
+          "text": "문서 나누기",
+          "x": 445.234375,
+          "y": 10,
+          "width": 87.7093505859375,
+          "height": 25,
+          "inside": true
+        },
+        {
+          "text": "찾기 좋은 크기의 조각",
+          "x": 420.3984375,
+          "y": 39,
+          "width": 138.9700927734375,
+          "height": 21,
+          "inside": true
+        }
+      ],
+      "nodeTextsSeparate": true,
+      "canvas": {
+        "left": 80,
+        "top": 64,
+        "right": 1520,
+        "bottom": 874,
+        "width": 1440,
+        "height": 810
+      },
+      "foot": {
+        "left": 146,
+        "top": 819.9375,
+        "right": 1454,
+        "bottom": 849.9375,
+        "width": 1308,
+        "height": 30
+      }
+    },
+    {
+      "case": "long-reflow",
+      "mode": "scroll",
+      "viewport": [
+        1440,
+        810
+      ],
+      "pass": true,
+      "fit": true,
+      "expectedFit": true,
+      "errors": [],
+      "zoom": 0.9666666666666667,
+      "title": {
+        "left": 87.796875,
+        "top": 130.375,
+        "right": 737.953125,
+        "bottom": 237.40625,
+        "width": 650.15625,
+        "height": 107.03125
+      },
+      "subtitle": {
+        "left": 761.140625,
+        "top": 155.890625,
+        "right": 1352.203125,
+        "bottom": 211.890625,
+        "width": 591.0625,
+        "height": 56
+      },
+      "titleLines": 1.99967460282862,
+      "fonts": [
+        "49px",
+        "21px",
+        "18px"
+      ],
+      "tracking": "-1.33333px",
+      "columnsSeparate": true,
+      "footerInside": true,
+      "footerInViewport": false,
+      "notesBeforeCaption": true,
+      "captionBeforeFooter": true,
+      "nodeBounds": [
+        {
+          "text": "문서 나누기",
+          "x": 445.275634765625,
+          "y": 10.344254493713379,
+          "width": 87.44866943359375,
+          "height": 24.828306198120117,
+          "inside": true
+        },
+        {
+          "text": "찾기 좋은 크기의 조각",
+          "x": 420.50390625,
+          "y": 38.41328048706055,
+          "width": 138.29405212402344,
+          "height": 21.724769592285156,
+          "inside": true
+        }
+      ],
+      "nodeTextsSeparate": true,
+      "canvas": {
+        "left": 24,
+        "top": 64,
+        "right": 1416,
+        "bottom": 847,
+        "width": 1392,
+        "height": 783
+      },
+      "foot": {
+        "left": 87.796875,
+        "top": 795.359375,
+        "right": 1352.203125,
+        "bottom": 823.984375,
+        "width": 1264.40625,
+        "height": 28.625
+      }
+    },
+    {
+      "case": "long-reflow",
+      "mode": "scroll",
+      "viewport": [
+        1366,
+        768
+      ],
+      "pass": true,
+      "fit": true,
+      "expectedFit": true,
+      "errors": [],
+      "zoom": 0.9152777777777777,
+      "title": {
+        "left": 84.40625,
+        "top": 126.921875,
+        "right": 700,
+        "bottom": 228.265625,
+        "width": 615.59375,
+        "height": 101.34375
+      },
+      "subtitle": {
+        "left": 721.953125,
+        "top": 151.078125,
+        "right": 1281.59375,
+        "bottom": 204.109375,
+        "width": 559.640625,
+        "height": 53.03125
+      },
+      "titleLines": 1.9997215586249273,
+      "fonts": [
+        "49px",
+        "21px",
+        "18px"
+      ],
+      "tracking": "-1.33333px",
+      "columnsSeparate": true,
+      "footerInside": true,
+      "footerInViewport": false,
+      "notesBeforeCaption": true,
+      "captionBeforeFooter": true,
+      "nodeBounds": [
+        {
+          "text": "문서 나누기",
+          "x": 445.2751159667969,
+          "y": 10.331478118896484,
+          "width": 87.44979095458984,
+          "height": 25.131999969482422,
+          "inside": true
+        },
+        {
+          "text": "찾기 좋은 크기의 조각",
+          "x": 420.4162902832031,
+          "y": 38.516868591308594,
+          "width": 138.23219299316406,
+          "height": 21.853912353515625,
+          "inside": true
+        }
+      ],
+      "nodeTextsSeparate": true,
+      "canvas": {
+        "left": 24,
+        "top": 64,
+        "right": 1342,
+        "bottom": 805.375,
+        "width": 1318,
+        "height": 741.375
+      },
+      "foot": {
+        "left": 84.40625,
+        "top": 756.609375,
+        "right": 1281.59375,
+        "bottom": 783.671875,
+        "width": 1197.1875,
+        "height": 27.0625
+      }
+    },
+    {
+      "case": "long-reflow",
+      "mode": "scroll",
+      "viewport": [
+        1280,
+        720
+      ],
+      "pass": true,
+      "fit": true,
+      "expectedFit": true,
+      "errors": [],
+      "zoom": 0.8555555555555555,
+      "title": {
+        "left": 80.453125,
+        "top": 123.0625,
+        "right": 655.890625,
+        "bottom": 217.78125,
+        "width": 575.4375,
+        "height": 94.71875
+      },
+      "subtitle": {
+        "left": 676.421875,
+        "top": 145.625,
+        "right": 1199.546875,
+        "bottom": 195.21875,
+        "width": 523.125,
+        "height": 49.59375
+      },
+      "titleLines": 1.9994622949743053,
+      "fonts": [
+        "49px",
+        "21px",
+        "18px"
+      ],
+      "tracking": "-1.33333px",
+      "columnsSeparate": true,
+      "footerInside": true,
+      "footerInViewport": false,
+      "notesBeforeCaption": true,
+      "captionBeforeFooter": true,
+      "nodeBounds": [
+        {
+          "text": "문서 나누기",
+          "x": 445.2587890625,
+          "y": 10.125112533569336,
+          "width": 87.48238372802734,
+          "height": 24.55133056640625,
+          "inside": true
+        },
+        {
+          "text": "찾기 좋은 크기의 조각",
+          "x": 420.5065612792969,
+          "y": 38.46333312988281,
+          "width": 139.14718627929688,
+          "height": 22.213109970092773,
+          "inside": true
+        }
+      ],
+      "nodeTextsSeparate": true,
+      "canvas": {
+        "left": 24,
+        "top": 64,
+        "right": 1256,
+        "bottom": 757,
+        "width": 1232,
+        "height": 693
+      },
+      "foot": {
+        "left": 80.453125,
+        "top": 711.875,
+        "right": 1199.546875,
+        "bottom": 737.28125,
+        "width": 1119.09375,
+        "height": 25.40625
+      }
+    },
+    {
+      "case": "long-reflow",
+      "mode": "slides",
+      "viewport": [
+        1600,
+        950
+      ],
+      "pass": true,
+      "fit": true,
+      "expectedFit": true,
+      "errors": [],
+      "zoom": 1,
+      "title": {
+        "left": 146,
+        "top": 160,
+        "right": 818.5625,
+        "bottom": 270.71875,
+        "width": 672.5625,
+        "height": 110.71875
+      },
+      "subtitle": {
+        "left": 842.5625,
+        "top": 186.390625,
+        "right": 1454,
+        "bottom": 244.328125,
+        "width": 611.4375,
+        "height": 57.9375
+      },
+      "titleLines": 1.9996162181686834,
+      "fonts": [
+        "49px",
+        "21px",
+        "18px"
+      ],
+      "tracking": "-1.33333px",
+      "columnsSeparate": true,
+      "footerInside": true,
+      "footerInViewport": true,
+      "notesBeforeCaption": true,
+      "captionBeforeFooter": true,
+      "nodeBounds": [
+        {
+          "text": "문서 나누기",
+          "x": 445.234375,
+          "y": 10,
+          "width": 87.7093505859375,
+          "height": 25,
+          "inside": true
+        },
+        {
+          "text": "찾기 좋은 크기의 조각",
+          "x": 420.3984375,
+          "y": 39,
+          "width": 138.9700927734375,
+          "height": 21,
+          "inside": true
+        }
+      ],
+      "nodeTextsSeparate": true,
+      "canvas": {
+        "left": 80,
+        "top": 92,
+        "right": 1520,
+        "bottom": 902,
+        "width": 1440,
+        "height": 810
+      },
+      "foot": {
+        "left": 146,
+        "top": 847.9375,
+        "right": 1454,
+        "bottom": 877.9375,
+        "width": 1308,
+        "height": 30
+      }
+    },
+    {
+      "case": "long-reflow",
+      "mode": "slides",
+      "viewport": [
+        1440,
+        810
+      ],
+      "pass": true,
+      "fit": true,
+      "expectedFit": true,
+      "errors": [],
+      "zoom": 0.8913519965277777,
+      "title": {
+        "left": 137.046875,
+        "top": 126.765625,
+        "right": 736.546875,
+        "bottom": 225.453125,
+        "width": 599.5,
+        "height": 98.6875
+      },
+      "subtitle": {
+        "left": 757.9375,
+        "top": 150.28125,
+        "right": 1302.9375,
+        "bottom": 201.9375,
+        "width": 545,
+        "height": 51.65625
+      },
+      "titleLines": 1.9995781491273288,
+      "fonts": [
+        "49px",
+        "21px",
+        "18px"
+      ],
+      "tracking": "-1.33333px",
+      "columnsSeparate": true,
+      "footerInside": true,
+      "footerInViewport": true,
+      "notesBeforeCaption": true,
+      "captionBeforeFooter": true,
+      "nodeBounds": [
+        {
+          "text": "문서 나누기",
+          "x": 445.2643127441406,
+          "y": 9.802148818969727,
+          "width": 87.49237823486328,
+          "height": 25.808364868164062,
+          "inside": true
+        },
+        {
+          "text": "찾기 좋은 크기의 조각",
+          "x": 420.446533203125,
+          "y": 39.16845703125,
+          "width": 138.5933380126953,
+          "height": 21.31995391845703,
+          "inside": true
+        }
+      ],
+      "nodeTextsSeparate": true,
+      "canvas": {
+        "left": 78.21875,
+        "top": 66,
+        "right": 1361.765625,
+        "bottom": 788,
+        "width": 1283.546875,
+        "height": 722
+      },
+      "foot": {
+        "left": 137.046875,
+        "top": 740.0625,
+        "right": 1302.9375,
+        "bottom": 766.859375,
+        "width": 1165.890625,
+        "height": 26.796875
+      }
+    },
+    {
+      "case": "long-reflow",
+      "mode": "slides",
+      "viewport": [
+        1366,
+        768
+      ],
+      "pass": true,
+      "fit": true,
+      "expectedFit": true,
+      "errors": [],
+      "zoom": 0.8394965277777777,
+      "title": {
+        "left": 133.96875,
+        "top": 123.28125,
+        "right": 698.59375,
+        "bottom": 216.25,
+        "width": 564.625,
+        "height": 92.96875
+      },
+      "subtitle": {
+        "left": 718.734375,
+        "top": 145.453125,
+        "right": 1232.03125,
+        "bottom": 194.078125,
+        "width": 513.296875,
+        "height": 48.625
+      },
+      "titleLines": 2.000062485612296,
+      "fonts": [
+        "49px",
+        "21px",
+        "18px"
+      ],
+      "tracking": "-1.33333px",
+      "columnsSeparate": true,
+      "footerInside": true,
+      "footerInViewport": true,
+      "notesBeforeCaption": true,
+      "captionBeforeFooter": true,
+      "nodeBounds": [
+        {
+          "text": "문서 나누기",
+          "x": 445.2762451171875,
+          "y": 9.743910789489746,
+          "width": 87.44747161865234,
+          "height": 25.022228240966797,
+          "inside": true
+        },
+        {
+          "text": "찾기 좋은 크기의 조각",
+          "x": 420.4681091308594,
+          "y": 39.318511962890625,
+          "width": 138.34324645996094,
+          "height": 21.44762420654297,
+          "inside": true
+        }
+      ],
+      "nodeTextsSeparate": true,
+      "canvas": {
+        "left": 78.5625,
+        "top": 66,
+        "right": 1287.4375,
+        "bottom": 746,
+        "width": 1208.875,
+        "height": 680
+      },
+      "foot": {
+        "left": 133.96875,
+        "top": 701,
+        "right": 1232.03125,
+        "bottom": 726.234375,
+        "width": 1098.0625,
+        "height": 25.234375
+      }
+    },
+    {
+      "case": "long-reflow",
+      "mode": "slides",
+      "viewport": [
+        1280,
+        720
+      ],
+      "pass": true,
+      "fit": true,
+      "expectedFit": true,
+      "errors": [],
+      "zoom": 0.7802408854166667,
+      "title": {
+        "left": 129.703125,
+        "top": 119.4375,
+        "right": 654.484375,
+        "bottom": 205.84375,
+        "width": 524.78125,
+        "height": 86.40625
+      },
+      "subtitle": {
+        "left": 673.203125,
+        "top": 140.03125,
+        "right": 1150.28125,
+        "bottom": 185.25,
+        "width": 477.078125,
+        "height": 45.21875
+      },
+      "titleLines": 2.0000549593161288,
+      "fonts": [
+        "49px",
+        "21px",
+        "18px"
+      ],
+      "tracking": "-1.33333px",
+      "columnsSeparate": true,
+      "footerInside": true,
+      "footerInViewport": true,
+      "notesBeforeCaption": true,
+      "captionBeforeFooter": true,
+      "nodeBounds": [
+        {
+          "text": "문서 나누기",
+          "x": 445.28564453125,
+          "y": 9.485102653503418,
+          "width": 87.42872619628906,
+          "height": 25.64362335205078,
+          "inside": true
+        },
+        {
+          "text": "찾기 좋은 크기의 조각",
+          "x": 420.5235290527344,
+          "y": 39.33164596557617,
+          "width": 138.1313018798828,
+          "height": 20.5148983001709,
+          "inside": true
+        }
+      ],
+      "nodeTextsSeparate": true,
+      "canvas": {
+        "left": 78.21875,
+        "top": 66,
+        "right": 1201.765625,
+        "bottom": 698,
+        "width": 1123.546875,
+        "height": 632
+      },
+      "foot": {
+        "left": 129.703125,
+        "top": 656.578125,
+        "right": 1150.28125,
+        "bottom": 680.15625,
+        "width": 1020.578125,
+        "height": 23.578125
+      }
+    },
+    {
+      "case": "description-original",
+      "mode": "scroll",
+      "viewport": [
+        1600,
+        950
+      ],
+      "pass": true,
+      "fit": false,
+      "expectedFit": false,
+      "errors": [],
+      "zoom": 1,
+      "title": {
+        "left": 146,
+        "top": 131,
+        "right": 1454,
+        "bottom": 186.359375,
+        "width": 1308,
+        "height": 55.359375
+      },
+      "subtitle": {
+        "left": 146,
+        "top": 192.359375,
+        "right": 1454,
+        "bottom": 250.296875,
+        "width": 1308,
+        "height": 57.9375
+      },
+      "titleLines": 0.9998081090843417,
+      "fonts": [
+        "49px",
+        "21px",
+        "18px"
+      ],
+      "tracking": "-1.33333px",
+      "columnsSeparate": true,
+      "footerInside": true,
+      "footerInViewport": true,
+      "notesBeforeCaption": true,
+      "captionBeforeFooter": true,
+      "nodeBounds": [
+        {
+          "text": "문서 나누기",
+          "x": 445.234375,
+          "y": 10,
+          "width": 87.7093505859375,
+          "height": 25,
+          "inside": true
+        },
+        {
+          "text": "문서를 의미가 이어지는짧은 조각으로 나누기",
+          "x": 414.8203125,
+          "y": 39,
+          "width": 149.1322021484375,
+          "height": 41,
+          "inside": false
+        }
+      ],
+      "nodeTextsSeparate": true,
+      "canvas": {
+        "left": 80,
+        "top": 64,
+        "right": 1520,
+        "bottom": 874,
+        "width": 1440,
+        "height": 810
+      },
+      "foot": {
+        "left": 146,
+        "top": 827.515625,
+        "right": 1454,
+        "bottom": 857.515625,
+        "width": 1308,
+        "height": 30
+      }
+    },
+    {
+      "case": "description-original",
+      "mode": "scroll",
+      "viewport": [
+        1440,
+        810
+      ],
+      "pass": true,
+      "fit": false,
+      "expectedFit": false,
+      "errors": [],
+      "zoom": 0.9666666666666667,
+      "title": {
+        "left": 87.796875,
+        "top": 129.421875,
+        "right": 1352.203125,
+        "bottom": 182.9375,
+        "width": 1264.40625,
+        "height": 53.515625
+      },
+      "subtitle": {
+        "left": 87.796875,
+        "top": 188.734375,
+        "right": 1352.203125,
+        "bottom": 244.734375,
+        "width": 1264.40625,
+        "height": 56
+      },
+      "titleLines": 0.99983730141431,
+      "fonts": [
+        "49px",
+        "21px",
+        "18px"
+      ],
+      "tracking": "-1.33333px",
+      "columnsSeparate": true,
+      "footerInside": true,
+      "footerInViewport": false,
+      "notesBeforeCaption": true,
+      "captionBeforeFooter": true,
+      "nodeBounds": [
+        {
+          "text": "문서 나누기",
+          "x": 445.275634765625,
+          "y": 10.344254493713379,
+          "width": 87.44866943359375,
+          "height": 24.828306198120117,
+          "inside": true
+        },
+        {
+          "text": "문서를 의미가 이어지는짧은 조각으로 나누기",
+          "x": 414.9353332519531,
+          "y": 38.41328048706055,
+          "width": 149.44046020507812,
+          "height": 41.72476577758789,
+          "inside": false
+        }
+      ],
+      "nodeTextsSeparate": true,
+      "canvas": {
+        "left": 24,
+        "top": 64,
+        "right": 1416,
+        "bottom": 847,
+        "width": 1392,
+        "height": 783
+      },
+      "foot": {
+        "left": 87.796875,
+        "top": 802.6875,
+        "right": 1352.203125,
+        "bottom": 831.3125,
+        "width": 1264.40625,
+        "height": 28.625
+      }
+    },
+    {
+      "case": "description-original",
+      "mode": "scroll",
+      "viewport": [
+        1366,
+        768
+      ],
+      "pass": true,
+      "fit": false,
+      "expectedFit": false,
+      "errors": [],
+      "zoom": 0.9152777777777777,
+      "title": {
+        "left": 84.40625,
+        "top": 126.015625,
+        "right": 1281.59375,
+        "bottom": 176.6875,
+        "width": 1197.1875,
+        "height": 50.671875
+      },
+      "subtitle": {
+        "left": 84.40625,
+        "top": 182.171875,
+        "right": 1281.59375,
+        "bottom": 235.203125,
+        "width": 1197.1875,
+        "height": 53.03125
+      },
+      "titleLines": 0.9998607793124636,
+      "fonts": [
+        "49px",
+        "21px",
+        "18px"
+      ],
+      "tracking": "-1.33333px",
+      "columnsSeparate": true,
+      "footerInside": true,
+      "footerInViewport": false,
+      "notesBeforeCaption": true,
+      "captionBeforeFooter": true,
+      "nodeBounds": [
+        {
+          "text": "문서 나누기",
+          "x": 445.2751159667969,
+          "y": 10.331478118896484,
+          "width": 87.44979095458984,
+          "height": 25.131999969482422,
+          "inside": true
+        },
+        {
+          "text": "문서를 의미가 이어지는짧은 조각으로 나누기",
+          "x": 414.8418273925781,
+          "y": 38.516868591308594,
+          "width": 149.39138793945312,
+          "height": 41.853912353515625,
+          "inside": false
+        }
+      ],
+      "nodeTextsSeparate": true,
+      "canvas": {
+        "left": 24,
+        "top": 64,
+        "right": 1342,
+        "bottom": 805.375,
+        "width": 1318,
+        "height": 741.375
+      },
+      "foot": {
+        "left": 84.40625,
+        "top": 763.546875,
+        "right": 1281.59375,
+        "bottom": 790.609375,
+        "width": 1197.1875,
+        "height": 27.0625
+      }
+    },
+    {
+      "case": "description-original",
+      "mode": "scroll",
+      "viewport": [
+        1280,
+        720
+      ],
+      "pass": true,
+      "fit": false,
+      "expectedFit": false,
+      "errors": [],
+      "zoom": 0.8555555555555555,
+      "title": {
+        "left": 80.453125,
+        "top": 122.203125,
+        "right": 1199.546875,
+        "bottom": 169.5625,
+        "width": 1119.09375,
+        "height": 47.359375
+      },
+      "subtitle": {
+        "left": 80.453125,
+        "top": 174.6875,
+        "right": 1199.546875,
+        "bottom": 224.28125,
+        "width": 1119.09375,
+        "height": 49.59375
+      },
+      "titleLines": 0.9997311474871526,
+      "fonts": [
+        "49px",
+        "21px",
+        "18px"
+      ],
+      "tracking": "-1.33333px",
+      "columnsSeparate": true,
+      "footerInside": true,
+      "footerInViewport": false,
+      "notesBeforeCaption": true,
+      "captionBeforeFooter": true,
+      "nodeBounds": [
+        {
+          "text": "문서 나누기",
+          "x": 445.2587890625,
+          "y": 10.125112533569336,
+          "width": 87.48238372802734,
+          "height": 24.55133056640625,
+          "inside": true
+        },
+        {
+          "text": "문서를 의미가 이어지는짧은 조각으로 나누기",
+          "x": 414.93499755859375,
+          "y": 38.46333312988281,
+          "width": 149.124755859375,
+          "height": 42.213104248046875,
+          "inside": false
+        }
+      ],
+      "nodeTextsSeparate": true,
+      "canvas": {
+        "left": 24,
+        "top": 64,
+        "right": 1256,
+        "bottom": 757,
+        "width": 1232,
+        "height": 693
+      },
+      "foot": {
+        "left": 80.453125,
+        "top": 718.375,
+        "right": 1199.546875,
+        "bottom": 743.78125,
+        "width": 1119.09375,
+        "height": 25.40625
+      }
+    },
+    {
+      "case": "description-original",
+      "mode": "slides",
+      "viewport": [
+        1600,
+        950
+      ],
+      "pass": true,
+      "fit": false,
+      "expectedFit": false,
+      "errors": [],
+      "zoom": 1,
+      "title": {
+        "left": 146,
+        "top": 159,
+        "right": 1454,
+        "bottom": 214.359375,
+        "width": 1308,
+        "height": 55.359375
+      },
+      "subtitle": {
+        "left": 146,
+        "top": 220.359375,
+        "right": 1454,
+        "bottom": 278.296875,
+        "width": 1308,
+        "height": 57.9375
+      },
+      "titleLines": 0.9998081090843417,
+      "fonts": [
+        "49px",
+        "21px",
+        "18px"
+      ],
+      "tracking": "-1.33333px",
+      "columnsSeparate": true,
+      "footerInside": true,
+      "footerInViewport": true,
+      "notesBeforeCaption": true,
+      "captionBeforeFooter": true,
+      "nodeBounds": [
+        {
+          "text": "문서 나누기",
+          "x": 445.234375,
+          "y": 10,
+          "width": 87.7093505859375,
+          "height": 25,
+          "inside": true
+        },
+        {
+          "text": "문서를 의미가 이어지는짧은 조각으로 나누기",
+          "x": 414.8203125,
+          "y": 39,
+          "width": 149.1322021484375,
+          "height": 41,
+          "inside": false
+        }
+      ],
+      "nodeTextsSeparate": true,
+      "canvas": {
+        "left": 80,
+        "top": 92,
+        "right": 1520,
+        "bottom": 902,
+        "width": 1440,
+        "height": 810
+      },
+      "foot": {
+        "left": 146,
+        "top": 855.515625,
+        "right": 1454,
+        "bottom": 885.515625,
+        "width": 1308,
+        "height": 30
+      }
+    },
+    {
+      "case": "description-original",
+      "mode": "slides",
+      "viewport": [
+        1440,
+        810
+      ],
+      "pass": true,
+      "fit": false,
+      "expectedFit": false,
+      "errors": [],
+      "zoom": 0.8913519965277777,
+      "title": {
+        "left": 137.046875,
+        "top": 125.875,
+        "right": 1302.9375,
+        "bottom": 175.21875,
+        "width": 1165.890625,
+        "height": 49.34375
+      },
+      "subtitle": {
+        "left": 137.046875,
+        "top": 180.5625,
+        "right": 1302.9375,
+        "bottom": 232.21875,
+        "width": 1165.890625,
+        "height": 51.65625
+      },
+      "titleLines": 0.9997890745636644,
+      "fonts": [
+        "49px",
+        "21px",
+        "18px"
+      ],
+      "tracking": "-1.33333px",
+      "columnsSeparate": true,
+      "footerInside": true,
+      "footerInViewport": true,
+      "notesBeforeCaption": true,
+      "captionBeforeFooter": true,
+      "nodeBounds": [
+        {
+          "text": "문서 나누기",
+          "x": 445.2643127441406,
+          "y": 9.802148818969727,
+          "width": 87.49237823486328,
+          "height": 25.808364868164062,
+          "inside": true
+        },
+        {
+          "text": "문서를 의미가 이어지는짧은 조각으로 나누기",
+          "x": 414.87109375,
+          "y": 39.16845703125,
+          "width": 149.7484130859375,
+          "height": 41.31996154785156,
+          "inside": false
+        }
+      ],
+      "nodeTextsSeparate": true,
+      "canvas": {
+        "left": 78.21875,
+        "top": 66,
+        "right": 1361.765625,
+        "bottom": 788,
+        "width": 1283.546875,
+        "height": 722
+      },
+      "foot": {
+        "left": 137.046875,
+        "top": 746.828125,
+        "right": 1302.9375,
+        "bottom": 773.625,
+        "width": 1165.890625,
+        "height": 26.796875
+      }
+    },
+    {
+      "case": "description-original",
+      "mode": "slides",
+      "viewport": [
+        1366,
+        768
+      ],
+      "pass": true,
+      "fit": false,
+      "expectedFit": false,
+      "errors": [],
+      "zoom": 0.8394965277777777,
+      "title": {
+        "left": 133.96875,
+        "top": 122.453125,
+        "right": 1232.03125,
+        "bottom": 168.9375,
+        "width": 1098.0625,
+        "height": 46.484375
+      },
+      "subtitle": {
+        "left": 133.96875,
+        "top": 173.96875,
+        "right": 1232.03125,
+        "bottom": 222.59375,
+        "width": 1098.0625,
+        "height": 48.625
+      },
+      "titleLines": 1.000031242806148,
+      "fonts": [
+        "49px",
+        "21px",
+        "18px"
+      ],
+      "tracking": "-1.33333px",
+      "columnsSeparate": true,
+      "footerInside": true,
+      "footerInViewport": true,
+      "notesBeforeCaption": true,
+      "captionBeforeFooter": true,
+      "nodeBounds": [
+        {
+          "text": "문서 나누기",
+          "x": 445.2762451171875,
+          "y": 9.743910789489746,
+          "width": 87.44747161865234,
+          "height": 25.022228240966797,
+          "inside": true
+        },
+        {
+          "text": "문서를 의미가 이어지는짧은 조각으로 나누기",
+          "x": 414.8827819824219,
+          "y": 39.318511962890625,
+          "width": 149.49588012695312,
+          "height": 41.44762420654297,
+          "inside": false
+        }
+      ],
+      "nodeTextsSeparate": true,
+      "canvas": {
+        "left": 78.5625,
+        "top": 66,
+        "right": 1287.4375,
+        "bottom": 746,
+        "width": 1208.875,
+        "height": 680
+      },
+      "foot": {
+        "left": 133.96875,
+        "top": 707.34375,
+        "right": 1232.03125,
+        "bottom": 732.578125,
+        "width": 1098.0625,
+        "height": 25.234375
+      }
+    },
+    {
+      "case": "description-original",
+      "mode": "slides",
+      "viewport": [
+        1280,
+        720
+      ],
+      "pass": true,
+      "fit": false,
+      "expectedFit": false,
+      "errors": [],
+      "zoom": 0.7802408854166667,
+      "title": {
+        "left": 129.703125,
+        "top": 118.65625,
+        "right": 1150.28125,
+        "bottom": 161.859375,
+        "width": 1020.578125,
+        "height": 43.203125
+      },
+      "subtitle": {
+        "left": 129.703125,
+        "top": 166.53125,
+        "right": 1150.28125,
+        "bottom": 211.75,
+        "width": 1020.578125,
+        "height": 45.21875
+      },
+      "titleLines": 1.0000274796580644,
+      "fonts": [
+        "49px",
+        "21px",
+        "18px"
+      ],
+      "tracking": "-1.33333px",
+      "columnsSeparate": true,
+      "footerInside": true,
+      "footerInViewport": true,
+      "notesBeforeCaption": true,
+      "captionBeforeFooter": true,
+      "nodeBounds": [
+        {
+          "text": "문서 나누기",
+          "x": 445.28564453125,
+          "y": 9.485102653503418,
+          "width": 87.42872619628906,
+          "height": 25.64362335205078,
+          "inside": true
+        },
+        {
+          "text": "문서를 의미가 이어지는짧은 조각으로 나누기",
+          "x": 414.95404052734375,
+          "y": 39.33164596557617,
+          "width": 149.275146484375,
+          "height": 40.514896392822266,
+          "inside": false
+        }
+      ],
+      "nodeTextsSeparate": true,
+      "canvas": {
+        "left": 78.21875,
+        "top": 66,
+        "right": 1201.765625,
+        "bottom": 698,
+        "width": 1123.546875,
+        "height": 632
+      },
+      "foot": {
+        "left": 129.703125,
+        "top": 662.484375,
+        "right": 1150.28125,
+        "bottom": 686.0625,
+        "width": 1020.578125,
+        "height": 23.578125
+      }
+    },
+    {
+      "case": "description-reflow",
+      "mode": "scroll",
+      "viewport": [
+        1600,
+        950
+      ],
+      "pass": true,
+      "fit": true,
+      "expectedFit": true,
+      "errors": [],
+      "zoom": 1,
+      "title": {
+        "left": 146,
+        "top": 131,
+        "right": 1454,
+        "bottom": 186.359375,
+        "width": 1308,
+        "height": 55.359375
+      },
+      "subtitle": {
+        "left": 146,
+        "top": 192.359375,
+        "right": 1454,
+        "bottom": 250.296875,
+        "width": 1308,
+        "height": 57.9375
+      },
+      "titleLines": 0.9998081090843417,
+      "fonts": [
+        "49px",
+        "21px",
+        "18px"
+      ],
+      "tracking": "-1.33333px",
+      "columnsSeparate": true,
+      "footerInside": true,
+      "footerInViewport": true,
+      "notesBeforeCaption": true,
+      "captionBeforeFooter": true,
+      "nodeBounds": [
+        {
+          "text": "문서 나누기",
+          "x": 445.234375,
+          "y": 10,
+          "width": 87.7093505859375,
+          "height": 25,
+          "inside": true
+        },
+        {
+          "text": "문서를 의미가 이어지는짧은 조각으로 나누기",
+          "x": 414.8203125,
+          "y": 37,
+          "width": 149.1322021484375,
+          "height": 43,
+          "inside": true
+        }
+      ],
+      "nodeTextsSeparate": true,
+      "canvas": {
+        "left": 80,
+        "top": 64,
+        "right": 1520,
+        "bottom": 874,
+        "width": 1440,
+        "height": 810
+      },
+      "foot": {
+        "left": 146,
+        "top": 827.515625,
+        "right": 1454,
+        "bottom": 857.515625,
+        "width": 1308,
+        "height": 30
+      }
+    },
+    {
+      "case": "description-reflow",
+      "mode": "scroll",
+      "viewport": [
+        1440,
+        810
+      ],
+      "pass": true,
+      "fit": true,
+      "expectedFit": true,
+      "errors": [],
+      "zoom": 0.9666666666666667,
+      "title": {
+        "left": 87.796875,
+        "top": 129.421875,
+        "right": 1352.203125,
+        "bottom": 182.9375,
+        "width": 1264.40625,
+        "height": 53.515625
+      },
+      "subtitle": {
+        "left": 87.796875,
+        "top": 188.734375,
+        "right": 1352.203125,
+        "bottom": 244.734375,
+        "width": 1264.40625,
+        "height": 56
+      },
+      "titleLines": 0.99983730141431,
+      "fonts": [
+        "49px",
+        "21px",
+        "18px"
+      ],
+      "tracking": "-1.33333px",
+      "columnsSeparate": true,
+      "footerInside": true,
+      "footerInViewport": false,
+      "notesBeforeCaption": true,
+      "captionBeforeFooter": true,
+      "nodeBounds": [
+        {
+          "text": "문서 나누기",
+          "x": 445.275634765625,
+          "y": 10.344254493713379,
+          "width": 87.44866943359375,
+          "height": 24.828306198120117,
+          "inside": true
+        },
+        {
+          "text": "문서를 의미가 이어지는짧은 조각으로 나누기",
+          "x": 414.9353332519531,
+          "y": 36.41328048706055,
+          "width": 149.44046020507812,
+          "height": 43.72476577758789,
+          "inside": true
+        }
+      ],
+      "nodeTextsSeparate": true,
+      "canvas": {
+        "left": 24,
+        "top": 64,
+        "right": 1416,
+        "bottom": 847,
+        "width": 1392,
+        "height": 783
+      },
+      "foot": {
+        "left": 87.796875,
+        "top": 802.6875,
+        "right": 1352.203125,
+        "bottom": 831.3125,
+        "width": 1264.40625,
+        "height": 28.625
+      }
+    },
+    {
+      "case": "description-reflow",
+      "mode": "scroll",
+      "viewport": [
+        1366,
+        768
+      ],
+      "pass": true,
+      "fit": true,
+      "expectedFit": true,
+      "errors": [],
+      "zoom": 0.9152777777777777,
+      "title": {
+        "left": 84.40625,
+        "top": 126.015625,
+        "right": 1281.59375,
+        "bottom": 176.6875,
+        "width": 1197.1875,
+        "height": 50.671875
+      },
+      "subtitle": {
+        "left": 84.40625,
+        "top": 182.171875,
+        "right": 1281.59375,
+        "bottom": 235.203125,
+        "width": 1197.1875,
+        "height": 53.03125
+      },
+      "titleLines": 0.9998607793124636,
+      "fonts": [
+        "49px",
+        "21px",
+        "18px"
+      ],
+      "tracking": "-1.33333px",
+      "columnsSeparate": true,
+      "footerInside": true,
+      "footerInViewport": false,
+      "notesBeforeCaption": true,
+      "captionBeforeFooter": true,
+      "nodeBounds": [
+        {
+          "text": "문서 나누기",
+          "x": 445.2751159667969,
+          "y": 10.331478118896484,
+          "width": 87.44979095458984,
+          "height": 25.131999969482422,
+          "inside": true
+        },
+        {
+          "text": "문서를 의미가 이어지는짧은 조각으로 나누기",
+          "x": 414.8418273925781,
+          "y": 36.516868591308594,
+          "width": 149.39138793945312,
+          "height": 43.853912353515625,
+          "inside": true
+        }
+      ],
+      "nodeTextsSeparate": true,
+      "canvas": {
+        "left": 24,
+        "top": 64,
+        "right": 1342,
+        "bottom": 805.375,
+        "width": 1318,
+        "height": 741.375
+      },
+      "foot": {
+        "left": 84.40625,
+        "top": 763.546875,
+        "right": 1281.59375,
+        "bottom": 790.609375,
+        "width": 1197.1875,
+        "height": 27.0625
+      }
+    },
+    {
+      "case": "description-reflow",
+      "mode": "scroll",
+      "viewport": [
+        1280,
+        720
+      ],
+      "pass": true,
+      "fit": true,
+      "expectedFit": true,
+      "errors": [],
+      "zoom": 0.8555555555555555,
+      "title": {
+        "left": 80.453125,
+        "top": 122.203125,
+        "right": 1199.546875,
+        "bottom": 169.5625,
+        "width": 1119.09375,
+        "height": 47.359375
+      },
+      "subtitle": {
+        "left": 80.453125,
+        "top": 174.6875,
+        "right": 1199.546875,
+        "bottom": 224.28125,
+        "width": 1119.09375,
+        "height": 49.59375
+      },
+      "titleLines": 0.9997311474871526,
+      "fonts": [
+        "49px",
+        "21px",
+        "18px"
+      ],
+      "tracking": "-1.33333px",
+      "columnsSeparate": true,
+      "footerInside": true,
+      "footerInViewport": false,
+      "notesBeforeCaption": true,
+      "captionBeforeFooter": true,
+      "nodeBounds": [
+        {
+          "text": "문서 나누기",
+          "x": 445.2587890625,
+          "y": 10.125112533569336,
+          "width": 87.48238372802734,
+          "height": 24.55133056640625,
+          "inside": true
+        },
+        {
+          "text": "문서를 의미가 이어지는짧은 조각으로 나누기",
+          "x": 414.93499755859375,
+          "y": 36.46332931518555,
+          "width": 149.124755859375,
+          "height": 44.21310806274414,
+          "inside": true
+        }
+      ],
+      "nodeTextsSeparate": true,
+      "canvas": {
+        "left": 24,
+        "top": 64,
+        "right": 1256,
+        "bottom": 757,
+        "width": 1232,
+        "height": 693
+      },
+      "foot": {
+        "left": 80.453125,
+        "top": 718.375,
+        "right": 1199.546875,
+        "bottom": 743.78125,
+        "width": 1119.09375,
+        "height": 25.40625
+      }
+    },
+    {
+      "case": "description-reflow",
+      "mode": "slides",
+      "viewport": [
+        1600,
+        950
+      ],
+      "pass": true,
+      "fit": true,
+      "expectedFit": true,
+      "errors": [],
+      "zoom": 1,
+      "title": {
+        "left": 146,
+        "top": 159,
+        "right": 1454,
+        "bottom": 214.359375,
+        "width": 1308,
+        "height": 55.359375
+      },
+      "subtitle": {
+        "left": 146,
+        "top": 220.359375,
+        "right": 1454,
+        "bottom": 278.296875,
+        "width": 1308,
+        "height": 57.9375
+      },
+      "titleLines": 0.9998081090843417,
+      "fonts": [
+        "49px",
+        "21px",
+        "18px"
+      ],
+      "tracking": "-1.33333px",
+      "columnsSeparate": true,
+      "footerInside": true,
+      "footerInViewport": true,
+      "notesBeforeCaption": true,
+      "captionBeforeFooter": true,
+      "nodeBounds": [
+        {
+          "text": "문서 나누기",
+          "x": 445.234375,
+          "y": 10,
+          "width": 87.7093505859375,
+          "height": 25,
+          "inside": true
+        },
+        {
+          "text": "문서를 의미가 이어지는짧은 조각으로 나누기",
+          "x": 414.8203125,
+          "y": 37,
+          "width": 149.1322021484375,
+          "height": 43,
+          "inside": true
+        }
+      ],
+      "nodeTextsSeparate": true,
+      "canvas": {
+        "left": 80,
+        "top": 92,
+        "right": 1520,
+        "bottom": 902,
+        "width": 1440,
+        "height": 810
+      },
+      "foot": {
+        "left": 146,
+        "top": 855.515625,
+        "right": 1454,
+        "bottom": 885.515625,
+        "width": 1308,
+        "height": 30
+      }
+    },
+    {
+      "case": "description-reflow",
+      "mode": "slides",
+      "viewport": [
+        1440,
+        810
+      ],
+      "pass": true,
+      "fit": true,
+      "expectedFit": true,
+      "errors": [],
+      "zoom": 0.8913519965277777,
+      "title": {
+        "left": 137.046875,
+        "top": 125.875,
+        "right": 1302.9375,
+        "bottom": 175.21875,
+        "width": 1165.890625,
+        "height": 49.34375
+      },
+      "subtitle": {
+        "left": 137.046875,
+        "top": 180.5625,
+        "right": 1302.9375,
+        "bottom": 232.21875,
+        "width": 1165.890625,
+        "height": 51.65625
+      },
+      "titleLines": 0.9997890745636644,
+      "fonts": [
+        "49px",
+        "21px",
+        "18px"
+      ],
+      "tracking": "-1.33333px",
+      "columnsSeparate": true,
+      "footerInside": true,
+      "footerInViewport": true,
+      "notesBeforeCaption": true,
+      "captionBeforeFooter": true,
+      "nodeBounds": [
+        {
+          "text": "문서 나누기",
+          "x": 445.2643127441406,
+          "y": 9.802148818969727,
+          "width": 87.49237823486328,
+          "height": 25.808364868164062,
+          "inside": true
+        },
+        {
+          "text": "문서를 의미가 이어지는짧은 조각으로 나누기",
+          "x": 414.87109375,
+          "y": 37.16845703125,
+          "width": 149.7484130859375,
+          "height": 43.31996154785156,
+          "inside": true
+        }
+      ],
+      "nodeTextsSeparate": true,
+      "canvas": {
+        "left": 78.21875,
+        "top": 66,
+        "right": 1361.765625,
+        "bottom": 788,
+        "width": 1283.546875,
+        "height": 722
+      },
+      "foot": {
+        "left": 137.046875,
+        "top": 746.828125,
+        "right": 1302.9375,
+        "bottom": 773.625,
+        "width": 1165.890625,
+        "height": 26.796875
+      }
+    },
+    {
+      "case": "description-reflow",
+      "mode": "slides",
+      "viewport": [
+        1366,
+        768
+      ],
+      "pass": true,
+      "fit": true,
+      "expectedFit": true,
+      "errors": [],
+      "zoom": 0.8394965277777777,
+      "title": {
+        "left": 133.96875,
+        "top": 122.453125,
+        "right": 1232.03125,
+        "bottom": 168.9375,
+        "width": 1098.0625,
+        "height": 46.484375
+      },
+      "subtitle": {
+        "left": 133.96875,
+        "top": 173.96875,
+        "right": 1232.03125,
+        "bottom": 222.59375,
+        "width": 1098.0625,
+        "height": 48.625
+      },
+      "titleLines": 1.000031242806148,
+      "fonts": [
+        "49px",
+        "21px",
+        "18px"
+      ],
+      "tracking": "-1.33333px",
+      "columnsSeparate": true,
+      "footerInside": true,
+      "footerInViewport": true,
+      "notesBeforeCaption": true,
+      "captionBeforeFooter": true,
+      "nodeBounds": [
+        {
+          "text": "문서 나누기",
+          "x": 445.2762451171875,
+          "y": 9.743910789489746,
+          "width": 87.44747161865234,
+          "height": 25.022228240966797,
+          "inside": true
+        },
+        {
+          "text": "문서를 의미가 이어지는짧은 조각으로 나누기",
+          "x": 414.8827819824219,
+          "y": 37.31851577758789,
+          "width": 149.49588012695312,
+          "height": 43.4476203918457,
+          "inside": true
+        }
+      ],
+      "nodeTextsSeparate": true,
+      "canvas": {
+        "left": 78.5625,
+        "top": 66,
+        "right": 1287.4375,
+        "bottom": 746,
+        "width": 1208.875,
+        "height": 680
+      },
+      "foot": {
+        "left": 133.96875,
+        "top": 707.34375,
+        "right": 1232.03125,
+        "bottom": 732.578125,
+        "width": 1098.0625,
+        "height": 25.234375
+      }
+    },
+    {
+      "case": "description-reflow",
+      "mode": "slides",
+      "viewport": [
+        1280,
+        720
+      ],
+      "pass": true,
+      "fit": true,
+      "expectedFit": true,
+      "errors": [],
+      "zoom": 0.7802408854166667,
+      "title": {
+        "left": 129.703125,
+        "top": 118.65625,
+        "right": 1150.28125,
+        "bottom": 161.859375,
+        "width": 1020.578125,
+        "height": 43.203125
+      },
+      "subtitle": {
+        "left": 129.703125,
+        "top": 166.53125,
+        "right": 1150.28125,
+        "bottom": 211.75,
+        "width": 1020.578125,
+        "height": 45.21875
+      },
+      "titleLines": 1.0000274796580644,
+      "fonts": [
+        "49px",
+        "21px",
+        "18px"
+      ],
+      "tracking": "-1.33333px",
+      "columnsSeparate": true,
+      "footerInside": true,
+      "footerInViewport": true,
+      "notesBeforeCaption": true,
+      "captionBeforeFooter": true,
+      "nodeBounds": [
+        {
+          "text": "문서 나누기",
+          "x": 445.28564453125,
+          "y": 9.485102653503418,
+          "width": 87.42872619628906,
+          "height": 25.64362335205078,
+          "inside": true
+        },
+        {
+          "text": "문서를 의미가 이어지는짧은 조각으로 나누기",
+          "x": 414.95404052734375,
+          "y": 37.33164596557617,
+          "width": 149.275146484375,
+          "height": 42.514896392822266,
+          "inside": true
+        }
+      ],
+      "nodeTextsSeparate": true,
+      "canvas": {
+        "left": 78.21875,
+        "top": 66,
+        "right": 1201.765625,
+        "bottom": 698,
+        "width": 1123.546875,
+        "height": 632
+      },
+      "foot": {
+        "left": 129.703125,
+        "top": 662.484375,
+        "right": 1150.28125,
+        "bottom": 686.0625,
+        "width": 1020.578125,
+        "height": 23.578125
+      }
+    },
+    {
+      "case": "overload-reject",
+      "mode": "scroll",
+      "viewport": [
+        1600,
+        950
+      ],
+      "pass": true,
+      "fit": false,
+      "expectedFit": false,
+      "errors": [],
+      "zoom": 1,
+      "title": {
+        "left": 146,
+        "top": 131,
+        "right": 1454,
+        "bottom": 186.359375,
+        "width": 1308,
+        "height": 55.359375
+      },
+      "subtitle": {
+        "left": 146,
+        "top": 192.359375,
+        "right": 1454,
+        "bottom": 250.296875,
+        "width": 1308,
+        "height": 57.9375
+      },
+      "titleLines": 0.9998081090843417,
+      "fonts": [
+        "49px",
+        "21px",
+        "18px"
+      ],
+      "tracking": "-1.33333px",
+      "columnsSeparate": true,
+      "footerInside": false,
+      "footerInViewport": false,
+      "notesBeforeCaption": true,
+      "captionBeforeFooter": true,
+      "nodeBounds": [
+        {
+          "text": "문서 나누기",
+          "x": 445.234375,
+          "y": 10,
+          "width": 87.7093505859375,
+          "height": 25,
+          "inside": true
+        },
+        {
+          "text": "찾기 좋은 크기의 조각",
+          "x": 420.3984375,
+          "y": 39,
+          "width": 138.9700927734375,
+          "height": 21,
+          "inside": true
+        }
+      ],
+      "nodeTextsSeparate": true,
+      "canvas": {
+        "left": 80,
+        "top": 64,
+        "right": 1520,
+        "bottom": 874,
+        "width": 1440,
+        "height": 810
+      },
+      "foot": {
+        "left": 146,
+        "top": 1406.828125,
+        "right": 1454,
+        "bottom": 1436.828125,
+        "width": 1308,
+        "height": 30
+      }
+    },
+    {
+      "case": "overload-reject",
+      "mode": "scroll",
+      "viewport": [
+        1440,
+        810
+      ],
+      "pass": true,
+      "fit": false,
+      "expectedFit": false,
+      "errors": [],
+      "zoom": 0.9666666666666667,
+      "title": {
+        "left": 87.796875,
+        "top": 129.421875,
+        "right": 1352.203125,
+        "bottom": 182.9375,
+        "width": 1264.40625,
+        "height": 53.515625
+      },
+      "subtitle": {
+        "left": 87.796875,
+        "top": 188.734375,
+        "right": 1352.203125,
+        "bottom": 244.734375,
+        "width": 1264.40625,
+        "height": 56
+      },
+      "titleLines": 0.99983730141431,
+      "fonts": [
+        "49px",
+        "21px",
+        "18px"
+      ],
+      "tracking": "-1.33333px",
+      "columnsSeparate": true,
+      "footerInside": false,
+      "footerInViewport": false,
+      "notesBeforeCaption": true,
+      "captionBeforeFooter": true,
+      "nodeBounds": [
+        {
+          "text": "문서 나누기",
+          "x": 445.275634765625,
+          "y": 10.344254493713379,
+          "width": 87.44866943359375,
+          "height": 24.828306198120117,
+          "inside": true
+        },
+        {
+          "text": "찾기 좋은 크기의 조각",
+          "x": 420.50390625,
+          "y": 38.41328048706055,
+          "width": 138.29405212402344,
+          "height": 21.724769592285156,
+          "inside": true
+        }
+      ],
+      "nodeTextsSeparate": true,
+      "canvas": {
+        "left": 24,
+        "top": 64,
+        "right": 1416,
+        "bottom": 847,
+        "width": 1392,
+        "height": 783
+      },
+      "foot": {
+        "left": 87.796875,
+        "top": 1362.953125,
+        "right": 1352.203125,
+        "bottom": 1391.578125,
+        "width": 1264.40625,
+        "height": 28.625
+      }
+    },
+    {
+      "case": "overload-reject",
+      "mode": "scroll",
+      "viewport": [
+        1366,
+        768
+      ],
+      "pass": true,
+      "fit": false,
+      "expectedFit": false,
+      "errors": [],
+      "zoom": 0.9152777777777777,
+      "title": {
+        "left": 84.40625,
+        "top": 126.015625,
+        "right": 1281.59375,
+        "bottom": 176.6875,
+        "width": 1197.1875,
+        "height": 50.671875
+      },
+      "subtitle": {
+        "left": 84.40625,
+        "top": 182.171875,
+        "right": 1281.59375,
+        "bottom": 235.203125,
+        "width": 1197.1875,
+        "height": 53.03125
+      },
+      "titleLines": 0.9998607793124636,
+      "fonts": [
+        "49px",
+        "21px",
+        "18px"
+      ],
+      "tracking": "-1.33333px",
+      "columnsSeparate": true,
+      "footerInside": false,
+      "footerInViewport": false,
+      "notesBeforeCaption": true,
+      "captionBeforeFooter": true,
+      "nodeBounds": [
+        {
+          "text": "문서 나누기",
+          "x": 445.2751159667969,
+          "y": 10.331478118896484,
+          "width": 87.44979095458984,
+          "height": 25.131999969482422,
+          "inside": true
+        },
+        {
+          "text": "찾기 좋은 크기의 조각",
+          "x": 420.4162902832031,
+          "y": 38.516868591308594,
+          "width": 138.23219299316406,
+          "height": 21.853912353515625,
+          "inside": true
+        }
+      ],
+      "nodeTextsSeparate": true,
+      "canvas": {
+        "left": 24,
+        "top": 64,
+        "right": 1342,
+        "bottom": 805.375,
+        "width": 1318,
+        "height": 741.375
+      },
+      "foot": {
+        "left": 84.40625,
+        "top": 1293.625,
+        "right": 1281.59375,
+        "bottom": 1320.6875,
+        "width": 1197.1875,
+        "height": 27.0625
+      }
+    },
+    {
+      "case": "overload-reject",
+      "mode": "scroll",
+      "viewport": [
+        1280,
+        720
+      ],
+      "pass": true,
+      "fit": false,
+      "expectedFit": false,
+      "errors": [],
+      "zoom": 0.8555555555555555,
+      "title": {
+        "left": 80.453125,
+        "top": 122.203125,
+        "right": 1199.546875,
+        "bottom": 169.5625,
+        "width": 1119.09375,
+        "height": 47.359375
+      },
+      "subtitle": {
+        "left": 80.453125,
+        "top": 174.6875,
+        "right": 1199.546875,
+        "bottom": 224.28125,
+        "width": 1119.09375,
+        "height": 49.59375
+      },
+      "titleLines": 0.9997311474871526,
+      "fonts": [
+        "49px",
+        "21px",
+        "18px"
+      ],
+      "tracking": "-1.33333px",
+      "columnsSeparate": true,
+      "footerInside": false,
+      "footerInViewport": false,
+      "notesBeforeCaption": true,
+      "captionBeforeFooter": true,
+      "nodeBounds": [
+        {
+          "text": "문서 나누기",
+          "x": 445.2587890625,
+          "y": 10.125112533569336,
+          "width": 87.48238372802734,
+          "height": 24.55133056640625,
+          "inside": true
+        },
+        {
+          "text": "찾기 좋은 크기의 조각",
+          "x": 420.5065612792969,
+          "y": 38.46333312988281,
+          "width": 139.14718627929688,
+          "height": 22.213109970092773,
+          "inside": true
+        }
+      ],
+      "nodeTextsSeparate": true,
+      "canvas": {
+        "left": 24,
+        "top": 64,
+        "right": 1256,
+        "bottom": 757,
+        "width": 1232,
+        "height": 693
+      },
+      "foot": {
+        "left": 80.453125,
+        "top": 1214.3125,
+        "right": 1199.546875,
+        "bottom": 1239.71875,
+        "width": 1119.09375,
+        "height": 25.40625
+      }
+    },
+    {
+      "case": "overload-reject",
+      "mode": "slides",
+      "viewport": [
+        1600,
+        950
+      ],
+      "pass": true,
+      "fit": false,
+      "expectedFit": false,
+      "errors": [],
+      "zoom": 1,
+      "title": {
+        "left": 146,
+        "top": 159,
+        "right": 1454,
+        "bottom": 214.359375,
+        "width": 1308,
+        "height": 55.359375
+      },
+      "subtitle": {
+        "left": 146,
+        "top": 220.359375,
+        "right": 1454,
+        "bottom": 278.296875,
+        "width": 1308,
+        "height": 57.9375
+      },
+      "titleLines": 0.9998081090843417,
+      "fonts": [
+        "49px",
+        "21px",
+        "18px"
+      ],
+      "tracking": "-1.33333px",
+      "columnsSeparate": true,
+      "footerInside": false,
+      "footerInViewport": false,
+      "notesBeforeCaption": true,
+      "captionBeforeFooter": true,
+      "nodeBounds": [
+        {
+          "text": "문서 나누기",
+          "x": 445.234375,
+          "y": 10,
+          "width": 87.7093505859375,
+          "height": 25,
+          "inside": true
+        },
+        {
+          "text": "찾기 좋은 크기의 조각",
+          "x": 420.3984375,
+          "y": 39,
+          "width": 138.9700927734375,
+          "height": 21,
+          "inside": true
+        }
+      ],
+      "nodeTextsSeparate": true,
+      "canvas": {
+        "left": 80,
+        "top": 92,
+        "right": 1520,
+        "bottom": 902,
+        "width": 1440,
+        "height": 810
+      },
+      "foot": {
+        "left": 146,
+        "top": 1434.828125,
+        "right": 1454,
+        "bottom": 1464.828125,
+        "width": 1308,
+        "height": 30
+      }
+    },
+    {
+      "case": "overload-reject",
+      "mode": "slides",
+      "viewport": [
+        1440,
+        810
+      ],
+      "pass": true,
+      "fit": false,
+      "expectedFit": false,
+      "errors": [],
+      "zoom": 0.8913519965277777,
+      "title": {
+        "left": 137.046875,
+        "top": 125.875,
+        "right": 1302.9375,
+        "bottom": 175.21875,
+        "width": 1165.890625,
+        "height": 49.34375
+      },
+      "subtitle": {
+        "left": 137.046875,
+        "top": 180.5625,
+        "right": 1302.9375,
+        "bottom": 232.21875,
+        "width": 1165.890625,
+        "height": 51.65625
+      },
+      "titleLines": 0.9997890745636644,
+      "fonts": [
+        "49px",
+        "21px",
+        "18px"
+      ],
+      "tracking": "-1.33333px",
+      "columnsSeparate": true,
+      "footerInside": false,
+      "footerInViewport": false,
+      "notesBeforeCaption": true,
+      "captionBeforeFooter": true,
+      "nodeBounds": [
+        {
+          "text": "문서 나누기",
+          "x": 445.2643127441406,
+          "y": 9.802148818969727,
+          "width": 87.49237823486328,
+          "height": 25.808364868164062,
+          "inside": true
+        },
+        {
+          "text": "찾기 좋은 크기의 조각",
+          "x": 420.446533203125,
+          "y": 39.16845703125,
+          "width": 138.5933380126953,
+          "height": 21.31995391845703,
+          "inside": true
+        }
+      ],
+      "nodeTextsSeparate": true,
+      "canvas": {
+        "left": 78.21875,
+        "top": 66,
+        "right": 1361.765625,
+        "bottom": 788,
+        "width": 1283.546875,
+        "height": 722
+      },
+      "foot": {
+        "left": 137.046875,
+        "top": 1263.25,
+        "right": 1302.9375,
+        "bottom": 1290.046875,
+        "width": 1165.890625,
+        "height": 26.796875
+      }
+    },
+    {
+      "case": "overload-reject",
+      "mode": "slides",
+      "viewport": [
+        1366,
+        768
+      ],
+      "pass": true,
+      "fit": false,
+      "expectedFit": false,
+      "errors": [],
+      "zoom": 0.8394965277777777,
+      "title": {
+        "left": 133.96875,
+        "top": 122.453125,
+        "right": 1232.03125,
+        "bottom": 168.9375,
+        "width": 1098.0625,
+        "height": 46.484375
+      },
+      "subtitle": {
+        "left": 133.96875,
+        "top": 173.96875,
+        "right": 1232.03125,
+        "bottom": 222.59375,
+        "width": 1098.0625,
+        "height": 48.625
+      },
+      "titleLines": 1.000031242806148,
+      "fonts": [
+        "49px",
+        "21px",
+        "18px"
+      ],
+      "tracking": "-1.33333px",
+      "columnsSeparate": true,
+      "footerInside": false,
+      "footerInViewport": false,
+      "notesBeforeCaption": true,
+      "captionBeforeFooter": true,
+      "nodeBounds": [
+        {
+          "text": "문서 나누기",
+          "x": 445.2762451171875,
+          "y": 9.743910789489746,
+          "width": 87.44747161865234,
+          "height": 25.022228240966797,
+          "inside": true
+        },
+        {
+          "text": "찾기 좋은 크기의 조각",
+          "x": 420.4681091308594,
+          "y": 39.318511962890625,
+          "width": 138.34324645996094,
+          "height": 21.44762420654297,
+          "inside": true
+        }
+      ],
+      "nodeTextsSeparate": true,
+      "canvas": {
+        "left": 78.5625,
+        "top": 66,
+        "right": 1287.4375,
+        "bottom": 746,
+        "width": 1208.875,
+        "height": 680
+      },
+      "foot": {
+        "left": 133.96875,
+        "top": 1193.578125,
+        "right": 1232.03125,
+        "bottom": 1218.8125,
+        "width": 1098.0625,
+        "height": 25.234375
+      }
+    },
+    {
+      "case": "overload-reject",
+      "mode": "slides",
+      "viewport": [
+        1280,
+        720
+      ],
+      "pass": true,
+      "fit": false,
+      "expectedFit": false,
+      "errors": [],
+      "zoom": 0.7802408854166667,
+      "title": {
+        "left": 129.703125,
+        "top": 118.65625,
+        "right": 1150.28125,
+        "bottom": 161.859375,
+        "width": 1020.578125,
+        "height": 43.203125
+      },
+      "subtitle": {
+        "left": 129.703125,
+        "top": 166.53125,
+        "right": 1150.28125,
+        "bottom": 211.75,
+        "width": 1020.578125,
+        "height": 45.21875
+      },
+      "titleLines": 1.0000274796580644,
+      "fonts": [
+        "49px",
+        "21px",
+        "18px"
+      ],
+      "tracking": "-1.33333px",
+      "columnsSeparate": true,
+      "footerInside": false,
+      "footerInViewport": false,
+      "notesBeforeCaption": true,
+      "captionBeforeFooter": true,
+      "nodeBounds": [
+        {
+          "text": "문서 나누기",
+          "x": 445.28564453125,
+          "y": 9.485102653503418,
+          "width": 87.42872619628906,
+          "height": 25.64362335205078,
+          "inside": true
+        },
+        {
+          "text": "찾기 좋은 크기의 조각",
+          "x": 420.5235290527344,
+          "y": 39.33164596557617,
+          "width": 138.1313018798828,
+          "height": 20.5148983001709,
+          "inside": true
+        }
+      ],
+      "nodeTextsSeparate": true,
+      "canvas": {
+        "left": 78.21875,
+        "top": 66,
+        "right": 1201.765625,
+        "bottom": 698,
+        "width": 1123.546875,
+        "height": 632
+      },
+      "foot": {
+        "left": 129.703125,
+        "top": 1114.578125,
+        "right": 1150.28125,
+        "bottom": 1138.15625,
+        "width": 1020.578125,
+        "height": 23.578125
+      }
+    }
+  ],
+  "hashes": {
+    "lesson.js": "ec96a75ccba77900f63c4181ee11042348276840b30c4cea38c463e0109a0740",
+    "lesson.css": "7dc051dea1281883c9c1245dff7a294ca114a0f1f7d5db3bad8fbdc4262d5c10",
+    "scroll.html": "1f0bfc48da9e799e0784244cd1f07f18057c8688a0574f1398307d3cdbac6d87",
+    "slides.html": "5d3964f71da523e26eb788fd31771db13b5957a369a58db69e60a83b1523728e"
+  }
+}

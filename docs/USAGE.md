@@ -1,5 +1,10 @@
 # 사용 방법 · HTML 전용
 
+<!-- documentation-role:start -->
+> **문서 역할:** 로컬 실행·편집의 빠른 시작. 디자인 규칙과 검증 명령은 연결된 정본에서 확인합니다.
+> [정본 위치·규칙 강도·현행/이력 구분](DOCUMENTATION_MAP.md)
+<!-- documentation-role:end -->
+
 이 문서는 빠른 실행·편집 요령입니다. 목적별 문서 지도는 [README](../README.md), 실제 패턴 선택은 [카탈로그](../TEMPLATE_CATALOG.md)를 참고합니다. 지원 결과물은 HTML Scroll / Slide이며 PPTX 파일·생성 경로는 없습니다.
 
 ## 실행
@@ -31,13 +36,9 @@ python -m http.server 8000
 ```bash
 python -m pip install playwright
 python -m playwright install chromium
-python scripts/check_sources.py
-python scripts/verify_character_spacing.py
-python scripts/validate_references.py
-python scripts/check_interactive.py
-python scripts/verify_pretendard.py
-python scripts/check_documentation.py
 ```
+
+공통 검증 명령은 [검토 가이드의 필수 PC 화면 절](REFERENCE_REVIEW_GUIDE.md#필수-pc-화면)에 한 곳에서 관리합니다. 위 설치 후 해당 명령을 저장소 루트에서 실행합니다.
 
 대표 프리뷰는 `previews/html-*`, 공통 결과는 [reference-validation.json](../previews/review/reference-validation.json), 화면별 PNG는 기본 `/tmp/reference-integration-review`입니다. 새 자료는 [검토 가이드](REFERENCE_REVIEW_GUIDE.md)의 PC 4개 크기를 직접 확인합니다. 현재 공통 스크립트가 추가로 실행하는 작은 화면 검사는 기존 예제의 호환성 회귀 기록으로 구분합니다.
 

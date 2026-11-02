@@ -1,5 +1,10 @@
 # 재사용 컴포넌트 설계 규격
 
+<!-- documentation-role:start -->
+> **문서 역할:** 패턴별 재사용 계약과 권장 시작값. 실제 측정값 표는 원본 구현의 근거이며 공통 강제값이 아닙니다.
+> [정본 위치·규칙 강도·현행/이력 구분](DOCUMENTATION_MAP.md)
+<!-- documentation-role:end -->
+
 [디자인 시스템](../DESIGN_SYSTEM.md) · [Figure 제작 표준](FIGURE_PRODUCTION_STANDARD.md) · [페이지별 의미·계산 명세](REFERENCE_PAGE_SPECS.md) · [재사용 순서](REFERENCE_REUSE_WORKFLOW.md)
 
 이 문서는 **다른 개념의 자료를 만들 때 무엇을 선택하고 어떤 수치를 기록할지** 정합니다. 색·폰트·행간·기본 간격은 디자인 시스템, 계산·실제 데이터는 페이지 명세, 좌표 계산 절차는 Figure 표준이 기준입니다. 같은 내용을 여러 문서에서 독립적으로 수정하지 않습니다.

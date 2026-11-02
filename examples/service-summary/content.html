@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>서비스 변경 실험 요약</title><link rel="icon" href="data:,"><link rel="stylesheet" href="../../templates/html/styles.css"><link rel="stylesheet" href="report.css"><script defer src="report.js"></script></head>
+<body><main class="report" id="summary">
+<header><div class="kicker">서비스 변경 · 관측 요약</div><h1>응답·비용 개선, 실패율 상승</h1><p class="subtitle">동일 요청 혼합·부하 조건 · 각 설정 하루씩, 10,000건 비교</p></header>
+<div class="report-body">
+<section class="panel impact" aria-labelledby="impact-title"><div class="panel-label">지표 비교</div><h2 id="impact-title">효율 이점과 품질 손실</h2>
+<div class="chart"><div class="groups"><div class="gridlines" aria-hidden="true"></div><div id="metrics"></div></div></div>
+
+</section>
+<section class="panel action" aria-labelledby="action-title"><div class="panel-label">판단과 후속 조치</div><h2 id="action-title">전면 확대 전, 실패 원인 확인</h2><div class="actions">
+<div class="action-item"><span class="number">1</span><div><h3>확대 적용 보류</h3><p>응답시간·비용 이점만으로 전면 확대하지 않음.<br>실패율 악화를 먼저 해소.</p></div></div>
+<div class="action-item"><span class="number">2</span><div><h3>실패 원인 분리</h3><p>실패 유형별로 변경 전후를 비교하고, 응답시간 집계에 실패 요청을 포함하는 기준을 통일.</p></div></div>
+<div class="action-item"><span class="number">3</span><div><h3>재검증 후 확대</h3><p>허용 실패율을 합의하고 같은 요청 조건에서 반복 관측. 기준 충족과 이점의 재현을 확인한 뒤 단계적으로 확대.</p></div></div>
+</div></section>
+</div><footer><span>서비스 변경 실험 요약</span><span>01 / 01</span></footer>
+</main></body></html>

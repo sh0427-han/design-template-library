@@ -1,9 +1,11 @@
 """Check all Markdown file links and final design / rendered-source contracts."""
 from pathlib import Path
 import hashlib,json,re,subprocess
+from check_document_roles import preserved_body, main as check_roles
 ROOT=Path(__file__).resolve().parents[1]
 
 def main():
+    check_roles()
     links=0;docs=list(ROOT.rglob('*.md'));broken=[]
     for doc in docs:
         text=doc.read_text();body=re.sub(r'```[\s\S]*?```','',text)
@@ -50,7 +52,8 @@ def main():
     assert baseline=='ce840a68b423ae7508381dc2745e3e7e12ebd41a'
     for path,expected in scope['documentation_changes'].items():
         assert path.endswith('.md')
-        assert hashlib.sha256((ROOT/path).read_bytes()).hexdigest()==expected['after_sha256'],('document changed',path)
+        # Role links are a separately checked migration, not a new historical approval.
+        assert hashlib.sha256(preserved_body(path,(ROOT/path).read_bytes())).hexdigest()==expected['after_sha256'],('document body changed',path)
         before=subprocess.run(['git','show',f'{baseline}:{path}'],cwd=ROOT,capture_output=True)
         assert (hashlib.sha256(before.stdout).hexdigest() if before.returncode==0 else None)==expected['before_sha256'],('document baseline',path)
     history=(ROOT/'examples/overfitting-generalization/review/design-history.md').read_text()

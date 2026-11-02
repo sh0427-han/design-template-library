@@ -1,0 +1,30 @@
+{
+  "implementation_commit": "9b0cd05c5ec5b0ad15fb7b9f934048e9e20425cf",
+  "sha256": {
+    "docs/fresh-builder-trial/review-final/audit.json": "96834a00cc3d02626597c4b98210ad086774929dab2540f88eabdefe247f6c9a",
+    "docs/fresh-builder-trial/review-final/audit.py": "5d0b19c774bb362f9e4926a13c3da0875d0def65ce4df7d349e0cb6a1bf62b36",
+    "docs/fresh-builder-trial/review-final/manifest-check.json": "5d225ef71c93fd26d81f16a58d89ec821182418670c574c54d6a3c51b5ed9d1d",
+    "docs/fresh-builder-trial/review-final/scroll-1280x720.png": "2d550566f88a8fc4fd9024a32369ace74fc89743954484cdcd7256f894f305e3",
+    "docs/fresh-builder-trial/review-final/scroll-1366x768.png": "8947a35cab5725090b063fb49f720a9d6c5546f415c06f856b1bae1db93ecd2f",
+    "docs/fresh-builder-trial/review-final/scroll-1440x810.png": "e1048035bd61576e418eab31ce35ceb574cc7e8ad99aab21a900f99eefffee62",
+    "docs/fresh-builder-trial/review-final/scroll-1600x950.png": "94ff8676dd002532cc38aaf6d0ead8807cc8bc6e199c50be1b3b040ee5b32465",
+    "docs/fresh-builder-trial/review-final/slides-1280x720.png": "877453c35ac306b0ea4bc9f71562e829ba93959f7e00e85fa918036ca2580a07",
+    "docs/fresh-builder-trial/review-final/slides-1366x768.png": "5332cc42f7c09ee2faddb0f118013ddcfda6b390c37da169ae2a2004f1d8714a",
+    "docs/fresh-builder-trial/review-final/slides-1440x810.png": "29cb4a0ed0aeb138d9e46cab41c2b6a05a4f7517bfafb3640bd31107d53311cb",
+    "docs/fresh-builder-trial/review-final/slides-1600x950.png": "fe9d8c019242c26235c75fa044f1e4e535503c87b64fec6ee6cc3dedb5bd9fde",
+    "examples/rag-architecture/lesson.css": "2257e6819eb7005e974f18e4c1e95b71b12c5a75837d97ed101a365327c750d6",
+    "examples/rag-architecture/lesson.js": "ec96a75ccba77900f63c4181ee11042348276840b30c4cea38c463e0109a0740",
+    "examples/rag-architecture/scroll-1280x720.png": "2d550566f88a8fc4fd9024a32369ace74fc89743954484cdcd7256f894f305e3",
+    "examples/rag-architecture/scroll-1366x768.png": "8947a35cab5725090b063fb49f720a9d6c5546f415c06f856b1bae1db93ecd2f",
+    "examples/rag-architecture/scroll-1440x810.png": "e1048035bd61576e418eab31ce35ceb574cc7e8ad99aab21a900f99eefffee62",
+    "examples/rag-architecture/scroll-1600x950.png": "94ff8676dd002532cc38aaf6d0ead8807cc8bc6e199c50be1b3b040ee5b32465",
+    "examples/rag-architecture/scroll.html": "1f0bfc48da9e799e0784244cd1f07f18057c8688a0574f1398307d3cdbac6d87",
+    "examples/rag-architecture/slides-1280x720.png": "877453c35ac306b0ea4bc9f71562e829ba93959f7e00e85fa918036ca2580a07",
+    "examples/rag-architecture/slides-1366x768.png": "5332cc42f7c09ee2faddb0f118013ddcfda6b390c37da169ae2a2004f1d8714a",
+    "examples/rag-architecture/slides-1440x810.png": "29cb4a0ed0aeb138d9e46cab41c2b6a05a4f7517bfafb3640bd31107d53311cb",
+    "examples/rag-architecture/slides-1600x950.png": "fe9d8c019242c26235c75fa044f1e4e535503c87b64fec6ee6cc3dedb5bd9fde",
+    "examples/rag-architecture/slides.html": "5d3964f71da523e26eb788fd31771db13b5957a369a58db69e60a83b1523728e",
+    "examples/rag-architecture/verification.json": "25366c09da2a098ac0b73fe9b080c7d154a2e18a0713a38e5f6e113b327c8276",
+    "examples/rag-architecture/verify.py": "97baef367a52847bd77ee76d9e35178ba53d307b4a4bcd0556e46fa41aed9305"
+  }
+}
